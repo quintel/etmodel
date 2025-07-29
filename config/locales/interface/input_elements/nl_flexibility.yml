@@ -112,29 +112,36 @@ nl:
     flexibility_outdoor_temperature:
       title: Buitentemperatuur
       short_description:
-      description: "Hoeveel denk je dat de gemiddelde buitentemperatuur zal veranderen in de toekomst?\r\n<br/><br/>\r\nJe keuze heeft invloed op de warmte- en koudevraag van huishoudens, gebouwen en landbouw. Kijk voor meer informatie in onze <a href=\"https://docs.energytransitionmodel.com/main/outdoor-temperature\" target =\"_blank\">documentatie</a>."
+      description: |
+        Deze slider bepaalt de verandering van de gemiddelde buitentemperatuur in de toekomst.</br></br>De gekozen temperatuur heeft invloed op de vraag naar verwarming en koeling in woningen, gebouwen en de landbouw. </br></br> Bekijk de <a href="https://docs.energytransitionmodel.com/main/outdoor-temperature" target="_blank">Documentatie</a> voor meer informatie.
     settings_weather_curve_set:
       title: Weerjaar
     flh_of_energy_power_wind_turbine_coastal:
       title: Wind aan de kust
       short_description:
-      description: Door de vollasturen te verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden met hetzelfde aantal windmolens. Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken breder worden doordat de windmolen vaker draait op hogere capaciteit. Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect van het aantal vollasturen op het windprofiel.
+      description: | 
+        Deze slider bepaalt het aantal vollasturen van windturbines aan de kust.</br></br> Bij een hoger aantal vollasturen produceert dezelfde hoeveelheid turbines meer elektriciteit. Dit beïnvloedt ook het productieprofiel: turbines draaien vaker op hoge capaciteit, waardoor de productiepieken breder en vlakker worden.</br></br>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="merit_order_hourly_supply" data-chart-location="side">Electriciteitsproductie op uurbasis</a> voor inzicht in het effect van vollasturen op het windprofiel.
     flh_of_energy_power_wind_turbine_inland:
       title: Wind op land
       short_description:
-      description: Door de vollasturen te verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden met hetzelfde aantal windmolens. Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken breder worden doordat de windmolen vaker draait op hogere capaciteit. Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect van het aantal vollasturen op het windprofiel.
+      description: | 
+        Deze slider bepaalt het aantal vollasturen van windturbines op land.</br></br> Door het aantal vollasturen te verhogen, produceert dezelfde hoeveelheid windturbines meer elektriciteit. Dit beïnvloedt ook het productieprofiel: bij meer vollasturen worden pieken breder omdat de turbines vaker op hogere capaciteit draaien.</br></br> Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="merit_order_hourly_supply" data-chart-location= "side">Electriciteitsproductie op uurbasis</a> voor inzicht in het effect van vollasturen op het windprofiel.
     flh_of_energy_power_wind_turbine_offshore:
       title: Wind op zee
       short_description:
-      description: Door de vollasturen te verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden met hetzelfde aantal windmolens. De vollasturen van zowel de 'normale' windmolens op zee als de hybride windmolens op zee worden hiermee aangepast. Wanneer het aantal vollasturen wordt verhoogd met deze schuif, verandert tegelijkertijd ook het productieprofiel per uur voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken breder worden doordat de windmolen vaker draait op hogere capaciteit. Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect van het aantal vollasturen op het windprofiel.
+      description: | 
+        Deze slider bepaalt het aantal vollasturen van windturbines op zee. </br></br> Een hoger aantal vollasturen betekent meer elektriciteitsproductie met dezelfde hoeveelheid turbines. Dit geldt voor zowel reguliere als windturbines op zee. Het productieprofiel verandert mee: turbines draaien vaker op hoge capaciteit, wat resulteert in bredere pieken.</br></br>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="merit_order_hourly_supply" data-chart-location="side">Electriciteitsproductie op uurbasis</a> voor inzicht in het effect van vollasturen op het windprofiel.
     flh_of_energy_hydrogen_wind_turbine_offshore:
-      title: Windmolen op zee voor H<sub>2</sub>
+      title: windturbine op zee voor H<sub>2</sub>
       short_description:
-      description: Door de vollasturen te verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden met hetzelfde aantal windmolens. Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken breder worden doordat de windmolen vaker draait op hogere capaciteit. Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect van het aantal vollasturen op het windprofiel.
+      description: |
+        Deze slider bepaalt het aantal vollasturen van windturbines op zee die direct waterstof produceren.</br></br>Bij meer vollasturen leveren dezelfde turbines meer elektriciteit voor waterstofproductie. Ook het productieprofiel verandert: bij hogere vollasturen draaien de turbines vaker op hoge capaciteit, wat leidt tot bredere pieken.</br></br>
+        Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="merit_order_hourly_supply" data-chart-location="side">Electriciteitsproductie op uurbasis</a> voor inzicht in het effect van vollasturen op het windprofiel.
     flh_of_solar_pv_solar_radiation:
       title: Zon-PV
       short_description:
-      description: "Hier kun je aannames maken over hoe zonnig het is in jouw scenario. Door de vollasturen te verhogen voor zonnepanelen zal er meer elektriciteit geproduceerd worden met hetzelfde aantal panelen. Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur voor zon. Bij een toenemend aantal vollasturen zullen de pieken breder worden doordat het paneel langer op hogere capaciteit elektriciteit produceert. Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect van het aantal vollasturen op het zonneprofiel.\r\n<br/><br/>\r\n "
+      description: |
+        Deze slider bepaalt het aantal vollasturen van zonne-energie (zon-PV).</br></br> Bij meer vollasturen produceren dezelfde zonnepanelen meer elektriciteit. Ook het productieprofiel verandert: bij hogere vollasturen zijn de pieken breder, doordat panelen langer op hoge capaciteit leveren. </br></br> Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="merit_order_hourly_supply" data-chart-location="side">Electriciteitsproductie op uurbasis</a> voor inzicht in het effect van vollasturen op het zonneprofiel.
     capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:

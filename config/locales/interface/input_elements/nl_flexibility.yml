@@ -173,7 +173,8 @@ nl:
     electricity_interconnector_1_export_availability: &interconnector_export_availability
       title: Beschikbaar voor export
       short_description:
-      description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit kan worden gebruikt wanneer er elektriciteitsoverschotten zijn als gevolg van de overproductie door windmolens en zonnepanelen omdat de omringende landen hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom instellingen welk deel van de interconnectiecapaciteit je verwacht te kunnen gebruiken voor export.
+      description: |
+        Deze slider bepaalt welk deel van de interconnectiecapaciteit beschikbaar is voor export van elektriciteit.</br></br> In periodes van elektriciteitsoverschot, bijvoorbeeld door veel zon of wind, kan de invoer uit het buitenland beperkt zijn. Buurlanden kampen dan vaak met dezelfde overproductie. Met deze slider wordt aangegeven welk aandeel van de fysieke interconnectiecapaciteit realistisch benut kan worden voor import onder zulke omstandigheden.
     electricity_interconnector_2_export_availability: *interconnector_export_availability
     electricity_interconnector_3_export_availability: *interconnector_export_availability
     electricity_interconnector_4_export_availability: *interconnector_export_availability
@@ -188,7 +189,8 @@ nl:
     electricity_interconnector_1_import_availability: &interconnector_import_availability
       title: Beschikbaar voor import
       short_description:
-      description: Het is erg waarschijnlijk dat niet alle fysieke interconnectiecapaciteit kan worden gebruikt wanneer er elektriciteitsoverschotten zijn als gevolg van de overproductie door windmolens en zonnepanelen omdat de omringende landen hier op dat moment ook last van zullen hebben. Met deze slider kun je daarom instellingen welk deel van de interconnectiecapaciteit je verwacht te kunnen gebruiken voor import.
+      description: |
+        Deze slider bepaalt welk deel van de interconnectiecapaciteit beschikbaar is voor import van elektriciteit.</br></br> In periodes van lage lokale productie kan import nodig zijn, maar de beschikbare capaciteit kan beperkt zijn als buurlanden ook een hoge vraag hebben. Deze slider geeft aan welk aandeel van de fysieke interconnectiecapaciteit realistisch benut kan worden om elektriciteit uit het buitenland te ontvangen.
     electricity_interconnector_2_import_availability: *interconnector_import_availability
     electricity_interconnector_3_import_availability: *interconnector_import_availability
     electricity_interconnector_4_import_availability: *interconnector_import_availability
@@ -203,7 +205,8 @@ nl:
     electricity_interconnector_1_capacity: &interconnector_capacity
       title: Interconnectiecapaciteit
       short_description:
-      description: De interconnectiecapaciteit met de omringende landen is beperkt. Met deze slider kun je de toekomstige interconnectiecapaciteit instellingen.
+      description: |
+        Deze slider bepaalt de toekomstige interconnectiecapaciteit voor elektriciteit met buurlanden.</br></br>Interconnectie maakt import en export van elektriciteit mogelijk. De maximale capaciteit wordt bepaald door het aantal verbindingen, hun transportvermogen en de netinfrastructuur aan beide zijden van de grens.
     electricity_interconnector_2_capacity: *interconnector_capacity
     electricity_interconnector_3_capacity: *interconnector_capacity
     electricity_interconnector_4_capacity: *interconnector_capacity
@@ -218,7 +221,8 @@ nl:
     electricity_interconnector_1_marginal_costs: &interconnector_marginal_costs
       title: Elektriciteitsprijs in externe markt
       short_description:
-      description: "De gemiddelde kosten van elektriciteit op de Centraal West Europese markt waren rond de 35 €/MWh in 2015. Alhoewel dit enorm kan verschillen per maand, dag, of zelfs uur. <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\" target =\"_blank\">(European Commission, 2015)</a>. \r\n\r\n</p>\r\n\r\n\r\nJe kunt een beter beeld krijgen van de fluctuerende prijs door te kijken in de <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\" target =\"_blank\">documentatie</a>. "
+      description: |
+        Deze slider bepaalt de elektriciteitsprijs op de externe markt.</br></br> Op markten zoals die in Centraal West Europa kan de prijs sterk variëren per maand, dag of uur.</br></br> Bekijk de <a href=\"https://docs.energytransitionmodel.com/main/costs-imported-electricity\" target =\"_blank\">Documentatie</a> voor meer informatie.
     electricity_interconnector_2_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_3_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_4_marginal_costs: *interconnector_marginal_costs
@@ -420,7 +424,8 @@ nl:
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:
-      description: "De gemiddelde emissie van de Nederlandse elektriciteitsmix is 527 gram CO<sub>2</sub> per kWh  <a href=\"https://www.cbs.nl/nl-nl/achtergrond/2017/06/rendementen-en-co2-emissie-elektriciteitsproductie-2015\" target =\"_blank\">(CBS, 2015)</a>.\r\n\r\n</p>\r\n\r\nDe Europese elektriciteitsmix heeft een gemiddelde emissie van 275.9 gram CO<sub>2</sub> per kWh <a href=\"https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-3#tab-googlechartid_chart_11_filters=%7B%22rowFilters%22%3A%7B%7D%3B%22columnFilters%22%3A%7B%22pre_config_ugeo%22%3A%5B%22European%20Union%20(28%20countries)%22%5D%7D%7D\" target =\"_blank\">(EEA, 2014)</a>. \r\n\r\n</p>\r\n\r\nJe kan meer emissies in gram CO<sub>2</sub> per kWh vinden per type drager, technologie en land in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\" target =\"_blank\">documentation</a>. "
+      description: |
+        Deze slider bepaalt de gemiddelde CO<sub>2</sub>-uitstoot van de elektriciteit die wordt geïmporteerd.</br></br> Bekijk de <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\" target =\"_blank\">Documentatie</a> voor meer informatie.
     electricity_interconnector_2_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_3_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
@@ -435,7 +440,8 @@ nl:
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Toekomstige import
       short_description:
-      description: "In sommige scenario's is het nodig om elektriciteit te importeren van buiten jouw gebied. De productie en distributie van deze elektriciteit kan CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies wil je toekennen aan jouw gebied? Op dit moment is de gemiddelde elektriciteitsmix van Nederland genomen als startwaarde. \r\n\r\n</p>\r\nKomt dit met name van hernieuwbaar zon of wind, dan gaan de emissies richting de 0 gram CO<sub>2</sub>/kWh.   \r\n\r\n</p>\r\n\r\nOf moet er tijdens de piekvraag met weinig zon en wind juist elektriciteit van bijvoorbeeld van gas (380 -1000 gCO<sub>2</sub>/kWh), kolen (660 -1050 gCO<sub>2</sub>/kWh), of bruinkolen (800 -1300 gCO<sub>2</sub>/kWh) geïmporteerd worden. <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\" target =\"_blank\">(Turconi et al, 2013)</a>. \r\n\r\n\r\n</p>\r\n\r\nJe kan meer emissies in gram CO<sub>2</sub> per kWh vinden per type drager, technologie en land in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\" target =\"_blank\">documentation</a>. "
+      description: 
+        Deze slider bepaalt de gemiddelde CO<sub>2</sub>-uitstoot van de elektriciteit die in de toekomst wordt geïmporteerd.</br></br> Bij import uit gebieden met veel hernieuwbare energie is de emissie vrijwel nul. Bij import tijdens piekvraag kan de elektriciteit ook uit fossiele bronnen komen, wat de emissie verhoogt.</br></br> Bekijk de <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\" target =\"_blank\">Documentatie</a> voor meer informatie.
     electricity_interconnector_2_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_3_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future

@@ -2,17 +2,61 @@
 
 ___
 
-# Juli 2025
+# Verwachte wijzigingen
+
+### Oktober
+
+Er komt een update van de Nederlandse datasets:
+
+* Een nieuwe dataset voor Nederland wordt toegevoegd met startjaar 2023. De bestaande Nederlandse dataset met startjaar 2019 blijft beschikbaar, echter wordt het alleen nog mogelijk om nieuwe scenario's met deze dataset te maken via Scenario-Tools of de API.
+* De bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdate naar startjaar 2023. Op dit moment hebben deze datasets nog startjaar 2019.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <b>Let op</b>: scenarioresultaten van bestaande scenario's die zijn gemaakt met de Nederlandse gemeentelijke, provinciale of RES-regio datasets kunnen veranderen als gevolg van de update naar startjaar 2023. Zet je scenario's over naar de stabiele versie <code>#2025-01</code> <b>voor oktober</b> als je wilt dat scenarioresultaten onveranderd blijven. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie over het wisselen tussen modelversies of <a href="https://my.energytransitionmodel.com/contact" target="_blank">neem contactop</a> bij vragen. Scenario's die met de Nederlandse dataset zijn gemaakt zullen niet veranderen aangezien deze dataset behouden blijft.
+</div>
+
+___
+
+# Augustus 2025
 
 **Nieuwe functies**
 
-### Nieuwe tabellen beschikbaar om economische levensvatbaarheid mee te verkennen
+Nafta wordt nu expliciet gemodelleerd in het ETM. Voorheen maakte nafta deel uit van de geaggregeerde drager olieproducten. De veranderingen omvatten:
+
+* Nafta kan worden geproduceerd in <a href="/scenario/demand/industry/refineries" target="_blank">raffinaderijen</a> of wordt geïmproteerd bij tekorten
+* Aannames kunnen worden gedaan in het eindverbruik van nafta in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a> als brandstof voor naftaketels of als grondstof (niet-energetisch eindverbruik).
+* Datasets zijn geüpdate waardoor productie en eindverbruik van nafta wordt meegenomen in het startjaar. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om deze data te vinden voor een specifiek gebied.
+* Scenarioresultaten van bestaande scenario's kunnen enigszins veranderen als gevolg van het afsplitsen van nafta van olieproducten.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Aanpasbare profielen</a> van het type 'Capaciteitsprofiel' (zoals zon-PV en windprofielen) worden nu in dezelfde format gedownload als waarin ze moeten worden geüpload. Voorheen werd bij het downloaden een genormaliseerde profiel verkregen, waarna een conversiestap benodigd was om het profiel om te zetten naar de juiste uploadformat. Dit is nu verholpen: het gedownloade profiel kan direct worden geüpload zonder conversiestap. Lees meer over aanpasbare profielen in de <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentatie</a>
+  * Voor enkele Nederlandse provinciale en RES-regio datasets is een kleine correctie gedaan in de afronding startjaardata voor de warmtevraag bij huishoudens. Deze correctie kan resulteren in een zeer kleine verandering in de warmtevraag bij huishoudens in bestaande scenario's.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * <a href="/assets/pages/whats_new/changelog/202506_changelog_inputs.csv" download>202506_changelog_inputs.csv</a>
+
+</details>
+</br>
+
+___
+
+# Juli 2025
+
+### Nieuwe functies
+
+**Nieuwe tabellen beschikbaar om economische levensvatbaarheid mee te verkennen**
 
 Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabellen die uitgebreide kosten-batenanalyses bieden voor elektriciteitsproductie-, opslag- en flexibele vraagtechnologieën. De tabellen stellen gebruikers in staat om een eerste inzicht te krijgen in de kosteneffectiviteit van deze assets. De tabellen zijn te vinden in de sectie "Kosten" van de grafiekenselectie. Zie de <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank">documentatie</a> voor meer informatie.
 
 -> <img src="/assets/pages/whats_new/economic_viability_nl.png" width="800" /> <-
 
-### Overige nieuwe functies
+**Overige nieuwe functies**
 
 * Alle bestaande scenario's voor Duitsland en Denemarken met startjaar 2015 automatisch worden geüpdatet naar startjaar 2019 met de eerstvolgende Deploy in augustus.
 

@@ -425,7 +425,7 @@ nl:
     flexibility_merit_order_merit_order:
       title: Merit order
       short_description:
-      description: 
+      description:
         Over het algemeen volgt de elektriciteitsproductie de vraag naar
         elektriciteit. De volgorde waarin elektriciteitscentrales worden ingeschakeld
         wordt bepaald door de 'merit order'. De merit order rangschikt de elektriciteitscentrales
@@ -750,32 +750,17 @@ nl:
     multi_curve_upload:
       title: Curve upload
       description: |
-        Het ETM rekent vraag en aanbod van gas, elekriciteit, warmte en waterstof uit op uurbasis.
-        Op deze pagina kun je je eigen uurprofielen in het ETM laden om de standaardprofielen te
-        overschrijven. Er zijn drie typen uurprofielen die je kunt uploaden:
-
-        <br /><br />
-
-        1. <b>Vraag</b>profielen (bijv. elektrische bussen, warmte in industrie)
-
-        <br />
-
-        2. <b>Aanbod</b>profielen (bijv. zon PV, wind op zee)
-
-        <br />
-
-        3. <b>Prijs</b>curves (bijv. voor elektriciteitsinterconnectoren)
-        <br /><br />
-        In het formulier hieronder kun je een categorie selecteren en een CSV-bestand met jouw eigen profiel
-        uploaden. Meer informatie over de bestandsvereisten voor elk type profiel kun je vinden in de
-        <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target=\"_blank\">documentatie</a>
-        en door te klikken op het vraagteken ('?') in het onderstaande formulier.
-
-        <br /><br />
-        De grafiek rechts laat de profielen zien van alle aanpasbare categorieën. Als je een profiel uploadt,
-        verandert de chart mee. Let op: als een technologie niet gebruikt wordt in jouw scenario laat de grafiek een
-        lege serie zien. Standaard geeft de grafiek de piekcapaciteit per <i>dag</i> weer voor het hele jaar.
-        Selecteer een maand of week in het dropdown-menu om de <i>uurlijkse</i> waardes te zien.
-        <br/><br/>
-        Je kunt de uurlijkse vraag- en aanbodprofielen in jouw scenario downloaden in de
-        <a href="/scenario/data/data_export/energy-flows">Resultaten → Data-export</a>sectie.
+        Hieronder kunnen de standaardprofielen van het ETM worden overschreven door eigen profielen
+        in CSV format te uploaden. Merk op dat geüploade eigen profielen scenario inputs zijn; op basis
+        van deze profielen berekent het model de resulterende (uurlijkse) energiestromen.<br/><br/>
+        Er wordt onderscheid gemaakt in verschillende typen profielen. Bij het selecteren van een
+        categorie hieronder wordt aangegeven welk type profiel moet worden
+        geüpload en wat de bestandsvereisten zijn.
+        Raadpleeg de <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles"
+        target =\"_blank\">documentatie</a> voor meer informatie. <br/><br/>
+        Op basis van jaarlijkse energiestromen en de geüploade vraag- en aanbodprofielen berekent het model
+        de resulterende uurlijkse energiestromen als scenario-output. De resulterende profielen die de
+        uurlijkse energiestromen representeren, worden in de grafiek hiernaast getoond per vraag- en
+        aanbodcategorie. De outputprofielen kunnen ook worden gedownload in de
+        <a href="/scenario/data/data_export/overview">
+        Data-export</a> sectie.

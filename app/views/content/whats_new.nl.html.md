@@ -6,10 +6,10 @@ ___
 
 ### Oktober
 
-Er komt een update van de Nederlandse datasets:
+Er komt een update aan van de Nederlandse datasets:
 
-* Een nieuwe dataset voor Nederland wordt toegevoegd met startjaar 2023.
-* De bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdate naar startjaar 2023. Op dit moment hebben deze datasets nog startjaar 2019.
+* Een nieuwe dataset voor Nederland wordt toegevoegd met startjaardata voor 2023.
+* De bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdate naar startjaardata voor 2023. Op dit moment hebben deze datasets nog startjaar 2019.
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <b>Let op</b>: scenarioresultaten van bestaande scenario's die zijn gemaakt met de Nederlandse gemeentelijke, provinciale of RES-regio datasets kunnen veranderen als gevolg van de update naar startjaar 2023. Zet je scenario's over naar de stabiele versie <code>#2025-01</code> <b>voor oktober</b> als je wilt dat scenarioresultaten onveranderd blijven. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie over het wisselen tussen modelversies of <a href="https://my.energytransitionmodel.com/contact" target="_blank">neem contact op</a> bij vragen. Scenario's die met de bestaande Nederlandse dataset zijn gemaakt, zullen niet veranderen aangezien deze dataset behouden blijft.
@@ -21,25 +21,25 @@ ___
 
 **Nieuwe functies**
 
-*Nafta* wordt nu expliciet gemodelleerd in het ETM. Voorheen maakte *nafta* deel uit van de geaggregeerde drager *olieproducten*. De veranderingen omvatten:
-
-* Nafta kan worden geproduceerd in <a href="/scenario/demand/industry/refineries" target="_blank">raffinaderijen</a> of geïmproteerd bij tekorten
-* Aannames kunnen worden gedaan in het eindverbruik van nafta in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a> als brandstof voor naftaketels of als grondstof.
-* Datasets zijn geüpdate waardoor productie en eindverbruik van nafta worden meegenomen in het startjaar. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om deze data te vinden voor een specifiek gebied.
-* Resultaten van bestaande scenario's kunnen enigszins zijn veranderd als gevolg van het afsplitsen van nafta van olieproducten.
+* *Nafta* wordt nu expliciet gemodelleerd in het ETM. Voorheen maakte *nafta* deel uit van de geaggregeerde drager *olieproducten*. De veranderingen omvatten:
+  * Nafta kan worden geproduceerd in <a href="/scenario/demand/industry/refineries" target="_blank">raffinaderijen</a> of geïmproteerd bij tekorten
+  * Aannames kunnen worden gedaan in het eindverbruik van nafta in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a> als brandstof voor naftaketels of als grondstof.
+  * Datasets zijn geüpdate waardoor productie en eindverbruik van nafta worden meegenomen in het startjaar. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om deze data te vinden voor een specifiek gebied.
+  * Resultaten van bestaande scenario's kunnen enigszins zijn veranderd als gevolg van het afsplitsen van nafta van olieproducten.
+* Bestaande scenario's voor Duitsland en Denemarken met startjaar 2015 zijn bijgewerkt naar startjaar 2019. Dit kan hebben geleid tot veranderingn in scenarioresultaten.
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Aanpasbare profielen</a> van het type 'Capaciteitsprofiel' (zoals zon-PV en windprofielen) worden nu in dezelfde format gedownload als waarin ze moeten worden geüpload. Voorheen werd bij het downloaden een genormaliseerd profiel verkregen, waarna een conversiestap benodigd was om het profiel om te zetten naar de juiste uploadformat. Dit is nu verholpen; het gedownloade profiel kan direct worden geüpload zonder conversiestap. Lees meer over aanpasbare profielen in de <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentatie</a>.
-  * Voor enkele Nederlandse provinciale en RES-regio datasets is in de startjaardata een kleine correctie gedaan in de afronding van waarden, gerelateerd aan de warmtevraag bij huishoudens. Deze correctie kan resulteren in een zeer kleine verandering in de warmtevraag bij huishoudens in bestaande scenario's.
+  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Aanpasbare profielen</a> van het type 'Capaciteitsprofiel' (zoals zon-PV en windprofielen) worden nu in dezelfde format gedownload als waarin ze moeten worden geüpload. Voorheen werd bij het downloaden een genormaliseerd profiel verkregen, waarna een conversiestap benodigd was om het profiel om te zetten naar de juiste uploadformat. Dit is nu niet meer nodig. Lees meer over aanpasbare profielen in de <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentatie</a>.
+  * Voor enkele Nederlandse provinciale en RES-regio datasets is een correctie gedaan in de afronding van waarden in het startjaar. Deze correctie kan resulteren in zeer kleine veranderingen in de warmtevraag bij huishoudens in bestaande scenario's.
 
 </details>
 
 <details>
   <summary>**Technical changelog**</summary>
 
-  * <a href="/assets/pages/whats_new/changelog/202506_changelog_inputs.csv" download>202506_changelog_inputs.csv</a>
+  * <a href="/assets/pages/whats_new/changelog/202508_changelog_inputs.csv" download>202508_changelog_inputs.csv</a>
 
 </details>
 </br>

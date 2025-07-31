@@ -21,25 +21,25 @@ ___
 
 **New features**
 
-*Naphtha* is now explicitly modelled in the ETM. Previously, *naphtha* was included in the aggregated carrier *oil products* as a product from refineries. Changes include:
-
-* Naphtha can be produced by <a href="/scenario/demand/industry/refineries" target="_blank">refineries</a> or imported in case of shortages.
-* Assumptions can be made in the final demand of naphtha in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a> as fuel for naphtha burners or for non-energetic use.
-* Datasets are updated to include the production and final demand of naphtha in the start year. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to find this data for a specific region.
-* Results in existing scenarios might change slightly as a consequence of splitting off naphtha from oil products.
+* *Naphtha* is now explicitly modelled in the ETM. Previously, *naphtha* was included in the aggregated carrier *oil products* as a product from refineries. Changes include:
+  * Naphtha can be produced by <a href="/scenario/demand/industry/refineries" target="_blank">refineries</a> or imported in case of shortages.
+  * Assumptions can be made in the final demand of naphtha in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a> as fuel for naphtha burners or for non-energetic use.
+  * Datasets are updated to include the production and final demand of naphtha in the start year. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to find this data for a specific region.
+  * Results in existing scenarios might change slightly as a consequence of splitting off naphtha from oil products.
+* Existing scenarios created for Germany and Denmark with start year 2015 are now updated to start year 2019. This might have lead to changes in scenario results.
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Modifiable profiles</a> of type 'Capacity profile' (such as solar PV and wind profiles) are now downloaded in the same format as they should be uploaded. Previously, a normalised profile was obtained when downloaded, which required a conversion step to transform the curve to the required format in which it needed to be uploaded. This is now rectified; the download curve can be uploaded directly without needing a conversion step. Read more about modifiable profiles in the <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentation</a>.
-  * For a few Dutch provincial and RES datasets, a minor correction was made in the rounding of household heat demand values in the start year. The fix might have resulted in very slight changes (if any) in existing scenarios, related to households heat demand in the start year.
+  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Modifiable profiles</a> of type 'Capacity profile' (such as solar PV and wind profiles) are now downloaded in the same format as they should be uploaded. Previously, a normalised profile was obtained when downloaded, which required a conversion step to transform the profile to the required format in which it needed to be uploaded. This is not needed anymore. Read more about modifiable profiles in the <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentation</a>.
+  * For a few Dutch provincial and RES datasets, a minor correction was made in the rounding values in the start year data. The fix might have resulted in very slight changes (if any) in households heat demand in existing scenarios.
 
 </details>
 
 <details>
   <summary>**Technical changelog**</summary>
 
-  * <a href="/assets/pages/whats_new/changelog/202506_changelog_inputs.csv" download>202506_changelog_inputs.csv</a>
+  * <a href="/assets/pages/whats_new/changelog/202508_changelog_inputs.csv" download>202508_changelog_inputs.csv</a>
 
 </details>
 </br>

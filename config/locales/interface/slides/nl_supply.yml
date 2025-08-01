@@ -158,15 +158,13 @@ nl:
     supply_electricity_coal_plants:
       title: Kolencentrales
       short_description: ''
-      description: Kolencentrales draaien als het even kan meer dan 80% van de tijd
-        op vol vermogen. Ze zijn dus niet zo flexibel qua productie. Kolencentrales
-        produceren grofweg twee keer zoveel CO<sub>2</sub> als gascentrales.<br/><br/>
-        Hieronder kun je aangeven hoeveel vermogen er geïnstalleerd is van verschillende
-        typen kolencentrales. In de <a href='/scenario/emissions/ccus/capture-of-co2'>CCUS</a>
-        sectie kun je aangeven of deze centrales zijn uitgerust met een CO<sub>2</sub>-afvanginstallatie
-        om de emissies omlaag te brengen. Op de
-        <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassapagina</a>
-        kun je aannames doen over de bijstook van biomassa.
+      description: |
+        Hieronder kan het geïnstalleerd vermogen van verschillende typen kolencentrales worden
+        ingesteld.<br/><br/>
+        In de <a href='/scenario/emissions/ccus/capture-of-co2'>CCUS</a>
+        sectie kunnen aannames worden gedaan over CO<sub>2</sub>-afvang bij kolencentrales. In de sectie
+        <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassa</a> kunnen
+        aannames worden gedaan over de bijstook van biokolen (<i>torrefied pellets</i>) in kolencentrales.
     supply_electricity_gas_plants:
       title: Gascentrales
       short_description: ''

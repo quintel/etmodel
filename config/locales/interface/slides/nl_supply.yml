@@ -183,15 +183,13 @@ nl:
       title: Kerncentrales
       short_description: ''
       description: |
-        Hier kan je het geïnstalleerd vermogen van grote 2e en 3e generatie kerncentrales
-        en kleine modulaire reactoren instellen. Het ETM neemt voor kerncentrales geen CO<sub>2</sub>
-        uitstoot mee. </br></br>
-        Standaard draaien kerncentrales als regelbare centrales. Vanwege de hoge kapitaalkosten en
-        lage operationele kosten draaien grote reactoren typisch zoveel mogelijk op vol vermogen.
-        Met onderstaande knop kun je er daarom voor kiezen de <b>grote reactoren</b> als
-        <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> niet-regelbare</a>
-        centrales te modelleren. Hierdoor draaien ze met een vlak profiel, onafhankelijk van de vraag.
-        Dit heeft geen effect op <b>kleine reactoren</b>.
+        Stel hier het geïnstalleerd vermogen in van grote 2e en 3e generatie kerncentrales
+        en van kleine modulaire reactoren.</br></br>
+        Standaard draaien kerncentrales als regelbare centrales in het ETM. Hieronder kan worden
+        ingesteld om in plaats daarvan de grote reactoren als
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand"
+        target=\"_blank\"> niet-regelbare</a>
+        centrales te modelleren. Dit is niet van toepassing op kleine modulaire reactoren.
     supply_electricity_oil_plants:
       title: Oliecentrales
       short_description: ''

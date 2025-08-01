@@ -268,12 +268,12 @@ nl:
       title: Kern 3e Gen
       short_description: ''
       description: |
-        Deze slider bepaalt het totale elektrische vermogen van derde-generatie kerncentrales. <br/><br/>
-        Derde-generatie kerncentrales, zoals de EPR, bieden geavanceerde veiligheid, efficiëntie
-        en betrouwbaarheid. De bouw ervan duurt gemiddeld 11-12 jaar en is kostbaar, maar eenmaal
-        operationeel draaien ze doorgaans meer dan 80% van de tijd op vol vermogen vanwege lage
-        operationele kosten. De bouw van kerncentrales veroorzaakt CO<sub>2</sub>-uitstoot, maar
-        geen fossiele brandstoffen worden verbruikt tijdens de werking. <br/><br/> Ga naar
+        Deze slider bepaalt het totale elektrische vermogen van derde-generatie kerncentrales.<br/><br/>
+        Derde-generatie kerncentrales bieden betere veiligheid en efficiëntie
+        dan tweede-generatie kerncentrales. De bouw ervan duurt gemiddeld 11-12 jaar en is kostbaar,
+        maar eenmaal operationeel draaien ze doorgaans meer dan 80% van de tijd op vol vermogen vanwege lage
+        operationele kosten. Hieronder kan worden ingesteld om dit type kerncentrale als niet-regelbaar
+        te modelleren.<br/><br/> Ga naar
         <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om
         de kosten en efficiënties voor deze kerncentrales in te stellen.
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
@@ -282,8 +282,11 @@ nl:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van tweede-generatie kerncentrales.
         <br/><br/>Tweede-generatie kerncentrales maken gebruik van verouderde technologie
-        en worden niet meer gebouwd.<br/><br/> Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de kosten en efficiënties voor deze kerncentrales
-        in te stellen.
+        en worden niet meer gebouwd. Vanwege hoge kapitaalkosten en
+        lage operationele kosten draaien grote reactoren typisch zoveel mogelijk op vol vermogen.
+        Hieronder kan worden ingesteld om dit type kerncentrale als niet-regelbaar te modelleren.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de
+        kosten en efficiënties voor deze kerncentrales in te stellen.
     capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
       title: Kern kleine modulaire reactor
       short_description:

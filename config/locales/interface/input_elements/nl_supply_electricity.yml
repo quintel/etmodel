@@ -186,20 +186,24 @@ nl:
       title: Oliecentrale
       short_description: ''
       description: |
-        Deze slider bepaalt het totale elektrische vermogen van oliegestookte centrales, waarbij
-        één centrale een vermogen van 800 MW heeft.<br/><br/> Oliecentrales verbranden
-        stookolie om elektriciteit op te wekken. Door hoge kosten en lage efficiëntie
+        Deze slider bepaalt het totale elektrische vermogen van oliegestookte elektriciteitscentrales.<br/><br/>
+        Oliecentrales komen vrij weinig voor in Europa. Door hoge kosten en lage efficiëntie
         worden ze zelden ingezet, behalve als back-up bij stroomtekorten of in gebieden
-        zonder stabiele gasvoorziening.
+        zonder stabiele gasvoorziening. Oliecentrales produceren relatief veel CO<sub>2</sub>.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/oil-plants">
+        Kosten & efficiënties</a> om de kosten en efficiënties van deze centrales in te stellen.
     capacity_of_energy_power_engine_diesel:
       title: Dieselgenerator
       short_description:
       description: |
-        Deze slider bepaalt het totale elektrische vermogen van dieselgeneratoren, waarbij één
-        generator een vermogen van 2 MW heeft.<br/><br/>Dieselgeneratoren worden voornamelijk
+        Deze slider bepaalt het totale elektrische vermogen van dieselgeneratoren<br/><br/>
+        Dieselgeneratoren worden voornamelijk
         gebruikt als noodaggregaten vanwege hun snelle opstarttijd en flexibiliteit. Ze hebben
         relatief hoge brandstofkosten en lage efficiëntie, waardoor ze meestal alleen ingezet
-        worden voor noodstroomvoorzieningen of tijdelijke pieken in de vraag.
+        worden voor noodstroomvoorzieningen of tijdelijke pieken in de vraag. Dieselcentrales
+        produceren relatief veel CO<sub>2</sub>.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/oil-plants">
+        Kosten & efficiënties</a> om de kosten en efficiënties van deze centrales in te stellen.
     capacity_of_energy_power_hydro_river:
       title: Rivier
       short_description: ''

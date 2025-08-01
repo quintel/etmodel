@@ -647,17 +647,24 @@ nl:
     share_of_energy_steel_energy_production_coal_gas:
       title: Energieproductie
       description: |
-        Deze slider bepaalt welk deel van het kolengas, dat niet voor staalproductie wordt gebruikt,
-        wordt ingezet om elektriciteit en warmte te produceren.<br/><br/>Kolengas wordt verbrand in
-        specifieke warmtekrachtkoppelingen (WKK's) en elektriciteitscentrales waardoor warmte en
-        elektriciteit kan worden opgewekt. Deze centrales zijn _must-run_ en produceren zolang er
-        kolengas beschikbaar is, ongeacht de vraag.<br/><br/> Bekijk de <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">Merit order tabel</a> om het
-        geïnstalleerde vermogen van deze centrales te zien.
+        Stel hier in welk deel van de geproduceerde kolengassen wordt gebruikt
+        in WKK's en elektriciteitscentrales voor de productie van elektriciteit
+        en warmte. </br></br>
+        Vanwege het hoge CO<sub>2</sub>-gehalte van kolengassen is het
+        gebruik van kolengas voor energieproductie zeer CO<sub>2</sub>-intensief. Een
+        alternatief is om de kolengassen om te zetten naar grondstoffen voor de chemische industrie.<br/><br/>
+        Let op dat de kolengas WKK's en elektriciteitscentrales must-run zijn. Dit betekent
+        dat ze produceren wanneer kolengas beschikbaar is, onafhankelijk van de elektriciteits-
+        en warmtevraag.<br/><br/>
+        Het geïnstalleerd vermogen van de kolengascentrales kan worden ingezien in de
+        <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
+        merit order tabel</a>.
     share_of_energy_steel_chemical_feedstock_coal_gas:
       title: Grondstof voor chemiesector
       description: |
-        Deze slider bepaalt welk aandeel van kolengassen, dat niet voor staalproductie wordt gebruikt,
-        wordt ingezet als grondstof voor de chemiesector.<br/><br/>In plaats van verbranding kan kolengas
-        worden afgevangen en omgezet in chemische grondstoffen, bijvoorbeeld voor kunstmestproductie.
-        Deze <em>steel-to-chemicals</em> route is nog in ontwikkeling, waardoor het ETM de impact op
-        andere grondstoffen niet expliciet modelleert.
+        Stel hier in welk deel van de geproduceerde kolengassen wordt omgezet naar
+        grondstoffen voor de chemische industrie (<i>steel-to-chemicals</i>). Door het
+        aandeel van deze slider te verhogen, zal de hoeveelheid energieproductie uit kolengassen
+        in het scenario afnemen. </br></br>
+        De steel-to-chemicals route staat nog in de kinderschoenen. Het ETM modelleert
+        momenteel nog niet het eindverbruik van kolengassen in de chemiesector.

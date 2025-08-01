@@ -135,17 +135,12 @@ nl:
     supply_ccus_steel_coal_gas:
       title: Kolengascentrales
       description: |
-        Kolengassen zijn een bijproduct van staalproductie, die alleen aanwezig zijn in jouw scenario als
-        staal geproduceerd wordt uit hoogovens. Als je de algehel productie van kolengas wilt verminderen,
-        kun je in de <a href="/scenario/demand/industry/steel">staalsector</a> het productieproces
-        veranderen. </br></br>
-        Een deel van deze gassen worden in het staalproductieproces zelf gebruikt. De rest wordt typisch
-        gebruikt in WKK's en elektriciteitscentrales voor de productie van elektriciteit en warmte. Vanwege
-        het hoge koolstofgehalte in deze gassen is deze productie zeer CO<sub>2</sub>-intensief. Een
-        alternatief is om de deze kolengassen om te zetten naar grondstof voor de chemische industrie
-        ('steel-to-chemicals'). </br></br>
-        Met onderstaande schuifjes kun je aangeven welk deel van de kolengassen worden gebruikt voor elektriciteit-
-        en warmteproductie, en welk deel wordt omgezet naar grondstof.
+        Kolengassen zijn een bijproduct van <a href='scenario/demand/industry/steel'>staalproductie</a> dat wordt
+        geproduceerd uit hoogovens. Een deel van deze gassen wordt in het staalproductieproces zelf gebruikt.
+        Het overige deel wordt typisch gebruik in
+        elektriciteitscentrales en WKK's, of kan worden ingezet als grondstof voor de chemische industrie.</br></br>
+        Stel hieronder het aandeel in van de kolengassen dat wordt ingezet voor energieproductie en voor
+        omzetting naar grondstof voor de chemische industrie. <br/><br/>
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot van biomassa
       short_description:

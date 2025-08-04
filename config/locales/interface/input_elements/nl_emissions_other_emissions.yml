@@ -4,32 +4,32 @@ nl:
     change_in_non_energetic_emissions_co2_chemical_industry:
       title: Chemische industrie
       short_description: ''
-      description: "In de chemische industrie bestaan verschillende niet-energetische processen
-      waarbij CO<sub>2</sub> vrijkomt. Bijvoorbeeld bij de productie van petrochemische producten en andere
-      chemische producten. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/>Let op: De uitstoot van niet-energetische CO<sub>2</sub> van de kunstmestindustrie valt niet
-      onder dit schuifje. Deze uitstoot rekent het ETM uit op basis van het grondstoffengebruik (niet-energetisch gebruik van netwerkgas). Ook de uitstoot van het gebruik van waterstof die geleverd wordt via een waterstofnetwerk valt niet
-      onder dit schuifje. Het ETM rekent deze uitstoot uit op basis van de gekozen productiemethodes voor waterstof
-      van de sector.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC valt de uitstoot van dit schuifje in de
-      categorieën: 2.B.2 t/m 2.B.10"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische CO<sub>2</sub>-emissies van de 
+        chemische industrie ten opzichte van het startjaar van het scenario.<br/><br/> Het betreft 
+        processen waarbij CO<sub>2</sub> vrijkomt, zoals bij de productie van petrochemische 
+        producten of andere chemische stoffen.<br/><br/><em>Let op:</em>
+        <ul>
+        <li>De niet-energetische CO<sub>2</sub>-emissies van de kunstmestindustrie valt buiten 
+        deze slider. Het ETM berekent deze uitstoot op basis van het grondstoffengebruik.</li>
+        <li> De uitstoot door waterstofgebruik via een waterstofnetwerk valt ook buiten deze 
+        slider en wordt apart berekend, afhankelijk van de productiemethode.</li>
     change_in_non_energetic_emissions_co2_waste_management:
       title: Afvalbeheer
       short_description: ''
-      description: "Bij het beheren van afval kunnen CO<sub>2</sub>-emissies vrijkomen.
-      Bijvoorbeeld bij het storten van afval op een afvalberg.
-      Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 5"
+      description: |
+        Deze slider bepaalt de verandering in niet-energetische CO<sub>2</sub>-emissies van 
+        afvalbeheer ten opzichte van het startjaar van het scenario. <br/><br/> Het betreft 
+        processen waarbij CO<sub>2</sub> vrijkomt, bijvoorbeeld bij het storten of verbranden van 
+        afval.
     change_in_non_energetic_emissions_co2_other_industry:
       title: Overige industrie
       short_description: ''
-      description: "Onder de overige industrie valt de productie van metaal, mineralen,
-      electronica, petrochemische producten (zoals plastic) en alle overige producten. Vooral in
-      de mijnbouw en productie van mineralen (bijv. cement) komt CO<sub>2</sub> vrij.
-      Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 2.A, 2.C t/m 2.H"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische CO<sub>2</sub>-emissies van 
+        overige industrie ten opzichte van het startjaar van het scenario. <br/><br/> Het betreft 
+        processen binnen sectoren zoals metaalproductie, mijnbouw, mineralen (bijvoorbeeld cement) 
+        en electronica.
     change_in_non_energetic_emissions_other_ghg_chemical_industry:
       title: Chemische industrie
       short_description: ''
@@ -83,24 +83,27 @@ nl:
     change_in_energetic_emissions_other_ghg_households:
       title: Huishoudens
       short_description: ''
-      description: "In huishoudens kan door de verbranding van gas voor verwarming methaan (CH<sub>4</sub>) of lachgas
-      (N<sub>2</sub>O) vrijkomen. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 1.A.4.b"
+      description: |
+        Deze slider bepaalt de verandering in de uitstoot van overige broeikasgassen door 
+        huishoudens ten opzichte van het startjaar van het scenario. <br/><br/> Door de 
+        verbranding van gas voor verwarming kunnen methaan (CH<sub>4</sub>) of lachgas 
+        (N<sub>2</sub>O) vrijkomen. 
     change_in_energetic_emissions_other_ghg_buildings:
       title: Gebouwen
       short_description: ''
-      description: "In gebouwen kan door de verbranding van gas voor verwarming methaan (CH<sub>4</sub>) of lachgas
-      (N<sub>2</sub>O) vrijkomen. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 1.A.4.c"
+      description: |
+        Deze slider bepaalt de verandering in de uitstoot van overige broeikasgassen door 
+        gebouwen ten opzichte van het startjaar van het scenario. <br/><br/> Door de 
+        verbranding van gas voor verwarming kunnen methaan (CH<sub>4</sub>) of lachgas 
+        (N<sub>2</sub>O) vrijkomen.
     change_in_energetic_emissions_other_ghg_transport:
       title: Transport
       short_description: ''
-      description: "Bij de verbranding van brandstoffen in de transportsector komen methaan (CH<sub>4</sub>) en lachgas
-      (N<sub>2</sub>O) vrij. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 1.A.3"
+      description: |
+        Deze slider bepaalt de verandering in de uitstoot van overige broeikasgassen door 
+        de transportsector ten opzichte van het startjaar van het scenario. <br/><br/> Door de 
+        verbranding van gas voor verwarming kunnen methaan (CH<sub>4</sub>) of lachgas 
+        (N<sub>2</sub>O) vrijkomen.
     change_in_non_energetic_emissions_co2_agriculture_manure:
       title: Mest
       short_description: ''

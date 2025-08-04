@@ -125,17 +125,13 @@ en:
     supply_ccus_steel_coal_gas:
       title: Coal gas plants
       description: |
-        Coal gases are a side product from steel production, that are only present in your scenario
-        if steel is produced through the blast furnace production route. If you want to reduce the
-        production of coal gases altogether, you can switch to a different steel production process
-        in the <a href="/scenario/demand/industry/steel">steel sector</a>. </br></br>
-        Part of these gases are used in the steel-making process itself. The remainder is
-        typically used in CHPs and power plants for electricity and heat production. Due to
-        the high carbon content of coal gases, this is very CO<sub>2</sub>-intensive. An alternative
-        use for these coal gases is to transform them into feedstock for the chemical industry
-        (steel-to-chemicals). </br></br>
-        With the sliders below you can specify which share of the coal gases is used for electricity
-        and heat generation and which share is transformed into feedstock.
+        Coal gases are a byproduct of <a href='scenario/demand/industry/steel'>steel 
+        production</a> that are generated in blast furnaces. Part of these gases is 
+        used within the steel production process itself. The remaining portion is 
+        typically used in power plants and CHP units, or can be utilized as a 
+        feedstock for the chemical sector.</br></br> Set below the share of coal gases 
+        that is used for energy production or converted into feedstock for the 
+        chemical sector.<br/><br/>
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub> emissions of biomass
       short_description:
@@ -153,48 +149,40 @@ en:
     supply_electricity_coal_plants:
       title: Coal plants
       short_description: ''
-      description: Coal-fired power plants tend to be running as much as possible.
-        They produce roughly twice as much CO<sub>2</sub> as gas-fired ones. They
-        are not flexible in their output.<br/><br/>
-        Below, you can specify the installed capacities of various coal-fired power plant
-        technologies. In the <a href='/scenario/emissions/ccus/capture-of-co2'>CCUS</a> section,
-        it is possible to add a CO<sub>2</sub> capture unit to these power plants to reduce
-        their emissions. In the
-        <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomass</a>
-        section, you can make assumptions about the co-firing of biomass.
+      description: |
+        Below, the installed capacity of various types of coal-fired power plants can 
+        be set. <br/><br/> In the <a href='/scenario/emissions/ccus/
+        capture-of-co2'>CCUS</a> section, assumptions can be made regarding CO<sub>2
+        </sub> capture at coal-fired power plants. In the <a href='/scenario/supply/
+        biomass/biocoal-and-bio-oil-in-energy-plants'>biomass</a> section, assumptions 
+        can be made about the co-firing of biocoal (<em>torrefied pellets</em>) in 
+        coal-fired power plants.
     supply_electricity_gas_plants:
       title: Gas plants
       short_description: ''
-      description: Gas-fired power plants produce roughly half as much CO<sub>2</sub>
-        as coal-fired ones. They are quite flexible in their output and therefore
-        used to fill in peaks in demand.<br/><br/>
-        Below, you can specify the installed capacities of various gas-fired power plant
-        technologies. In the <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a> section,
-        it is possible to add a CO<sub>2</sub> capture unit to these power plants to reduce
-        their emissions. In the
-        <a href='/scenario/supply/biomass/gas-mix-in-gas-network'>green gas</a>
-        section, you can make assumptions about the amount of green gas in the gas network.
+      description: |
+        Below, the installed capacity of various types of gas-fired power plants can be 
+        set. <br/><br/> In the <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a> 
+        section, assumptions can be made regarding CO<sub>2</sub> capture at gas-fired 
+        power plants. In the <a href='/scenario/supply/biomass/
+        gas-mix-in-gas-network'>biomass</a> section, the share of green gas in the gas 
+        network can be set.
     supply_electricity_nuclear_plant:
       title: Nuclear plants
       short_description: ''
       description: |
-        Here you can set the capacity for large 2nd and 3rd generation nuclear plants
-        and for small modular reactors. The ETM does not include any CO<sub>2</sub>
-        emissions for nuclear power plants. </br></br>
-        By default all nuclear power plants are run as dispatchable producers. Due to
-        their high captial costs and low operating costs, large reactors tend to run as
-        much as possible. You therefore also have the option to model the <b>large reactors</b> as
-        <a href="https://docs.energytransitionmodel.com/main/merit-order#producers" target=\"_blank\"> 'must-run'</a>
-        power plants by switching the toggle. This means that they will run with a
-        flat production profile, independent of demand. This does not affect the <b>small reactors</b>.
+        Set the installed capacity here for large 2nd and 3rd generation nuclear power 
+        plants and for small modular reactors.</br></br> By default, nuclear power 
+        plants operate as dispatchable plants in the ETM. Below, an option is available 
+        to model large reactors as <a href="https://docs.energytransitionmodel.
+        com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand"
+        target="_blank">must-run</a> plants. This does not apply to small modular 
+        reactors.
     supply_electricity_oil_plants:
       title: Oil plants
       short_description: ''
-      description: "Oil-fired power plants are not common in Europe. These plants
-        produce less CO<sub>2</sub> than coal-fired plants, but more than gas-fired
-        ones. \r\n<br/>\r\nDiesel engines are used in places without connection to
-        the power grid, as emergency power-supply, as well as for stabilizing the
-        power grid."
+      description: |
+        Set the installed capacity for oil-fired power plants and diesel power plants.
     supply_electricity_backup_security_of_supply:
       title: Security of supply
       short_description:

@@ -23,7 +23,8 @@ nl:
         warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. Biomassa-WKK's worden
         vaak ingezet op locaties met toegang tot organisch materiaal, zoals
         afvalverwerkingsinstallaties of de agrarische sector.<br/><br/>
-        Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.
+        Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen 
+        hoe de warmte wordt ingezet.
     capacity_of_energy_chp_local_wood_pellets_dispatchable:
       title: Biomassa-WKK
       short_description:
@@ -320,7 +321,7 @@ nl:
         <li>Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties voor deze centrales in te stellen.</li>
         <li>Ga naar de <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
-        Koolstofafvang en -opslag</a>sectie om CO<sub>2</sub>-afvang in te stellen.
+        Koolstofafvang en -opslag (CCS)</a> sectie om CO<sub>2</sub>-afvang in te stellen.
         </ul>
     capacity_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen + CCS
@@ -349,7 +350,7 @@ nl:
         <li>Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties voor deze centrales in te stellen.</li>
         <li>Ga naar de <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
-        Koolstofafvang, -gebruik en -opslag</a>sectie om CO<sub>2</sub>-afvang in te stellen.
+        Koolstofafvang, -gebruik en -opslag (CCUS)</a> sectie om CO<sub>2</sub>-afvang in te stellen.
         </ul>
     capacity_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing + CCS
@@ -399,7 +400,7 @@ nl:
         en draaien daarom meer dan 75% van de tijd op vol vermogen. Bouw is alleen mogelijk
         bij een lokale bruinkoolvoorraad.<br/><br/>
         Ga naar de <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
-        Koolstofafvang, -gebruik en -opslag</a> sectie om CO<sub>2</sub>-afvang in te stellen.
+        Koolstofafvang, -gebruik en -opslag (CCUS)</a> sectie om CO<sub>2</sub>-afvang in te stellen.
     capacity_of_energy_chp_ultra_supercritical_lignite:
       title: Bruinkolen-WKK
       short_description:
@@ -547,7 +548,7 @@ nl:
         <li>Ga naar <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties voor deze centrales in te stellen.</li>
         <li>Ga naar <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">Koolstofafvang 
-        en -opslag</a> sectie om CO<sub>2</sub>-afvang in te stellen voor dit type gascentrale.
+        en -opslag (CCS)</a> sectie om CO<sub>2</sub>-afvang in te stellen voor dit type gascentrale.
         </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas STEG WKK
@@ -654,24 +655,19 @@ nl:
     share_of_energy_steel_energy_production_coal_gas:
       title: Energieproductie
       description: |
-        Stel hier in welk deel van de geproduceerde kolengassen wordt gebruikt
-        in WKK's en elektriciteitscentrales voor de productie van elektriciteit
-        en warmte. </br></br>
-        Vanwege het hoge CO<sub>2</sub>-gehalte van kolengassen is het
-        gebruik van kolengas voor energieproductie zeer CO<sub>2</sub>-intensief. Een
-        alternatief is om de kolengassen om te zetten naar grondstoffen voor de chemiesector.<br/><br/>
-        Let op dat de kolengas WKK's en elektriciteitscentrales must-run zijn. Dit betekent
-        dat ze produceren wanneer kolengas beschikbaar is, onafhankelijk van de elektriciteits-
-        en warmtevraag.<br/><br/>
-        Het geïnstalleerd vermogen van de kolengascentrales kan worden ingezien in de
-        <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
-        merit order tabel</a>.
+        Deze slider bepaalt welk deel van de geproduceerde kolengassen wordt inzet in 
+        elektriciteitscentrales en warmtekrachtkoppelingen (WKK's).<br/><br/> Kolengas heeft 
+        een hoog CO<sub>2</sub>-gehalte en is daardoor  zeer CO<sub>2</sub>-intensief. Deze 
+        must-run centrales draaien zodra kolengas beschikbaar is, ongeacht de vraag. Een 
+        alternatief is om de kolengassen om te zetten naar grondstoffen voor de chemiesector.
+        </br></br> Open de  <a href="#" class="open_chart" data-chart-key="merit_order_table" 
+        data-chart-location="side">merit order tabel</a> om het geïnstalleerde vermogen van 
+        de kolengasentrales te bekijken.
     share_of_energy_steel_chemical_feedstock_coal_gas:
       title: Grondstof voor chemiesector
       description: |
-        Stel hier in welk deel van de geproduceerde kolengassen wordt omgezet naar
-        grondstoffen voor de chemiesector (<i>steel-to-chemicals</i>). Door het
-        aandeel van deze slider te verhogen, zal de hoeveelheid energieproductie uit kolengassen
-        in het scenario afnemen. </br></br>
-        De steel-to-chemicals route staat nog in de kinderschoenen. Het ETM modelleert
-        momenteel nog niet het eindverbruik van kolengassen in de chemiesector.
+        Deze slider bepaalt welk deel van de geproduceerde kolengassen wordt omgezet naar
+        grondstoffen voor de chemiesector (<em>steel-to-chemicals</em>).<br/><br/> Een hoger 
+        aandeel zorgt ervoor dat er minder kolengas wordt gebruikt voor energieproductie. De 
+        <em>steel-to-chemicals</em> route is nog in ontwikkeling. Het ETM modelleert daarom 
+        nog niet het eindverbruik van kolengassen in de chemiesector.

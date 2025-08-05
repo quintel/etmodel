@@ -2,22 +2,23 @@
 
 ___
 
-# Verwachte wijzigingen
-
-### Oktober
-
-Er komt een update aan van de Nederlandse datasets:
-
-* Een nieuwe dataset voor Nederland wordt toegevoegd met startjaardata voor 2023.
-* De bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdate naar startjaardata voor 2023. Op dit moment hebben deze datasets nog startjaar 2019.
+## Verwachte wijzigingen
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <b>Let op</b>: scenarioresultaten van bestaande scenario's die zijn gemaakt met de Nederlandse gemeentelijke, provinciale of RES-regio datasets kunnen veranderen als gevolg van de update naar startjaar 2023. Zet je scenario's over naar de stabiele versie <code>#2025-01</code> <b>voor oktober</b> als je wilt dat scenarioresultaten onveranderd blijven. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie over het wisselen tussen modelversies of <a href="https://my.energytransitionmodel.com/contact" target="_blank">neem contact op</a> bij vragen. Scenario's die met de bestaande Nederlandse dataset zijn gemaakt, zullen niet veranderen aangezien deze dataset behouden blijft.
+  <ul>
+    <li><b>Oktober</b>: een nieuwe dataset voor Nederland wordt toegevoegd met startjaar 2023.</li>
+    <li><b>Oktober</b>: de bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdatet naar startjaar 2023.
+    <details>
+      <summary>Wat betekent dit voor bestaande scenario's?</summary>
+      Op dit moment hebben deze datasets nog startjaar 2019. Scenarioresultaten van bestaande scenario's die zijn gemaakt met de Nederlandse gemeentelijke, provinciale of RES-regio datasets kunnen veranderen als gevolg van de update naar startjaar 2023. Zet je scenario's over naar de stabiele versie <code>#2025-01</code> <b>voor oktober</b> als je wilt dat scenarioresultaten onveranderd blijven. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie over het wisselen tussen modelversies of <a href="https://my.energytransitionmodel.com/contact" target="_blank">neem contact op</a> bij vragen. Scenario's die met de bestaande Nederlandse dataset zijn gemaakt, zullen niet veranderen aangezien deze dataset behouden blijft. </li>
+    </details>
+    </li>
+  </ul>
 </div>
 
 ___
 
-# Augustus 2025
+## Augustus 2025
 
 **Nieuwe functies**
 
@@ -46,7 +47,7 @@ ___
 
 ___
 
-# Juli 2025
+## Juli 2025
 
 ### Nieuwe functies
 
@@ -74,7 +75,7 @@ Het ETM bevat nu drie nieuwe economische levensvatbaarheidstabellen die uitgebre
 </details>
 ___
 
-# Juni 2025
+## Juni 2025
 
 **Nieuwe functies**
 
@@ -103,7 +104,7 @@ ___
 
 ___
 
-# Mei 2025
+## Mei 2025
 
 **Nieuwe functies**
 

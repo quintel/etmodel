@@ -23,10 +23,10 @@ ___
 
 * *Naphtha* is now explicitly modelled in the ETM. Previously, *naphtha* was included in the aggregated carrier *oil products* as a product from refineries. Changes include:
   * Naphtha can be produced by <a href="/scenario/demand/industry/refineries" target="_blank">refineries</a> or imported in case of shortages.
-  * Assumptions can be made in the final demand of naphtha in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a> as fuel for naphtha burners or for non-energetic use.
-  * Datasets are updated to include the production and final demand of naphtha in the start year. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to find this data for a specific region.
+  * Assumptions can be made for the final demand of naphtha in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a> as an energetic fuel or as (non-energetic) feedstock.
+  * Datasets are updated to include the production and final demand of naphtha in the start year. See the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> for data for a specific region.
   * Results in existing scenarios might change slightly as a consequence of splitting off naphtha from oil products.
-* Existing scenarios created for Germany and Denmark with start year 2015 are now updated to start year 2019. This might have lead to changes in scenario results.
+* Existing scenarios created for Germany and Denmark with start year 2015 are now updated to 2019. This may have affected outcomes for those scenarios.
 
 <details>
   <summary>**Bug fixes**</summary>

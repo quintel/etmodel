@@ -137,6 +137,18 @@
   group: ''
   show_at_first: false
   is_target_line: true
+  target_line_position: '1'
+  gquery: present_demand_and_export_in_source_of_electricity_production
+  is_1990:
+  dependent_on:
+  output_element_key: source_of_electricity_production
+  key: present_demand_and_export_source_of_electricity_production
+- label: demand_incl_export
+  color: "#5D59C7"
+  order_by: 14
+  group: ''
+  show_at_first: false
+  is_target_line: true
   target_line_position: '2'
   gquery: future_demand_and_export_in_source_of_electricity_production
   is_1990:

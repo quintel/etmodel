@@ -23,7 +23,7 @@ ___
 **Nieuwe functies**
 
 * *Nafta* wordt nu expliciet gemodelleerd in het ETM. Voorheen maakte *nafta* deel uit van de geaggregeerde drager *olieproducten*. De veranderingen omvatten:
-  * Nafta kan worden geproduceerd in <a href="/scenario/demand/industry/refineries" target="_blank">raffinaderijen</a> of geïmproteerd bij tekorten
+  * Nafta kan worden geproduceerd in <a href="/scenario/demand/industry/refineries" target="_blank">raffinaderijen</a> of geïmporteerd bij tekorten
   * Aannames kunnen worden gedaan voor het eindverbruik van nafta in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a> als energetische brandstof of als (niet-energetische) grondstof.
   * Datasets zijn geüpdatet waardoor productie en eindverbruik van nafta worden meegenomen in het startjaar. Zie de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> voor data voor een specifieke regio.
   * Resultaten van bestaande scenario's kunnen enigszins zijn veranderd door de afsplitsing van nafta van olieproducten.

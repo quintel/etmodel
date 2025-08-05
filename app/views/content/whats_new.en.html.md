@@ -7,12 +7,13 @@ ___
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
     <li><b>October</b>: a new dataset for the Netherlands with start year 2023 will be added.</li>
-    <li><b>October</b>: the existing Dutch municipal, provincial and RES region datasets will be updated to start year 2023.
-    <details>
-      <summary>What does this mean for existing scenarios?</summary>
-      Currently, these datasets have start year data for 2019. Scenario results of existing scenarios created with the Dutch municipal, provincial and RES region datasets are expected to change as a result of the start year update to 2023. If you want your scenarios to remain unaffected, transfer your scenarios to the stable version <code>#2025-01</code> <b>before October</b>.  See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information or <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact us</a> if you have questions. Scenarios created with the existing national dataset of the Netherlands will not be affected, as this dataset will remain available. </li>
-    </details>
-    </li>
+    <li><b>October</b>: the existing Dutch municipal, provincial and RES region datasets will be updated to start year 2023.</li>
+    <p>
+      <details>
+        <summary><u>What does this mean for existing scenarios?</u></summary>
+        <i>Currently, these datasets have start year data for 2019. Scenario results of existing scenarios created with the Dutch municipal, provincial and RES region datasets are expected to change as a result of the start year update to 2023. If you want your scenarios to remain unaffected, transfer your scenarios to the stable version <code>#2025-01</code> <b>before October</b>.  See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information or <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact us</a> if you have questions. Scenarios created with the existing national dataset of the Netherlands will not be affected, as this dataset will remain available.</i>
+      </details>
+    </p>
   </ul>
 </div>
 

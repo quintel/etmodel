@@ -11,7 +11,7 @@ ___
     <p>
       <details>
         <summary><u>What does this mean for existing scenarios?</u></summary>
-        <i>Currently, these datasets have start year data for 2019. Scenario results of existing scenarios created with the Dutch municipal, provincial and RES region datasets are expected to change as a result of the start year update to 2023. If you want your scenarios to remain unaffected, transfer your scenarios to the stable version <code>#2025-01</code> <b>before October</b>.  See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information or <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact us</a> if you have questions. Scenarios created with the existing national dataset of the Netherlands will not be affected, as this dataset will remain available.</i>
+        Existing scenarios created for Dutch municipalities, provinces and RES regions now have 2019 as the start year. Results for these scenarios are expected to change as a result of the start year update to 2023. To keep scenarios results unaffected, they can be transferred to the stable version <code>#2025-01</code> <b>before October</b>. See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information about model versions or get in <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact</a> if you have questions. Scenarios created for the Netherlands with start year 2019 will not be affected, as this dataset will remain available.
       </details>
     </p>
   </ul>

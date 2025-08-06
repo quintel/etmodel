@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Creates a new API scenario based on the given existing API `scenario_id`, and
-# then adds the current sceanrio to the provided SavedScenario, and adding the old
+# then adds the current scenario to the provided SavedScenario, and adding the old
 # scenario to history.
 # The new API scenario can be set as current one to continue working.
 #

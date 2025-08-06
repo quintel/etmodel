@@ -135,7 +135,7 @@ class ScenariosController < ApplicationController
   # causes the loss of session data when the visitor has third-party cookies
   # disabled.
   #
-  # This action loads the requested sceanrio with a minimal interface,
+  # This action loads the requested scenario with a minimal interface,
   # optionally sending the user straight to a specific input.
   #
   # GET /scenario/myc/:id

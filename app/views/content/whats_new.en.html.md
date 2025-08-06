@@ -2,17 +2,63 @@
 
 ___
 
-# July 2025
+## Upcoming changes
 
-**New features** 
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <ul>
+    <li><b>October</b>: a new dataset for the Netherlands with start year 2023 will be added.</li>
+    <li><b>October</b>: the existing Dutch municipal, provincial and RES region datasets will be updated to start year 2023.</li>
+    <p>
+      <details>
+        <summary><u>What does this mean for existing scenarios?</u></summary>
+        Existing scenarios created for Dutch municipalities, provinces and RES regions now have 2019 as their start year. If no action is taken, these scenarios will automatically be updated to start year 2023, which relies on more recent and higher-quality data. Note: results for these scenarios are expected to change as a result of this update. If changes in scenario results are undesirable, the scenarios can be transferred to the stable version <code>#2025-01</code> <b>before October</b>. See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information about model versions or get in <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact</a> if you have questions. Scenarios created for the Netherlands with start year 2019 will not be affected, as this dataset will remain available.
+      </details>
+    </p>
+  </ul>
+</div>
 
-### New tables available to explore economic viability
+___
+
+## August 2025
+
+**New features**
+
+* *Naphtha* is now explicitly modelled in the ETM. Previously, *naphtha* was included in the aggregated carrier *oil products* as a product from refineries. Changes include:
+  * Naphtha can be produced by <a href="/scenario/demand/industry/refineries" target="_blank">refineries</a> or imported in case of shortages.
+  * Assumptions can be made for the final demand of naphtha in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a> as an energetic fuel or as (non-energetic) feedstock.
+  * Datasets are updated to include the production and final demand of naphtha in the start year. See the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> for data for a specific region.
+  * Results in existing scenarios might change slightly as a consequence of splitting off naphtha from oil products.
+* Existing scenarios created for Germany and Denmark with start year 2015 are now updated to 2019. This may have affected outcomes for those scenarios.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Modifiable profiles</a> of type 'Capacity profile' (such as solar PV and wind profiles) are now downloaded in the same format as they should be uploaded. Previously, a normalised profile was obtained when downloaded, which required a conversion step to transform the profile to the required format in which it needed to be uploaded. This is not needed anymore. Read more about modifiable profiles in the <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentation</a>.
+  * For a few Dutch provincial and RES datasets, a minor correction was made in the rounding values in the start year data. The fix might have resulted in very slight changes (if any) in households heat demand in existing scenarios.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * <a href="/assets/pages/whats_new/changelog/202508_changelog_inputs.csv" download>202508_changelog_inputs.csv</a>
+
+</details>
+</br>
+
+___
+
+## July 2025
+
+### New features
+
+**New tables available to explore economic viability**
 
 The ETM now includes three new economic viability tables that provide comprehensive cost-benefit analyses for electricity production, storage, and flexible demand technologies. The tables enable users to gain a first insight in the cost effectiveness of these assets. The tables can be found in the "Cost" section of the charts selection. See the <a href="https://docs.energytransitionmodel.com/main/economic-viability" target="_blank">documentation</a> for more information.
 
 -> <img src="/assets/pages/whats_new/economic_viability_en.png" width="800" /> <-
 
-### Other new features
+**Other new features**
 
 * With the next Deploy in August, all existing scenarios for Germany and Denmark with start year 2015 will automatically be updated to start year 2019.
 
@@ -34,7 +80,7 @@ The ETM now includes three new economic viability tables that provide comprehens
 ___
 
 
-# June 2025
+## June 2025
 
 **New features**
 

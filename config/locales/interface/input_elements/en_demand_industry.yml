@@ -163,14 +163,13 @@ en:
     industry_steel_cyclonefurnace_bof_share:
       title: Cyclone furnace
       short_description:
-      description: "Cyclone ovens (also known as Hisarna ovens) combine several different
-        processes in one. In 2011 the first test plant was built in the Netherlands.
-        It is expected that several more years of development are needed before the
-        technology is fully mature. \r\n<br/><br/>\r\n The cyclone furnaces are unique
-        in the sense that their coal input can be replaced for up to 40% by
-        <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomass </a>.
-        \r\n<br/><br/>\r\nHere you can indicate what share cyclone ovens will have
-        in future iron and steel production."
+      description:
+        Determine which share the cyclone furnace has in future steel production. </br></br>
+        Cyclone ovens combine several different processes in one. In 2011 the first test plant was
+        built in the Netherlands. It is expected that several more years of development are needed
+        before the technology is fully mature. </br></br>
+        The cyclone furnaces are unique in the sense that their coal input can be replaced for up
+        to 40% by biomass, see the slider below.
     industry_steel_scrap_hbi_eaf_share:
       title: Recycling / HBI
       short_description:
@@ -206,6 +205,16 @@ en:
       emissions. There is also no production of coal gases. DRI is a new technology
       that is not yet commercialy used. \r\n</br></br>\r\n Here you can indicate what
       share DRI with hydrogen as reducing agent will have in future steel production."
+    industry_steel_cyclonefurnace_bof_wood_pellets_share:
+      title: Wood pellets in cyclone furnace
+      short_description:
+      description: |
+        Producing pig iron for steel production in a blast furnace requires large
+        amounts of coal. The coal serves a source of carbon and 'reducing agent' for
+        separating iron and oxygen from iron ore. Coal is used partly in the form
+        of cokes and partly as injected coal. The injected coal could also be replaced
+        by biomass. The potential for replacing coal in cyclone
+        furnaces by biomass in the form of wood pellets is 40%.
     industry_other_metals_process_electricity_efficiency:
       title: Electricity
       short_description:

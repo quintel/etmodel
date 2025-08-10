@@ -166,17 +166,17 @@ nl:
     industry_steel_cyclonefurnace_bof_share:
       title: Cycloonoven
       short_description:
-      description: "Wereldwijd wordt er gezocht naar nieuwe technieken om de productie
+      description: |
+        Stel in welk aandeel de cycloonoven heeft in de toekomstige productie van staal. </br></br>
+        Wereldwijd wordt er gezocht naar nieuwe technieken om de productie
         van ijzer en staal efficiënter te maken en minder CO<sub>2</sub> uit te stoten.
         De cycloonoven is één van die technieken. De cycloonoven is een combinatie
         van technieken die de productie van ruwijzer voor staal in minder stappen
         doet dan een hoogoven en iets minder energiegebruik en CO<sub>2</sub>-uitstoot heeft.
         In 2011 is in Nederland de eerste testfabriek hiervoor geplaatst. Naar verwachting
-        duurt het nog enkele jaren voordat de techniek helemaal is uitgewerkt. \r\n<br><br>\r\n
-        Voor de cycloonoven is het mogelijk om het gebruik van kolen tot 40% door
-        <a href=/scenario/supply/biomass/wood-pellets-in-steel-production>biomassa </a>
-        te vervangen. \r\n<br><br>\r\n Geef hier aan welk aandeel de cycloonoven heeft
-        bij de toekomstige productie van ijzer en staal."
+        duurt het nog enkele jaren voordat de techniek volwassen is. </br></br>
+        Voor de cycloonoven is het mogelijk om het gebruik van kolen tot 40% door biomassa
+        te vervangen, zie het schuifje hieronder.
     industry_steel_scrap_hbi_eaf_share:
       title: Recycling / HBI
       short_description:
@@ -214,6 +214,16 @@ nl:
       productie van kolengas. DRI is een nieuwe technologie die nog niet commercieel
       gebruikt wordt. \r\n<p>\r\nGeef hier aan welk aandeel het DRI proces met waterstof
       als reducerend gas heeft bij de toekomstige productie van ijzer en staal."
+    industry_steel_cyclonefurnace_bof_wood_pellets_share:
+      title: Houtpellets in cycloonoven
+      short_description:
+      description: |
+        Bij de productie van ruwijzer voor staal wordt in een hoogoven
+        veel steenkool gebruikt als reductiemiddel om het ijzer zuiver te krijgen.
+        Een deel van de steenkool wordt ingezet als cokes en een deel als injectiekolen.
+        Deze injectiekolen kunnen (in principe) ook vervangen worden door biomassa.
+        Bij de cycloonoven kunnen de kolen tot 40% vervangen worden door biomassa in de
+        vorm van houtpellets.
     industry_other_metals_process_electricity_efficiency:
       title: Elektriciteit
       short_description:

@@ -867,4 +867,46 @@ en:
         burners? <br /><br />\r\n\r\nThis burner can be used to generate high-grade
         heat, which is the kind most in demand in industry. You can specify how this
         hydrogen is produced in the <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Supply section </a>. <br />"
+        Supply section </a>."
+    industry_diesel_in_crude_oil_share:
+      title: Diesel
+      short_description:
+      description: |
+        Percentage of diesel in oil products used in the industry sector. This diesel is mainly used
+        for heat.
+    industry_biodiesel_in_crude_oil_share:
+      title: Biodiesel
+      short_description:
+      description: |
+        Percentage of biodiesel in oil products used in the industry sector. This biodiesel is mainly used
+        for heat.
+    industry_kerosene_in_crude_oil_share:
+      title: Kerosene
+      short_description:
+      description: |
+        Percentage of kerosene in oil products used in the industry sector. This kerosene is mainly used
+        for heat.
+    industry_bio_kerosene_in_crude_oil_share:
+      title: Bio kerosene
+      short_description:
+      description: |
+        Percentage of bio kerosene in oil products used in the industry sector. This bio kerosene is mainly
+        used for heat.
+    industry_lpg_in_crude_oil_share:
+      title: LPG
+      short_description:
+      description: |
+        Percentage of liquified petroleum gas (LPG) in oil products used in the industry sector. This lpg is
+        mainly used for heat.
+    industry_other_oil_in_crude_oil_share:
+      title: Other oil
+      short_description:
+      description: |
+        Percentage of other non bio oil and oil products in the industry sector. Included are gasoline,
+        natural gas liquids (NGL), crude oil and other fuels.
+    industry_other_bio_oil_in_crude_oil_share:
+      title: Other bio oil
+      short_description:
+      description: |
+        Percentage of other bio oil products in the industry sector. Included are bio gasoline and
+        other bio fuels.

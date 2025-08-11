@@ -1,15 +1,19 @@
 ---
-- image: industry_solarpanels.gif
-  group_sub_header: electricity_output
-  key: supply_heat_network_industry
-  position: 13
+- key: demand_industry
+  position: 100
   sidebar_item_key: industry
-  alt_output_element_key: source_of_heat_and_electricity_in_industry
-  output_element_key: industrial_heat_mekko
-- image: industry.gif
-  group_sub_header: share
+  alt_output_element_key: mekko_of_detailed_final_demand_in_industry
+  output_element_key: mekko_of_detailed_final_demand_in_industry_energetic
+- group_sub_header: share
+  key: demand_industry_steel
+  position: 105
+  dependent_on: has_metal
+  sidebar_item_key: industry
+  alt_output_element_key: demand_in_industry_steel
+  output_element_key: demand_in_industry_steel
+- group_sub_header: share
   key: demand_industry_aluminium
-  position: 3
+  position: 110
   dependent_on: has_metal
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_aluminium
@@ -17,64 +21,62 @@
 - image: industry.gif
   group_sub_header: "%"
   key: demand_industry_other_metals
-  position: 4
+  position: 115
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_metals
   output_element_key: use_of_final_demand_in_industry_other_metals
-- image: industry.gif
-  group_sub_header: share
-  key: demand_industry_steel
-  position: 2
-  dependent_on: has_metal
-  sidebar_item_key: industry
-  alt_output_element_key: demand_in_industry_steel
-  output_element_key: demand_in_industry_steel
-- image: industry.gif
-  key: demand_industry
-  position: 1
-  sidebar_item_key: industry
-  alt_output_element_key: mekko_of_detailed_final_demand_in_industry
-  output_element_key: mekko_of_detailed_final_demand_in_industry_energetic
 - group_sub_header: share
   key: demand_industry_chemical_refineries
-  position: 5
+  position: 120
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_refineries
   output_element_key: refinery
 - group_sub_header: share
   key: demand_industry_chemical_fertilizers
-  position: 6
+  position: 125
   dependent_on: has_detailed_chemical_industry
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
   output_element_key: use_of_final_demand_in_industry_chemical_fertilizers
 - group_sub_header: share
   key: demand_industry_chemical_other
-  position: 7
+  position: 130
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_chemical_other
   output_element_key: use_of_final_demand_in_industry_chemical_other
+- group_sub_header: "%/year"
+  key: demand_industry_other_ict
+  position: 135
+  sidebar_item_key: industry
+  alt_output_element_key: use_of_final_demand_in_industry_other_ict
+  output_element_key: use_of_final_demand_in_industry_other_ict
 - group_sub_header: share
   key: demand_industry_other_food
-  position: 9
+  position: 140
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_food
   output_element_key: use_of_final_demand_in_industry_other_food
 - group_sub_header: share
   key: demand_industry_other_paper
-  position: 10
+  position: 145
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other_paper
   output_element_key: use_of_final_demand_in_industry_other_paper
 - group_sub_header: share
   key: demand_industry_aggregated_other
-  position: 11
+  position: 150
   sidebar_item_key: industry
   alt_output_element_key: use_of_final_demand_in_industry_other
   output_element_key: use_of_final_demand_in_industry_other
-- group_sub_header: "%/year"
-  key: demand_industry_other_ict
-  position: 8
+
+- group_sub_header: electricity_output
+  key: supply_heat_network_industry
+  position: 200
   sidebar_item_key: industry
-  alt_output_element_key: use_of_final_demand_in_industry_other_ict
-  output_element_key: use_of_final_demand_in_industry_other_ict
+  alt_output_element_key: source_of_heat_and_electricity_in_industry
+  output_element_key: industrial_heat_mekko
+
+- key: demand_industry_oil_mix
+  position: 300
+  sidebar_item_key: industry
+  output_element_key: mekko_of_oil_mix

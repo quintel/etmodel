@@ -453,75 +453,115 @@ nl:
         efficiënties</a> om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_wind_turbine_inland:
       title: Wind op land
-      short_description: ''
-      description: |
-        Deze slider bepaalt het totale elektrische vermogen van windturbines op land.<br/><br/>
-        Door wisselende windcondities draaien deze windturbines ongeveer 25% van de tijd
-        op maximaal vermogen. Deze fluctuaties kunnen leiden tot een instabiel elektriciteitsnet.
-        Om deze fluctuaties op te vangen, is back-up capaciteit nodig, zoals gascentrales.
-        Daarnaast kunnen accu's de overtollige elektriciteit opslaan wanneer er te veel wordt
-        geproduceerd. Een andere oplossing is flexibele vraag, waarbij gebruikers hun
-        elektriciteitsverbruik aanpassen aan de beschikbaarheid van windenergie.
-    capacity_of_energy_power_wind_turbine_coastal:
-      title: Wind aan kust
       short_description:
       description: |
-        Deze slider bepaalt het totale elektrische vermogen van windturbines langs de kust,
-        zoals op dijken of in kustwateren.<br/><br/> Door wisselende windcondities
-        draaien deze windturbines ongeveer 27% van de tijd op maximaal vermogen. Deze
-        fluctuaties kunnen leiden tot een instabiel elektriciteitsnet. Om deze fluctuaties
-        op te vangen, is back-up capaciteit nodig, zoals gascentrales. Daarnaast kunnen
-        accu's de overtollige elektriciteit opslaan wanneer er te veel wordt geproduceerd.
-        Een andere oplossing is flexibele vraag, waarbij gebruikers hun elektriciteitsverbruik
-        aanpassen aan de beschikbaarheid van windenergie.
+        Deze slider bepaalt het totale elektrische vermogen van windturbines op land.<br/><br/>
+        Door wisselende windcondities is de productie van windturbines volatiel, wat bijdraagt aan
+        fluctaties op het elektriciteitsnet. Door inzet van regelbare centrales bij tekorten en
+        opslag en flexibele vraagtechnologieën bij productieoverschot, kunnen de fluctuaties op
+        het elektriciteitsnet worden ogevangen. Betere benutting van opgewekte stroom bij overproductie
+        zorgt ervoor dat productiebeperking (<i>curtailment</i>) zoveel mogelijk wordt beperkt.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        weersomstandigheden</a> om het aantal vollasturen aan te passen of upload een
+        <a href="/scenario/flexibility/curve_upload/upload-curves">uurlijks profiel</a>
+        voor windturbines op land.<br/><br/>
+        <ul>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+          data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+          elektriciteitsproductie.</li>
+        </ul>
+    capacity_of_energy_power_wind_turbine_coastal:
+      title: Wind aan de kust
+      short_description:
+      description: |
+        Deze slider bepaalt het totale elektrische vermogen van windturbines aan de kust,
+        zoals op dijken of in kustwateren.<br/><br/>
+        Door wisselende windcondities is de productie van windturbines volatiel, wat bijdraagt aan
+        fluctaties op het elektriciteitsnet. Door inzet van regelbare centrales bij tekorten en
+        opslag en flexibele vraagtechnologieën bij productieoverschot, kunnen de fluctuaties op
+        het elektriciteitsnet worden ogevangen. Betere benutting van opgewekte stroom bij overproductie
+        zorgt ervoor dat productiebeperking (<i>curtailment</i>) zoveel mogelijk wordt beperkt.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weersomstandigheden</a> om het aantal vollasturen aan te passen of upload een
+        <a href="/scenario/flexibility/curve_upload/upload-curves">uurlijks profiel</a>
+        voor windturbines op land.<br/><br/>
+        <ul>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+          data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+          elektriciteitsproductie.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_offshore:
       title: Wind op zee
       short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van windturbines op zee.<br/><br/>
-        Door wisselende windcondities draaien deze windturbines ongeveer 40% van de tijd op
-        maximaal vermogen. Deze fluctuaties kunnen leiden tot een instabiel elektriciteitsnet.
-        Om deze fluctuaties op te vangen, is back-up capaciteit nodig, zoals gascentrales.
-        Daarnaast kunnen accu's de overtollige elektriciteit opslaan wanneer er te veel wordt
-        geproduceerd. Een andere oplossing is flexibele vraag, waarbij gebruikers hun
-        elektriciteitsverbruik aanpassen aan de beschikbaarheid van windenergie.
+        Door wisselende windcondities is de productie van windturbines volatiel, wat bijdraagt aan
+        fluctaties op het elektriciteitsnet. Door inzet van regelbare centrales bij tekorten en
+        opslag en flexibele vraagtechnologieën bij productieoverschot, kunnen de fluctuaties op
+        het elektriciteitsnet worden ogevangen. Betere benutting van opgewekte stroom bij overproductie
+        zorgt ervoor dat productiebeperking (<i>curtailment</i>) zoveel mogelijk wordt beperkt.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weersomstandigheden</a> om het aantal vollasturen aan te passen of upload een
+        <a href="/scenario/flexibility/curve_upload/upload-curves">uurlijks profiel</a>
+        voor windturbines op zee.<br/><br/>
+        <ul>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+          data-chart-location="side">grafiek</a> toont de uurlijkse productie van wind en zon op zee.</li>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+          elektriciteitsproductie.</li>
+        </ul>
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
-      title: Wind op zee (met hybride aansluiting)
+      title: Wind op zee met hybride aansluiting
       short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van windturbines op zee met een hybride
-        aansluiting. Hierbij kan de opgewekte elektriciteit direct worden geleverd aan een
-        elektrolyser voor waterstofproductie of via een elektriciteitskabel op zee aan het
-        hoogspanningsnet. <br/><br/>
-        <ul>
-          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
+        aansluiting.<br/><br/>
+        Opgewekte elektriciteit kan direct worden geleverd aan land via een elektriciteitskabel op zee,
+        of kan bij een overschot aan elektriciteitsproductie worden geleverd een elektrolyser op zee voor
+        waterstofproductie. Bekijk de
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind">documentatie</a>
+        voor meer informatie over de modellering van hybride wind op zee.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
         Flexibiliteit</a> om de geïnstalleerde vermogens van de elektrolyser en elektriciteitskabel
-        op zee in te stellen.</li>
-          <li>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities"
-          data-chart-location="side">Geïnstalleerde vermogens</a> en <a href="#" class="open_chart"
-          data-chart-key="sankey_hybrid_offshore" data-chart-location="side">Energiestromen</a>.</li>
-          <li>Bekijk de tabel <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
-          data-chart-location="side">Vermogens en energiestromen</a>.</li>
-        </ul><br/>
-        Bekijk de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind">Documentatie</a>
-        voor meer informatie.
+        op zee in te stellen en de betalingsbereidheid van de elektrolyser aan te passen.<br/><br/>
+        <ul>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities"
+          data-chart-location="side">grafiek</a> toont de opgestelde vermogens van de hybride wind op zee
+          componenten.</li>
+          <li>Deze <a href="#" class="open_chart"
+          data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a> toont de jaarlijkse
+          energiestromen tussen de hybride wind op zee componenten.</li>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+          data-chart-location="side">tabel</a> vat de opgestelde vermogens en jaarlijkse energiestromen
+          van hybride wind op zee componten samen.</li>
+        </ul>
     capacity_of_energy_battery_wind_turbine_inland:
-      title: Wind op land (met batterijsysteem)
+      title: Wind op land met batterijsysteem
       short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van windturbines op land met een geïntegreerd
-        batterijsysteem en een beperkte netwerkcapaciteit. <br/><br/> In plaats van het volledige
-        vermogen direct aan te sluiten op het netwerk, wordt overtollige elektriciteit opgeslagen
-        in een batterij wanneer de productie groter is dan de netwerkcapaciteit. Bij lagere
-        productie wordt de opgeslagen elektriciteit weer afgegeven aan het netwerk. <br/><br/>
-        <em>Let op</em>: De aangesloten netwerkcapaciteit en het batterijvermogen zijn relatief
-        ten opzichte van het geïnstalleerde vermogen en zullen met deze slider meeveranderen.
-        <br/><br/>
+        batterijsysteem en een beperkte netwerkcapaciteit.<br/><br/>
+        Om grote vermogenspieken op het elektriciteitsnet te voorkomen, wordt niet het volledige
+        geïnstalleerd vermogen van de windturbines aangesloten op het net, maar wordt de netwerkcapaciteit
+        ondergedimensioneerd. Wanneer meer wordt geproduceerd dan de netwerkcapaciteit, begint de batterij
+        op te laden. Wanneer productie weer onder de netcapaciteit zakt, zal de batterij
+        beginnen met ontladen. <br/><br/>
+        <b>Let op</b>: de aangesloten netwerkcapaciteit en het batterijvermogen zijn relatief
+        ten opzichte van het geïnstalleerd vermogen van de windturbines en zullen met deze slider meeveranderen.
+        Ga naar <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        Flexibiliteit</a> om de verhouding tussen netwerkcapaciteit en batterijvermogen in te stellen.<br/><br/>
         <ul>
-          <li>Ga naar <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
-        Flexibiliteit</a> om de verhouding tussen netwerkcapaciteit en batterijvermogen in te stellen.</li>
-          <li>Bekijk de grafiek <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind" data-chart-location="side">Uurlijkse productie door wind op land met batterij</a>.</li>
-          <li>Zie 'Technische parameters en kosten' voor de specificaties van windturbines zonder batterij.</li>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind"
+          data-chart-location="side">grafiek</a> toont de uurlijkse productie en het laadgedrag
+          van deze technologie.</li>
+          <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+          elektriciteitsproductie.</li>
         </ul>
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventioneel

@@ -655,10 +655,11 @@ nl:
       title: Energieproductie
       description: |
         Deze slider bepaalt welk deel van de geproduceerde kolengassen wordt inzet in
-        elektriciteitscentrales en warmtekrachtkoppelingen (WKK's).<br/><br/> Kolengas heeft
-        een hoog CO<sub>2</sub>-gehalte en is daardoor  zeer CO<sub>2</sub>-intensief. Deze
-        must-run centrales draaien zodra kolengas beschikbaar is, ongeacht de vraag. Een
-        alternatief is om de kolengassen om te zetten naar grondstoffen voor de chemiesector.
+        elektriciteitscentrales en warmtekrachtkoppelingen (WKK's).<br/><br/> Deze
+        centrales worden gemodelleerd als must-run centrales die draaien zodra kolengas beschikbaar is. Kolengas heeft
+        een hoog CO<sub>2</sub>-gehalte waardoor de CO<sub>2</sub>-uitstoot van deze
+        centrales relatief hoog is. Een alternatieve inzet van de kolengassen is om deze
+        om te zetten naar grondstoffen voor de chemiesector.
         </br></br> Open de  <a href="#" class="open_chart" data-chart-key="merit_order_table"
         data-chart-location="side">merit order tabel</a> om het geïnstalleerde vermogen van
         de kolengasentrales te bekijken.
@@ -666,6 +667,9 @@ nl:
       title: Grondstof voor chemiesector
       description: |
         Deze slider bepaalt welk deel van de geproduceerde kolengassen wordt omgezet naar
+        grondstoffen voor de chemiesector (<em>steel-to-chemicals</em>).<br/><br/> Een hoger
+        aandeel zorgt ervoor dat er minder kolengas wordt gebruikt voor energieproductie. De
+        <em>steel-to-chemicals</em> route is nog in ontwikkeling. Het ETM modelleert daarom
         grondstoffen voor de chemiesector (<em>steel-to-chemicals</em>).<br/><br/> Een hoger
         aandeel zorgt ervoor dat er minder kolengas wordt gebruikt voor energieproductie. De
         <em>steel-to-chemicals</em> route is nog in ontwikkeling. Het ETM modelleert daarom

@@ -11,7 +11,7 @@
 - key: demand_buildings_insulation
   position: 105
   sidebar_item_key: buildings
-  alt_output_element_key: 
+  alt_output_element_key:
   output_element_key: use_of_final_demand_in_buildings
 - group_sub_header: of_heat_demand
   key: demand_buildings_heating
@@ -44,7 +44,8 @@
   alt_output_element_key: use_of_final_demand_in_buildings
   output_element_key: use_of_final_demand_in_buildings
 
-- key: demand_buildings_oil_mix
+- group_sub_header: share
+  key: demand_buildings_oil_mix
   position: 200
   sidebar_item_key: buildings
   output_element_key: mekko_of_oil_mix

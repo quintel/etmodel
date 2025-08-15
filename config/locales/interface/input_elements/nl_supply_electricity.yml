@@ -86,7 +86,7 @@ nl:
         De haalbaarheid hangt af van de diepte en temperatuur van het ondergrondse water.
     capacity_of_buildings_solar_pv_solar_radiation:
       title: Zon op dak gebouwen
-      short_description: ''
+      short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van zonnepanelen op daken van gebouwen.
         <br/><br/>Zonnepanelen op daken wekken elektriciteit op voor eigen gebruik, met
@@ -102,8 +102,8 @@ nl:
           Kosten & efficiënties</a> om de efficiëntie van de zonnepanelen in te stellen.</li>
         </ul>
     capacity_of_households_solar_pv_solar_radiation:
-      title: Zon op dak huishoudens
-      short_description: ''
+      title: Zon op dak woningen
+      short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van zonnepanelen op daken van huishoudens.
         <br/><br/>Zonnepanelen op daken wekken elektriciteit op voor eigen gebruik, met overtollige
@@ -118,8 +118,8 @@ nl:
           Kosten & efficiënties</a> om de efficiëntie van de zonnepanelen in te stellen.</li>
         </ul>
     capacity_of_energy_power_solar_pv_solar_radiation:
-      title: Zon op land
-      short_description: ''
+      title: Zon op veld
+      short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van zonneparken op land.<br/><br/>
         Zonneparken op land wekken elektriciteit op voor het net, waarbij de productie
@@ -136,8 +136,8 @@ nl:
           Kosten & efficiënties</a> om de efficiëntie van de zonnepanelen in te stellen.</li>
         </ul>
     capacity_of_energy_battery_solar_pv_solar_radiation:
-      title: Zon op land met batterijsysteem
-      short_description: ''
+      title: Zon op veld met batterijsysteem
+      short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van zonneparken op land met een
         geïntegreerd batterijsysteem en een beperkte netwerkcapaciteit.<br/><br/>
@@ -156,7 +156,7 @@ nl:
           <li>Zie 'Technische parameters en kosten' voor de specificaties van zonneparken zonder batterij.</li>
         </ul>
     capacity_of_energy_power_solar_pv_offshore:
-      title: Zonnecentrales PV op zee
+      title: Zon op zee
       short_description:
       description: |
         Deze slider bepaalt het totale elektrische vermogen van zonneparken op zee.<br/><br/>

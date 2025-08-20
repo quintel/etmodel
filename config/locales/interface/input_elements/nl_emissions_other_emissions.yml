@@ -33,53 +33,51 @@ nl:
     change_in_non_energetic_emissions_other_ghg_chemical_industry:
       title: Chemische industrie
       short_description: ''
-      description: "In de chemische industrie bestaan veel verschillende niet-energetische
-      processen waarbij (overige) broeikasgassen vrij komen. Dit gebeurt bijvoorbeeld bij
-      de productie van salpeterzuur, caprolactam, glyoxal, glyoxylzuur, petrochemische producten
-      of fluorchemische producten. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 2.B"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen in de chemische industrie ten opzichte van het startjaar van het scenario.
+        <br/><br/> Voorbeelden zijn emissies bij de productie van salpeterzuur, caprolactam, 
+        glyoxal, glyoxylzuur, petrochemische producten en fluorchemische producten.
     change_in_non_energetic_emissions_other_ghg_waste_management:
       title: Afvalbeheer
       short_description: ''
-      description: "Tijdens het beheren van afval op afvalstort plaatsen komt vaak methaan (CH<sub>4</sub>) vrij.
-      Daarnaast komen bij het beheer van afvalwater en organisch afval ook in mindere mate
-      methaan en lachgas (N<sub>2</sub>O) vrij. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 5"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen van afvalbeheer ten opzichte van het startjaar van het scenario.<br/><br/> 
+        Het gaat hierbij om methaan (CH<sub>4</sub>) dat vrijkomt bij afvalstortplaatsen en om 
+        methaan en lachgas (N<sub>2</sub>O) uit afvalwater en organisch afval.
     change_in_non_energetic_emissions_other_ghg_other_industry:
       title: Overige industrie
       short_description: ''
-      description: "Bij de overige industrie komen tijdens niet-energetische processen allerlei
-      verschillende soorten broeikasgassen vrij. Dit gebeurt bijvoorbeeld bij de productie van
-      koelvloeistoffen en in mindere mate bij de productie van elektronica of paraffine.
-      Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 2.A, 2.C t/m 2.H"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen van de overige industrie ten opzichte van het startjaar van het scenario. 
+        <br/><br/> Het gaat hierbij om diverse broeikasgassen die vrijkomen bij processen zoals de 
+        productie van koelvloeistoffen, en in mindere mate bij de productie van elektronica of 
+        paraffine.
     change_in_energetic_emissions_other_ghg_industry:
       title: Industrie
       short_description: ''
-      description: "Door het energiegebruik in een verzameling van industriële processen kunnen
-      naast de grote hoeveelheden CO<sub>2</sub> ook (relatief kleine) hoeveelheden methaan (CH<sub>4</sub>) of lachgas
-      (N<sub>2</sub>O) vrijkomen. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 1.A.2"
+      description: |
+        Deze slider bepaalt de verandering in de energetische emissies van overige broeikasgassen 
+        van de industrie ten opzichte van het startjaar van het scenario. <br/><br/>Energiegebruik 
+        in industriële processen veroorzaakt naast CO<sub>2</sub> ook kleinere hoeveelheden 
+        methaan (CH<sub>4</sub>) en lachgas (N<sub>2</sub>O).
     change_in_energetic_emissions_other_ghg_energy:
       title: Energiesector
       short_description: ''
-      description: "Tijdens de productie van warmte, elektriciteit
-      of brandstoffen kan er methaan (CH<sub>4</sub>) of lachgas (N<sub>2</sub>O) vrijkomen. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst
-      verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 1.A.1, 1.B"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen van de energiesector ten opzichte van het startjaar van het scenario. 
+        <br/><br/> Tijdens de productie van warmte, elektriciteit of brandstoffen komen methaan 
+        (CH<sub>4</sub>) en lachgas (N<sub>2</sub>O) vrij.
     change_in_indirect_emissions_co2:
       title: Indirecte emissies
       short_description: ''
-      description: "‘Indirecte emissies’ is een verzamelnaam voor emissies veroorzaakt door oxidatie
-      van koolstofhoudende solventen en niet-methaan vluchtige organische stoffen (NMVOS).
-      Deze emissies kunnen een groot aantal oorzaken hebben en plaatsvinden in alle sectoren.
-      Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC wordt deze uitstoot geclassificeerd als 'ind_CO2'."
+      description: |
+        Deze slider bepaalt de verandering in indirecte emissies ten opzichte van het startjaar 
+        van het scenario.<br/><br/> Indirecte emissies ontstaan door oxidatie van koolstofhoudende 
+        solventen en niet-methaan vluchtige stoffen (NMVOS) en kunnen in alle sectoren voorkomen.
     change_in_energetic_emissions_other_ghg_households:
       title: Huishoudens
       short_description: ''
@@ -107,69 +105,70 @@ nl:
     change_in_non_energetic_emissions_co2_agriculture_manure:
       title: Mest
       short_description: ''
-      description: "Onder mest valt zowel de mest en urine van landbouwdieren als het gebruik van kunstmest.
-      Vooral urine zorgt voor veel CO<sub>2</sub> uitstoot. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 3.B, 3.H, 3.I"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische CO<sub>2</sub>-emissies van 
+        mest ten opzichte van het startjaar van het scenario. <br/><br/> Mest en urine van 
+        landbouwdieren en kunstmest veroorzaken CO<sub>2</sub>-uitstoot, waarbij urine het meest 
+        bijdraagt.
     change_in_non_energetic_emissions_co2_agriculture_soil_cultivation:
       title: Landbewerking
       short_description: ''
-      description: "Onder landbewerking vallen het telen van rijst, het bewerken van de grond, het verbranden van vegetatie of het gebruiken van kalk om
-      onder andere bodemverzuring tegen te gaan. In Europa is vooral de laatste een bron van
-      CO<sub>2</sub>. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 3.C, 3.D, 3.E, 3.G"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische CO<sub>2</sub>-emissies van 
+        landbewerking ten opzichte van het startjaar van het scenario.<br/><br/>Landbewerking 
+        omvat het telen van rijst, grondbewerking, verbranden van vegetatie en het gebruik van 
+        kalk, waarbij vooral kalk in Europa een belangrijke bron van CO<sub>2</sub> is.
     change_in_non_energetic_emissions_other_ghg_agriculture_manure:
       title: Mest
       short_description: ''
-      description: "Onder mest valt zowel de mest en urine van landbouwdieren als het gebruik van kunstmest.
-      Vooral mest zorgt voor veel methaan (CH<sub>4</sub>)-uitstoot. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 3.B, 3.H, 3.I"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen van emst ten opzichte van het startjaar van het scenario.<br/><br/> Mest en 
+        urine van landbouwdieren en kunstmest veroorzaken broeikasgassen, waarbij vooral mest veel 
+        methaan (CH<sub>4</sub>) uitstoot.
     change_in_non_energetic_emissions_other_ghg_agriculture_fermentation:
       title: Fermentatie
       short_description: ''
-      description: "Emissies in deze categorie zijn afkomstig uit de veeteelt. (Enterische)
-      fermentatie of gisting vindt plaatst tijdens de spijsvertering van dieren. Tijdens deze
-      spijsvertering komt er methaan (CH<sub>4</sub>) vrij. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 3.A"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen uit fermentatie ten opzichte van het startjaar van het scenario. <br/><br/> 
+        Fermentatie, of gisting, vindt plaats tijdens de spijsvertering van vee en veroorzaakt 
+        methaan (CH<sub>4</sub>)-uitstoot.
     change_in_non_energetic_emissions_other_ghg_agriculture_other:
       title: Overige activiteiten
       short_description: ''
-      description: "Onder de categorie ‘overig’ vallen activiteiten zoals het verbranden van
-      overblijfselen van gewassen op landbouwgrond om de productiviteit van de bodem te verhogen,
-      het gebruik van pesticiden, het bewerken van stro met ammoniak of het vergisten van
-      biomassa voor de productie van biogas. Vooral de laatste categorie is relevant in Europa en
-      zorgt voor de uitstoot van zowel lachgas (N<sub>2</sub>O) als methaan (CH<sub>4</sub>).
-      Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 3.F, 3.J"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen uit overige activiteiten ten opzichte van het startjaar van het scenario. 
+        <br/><br/> Onder overige activiteiten vallen bijvoorbeeld het verbranden van gewasresten, 
+        gebruik van pesticiden, bewerking van stro met ammoniak en vergisting van biomassa; vooral 
+        vergisting in Europa veroorzaakt methaan (CH<sub>4</sub>) en lachgas (N<sub>2</sub>O).
     change_in_energetic_emissions_other_ghg_agriculture:
       title:  Landbouw
       short_description: ''
-      description: "In de landbouw en visserij bevinden zich allerlei processen die energie verbruiken.
-      Hieronder vallen bijvoorbeeld het gebruik van machines, kasverlichting of de verwarming van
-      gewassen. Hierbij komen zowel lachgas (N<sub>2</sub>O) als methaan (CH<sub>4</sub>) vrij.
-      Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorie: 1.A.4.c"
+      description: |
+        Deze slider bepaalt de verandering in de energetische emissies van overige broeikasgassen 
+        uit landbouw en visserij ten opzichte van het startjaar van het scenario. <br/><br/> 
+        Energiegebruik in landbouw en visserij, zoals door machines, kasverlichting of 
+        gewasverwarming, veroorzaakt methaan (CH<sub>4</sub>) en lachgas (N<sub>2</sub>O).
     change_in_non_energetic_emissions_other_ghg_agriculture_soil_cultivation:
       title: Landbewerking
       short_description: ''
-      description: "Onder landbewerking vallen het telen van rijst, het bewerken van de grond, het verbranden van vegetatie of het gebruiken van kalk om
-      onder andere bodemverzuring tegen te gaan. Met dit schuifje kun je aangeven hoe deze uitstoot in de toekomst verandert.
-      <br/><br/> In het 'Common Reporting Format' van het UNFCCC is dit de uitstoot in de
-      categorieën: 3.C, 3.D, 3.E, 3.G"
+      description: |
+        Deze slider bepaalt de verandering in de niet-energetische emissies van overige 
+        broeikasgassen van landbewerking ten opzichte van het startjaar van het scenario. <br/>
+        <br/> Landbewerking omvat rijstteelt, grondbewerking, verbranden van vegetatie en het 
+        gebruik van kalk.
     share_of_molecules_other_utilisation_delayed_emitted_co2:
       title: Uitgestoten uitgesteld
       short_description:
       description: |
-        Met dit schuifje kun je bepalen welk deel van de uitgestelde emissies wordt uitgestoten
-        en dus in <b>inbegrepen</b> in de totale CO<sub>2</sub>-emissies van jouw scenario.
+        Deze slider bepaalt welk deel van de uitgestelde emissies daadwerkelijk wordt uitgestoten 
+        en daarmee wordt <em>meegenomen</em> in de totale CO<sub>2</sub>-emissies van het scenario.
     share_of_molecules_other_utilisation_delayed_indefinitely_co2:
       title: Onbepaalde tijd uitgesteld
       short_description:
       description: |
-        Met dit schuifje kun je bepalen welk deel van de uitgestelde emissies voor onbepaalde tijd wordt 
-        uitgesteld en dus is <b>uitgesloten</b> van de totale CO<sub>2</sub>-emissies van jouw scenario.
+        Deze slider bepaalt welk deel van de uitgestelde emissies voor onbepaalde tijd wordt 
+        uitgesteld en daardoor <em>niet</em> wordt meegeteld in de totale CO<sub>2</sub>-emissies 
+        van het scenario.

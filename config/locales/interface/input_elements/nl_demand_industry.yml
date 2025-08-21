@@ -423,6 +423,16 @@ nl:
         processen hangt waarschijnlijk het meest af van de brandstofprijzen en milieuwetgeving.
         Zie de sectie <a href=/scenario/costs/fuel_costs/combustion-fuel>Kosten</a> om
         aannames te doen in de prijs van primaire brandstoffen.
+    industry_chemicals_other_burner_bionaphtha_share:
+      title: Bionaftaketel
+      short_description:
+      description: |
+        Het aandeel van de warmtevraag dat wordt ingevuld door bionaftaketels.<br/><br/>In industriële
+        processen is vooral hoge temperatuur nodig. Die kan nu het beste geleverd worden
+        door brandstoffen te verstoken. De brandstofmix voor warmtelevering aan industriële
+        processen hangt waarschijnlijk het meest af van de brandstofprijzen en milieuwetgeving.
+        Zie de sectie <a href=/scenario/costs/fuel_costs/combustion-fuel>Kosten</a> om
+        aannames te doen in de prijs van primaire brandstoffen.        
     industry_chemicals_other_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
@@ -562,6 +572,16 @@ nl:
         gemaakt zoals methanol en ethyleen. In de toekomst zou deze fossiele olie vervangen
         kunnen worden door andere bronnen, zoals biomassa of waterstof. Aannames in de
         grondstofmix voor de chemische industrie kunnen hier worden gedaan.
+    industry_chemicals_other_bionaphtha_non_energetic_share:
+      title: Bionafta
+      short_description:
+      description: |
+        Aandeel van bionafta in de niet-energetische vraag van de chemische industrie.<br/><br/>
+        De chemische industrie gebruikt traditioneel fossiele olie als
+        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
+        gemaakt zoals methanol en ethyleen. In de toekomst zou deze fossiele olie vervangen
+        kunnen worden door andere bronnen, zoals biomassa of waterstof. Aannames in de
+        grondstofmix voor de chemische industrie kunnen hier worden gedaan.        
     industry_chemicals_other_coal_non_energetic_share:
       title: Kolen
       short_description:
@@ -571,6 +591,24 @@ nl:
         kunnen worden door andere bronnen, zoals biomassa of waterstof. Aannames in de
         grondstofmix voor de chemische industrie kunnen hier worden gedaan. Hoe groot is
         het aandeel van steenkool in de chemische industrie van de toekomst?
+    industry_chemicals_other_methanol_non_energetic_share:
+      title: Methanol
+      short_description:
+      description: De chemische industrie gebruikt traditioneel fossiele olie als
+        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
+        gemaakt zoals methanol en ethyleen. In de toekomst zou deze fossiele olie vervangen
+        kunnen worden door andere bronnen, zoals biomassa of waterstof. Aannames in de
+        grondstofmix voor de chemische industrie kunnen hier worden gedaan. Hoe groot is
+        het aandeel van steenkool in de chemische industrie van de toekomst?       
+    industry_chemicals_other_methanol_non_energetic_share:
+      title: Biomethanol
+      short_description:
+      description: De chemische industrie gebruikt traditioneel fossiele olie als
+        grondstofbron van koolwaterstoffen. Hiermee worden chemische basisproducten
+        gemaakt zoals methanol en ethyleen. In de toekomst zou deze fossiele olie vervangen
+        kunnen worden door andere bronnen, zoals biomassa of waterstof. Aannames in de
+        grondstofmix voor de chemische industrie kunnen hier worden gedaan. Hoe groot is
+        het aandeel van steenkool in de chemische industrie van de toekomst?                 
     industry_useful_demand_for_aggregated_other_electricity_efficiency:
       title: Elektriciteit
       description: Hoe zal de efficiëntie van overige industriesector verbeterd zijn

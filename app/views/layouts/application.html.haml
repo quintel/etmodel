@@ -11,6 +11,7 @@
 
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
+    = favicon_link_tag asset_path("favicon.svg")
 
     - if defined?(extra_pack)
       = javascript_pack_tag 'survey', extra_pack

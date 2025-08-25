@@ -187,21 +187,43 @@ nl:
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
       description: |
-        Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er uit de lucht
-        gehaald wordt via "direct air capture". Direct air capture is een technologie waarbij
-        CO<sub>2</sub> met behulp van elektriciteit direct uit de buitenlucht gehaald wordt.
-        Als hiervoor hernieuwbare stroom wordt gebruikt, neemt de CO<sub>2</sub>-concentratie
-        in de atmosfeer af ("negatieve" emissies) als de afgevangen CO<sub>2</sub> wordt
-        opgeslagen onder de grond. De CO<sub>2</sub> kan ook worden gebruikt voor de productie
-        van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
-        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Gebruik en opslag van CO<sub>2</sub></a>
-        sectie. </br></br>
-        Direct Air Capture is een veelbelovende technologie om de CO<sub>2</sub>-concentratie
-        in de lucht omlaag te brengen. Tegelijkertijd is het proces energie-intensief en
-        (op dit moment) prijzig. Aangezien
-        CO<sub>2</sub> over de hele wereld beschikbaar is, ligt het voor de hand om DAC
-        met name toe te passen in gebieden waar de prijs van (hernieuwbare) stroom zo laag
-        mogelijk is.
+        Deze slider bepaalt hoeveel CO<sub>2</sub> uit de lucht wordt gehaald met Direct Air Capture (DAC).<br/><br/> DAC is een technologie waarbij CO<sub>2</sub> met elektriciteit direct uit de buitenlucht wordt gehaald. Wanneer hernieuwbare stroom wordt gebruikt, kan dit leiden tot negatieve emissies als de CO<sub>2</sub> ondergronds wordt opgeslagen. De CO<sub>2</sub> kan ook worden gebruikt voor de productie van CO<sub>2</sub>-neutrale brandstoffen. <br/><br/>
+        <ul>
+        <li>Ga naar <a href="">Gebruik en opslag van CO<sub>2</sub></a>.</li>
+        <li></li>
+        </ul>
+        
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Meer over gebruik en opslag van CO<sub>2</sub></a>.<br/><br/> 
+        Zie <a href="/scenario/emissions/ccus">CCUS-sliders</a> voor gerelateerde technologieën.
+
+      # description: |
+      #   Deze slider regelt het gebruik van Direct Air Capture (DAC).<br/><br/> DAC is een technologie die CO<sub>2</sub> met elektriciteit uit de atmosfeer verwijdert. De opgevangen CO<sub>2</sub> kan worden opgeslagen of gebruikt voor CO<sub>2</sub>-neutrale brandstoffen, waardoor de concentratie in de lucht daalt. <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Meer over gebruik en opslag van CO<sub>2</sub></a>.<br/><br/> Zie <a href="/scenario/emissions/ccus">CCUS-sliders</a> voor gerelateerde technologieën.
+
+      # description: |
+      #   Deze slider bepaalt hoeveel CO<sub>2</sub> uit de lucht wordt gehaald met Direct Air Capture (DAC).<br/><br/> DAC verwijdert CO<sub>2</sub> uit de atmosfeer met elektriciteit. Opgevangen CO<sub>2</sub> kan worden opgeslagen of gebruikt voor CO<sub>2</sub>-neutrale brandstoffen, waardoor de concentratie CO<sub>2</sub> in de lucht daalt. <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Meer over gebruik en opslag van CO<sub>2</sub></a>.<br/><br/> Zie <a href="/scenario/emissions/ccus">CCUS-sliders</a> voor gerelateerde technologieën.
+
+      # description: |
+      #   Deze slider bepaalt hoeveel CO<sub>2</sub> uit de lucht wordt gehaald met Direct Air Capture (DAC).<br/><br/> DAC is een technologie die CO<sub>2</sub> rechtstreeks uit de atmosfeer verwijdert met elektriciteit. Wanneer hernieuwbare stroom wordt gebruikt, kan de opgevangen CO<sub>2</sub> ondergronds worden opgeslagen of worden gebruikt voor de productie van CO<sub>2</sub>-neutrale brandstoffen. DAC biedt potentieel voor negatieve emissies en kan bijdragen aan het verlagen van de CO<sub>2</sub>-concentratie in de lucht. <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Lees meer over gebruik en opslag van CO<sub>2</sub></a>.<br/><br/> Zie <a href="/scenario/emissions/ccus">CCUS-sliders</a> voor gerelateerde technologieën.
+
+      # description: |
+      #   Deze slider bepaalt hoeveel CO<sub>2</sub> uit de lucht wordt gehaald met Direct Air Capture (DAC).<br/><br/> DAC is een technologie die CO<sub>2</sub> rechtstreeks uit de atmosfeer verwijdert met elektriciteit. Wanneer hernieuwbare stroom wordt gebruikt, kan de opgevangen CO<sub>2</sub> ondergronds worden opgeslagen of gebruikt voor de productie van CO<sub>2</sub>-neutrale brandstoffen, waardoor de concentratie CO<sub>2</sub> in de lucht afneemt. DAC is een veelbelovende technologie met potentieel voor negatieve emissies. <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Lees meer over gebruik en opslag van CO<sub>2</sub></a>.<br/><br/> Zie <a href="/scenario/emissions/ccus">CCUS-sliders</a> voor gerelateerde technologieën.
+        
+      # description: |
+      #   Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er uit de lucht
+      #   gehaald wordt via "direct air capture". Direct air capture is een technologie waarbij
+      #   CO<sub>2</sub> met behulp van elektriciteit direct uit de buitenlucht gehaald wordt.
+      #   Als hiervoor hernieuwbare stroom wordt gebruikt, neemt de CO<sub>2</sub>-concentratie
+      #   in de atmosfeer af ("negatieve" emissies) als de afgevangen CO<sub>2</sub> wordt
+      #   opgeslagen onder de grond. De CO<sub>2</sub> kan ook worden gebruikt voor de productie
+      #   van CO<sub>2</sub>-neutrale brandstoffen. Meer hierover vind je
+      #   <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">Gebruik en opslag van CO<sub>2</sub></a>
+      #   sectie. </br></br>
+      #   Direct Air Capture is een veelbelovende technologie om de CO<sub>2</sub>-concentratie
+      #   in de lucht omlaag te brengen. Tegelijkertijd is het proces energie-intensief en
+      #   (op dit moment) prijzig. Aangezien
+      #   CO<sub>2</sub> over de hele wereld beschikbaar is, ligt het voor de hand om DAC
+      #   met name toe te passen in gebieden waar de prijs van (hernieuwbare) stroom zo laag
+      #   mogelijk is.
     demand_of_molecules_offshore_sequestration_co2:
       title: Opslag van CO<sub>2</sub> onder de zeebodem
       description: |

@@ -6,7 +6,7 @@ en:
       description: "Biomass can be used in different places throughout the model:\r\n<ul>\r\n
         \ <li>as <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\">green
         gas</a> in the gas network</li>\r\n  <li>in biomass heaters for <a href=\"/scenario/supply/heat/heat-sources\">(local)
-        heat networks</a></li>\r\n  <li>as <a href=\"/scenario/supply/transport_fuels/road-transport\">transport
+        heat networks</a></li>\r\n  <li>as <a href=\"/scenario/demand/transport_fuels/road-transport\">transport
         fuel</a>: bio-ethanol, biodiesel, bio-LNG and bio-kerosene</li>\r\n  <li>as
         co-firing in <a href=\"/scenario/supply/electricity/coal-plants\" >coal plants</a></li>\r\n
         \ <li>as <a href=\"/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants\">biocoal
@@ -630,7 +630,7 @@ en:
       title: Gasoline for road transport
       short_description:
       description:
-    supply_transport_international_aviation:
+    demand_transport_international_aviation:
       title: International aviation
       short_description:
       description: "Will bio-kerosene contribute more to the aviation fuels mix in
@@ -639,7 +639,7 @@ en:
         hydrogen, and electricity. This option can be chosen in the
         <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
         > CCUS section</a>. "
-    supply_transport_international_shipping:
+    demand_transport_international_shipping:
       title: International navigation
       short_description:
       description: The transport fuels for international navigation depend directly
@@ -647,7 +647,7 @@ en:
         >international navigation section</a> you can select the engines (HFO or LNG)
         your international ships will be equipped with. Note that use biofuels is
         not yet possible for this sector.
-    supply_transport_marine_fuels:
+    demand_transport_marine_fuels:
       title: Domestic navigation
       short_description: ''
       description: |
@@ -659,7 +659,7 @@ en:
       title: Public transport fuels
       short_description:
       description:
-    supply_transport_road_transport:
+    demand_transport_road_transport:
       title: Road transport
       short_description:
       description: |
@@ -670,7 +670,7 @@ en:
         and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a>
         transport section, you can determine which engines, and therefore which transport fuels
         are used.
-    supply_transport_trains:
+    demand_transport_trains:
       title: Rail transport
       short_description: ''
       description: How much of the fuel used by diesel trains will come from renewable

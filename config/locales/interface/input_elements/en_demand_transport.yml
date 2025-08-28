@@ -120,7 +120,7 @@ en:
       short_description: ''
       description: "What percentage of all cars will use conventional diesel fueled
         internal combustion engine (ICE) technology? \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the diesel mix for road transport."
     transport_car_using_gasoline_mix_share:
       title: Gasoline
@@ -128,7 +128,7 @@ en:
       description: "What percentage of all cars will be use gasoline fuelled internal
         combustion engine (ICE) technology? \r\n<br/><br/> \r\nTheir efficiency may
         start improving faster once competition from electric cars is felt more keenly.
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the gasoline mix for road transport."
     transport_car_using_lpg_share:
       title: LPG
@@ -183,7 +183,7 @@ en:
         selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
         >Source data</a> to see whether this is the case for your region.
         \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the gasoline mix for road transport."
     transport_truck_using_diesel_mix_share:
       title: Diesel
@@ -195,7 +195,7 @@ en:
         that trucks may also include non-road mobile machinery, depending on your
         selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
         >Source data</a> to see whether this is the case for your region.
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the diesel mix for road transport."
     transport_truck_using_electricity_share:
       title: Electric
@@ -228,7 +228,7 @@ en:
         selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
         >Source data</a> to see whether this is the case for your region.
         \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the LNG mix for road transport."
     transport_truck_using_hydrogen_share:
       title: Hydrogen
@@ -283,7 +283,7 @@ en:
         all of the buses use diesel as the primary source of fuel; however, competition
         with alternative technologies will most likely induce a change in the demand
         share for diesel powered buses.
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the diesel mix for road transport."
     transport_bus_using_gasoline_mix_share:
       title: Gasoline
@@ -296,7 +296,7 @@ en:
         the demand for gasoline fuelled buses in the future, how do you suppose the
         demand will change?
         \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the gasoline mix for road transport."
     transport_bus_using_lng_share:
       title: LNG
@@ -310,7 +310,7 @@ en:
         prices will also play a hand in determining its share in the fuel-mix in the
         near future.
         \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the LNG mix for road transport."
     transport_bus_using_compressed_natural_gas_share:
       title: Compressed gas
@@ -368,7 +368,7 @@ en:
         Like hydrogen-powered shipping, electricity-powered shipping is a novel technology that is still in its developmental phase.
         Full-electric ships will likely use large-scale batteries to ensure enough power is available for the duration of the trip.
         <br/><br/>
-        With this slider, you can also model the demand for On-shore Power Supply (OPS). 
+        With this slider, you can also model the demand for On-shore Power Supply (OPS).
         OPS allows ships to plug in at the harbor they are visiting, reducing the need for fossil fuels to maintain their power supply.
     bunkers_ship_using_methanol_mix_share:
       title: Methanol (mix)
@@ -397,7 +397,7 @@ en:
       short_description:
       description: |
         Kerosene-powered aviation is the standard practie.
-        In the <a href="/scenario/supply/transport_fuels/international-aviation"
+        In the <a href="/scenario/demand/transport_fuels/international-aviation"
         >Fuels</a> section it is possible to choose the blend of kerosene for your
         planes.
     bunkers_ship_using_ammonia_share:
@@ -433,7 +433,7 @@ en:
         expensive electricity infrastructure. They are ideal for very remote and sparsely
         populated regions. Because Europe is a patchwork of differing standards for
         powerlines, electric trains often cannot cross borders in Europe.
-        You can set the diesel mix for passenger trains in the <a href=/scenario/supply/transport_fuels/rail-transport>Rail transport
+        You can set the diesel mix for passenger trains in the <a href=/scenario/demand/transport_fuels/rail-transport>Rail transport
         section</a>.
     transport_passenger_train_using_electricity_share:
       title: Electric
@@ -508,7 +508,7 @@ en:
         and priorities on environmental effects of such fuels are being placed higher
         up, one can expect a change in this share in the future.
         \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the gasoline mix for road transport."
     transport_motorcycle_using_electricity_share:
       title: Electric
@@ -544,7 +544,7 @@ en:
         engines are being developed that, in addition to LNG and diesel, can run on fuels such as bio-ethanol. </br></br>
         For clarity the share of all types of diesel engines is set with this slider. You can then
         set the aggregate fuel mix in the
-        <a href="/scenario/supply/transport_fuels/domestic-navigation">Transport fuels</a> section.
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport fuels</a> section.
         Checkout the technical and financial properties below for more information.
     transport_ship_using_lng_mix_share:
       title: LNG
@@ -560,7 +560,7 @@ en:
         on the availability of shipping fuels.</br></br>
         Checkout the technical and financial properties below for more information.
         You can set the LNG mix in the
-        <a href="/scenario/supply/transport_fuels/domestic-navigation">Transport fuels</a> section.
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport fuels</a> section.
     transport_ship_using_hydrogen_share:
       title: Hydrogen
       short_description:
@@ -587,7 +587,7 @@ en:
         a decline in energy use. Currently battery technology does not allow ships to travel large
         distances efficiently due to the weight of the battery which means batteries should be
         charged or replaced often. \r\n<br/><br/>\r\n
-        With this slider, you can also model the demand for On-shore Power Supply (OPS). 
+        With this slider, you can also model the demand for On-shore Power Supply (OPS).
         OPS allows ships to plug in at the harbor they are visiting, reducing the need for fossil fuels to maintain their power supply.
         \r\n<br/><br/>\r\n
         Checkout the technical and financial properties below for more information."
@@ -664,7 +664,7 @@ en:
         populated regions, or for international transport of goods. Because Europe
         is a patchwork of differing standards for powerlines, electric trains often
         cannot cross borders in Europe.
-        In the <a href=\"/scenario/supply/transport_fuels/rail-transport\" >Rails transport
+        In the <a href=\"/scenario/demand/transport_fuels/rail-transport\" >Rails transport
         section</a> you can set the diesel mix for rail transport."
     transport_vehicle_using_electricity_efficiency:
       title: Electric vehicles
@@ -722,14 +722,14 @@ en:
       short_description:
       description:
         "What percentage of all vans use diesel in the future?
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the diesel mix for road transport."
     transport_van_using_gasoline_mix_share:
       title: Gasoline
       short_description:
       description: "What percentage of all vans use gasoline in the future?
         \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/supply/transport_fuels/road-transport\" >Road transport
+        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the gasoline mix for road transport."
     transport_van_using_lpg_share:
       title: LPG

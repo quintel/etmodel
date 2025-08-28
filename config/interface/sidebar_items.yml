@@ -42,7 +42,7 @@
   percentage_bar_query: share_of_agriculture_in_final_demand
   tab_key: demand
   position: 5
-  dependent_on: 
+  dependent_on:
 - key: other
   section: demand
   percentage_bar_query: share_of_other_in_final_demand
@@ -53,7 +53,7 @@
   section: demand
   tab_key: demand
   position: 7
-  dependent_on: 
+  dependent_on:
 - key: specs_electricity
   section: costs
   tab_key: costs
@@ -122,7 +122,7 @@
   section: supply
   tab_key: supply
   position: 8
-- key: fuel_production
+- key: fuel_extraction
   section: supply
   tab_key: supply
   position: 11

@@ -7,7 +7,7 @@ nl:
     demand_agriculture_demand_growth:
       title: Vraagontwikkeling
       short_description: ''
-      description: De ontwikkeling die je hier aangeeft is het gevolg van ontwikkeling 
+      description: De ontwikkeling die je hier aangeeft is het gevolg van ontwikkeling
         van economie en bevolking. Dit is <strong>inclusief</strong> efficiëntieverbeteringen,
         maar <strong>exclusief</strong> andere technologieën die je in de gedeeltes
         hieronder kunt aangeven.
@@ -21,22 +21,22 @@ nl:
       title: Warmte van lokale WKK's
       short_description:
       description: |
-        In deze sectie kun je bepalen hoe je wilt voorzien in de finale vraag naar warmte van 
-        lokale warmte-krachtkoppeling (WKK) uit de 
+        In deze sectie kun je bepalen hoe je wilt voorzien in de finale vraag naar warmte van
+        lokale warmte-krachtkoppeling (WKK) uit de
         <a href="/scenario/demand/agriculture/heat"> Warmte</a> sectie hierboven. De grafiek rechts laat de warmtebalans
-        zien van deze WKKs. Voor een gedetailleerder overzicht, bekijk dan ook de sankey grafiek 
+        zien van deze WKKs. Voor een gedetailleerder overzicht, bekijk dan ook de sankey grafiek
         <a href="#" class="open_chart" data-chart-key="agriculture_sankey" data-chart-location="side">
         Lokale warmte- en elektriciteitsproductie in de landbouw.</a></br></br>
-        Als de totale lokale warmteproductie van deze WKK's groter is dan de vraag vanuit de 
-        landbouw wordt de overtollige warmte verspild. Als het aanbod onvoldoende is om in de 
-        vraag te voorzien, wordt het tekort geleverd door een back-up gasketel. Lokale 
+        Als de totale lokale warmteproductie van deze WKK's groter is dan de vraag vanuit de
+        landbouw wordt de overtollige warmte verspild. Als het aanbod onvoldoende is om in de
+        vraag te voorzien, wordt het tekort geleverd door een back-up gasketel. Lokale
         overschotten en tekorten van elektriciteit worden uitgewisseld met het elektriciteitsnet.
     demand_buildings_overview:
       title: Overzicht
-      short_description: 
+      short_description:
       description: |
-        Niet-residentiële gebouwen worden gebruikt om verschillende diensten te leveren. Ze omvatten onder 
-        andere kantoren, winkels, scholen, ziekenhuizen en zwembaden. De vraag is verdeeld in toepassingen: 
+        Niet-residentiële gebouwen worden gebruikt om verschillende diensten te leveren. Ze omvatten onder
+        andere kantoren, winkels, scholen, ziekenhuizen en zwembaden. De vraag is verdeeld in toepassingen:
         ruimteverwarming, koeling, koken, apparaten en verlichting.
     demand_buildings_stock:
       title: Gebouwvoorraad
@@ -72,8 +72,8 @@ nl:
       short_description:
       description: |
         De energievraag van een gebouw is sterk afhankelijk van de functie, maar ook van
-        gebouwkenmerken zoals de mate van isolatie. De typische warmtevraag voor gebouwen 
-        kan hier worden ingesteld per bouwjaarklasse. Ga naar de 
+        gebouwkenmerken zoals de mate van isolatie. De typische warmtevraag voor gebouwen
+        kan hier worden ingesteld per bouwjaarklasse. Ga naar de
         <a href="https://docs.energytransitionmodel.com/main/demand#buildings" target=\"_blank\">documentatie</a>
         voor meer informatie.
     demand_buildings_lighting:
@@ -93,22 +93,22 @@ nl:
       title: Introductie
       short_description:
       description: |
-        Veel regio's hebben te maken met energiestromen die niet geproduceerd of verbruikt worden 
-        binnen het lokale energiesysteem maar alleen worden doorgevoerd naar het achterland. 
-        Zulke energiestromen worden <b>transitstromen</b> of doorvoerstromen genoemd. Een voorbeeld 
-        van zo'n transitstroom is de import van olie via de haven en de daaropvolgende export via 
+        Veel regio's hebben te maken met energiestromen die niet geproduceerd of verbruikt worden
+        binnen het lokale energiesysteem maar alleen worden doorgevoerd naar het achterland.
+        Zulke energiestromen worden <b>transitstromen</b> of doorvoerstromen genoemd. Een voorbeeld
+        van zo'n transitstroom is de import van olie via de haven en de daaropvolgende export via
         lokale pijpleidingen naar het achterland, zonder dat de olie onderweg wordt verbruikt.
         <br /><br />
-        Deze stromen kunnen bijvoorbeeld voortvloeien uit contractuele verplichtingen om bepaalde 
-        hoeveelheden energie te exporteren naar naastgelegen gebieden, of ze zijn enkel op doorvoer, 
+        Deze stromen kunnen bijvoorbeeld voortvloeien uit contractuele verplichtingen om bepaalde
+        hoeveelheden energie te exporteren naar naastgelegen gebieden, of ze zijn enkel op doorvoer,
         bijvoorbeeld van een haven naar het achterland.
     demand_export_energy:
       title: Exportvolumes per drager
       short_description:
       description: |
-        Om transitstromen te modelleren in je scenario, kun je de <i>inflexibele</i> exportvolumes 
-        van verschillende energiedragers instellen met de schuifjes hieronder. Het instellen van zo'n 
-        exportstroom dwingt ook een vraag naar import af in je scenario zodat het energiesysteem in 
+        Om transitstromen te modelleren in je scenario, kun je de <i>inflexibele</i> exportvolumes
+        van verschillende energiedragers instellen met de schuifjes hieronder. Het instellen van zo'n
+        exportstroom dwingt ook een vraag naar import af in je scenario zodat het energiesysteem in
         balans blijft.
     demand_export_energy_transit_flows:
       title: Transitstromen
@@ -136,8 +136,8 @@ nl:
       title: Overzicht
       short_description:
       description: |
-        De bevolking en woningvoorraad zijn belangrijke factoren die invloed hebben op de totale vraag 
-        van huishoudens. De vraag is verdeeld in toepassingen: ruimteverwarming en warm water, 
+        De bevolking en woningvoorraad zijn belangrijke factoren die invloed hebben op de totale vraag
+        van huishoudens. De vraag is verdeeld in toepassingen: ruimteverwarming en warm water,
         koeling, koken, apparaten en verlichting.
     demand_households_appliances:
       title: Apparaten
@@ -171,23 +171,23 @@ nl:
       short_description:
       description: |
         Hoe zullen huishoudens verwarmd worden en hun warm water maken? Hoe technologieën
-        worden verdeeld over de verschillende woningtypes en bouwjaarklasses wordt bepaald 
+        worden verdeeld over de verschillende woningtypes en bouwjaarklasses wordt bepaald
         in de sectie
         <a href="/scenario/demand/households_heating_order/merit-order">
-        Merit order</a>. Het resultaat van deze verdeling is te zien in 
+        Merit order</a>. Het resultaat van deze verdeling is te zien in
         <a href="#" class="open_chart" data-chart-key="residential_heating_technologies" data-chart-location="side">
         deze grafiek</a>.
-        Ga naar de 
+        Ga naar de
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
         voor meer informatie.
     demand_households_insulation:
       title: Warmtevraag & isolatie
       short_description:
       description: |
-        De energiebehoefte van een woning is afhankelijk van gebouwkenmerken, met name 
+        De energiebehoefte van een woning is afhankelijk van gebouwkenmerken, met name
         de mate van isolatie, maar ook andere factoren zoals gedrag en gewenst comfort
-        spelen een rol. De typische warmtevraag voor woningen kan hier worden ingesteld 
-        per woningtype en bouwjaarklasse. Ga naar de 
+        spelen een rol. De typische warmtevraag voor woningen kan hier worden ingesteld
+        per woningtype en bouwjaarklasse. Ga naar de
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
         voor meer informatie.
     demand_households_lighting:
@@ -199,7 +199,7 @@ nl:
       title: Bevolking & woningvoorraad
       short_description:
       description: |
-        Bevolkingen groeien of krimpen in de loop van de tijd. Nieuwe woningen kunnen worden 
+        Bevolkingen groeien of krimpen in de loop van de tijd. Nieuwe woningen kunnen worden
         gebouwd en oude woningen kunnen worden gesloopt.
     demand_households_solar_panels:
       title: Zonnepanelen
@@ -211,33 +211,33 @@ nl:
         data-chart-location="side">deze grafiek</a>.
     demand_households_heating_producers_order:
       title: Inzetvolgorde
-      short_description: 
+      short_description:
       description: |
         In de sectie <a href="/scenario/demand/households/space-heating-and-hot-water">
-        Ruimteverwarming & warm water</a> is de mix van verwarmingstechnologieën ingesteld. 
-        Hoe de technologieën worden toegewezen aan woningen van een specifiek type en bouwjaarklasse 
+        Ruimteverwarming & warm water</a> is de mix van verwarmingstechnologieën ingesteld.
+        Hoe de technologieën worden toegewezen aan woningen van een specifiek type en bouwjaarklasse
         (zie <a href="/scenario/demand/households/population-and-housing-stock">
         Bevolking & woningvoorraad</a>), wordt hier bepaald. </br></br>
-        Er wordt aangenomen dat het de voorkeur van technologieën is om te leveren aan de meest 
-        recent gebouwde woningen. De technologie die vooraan in de inzetvolgorde staat, 
-        heeft als eerste de keuze en zal worden geïnstalleerd in de nieuwste woningen, 
+        Er wordt aangenomen dat het de voorkeur van technologieën is om te leveren aan de meest
+        recent gebouwde woningen. De technologie die vooraan in de inzetvolgorde staat,
+        heeft als eerste de keuze en zal worden geïnstalleerd in de nieuwste woningen,
         doorgaans met de beste isolatie. De laatste technologie in de inzetvolgorde zal
-        dan de oudste woningen voorzien, die doorgaans slecht geïsoleerd zijn. 
+        dan de oudste woningen voorzien, die doorgaans slecht geïsoleerd zijn.
         Zie de <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
         voor meer informatie.
     demand_households_heating_technologies:
       title: Vermogens
-      short_description: 
+      short_description:
       description: |
         In de sectie voor <a href="/scenario/demand/households/space-heating-and-hot-water">
         Ruimteverwarming & warm water</a> is de mix van verwarmingstechnologieën ingesteld.
         De dimensionering van deze technologieën kan hier worden aangepast. </br></br>
         Het kan voorkomen dat het standaard warmtevermogen van een technologie te laag is om
-        aan de vraag van de woning waarin deze is geïnstalleerd te voldoen. Een optie is dan 
+        aan de vraag van de woning waarin deze is geïnstalleerd te voldoen. Een optie is dan
         om de warmtecapaciteit te veranderen en zo de technologie juist te dimensioneren.
         Een andere optie is om te kiezen voor een andere technologie, wat kan door de
         <a href="/scenario/demand/households_heating_order/merit-order">Inzetvolgorde</a> te
-        wijzigen. Zie de 
+        wijzigen. Zie de
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target="_blank">documentatie</a>
         voor meer informatie.
     demand_industry:
@@ -288,13 +288,13 @@ nl:
       title: Kunstmest
       short_description:
       description: |
-        Ammoniak (NH<sub>3</sub>) vormt de basis voor alle op stikstof gebaseerde kunstmest. 
-        De belangrijkste stap in het produceren van ammoniak is het laten reageren van waterstof 
-        met stikstof. Op dit moment wordt de benodigde waterstof lokaal gemaakt door aardgas om 
+        Ammoniak (NH<sub>3</sub>) vormt de basis voor alle op stikstof gebaseerde kunstmest.
+        De belangrijkste stap in het produceren van ammoniak is het laten reageren van waterstof
+        met stikstof. Op dit moment wordt de benodigde waterstof lokaal gemaakt door aardgas om
         te zetten in een stoomreformer (SMR). </br></br>
         In plaats van de lokale productie met een SMR, zou je in de toekomst ook waterstof van
         een centraal waterstofnetwerk kunnen gebruiken. Wellicht wordt het zelfs mogelijk ammoniak
-        van een centrale bron te betrekken, waarmee lokale ammoniakproductie volledig wordt omzeild. 
+        van een centrale bron te betrekken, waarmee lokale ammoniakproductie volledig wordt omzeild.
     demand_industry_chemical_other:
       title: Chemie
       short_description:
@@ -354,14 +354,14 @@ nl:
     demand_other_demand_growth:
       title: Vraagontwikkeling
       short_description: ''
-      description: De ontwikkeling die je hier aangeeft is het gevolg van ontwikkeling van 
+      description: De ontwikkeling die je hier aangeeft is het gevolg van ontwikkeling van
         economie en bevolking. Dit is dus <strong>exclusief</strong> efficiëntieverbeteringen
         en andere technologieën.
     demand_transport_bus_technology:
       title: Technologie bussen
       short_description:
       description: 'Veruit de meeste bussen rijden vandaag de dag op diesel of gas.
-        Hoe zal dit veranderen in de toekomst? In de <a href="/scenario/supply/transport_fuels/road-transport"
+        Hoe zal dit veranderen in de toekomst? In de <a href="/scenario/demand/transport_fuels/road-transport"
         >sectie wegverkeer brandstoffen</a> kun je bepalen op welke brandstofmix bussen
         zullen rijden. '
     demand_transport_bicycle_technology:
@@ -374,7 +374,7 @@ nl:
       description: |
         Gaan we massaal over op auto's die geen fossiele brandstoffen gebruiken?
         Wat gebeurt er als we allemaal overstappen op elektrische auto's? Hier kun
-        je aangeven in wat voor auto's we in de toekomst rijden. In de <a href="/scenario/supply/transport_fuels/road-transport"
+        je aangeven in wat voor auto's we in de toekomst rijden. In de <a href="/scenario/demand/transport_fuels/road-transport"
         >sectie brandstoffen wegverkeer </a> kun je bepalen op welke brandstofmix
         auto's zullen rijden en in de <a href="/scenario/flexibility/flexibility_net_load/demand-response-electric-vehicles"
         >sectie vraagsturing - elektrische auto's</a> kun je aangeven waar auto's
@@ -400,7 +400,7 @@ nl:
       title: Technologie internationale scheepvaart
       short_description:
       description: |
-        Zullen schepen blijven varen op zware stookolie (heavy fuel oil - HFO) of zullen ze overstappen op 
+        Zullen schepen blijven varen op zware stookolie (heavy fuel oil - HFO) of zullen ze overstappen op
         LNG, waterstof, elektriciteit of ammoniak voor internationale scheepvaart?
     demand_transport_international_aviation_technology:
       title: Technologie internationale luchtvaart
@@ -408,7 +408,7 @@ nl:
       description: Voor internationaal vliegverkeer worden vooral grote vliegtuigen
         ingezet die kerosine gebruiken. In de toekomst zou het mogelijk kunnen zijn om ook elektriciteit en waterstof te gebruiken voor luchtvaart.
         Je kunt de kerosine-mix die gebruikt wordt als kerosine-brandstof instellen in de
-        <a href="/scenario/supply/transport_fuels/international-aviation" >brandstoffen
+        <a href="/scenario/demand/transport_fuels/international-aviation" >brandstoffen
         </a>sectie.
     demand_transport_freight_train_technology:
       title: Technologie goederentreinen
@@ -416,7 +416,7 @@ nl:
       description: |
         Welke trein-technologiën zullen voornamelijk gebruikt worden? Elektrische
         treinen zijn schoner en efficiënter dan dieseltreinen, maar hebben wel meer
-        infrastructuur nodig om te kunnen rijden. In de <a href="/scenario/supply/transport_fuels/rail-transport"
+        infrastructuur nodig om te kunnen rijden. In de <a href="/scenario/demand/transport_fuels/rail-transport"
         > brandstoffensectie van treinen</a> kun je aangeven welke brandstoffen dieseltreinen
         zullen gebruiken.
     demand_transport_freight_transport:
@@ -465,7 +465,7 @@ nl:
       short_description: ''
       description: "Welke trein-technologiën zullen voornamelijk gebruikt worden? Elektrische
         treinen zijn schoner en efficiënter dan kolen- of dieseltreinen, maar hebben
-        wel meer infrastructuur nodig om te kunnen rijden. In de <a href=/scenario/supply/transport_fuels/rail-transport
+        wel meer infrastructuur nodig om te kunnen rijden. In de <a href=/scenario/demand/transport_fuels/rail-transport
         > brandstoffensectie van treinen</a> kun je aangeven welke brandstoffen dieseltreinen
         zullen gebruiken."
     demand_transport_tram_technology:
@@ -476,7 +476,7 @@ nl:
       title: Technologie vrachtwagens
       short_description: ''
       description: "Komen er meer trucks die geen fossiele brandstoffen gebruiken?
-        Wat gebeurt er dan met het energiegebruik? In de <a href=/scenario/supply/transport_fuels/road-transport
+        Wat gebeurt er dan met het energiegebruik? In de <a href=/scenario/demand/transport_fuels/road-transport
         >brandstoffensectie van wegverkeer</a> kun je de brandstofmix bepalen."
     demand_transport_domestic_aviation_technology:
       title: Technologie binnenlandse luchtvaart
@@ -487,16 +487,16 @@ nl:
       short_description:
       description: |
         Conventionele binnenvaartschepen zijn typisch uitgerust met (single-fuel) dieselmotoren.
-        Zullen deze worden vervangen door dual- of zelfs multifuel dieselmotoren? Of zal een er 
-        overstap worden gemaakt naar schepen die door compleet andere brandstoffen worden aangedreven, 
+        Zullen deze worden vervangen door dual- of zelfs multifuel dieselmotoren? Of zal een er
+        overstap worden gemaakt naar schepen die door compleet andere brandstoffen worden aangedreven,
         zoals LNG, waterstof, elektriciteit of ammoniak? </br></br>
-        In de <a href="/scenario/supply/transport_fuels/road-transport">transportbrandstoffen</a> sectie
+        In de <a href="/scenario/demand/transport_fuels/road-transport">transportbrandstoffen</a> sectie
         kun je bepalen welke brandstofmix diesel- en LNG-motoren gebruiken.
     demand_transport_van_technology:
       title: Technologie bestelbussen
       short_description:
       description: "Komen er meer bestelbussen die geen fossiele brandstoffen gebruiken?
-        Wat gebeurt er dan met het energiegebruik? In de <a href=/scenario/supply/transport_fuels/road-transport
+        Wat gebeurt er dan met het energiegebruik? In de <a href=/scenario/demand/transport_fuels/road-transport
         >brandstoffensectie van wegverkeer</a> kun je de brandstofmix bepalen."
     demand_agriculture_oil_mix:
       title: Oliemix

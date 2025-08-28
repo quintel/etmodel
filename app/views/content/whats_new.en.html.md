@@ -554,7 +554,7 @@ ___
 # December 2022
 
 ## Bio-ethanol for inland shipping
-Currently, ships for inland waterway transport are often fitted with conventional diesel engines. Advanced multifuel diesel engines are being developed that can run on a range of fuels, including bio-ethanol. You can set the share of diesel engines in *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**. You can then add bio-ethanol by changing the fuel mix of these engines in *Supply → Transport fuels* → **[Domestic navigation](/scenario/supply/transport_fuels/domestic-navigation)**.
+Currently, ships for inland waterway transport are often fitted with conventional diesel engines. Advanced multifuel diesel engines are being developed that can run on a range of fuels, including bio-ethanol. You can set the share of diesel engines in *Demand → Transport* → **[Freight transport](/scenario/demand/transport_freight_transport/domestic-navigation-technology)**. You can then add bio-ethanol by changing the fuel mix of these engines in *Supply → Transport fuels* → **[Domestic navigation](/scenario/demand/transport_fuels/domestic-navigation)**.
 
 -> ![](/assets/pages/whats_new/bio_ethanol_inland_shipping_en.png) <-
 

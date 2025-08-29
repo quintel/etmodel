@@ -56,3 +56,18 @@
   interface_group: lng_shipping_mix
   position: 210
   slide_key: demand_transport_marine_fuels
+
+- key: transport_shipping_mixer_methanol_methanol_share
+  share_group: transport_methanol_ship
+  step_value: 0.1
+  unit: "%"
+  interface_group: methanol_shipping_mix
+  position: 200
+  slide_key: demand_transport_marine_fuels
+- key: transport_shipping_mixer_methanol_biomethanol_share
+  share_group: transport_methanol_ship
+  step_value: 0.1
+  unit: "%"
+  interface_group: methanol_shipping_mix
+  position: 210
+  slide_key: demand_transport_marine_fuels

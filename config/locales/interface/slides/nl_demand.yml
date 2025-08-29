@@ -518,3 +518,47 @@ nl:
       short_description:
       description: |
         Met de onderstaande schuifjes kan de oliemix voor eindgebruik in de industrie worden bepaald.
+    demand_transport_international_aviation:
+      title: Internationale luchtvaart
+      short_description:
+      description: "Hoeveel zal bio-kerosene gebruikt worden in de toekomstige internationale
+        luchtvaart? Hier kan je het aandeel bepalen.\r\n</br></br>\r\n
+        Het is ook mogelijk om synthetische kerosine te produceren, met afgevangen CO<sub>2</sub>,
+        elektriciteit en waterstof. Dit kun je kiezen in
+        <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
+        > de CCUS sectie</a>. "
+    demand_transport_international_shipping:
+      title: Internationale scheepvaart
+      short_description:
+      description: 'De brandstoffen voor internationale scheepvaart hangen direct
+        af van het type motor wat je voor deze schepen hebt gekozen. In de <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
+        >internationale scheepvaart</a> kan je het type motor (HFO of LNG) kiezen.
+        Merk op dat het nog niet mogelijk is om biobrandstoffen in te zetten in deze
+        sector. '
+    demand_transport_marine_fuels:
+      title: Binnenlandse scheepvaart
+      short_description: ''
+      description: |
+        Welke brandstoffen zullen worden gebruikt voor schepen met dieselmotoren en schepen
+        met LNG-motoren? In de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >binnenvaart</a> sectie kun je het aandeel van deze motoren in het totale vrachtvervoer door binnenvaart
+        bepalen.
+    demand_transport_road_transport:
+      title: Wegverkeer
+      short_description:
+      description: |
+        Hoeveel van de gebruikte brandstof voor het wegverkeer komt van
+        hernieuwbare bronnen? Houd rekening met de impact op landgebruik (of zeegebruik)
+        als hiervoor gewassen geteeld moeten worden. Door de wegverkeertechnologieën in de
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">personen-</a>
+        en <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtvervoer</a>
+        aan te passen, kun je bepalen welke motoren en dus welke transportbrandstoffen
+        gebruikt worden.
+    demand_transport_trains:
+      title: Treinverkeer
+      short_description: ''
+      description: Hoeveel van de gebruikte brandstof voor dieseltreinen komt van
+        hernieuwbare bronnen? Vergeet niet dat het telen van gewassen hiervoor deels
+        ten koste gaat van voedselproductie. In de <a href="/scenario/demand/transport_passenger_transport/train-technology"
+        >technologie passagierstreinen</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
+        >technologie goederentreinen</a> kun je de treintechnologie specificeren.

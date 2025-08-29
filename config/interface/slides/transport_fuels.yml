@@ -5,7 +5,7 @@
   sidebar_item_key: transport_fuels
   alt_output_element_key: use_of_transport_fuels
   output_element_key: use_of_transport_fuels
-- general_sub_header: share
+- group_sub_header: share
   key: demand_transport_trains
   position: 2
   sidebar_item_key: transport_fuels
@@ -17,13 +17,18 @@
   sidebar_item_key: transport_fuels
   alt_output_element_key: use_of_transport_fuels
   output_element_key: use_of_transport_fuels
-- general_sub_header: share
+- group_sub_header: share
   key: demand_transport_international_aviation
-  position: 5
+  position: 6
   sidebar_item_key: transport_fuels
   output_element_key: co2_emission_international_transportation
 - key: demand_transport_international_shipping
-  position: 6
+  position: 7
   sidebar_item_key: transport_fuels
   alt_output_element_key: refinery
   output_element_key: co2_emission_international_transportation
+- group_sub_header: share
+  key: demand_transport_domestic_aviation
+  position: 5
+  sidebar_item_key: transport_fuels
+  output_element_key: use_of_transport_fuels

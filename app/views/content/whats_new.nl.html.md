@@ -30,8 +30,9 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Door een bug werden de kosten en de omzet van respectievelijk <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">geïmporteerde en geëxporteerde elektriciteit</a> incorrect berekend. Dit is nu verholpen. Als gevolg van deze bug fix, kunnen de kosten van de drager elektriciteit zijn veranderd in bestaande scenario's.
-
+  * Door een bug werden de kosten en de omzet van respectievelijk <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">geïmporteerde en geëxporteerde elektriciteit</a> incorrect berekend. Dit is nu verholpen. Als gevolg van deze fix, kunnen de kosten van de drager elektriciteit zijn veranderd in bestaande scenario's.
+  * De data-export van <a href="/scenario/data/data_export/specifications-annual-costs" target="_blank">jaarlijkse kosten</a> werkte niet meer door een bug. Deze bug is verholpen.
+  * Door een bug in de <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">aanpasbare uurprofielen</a> voor weergerelateerde profielen (zoals zon-PV en wind), werd een foutmelding gegeven bij het uploaden van een eigen profiel. Dit probleem is verholpen: de weergerelateerde profielen kunnen weer zonder problemen worden geüpload.
 </details>
 
 <details>

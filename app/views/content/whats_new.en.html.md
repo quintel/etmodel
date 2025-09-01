@@ -31,7 +31,8 @@ ___
   <summary>**Bug fixes**</summary>
 
   * Due to a bug, the costs and revenue of respectively <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">imported and exported electricity</a> were calculated incorrectly. This has now been fixed. As a result of this fix, the electricity carrier costs in existing scenarios may have changed.
-
+  * The data download of <a href="/scenario/data/data_export/specifications-annual-costs" target="_blank">annual costs</a> was not working due to an issue. This has been fixed.
+  * Due to an issue in the <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">modifiable profiles</a>, uploading a custom profile for weather-related profiles (such as solar PV and wind) gave an error. This issue has been solved: the weather-related profiles can now be uploaded again without any errors.
 </details>
 
 <details>

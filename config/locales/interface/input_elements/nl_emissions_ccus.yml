@@ -215,27 +215,6 @@ nl:
         Een overzicht van de gebruikte data staat op
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
-    output_of_energy_production_synthetic_kerosene_must_run:
-      title: Synthetische kerosine
-      description: |
-        Met deze schuif geef je aan hoeveel synthetische kerosine er wordt
-        geproduceerd in jouw scenario. Synthetische kerosine wordt gemaakt uit
-        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
-        elektriciteit, groene waterstof en groene CO<sub>2</sub>
-        (bijvoorbeeld via Direct Air Capture) worden gebruikt, is het mogelijk om een CO<sub>2</sub>-neutrale
-        brandstof te maken voor vliegtuigen.
-        <br/><br/>Voor het instellen van deze schuif is het handig om te weten wat de totale
-        vraag en aanbod van kerosine in jouw scenario is. Bekijk hiervoor
-        <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_kerosene_demand_supply\"\r\n>deze</a> grafiek.
-        Een overschot aan kerosineproductie wordt door het ETM automatisch geëxporteerd. Bij een tekort
-        wordt kerosine uit het buitenland gehaald.
-        <br/><br/>
-        De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
-        Deze aanname kun je veranderen bij <a href="/scenario/demand/transport_international_transport/international-transport">
-        Internationaal transport</a>.
-        <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
-        raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
-        kerosine, verklein dan de omvang van <a href="/scenario/demand/industry/refineries">Raffinaderijen</a>.
     capacity_of_energy_production_synthetic_kerosene_dispatchable:    
       title: Synthetische kerosine
       description: |
@@ -265,21 +244,6 @@ nl:
         <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
         raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
         kerosine, verklein dan de omvang van <a href="/scenario/demand/industry/refineries">Raffinaderijen</a>.
-    output_of_energy_production_synthetic_methanol:
-      title: Synthetische methanol
-      description: |
-        Methanol is een van de meest gebruikte grondstoffen in de chemische industrie,
-        bijvoorbeeld voor de productie van plastics en polyester. Daarnaast kan methanol ook
-        als brandstof gebruikt worden. Op dit moment wordt methanol voornamelijk geproduceerd
-        uit aardgas. Het is echter ook mogelijk om synthetische methanol te maken uit
-        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
-        elektriciteit wordt gebruikt, groene waterstof en groene CO<sub>2</sub>
-        (bijvoorbeeld via Direct Air Capture) kan dit productieproces volledig CO<sub>2</sub>-neutraal
-        zijn.<br/><br/>
-        Met deze schuif geef je aan hoeveel synthetische methanol er wordt
-        geproduceerd in jouw scenario. Deze schuif heeft geen invloed op de productie van
-        methanol en andere producten in de conventionele chemiesector. Aannames hierover kun je
-        doen op de <a href="/scenario/demand/industry/chemicals">chemiepagina</a>.<br/>
     demand_of_molecules_other_utilisation_co2:
       title: Overig gebruik
       description: |

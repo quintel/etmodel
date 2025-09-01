@@ -19,6 +19,31 @@ ___
 
 ___
 
+## September 2025
+
+**New features**
+
+* Several sliders that were in the <a href="/scenario/supply/biomass/overview" target="_blank">biomass</a> section have been moved to more intuitive locations in the model, where they actually apply. Specifically:
+  * The use of wood pellets in cyclone ovens can now be set in the <a href="/scenario/demand/industry/steel" target="_blank">steel</a> section.
+  * The sliders that set the oil mix per demand sector have been moved to their respective demand sectors: <a href="/scenario/demand/industry/oil-mix" target="_blank">industry</a>, <a href="/scenario/demand/agriculture/oil-mix" target="_blank">agriculture</a>, <a href="/scenario/demand/households/oil-mix" target="_blank">households</a> and <a href="/scenario/demand/buildings/oil-mix" target="_blank">buildings</a>. Note that for some regions it is not possible to set the oil mix for all four demand sectors.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Due to a bug, the costs and revenue of respectively <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">imported and exported electricity</a> were calculated incorrectly. This has now been fixed. As a result of this fix, the electricity carrier costs in existing scenarios may have changed.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * No relevant changes to inputs have been made.
+
+</details>
+</br>
+
+___
+
 ## August 2025
 
 **New features**

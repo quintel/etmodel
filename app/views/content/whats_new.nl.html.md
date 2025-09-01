@@ -19,6 +19,30 @@ ___
 
 ___
 
+## September 2025
+
+**Nieuwe functies**
+
+* Diverse schuifjes die voorheen in de sectie <a href="/scenario/supply/biomass/overview" target="_blank">biomassa</a> stonden, zijn verplaatst naar meer logische locaties in het model waar deze daadwerkelijk van toepassing zijn. Concreet gaat het om:
+  * Het gebruik van houtpellets in cycloonovens kan nu worden ingesteld in de sectie <a href="/scenario/demand/industry/steel" target="_blank">staal</a>.
+  * De schuifjes voor het instellen van de oliemix per vraagsector zijn verplaatst naar de respectievelijke vraagsectoren: <a href="/scenario/demand/industry/oil-mix" target="_blank">industrie</a>, <a href="/scenario/demand/agriculture/oil-mix" target="_blank">landbouw</a>, <a href="/scenario/demand/households/oil-mix" target="_blank">huishoudens</a> en <a href="/scenario/demand/buildings/oil-mix" target="_blank">gebouwen</a>. Let op: voor sommige gebieden is het niet mogelijk om de oliemix voor alle vier de vraagsectoren in te stellen.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Door een bug werden de kosten en de omzet van respectievelijk <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">geïmporteerde en geëxporteerde elektriciteit</a> incorrect berekend. Dit is nu verholpen. Als gevolg van deze bug fix, kunnen de kosten van de drager elektriciteit zijn veranderd in bestaande scenario's.
+
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * Er zijn geen relevante wijzigingen in inputs.
+</details>
+</br>
+
+___
+
 ## Augustus 2025
 
 **Nieuwe functies**

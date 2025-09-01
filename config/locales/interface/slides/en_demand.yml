@@ -271,17 +271,7 @@ en:
     demand_industry_chemical_refineries:
       title: Refineries
       short_description:
-      description: "Refineries turn crude oil into oil products. These oil products
-        are used as fuel in the transport sector or feedstock in the chemical industry.
-        Refineries make most of their money by selling transport fuels. The demand
-        for these fuels will most probably change as transport technologies change.
-        You can set these technologies in <a href=\"/scenario/demand/transport\" >
-        the transport sector</a>.\r\n<br/><br/>\r\nIn the ETM the output of the refineries
-        is not directly coupled to domestic demand for transport fuels. Potential
-        shortages can be imported and excess production can be exported. This also
-        holds for oil products that are used as feedstock in the chemical industry.
-        Below you can set the growth and efficiency improvements of the refineries
-        separately. Note that the demand for refinery products is set by global markets. "
+      description: " The refinery sector of the ETM can be configured in the <a href=\"/scenario/supply/fuel_production\" > Liquid fuels</a> section."
     demand_industry_chemical_fertilizers:
       title: Fertilizers
       short_description:

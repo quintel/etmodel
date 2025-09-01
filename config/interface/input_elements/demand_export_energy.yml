@@ -60,6 +60,12 @@
   interface_group: oil_products
   position: 55
   slide_key: demand_export_energy
+- key: volume_of_baseload_export_pyrolysis_oil
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: oil_products
+  position: 58
+  slide_key: demand_export_energy  
 
 - key: volume_of_baseload_export_network_gas
   step_value: 0.1
@@ -98,3 +104,41 @@
   interface_group: hydrogen_carriers
   position: 80
   slide_key: demand_export_energy
+
+
+- key: volume_of_baseload_export_bio_ethanol
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: biomass_products
+  position: 100
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_biomethanol
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: biomass_products
+  position: 105
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_bio_kerosene
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: biomass_products
+  position: 110
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_bio_pyrolysis_oil
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: biomass_products
+  position: 115
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_biodiesel
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: biomass_products
+  position: 120
+  slide_key: demand_export_energy
+- key: volume_of_baseload_export_bionaphtha
+  step_value: 0.1
+  unit: "PJ"
+  interface_group: biomass_products
+  position: 125
+  slide_key: demand_export_energy         

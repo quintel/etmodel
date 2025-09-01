@@ -6,21 +6,7 @@
   related_node: molecules_offshore_sequestration_co2
   position: 100
   slide_key: supply_ccus_utilisation_storage
-
-- key: output_of_energy_production_synthetic_kerosene_must_run
-  step_value: 0.1
-  unit: "PJ"
-  interface_group: utilisation
-  related_node: energy_production_synthetic_kerosene_must_run
-  position: 200
-  slide_key: supply_ccus_utilisation_storage
-- key: output_of_energy_production_synthetic_methanol
-  step_value: 0.1
-  unit: "PJ"
-  interface_group: utilisation
-  related_node: energy_production_synthetic_methanol
-  position: 205
-  slide_key: supply_ccus_utilisation_storage
+ 
 - key: demand_of_molecules_other_utilisation_co2
   step_value: 0.1
   unit: "Mton"

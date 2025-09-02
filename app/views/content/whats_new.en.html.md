@@ -19,6 +19,27 @@ ___
 
 ___
 
+## September 2025
+
+**New features**
+
+* Several sliders in the <a href="/scenario/supply/biomass/overview" target="_blank">Biomass</a> section have been moved to more intuitive locations in the model. Specifically:
+  * The use of wood pellets in cyclone ovens for steel production can now be set in the <a href="/scenario/demand/industry/steel" target="_blank">Steel</a> section.
+  * The sliders that set the oil mix per demand sector have been moved to their respective demand sectors: <a href="/scenario/demand/industry/oil-mix" target="_blank">Industry</a>, <a href="/scenario/demand/agriculture/oil-mix" target="_blank">Agriculture</a>, <a href="/scenario/demand/households/oil-mix" target="_blank">Households</a> and <a href="/scenario/demand/buildings/oil-mix" target="_blank">Buildings</a>. Note: for some regions it is not possible to set the oil mix for all demand sectors.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * The costs and revenue of respectively <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">imported and exported electricity</a> were calculated incorrectly. This has now been fixed, which causes the net costs of electricity exchange with neighbouring countries to change for existing scenarios.
+  * The data export of <a href="/scenario/data/data_export/specifications-annual-costs" target="_blank">annual costs</a> was not working due to an issue. This has been fixed.
+  * Due to an issue in the <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">modifiable profiles</a>, uploading a custom profile for weather-related profiles (such as solar PV and wind) gave an error. This issue has been solved: the weather-related profiles can now be uploaded again without any errors.
+
+</details>
+
+</br>
+
+___
+
 ## August 2025
 
 **New features**

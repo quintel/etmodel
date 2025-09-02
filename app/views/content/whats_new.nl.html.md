@@ -19,6 +19,27 @@ ___
 
 ___
 
+## September 2025
+
+**Nieuwe functies**
+
+* Verschillende schuifjes van de sectie <a href="/scenario/supply/biomass/overview" target="_blank">Biomassa</a>, zijn verplaatst naar meer logische locaties in het model. Concreet gaat het om:
+  * Het gebruik van houtpellets in cycloonovens voor staalproductie kan nu worden ingesteld in de sectie <a href="/scenario/demand/industry/steel" target="_blank">Staal</a>.
+  * De schuifjes voor het instellen van de oliemix per vraagsector zijn verplaatst naar de respectievelijke vraagsectoren: <a href="/scenario/demand/industry/oil-mix" target="_blank">Industrie</a>, <a href="/scenario/demand/agriculture/oil-mix" target="_blank">Landbouw</a>, <a href="/scenario/demand/households/oil-mix" target="_blank">Huishoudens</a> en <a href="/scenario/demand/buildings/oil-mix" target="_blank">Gebouwen</a>. Let op: voor sommige regio's is het niet mogelijk om de oliemix voor alle vraagsectoren in te stellen.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * De kosten en de opbrengsten van respectievelijk <a href="/scenario/flexibility/electricity_import_export/electricity-interconnectors" target="_blank">geïmporteerde en geëxporteerde elektriciteit</a> werden incorrect berekend. Dit is nu verholpen, wat als gevolg heeft dat in de bestaande scenario's de netto kosten voor elektriciteitsuitwisseling met buurlanden zijn veranderd.
+  * De data-export van <a href="/scenario/data/data_export/specifications-annual-costs" target="_blank">jaarlijkse kosten</a> werkte niet meer door een bug. Deze bug is verholpen.
+  * Door een bug in de <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">aanpasbare uurprofielen</a> voor weergerelateerde profielen (zoals zon-PV en wind), werd een foutmelding gegeven bij het uploaden van een eigen profiel. Dit probleem is verholpen: de weergerelateerde profielen kunnen weer zonder problemen worden geüpload.
+
+</details>
+
+</br>
+
+___
+
 ## Augustus 2025
 
 **Nieuwe functies**

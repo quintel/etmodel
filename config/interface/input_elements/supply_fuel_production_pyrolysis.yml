@@ -1,12 +1,14 @@
 ---
 - key: output_of_energy_production_pyrolysis_oil
   interface_group: pyrolysis_production
+  related_node: energy_production_pyrolysis_non_biogenic_waste
   step_value: 0.1
   unit: PJ
   position: 100
   slide_key: supply_fuel_production_pyrolysis
 - key: output_of_energy_production_bio_pyrolysis_oil
   interface_group: pyrolysis_production
+  related_node: energy_production_pyrolysis_biogenic_waste
   step_value: 0.1
   unit: PJ
   position: 100
@@ -14,12 +16,14 @@
 
 - key: energy_production_pyrolysis_biogenic_waste_share
   share_group: bio_pyrolysis_oil
+  related_node: energy_production_pyrolysis_biogenic_waste
   interface_group: pyrolysis_biogenic
   step_value: 0.1
   unit: "%"
   position: 200
   slide_key: supply_fuel_production_pyrolysis
 - key: energy_production_pyrolysis_dry_biomass_share
+  related_node: energy_production_pyrolysis_dry_biomass
   share_group: bio_pyrolysis_oil
   interface_group: pyrolysis_biogenic
   step_value: 0.1

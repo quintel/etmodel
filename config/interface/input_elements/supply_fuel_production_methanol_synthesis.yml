@@ -9,6 +9,7 @@
   slide_key: supply_fuel_production_methanol_synthesis
 - key: energy_production_methanol_synthesis_non_biogenic_waste_ccs_share
   share_group: methanol_synthesis
+  related_node: energy_production_methanol_synthesis_non_biogenic_waste_ccs
   interface_group: syngas_share
   step_value: 0.1
   unit: "%"
@@ -16,6 +17,7 @@
   slide_key: supply_fuel_production_methanol_synthesis
 - key: energy_production_methanol_synthesis_biogenic_waste_ccs_share
   share_group: methanol_synthesis
+  related_node: energy_production_methanol_synthesis_biogenic_waste_ccs
   interface_group: syngas_share
   step_value: 0.1
   unit: "%"
@@ -23,6 +25,7 @@
   slide_key: supply_fuel_production_methanol_synthesis
 - key: energy_production_methanol_synthesis_dry_biomass_ccs_share
   share_group: methanol_synthesis
+  related_node: energy_production_methanol_synthesis_dry_biomass_ccs
   interface_group: syngas_share
   step_value: 0.1
   unit: "%"

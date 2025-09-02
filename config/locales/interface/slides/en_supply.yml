@@ -110,10 +110,11 @@ en:
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">Export</a> section.
     supply_ccus_utilisation_storage:
       title: Utilisation and storage of CO<sub>2</sub>
-      description: "Captured CO<sub>2</sub> can be stored under the ground or re-used to produce fuels or (basic) chemicals.
-        Below you can specify how the captured CO<sub>2</sub> in your scenario is used. If more CO<sub>2</sub> is stored or
-        utilised (CO<sub>2</sub> demand) than captured (CO<sub>2</sub> supply), the ETM shows a CO<sub>2</sub> 'deficit'.
-        If more is captured than used, the ETM shows a CO<sub>2</sub> surplus."
+      description: |
+        Captured CO<sub>2</sub> can be stored under the ground or re-used to produce fuels or (basic) chemicals.
+        Below, the amount stored or re-used CO<sub>2</sub> can be set. Go to the section
+        <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        to set processes that use CO<sub>2</sub> to produce transport fuels and chemical feedstock.
     supply_ccus_transport:
       title: Transport of CO<sub>2</sub>
       description: "Below you can specify how captured CO<sub>2</sub> will be transported in the future.

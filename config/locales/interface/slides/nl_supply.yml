@@ -119,10 +119,12 @@ nl:
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">Export</a>.
     supply_ccus_utilisation_storage:
       title: Gebruik en opslag van CO<sub>2</sub>
-      description: "Afgevangen CO<sub>2</sub> kan worden opgeslagen onder de grond of kan worden hergebruikt
-        voor de productie van brandstoffen of chemische (basis)producten. Hieronder kun je aangeven wat er
-        gebeurt met de afgevangen CO<sub>2</sub> in jouw scenario. Als je meer CO<sub>2</sub> afvangt of hergebruikt
-        dan er is afgevangen, laat het ETM een 'tekort' aan CO<sub>2</sub> zien."
+      description: |
+        Afgevangen CO<sub>2</sub> kan worden opgeslagen onder de grond of kan worden hergebruikt
+        voor de productie van brandstoffen of chemische grondstoffen. Stel hieronder in hoeveel CO<sub>2</sub>
+        wordt opgeslagen of hergebruikt voor overig gebruik. Stel in de sectie
+        <a href="/scenario/supply/fuel_production/overview">Vloeibare brandstoffen</a>
+        processen in die CO<sub>2</sub> benutten voor productie van brandstoffen en grondstoffen.
     supply_ccus_transport:
       title: Transport van CO<sub>2</sub>
       description: "Hieronder kun je aangeven op welke manier de afgevangen CO<sub>2</sub> wordt getransporteerd.

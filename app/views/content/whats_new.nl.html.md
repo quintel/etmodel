@@ -863,7 +863,7 @@ De grafiek aan de rechterkant laat alle aanpasbare profielen zien op basis van h
 
 ![](/assets/pages/whats_new/modify_profiles_nl.png)
 
-*Meer weten? Ga dan naar de [Curves](https://docs.energytransitionmodel.com/main/curves) pagina in de documentatie.*
+*Meer weten? Ga dan naar de [Curves](https://docs.energytransitionmodel.com/main/profiles) pagina in de documentatie.*
 
 ## Download grafieken als afbeelding
 

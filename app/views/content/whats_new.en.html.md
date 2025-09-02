@@ -36,12 +36,6 @@ ___
 
 </details>
 
-<details>
-  <summary>**Technical changelog**</summary>
-
-  * No relevant changes to inputs have been made.
-
-</details>
 </br>
 
 ___

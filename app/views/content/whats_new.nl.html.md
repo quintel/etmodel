@@ -36,12 +36,6 @@ ___
 
 </details>
 
-<details>
-  <summary>**Technical changelog**</summary>
-
-  * Er zijn geen relevante wijzigingen in inputs.
-
-</details>
 </br>
 
 ___

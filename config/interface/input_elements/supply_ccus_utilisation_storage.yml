@@ -6,18 +6,10 @@
   related_node: molecules_offshore_sequestration_co2
   position: 100
   slide_key: supply_ccus_utilisation_storage
- 
+
 - key: demand_of_molecules_other_utilisation_co2
   step_value: 0.1
   unit: "Mton"
   interface_group: utilisation
   position: 210
-  slide_key: supply_ccus_utilisation_storage
-
-- key: capacity_of_energy_production_synthetic_kerosene_dispatchable
-  step_value: 1.0
-  unit: "MW"
-  interface_group: utilisation_dispatchable
-  related_node: energy_production_synthetic_kerosene_dispatchable
-  position: 300
   slide_key: supply_ccus_utilisation_storage

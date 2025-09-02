@@ -1,12 +1,12 @@
 ---
 - key: industry_useful_demand_for_chemical_refineries
-  interface_group: fuel_production 
+  interface_group: fuel_production
   step_value: 0.1
   unit: "PJ"
   position: 100
   slide_key: supply_fuel_production_overview
 - key: output_of_energy_production_fischer_tropsch
-  interface_group: fuel_production 
+  interface_group: fuel_production
   step_value: 0.1
   unit: PJ
   position: 110
@@ -46,4 +46,12 @@
   step_value: 0.1
   unit: PJ
   position: 170
+  slide_key: supply_fuel_production_overview
+
+- key: capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable
+  step_value: 1.0
+  unit: "MW"
+  interface_group: utilisation_dispatchable
+  related_node: energy_production_fischer_tropsch_synthetic_dispatchable
+  position: 200
   slide_key: supply_fuel_production_overview

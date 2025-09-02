@@ -33,7 +33,7 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Modifiable profiles</a> of type 'Capacity profile' (such as solar PV and wind profiles) are now downloaded in the same format as they should be uploaded. Previously, a normalised profile was obtained when downloaded, which required a conversion step to transform the profile to the required format in which it needed to be uploaded. This is not needed anymore. Read more about modifiable profiles in the <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentation</a>.
+  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Modifiable profiles</a> of type 'Capacity profile' (such as solar PV and wind profiles) are now downloaded in the same format as they should be uploaded. Previously, a normalised profile was obtained when downloaded, which required a conversion step to transform the profile to the required format in which it needed to be uploaded. This is not needed anymore. Read more about modifiable profiles in the <a href="https://docs.energytransitionmodel.com/main/profiles#uploading-custom-profiles" target="_blank">documentation</a>.
   * For a few Dutch provincial and RES datasets, a minor correction was made in the rounding values in the start year data. The fix might have resulted in very slight changes (if any) in households heat demand in existing scenarios.
 
 </details>
@@ -852,7 +852,7 @@ The chart on the right shows all profiles which you may customise. If you upload
 
 ![](/assets/pages/whats_new/modify_profiles_en.png)
 
-Check out [the Curves documentation](https://docs.energytransitionmodel.com/main/curves) for more information.
+Check out [the Curves documentation](https://docs.energytransitionmodel.com/main/profiles) for more information.
 
 ## Download charts as images
 

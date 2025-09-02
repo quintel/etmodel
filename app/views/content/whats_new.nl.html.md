@@ -33,7 +33,7 @@ ___
 <details>
   <summary>**Bug fixes**</summary>
 
-  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Aanpasbare profielen</a> van het type 'Capaciteitsprofiel' (zoals zon-PV en windprofielen) worden nu in dezelfde format gedownload als waarin ze moeten worden geüpload. Voorheen werd bij het downloaden een genormaliseerd profiel verkregen, waarna een conversiestap benodigd was om het profiel om te zetten naar de juiste uploadformat. Dit is nu niet meer nodig. Lees meer over aanpasbare profielen in de <a href="https://docs.energytransitionmodel.com/main/curves#modifying-profiles" target="_blank">documentatie</a>.
+  * <a href="/scenario/flexibility/curve_upload/upload-curves" target="_blank">Aanpasbare profielen</a> van het type 'Capaciteitsprofiel' (zoals zon-PV en windprofielen) worden nu in dezelfde format gedownload als waarin ze moeten worden geüpload. Voorheen werd bij het downloaden een genormaliseerd profiel verkregen, waarna een conversiestap benodigd was om het profiel om te zetten naar de juiste uploadformat. Dit is nu niet meer nodig. Lees meer over aanpasbare profielen in de <a href="https://docs.energytransitionmodel.com/main/profiles#uploading-custom-profiles" target="_blank">documentatie</a>.
   * Voor enkele Nederlandse provinciale en RES-regio datasets is een correctie gedaan in de afronding van waarden in het startjaar. Deze correctie kan resulteren in zeer kleine veranderingen in de warmtevraag bij huishoudens in bestaande scenario's.
 
 </details>
@@ -842,7 +842,7 @@ De grafiek aan de rechterkant laat alle aanpasbare profielen zien op basis van h
 
 ![](/assets/pages/whats_new/modify_profiles_nl.png)
 
-*Meer weten? Ga dan naar de [Curves](https://docs.energytransitionmodel.com/main/curves) pagina in de documentatie.*
+*Meer weten? Ga dan naar de [Curves](https://docs.energytransitionmodel.com/main/profiles) pagina in de documentatie.*
 
 ## Download grafieken als afbeelding
 

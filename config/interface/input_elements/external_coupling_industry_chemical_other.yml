@@ -63,6 +63,14 @@
   share_group: external_coupling_chemical_other_heat
   interface_group: external_coupling_industry_chemical_other_energetic
   coupling_icon: true
+- key: external_coupling_industry_chemical_other_burner_bionaphtha_share
+  step_value: 0.1
+  unit: '%'
+  position: 133
+  slide_key: demand_industry_chemical_other
+  share_group: external_coupling_chemical_other_heat
+  interface_group: external_coupling_industry_chemical_other_energetic
+  coupling_icon: true
 - key: external_coupling_industry_chemical_other_heatpump_water_water_electricity_share
   step_value: 0.1
   unit: '%'

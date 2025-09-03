@@ -17,16 +17,16 @@
   unit: PJ
   position: 120
   slide_key: supply_fuel_production_overview
-- key: output_of_energy_production_pyrolysis_oil_fractionation_pyrolysis_oil
+- key: output_of_energy_production_fractionation_pyrolysis_oil
   interface_group: fuel_production
-  related_node: energy_production_pyrolysis_oil_fractionation_pyrolysis_oil
+  related_node: energy_production_fractionation_pyrolysis_oil
   step_value: 0.1
   unit: PJ
   position: 130
   slide_key: supply_fuel_production_overview
-- key: output_of_energy_production_pyrolysis_oil_fractionation_bio_pyrolysis_oil
+- key: output_of_energy_production_fractionation_bio_pyrolysis_oil
   interface_group: fuel_production
-  related_node: energy_production_pyrolysis_oil_fractionation_bio_pyrolysis_oil
+  related_node: energy_production_fractionation_bio_pyrolysis_oil
   step_value: 0.1
   unit: PJ
   position: 140

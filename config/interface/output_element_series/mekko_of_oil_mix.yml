@@ -180,9 +180,21 @@
   dependent_on:
   output_element_key: mekko_of_oil_mix
   key: final_demand_naphtha_mekko_of_oil_mix
+- label: bio_naphtha
+  color: "#F0D890"
+  order_by: 20
+  group: product
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_bio_naphtha
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_oil_mix
+  key: final_demand_bio_naphtha_mekko_of_oil_mix
 - label: other_oil
   color: "#82685c"
-  order_by: 20
+  order_by: 25
   group: product
   show_at_first: false
   is_target_line: false
@@ -194,7 +206,7 @@
   key: final_demand_other_oil_mekko_of_oil_mix
 - label: other_bio_oil
   color: "#d4aa96"
-  order_by: 25
+  order_by: 30
   group: product
   show_at_first: false
   is_target_line: false

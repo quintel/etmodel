@@ -127,3 +127,27 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: electricity_ships_use_of_final_demand_in_international_transport  
+- label: methanol_ships
+  color: "#FF8C8C"
+  order_by: 320
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: methanol_demand_international_shipping
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_international_transport
+  key: methanol_ships_use_of_final_demand_in_international_transport
+- label: bio_methanol_ships
+  color: "#6AB04C"
+  order_by: 325
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_methanol_demand_international_shipping
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_international_transport
+  key: bio_methanol_ships_use_of_final_demand_in_international_transport

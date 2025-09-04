@@ -95,3 +95,27 @@
   dependent_on: 
   output_element_key: co2_emission_international_transportation
   key: electricity_co2_emission_international_transportation
+- label: methanol
+  color: "#FF8C8C"
+  order_by: 45
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: methanol_co2_emission_international_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: methanol_co2_emission_international_transportation
+- label: bio_methanol
+  color: "#6AB04C"
+  order_by: 50
+  group: 
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: bio_methanol_co2_emission_international_transport
+  is_1990: false
+  dependent_on: 
+  output_element_key: co2_emission_international_transportation
+  key: bio_methanol_co2_emission_international_transportation

@@ -167,3 +167,15 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_chemical_detailed
   key: ammonia_non_energetic_use_of_final_demand_in_industry_chemical_detailed
+- label: methanol_non_energetic
+  color: "#FF8C8C"
+  order_by: 25
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_methanol_in_chemical_industry_non_energetic
+  is_1990: 
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_chemical_detailed
+  key: methanol_non_energetic_use_of_final_demand_in_industry_chemical_detailed

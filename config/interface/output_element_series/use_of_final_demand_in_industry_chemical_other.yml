@@ -179,3 +179,15 @@
   dependent_on: 
   output_element_key: use_of_final_demand_in_industry_chemical_other
   key: hydrogen_non_energetic_other_chemical_use_of_final_demand_in_industry_chemical_other
+- label: methanol_non_energetic
+  color: "#FF8C8C"
+  order_by: 15
+  group: other_chemical
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_methanol_in_other_chemical_industry_non_energetic
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_final_demand_in_industry_chemical_other
+  key: methanol_non_energetic_other_chemical_use_of_final_demand_in_industry_chemical_other

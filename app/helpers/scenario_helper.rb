@@ -118,6 +118,14 @@ module ScenarioHelper
     # rubocop:enable Rails/OutputSafety
   end
 
+  # Public: Returns true if there is a special warning for the scenario
+  #
+  # Current use: dataset 2023 update for Dutch regions. Show banner
+  # when scenario on latest with elegible dataset
+  def warning_for(scenario)
+    %w[GM RES PV].any? { |code| scenario.area_code.start_with?(code) }
+  end
+
   # Public: Renders the HTML for an electricity interconnector price curve
   # upload form.
   #

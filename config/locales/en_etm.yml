@@ -332,6 +332,13 @@ en:
         title: Private
         description: Only you can view or clone this scenario
         invert: Make this scenario public
+    dataset_warning:
+      desc: |
+        This scenario will be affected by the upcoming October update of the municipal datasets to
+        reference year 2023. This may impact outcomes of the scenario. To preserve scenario
+        stability you may want to transfer the scenario to a stable version of the ETM,
+        where the current reference data will remain available.
+      learn_more: Learn more..
     warning:
       message: |
         This scenario was last updated on %{last_updated}, in an earlier version of the model. The

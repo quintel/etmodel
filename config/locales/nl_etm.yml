@@ -333,6 +333,13 @@ nl:
         title: Privé
         description: Alleen jij kan dit scenario bekijken en kopiëren
         invert: Maak dit scenario publiek
+    dataset_warning:
+      desc: |
+        Dit scenario zal worden beïnvloed door de aanstaande update van de gemeentelijke datasets
+        van startjaar 2019 naar 2023 in oktober. Dit kan gevolgen hebben voor de uitkomsten van
+        het scenario. Om de scenario-uitkomsten te behouden kun je het scenario overzetten
+        naar een stabiele versie van het ETM, waar het huidige startjaar beschikbaar blijft.
+      learn_more: Lees verder...
     warning:
       message: |
         Dit scenario is voor het laatst bijgewerkt op %{last_updated}, in een eerdere versie van het model.

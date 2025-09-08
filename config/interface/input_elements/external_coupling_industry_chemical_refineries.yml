@@ -1,4 +1,13 @@
 ---
+- key: external_coupling_energy_chemical_refineries_transformation_external_coupling_node_total_demand
+  step_value: 0.1
+  unit: PJ
+  position: 10
+  slide_key: supply_fuel_production_overview
+  share_group: ''
+  interface_group: fuel_production
+  coupling_icon: true
+
 - key: external_coupling_industry_chemical_refineries_steam_hot_water_share
   step_value: 0.1
   unit: '%'
@@ -67,14 +76,6 @@
   step_value: 0.001
   unit: '%'
   position: 210
-  slide_key: supply_fuel_fossil_refinery
-  share_group: ''
-  interface_group: external_coupling_industry_chemical_refineries_general
-  coupling_icon: true
-- key: external_coupling_energy_chemical_refineries_transformation_external_coupling_node_total_demand
-  step_value: 0.1
-  unit: PJ
-  position: 215
   slide_key: supply_fuel_fossil_refinery
   share_group: ''
   interface_group: external_coupling_industry_chemical_refineries_general

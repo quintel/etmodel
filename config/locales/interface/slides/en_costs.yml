@@ -20,8 +20,11 @@ en:
       description: What will CO<sub>2</sub> storage cost on average?
     costs_co2_utilisation:
       title: CO<sub>2</sub> utilisation
-      short_description: ''
-      description: What will CO<sub>2</sub> utilisation cost on average?
+      short_description:
+      description: |
+        Go to the <a href="/scenario/costs/costs_fuel_production/costs-of-liquid-fuels-production-processes">
+        Liquid fuels</a> section to change the costs of processes that use CO<sub>2</sub> for the production
+        of liquid fuels and feedstock (Fischer-Tropsch and methanol synthesis).
     costs_co2_transport:
       title: CO<sub>2</sub> transport
       short_description: ''

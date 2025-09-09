@@ -78,25 +78,29 @@
 - key: costs_hydrogen
   tab_key: costs
   position: 5
-- key: specs_transport
+- key: costs_fuel_production
   section: costs
   tab_key: costs
   position: 6
-- key: fuel_costs
+- key: specs_transport
   section: costs
   tab_key: costs
   position: 7
-- key: costs_flexibility
+- key: fuel_costs
   section: costs
   tab_key: costs
   position: 8
-- key: co2
+- key: costs_flexibility
   section: costs
   tab_key: costs
   position: 9
-- key: wacc
+- key: co2
+  section: costs
   tab_key: costs
   position: 10
+- key: wacc
+  tab_key: costs
+  position: 11
 - key: electricity
   section: supply
   tab_key: supply

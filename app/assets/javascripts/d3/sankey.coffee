@@ -91,7 +91,7 @@ D3.sankey =
           {left: 'non_biogenic_waste',           right: 'waste_mix',                 gquery: 'sankey_0_to_1_non_biogenic_waste_to_waste_mix',          color: '#BA7D40'},
 
           {left: 'imported_methanol',            right: 'methanol',                  gquery: 'sankey_0_to_1_imported_methanol_to_methanol',            color: '#FF8C8C'},
-          {left: 'biomass_products',             right: 'methanol',                  gquery: 'sankey_0_to_1_biomass_products_to_methanol',             color: '#2ca02c'}
+          {left: 'biomass_products',             right: 'methanol',                  gquery: 'sankey_0_to_1_biomass_products_to_methanol',             color: '#2ca02c'},
           {left: 'natural_gas',                  right: 'methanol',                  gquery: 'sankey_0_to_1_natural_gas_to_methanol',                  color: '#7f7f7f'},
           {left: 'not_defined',                  right: 'methanol',                  gquery: 'sankey_0_to_1_not_defined_to_methanol',                  color: '#DCDCDC'},
 
@@ -936,108 +936,268 @@ D3.sankey =
           #{left: 'geo_ambient',                   right: 'other',            gquery: 'geo_ambient_to_other_in_sankey', color: '#2ca02c'},
 
         ]
+
+
     refinery:
       data:
         nodes: [
-          {id: 'oil_import',                      column: 0, label: 'oil_import',                color: '#854321'},
-          {id: 'extraction',                      column: 0, label: 'extraction',                color: '#854321'},
-          {id: 'heat_input',                      column: 0, label: 'heat_input',                color: '#d62728'},
-          {id: 'fuel_import',                     column: 0, label: 'fuel_import',               color: '#854321'},
-          {id: 'non_oil_input',                   column: 0, label: 'non_oil_input',             color: '#ff7f0e'}
-          {id: 'refinery',                        column: 1, label: 'refinery',                  color: '#854321'},
-          {id: 'chemical_fertilizer',             column: 1, label: 'chemical_fertilizer',       color: '#000000'},
-          {id: 'synthetic_production',            column: 1, label: 'synthetic_production',      color: '#BFEFFF'},
-          {id: 'distribution_diesel',             column: 2, label: 'distribution_diesel',       color: '#854321'},
-          {id: 'distribution_gasoline',           column: 2, label: 'distribution_gasoline',     color: '#8B0000'},
-          {id: 'distribution_lpg',                column: 2, label: 'distribution_lpg',          color: '#CCCCCC'},
-          {id: 'distribution_hfo',                column: 2, label: 'distribution_hfo',          color: '#BA7D40'},
-          {id: 'distribution_kerosene',           column: 2, label: 'distribution_kerosene',     color: '#BFEFFF'},
-          {id: 'distribution_naphtha',            column: 2, label: 'distribution_naphtha',      color: '#F3CA4E'},
-          {id: 'distribution_oil_products',       column: 2, label: 'distribution_oil_products', color: '#854321'},
-          {id: 'distribution_refinery_gas',       column: 2, label: 'distribution_refinery_gas', color: '#7f7f7f'},
-          {id: 'loss',                            column: 2},
-          {id: 'non_oil_output',                  column: 2, label: 'non_oil_output',            color: '#ff7f0e'},
-          {id: 'households',                      column: 3, label: 'households'},
-          {id: 'buildings',                       column: 3, label: 'buildings'},
-          {id: 'transport',                       column: 3, label: 'transport'},
-          {id: 'bunkers',                         column: 3, label: 'bunkers'},
-          {id: 'energy',                          column: 3, label: 'energy'},
-          {id: 'industry',                        column: 3, label: 'industry'},
-          {id: 'agriculture',                     column: 3, label: 'agriculture'},
-          {id: 'export',                          column: 3, label: 'export'}
+          # INPUT SOURCES (Column 0)
+          {id: 'crude_oil',                       column: 0, label: 'crude_oil',                 color: '#8B4513'},        # Brown - fossil
+          {id: 'hydrogen',                        column: 0, label: 'hydrogen',                  color: '#87CEEB'},        # Light blue - renewable
+          {id: 'electricity',                     column: 0, label: 'electricity',               color: '#1f77b4'},        # Blue - renewable
+          {id: 'dry_biomass',                     column: 0, label: 'dry_biomass',               color: '#228B22'},        # Forest green - biogenic
+          {id: 'biogenic_waste',                  column: 0, label: 'biogenic_waste',            color: '#32CD32'},        # Lime green - biogenic
+          {id: 'non_biogenic_waste',              column: 0, label: 'non_biogenic_waste',        color: '#A0522D'},        # Saddle brown - fossil
+          {id: 'oily_biomass',                    column: 0, label: 'oily_biomass',              color: '#3CB371'},        # Medium sea green - biogenic
+          {id: 'wet_biomass',                     column: 0, label: 'wet_biomass',               color: '#2E8B57'},        # Sea green - biogenic
+          {id: 'fuel_import',                     column: 0, label: 'fuel_import',               color: '#A0522D'},        # Saddle brown - fossil
+          {id: 'biofuel_import',                  column: 0, label: 'biofuel_import',            color: '#90EE90'},        # Light green - biogenic
+          {id: 'non_oil_input',                   column: 0, label: 'non_oil_input',             color: '#D3D3D3'},        # Light grey - neutral
+
+          # PROCESSING PATHWAYS (Column 1)
+          {id: 'fossil_refinery',                 column: 1, label: 'fossil_refinery',           color: '#8B4513'},        # Brown - fossil processing
+          {id: 'chemical_fertilizer',             column: 1, label: 'chemical_fertilizer',       color: '#000000'},        # Forest green - biogenic processing
+          {id: 'fischer_tropsch',                 column: 1, label: 'fischer_tropsch',           color: '#696969'},        # Dim grey - mixed processing
+          {id: 'methanol_synthesis',              column: 1, label: 'methanol_synthesis',        color: '#708090'},        # Slate grey - mixed processing
+          {id: 'pyrolysis',                       column: 1, label: 'pyrolysis',                 color: '#556B2F'},        # Dark olive green - biomass processing
+          {id: 'hvo_biodiesel',                   column: 1, label: 'hvo_biodiesel',             color: '#2E8B57'},        # Sea green - biogenic processing
+          {id: 'hvo_bio_kerosene',                column: 1, label: 'hvo_bio_kerosene',          color: '#2E8B57'},        # Sea green - biogenic processing
+          {id: 'bio_ethanol_production',          column: 1, label: 'bio_ethanol_production',    color: '#228B22'},        # Forest green - biogenic processing
+
+          # Process pathways part 2 (Column 2)
+          #{id: 'pyrolysis_fractionation',         column: 2, label: 'pyrolysis fractionation',   color: '#8B008B'},
+
+          
+          # FUEL PRODUCTS (Column 2)
+          {id: 'diesel',                          column: 2, label: 'diesel',                    color: '#8B4513'},        # Brown - fossil fuel
+          {id: 'gasoline',                        column: 2, label: 'gasoline',                  color: '#A0522D'},        # Saddle brown - fossil fuel
+          {id: 'oil_products',                    column: 2, label: 'oil_products',              color: '#8B4513'},        # Brown - fossil fuel
+          {id: 'lpg',                             column: 2, label: 'lpg',                       color: '#CD853F'},        # Peru brown - fossil fuel
+          {id: 'kerosene',                        column: 2, label: 'kerosene',                  color: '#D2691E'},        # Chocolate brown - fossil fuel
+          {id: 'hfo',                             column: 2, label: 'hfo',                       color: '#8B7355'},        # Khaki brown - fossil fuel
+          {id: 'naphtha',                         column: 2, label: 'naphtha',                   color: '#B8860B'},        # Dark goldenrod brown - fossil fuel
+          {id: 'methanol',                        column: 2, label: 'methanol',                  color: '#A0522D'},        # Saddle brown - fossil fuel
+          {id: 'biodiesel',                       column: 2, label: 'biodiesel',                 color: '#9ACD32'},        # Yellow green - biogenic fuel
+          {id: 'bionaphtha',                      column: 2, label: 'bionaphtha',                color: '#3CB371'},        # Medium sea green - biogenic fuel
+          {id: 'bio_kerosene',                    column: 2, label: 'bio_kerosene',              color: '#32CD32'},        # Lime green - biogenic fuel
+          {id: 'biomethanol',                     column: 2, label: 'biomethanol',               color: '#228B22'},        # Forest green - biogenic fuel
+          {id: 'bio_ethanol',                     column: 2, label: 'bio_ethanol',               color: '#90EE90'},        # Light green - biogenic fuel
+          {id: 'losses',                          column: 2, label: 'losses',                    color: '#808080'},        # Grey - neutral
+          {id: 'non_oil_output',                  column: 2, label: 'non_oil_output',            color: '#708090'},        # Slate grey - neutral
+          
+          # END USES (Column 3) - Add all the missing nodes
+          {id: 'households',                      column: 3, label: 'households',                color: '#4169E1'},
+          {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#ADD8E6'},
+          {id: 'transport',                       column: 3, label: 'transport',                 color: '#DC143C'},
+          {id: 'bunkers',                         column: 3, label: 'bunkers',                   color: '#8B4513'},
+          {id: 'agriculture',                     column: 3, label: 'agriculture',               color: '#FFD700'},
+          {id: 'industry',                        column: 3, label: 'industry',                  color: '#A9A9A9'},
+          {id: 'energy',                          column: 3, label: 'energy',                    color: '#416B86'},
+          {id: 'export',                          column: 3, label: 'export',                    color: '#708090'}
         ]
         links: [
-          {left: 'oil_import',                             right: 'refinery',                          gquery: 'crude_oil_import_to_refinery_in_sankey', color: '#854321'},
-          {left: 'oil_import',                             right: 'refinery',                          gquery: 'crude_oil_import_to_industry_transformation_chemical_refineries_in_sankey', color: '#854321'},
-          {left: 'extraction',                             right: 'refinery',                          gquery: 'crude_oil_extraction_to_refinery_in_sankey', color: '#854321'},
-          {left: 'extraction',                             right: 'refinery',                          gquery: 'crude_oil_extraction_to_industry_transformation_chemical_refineries_in_sankey', color: '#854321'},
-          {left: 'heat_input',                             right: 'refinery',                          gquery: 'refinery_heat_input_in_sankey', color: '#d62728'},
-          {left: 'heat_input',                             right: 'refinery',                          gquery: 'industry_transformation_chemical_refineries_heat_input_in_sankey', color: '#d62728'},
-          {left: 'non_oil_input',                          right: 'refinery',                          gquery: 'non_oil_input_to_industry_transformation_chemical_refineries_in_sankey', color: '#ff7f0e'},
-          {left: 'refinery',                               right: 'distribution_diesel',               gquery: 'diesel_refinery_to_distribution_in_sankey', color: '#854321'},
-          {left: 'refinery',                               right: 'distribution_gasoline',             gquery: 'gasoline_refinery_to_distribution_in_sankey', color: '#8B0000'},
-          {left: 'refinery',                               right: 'distribution_lpg',                  gquery: 'lpg_refinery_to_distribution_in_sankey', color: '#CCCCCC'},
-          {left: 'refinery',                               right: 'distribution_hfo',                  gquery: 'hfo_refinery_to_distribution_in_sankey', color: '#BA7D40'},
-          {left: 'refinery',                               right: 'distribution_kerosene',             gquery: 'kerosene_refinery_to_distribution_in_sankey', color: '#BFEFFF'},
-          {left: 'refinery',                               right: 'distribution_naphtha',              gquery: 'naphtha_refinery_to_distribution_in_sankey', color: '#F3CA4E'},
-          {left: 'refinery',                               right: 'distribution_oil_products',         gquery: 'oil_products_refinery_to_distribution_in_sankey', color: '#854321'},
-          {left: 'refinery',                               right: 'distribution_refinery_gas',         gquery: 'refinery_gas_refinery_to_distribution_in_sankey', color: '#7f7f7f'},
-          {left: 'refinery',                               right: 'distribution_diesel',               gquery: 'diesel_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#854321'},
-          {left: 'refinery',                               right: 'distribution_gasoline',             gquery: 'gasoline_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#8B0000'},
-          {left: 'refinery',                               right: 'distribution_lpg',                  gquery: 'lpg_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#CCCCCC'},
-          {left: 'refinery',                               right: 'distribution_hfo',                  gquery: 'hfo_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#BA7D40'},
-          {left: 'refinery',                               right: 'distribution_kerosene',             gquery: 'kerosene_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#BFEFFF'},
-          {left: 'refinery',                               right: 'distribution_naphtha',              gquery: 'naphtha_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#F3CA4E'},
-          {left: 'refinery',                               right: 'distribution_refinery_gas',         gquery: 'refinery_gas_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#7f7f7f'},
-          {left: 'refinery',                               right: 'distribution_oil_products',         gquery: 'oil_products_industry_transformation_chemical_refineries_to_distribution_in_sankey', color: '#854321'},
-          {left: 'refinery',                               right: 'non_oil_output',                    gquery: 'industry_transformation_chemical_refineries_to_non_oil_output_in_sankey', color: '#ff7f0e'},
-          {left: 'refinery',                               right: 'loss',                              gquery: 'refinery_loss_in_sankey', color: '#416B86'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_diesel',               gquery: 'diesel_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#854321'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_gasoline',             gquery: 'gasoline_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#8B0000'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_lpg',                  gquery: 'lpg_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#CCCCCC'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_hfo',                  gquery: 'hfo_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#BA7D40'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_kerosene',             gquery: 'kerosene_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#BFEFFF'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_naphtha',              gquery: 'naphtha_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#F3CA4E'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_refinery_gas',         gquery: 'refinery_gas_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#7f7f7f'},
-          {left: 'chemical_fertilizer',                    right: 'distribution_oil_products',         gquery: 'oil_products_industry_transformation_chemical_other_fertilizers_to_distribution_in_sankey', color: '#854321'},
-          {left: 'fuel_import',                            right: 'distribution_diesel',               gquery: 'diesel_import_to_distribution_in_sankey', color: '#854321'},
-          {left: 'fuel_import',                            right: 'distribution_gasoline',             gquery: 'gasoline_import_to_distribution_in_sankey', color: '#8B0000'},
-          {left: 'fuel_import',                            right: 'distribution_lpg',                  gquery: 'lpg_import_to_distribution_in_sankey', color: '#CCCCCC'},
-          {left: 'fuel_import',                            right: 'distribution_hfo',                  gquery: 'hfo_import_to_distribution_in_sankey', color: '#BA7D40'},
-          {left: 'fuel_import',                            right: 'distribution_kerosene',             gquery: 'kerosene_import_to_distribution_in_sankey', color: '#7f7f7f'},
-          {left: 'fuel_import',                            right: 'distribution_naphtha',              gquery: 'naphtha_import_to_distribution_in_sankey', color: '#F3CA4E'},
-          {left: 'fuel_import',                            right: 'distribution_oil_products',         gquery: 'oil_products_import_to_distribution_in_sankey', color: '#854321'},
-          {left: 'synthetic_production',                   right: 'distribution_kerosene',             gquery: 'kerosene_synthetic_to_distribution_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_diesel',                    right: 'households',                        gquery: 'diesel_distribution_to_households_in_sankey', color: '#854321'},
-          {left: 'distribution_diesel',                    right: 'buildings',                         gquery: 'diesel_distribution_to_buildings_in_sankey', color: '#854321'},
-          {left: 'distribution_diesel',                    right: 'agriculture',                       gquery: 'diesel_distribution_to_agriculture_in_sankey', color: '#854321'},
-          {left: 'distribution_diesel',                    right: 'industry',                          gquery: 'diesel_distribution_to_industry_in_sankey', color: '#854321'},
-          {left: 'distribution_diesel',                    right: 'transport',                         gquery: 'diesel_distribution_to_transport_in_sankey', color: '#854321'},
-          {left: 'distribution_diesel',                    right: 'energy',                            gquery: 'diesel_distribution_to_energy_in_sankey', color: '#854321'},
-          {left: 'distribution_diesel',                    right: 'export',                            gquery: 'diesel_distribution_to_export_in_sankey', color: '#854321'},
-          {left: 'distribution_gasoline',                  right: 'transport',                         gquery: 'gasoline_distribution_to_transport_in_sankey', color: '#8B0000'},
-          {left: 'distribution_gasoline',                  right: 'export',                            gquery: 'gasoline_distribution_to_export_in_sankey', color: '#8B0000'},
-          {left: 'distribution_lpg',                       right: 'households',                        gquery: 'lpg_distribution_to_households_in_sankey', color: '#CCCCCC'},
-          {left: 'distribution_lpg',                       right: 'buildings',                         gquery: 'lpg_distribution_to_buildings_in_sankey', color: '#CCCCCC'},
-          {left: 'distribution_lpg',                       right: 'industry',                          gquery: 'lpg_distribution_to_industry_in_sankey', color: '#CCCCCC'},
-          {left: 'distribution_lpg',                       right: 'agriculture',                       gquery: 'lpg_distribution_to_agriculture_in_sankey', color: '#CCCCCC'},
-          {left: 'distribution_lpg',                       right: 'transport',                         gquery: 'lpg_distribution_to_transport_in_sankey', color: '#CCCCCC'},
-          {left: 'distribution_lpg',                       right: 'export',                            gquery: 'lpg_distribution_to_export_in_sankey', color: '#CCCCCC'},
-          {left: 'distribution_hfo',                       right: 'transport',                         gquery: 'hfo_distribution_to_transport_in_sankey', color: '#BA7D40'},
-          {left: 'distribution_hfo',                       right: 'bunkers',                           gquery: 'hfo_distribution_to_bunkers_in_sankey', color: '#BA7D40'},
-          {left: 'distribution_hfo',                       right: 'export',                            gquery: 'hfo_distribution_to_export_in_sankey', color: '#BA7D40'},
-          {left: 'distribution_kerosene',                  right: 'households',                        gquery: 'kerosene_distribution_to_households_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_kerosene',                  right: 'buildings',                         gquery: 'kerosene_distribution_to_buildings_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_kerosene',                  right: 'agriculture',                       gquery: 'kerosene_distribution_to_agriculture_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_kerosene',                  right: 'industry',                          gquery: 'kerosene_distribution_to_industry_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_kerosene',                  right: 'transport',                         gquery: 'kerosene_distribution_to_transport_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_kerosene',                  right: 'bunkers',                           gquery: 'kerosene_distribution_to_bunkers_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_kerosene',                  right: 'export',                            gquery: 'kerosene_distribution_to_export_in_sankey', color: '#BFEFFF'},
-          {left: 'distribution_naphtha',                   right: 'industry',                          gquery: 'naphtha_distribution_to_industry_in_sankey', color: '#F3CA4E'},
-          {left: 'distribution_naphtha',                   right: 'export',                            gquery: 'naphtha_distribution_to_export_in_sankey', color: '#F3CA4E'},
-          {left: 'distribution_oil_products',              right: 'industry',                          gquery: 'oil_products_distribution_to_industry_in_sankey', color: '#854321'},
-          {left: 'distribution_oil_products',              right: 'export',                            gquery: 'oil_products_distribution_to_export_in_sankey', color: '#854321'}
+        # CRUDE OIL TO FOSSIL REFINERY
+          {left: 'crude_oil',                             right: 'fossil_refinery',                   gquery: 'crude_oil_to_fossil_refinery_in_sankey', color: '#8B4513'},
+          {left: 'non_oil_input',                         right: 'fossil_refinery',                   gquery: 'non_oil_input_to_industry_transformation_chemical_refineries_in_sankey', color: '#A0522D'},
+
+
+          # RENEWABLE INPUTS TO FISCHER-TROPSCH
+          {left: 'hydrogen',                              right: 'fischer_tropsch',                   gquery: 'hydrogen_to_fischer_tropsch_in_sankey', color: '#87CEEB'},
+          {left: 'electricity',                           right: 'fischer_tropsch',                   gquery: 'electricity_to_fischer_tropsch_in_sankey', color: '#1f77b4'},
+          {left: 'dry_biomass',                           right: 'fischer_tropsch',                   gquery: 'dry_biomass_to_fischer_tropsch_in_sankey', color: '#228B22'},
+          {left: 'non_biogenic_waste',                    right: 'fischer_tropsch',                   gquery: 'non_biogenic_waste_to_fischer_tropsch_in_sankey', color: '#A0522D'},
+          {left: 'biogenic_waste',                        right: 'fischer_tropsch',                   gquery: 'biogenic_waste_to_fischer_tropsch_in_sankey', color: '#32CD32'},
+
+          #INPUTS TO METHANOL SYNTHESIS
+          {left: 'hydrogen',                              right: 'methanol_synthesis',                gquery: 'hydrogen_to_methanol_synthesis_in_sankey', color: '#87CEEB'},
+          {left: 'electricity',                           right: 'methanol_synthesis',                gquery: 'electricity_to_methanol_synthesis_in_sankey', color: '#1f77b4'},
+          {left: 'dry_biomass',                           right: 'methanol_synthesis',                gquery: 'dry_biomass_to_methanol_synthesis_in_sankey', color: '#228B22'},
+          {left: 'non_biogenic_waste',                    right: 'methanol_synthesis',                gquery: 'non_biogenic_waste_to_methanol_synthesis_in_sankey', color: '#A0522D'},
+          {left: 'biogenic_waste',                        right: 'methanol_synthesis',                gquery: 'biogenic_waste_to_methanol_synthesis_in_sankey', color: '#32CD32'},
+          
+          # BIOMASS INPUTS TO PYROLYSIS
+          #{left: 'dry_biomass',                           right: 'pyrolysis',                         gquery: 'dry_biomass_to_pyrolysis_in_sankey', color: '#228B22'},
+          #{left: 'non_biogenic_waste',                    right: 'pyrolysis',                         gquery: 'non_biogenic_waste_to_pyrolysis_in_sankey', color: '#A0522D'},
+          #{left: 'wet_biomass',                           right: 'pyrolysis',                         gquery: 'wet_biomass_to_pyrolysis_in_sankey', color: '#2E8B57'},
+
+
+          #INPUTS TO HVO biodiesel
+          {left: 'hydrogen',                              right: 'hvo_biodiesel',                       gquery: 'hydrogen_to_hvo_biodiesel_in_sankey', color: '#87CEEB'},
+          {left: 'oily_biomass',                          right: 'hvo_biodiesel',                       gquery: 'oily_biomass_to_hvo_biodiesel_in_sankey', color: '#3CB371'},
+
+          {left: 'hydrogen',                              right: 'hvo_bio_kerosene',                   gquery: 'hydrogen_to_hvo_bio_kerosene_in_sankey', color: '#87CEEB'},
+          {left: 'oily_biomass',                          right: 'hvo_bio_kerosene',                   gquery: 'oily_biomass_to_hvo_bio_kerosene_in_sankey', color: '#3CB371'},
+
+          # WET BIOMASS TO BIOETHANOL PRODUCTION
+          {left: 'wet_biomass',                           right: 'bio_ethanol_production',             gquery: 'wet_biomass_to_bio_ethanol_production_in_sankey', color: '#2E8B57'},
+
+          # HVO TO FISCHER-TROPSCH
+
+          # FOSSIL REFINERY OUTPUTS
+          {left: 'fossil_refinery',                       right: 'diesel',                            gquery: 'fossil_refinery_to_diesel_in_sankey', color: '#8B4513'},
+          {left: 'fossil_refinery',                       right: 'gasoline',                          gquery: 'fossil_refinery_to_gasoline_in_sankey', color: '#A0522D'},
+          {left: 'fossil_refinery',                       right: 'oil_products',                      gquery: 'fossil_refinery_to_oil_products_in_sankey', color: '#8B4513'},
+          {left: 'fossil_refinery',                       right: 'lpg',                               gquery: 'fossil_refinery_to_lpg_in_sankey', color: '#CD853F'},
+          {left: 'fossil_refinery',                       right: 'kerosene',                          gquery: 'fossil_refinery_to_kerosene_in_sankey', color: '#D2691E'},
+          {left: 'fossil_refinery',                       right: 'hfo',                               gquery: 'fossil_refinery_to_hfo_in_sankey', color: '#8B7355'},
+          {left: 'fossil_refinery',                       right: 'naphtha',                           gquery: 'fossil_refinery_to_naphtha_in_sankey', color: '#B8860B'},
+          {left: 'fossil_refinery',                       right: 'bionaphtha',                        gquery: 'fossil_refinery_to_bionaphtha_in_sankey', color: '#B8860B'},
+          {left: 'fossil_refinery',                       right: 'biodiesel',                         gquery: 'fossil_refinery_to_biodiesel_in_sankey', color: '#B8860B'},
+          {left: 'fossil_refinery',                       right: 'bio_kerosene',                      gquery: 'fossil_refinery_to_bio_kerosene_in_sankey', color: '#B8860B'},
+          {left: 'fossil_refinery',                       right: 'methanol',                          gquery: 'fossil_refinery_to_methanol_in_sankey', color: '#B8860B'},
+          {left: 'fossil_refinery',                       right: 'losses',                            gquery: 'fossil_refinery_to_loss_in_sankey', color: '#808080'},
+          {left: 'fossil_refinery',                       right: 'non_oil_output',                    gquery: 'fossil_refinery_to_non_oil_output_in_sankey', color: '#708090'},
+
+
+          {left: 'chemical_fertilizer',                  right: 'diesel',                            gquery: 'fertilizers_chemical_to_diesel_in_sankey', color: '#8B4513'},
+          {left: 'chemical_fertilizer',                  right: 'gasoline',                          gquery: 'fertilizers_chemical_to_gasoline_in_sankey', color: '#A0522D'},
+          {left: 'chemical_fertilizer',                  right: 'oil_products',                      gquery: 'fertilizers_chemical_to_oil_products_in_sankey', color: '#8B4513'},
+          {left: 'chemical_fertilizer',                  right: 'lpg',                               gquery: 'fertilizers_chemical_to_lpg_in_sankey', color: '#CD853F'},
+          {left: 'chemical_fertilizer',                  right: 'kerosene',                          gquery: 'fertilizers_chemical_to_kerosene_in_sankey', color: '#D2691E'},
+          {left: 'chemical_fertilizer',                  right: 'hfo',                               gquery: 'fertilizers_chemical_to_hfo_in_sankey', color: '#8B7355'},
+          {left: 'chemical_fertilizer',                  right: 'naphtha',                           gquery: 'fertilizers_chemical_to_naphtha_in_sankey', color: '#B8860B'},
+          {left: 'chemical_fertilizer',                  right: 'bionaphtha',                        gquery: 'fertilizers_chemical_to_bionaphtha_in_sankey', color: '#B8860B'},
+          {left: 'chemical_fertilizer',                  right: 'biodiesel',                         gquery: 'fertilizers_chemical_to_biodiesel_in_sankey', color: '#B8860B'},
+          {left: 'chemical_fertilizer',                  right: 'bio_kerosene',                      gquery: 'fertilizers_chemical_to_bio_kerosene_in_sankey', color: '#B8860B'},
+          {left: 'chemical_fertilizer',                  right: 'methanol',                          gquery: 'fertilizers_chemical_to_methanol_in_sankey', color: '#B8860B'},
+          {left: 'chemical_fertilizer',                  right: 'losses',                            gquery: 'fertilizers_chemical_to_loss_in_sankey', color: '#808080'},
+          {left: 'chemical_fertilizer',                  right: 'non_oil_output',                    gquery: 'fertilizers_chemical_to_non_oil_output_in_sankey', color: '#708090'},
+
+
+          # FISCHER-TROPSCH OUTPUTS
+          {left: 'fischer_tropsch',                       right: 'diesel',                            gquery: 'fischer_tropsch_to_diesel_in_sankey', color: '#8B4513'},
+          {left: 'fischer_tropsch',                       right: 'kerosene',                          gquery: 'fischer_tropsch_to_kerosene_in_sankey', color: '#D2691E'},
+          {left: 'fischer_tropsch',                       right: 'naphtha',                           gquery: 'fischer_tropsch_to_naphtha_in_sankey', color: '#B8860B'},
+
+          {left: 'fischer_tropsch',                       right: 'biodiesel',                         gquery: 'fischer_tropsch_to_biodiesel_in_sankey', color: '#9ACD32'},
+          {left: 'fischer_tropsch',                       right: 'bio_kerosene',                      gquery: 'fischer_tropsch_to_bio_kerosene_in_sankey', color: '#32CD32'},
+          {left: 'fischer_tropsch',                       right: 'bionaphtha',                        gquery: 'fischer_tropsch_to_bionaphtha_in_sankey', color: '#3CB371'},
+          {left: 'fischer_tropsch',                       right: 'losses',                            gquery: 'fischer_tropsch_to_loss_in_sankey', color: '#808080'},
+
+
+          # METHANOL SYNTHESIS OUTPUTS
+          {left: 'methanol_synthesis',                    right: 'methanol',                          gquery: 'methanol_synthesis_to_methanol_in_sankey', color: '#A0522D'},
+          {left: 'methanol_synthesis',                    right: 'biomethanol',                       gquery: 'methanol_synthesis_to_biomethanol_in_sankey', color: '#228B22'},
+          {left: 'methanol_synthesis',                    right: 'losses',                            gquery: 'methanol_synthesis_to_loss_in_sankey', color: '#808080'},
+
+          # HVO BIODIESEL OUTPUTS
+          {left: 'hvo_biodiesel',                         right: 'bionaphtha',                        gquery: 'hvo_biodiesel_to_bionaphtha_in_sankey', color: '#3CB371'},
+          {left: 'hvo_biodiesel',                         right: 'biodiesel',                         gquery: 'hvo_biodiesel_to_biodiesel_in_sankey', color: '#9ACD32'},
+          {left: 'hvo_biodiesel',                         right: 'losses',                            gquery: 'hvo_biodiesel_to_loss_in_sankey', color: '#808080'},
+
+          # HVO BIO_KEROSENE OUTPUTS
+          {left: 'hvo_bio_kerosene',                      right: 'bionaphtha',                        gquery: 'hvo_bio_kerosene_to_bionaphtha_in_sankey', color: '#3CB371'},
+          {left: 'hvo_bio_kerosene',                      right: 'bio_kerosene',                      gquery: 'hvo_bio_kerosene_to_bio_kerosene_in_sankey', color: '#32CD32'},
+          {left: 'hvo_bio_kerosene',                      right: 'losses',                            gquery: 'hvo_bio_kerosene_to_loss_in_sankey', color: '#808080'},
+
+
+          # PYROLYSIS OUTPUTS
+          #{left: 'pyrolysis',                             right: 'methanol',                         gquery: 'pyrolysis_to_methanol_in_sankey', color: '#A0522D'},
+          #{left: 'pyrolysis',                             right: 'biodiesel',                        gquery: 'pyrolysis_to_biodiesel_in_sankey', color: '#9ACD32'},
+          #{left: 'pyrolysis',                             right: 'bionaphtha',                       gquery: 'pyrolysis_to_bionaphtha_in_sankey', color: '#3CB371'},
+          #{left: 'pyrolysis',                             right: 'losses',                           gquery: 'pyrolysis_to_bionaphtha_in_sankey', color: '#3CB371'},
+          
+
+          # METHANOL SYNTHESIS OUTPUTS
+          {left: 'bio_ethanol_production',                right: 'bio_ethanol',                       gquery: 'bio_ethanol_production_to_bio_ethanol_in_sankey', color: '#90EE90'},
+          {left: 'bio_ethanol_production',                right: 'losses',                            gquery: 'bio_ethanol_production_to_loss_in_sankey', color: '#808080'},
+
+          # DIRECT IMPORTS
+          {left: 'fuel_import',                           right: 'diesel',                            gquery: 'fuel_import_to_diesel_in_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'gasoline',                          gquery: 'fuel_import_to_gasoline_in_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'kerosene',                          gquery: 'fuel_import_to_kerosene_in_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'hfo',                               gquery: 'fuel_import_to_hfo_in_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'lpg',                               gquery: 'fuel_import_to_lpg_in_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'naphtha',                           gquery: 'fuel_import_to_naphtha_in_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'methanol',                          gquery: 'fuel_import_to_methanol_in_sankey', color: '#A0522D'},
+          
+          {left: 'biofuel_import',                        right: 'biodiesel',                         gquery: 'biofuel_import_to_biodiesel_in_sankey', color: '#90EE90'},
+          {left: 'biofuel_import',                        right: 'bio_kerosene',                      gquery: 'biofuel_import_to_bio_kerosene_in_sankey', color: '#90EE90'},
+          {left: 'biofuel_import',                        right: 'bionaphtha',                        gquery: 'biofuel_import_to_bionaphtha_in_sankey', color: '#90EE90'},
+          {left: 'biofuel_import',                        right: 'biomethanol',                       gquery: 'biofuel_import_to_biomethanol_in_sankey', color: '#90EE90'},
+          {left: 'biofuel_import',                        right: 'bio_ethanol',                       gquery: 'biofuel_import_to_bio_ethanol_in_sankey', color: '#90EE90'},
+          
+          # FUEL PRODUCTS TO END USES - DIESEL
+          {left: 'diesel',                                right: 'households',                        gquery: 'diesel_to_households_in_sankey', color: '#8B4513'},
+          {left: 'diesel',                                right: 'buildings',                         gquery: 'diesel_to_buildings_in_sankey', color: '#8B4513'},
+          {left: 'diesel',                                right: 'transport',                         gquery: 'diesel_to_transport_in_sankey', color: '#8B4513'},
+          {left: 'diesel',                                right: 'agriculture',                       gquery: 'diesel_to_agriculture_in_sankey', color: '#8B4513'},
+          {left: 'diesel',                                right: 'industry',                          gquery: 'diesel_to_industry_in_sankey', color: '#8B4513'},
+          {left: 'diesel',                                right: 'energy',                            gquery: 'diesel_to_energy_in_sankey', color: '#8B4513'}, # Gaat dit goed?
+          {left: 'diesel',                                right: 'export',                            gquery: 'diesel_to_export_in_sankey', color: '#8B4513'},
+          
+          # FUEL PRODUCTS TO END USES - GASOLINE
+          {left: 'gasoline',                              right: 'transport',                         gquery: 'gasoline_to_transport_in_sankey', color: '#A0522D'},
+          {left: 'gasoline',                              right: 'export',                            gquery: 'gasoline_to_export_in_sankey', color: '#A0522D'},
+          
+          # FUEL PRODUCTS TO END USES - LPG
+          {left: 'lpg',                                   right: 'households',                        gquery: 'lpg_to_households_in_sankey', color: '#CD853F'},
+          {left: 'lpg',                                   right: 'buildings',                         gquery: 'lpg_to_buildings_in_sankey', color: '#CD853F'},
+          {left: 'lpg',                                   right: 'transport',                         gquery: 'lpg_to_transport_in_sankey', color: '#CD853F'},
+          {left: 'lpg',                                   right: 'agriculture',                       gquery: 'lpg_to_agriculture_in_sankey', color: '#CD853F'},
+          {left: 'lpg',                                   right: 'industry',                          gquery: 'lpg_to_industry_in_sankey', color: '#CD853F'},
+          {left: 'lpg',                                   right: 'export',                            gquery: 'lpg_to_export_in_sankey', color: '#CD853F'},
+          
+          # FUEL PRODUCTS TO END USES - KEROSENE & bio_kerosene
+          {left: 'kerosene',                              right: 'households',                        gquery: 'kerosene_to_households_in_sankey', color: '#D2691E'},
+          {left: 'kerosene',                              right: 'buildings',                         gquery: 'kerosene_to_buildings_in_sankey', color: '#D2691E'},
+          {left: 'kerosene',                              right: 'transport',                         gquery: 'kerosene_to_transport_in_sankey', color: '#D2691E'},
+          {left: 'kerosene',                              right: 'bunkers',                           gquery: 'kerosene_to_bunkers_in_sankey', color: '#D2691E'},
+          {left: 'kerosene',                              right: 'agriculture',                       gquery: 'kerosene_to_agriculture_in_sankey', color: '#D2691E'},
+          {left: 'kerosene',                              right: 'industry',                          gquery: 'kerosene_to_industry_in_sankey', color: '#D2691E'},
+          {left: 'kerosene',                              right: 'export',                            gquery: 'kerosene_to_export_in_sankey', color: '#D2691E'},
+
+          {left: 'bio_kerosene',                          right: 'households',                        gquery: 'bio_kerosene_to_households_in_sankey', color: '#32CD32'},
+          {left: 'bio_kerosene',                          right: 'buildings',                         gquery: 'bio_kerosene_to_buildings_in_sankey', color: '#32CD32'},
+          {left: 'bio_kerosene',                          right: 'transport',                         gquery: 'bio_kerosene_to_transport_in_sankey', color: '#32CD32'},
+          {left: 'bio_kerosene',                          right: 'bunkers',                           gquery: 'bio_kerosene_to_bunkers_in_sankey', color: '#32CD32'},
+          {left: 'bio_kerosene',                          right: 'agriculture',                       gquery: 'bio_kerosene_to_agriculture_in_sankey', color: '#32CD32'},
+          {left: 'bio_kerosene',                          right: 'industry',                          gquery: 'bio_kerosene_to_industry_in_sankey', color: '#32CD32'},
+          {left: 'bio_kerosene',                          right: 'export',                            gquery: 'bio_kerosene_to_export_in_sankey', color: '#32CD32'},
+
+          
+          # FUEL PRODUCTS TO END USES - HFO
+          {left: 'hfo',                                   right: 'transport',                         gquery: 'hfo_to_transport_in_sankey', color: '#8B7355'},
+          {left: 'hfo',                                   right: 'bunkers',                           gquery: 'hfo_to_bunkers_in_sankey', color: '#8B7355'},
+          {left: 'hfo',                                   right: 'export',                            gquery: 'hfo_to_export_in_sankey', color: '#8B7355'},
+          
+          # FUEL PRODUCTS TO END USES - NAPHTHA & BIONAPHTHA
+          {left: 'naphtha',                               right: 'industry',                          gquery: 'naphtha_to_industry_in_sankey', color: '#B8860B'},
+          {left: 'naphtha',                               right: 'export',                            gquery: 'naphtha_to_export_in_sankey', color: '#B8860B'},
+          {left: 'bionaphtha',                            right: 'industry',                          gquery: 'bionaphtha_to_industry_in_sankey', color: '#3CB371'},
+          {left: 'bionaphtha',                            right: 'export',                            gquery: 'bionaphtha_to_export_in_sankey', color: '#3CB371'},
+          
+          # FUEL PRODUCTS TO END USES - BIODIESEL
+          {left: 'biodiesel',                             right: 'transport',                         gquery: 'biodiesel_to_transport_in_sankey', color: '#9ACD32'},
+          {left: 'biodiesel',                             right: 'buildings',                         gquery: 'biodiesel_to_buildings_in_sankey', color: '#9ACD32'},
+          {left: 'biodiesel',                             right: 'households',                        gquery: 'biodiesel_to_households_in_sankey', color: '#9ACD32'},
+          {left: 'biodiesel',                             right: 'agriculture',                       gquery: 'biodiesel_to_agriculture_in_sankey', color: '#9ACD32'},
+          {left: 'biodiesel',                             right: 'industry',                          gquery: 'biodiesel_to_industry_in_sankey', color: '#9ACD32'},
+          {left: 'biodiesel',                             right: 'export',                            gquery: 'biodiesel_to_export_in_sankey', color: '#9ACD32'},
+          
+          # FUEL PRODUCTS TO END USES - METHANOL
+          {left: 'methanol',                              right: 'industry',                          gquery: 'methanol_to_industry_in_sankey', color: '#A0522D'},
+          {left: 'methanol',                              right: 'transport',                         gquery: 'methanol_to_transport_in_sankey', color: '#A0522D'},
+          {left: 'methanol',                              right: 'bunkers',                           gquery: 'methanol_to_bunkers_in_sankey', color: '#A0522D'},
+          {left: 'methanol',                              right: 'export',                            gquery: 'methanol_to_export_in_sankey', color: '#A0522D'},
+
+          {left: 'biomethanol',                           right: 'industry',                          gquery: 'biomethanol_to_industry_in_sankey', color: '#228B22'},
+          {left: 'biomethanol',                           right: 'transport',                         gquery: 'biomethanol_to_transport_in_sankey', color: '#228B22'},
+          {left: 'biomethanol',                           right: 'bunkers',                           gquery: 'biomethanol_to_bunkers_in_sankey', color: '#228B22'},
+          {left: 'biomethanol',                           right: 'export',                            gquery: 'biomethanol_to_export_in_sankey', color: '#228B22'},
+          
+
+
+          # FUEL PRODUCTS TO END USES - OIL PRODUCTS
+          {left: 'oil_products',                          right: 'export',                            gquery: 'oil_products_to_export_in_sankey', color: '#8B4513'},
+
+                    
+          # FUEL PRODUCTS TO END USES - BIO ETHANOL
+          {left: 'bio_ethanol',                           right: 'transport',                         gquery: 'bio_ethanol_to_transport_in_sankey', color: '#90EE90'},
+          {left: 'bio_ethanol',                           right: 'export',                            gquery: 'bio_ethanol_to_export_in_sankey', color: '#90EE90'},
+
         ]
+
     agriculture_sankey:
       data:
         nodes: [

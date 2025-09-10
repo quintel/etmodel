@@ -1354,18 +1354,20 @@ en:
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
     wtp_of_energy_production_synthetic_kerosene_dispatchable:
-      title: Dispatchable synthetic kerosene for industry
+      title: Fischer-Tropsch (from syngas from hydrogen, electricity en CO2)
       short_description:
       description: |
-        Electricity, hydrogen and carbon dioxide can be used to produce synthetic kerosene. In the ETM,
-        capacity of synthetic kerosene production can be set as a flexible demand technology, which means
-        that kerosene is only produced when the willingness to pay for electricity for the production process
+        This slider sets the maximum price the dispatchable technology
+        is willing to pay for electricity required in the production process. </br><br/>
+        Electricity, hydrogen and CO<sub>2</sub> can be used to produce syngas, which can subsequently be
+        used in the Fischer-Tropsch process to produce synthetic transport fuels and chemical feedstock. In the ETM,
+        capacity of this technology can be set as a flexible demand technology, which means
+        that there is only production when the willingness to pay for electricity for the production process
         exceeds the hourly electricity price. </br></br>
-        This slider sets the maximum price the dispatchable synthetic kerosene industry
-        is willing to pay for electricity required in the production process. Note that for this slider to have an effect,
-        capacity of <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">dispatchable synthetic kerosene production</a>
-        needs to be set. </br></br>
-        A number of charts are available to help you determine the effect of the willingness to pay of kersosene: </br></br>
+        Note that for this slider to have an effect,
+        capacity of dispatchable Fischer-Tropsch needs to be set in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section. </br></br>
+        A number of charts are available to help you determine the effect of the willingness to pay: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         The yearly use of electricity consumed by flexible demand technologies</a></li>
         <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">

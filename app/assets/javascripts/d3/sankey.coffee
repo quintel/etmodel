@@ -661,6 +661,8 @@ D3.sankey =
           {id: 'industry_steel',                 column: 0, label: 'industry_steel',              color: '#485460'},
           {id: 'industry_food',                  column: 0, label: 'industry_food',               color: '#A2D679'},
           {id: 'industry_paper',                 column: 0, label: 'industry_paper',              color: '#394C19'},
+          {id: 'fischer_tropsch_capture',        column: 0, label: 'fischer_tropsch_capture',     color: '#2d5016'}, 
+          {id: 'methanol_synthesis_capture',     column: 0, label: 'methanol_synthesis_capture',  color: '#1a2e0b'},                    
           {id: 'industry_external_coupling',     column: 0, label: 'industry_external_coupling',  color: '#3d1d59'},
           {id: 'import_co2_backup',              column: 0, label: 'import_co2_backup',           color: '#FDE97B'},
           {id: 'import_co2_baseload',            column: 0, label: 'import_co2_baseload',         color: '#fff3b0'},
@@ -684,6 +686,8 @@ D3.sankey =
           {left: 'industry_steel',               right: 'captured_co2',               gquery: 'industry_steel_captured_co2_total_in_ccus_sankey', color: '#485460'},
           {left: 'industry_food',                right: 'captured_co2',               gquery: 'industry_food_captured_co2_total_in_ccus_sankey', color: '#A2D679'},
           {left: 'industry_paper',               right: 'captured_co2',               gquery: 'industry_paper_captured_co2_total_in_ccus_sankey', color: '#394C19'},
+          {left: 'fischer_tropsch_capture',      right: 'captured_co2',               gquery: 'fischer_tropsch_captured_co2_total_in_ccus_sankey', color: '#2d5016'},
+          {left: 'methanol_synthesis_capture',   right: 'captured_co2',               gquery: 'methanol_synthesis_captured_co2_total_in_ccus_sankey', color: '#1a2e0b'},
           {left: 'industry_external_coupling',   right: 'captured_co2',               gquery: 'captured_co2_industry_external_coupling_in_ccus_sankey', color: '#3d1d59'},
           {left: 'import_co2_backup',            right: 'captured_co2',               gquery: 'import_captured_co2_backup_in_ccus_sankey', color: '#FDE97B'},
           {left: 'import_co2_baseload',          right: 'captured_co2',               gquery: 'import_captured_co2_baseload_in_ccus_sankey', color: '#fff3b0'},
@@ -691,8 +695,8 @@ D3.sankey =
           {left: 'other_utilisation',            right: 'other_delayed',              gquery: 'captured_co2_other_utilisation_emitted_in_ccus_sankey', color: '#A7A1C5'},
           {left: 'other_utilisation',            right: 'other_indefinitely',         gquery: 'captured_co2_other_utilisation_indefinitely_in_ccus_sankey', color: '#533483'},
           {left: 'captured_co2',                 right: 'offshore_sequestration',     gquery: 'captured_co2_offshore_sequestration_total_in_ccus_sankey', color: '#1f77b4'},
-          {left: 'captured_co2',                 right: 'synthetic_methanol',         gquery: 'captured_co2_synthetic_methanol_total_in_ccus_sankey', color: '#1f77b4'},
-          {left: 'captured_co2',                 right: 'synthetic_kerosene',         gquery: 'captured_co2_synthetic_kerosene_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'synthetic_methanol',         gquery: 'captured_co2_methanol_synthesis_total_in_ccus_sankey', color: '#1f77b4'},
+          {left: 'captured_co2',                 right: 'synthetic_kerosene',         gquery: 'captured_co2_fischer_tropsch_total_in_ccus_sankey', color: '#1f77b4'},
           {left: 'captured_co2',                 right: 'export',                     gquery: 'captured_co2_export_total_in_ccus_sankey', color: '#1f77b4'}
 
        ]

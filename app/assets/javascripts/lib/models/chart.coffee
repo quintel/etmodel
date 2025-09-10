@@ -116,7 +116,7 @@ class @Chart extends Backbone.Model
       when 'scatter'
         if d3_support then D3.scatter.View else ScatterChartView
       when 'sankey'                     then D3.sankey.View
-      when 'refinery'                   then D3.sankey.View
+      when 'liquid_fuels'                   then D3.sankey.View
       when 'target_bar'                 then D3.target_bar.View
       when 'cost_capacity_bar'          then D3.cost_capacity_bar.View
       when 'd3'                         then @d3_view_factory()

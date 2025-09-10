@@ -1,7 +1,7 @@
 ---
 - label: co2_demand_export
   color: "#ff9f43"
-  order_by: 10
+  order_by: 5
   group: demand
   show_at_first: false
   is_target_line: false
@@ -13,7 +13,7 @@
   key: co2_demand_export_for_mekko_mekko_of_co2_demand_supply
 - label: co2_demand_offshore_sequestration
   color: "#416B86"
-  order_by: 20
+  order_by: 10
   group: demand
   show_at_first: false
   is_target_line: false
@@ -23,33 +23,33 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_demand_offshore_sequestration_mekko_of_co2_demand_supply
-- label: co2_demand_synthetic_kerosene
+- label: co2_demand_fischer_tropsch
   color: "#74B9FF"
-  order_by: 30
+  order_by: 15
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: co2_demand_synthetic_kerosene
+  gquery: co2_demand_fischer_tropsch
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
-  key: co2_demand_synthetic_kerosene_mekko_of_co2_demand_supply
-- label: co2_demand_synthetic_methanol
+  key: co2_demand_fischer_tropsch_mekko_of_co2_demand_supply
+- label: co2_demand_methanol_synthesis
   color: "#FF8C8C"
-  order_by: 40
+  order_by: 20
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: co2_demand_synthetic_methanol
+  gquery: co2_demand_methanol_synthesis
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_demand_synthetic_methanol_mekko_of_co2_demand_supply
 - label: co2_demand_other_utilisation_emitted
   color: "#A7A1C5"
-  order_by: 50
+  order_by: 25
   group: demand
   show_at_first: false
   is_target_line: false
@@ -61,7 +61,7 @@
   key: co2_demand_other_utilisation_emitted_supply_mekko_of_co2_demand_supply
 - label: co2_demand_other_utilisation_indefinitely
   color: "#533483"
-  order_by: 60
+  order_by: 30
   group: demand
   show_at_first: false
   is_target_line: false
@@ -86,7 +86,7 @@
   key: co2_supply_direct_air_capture_mekko_of_co2_demand_supply
 - label: co2_supply_energy_hydrogen
   color: "#2e86de"
-  order_by: 110
+  order_by: 105
   group: supply
   show_at_first: false
   is_target_line: false
@@ -98,7 +98,7 @@
   key: co2_supply_energy_hydrogen_mekko_of_co2_demand_supply
 - label: co2_supply_energy_power
   color: "#786FA6"
-  order_by: 120
+  order_by: 110
   group: supply
   show_at_first: false
   is_target_line: false
@@ -110,7 +110,7 @@
   key: co2_supply_energy_power_mekko_of_co2_demand_supply
 - label: co2_supply_import_backup
   color: "#FDE97B"
-  order_by: 130
+  order_by: 115
   group: supply
   show_at_first: false
   is_target_line: false
@@ -122,7 +122,7 @@
   key: co2_supply_import_baseload_mekko_of_co2_demand_supply
 - label: co2_supply_import_baseload
   color: "#fff3b0"
-  order_by: 140
+  order_by: 120
   group: supply
   show_at_first: false
   is_target_line: false
@@ -134,7 +134,7 @@
   key: co2_supply_import_backup_mekko_of_co2_demand_supply
 - label: co2_supply_industry_fertilizers
   color: "#10ac84"
-  order_by: 150
+  order_by: 125
   group: supply
   show_at_first: false
   is_target_line: false
@@ -146,7 +146,7 @@
   key: co2_supply_industry_fertilizers_mekko_of_co2_demand_supply
 - label: co2_supply_industry_food
   color: "#A2D679"
-  order_by: 160
+  order_by: 130
   group: supply
   show_at_first: false
   is_target_line: false
@@ -158,7 +158,7 @@
   key: co2_supply_industry_food_mekko_of_co2_demand_supply
 - label: co2_supply_industry_paper
   color: "#394C19"
-  order_by: 170
+  order_by: 135
   group: supply
   show_at_first: false
   is_target_line: false
@@ -170,7 +170,7 @@
   key: co2_supply_industry_paper_mekko_of_co2_demand_supply
 - label: co2_supply_industry_steel
   color: "#485460"
-  order_by: 180
+  order_by: 140
   group: supply
   show_at_first: false
   is_target_line: false
@@ -182,7 +182,7 @@
   key: co2_supply_industry_steel_mekko_of_co2_demand_supply
 - label: co2_supply_industry_refineries
   color: "#854321"
-  order_by: 190
+  order_by: 145
   group: supply
   show_at_first: false
   is_target_line: false
@@ -194,7 +194,7 @@
   key: co2_supply_industry_refineries_mekko_of_co2_demand_supply
 - label: co2_supply_industry_chemical_other
   color: "#416B86"
-  order_by: 200
+  order_by: 150
   group: supply
   show_at_first: false
   is_target_line: false
@@ -206,7 +206,7 @@
   key: co2_supply_industry_chemical_other_mekko_of_co2_demand_supply
 - label: co2_supply_industry_external_coupling
   color: "#3d1d59"
-  order_by: 210
+  order_by: 155
   group: supply
   show_at_first: false
   is_target_line: false
@@ -216,3 +216,27 @@
   dependent_on:
   output_element_key: mekko_of_co2_demand_supply
   key: co2_supply_industry_external_coupling_mekko_of_co2_demand_supply
+- label: co2_supply_energy_fischer_tropsch
+  color: "#2d5016"
+  order_by: 160
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: co2_supply_energy_fischer_tropsch
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_supply_energy_fischer_tropsch_mekko_of_co2_demand_supply
+- label: co2_supply_energy_methanol_synthesis
+  color: "#1a2e0b"
+  order_by: 165
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: co2_supply_energy_methanol_synthesis
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_co2_demand_supply
+  key: co2_supply_energy_methanol_synthesis_mekko_of_co2_demand_supply

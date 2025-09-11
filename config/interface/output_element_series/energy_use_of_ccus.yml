@@ -11,42 +11,42 @@
   dependent_on:
   output_element_key: energy_use_of_ccus
   key: co2_demand_offshore_sequestration_energy_use_of_ccus
-- label: co2_demand_synthetic_kerosene_must_run_utilisation
+- label: co2_demand_fischer_tropsch_must_run_utilisation
   color: "#74B9FF"
   order_by: 10
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_use_of_synthetic_kerosene_must_run_production
+  gquery: energy_use_of_fischer_tropsch_synthetic_must_run_production
   is_1990: false
   dependent_on:
   output_element_key: energy_use_of_ccus
-  key: co2_demand_synthetic_kerosene_must_run_energy_use_of_ccus
-- label: co2_demand_synthetic_kerosene_dispatchable_utilisation
+  key: co2_demand_fischer_tropsch_must_run_energy_use_of_ccus
+- label: co2_demand_fischer_tropsch_dispatchable_utilisation
   color: "#74ffff"
   order_by: 15
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_use_of_synthetic_kerosene_dispatchable_production
+  gquery: energy_use_of_fischer_tropsch_synthetic_dispatchable_production
   is_1990: false
   dependent_on:
   output_element_key: energy_use_of_ccus
-  key: co2_demand_synthetic_kerosene_dispatchable_energy_use_of_ccus  
-- label: co2_demand_synthetic_methanol_utilisation
+  key: co2_demand_synthetic_kerosene_dispatchable_utilisation_energy_use_of_ccus  
+- label: co2_demand_energy_use_of_methanol_synthesis_production
   color: "#FF8C8C"
   order_by: 20
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_use_of_synthetic_methanol_production
+  gquery: energy_use_of_methanol_synthesis_production
   is_1990: false
   dependent_on:
   output_element_key: energy_use_of_ccus
-  key: co2_demand_synthetic_methanol_energy_use_of_ccus
+  key: co2_demand_energy_use_of_methanol_synthesis_production_energy_use_of_ccus
 - label: co2_supply_direct_air_capture
   color: "#b71540"
   order_by: 100

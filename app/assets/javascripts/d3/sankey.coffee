@@ -947,30 +947,28 @@ D3.sankey =
           {id: 'crude_oil',                       column: 0, label: 'crude_oil',                 color: '#8B4513'},        # Brown - fossil
           {id: 'hydrogen',                        column: 0, label: 'hydrogen',                  color: '#87CEEB'},        # Light blue - renewable
           {id: 'electricity',                     column: 0, label: 'electricity',               color: '#1f77b4'},        # Blue - renewable
-          #{id: 'fuel_import',                     column: 0, label: 'fuel_import',               color: '#A0522D'},        # Saddle brown - fossil
+          {id: 'steam_hot_water_input',           column: 0, label: 'steam_hot_water_input',     color: '#FF4500'},        # Red - energy carrier
+          {id: 'fuel_import',                     column: 0, label: 'fuel_import',               color: '#A0522D'},        # Saddle brown - fossil
           {id: 'non_biogenic_waste',              column: 0, label: 'non_biogenic_waste',        color: '#A0522D'},        # Saddle brown - fossil
           {id: 'biogenic_waste',                  column: 0, label: 'biogenic_waste',            color: '#32CD32'},        # Lime green - biogenic
           {id: 'dry_biomass',                     column: 0, label: 'dry_biomass',               color: '#228B22'},        # Forest green - biogenic
           {id: 'oily_biomass',                    column: 0, label: 'oily_biomass',              color: '#3CB371'},        # Medium sea green - biogenic
           {id: 'wet_biomass',                     column: 0, label: 'wet_biomass',               color: '#2E8B57'},        # Sea green - biogenic
           {id: 'non_oil_input',                   column: 0, label: 'non_oil_input',             color: '#D3D3D3'},        # Light grey - neutral
-          #{id: 'biofuel_import',                  column: 0, label: 'biofuel_import',            color: '#90EE90'},        # Light green - biogenic
+          {id: 'biofuel_import',                  column: 0, label: 'biofuel_import',            color: '#90EE90'},        # Light green - biogenic
 
           # PROCESSING PATHWAYS (Column 1)
           {id: 'fossil_refinery',                 column: 1, label: 'fossil_refinery',           color: '#8B4513'},        # Brown - fossil processing
-          {id: 'chemical_fertilizer',             column: 1, label: 'chemical_fertilizer',       color: '#000000'},        # Forest green - biogenic processing
-          {id: 'fuel_import',                     column: 1, label: 'fuel_import',               color: '#A0522D'},        # Saddle brown - fossil
+          {id: 'chemical_fertilizer',             column: 1, label: 'chemical_fertilizer',       color: '#A0522D'},        # Saddle brown - fossil processing
+          #{id: 'fuel_import',                     column: 1, label: 'fuel_import',               color: '#A0522D'},        # Saddle brown - fossil
           {id: 'fischer_tropsch',                 column: 1, label: 'fischer_tropsch',           color: '#696969'},        # Dim grey - mixed processing
           {id: 'methanol_synthesis',              column: 1, label: 'methanol_synthesis',        color: '#708090'},        # Slate grey - mixed processing
           {id: 'pyrolysis',                       column: 1, label: 'pyrolysis',                 color: '#556B2F'},        # Dark olive green - biomass processing
+          {id: 'pyrolysis_fractionation',         column: 1, label: 'pyrolysis_fractionation',   color: '#556B2F'},        # Dark olive green - biomass processing
           {id: 'hvo_bio_kerosene',                column: 1, label: 'hvo_bio_kerosene',          color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'hvo_biodiesel',                   column: 1, label: 'hvo_biodiesel',             color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'bio_ethanol_production',          column: 1, label: 'bio_ethanol_production',    color: '#228B22'},        # Forest green - biogenic processing
-          {id: 'biofuel_import',                  column: 1, label: 'biofuel_import',            color: '#90EE90'},        # Light green - biogenic
-
-          # Process pathways part 2 (Column 2)
-          {id: 'pyrolysis_fractionation',         column: 2, label: 'pyrolysis_fractionation',   color: '#8B008B'},
-
+          #{id: 'biofuel_import',                  column: 1, label: 'biofuel_import',            color: '#90EE90'},        # Light green - biogenic
 
           # FUEL PRODUCTS (Column 2)
           {id: 'diesel',                          column: 2, label: 'diesel',                    color: '#8B4513'},        # Brown - fossil fuel
@@ -980,17 +978,20 @@ D3.sankey =
           {id: 'kerosene',                        column: 2, label: 'kerosene',                  color: '#D2691E'},        # Chocolate brown - fossil fuel
           {id: 'hfo',                             column: 2, label: 'hfo',                       color: '#8B7355'},        # Khaki brown - fossil fuel
           {id: 'naphtha',                         column: 2, label: 'naphtha',                   color: '#B8860B'},        # Dark goldenrod brown - fossil fuel
-          {id: 'refinery_gas',                    column: 2, label: 'refinery_gas',              color: '#7f7f7f'},        # Dark goldenrod brown - fossil fuel
+          {id: 'refinery_gas',                    column: 2, label: 'refinery_gas',              color: '#BC8F8F'},        # Rosy brown - fossil fuel
+          {id: 'pyrolysis_oil',                   column: 2, label: 'pyrolysis_oil',             color: '#8B7D6B'},        # Dark khaki brown - fossil fuel
           {id: 'methanol',                        column: 2, label: 'methanol',                  color: '#A0522D'},        # Saddle brown - fossil fuel
-          {id: 'biomethanol',                     column: 2, label: 'biomethanol',               color: '#228B22'},        # Forest green - biogenic fue
-          {id: 'bio_kerosene',                    column: 2, label: 'bio_kerosene',              color: '#32CD32'},        # Lime green - biogenic fuell
+          {id: 'biomethanol',                     column: 2, label: 'biomethanol',               color: '#228B22'},        # Forest green - biogenic fuel
+          {id: 'bio_kerosene',                    column: 2, label: 'bio_kerosene',              color: '#32CD32'},        # Lime green - biogenic fuel
           {id: 'biodiesel',                       column: 2, label: 'biodiesel',                 color: '#9ACD32'},        # Yellow green - biogenic fuel
           {id: 'bionaphtha',                      column: 2, label: 'bionaphtha',                color: '#3CB371'},        # Medium sea green - biogenic fuel
           {id: 'bio_ethanol',                     column: 2, label: 'bio_ethanol',               color: '#90EE90'},        # Light green - biogenic fuel
+          {id: 'bio_pyrolysis_oil',               column: 2, label: 'bio_pyrolysis_oil',         color: '#6B8E23'},        # Olive drab green - biogenic fuel
           {id: 'non_oil_output',                  column: 2, label: 'non_oil_output',            color: '#708090'},        # Slate grey - neutral
+          {id: 'steam_hot_water_output',          column: 2, label: 'steam_hot_water_output',    color: '#FF4500'},        # Red - energy carrier
           #{id: 'losses',                          column: 2, label: 'losses',                    color: '#DCDCDC'},        # Grey - neutral
 
-          # END USES (Column 3) - Add all the missing nodes
+          # END USES (Column 3) 
           {id: 'households',                      column: 3, label: 'households',                color: '#117733'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#44AA99'},
           {id: 'agriculture',                     column: 3, label: 'agriculture',               color: '#332288'},
@@ -1004,7 +1005,7 @@ D3.sankey =
         links: [
           # CRUDE OIL TO FOSSIL REFINERY
           {left: 'crude_oil',                             right: 'fossil_refinery',                   gquery: 'crude_oil_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},
-          {left: 'non_oil_input',                         right: 'fossil_refinery',                   gquery: 'non_oil_input_to_industry_transformation_chemical_refineries_in_liquid_fuels_sankey', color: '#A0522D'},
+          {left: 'non_oil_input',                         right: 'fossil_refinery',                   gquery: 'non_oil_input_to_industry_transformation_chemical_refineries_in_liquid_fuels_sankey', color: '#D3D3D3'},
 
           # INPUTS TO FISCHER-TROPSCH
           {left: 'hydrogen',                              right: 'fischer_tropsch',                   gquery: 'hydrogen_to_fischer_tropsch_in_liquid_fuels_sankey', color: '#87CEEB'},
@@ -1035,6 +1036,8 @@ D3.sankey =
           # WET BIOMASS TO BIOETHANOL PRODUCTION
           {left: 'wet_biomass',                           right: 'bio_ethanol_production',             gquery: 'wet_biomass_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#2E8B57'},
 
+          {left: 'hydrogen',                              right: 'pyrolysis_fractionation',            gquery: 'hydrogen_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#87CEEB'},
+          {left: 'steam_hot_water_input',                 right: 'pyrolysis_fractionation',            gquery: 'steam_hot_water_input_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#FF4500'},
 
           # FOSSIL REFINERY OUTPUTS
           {left: 'fossil_refinery',                       right: 'diesel',                            gquery: 'fossil_refinery_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
@@ -1044,7 +1047,7 @@ D3.sankey =
           {left: 'fossil_refinery',                       right: 'kerosene',                          gquery: 'fossil_refinery_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'fossil_refinery',                       right: 'hfo',                               gquery: 'fossil_refinery_to_hfo_in_liquid_fuels_sankey', color: '#8B7355'},
           {left: 'fossil_refinery',                       right: 'naphtha',                           gquery: 'fossil_refinery_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
-          {left: 'fossil_refinery',                       right: 'refinery_gas',                      gquery: 'fossil_refinery_to_refinery_gas_in_liquid_fuels_sankey', color: '#7f7f7f'},
+          {left: 'fossil_refinery',                       right: 'refinery_gas',                      gquery: 'fossil_refinery_to_refinery_gas_in_liquid_fuels_sankey', color: '#BC8F8F'},
           {left: 'fossil_refinery',                       right: 'methanol',                          gquery: 'fossil_refinery_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'fossil_refinery',                       right: 'bio_kerosene',                      gquery: 'fossil_refinery_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'fossil_refinery',                       right: 'biodiesel',                         gquery: 'fossil_refinery_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
@@ -1066,7 +1069,6 @@ D3.sankey =
           {left: 'chemical_fertilizer',                  right: 'losses',                            gquery: 'fertilizers_chemical_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
           {left: 'chemical_fertilizer',                  right: 'non_oil_output',                    gquery: 'fertilizers_chemical_to_non_oil_output_in_liquid_fuels_sankey', color: '#708090'},
 
-
           # FISCHER-TROPSCH OUTPUTS
           {left: 'fischer_tropsch',                       right: 'diesel',                            gquery: 'fischer_tropsch_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'fischer_tropsch',                       right: 'kerosene',                          gquery: 'fischer_tropsch_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
@@ -1076,7 +1078,6 @@ D3.sankey =
           {left: 'fischer_tropsch',                       right: 'biodiesel',                         gquery: 'fischer_tropsch_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
           {left: 'fischer_tropsch',                       right: 'bionaphtha',                        gquery: 'fischer_tropsch_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
           {left: 'fischer_tropsch',                       right: 'losses',                            gquery: 'fischer_tropsch_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
-
 
           # METHANOL SYNTHESIS OUTPUTS
           {left: 'methanol_synthesis',                    right: 'methanol',                          gquery: 'methanol_synthesis_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
@@ -1093,14 +1094,20 @@ D3.sankey =
           {left: 'hvo_biodiesel',                         right: 'bionaphtha',                        gquery: 'hvo_biodiesel_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
           {left: 'hvo_biodiesel',                         right: 'losses',                            gquery: 'hvo_biodiesel_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
+          # PYROLYSIS OUTPUTS
+          {left: 'pyrolysis',                             right: 'pyrolysis_oil',                     gquery: 'pyrolysis_to_pyrolysis_oil_in_liquid_fuels_sankey', color: '#8B7D6B'},
+          {left: 'pyrolysis',                             right: 'bio_pyrolysis_oil',                 gquery: 'pyrolysis_to_bio_pyrolysis_oil_in_liquid_fuels_sankey', color: '#6B8E23'},
+          {left: 'pyrolysis',                             right: 'steam_hot_water_output',            gquery: 'pyrolysis_to_steam_hot_water_output_in_liquid_fuels_sankey', color: '#FF4500'},
+          {left: 'pyrolysis',                             right: 'losses',                            gquery: 'pyrolysis_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
+
           # PYROLYSIS AND FRACTIONATION OUTPUTS
-          # {left: 'pyrolysis',                             right: 'methanol',                         gquery: 'pyrolysis_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
-          # {left: 'pyrolysis',                             right: 'biodiesel',                        gquery: 'pyrolysis_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
-          # {left: 'pyrolysis',                             right: 'bionaphtha',                       gquery: 'pyrolysis_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
-          # {left: 'pyrolysis',                             right: 'losses',                           gquery: 'pyrolysis_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
+          {left: 'pyrolysis_fractionation',               right: 'diesel',                            gquery: 'pyrolysis_fractionation_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'pyrolysis_fractionation',               right: 'naphtha',                           gquery: 'pyrolysis_fractionation_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
+          {left: 'pyrolysis_fractionation',               right: 'biodiesel',                         gquery: 'pyrolysis_fractionation_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
+          {left: 'pyrolysis_fractionation',               right: 'bionaphtha',                        gquery: 'pyrolysis_fractionation_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
+          {left: 'pyrolysis_fractionation',               right: 'losses',                            gquery: 'pyrolysis_fractionation_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
-
-          # METHANOL SYNTHESIS OUTPUTS
+          # BIO ETHANOL PRODUCTION OUTPUTS
           {left: 'bio_ethanol_production',                right: 'bio_ethanol',                       gquery: 'bio_ethanol_production_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'bio_ethanol_production',                right: 'losses',                            gquery: 'bio_ethanol_production_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
@@ -1112,12 +1119,14 @@ D3.sankey =
           {left: 'fuel_import',                           right: 'hfo',                               gquery: 'fuel_import_to_hfo_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'fuel_import',                           right: 'naphtha',                           gquery: 'fuel_import_to_naphtha_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'fuel_import',                           right: 'methanol',                          gquery: 'fuel_import_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
+          {left: 'fuel_import',                           right: 'pyrolysis_oil',                     gquery: 'fuel_import_to_pyrolysis_oil_in_liquid_fuels_sankey', color: '#A0522D'},
 
           {left: 'biofuel_import',                        right: 'biomethanol',                       gquery: 'biofuel_import_to_biomethanol_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'biofuel_import',                        right: 'bio_kerosene',                      gquery: 'biofuel_import_to_bio_kerosene_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'biofuel_import',                        right: 'biodiesel',                         gquery: 'biofuel_import_to_biodiesel_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'biofuel_import',                        right: 'bionaphtha',                        gquery: 'biofuel_import_to_bionaphtha_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'biofuel_import',                        right: 'bio_ethanol',                       gquery: 'biofuel_import_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
+          {left: 'biofuel_import',                        right: 'bio_pyrolysis_oil',                 gquery: 'biofuel_import_to_bio_pyrolysis_oil_in_liquid_fuels_sankey', color: '#90EE90'},
 
           # FUEL PRODUCTS TO END USES - DIESEL
           {left: 'diesel',                                right: 'households',                        gquery: 'diesel_to_households_in_liquid_fuels_sankey', color: '#8B4513'},
@@ -1149,6 +1158,10 @@ D3.sankey =
           {left: 'kerosene',                              right: 'industry',                          gquery: 'kerosene_to_industry_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'kerosene',                              right: 'export',                            gquery: 'kerosene_to_export_in_liquid_fuels_sankey', color: '#D2691E'},
 
+          
+          {left: 'pyrolysis_oil',                         right: 'pyrolysis_fractionation',           gquery: 'pyrolysis_oil_to_pyrolysis_fractioning_in_liquid_fuels_sankey', color: '#8B7D6B'},
+          {left: 'pyrolysis_oil',                         right: 'export',                            gquery: 'pyrolysis_oil_to_export_in_liquid_fuels_sankey', color: '#8B7D6B'},
+
           {left: 'bio_kerosene',                          right: 'households',                        gquery: 'bio_kerosene_to_households_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'bio_kerosene',                          right: 'buildings',                         gquery: 'bio_kerosene_to_buildings_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'bio_kerosene',                          right: 'agriculture',                       gquery: 'bio_kerosene_to_agriculture_in_liquid_fuels_sankey', color: '#32CD32'},
@@ -1156,7 +1169,6 @@ D3.sankey =
           {left: 'bio_kerosene',                          right: 'bunkers',                           gquery: 'bio_kerosene_to_bunkers_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'bio_kerosene',                          right: 'industry',                          gquery: 'bio_kerosene_to_industry_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'bio_kerosene',                          right: 'export',                            gquery: 'bio_kerosene_to_export_in_liquid_fuels_sankey', color: '#32CD32'},
-
 
           # FUEL PRODUCTS TO END USES - HFO
           {left: 'hfo',                                   right: 'transport',                         gquery: 'hfo_to_transport_in_liquid_fuels_sankey', color: '#8B7355'},
@@ -1188,18 +1200,16 @@ D3.sankey =
           {left: 'biomethanol',                           right: 'industry',                          gquery: 'biomethanol_to_industry_in_liquid_fuels_sankey', color: '#228B22'},
           {left: 'biomethanol',                           right: 'export',                            gquery: 'biomethanol_to_export_in_liquid_fuels_sankey', color: '#228B22'},
 
-
-
+          {left: 'bio_pyrolysis_oil',                     right: 'pyrolysis_fractionation',           gquery: 'bio_pyrolysis_oil_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#6B8E23'},
+          {left: 'bio_pyrolysis_oil',                     right: 'export',                            gquery: 'bio_pyrolysis_oil_to_export_in_liquid_fuels_sankey', color: '#6B8E23'},
           # FUEL PRODUCTS TO END USES - OIL PRODUCTS
           {left: 'oil_products',                          right: 'export',                            gquery: 'oil_products_to_export_in_liquid_fuels_sankey', color: '#8B4513'},
-
 
           # FUEL PRODUCTS TO END USES - BIO ETHANOL
           {left: 'bio_ethanol',                           right: 'transport',                         gquery: 'bio_ethanol_to_transport_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'bio_ethanol',                           right: 'export',                            gquery: 'bio_ethanol_to_export_in_liquid_fuels_sankey', color: '#90EE90'},
 
         ]
-
     agriculture_sankey:
       data:
         nodes: [

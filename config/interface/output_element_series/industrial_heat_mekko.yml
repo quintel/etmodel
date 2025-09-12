@@ -216,3 +216,28 @@
   dependent_on: 
   output_element_key: industrial_heat_mekko
   key: industry_heat_burner_hydrogen_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
+- label: energy_production_bio_pyrolysis_locally_available_steam_hot_water_in_industrial_heat_network_mekko
+  color: "#6B8E23"
+  order_by: 330
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_production_bio_pyrolysis_locally_available_steam_hot_water_in_industrial_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: energy_production_bio_pyrolysis_locally_available_steam_hot_water_in_industrial_heat_network_mekko_supply_industrial_heat_mekko
+- label: energy_production_pyrolysis_locally_available_steam_hot_water_in_industrial_heat_network_mekko
+  color: "#8B7D6B"
+  order_by: 335
+  group: supply
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: energy_production_pyrolysis_locally_available_steam_hot_water_in_industrial_heat_network_mekko
+  is_1990: 
+  dependent_on: 
+  output_element_key: industrial_heat_mekko
+  key: energy_production_pyrolysis_locally_available_steam_hot_water_in_industrial_heat_network_mekko_supply_industrial_heat_mekko  
+

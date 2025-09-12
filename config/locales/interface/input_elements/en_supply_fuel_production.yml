@@ -1,14 +1,40 @@
 ---
 en:
   input_elements:
+    industry_useful_demand_for_chemical_refineries:
+      title: Fossil refinery
+      short_description:
+      description: |
+        This slider sets the annual useful production of fossil refineries.<br/><br/>
+        If there is no fossil refinery in the start year, the output fractions of fossil refinery products
+        are determined based on a refinery archetype.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuel and feedstock flows</a> shows the liquid fuels production and final demand.
     output_of_energy_production_fischer_tropsch:
       title: Fischer-Tropsch from syngas
       short_description:
-      description:
+      description: |
+        This slider sets the annual useful production of liquid fuels and feedstock from Fischer-Tropsch.<br/><br/>
+        The process of Fischer-Tropsch converts syngas (a mixture of mainly CO and hydrogen) into liquid hydrocarbons,
+        such as kerosene and naphtha. Different types of feedstock can be used to produce syngas. Depending on
+        the type of used feedstock, the produced liquid fuels will differ in the extent to which they are synthetic,
+        biogenic or non-biogenic.<br/><br/>
+        In the <a href="/scenario/supply/fuel_production/fischer-tropsch-from-syngas">Fischer-Tropsch</a> section
+        the shares of the different feedstock routes for syngas production for Fischer-Tropsch can be set.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuel and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_methanol_synthesis:
       title: Methanol synthesis from syngas
       short_description:
-      description:
+      description: |
+        This slider sets the annual useful production of methanol from methanol synthesis.<br/><br/>
+        Methanol can be produced by converting syngas (a mixture of mainly CO and hydrogen). Different types of feedstock
+        can be used to produce syngas. Depending on the type of used feedstock, the produced methanol will differ in the
+        extent to which it is synthetic, biogenic or non-biogenic.<br/><br/>
+        In the <a href="/scenario/supply/fuel_production/methanol-synthesis-from-syngas">Methanol synthesis</a> section
+        the shares of the different feedstock routes for syngas production for methanol synthesis can be set.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuel and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_fractionation_pyrolysis_oil:
       title: Fractionation of pyrolysis oil
       short_description:

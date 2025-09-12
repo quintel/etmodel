@@ -1,14 +1,42 @@
 ---
 nl:
   input_elements:
+    industry_useful_demand_for_chemical_refineries:
+      title: Fossiele raffinaderij
+      short_description:
+      description: |
+        Stel hier de nuttige jaarlijkse productie in van fossiele raffinage.<br/><br/>
+        Indien er in het startjaar nog geen fossiele raffinage aanwezig is, worden de outputfracties
+        van fossiele raffinageproducten bepaald op basis van een archetype raffinage.<br/><br/>
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Vloeibare brandstof- en grondstofstromen</a> toont de productie en het finaal eindgebruik van
+        vloeibare brandstoffen.
     output_of_energy_production_fischer_tropsch:
       title: Fischer-Tropsch uit syngas
       short_description:
-      description:
+      description: |
+        Stel hier de nuttige jaarlijkse productie in van vloeibare brandstoffen en grondstoffen uit Fischer-Tropsch.<br/><br/>
+        Het proces van Fischer-Tropsch zet syngas (een mengsel van grotendeels CO en waterstof) om in vloeibare koolwaterstoffen,
+        zoals kerosine en nafta. Verschillende soorten grondstoffen kunnen worden gebruikt om syngas te produceren. Afhankelijk van
+        het type grondstof zullen de geproduceerde producten synthetisch, biogeen of niet-biogeen van aard zijn.<br/><br/>
+        In de sectie <a href="/scenario/supply/fuel_production/fischer-tropsch-from-syngas">Fischer-Tropsch</a> kan het
+        aandeel van de verschillende grondstofroutes voor syngasproductie voor Fischer-Tropsch worden ingesteld.<br/><br/>
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Vloeibare brandstof- en grondstofstromen</a> toont de productie en finaal eindgebruik van
+        vloeibare brandstoffen en grondstoffen.
     output_of_energy_production_methanol_synthesis:
       title: Methanolsynthese uit syngas
       short_description:
-      description:
+      description: |
+        Stel hier de nuttige jaarlijkse productie in van methanol uit methanolsynthese.<br/><br/>
+        Methanol kan wordt geproduceerd door syngas (een mengsel van grotendeels CO en waterstof) om te zetten. Verschillende soorten
+        grondstoffen kunnen worden gebruikt om syngas te produceren. Afhankelijk van
+        het type grondstof zal de geproduceerde methanol synthetisch, biogeen of niet-biogeen van aard zijn.<br/><br/>
+        In de sectie <a href="/scenario/supply/fuel_production/methanol-synthesis-from-syngas">Methanolsynthese</a> kan het
+        aandeel van de verschillende grondstofroutes voor syngasproductie voor methanolsynthese worden ingesteld.<br/><br/>
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Vloeibare brandstof- en grondstofstromen</a> toont de productie en finaal eindgebruik van
+        vloeibare brandstoffen en grondstoffen.
     output_of_energy_production_fractionation_pyrolysis_oil:
       title: Fractionering van pyrolyse-olie
       short_description:

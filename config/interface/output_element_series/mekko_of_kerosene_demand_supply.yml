@@ -1,7 +1,7 @@
 ---
 - label: kerosene_demand_domestic_aviation
   color: "#8B0000"
-  order_by: 5
+  order_by: 10
   group: demand
   show_at_first: false
   is_target_line: false
@@ -11,81 +11,9 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: kerosene_demand_domestic_aviation_mekko_of_kerosene_demand_supply
-- label: kerosene_demand_international_aviation
-  color: "#82589F"
-  order_by: 10
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_demand_international_aviation
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_demand_international_aviation_mekko_of_kerosene_demand_supply
-- label: kerosene_demand_export
-  color: "#CCCCCC"
-  order_by: 15
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_demand_export
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_demand_export_mekko_of_kerosene_demand_supply
-- label: kerosene_demand_agriculture
-  color: "#ff9f43"
-  order_by: 20
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_demand_agriculture
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_demand_agriculture_mekko_of_kerosene_demand_supply
-- label: kerosene_demand_buildings
-  color: "#A7A1C5"
-  order_by: 25
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_demand_buildings
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_demand_buildings_mekko_of_kerosene_demand_supply
-- label: kerosene_demand_industry
-  color: "#2e86de"
-  order_by: 30
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_demand_industry
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_demand_industry_mekko_of_kerosene_demand_supply
-- label: kerosene_demand_households
-  color: "#10ac84"
-  order_by: 35
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_demand_households
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_demand_households_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_demand_domestic_aviation
-  color: "#4A4A4A"
-  order_by: 40
+  color: "#C37F7F"
+  order_by: 20
   group: demand
   show_at_first: false
   is_target_line: false
@@ -95,9 +23,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_domestic_aviation_mekko_of_kerosene_demand_supply
+- label: kerosene_demand_international_aviation
+  color: "#82589F"
+  order_by: 30
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_demand_international_aviation
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_demand_international_aviation_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_demand_international_aviation
-  color: "#6A4C93"
-  order_by: 45
+  color: "#AC8DC1"
+  order_by: 40
   group: demand
   show_at_first: false
   is_target_line: false
@@ -107,21 +47,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_international_aviation_mekko_of_kerosene_demand_supply
-- label: bio_kerosene_demand_export
-  color: "#AAAAAA"
-  order_by: 50
+- label: kerosene_demand_agriculture
+  color: "#ff9f43"
+  order_by: 70
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: bio_kerosene_demand_export
+  gquery: kerosene_demand_agriculture
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
-  key: bio_kerosene_demand_export_mekko_of_kerosene_demand_supply
+  key: kerosene_demand_agriculture_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_demand_agriculture
   color: "#5D7929"
-  order_by: 55
+  order_by: 90
   group: demand
   show_at_first: false
   is_target_line: false
@@ -131,9 +71,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_agriculture_mekko_of_kerosene_demand_supply
+- label: kerosene_demand_buildings
+  color: "#A7A1C5"
+  order_by: 90
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_demand_buildings
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_demand_buildings_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_demand_buildings
   color: "#DFE4EA"
-  order_by: 60
+  order_by: 100
   group: demand
   show_at_first: false
   is_target_line: false
@@ -143,9 +95,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_buildings_mekko_of_kerosene_demand_supply
+- label: kerosene_demand_industry
+  color: "#2e86de"
+  order_by: 110
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_demand_industry
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_demand_industry_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_demand_industry
   color: "#63A1C9"
-  order_by: 65
+  order_by: 120
   group: demand
   show_at_first: false
   is_target_line: false
@@ -155,9 +119,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_industry_mekko_of_kerosene_demand_supply
+- label: kerosene_demand_households
+  color: "#10ac84"
+  order_by: 130
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_demand_households
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_demand_households_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_demand_households
   color: "#5D7929"
-  order_by: 70
+  order_by: 140
   group: demand
   show_at_first: false
   is_target_line: false
@@ -167,9 +143,34 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_households_mekko_of_kerosene_demand_supply
+- label: kerosene_demand_export
+  color: "#CCCCCC"
+  order_by: 150
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_demand_export
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_demand_export_mekko_of_kerosene_demand_supply
+- label: bio_kerosene_demand_export
+  color: "#AAAAAA"
+  order_by: 160
+  group: demand
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_kerosene_demand_export
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: bio_kerosene_demand_export_mekko_of_kerosene_demand_supply
+
 - label: kerosene_supply_fischer_tropsch_dispatchable
   color: "#4682B4"
-  order_by: 100
+  order_by: 200
   group: supply
   show_at_first: false
   is_target_line: false
@@ -181,7 +182,7 @@
   key: kerosene_supply_fischer_tropsch_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_fischer_tropsch_must_run
   color: "#2F4F4F"
-  order_by: 105
+  order_by: 210
   group: supply
   show_at_first: false
   is_target_line: false
@@ -193,7 +194,7 @@
   key: kerosene_supply_fischer_tropsch_must_run_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_fischer_tropsch
   color: "#556B2F"
-  order_by: 115
+  order_by: 220
   group: supply
   show_at_first: false
   is_target_line: false
@@ -205,7 +206,7 @@
   key: bio_kerosene_supply_fischer_tropsch_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_hvo
   color: "#8FBC8F"
-  order_by: 120
+  order_by: 230
   group: supply
   show_at_first: false
   is_target_line: false
@@ -217,7 +218,7 @@
   key: bio_kerosene_supply_hvo_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_import
   color: "#90EE90"
-  order_by: 125
+  order_by: 240
   group: supply
   show_at_first: false
   is_target_line: false
@@ -229,7 +230,7 @@
   key: bio_kerosene_supply_import_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_transformation
   color: "#228B22"
-  order_by: 130
+  order_by: 250
   group: supply
   show_at_first: false
   is_target_line: false
@@ -241,7 +242,7 @@
   key: bio_kerosene_supply_transformation_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_refineries
   color: "#854321"
-  order_by: 135
+  order_by: 260
   group: supply
   show_at_first: false
   is_target_line: false
@@ -253,7 +254,7 @@
   key: kerosene_supply_refineries_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_transformation
   color: "#9A9C9C"
-  order_by: 140
+  order_by: 270
   group: supply
   show_at_first: false
   is_target_line: false
@@ -265,7 +266,7 @@
   key: kerosene_supply_transformation_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_import
   color: "#FDE97B"
-  order_by: 145
+  order_by: 280
   group: supply
   show_at_first: false
   is_target_line: false

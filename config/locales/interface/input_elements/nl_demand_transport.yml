@@ -57,7 +57,7 @@ nl:
       title: Fiets
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de fiets-reizigerskilometers met de reguliere fiets wordt afgelegd.
+        Deze slider bepaalt welk percentage van de fiets-reizigerskilometers met een gewone fiets wordt afgelegd.
     transport_bicycle_using_electricity_share:
       title: E-bike
       short_description:
@@ -82,7 +82,7 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met benzineauto's.</br></br>
-        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van diesel 
+        Ga naar <a href="/scenario/supply/transport_fuels/road-transport">Wegverkeer</a> om de samenstelling van benzine 
         in te stellen.
     transport_car_using_lpg_share:
       title: LPG
@@ -90,8 +90,7 @@ nl:
       description: |
         Deze slider bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met auto's die rijden op 
         Liquefied Petroleum Gas (LPG).</br></br>LPG is een voordeligere en milieuvriendelijkere brandstof dan benzine, 
-        met een lagere CO<sub>2</sub>-uitstoot. Als LPG niet beschikbaar is, schakelen deze voertuigen automatisch over 
-        op benzine als back-upbrandstof.
+        met een lagere CO<sub>2</sub>-uitstoot.
     transport_car_using_compressed_natural_gas_share:
       title: Gas onder druk (CNG)
       short_description: ''
@@ -199,9 +198,7 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met 
-        vloeibaar aardgas (LNG).</br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> 
-        om de methode voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het 
-        tekort aangevuld door import.
+        vloeibaar aardgas (LNG).
     bunkers_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
@@ -215,7 +212,7 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart wordt ingevuld met 
-        elektriciteit.</br></br>Het is mogelijk om deze slider te gebruiken om walstromen te modelleren.
+        elektriciteit.</br></br> Deze slider kan worden gebruikt om de vraag van walstromen te modelleren.
     bunkers_aviation_using_electricity_share:
       title: Elektriciteit
       short_description:
@@ -235,15 +232,17 @@ nl:
       title: Waterstof
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld 
-        met waterstof.
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart ƒwordt ingevuld 
+        met waterstof.</br></br>Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode 
+        voor waterstofproductie te kiezen. Als de waterstofproductie in dit gebied onvoldoende is, wordt het tekort 
+        aangevuld door import.
     bunkers_ship_using_ammonia_share:
       title: Ammoniak
       short_description:
       description: |
         Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart wordt ingevuld 
         met ammoniak.</br></br>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> 
-        om de productie van ammoniak in stellen.
+        om de productie van ammoniak in te stellen.
     transport_passenger_train_using_coal_share:
       title: Kolen
       short_description: ''
@@ -254,7 +253,7 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met dieseltreinen.</br></br>
-        Ga naar <a href=/scenario/supply/transport_fuels/rail-transport>Treinverkeer</a> omde samenstelling van diesel 
+        Ga naar <a href=/scenario/supply/transport_fuels/rail-transport>Treinverkeer</a> om de samenstelling van diesel 
         in te stellen.
     transport_passenger_train_using_electricity_share:
       title: Elektrisch
@@ -297,7 +296,7 @@ nl:
       title: Bussen
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de auto.
+        Deze slider bepaalt welk percentage van de reizigerskilometers wordt afgelegd met bussen.
     transport_trams_share:
       title: Trams/metro's
       short_description:
@@ -307,7 +306,7 @@ nl:
       title: Fietsen
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de auto.
+        Deze slider bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de fiets.
     transport_motorcycles_share:
       title: Motorfietsen
       short_description:
@@ -332,13 +331,11 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt de jaarlijkse stijging of daling van het energiegebruik van internationale luchtvaart.
-    # Check of bovenstaande statement klopt
     bunkers_useful_demand_ships:
       title: Internationale scheepvaart
       short_description:
       description: |
         Deze slider bepaalt de jaarlijkse stijging of daling van het energiegebruik van internationale scheepvaart. 
-    # Check of bovenstaande statement klopt
     transport_ship_using_diesel_mix_share:
       title: Diesel (single / dual / multi-fuel motor)
       short_description:
@@ -374,7 +371,7 @@ nl:
       description: |
         Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen die op 
         ammoniak varen.</br></br>Ga naar <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a> 
-        om de productie van ammoniak in stellen.
+        om de productie van ammoniak in te stellen.
     transport_trucks_share:
       title: Vrachtwagens
       short_description: ''
@@ -424,7 +421,7 @@ nl:
       short_description: ''
       description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat elektrische
         voertuigen ieder jaar zullen worden. Elektrische voertuigen zijn alle voertuigen
-        die geëlektrificeerd kunnen worden: auto's, treinen, vrachtwagens, trams,
+        die elektrisch kunnen rijden: auto's, treinen, vrachtwagens, trams,
         metro's, bussen, motorfietsen en e-bikes.\r\n<br/><br/>\r\nDe grootste efficiëntieverbeteringen
         verwacht men voor de accu's, aangezien elektromotoren al heel efficiënt zijn
         van nature. De meeste verliezen vinden dan ook plaats bij het laden en ontladen."
@@ -445,7 +442,7 @@ nl:
     transport_planes_efficiency:
       title: Vliegtuigen
       short_description: ''
-      description: "Geef hier aan hoeveel efficienter jij denkt dat vliegtuigen ieder
+      description: "Geef hier aan hoeveel efficiënter jij denkt dat vliegtuigen ieder
         jaar zullen worden. \r\n<br/> <br/>\r\nHier bestaat nog ruimte voor verbetering,
         maar niet heel veel."
     transport_trains_efficiency:
@@ -458,7 +455,7 @@ nl:
       short_description:
       description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat voertuigen
         die op waterstof rijden ieder jaar worden. Waterstofvoertuigen zijn alle voertuigen
-        die op waterstof kunnen rijden: auto's, bussen and vrachtwagens. \r\n<br/><br/>\r\nAangezien
+        die op waterstof kunnen rijden: auto's, bussen en vrachtwagens. \r\n<br/><br/>\r\nAangezien
         waterstofvoertuigen een vrij nieuwe technologie zijn, is er nog relatief veel
         ruimte voor verbeteringen. De elektrische motor is al zeer efficiënt, maar
         de waterstofcellen (het onderdeel van de elektrische auto dat elektriciteit

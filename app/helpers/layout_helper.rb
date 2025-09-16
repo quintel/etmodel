@@ -32,7 +32,7 @@ module LayoutHelper
     code = area[:area_code]
 
     selector = params[:country] || Current.setting.area_code
-    selected = selector == code || (selector == 'nl' && code == 'nl2019') ? "selected='true'" : nil
+    selected = selector == code || (selector == 'nl' && code == 'nl2023') ? "selected='true'" : nil
 
     label = name_for(code)
     label += " (#{ I18n.t('new') })" if area[:test]

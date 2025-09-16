@@ -143,7 +143,7 @@ module ScenarioHelper
   # Public: Checks if a link to the Dataset Manager should be shown for the current
   # area. Currently only 'NL' will not be linked.
   def show_link_to_datamanager?
-    %w[NL_netherlands nl eu nl2019 nl2023].exclude?(Current.setting.area_code)
+    %w[eu nl nl2019 nl2023].exclude?(Current.setting.area_code)
   end
 
   # Public: Creates the warning message shown when the scenario was created with a previous version

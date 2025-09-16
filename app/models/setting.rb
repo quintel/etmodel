@@ -15,8 +15,9 @@ class Setting
   extend ActiveModel::Naming
 
   MIN_YEAR = 2020
+  MIN_YEAR_PRESET = 2030
   DEFAULT_YEAR = 2050
-  MAX_YEAR = 2070
+  MAX_YEAR = 2050
 
   # A list of all attributes which may be stored in the Setting, and their
   # default values.

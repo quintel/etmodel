@@ -108,7 +108,7 @@ module LayoutHelper
 
   def preset_years
     custom_years
-      .select { |year| (year % 10).zero? }
+      .select { |year| (year % 10).zero? && year >= Setting::MIN_YEAR_PRESET }
       .push([I18n.t('scenario.other').html_safe, 'other'])
   end
 end

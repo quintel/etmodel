@@ -534,10 +534,10 @@ D3.sankey =
           {id: 'wet',                             column: 1, label: 'wet',                       color: '#38ada9'},
           {id: 'oily',                            column: 1, label: 'oily',                      color: '#f9ca24'},
           {id: 'dry',                             column: 1, label: 'dry',                       color: '#009432'},
+          {id: 'biogenic_waste',                  column: 1, label: 'biogenic_waste',            color: '#006266'},
           {id: 'biogas',                          column: 2, label: 'biogas',                    color: '#ffff99'},
           {id: 'greengas',                        column: 2, label: 'greengas',                  color: '#A3CB38'},
           {id: 'biofuels',                        column: 2, label: 'biofuels',                  color: '#00b894'},
-          {id: 'biogenic_waste',                  column: 2, label: 'biogenic_waste',            color: '#006266'},
           {id: 'households',                      column: 3, label: 'households',                color: '#4169E1'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#ADD8E6'},
           {id: 'transport',                       column: 3, label: 'transport',                 color: '#8B0000'},
@@ -557,11 +557,11 @@ D3.sankey =
           {left: 'import',                          right: 'wet',                         gquery: 'import_wet_biomass_in_biomass_sankey', color: '#b71540'},
           {left: 'import',                          right: 'oily',                        gquery: 'import_oily_biomass_in_biomass_sankey', color: '#b71540'},
           {left: 'import',                          right: 'dry',                         gquery: 'import_dry_biomass_in_biomass_sankey', color: '#b71540'},
+          {left: 'import',                          right: 'biofuels',                    gquery: 'import_biofuels_in_biomass_sankey', color: '#b71540'},
           {left: 'import',                          right: 'biogenic_waste',              gquery: 'import_biogenic_waste_in_biomass_sankey', color: '#b71540'},
           {left: 'wet',                             right: 'biogas',                      gquery: 'wet_biomass_to_biogas_in_biomass_sankey', color: '#38ada9'},
           {left: 'wet',                             right: 'greengas',                    gquery: 'wet_biomass_to_greengas_in_biomass_sankey', color: '#38ada9'},
           {left: 'wet',                             right: 'biofuels',                    gquery: 'wet_biomass_to_biofuels_in_biomass_sankey', color: '#38ada9'},
-          {left: 'wet',                             right: 'export',                      gquery: 'wet_biomass_to_export_in_biomass_sankey', color: '#38ada9'},
           {left: 'oily',                            right: 'biofuels',                    gquery: 'oily_biomass_to_biofuels_in_biomass_sankey', color: '#f9ca24'},
           {left: 'dry',                             right: 'greengas',                    gquery: 'dry_biomass_to_greengas_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'households',                  gquery: 'dry_biomass_to_households_in_biomass_sankey', color: '#009432'},
@@ -571,10 +571,11 @@ D3.sankey =
           {left: 'dry',                             right: 'agriculture',                 gquery: 'dry_biomass_to_agriculture_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'other',                       gquery: 'dry_biomass_to_other_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'bunkers',                     gquery: 'dry_biomass_to_bunkers_in_biomass_sankey', color: '#009432'},
-          {left: 'dry',                             right: 'export',                      gquery: 'dry_biomass_to_export_in_biomass_sankey', color: '#009432'},
-          {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'dry',                             right: 'biofuels',                    gquery: 'dry_biomass_to_biofuels_in_biomass_sankey', color: '#009432'},
           {left: 'dry',                             right: 'non_biogenic_carriers_demand',gquery: 'dry_biomass_to_non_biogenic_carriers_in_biomass_sankey', color: '#009432'},
+          {left: 'dry',                             right: 'losses',                      gquery: 'dry_biomass_to_losses_in_biomass_sankey', color: '#DCDCDC'},
+          {left: 'biogenic_waste',                  right: 'biofuels',                    gquery: 'biogenic_waste_to_biofuels_in_biomass_sankey', color: '#006266'},
+          {left: 'biogenic_waste',                  right: 'non_biogenic_carriers_demand',gquery: 'biogenic_waste_to_non_biogenic_carriers_in_biomass_sankey', color: '#006266'},
           {left: 'non_biogenic_carriers_supply',    right: 'greengas',                    gquery: 'non_biogenic_carriers_to_greengas_in_biomass_sankey', color: '#8c564b'},
           {left: 'non_biogenic_carriers_supply',    right: 'biofuels',                    gquery: 'non_biogenic_carriers_to_biofuels_in_biomass_sankey', color: '#8c564b'},
           {left: 'biogas',                          right: 'losses',                      gquery: 'biogas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
@@ -587,9 +588,9 @@ D3.sankey =
           {left: 'greengas',                        right: 'other',                       gquery: 'greengas_to_other_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas',                        right: 'bunkers',                     gquery: 'greengas_to_bunkers_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas',                        right: 'export',                      gquery: 'greengas_to_export_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'biofuels',                    gquery: 'greengas_to_biofuels_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas',                        right: 'non_biogenic_carriers_demand',gquery: 'greengas_to_non_biogenic_carriers_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas',                        right: 'losses',                      gquery: 'greengas_to_losses_in_biomass_sankey', color: '#DCDCDC'},
-          {left: 'greengas',                        right: 'non_biogenic_carriers_demand',gquery: 'greengas_to_non_biogenic_carriers_in_biomass_sankey', color: '#DCDCDC'},
-          {left: 'greengas',                        right: 'biofuels',                    gquery: 'greengas_to_biofuels_in_biomass_sankey', color: '#DCDCDC'},
           {left: 'biofuels',                        right: 'greengas',                    gquery: 'biofuels_to_greengas_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'households',                  gquery: 'biofuels_to_households_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'buildings',                   gquery: 'biofuels_to_buildings_in_biomass_sankey', color: '#00b894'},
@@ -599,8 +600,7 @@ D3.sankey =
           {left: 'biofuels',                        right: 'bunkers',                     gquery: 'biofuels_to_bunkers_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'export',                      gquery: 'biofuels_to_export_in_biomass_sankey', color: '#00b894'},
           {left: 'biofuels',                        right: 'losses',                      gquery: 'biofuels_to_losses_in_biomass_sankey', color: '#DCDCDC'},
-          {left: 'biofuels',                        right: 'non_biogenic_carriers_demand',gquery: 'biofuels_to_non_biogenic_carriers_in_biomass_sankey', color: '#00b894'},
-          {left: 'biogenic_waste',                  right: 'non_biogenic_carriers_demand',gquery: 'biogenic_waste_to_non_biogenic_carriers_in_biomass_sankey', color: '#006266'},
+          {left: 'biofuels',                        right: 'non_biogenic_carriers_demand',gquery: 'biofuels_to_non_biogenic_carriers_in_biomass_sankey', color: '#00b894'}
         ]
     co2_sankey:
       data:
@@ -1011,7 +1011,7 @@ D3.sankey =
           {id: 'steam_hot_water_distribution',    column: 2, label: 'steam_hot_water_distribution', color: '#cc0000'},        # Red - energy carrier
           #{id: 'losses',                          column: 2, label: 'losses',                    color: '#DCDCDC'},        # Grey - neutral
 
-          # END USES (Column 3) 
+          # END USES (Column 3)
           {id: 'households',                      column: 3, label: 'households',                color: '#117733'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#44AA99'},
           {id: 'agriculture',                     column: 3, label: 'agriculture',               color: '#332288'},
@@ -1183,7 +1183,7 @@ D3.sankey =
           {left: 'kerosene',                              right: 'industry',                          gquery: 'kerosene_to_industry_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'kerosene',                              right: 'export',                            gquery: 'kerosene_to_export_in_liquid_fuels_sankey', color: '#D2691E'},
 
-          
+
           {left: 'pyrolysis_oil',                         right: 'pyrolysis_fractionation',           gquery: 'pyrolysis_oil_to_pyrolysis_fractioning_in_liquid_fuels_sankey', color: '#8B7D6B'},
           {left: 'pyrolysis_oil',                         right: 'export',                            gquery: 'pyrolysis_oil_to_export_in_liquid_fuels_sankey', color: '#8B7D6B'},
 

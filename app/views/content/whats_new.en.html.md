@@ -873,7 +873,7 @@ The chart on the right shows all profiles which you may customise. If you upload
 
 ![](/assets/pages/whats_new/modify_profiles_en.png)
 
-Check out [the Curves documentation](https://docs.energytransitionmodel.com/main/curves) for more information.
+Check out [the Curves documentation](https://docs.energytransitionmodel.com/main/profiles) for more information.
 
 ## Download charts as images
 

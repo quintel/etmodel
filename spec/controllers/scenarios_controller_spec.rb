@@ -137,17 +137,17 @@ describe ScenariosController, vcr: true do
 
       context 'with a scenario for a existing region' do
         subject do
-          session[:setting] = Setting.new(area_code: 'de', api_session_id: 123)
+          session[:setting] = Setting.new(area_code: 'DE_germany', api_session_id: 123)
           allow(Engine::Area)
             .to receive(:code_exists?)
-            .with('de').and_return(true)
+            .with('DE_germany').and_return(true)
           get :play
 
           session[:setting]
         end
 
         it 'retains the area code' do
-          expect(subject.area_code).to eq('de')
+          expect(subject.area_code).to eq('DE_germany')
         end
 
         it 'retains the api session id' do

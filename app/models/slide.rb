@@ -123,7 +123,7 @@ class Slide < YModel::Base
     return true if subheader_image_dependent_on_country.blank?
 
     country = subheader_image_dependent_on_country
-    country = [country, 'nl2019'] if country == 'nl'
+    country = [country, 'nl2019', 'nl2023'] if country == 'nl'
 
     country.include?(Current.setting.area_code) ||
       country.include?(Current.setting.area.country_area.area)

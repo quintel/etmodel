@@ -267,12 +267,12 @@ li
           color: $font-color
 
   .region
-    &.be, &.br, &.de, &.es, &.eu, &.fr, &.nl, &.nl2019, &.pl, &.uk
+    &.be, &.br, &.de, &.es, &.eu, &.fr, &.nl, &.nl2019, &.nl2023,&.pl, &.uk
       padding: 1px 0 0 22px
       background-size: 18px 18px
       background-repeat: no-repeat
       -webkit-print-color-adjust: exact
-    @each $region in be, br, de, es, eu, fr, nl, nl2019, pl, uk
+    @each $region in be, br, de, es, eu, fr, nl, nl2019, nl2023, pl, uk
       &.#{$region}
         background-image: image-url("reports/regions/#{$region}.svg")
 

@@ -217,14 +217,22 @@ nl:
         afvalproduct uit alle behalve de meest  geavanceerde raffinaderijen komen.
         Omdat deze fracties verder weinig toepassingen hebben zonder verder afgebroken
         te worden, zijn ze relatief goedkoop.
-    transport_shipping_mixer_methanol_methanol_share:
+    transport_shipping_mixer_methanol_methanol_share: # is dit te technisch? (In de nieuwe slider teksten is het ook wel technisch)
       title: Methanol
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van methanol in de brandstofmix van binnenlandse 
+        scheepvaart.</br></br>Methanol is een veelbelovende alternatieve brandstof met een lagere 
+        uitstoot dan diesel of zware stookolie. Het is vloeibaar bij omgevingstemperatuur en relatief 
+        eenvoudig te transporteren, maar vereist aangepaste motoren en infrastructuur.
     transport_shipping_mixer_methanol_biomethanol_share:
       title: Biomethanol
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van biomethanol in de brandstofmix van binnenlandse 
+        scheepvaart.</br></br>Biomethanol wordt geproduceerd uit duurzame grondstoffen en kan de 
+        klimaatimpact van scheepvaart aanzienlijk verminderen. Net als methanol vereist het aangepaste 
+        motoren, en de beschikbaarheid is momenteel nog beperkt.
     bunkers_plane_using_kerosene_share:
       title: Kerosine
       short_description:
@@ -250,16 +258,31 @@ nl:
     bunkers_ship_using_methanol_share:
       title: Methanol
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het energetisch aandeel van fossiele methanol in de methanolmix 
+        van internationale scheepvaart.<br/><br/>Methanol is een veelbelovende alternatieve brandstof met 
+        een lagere uitstoot dan diesel of zware stookolie. Het is vloeibaar bij omgevingstemperatuur en 
+        relatief eenvoudig te transporteren, maar vereist aangepaste motoren en infrastructuur.
     bunkers_ship_using_biomethanol_share:
       title: Biomethanol
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het energetisch aandeel van biomethanol in de methanolmix van internationale 
+        scheepvaart.</br></br>Biomethanol wordt geproduceerd uit duurzame grondstoffen en kan de 
+        klimaatimpact van scheepvaart aanzienlijk verminderen. Net als methanol vereist het aangepaste 
+        motoren, en de beschikbaarheid is momenteel nog beperkt.
     transport_aviation_mixer_kerosene_kerosene_share:
       title: Kerosine
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van fossiele kerosine in de kerosinemix van nationale luchtvaart.
     transport_aviation_mixer_kerosene_bio_kerosene_share:
       title: Biokerosine
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het energetisch aandeel van biokerosine in de kerosinemix van 
+        nationale luchtvaart.</br></br> Biokerosine is een duurzaam alternatief voor 
+        fossiele kerosine en kan zonder aanpassingen worden gebruikt in de bestaande 
+        vliegtuigmotoren. De beschikbaarheid van biokerosine is echter beperkt door de 
+        hoeveelheid beschikbare landbouwgrond voor biobrandstofproductie, wat invloed heeft op 
+        de schaalbaarheid.

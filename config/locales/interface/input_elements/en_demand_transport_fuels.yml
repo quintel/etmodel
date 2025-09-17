@@ -209,11 +209,19 @@ en:
     transport_shipping_mixer_methanol_methanol_share:
       title: Methanol
       short_description:
-      description:
+      description: |
+        This slider sets the energetic share of methanol in the fuel mix for inland shipping.</br></br>
+        Methanol is a promising alternative fuel with lower emissions than diesel or heavy fuel oil. It 
+        is liquid at ambient temperature and relatively easy to transport, but requires modified engines 
+        and infrastructure.
     transport_shipping_mixer_methanol_biomethanol_share:
       title: Biomethanol
       short_description:
-      description:
+      description: |
+        This slider sets the energetic share of biomethanol in the fuel mix for inland shipping.</br></br>
+        Biomethanol is produced from sustainable feedstocks and can significantly reduce the climate 
+        impact of shipping. Like methanol, it requires modified engines, and availability is currently 
+        limited.
     bunkers_plane_using_kerosene_share:
       title: Kerosene
       short_description:
@@ -235,16 +243,29 @@ en:
     bunkers_ship_using_methanol_share:
       title: Methanol
       short_description:
-      description:
+      description: |
+        This slider sets the energetic share of fossil methanol in the methanol mix for international 
+        shipping.<br/><br/>Methanol is a promising alternative fuel with lower emissions than diesel or 
+        heavy fuel oil. It is liquid at ambient temperature and relatively easy to transport, but 
+        requires modified engines and infrastructure.
     bunkers_ship_using_biomethanol_share:
       title: Biomethanol
       short_description:
-      description:
+      description: |
+        This slider sets the energetic share of biomethanol in the methanol mix for international 
+        shipping.</br></br>Biomethanol is produced from sustainable feedstocks and can significantly 
+        reduce the climate impact of shipping. Like methanol, it requires modified engines, and 
+        availability is currently limited.
     transport_aviation_mixer_kerosene_kerosene_share:
       title: Kerosene
       short_description:
-      description:
+      description: |
+        This slider sets the energetic share of fossil kerosene in the kerosene mix for national aviation.
     transport_aviation_mixer_kerosene_bio_kerosene_share:
       title: Bio-kerosene
       short_description:
-      description:
+      description: |
+        This slider sets the energy share of bio-kerosene in the kerosene mix for national aviation.
+        </br></br>Bio-kerosene is a sustainable alternative to fossil kerosene and can be used in 
+        existing aircraft engines without modifications. However, its availability is limited by the 
+        amount of arable land available for biofuel production, which affects scalability.

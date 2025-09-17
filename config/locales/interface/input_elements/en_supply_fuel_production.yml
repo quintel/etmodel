@@ -2,14 +2,14 @@
 en:
   input_elements:
     industry_useful_demand_for_chemical_refineries:
-      title: Fossil refinery
+      title: Refineries
       short_description:
       description: |
-        This slider sets the annual useful production of fossil refineries.<br/><br/>
-        If there is no fossil refinery in the start year, the output fractions of fossil refinery products
+        This slider sets the annual useful production of refineries.<br/><br/>
+        If there is no refinery in the start year, the output fractions of refinery products
         are determined based on a refinery archetype.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuel and feedstock flows</a> shows the liquid fuels production and final demand.
+        Liquid fuels and feedstock flows</a> shows the liquid fuels production and final demand.
     output_of_energy_production_fischer_tropsch:
       title: Fischer-Tropsch from syngas
       short_description:
@@ -22,7 +22,7 @@ en:
         In the <a href="/scenario/supply/fuel_production/fischer-tropsch-from-syngas">Fischer-Tropsch</a> section
         the shares of the different feedstock routes for syngas production for Fischer-Tropsch can be set.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuel and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_methanol_synthesis:
       title: Methanol synthesis from syngas
       short_description:
@@ -34,7 +34,7 @@ en:
         In the <a href="/scenario/supply/fuel_production/methanol-synthesis-from-syngas">Methanol synthesis</a> section
         the shares of the different feedstock routes for syngas production for methanol synthesis can be set.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuel and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_fractionation_pyrolysis_oil:
       title: Fractionation of pyrolysis oil
       short_description:
@@ -44,7 +44,7 @@ en:
       short_description:
       description:
     output_of_energy_production_hvo_bio_kerosene:
-      title: HVO bio-kerosene
+      title: HVO biokerosene
       short_description:
       description:
     output_of_energy_production_hvo_biodiesel:

@@ -4,106 +4,118 @@ en:
     energy_mixer_for_gas_power_fuel_bio_oil_share:
       title: Bio-oil
       short_description: ''
-      description: "This slider sets what percentage of fuel for industry CHPs is
-        bio-oil . The oil is injected into the furnace as a fine mist together with
-        the gas. In theory, it is possible to substitute 100% of the gas in this way
-        without losing efficiency. In practice, considerably less than 100% is co-fired
-        in such plants.<br/>\r\nThe sustainability of bio-oil has been in dispute
-        for a couple of years now, and its popularity has declined strongly. Future
-        international regulation of bio-oil production may mean bio-oil will be used
-        more often.  \r\n<br/><br/> \r\nAt the bottom of each page, you can see how
-        much arable land you need world-wide to grow all the required biomass.\r\n"
+      description: |
+        This slider sets the share of bio-oil in gas-fired combined heat and power 
+        (CHP) plants in industry.<br/><br/>Bio-oil is a liquid biofuel derived from 
+        organic residual material, which can be atomized and burned together with 
+        gas in CHP systems. In theory, full replacement of gas is possible, but in 
+        practice the share is often limited. Use of bio-oil has declined due to 
+        concerns about renewability.
     co_firing_biocoal_share:
       title: Biocoal
       short_description: ''
-      description: 'Bio-coal is a fuel with properties sufficiently similar to coal
-        that it be used as a substitute. It is made by torrefaction of woody biomass.
-        Torrefaction of biomass occurs at temperatures of several hundred &#8451;
-        in the absence of oxygen.  '
+      description: |
+        This slider sets the share of biocoal in coal-fired power plants.</br></br>
+        Biocoal, produced by torrefaction of woody biomass, closely resembles coal 
+        and can replace it in coal plants. This process, in which biomass is heated 
+        to high temperatures without oxygen, produces a fuel with lower CO<sub>2</sub> 
+        emissions than coal.
     co_firing_coal_share:
       title: Coal
       short_description: ''
-      description: Coal is the most CO<sub>2</sub> intensive of all fossil fuels.
-        For that reason, governments promote and subsidize replacing a part of coal
-        for electricity production by biomass alternatives.
+      description: |
+        This slider sets the share of coal in coal-fired power plants.
     energy_mixer_for_gas_power_fuel_natural_gas_share:
       title: Gas from gas network
       short_description: ''
-      description: "Gas-fired power plants obtain their gas from the gas mains, of
-        course. Some of this gas may be green gas, if you have set this to be the
-        case. \r\n<br/>\r\nAlternatively, gas-fired plants can co-fire oil and bio-oil."
+      description: |
+        This slider sets the share of network gas in gas-fired combined heat and 
+        power (CHP) plants in industry.<br/><br/>Network gas can be used as a fuel 
+        in CHP systems for simultaneous heat and electricity generation. It consists 
+        of natural gas or green gas.<br/><br/>Go to <a href="/scenario/supply/biomass/gas-mix-in-gas-network">
+        Gas mix in gas network</a> to configure the share of green gas.
     energy_mixer_for_gas_power_fuel_crude_oil_share:
       title: Oil
       short_description: ''
-      description: This slider sets what percentage of the total input consists of
-        oil-derivatives that are 'co-fired' in industrial CHPs. The oil is injected
-        into the furnace as a fine mist together with the gas. In theory, it is possible
-        to substitute 100% of the gas in this way without losing efficiency. In practice
-        less than the theoretical maximum is co-fired in such plants.
+      description: |
+        This slider sets the share of oil in gas-fired combined heat and power (CHP) 
+        plants in industry.<br/><br/>The oil is atomized and injected together with gas. 
+        In theory, gas can be fully replaced without loss of efficiency, but in practice 
+        the blend is limited.
     max_demand_of_biogenic_waste:
       title: Biogenic waste
       short_description:
-      description: With this slider you can set the potential of biogenic waste that
-        is available for combustion in waste incinerators or waste CHPs.
+      description: |
+        This slider sets the annual energy potential of biogenic waste. <br/><br/>Biogenic waste, 
+        such as food scraps, garden waste, and animal manure, can be converted into energy through 
+        combustion in waste incineration plants or combined heat and power (CHP) systems. It can
+        also be used for the production of transport fuels or as a raw material for the chemical 
+        industry.<br/><br/>View the chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     max_demand_of_non_biogenic_waste:
       title: Non-biogenic waste
       short_description:
-      description: With this slider you can set the potential of non-biogenic waste that
-        is available for combustion in waste incinerators or waste CHPs.
+      description: |
+        This slider sets the annual energy potential of non-biogenic waste.<br/><br/>Non-biogenic 
+        waste, such as plastics, textiles, and other household or industrial residuals 
+        not of biological origin, can be converted into energy through combustion in waste 
+        incineration plants or combined heat and power (CHP) systems. It can also be used for 
+        the production of transport fuels or as a raw material for the chemical industry.<br/><br>
+        View the chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the waste is utilized.
     max_demand_of_wet_biomass:
       title: Wet biomass
       short_description:
-      description: 'Wet biomass is biomass with a moisture percentage of at least
-        40-50%. This includes: residues from the food and beverage industry, agricultural
-        residual streams, sewage sludge, aquatic biomass, cultivated grain products,
-        etc.'
+      description: |
+        This slider sets the annual energy potential of wet biomass.<br/><br/> Wet biomass 
+        contains at least 40–50% moisture and includes residues from the food and beverage 
+        industry, agricultural by-products, sewage sludge, aquatic biomass, and cultivated 
+        grains.<br/><br/>View the chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     max_demand_of_dry_biomass:
       title: Dry biomass
       short_description:
-      description: 'Dry biomass consists of relatively dry organic material, like
-        wood. Dry biomass is ''simple biomass'': it requires no processing and provides
-        a high return. There is therefore a great demand for clean, woody biomass.
-        Examples of woody biomass are residual streams from forestry (tree tops, stumps,
-        bark, branches), recycled waste wood, residual streams from agriculture (straw),
-        and fast-growing bio-energy crops (elephant grass, willow, poplar).'
+      description: |
+        This slider sets the annual energy potential of dry biomass.<br/><br/> Dry biomass 
+        has a low moisture content, requires no pre-treatment, and provides high energy yield. 
+        Examples include wood, recycled wood, agricultural residues (straw), and fast-growing 
+        crops.<br/><br/>View the chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     max_demand_of_oily_biomass:
       title: Oil-containing biomass
       short_description:
-      description: 'Oil-containing biomass is biomass with seeds that contain oil.
-        Crude biodiesel is produced by pressing oil seeds. This can be converted into
-        biodiesel in an esterification process with the addition of methanol. Examples
-        of oil-containing biomass are: rapeseed, sunflower seeds, oil palm. Used frying
-        fats also fall within this category.'
+      description: |
+        This slider sets the annual energy potential of oil-rich biomass.<br/><br/> Oil-rich 
+        biomass consists of oil-containing seeds. After pressing, crude biodiesel is obtained, 
+        which is then converted into biodiesel through esterification with methanol. Examples 
+        include rapeseed, sunflower seeds, palm oil, and used frying oils.<br/><br/> View the 
+        chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     energy_biogas_fermentation_share:
       title: Anaerobic digestion
       short_description:
-      description: "Currently green gas is mostly generated from the anaerobic digestion
-        of organic biomass and residues produced in agriculture, food production and
-        waste processing. There are two methods for biomass digestion: mono-digestion
-        (one residual flow) or co-digestion (multiple flows with at least 50% animal
-        manure). After digestion the produced biogas can be either used directly for
-        power and/or heat generation or can be converted into green gas to make it
-        suitable for the gas network.\r\n</br></br>\r\nThe ETM models one general
-        type of digester that digests wet biomass. The specifications of this technology
-        can be found below."
+      description: |
+        This slider sets the share of green gas from anaerobic digestion in green gas 
+        production.<br/><br/>Anaerobic digestion is a biological process in which 
+        microorganisms break down organic material in an oxygen-limited environment, 
+        producing biogas. This biogas is upgraded to green gas and can be injected into 
+        the gas network.
     energy_greengas_gasification_dry_biomass_share:
       title: Dry biomass gasification
       short_description:
-      description: During dry gasification dry biomass is gasified at high temperatures
-        (800 to 1000 °C), a kind of combustion with a lack of oxygen. The formation
-        of a synthesis gas is central to gasification. This synthesis gas is a flammable
-        mixture of methane, hydrogen, CO<sub>2</sub> en CO. The gasification route
-        offers flexibility when it comes to the possible follow-up routes and end
-        products to be manufactured (green gas, hydrogen, transport biofuels and more).
-        In the case of green gas production, gasification is followed by methane synthesis,
-        and reprocessing into green gas of natural gas quality.
+      description: |
+        This slider sets the share of green gas from dry gasification in green gas 
+        production.<br/><br/>In dry gasification, dry biomass is gasified with a 
+        limited amount of oxygen, producing syngas. This gas, consisting of methane, 
+        hydrogen, carbon dioxide, and carbon monoxide, can be further converted into 
+        green gas for the gas network.
     energy_greengas_gasification_wet_biomass_share:
       title: Wet biomass gasification (SCW)
       short_description:
-      description: Wet gasification is also called Super Critical Water gasification
-        (SCW). During SCW wet biomass is converted into green gas under high pressure
-        and temperature (at least 375 °C and 221 bar). Above this critical point,
-        water achieves supercritical conditions. During this phase all organic molecules
-        within the biomass fall apart en reach a new balance in the form of synthesis
-        gas (methane, hydrogen, CO<sub>2</sub> and CO) (Gasunie, 2019). Inorganic
-        substances crystallize out simultaneously so that they can be recovered.
+      description: |
+        This slider sets the share of green gas from wet gasification (SCW) in green 
+        gas production.<br/><br/>Wet gasification (Subcritical Water Gasification, SCW) 
+        converts wet biomass into green gas by gasifying it under high pressure and 
+        temperature. This process uses the water content in the biomass and produces 
+        syngas, consisting of methane, hydrogen, carbon dioxide, and carbon monoxide. 
+        The gas can then be upgraded to green gas for the gas network.

@@ -374,6 +374,9 @@ en:
       title: Methanol (mix)
       short_description:
       description: |
+        This slider sets the share of international shipping fuel supplied by methanol.</br></br>Go to 
+        <a href="/scenario/demand/transport_fuels/international-navigation">Transport fuels</a> to 
+        configure the share of methanol in the fuel mix.
     bunkers_aviation_using_electricity_share:
       title: Electricity
       short_description:
@@ -612,7 +615,10 @@ en:
     transport_ship_using_methanol_mix_share:
       title: Methanol (mix)
       short_description:
-      description:
+      description: |
+       This slider sets the percentage of inland shipping kilometers traveled by vessels running on 
+       methanol.</br></br>Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport 
+       fuels</a> to configure the share of methanol in the fuel mix.
     transport_trucks_share:
       title: Trucks
       short_description: ''

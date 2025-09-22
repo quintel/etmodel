@@ -15,9 +15,14 @@ en:
       short_description:
       description: |
         This slider sets the annual useful production of liquid fuels and feedstock from Fischer-Tropsch.<br/><br/>
-        The process of Fischer-Tropsch converts syngas (a mixture of mainly CO and hydrogen) into liquid hydrocarbons,
-        such as kerosene and naphtha. Different types of feedstock can be used to produce syngas. Depending on
-        the type of used feedstock, the produced liquid fuels will differ in the extent to which they are synthetic,
+        The process of Fischer-Tropsch converts syngas (a mixture of mainly CO and hydrogen) into liquid hydrocarbons.
+        In the ETM, the following fuels and feedstock can be produced via Fischer-Tropsch:
+        <ul>
+        <li>Main product: kerosene</li>
+        <li>By-products: naphtha, diesel</li>
+        </ul><br/>
+        Different types of feedstock can be used to produce syngas. Depending on
+        the type of used feedstock, the produced liquid fuels from Fischer-Tropsch will differ in the extent to which they are synthetic,
         biogenic or non-biogenic.<br/><br/>
         In the <a href="/scenario/supply/fuel_production/fischer-tropsch-from-syngas">Fischer-Tropsch</a> section
         the shares of the different feedstock routes for syngas production for Fischer-Tropsch can be set.<br/><br/>
@@ -38,17 +43,31 @@ en:
     output_of_energy_production_fractionation_pyrolysis_oil:
       title: Fractionation of pyrolysis oil
       short_description:
-      description:
+      description: |
+        This slider sets the annual useful production of liquid fuels and feedstock from fractionation of
+        pyrolysis oil.<br/><br/>
+        In this process, pyrolysis oil is upgraded through hydrotreatment for which hydrogen is used. In the ETM,
+        fractionation of pyrolysis oil yields the following fuels and feedstock:
+        <ul>
+        <li>diesel</li>
+        <li>naphtha</li>
+        </ul><br/>
+        The pyrolysis oil required for this process can either be produced locally or imported. Go to the section
+        <a href="/scenario/supply/fuel_production/fractionation-of-pyrolysis-oil">Fractionation of pyrolysis oil</a> to
+        set the local production of pyrolysis oil. In case the local production of pyrolysis oil is lower than
+        the amount required for fractionation, the shortage is imported.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_fractionation_bio_pyrolysis_oil:
       title: Fractionation of biogenic pyrolysis oil
       short_description:
       description:
     output_of_energy_production_hvo_bio_kerosene:
-      title: HVO biokerosene
+      title: HVO biokerosene from hydrotreatment
       short_description:
       description:
     output_of_energy_production_hvo_biodiesel:
-      title: HVO biodiesel
+      title: HVO biodiesel from hydrotreatment
       short_description:
       description:
     output_of_energy_production_bio_ethanol:

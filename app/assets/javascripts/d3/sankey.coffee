@@ -1019,7 +1019,7 @@ D3.sankey =
           {id: 'losses',                          column: 3, label: 'losses',                    color: '#DCDCDC'},        # Grey - neutral
         ]
         links: [
-          # CRUDE OIL TO FOSSIL REFINERY
+          # CARRIERS TO FOSSIL REFINERY
           {left: 'crude_oil',                             right: 'fossil_refinery',                   gquery: 'crude_oil_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'network_gas',                           right: 'fossil_refinery',                   gquery: 'network_gas_to_fossil_refinery_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'coal',                                  right: 'fossil_refinery',                   gquery: 'coal_to_fossil_refinery_in_liquid_fuels_sankey', color: '#252525'},
@@ -1075,8 +1075,8 @@ D3.sankey =
           {left: 'fossil_refinery',                       right: 'bio_kerosene',                      gquery: 'fossil_refinery_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'fossil_refinery',                       right: 'biodiesel',                         gquery: 'fossil_refinery_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
           {left: 'fossil_refinery',                       right: 'bionaphtha',                        gquery: 'fossil_refinery_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
-          {left: 'fossil_refinery',                       right: 'losses',                            gquery: 'fossil_refinery_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
           {left: 'fossil_refinery',                       right: 'non_oil_output',                    gquery: 'fossil_refinery_to_non_oil_output_in_liquid_fuels_sankey', color: '#708090'},
+          {left: 'fossil_refinery',                       right: 'losses',                            gquery: 'fossil_refinery_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           {left: 'chemical_fertilizer',                  right: 'diesel',                            gquery: 'fertilizers_chemical_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'chemical_fertilizer',                  right: 'gasoline',                          gquery: 'fertilizers_chemical_to_gasoline_in_liquid_fuels_sankey', color: '#A0522D'},
@@ -1090,7 +1090,6 @@ D3.sankey =
           {left: 'chemical_fertilizer',                  right: 'biodiesel',                         gquery: 'fertilizers_chemical_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
           {left: 'chemical_fertilizer',                  right: 'bionaphtha',                        gquery: 'fertilizers_chemical_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
           {left: 'chemical_fertilizer',                  right: 'losses',                            gquery: 'fertilizers_chemical_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
-          {left: 'chemical_fertilizer',                  right: 'non_oil_output',                    gquery: 'fertilizers_chemical_to_non_oil_output_in_liquid_fuels_sankey', color: '#708090'},
 
           # FISCHER-TROPSCH OUTPUTS
           {left: 'fischer_tropsch',                       right: 'diesel',                            gquery: 'fischer_tropsch_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},

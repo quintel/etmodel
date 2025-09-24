@@ -2,17 +2,17 @@
 nl:
   input_elements:
     industry_useful_demand_for_chemical_refineries:
-      title: Raffinaderijen
+      title: Olieraffinaderijen
       short_description:
       description: |
-        Stel hier de nuttige jaarlijkse productie in van fossiele raffinage.<br/><br/>
+        Stel hier de nuttige jaarlijkse productie in van fossiele olieraffinage.<br/><br/>
         Indien er in het startjaar nog geen fossiele raffinage aanwezig is, worden de outputfracties
         van fossiele raffinageproducten bepaald op basis van een archetype raffinage.<br/><br/>
         De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Vloeibare brandstof- en grondstofstromen</a> toont de productie en het finaal eindgebruik van
         vloeibare brandstoffen.
     output_of_energy_production_fischer_tropsch:
-      title: Fischer-Tropsch uit syngas
+      title: Fischer-Tropsch
       short_description:
       description: |
         Stel hier de nuttige jaarlijkse productie in van vloeibare brandstoffen en grondstoffen uit Fischer-Tropsch.<br/><br/>
@@ -30,7 +30,7 @@ nl:
         Vloeibare brandstof- en grondstofstromen</a> toont de productie en finaal eindgebruik van
         vloeibare brandstoffen en grondstoffen.
     output_of_energy_production_methanol_synthesis:
-      title: Methanolsynthese uit syngas
+      title: Methanolsynthese
       short_description:
       description: |
         Stel hier de nuttige jaarlijkse productie in van methanol uit methanolsynthese.<br/><br/>
@@ -66,15 +66,15 @@ nl:
       short_description:
       description:
     output_of_energy_production_hvo_bio_kerosene:
-      title: HVO biokerosine uit hydrotreatment
+      title: Hydrotreatment naar HVO (biokerosine)
       short_description:
       description:
     output_of_energy_production_hvo_biodiesel:
-      title: HVO biodiesel uit hydrotreatment
+      title: Hydrotreatment naar HVO (biodiesel)
       short_description:
       description:
     output_of_energy_production_bio_ethanol:
-      title: Bio-ethanol uit fermentatie
+      title: Bio-ethanolfermentatie
       short_description:
       description:
     energy_production_fischer_tropsch_synthetic_share:
@@ -126,7 +126,7 @@ nl:
       short_description:
       description:
     capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable:
-      title: Fischer-Tropsch uit syngas (van waterstof, elektriciteit en CO<sub>2</sub>)
+      title: Fischer-Tropsch (met waterstof, elektriciteit en CO<sub>2</sub>)
       description: |
         Met deze schuif wordt het geïnstalleerd regelbaar vermogen (in elektrisch inputvermogen) voor de productie van synthetische
         kerosine en nafta met Fischer-Tropsch ingesteld. Syngas voor het Fischer-Tropsch proces wordt geproduceerd met input van

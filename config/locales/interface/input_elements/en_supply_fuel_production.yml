@@ -2,16 +2,16 @@
 en:
   input_elements:
     industry_useful_demand_for_chemical_refineries:
-      title: Refineries
+      title: Oil refineries
       short_description:
       description: |
-        This slider sets the annual useful production of refineries.<br/><br/>
+        This slider sets the annual useful production of oil refineries.<br/><br/>
         If there is no refinery in the start year, the output fractions of refinery products
         are determined based on a refinery archetype.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the liquid fuels production and final demand.
     output_of_energy_production_fischer_tropsch:
-      title: Fischer-Tropsch from syngas
+      title: Fischer-Tropsch
       short_description:
       description: |
         This slider sets the annual useful production of liquid fuels and feedstock from Fischer-Tropsch.<br/><br/>
@@ -29,7 +29,7 @@ en:
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_methanol_synthesis:
-      title: Methanol synthesis from syngas
+      title: Methanol synthesis
       short_description:
       description: |
         This slider sets the annual useful production of methanol from methanol synthesis.<br/><br/>
@@ -41,7 +41,7 @@ en:
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_fractionation_pyrolysis_oil:
-      title: Fractionation of pyrolysis oil
+      title: Pyrolysis oil fractionation
       short_description:
       description: |
         This slider sets the annual useful production of liquid fuels and feedstock from fractionation of
@@ -59,19 +59,19 @@ en:
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_fractionation_bio_pyrolysis_oil:
-      title: Fractionation of biogenic pyrolysis oil
+      title: Pyrolysis bio-oil fractionation
       short_description:
       description:
     output_of_energy_production_hvo_bio_kerosene:
-      title: HVO biokerosene from hydrotreatment
+      title: Hydrotreatment to HVO (biokerosene)
       short_description:
       description:
     output_of_energy_production_hvo_biodiesel:
-      title: HVO biodiesel from hydrotreatment
+      title: Hydrotreatment to HVO (biodiesel)
       short_description:
       description:
     output_of_energy_production_bio_ethanol:
-      title: Bio-ethanol from fermentation
+      title: Bio-ethanol fermentation
       short_description:
       description:
     energy_production_fischer_tropsch_synthetic_share:
@@ -123,7 +123,7 @@ en:
       short_description:
       description:
     capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable:
-      title: Fischer-Tropsch from syngas (from hydrogen, electricity en CO<sub>2</sub>)
+      title: Fischer-Tropsch (with hydrogen, electricity and CO<sub>2</sub>)
       description: |
         This slider sets the amount of installed dispatchable capacity (in electric input capacity) for synthetic kerosene and
         naphtha production from Fischer-Tropsch. Syngas for the Fischer-Tropsch process is produced with input of

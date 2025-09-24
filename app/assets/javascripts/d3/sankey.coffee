@@ -55,6 +55,9 @@ D3.sankey =
           {left: 'natural_gas',                  right: 'biomass_products',          gquery: 'sankey_0_to_0_natural_gas_to_biomass_products',          color: '#7f7f7f'},
           {left: 'not_defined',                  right: 'biomass_products',          gquery: 'sankey_0_to_0_not_defined_to_biomass_products',          color: '#DCDCDC'},
 
+          {left: 'natural_gas',                  right: 'biofuels',                  gquery: 'sankey_0_to_1_natural_gas_to_biofuels',          color: '#7f7f7f'},
+          {left: 'not_defined',                  right: 'biofuels',                  gquery: 'sankey_0_to_1_not_defined_to_biofuels',          color: '#DCDCDC'},
+
           {left: 'biomass_products',             right: 'natural_gas',               gquery: 'sankey_0_to_0_biomass_products_to_natural_gas',          color: '#2ca02c'},
           {left: 'not_defined',                  right: 'natural_gas',               gquery: 'sankey_0_to_0_not_defined_to_natural_gas',               color: '#DCDCDC'},
 
@@ -184,7 +187,6 @@ D3.sankey =
           {left: 'ammonia',                      right: 'biomass_products',          gquery: 'sankey_1_to_0_ammonia_to_biomass_products',              color: '#1ce6d6'},
 
 
-
           {left: 'electricity',                  right: 'natural_gas',               gquery: 'sankey_1_to_0_electricity_to_natural_gas',               color: '#1f77b4'},
           {left: 'heat',                         right: 'natural_gas',               gquery: 'sankey_1_to_0_heat_to_natural_gas',                      color: '#cc0000'},
           {left: 'hydrogen',                     right: 'natural_gas',               gquery: 'sankey_1_to_0_hydrogen_to_natural_gas',                  color: '#87cfeb'},
@@ -192,18 +194,6 @@ D3.sankey =
           {left: 'waste_mix',                    right: 'natural_gas',               gquery: 'sankey_1_to_0_waste_mix_to_natural_gas',                 color: '#CE7013'},
           {left: 'methanol',                     right: 'natural_gas',               gquery: 'sankey_1_to_0_methanol_to_natural_gas',                  color: '#FF8C8C'},
           {left: 'ammonia',                      right: 'natural_gas',               gquery: 'sankey_1_to_0_ammonia_to_natural_gas',                   color: '#1ce6d6'},
-
-          #{left: 'biomass_products',             right: 'agriculture',               gquery: 'sankey_0_to_2_biomass_products_to_agriculture',          color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'households',                gquery: 'sankey_0_to_2_biomass_products_to_households',           color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'buildings',                 gquery: 'sankey_0_to_2_biomass_products_to_buildings',            color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'transport',                 gquery: 'sankey_0_to_2_biomass_products_to_transport',            color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'industry',                  gquery: 'sankey_0_to_2_biomass_products_to_industry',             color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'energy',                    gquery: 'sankey_0_to_2_biomass_products_to_energy',               color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'other',                     gquery: 'sankey_0_to_2_biomass_products_to_other',                color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'bunkers',                   gquery: 'sankey_0_to_2_biomass_products_to_bunkers',              color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'feedstock',                 gquery: 'sankey_0_to_2_biomass_products_to_feedstock',            color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'export',                    gquery: 'sankey_0_to_2_biomass_products_to_export',               color: '#2ca02c'},
-          #{left: 'biomass_products',             right: 'losses',                    gquery: 'sankey_0_to_2_biomass_products_to_loss',                 color: '#DCDCDC'},
 
           {left: 'coal_and_coal_products',       right: 'agriculture',               gquery: 'sankey_0_to_2_coal_and_coal_products_to_agriculture',    color: '#252525'},
           {left: 'coal_and_coal_products',       right: 'households',                gquery: 'sankey_0_to_2_coal_and_coal_products_to_households',     color: '#252525'},

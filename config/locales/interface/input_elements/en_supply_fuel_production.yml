@@ -14,28 +14,45 @@ en:
       title: Fischer-Tropsch
       short_description:
       description: |
-        This slider sets the annual useful production of liquid fuels and feedstock from Fischer-Tropsch.<br/><br/>
-        The process of Fischer-Tropsch converts syngas (a mixture of mainly CO and hydrogen) into liquid hydrocarbons.
-        In the ETM, the following fuels and feedstock can be produced via Fischer-Tropsch:
+        This slider sets the annual useful production of liquid fuels and feedstock from Fischer-Tropsch.
+        The process of Fischer-Tropsch converts syngas (a mixture of mainly CO and hydrogen) into liquid hydrocarbons.<br/><br/>
+        The following feedstock (routes) can be used for syngas production for Fischer-Tropsch, and therefore
+        represent feedstock going into this process:
         <ul>
-        <li>Main product: kerosene</li>
-        <li>By-products: naphtha, diesel</li>
+        <li><b>hydrogen, electricity and CO<sub>2</sub></b></li>
+        <li><b>non-biogenic waste</b></li>
+        <li><b>biogenic waste</b></li>
+        <li><b>dry biomass</b></li>
         </ul><br/>
-        Different types of feedstock can be used to produce syngas. Depending on
-        the type of used feedstock, the produced liquid fuels from Fischer-Tropsch will differ in the extent to which they are synthetic,
-        biogenic or non-biogenic.<br/><br/>
-        In the <a href="/scenario/supply/fuel_production/fischer-tropsch">Fischer-Tropsch</a> section
-        the shares of the different feedstock routes for syngas production for Fischer-Tropsch can be set.<br/><br/>
+
+        The output of Fischer-Tropsch consists of the following fuels and feedstock:
+        <ul>
+        <li><b>kerosene</b> (main product)</li>
+        <li><b>diesel</b></li>
+        <li><b>naphtha</b></li>
+        </ul><br/>
+        Depending on the type of feedstock going into the process, the produced products from Fischer-Tropsch will
+        differ in the extent to which they are synthetic, biogenic or non-biogenic.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/fischer-tropsch">Fischer-Tropsch</a> section to set
+        the shares the feedstock routes that produce syngas for Fischer-Tropsch.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_methanol_synthesis:
       title: Methanol synthesis
       short_description:
       description: |
-        This slider sets the annual useful production of methanol from methanol synthesis.<br/><br/>
-        Methanol can be produced by converting syngas (a mixture of mainly CO and hydrogen). Different types of feedstock
-        can be used to produce syngas. Depending on the type of used feedstock, the produced methanol will differ in the
-        extent to which it is synthetic, biogenic or non-biogenic.<br/><br/>
+        This slider sets the annual useful production of methanol from methanol synthesis.
+        In this process, syngas (a mixture of mainly CO and hydrogen) is converted to methanol.<br/><br/>
+        The following feedstock (routes) can be used for syngas production for methanol synthesis, and therefore
+        represent feedstock going into this process:
+        <ul>
+        <li><b>hydrogen, electricity and CO<sub>2</sub></b></li>
+        <li><b>non-biogenic waste</b></li>
+        <li><b>biogenic waste</b></li>
+        <li><b>dry biomass</b></li>
+        </ul><br/>
+        The only output product is <b>methanol</b>. Depending on the type of used feedstock, the produced methanol
+        will differ in the extent to which it is synthetic, biogenic or non-biogenic.<br/><br/>
         In the <a href="/scenario/supply/fuel_production/methanol-synthesis">Methanol synthesis</a> section
         the shares of the different feedstock routes for syngas production for methanol synthesis can be set.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
@@ -45,27 +62,64 @@ en:
       short_description:
       description: |
         This slider sets the annual useful production of liquid fuels and feedstock from fractionation of
-        pyrolysis oil.<br/><br/>
-        In this process, pyrolysis oil is upgraded through hydrotreatment for which hydrogen is used. In the ETM,
-        fractionation of pyrolysis oil yields the following fuels and feedstock:
+        pyrolysis oil (non-biogenic). In this process, pyrolysis oil is upgraded through hydrotreatment.<br/><br/>
+        The pyrolysis oil, required for fractionation, can be produced through fast pyrolysis of feedstock.
+        Pyrolysis oil (non-biogenic) can only be produced with <b>non-biogenic waste</b>. Furthermore, there is
+        input of <b>hydrogen</b> in the hydrotreatment process of fractionation of pyrolysis oil.<br/><br/>
+        The following fuels and feedstock can be produced from pyrolysis oil fractionation:
         <ul>
-        <li>diesel</li>
-        <li>naphtha</li>
+        <li><b>diesel</b></li>
+        <li><b>naphtha</b></li>
         </ul><br/>
-        The pyrolysis oil required for this process can either be produced locally or imported. Go to the section
-        <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Fractionation of pyrolysis oil</a> to
-        set the local production of pyrolysis oil. In case the local production of pyrolysis oil is lower than
-        the amount required for fractionation, the shortage is imported.<br/><br/>
+        The model assumes that required pyrolysis oil for the fractionation process or for baseload export is produced locally. This can be altered by
+        setting import of pyrolysis oil, which will substitute the local production of pyrolysis oil.<br/><br/>
+        Go to the section
+        <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
+        of pyrolysis oil.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_fractionation_bio_pyrolysis_oil:
       title: Pyrolysis bio-oil fractionation
       short_description:
-      description:
+      description: |
+        This slider sets the annual useful production of liquid fuels and feedstock from fractionation of biogenic
+        pyrolysis oil (further referred to as pyrolysis bio-oil). In this process, pyrolysis bio-oil is upgraded through hydrotreatment.<br/><br/>
+        The pyrolysis bio-oil, required for fractionation, can be produced through fast pyrolysis of feedstock.
+        Pyrolysis bio-oil can be produced with the following feedstockL
+        <ul>
+        <li><b>biogenic waste</b></li>
+        <li><b>dry biomass</b></li>
+        </ul><br/>
+        Furthermore, input of <b>hydrogen</b> is required in the hydrotreatment process of fractionation of pyrolysis bio-oil.<br/><br/>
+        The following fuels and feedstock can be produced from pyrolysis bio-oil fractionation:
+        <ul>
+        <li><b>biodiesel</b></li>
+        <li><b>bionaphtha</b></li>
+        </ul><br/>
+        The model assumes that required pyrolysis bio-oil for the fractionation process or for baseload export is produced locally. This can be altered by
+        setting import of pyrolysis bio-oil, which will substitute the local production of pyrolysis oil.<br/><br/>
+        Go to the section
+        <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
+        of pyrolysis bio-oil and to set the shares of feedstock used for pyrolysis bio-oil production.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_hvo_bio_kerosene:
       title: Hydrotreatment to HVO (biokerosene)
       short_description:
-      description:
+      description: |
+        This slider sets the annual useful production of HVO biokerosene (Sustainable Aviation Fuel, SAF) from hydrotreatment
+        of oily biomass, such as vegetable oils and animal fats.<br/><br/>
+        The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
+        processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
+        The feedstock input of hydrotreatment (for both HVO biokerosene and biodiesel) consists of <b>oily biomass</b> and
+        <b>hydrogen</b> for the hydrotreatment process.<br/><br/>
+        The output products of hydrotreatment to HVO biokerosene are:
+        <ul>
+        <li><b>biokerosene</b></li>
+        <li><b>bionaphtha</b></li>
+        </ul><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
     output_of_energy_production_hvo_biodiesel:
       title: Hydrotreatment to HVO (biodiesel)
       short_description:

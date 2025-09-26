@@ -1,7 +1,7 @@
 ---
 - label: baseload_demand
   color: "#CC0000"
-  order_by: 1
+  order_by: 100
   group:
   show_at_first:
   is_target_line: true
@@ -11,105 +11,34 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: total_demand_dynamic_demand_curve
-- label: merit_households_other
-  color: "#E84118"
-  order_by: 2
-  group: ''
+
+- label: other
+  color: "#FFA502"
+  order_by: 205
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
-  gquery: merit_households_other_demand
+  target_line_position:
+  gquery: merit_other_demand
   is_1990: false
   dependent_on:
   output_element_key: dynamic_demand_curve
-  key: merit_households_other_dynamic_demand_curve
-- label: merit_households_space_heating
-  color: "#FF6B6B"
-  order_by: 3
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: merit_households_space_heating_demand
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: merit_households_space_heating_dynamic_demand_curve
-- label: merit_households_hot_water
-  color: "#FF0000"
-  order_by: 4
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: merit_households_hot_water_demand
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: merit_households_hot_water_dynamic_demand_curve
-- label: merit_buildings_space_heating
-  color: "#F6E58D"
-  order_by: 5
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: merit_buildings_space_heating_demand
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: merit_buildings_space_heating_dynamic_demand_curve
-- label: merit_buildings_other
-  color: "#F9CA24"
-  order_by: 6
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: merit_buildings_other_demand
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: merit_buildings_other_dynamic_demand_curve
-- label: merit_ev_demand
-  color: "#0984E3"
-  order_by: 7
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: merit_ev_demand
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: merit_ev_demand_dynamic_demand_curve
-- label: merit_transport_other
-  color: "#74B9FF"
-  order_by: 8
+  key: other_dynamic_demand_curve
+- label: distribution_losses
+  color: "#D87093"
+  order_by: 205
   group:
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: merit_transport_other_demand
+  gquery: merit_hv_network_loss
   is_1990:
   dependent_on:
   output_element_key: dynamic_demand_curve
-  key: merit_transport_other_dynamic_demand_curve
-- label: merit_collective_heat
-  color: "#8B0000"
-  order_by: 9
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: mv_energy_heat_load_curve
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: merit_collective_heat_dynamic_demand_curve
+  key: distribution_losses_dynamic_demand_curve
 - label: merit_agriculture
   color: "#6AB04C"
-  order_by: 10
+  order_by: 210
   group:
   show_at_first:
   is_target_line:
@@ -119,33 +48,9 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: merit_agriculture_dynamic_demand_curve
-- label: other
-  color: "#FFA502"
-  order_by: 11
-  group: ''
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: merit_other_demand
-  is_1990: false
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: other_dynamic_demand_curve
-- label: losses_in_storage
-  color: "#D87093"
-  order_by: 12
-  group:
-  show_at_first:
-  is_target_line:
-  target_line_position:
-  gquery: merit_hv_network_loss
-  is_1990:
-  dependent_on:
-  output_element_key: dynamic_demand_curve
-  key: losses_in_storage_dynamic_demand_curve
 - label: merit_industry_metals
   color: "#666666"
-  order_by: 13
+  order_by: 215
   group:
   show_at_first:
   is_target_line:
@@ -157,7 +62,7 @@
   key: merit_industry_metals_dynamic_demand_curve
 - label: merit_industry_chemical
   color: "#2F3640"
-  order_by: 14
+  order_by: 220
   group:
   show_at_first:
   is_target_line:
@@ -169,7 +74,7 @@
   key: merit_industry_chemical_dynamic_demand_curve
 - label: merit_industry_other
   color: "#353B48"
-  order_by: 15
+  order_by: 225
   group:
   show_at_first:
   is_target_line:
@@ -181,7 +86,7 @@
   key: merit_industry_other_dynamic_demand_curve
 - label: merit_industry_transformation
   color: "#9A9C9C"
-  order_by: 18
+  order_by: 230
   group:
   show_at_first:
   is_target_line:
@@ -191,9 +96,106 @@
   dependent_on:
   output_element_key: dynamic_demand_curve
   key: merit_industry_transformation_dynamic_demand_curve
+- label: merit_ev_demand
+  color: "#0984E3"
+  order_by: 235
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: merit_ev_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_ev_demand_dynamic_demand_curve
+- label: merit_transport_other
+  color: "#74B9FF"
+  order_by: 240
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: merit_transport_other_demand
+  is_1990:
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_transport_other_dynamic_demand_curve
+- label: merit_buildings_other
+  color: "#F9CA24"
+  order_by: 245
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: merit_buildings_other_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_buildings_other_dynamic_demand_curve
+- label: merit_buildings_space_heating
+  color: "#F6E58D"
+  order_by: 250
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: merit_buildings_space_heating_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_buildings_space_heating_dynamic_demand_curve
+- label: merit_households_other
+  color: "#E84118"
+  order_by: 255
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: merit_households_other_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_households_other_dynamic_demand_curve
+- label: merit_households_hot_water
+  color: "#FF0000"
+  order_by: 260
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: merit_households_hot_water_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_households_hot_water_dynamic_demand_curve
+- label: merit_households_space_heating
+  color: "#FF6B6B"
+  order_by: 265
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: merit_households_space_heating_demand
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_households_space_heating_dynamic_demand_curve
+- label: merit_collective_heat
+  color: "#8B0000"
+  order_by: 270
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: mv_energy_heat_load_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: dynamic_demand_curve
+  key: merit_collective_heat_dynamic_demand_curve
+
 - label: flexibility_conversion_and_storage
   color: "#0AA1DD"
-  order_by: 20
+  order_by: 300
   group:
   show_at_first:
   is_target_line:
@@ -205,11 +207,11 @@
   key: flexibility_dynamic_demand_curve
 - label: flexibility_export
   color: "#79DAE8"
-  order_by: 21
-  group: ''
+  order_by: 305
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: merit_energy_export_demand
   is_1990: false
   dependent_on:
@@ -217,11 +219,11 @@
   key: merit_export_dynamic_demand_curve
 - label: flexibility_curtailment
   color: "#E8F9FD"
-  order_by: 22
-  group: ''
+  order_by: 310
+  group:
   show_at_first: false
   is_target_line: false
-  target_line_position: ''
+  target_line_position:
   gquery: merit_flexibility_curtailment_demand
   is_1990: false
   dependent_on:

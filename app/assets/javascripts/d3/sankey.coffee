@@ -23,7 +23,7 @@ D3.sankey =
           {id: 'imported_ammonia',             column: 0, label: 'imported_ammonia',                  color: '#1ce6d6'},
           {id: 'extracted_oil',                column: 0, label: 'extracted_oil',                     color: '#8c564b'},
           {id: 'imported_oil',                 column: 0, label: 'imported_oil',                      color: '#8c564b'},
-          {id: 'imported_biofuels',            column: 0, label: 'imported_biofuels',                 color: '#2ca02c'},    
+          {id: 'imported_biofuels',            column: 0, label: 'imported_biofuels',                 color: '#2ca02c'},
           {id: 'oil_products',                 column: 0, label: 'oil_products',                      color: '#8c564b'},
           {id: 'imported_methanol',            column: 0, label: 'imported_methanol',                 color: '#FF8C8C'},
           {id: 'not_defined',                  column: 0, label: 'not_defined',                       color: '#DCDCDC'},
@@ -70,7 +70,6 @@ D3.sankey =
           {left: 'coal_and_coal_products',       right: 'electricity',               gquery: 'sankey_0_to_1_coal_and_coal_products_to_electricity',    color: '#252525'},
           {left: 'geothermal',                   right: 'electricity',               gquery: 'sankey_0_to_1_geothermal_to_electricity',                color: '#FF8400'},
 
-          {left: 'biomass_products',             right: 'heat',                      gquery: 'sankey_0_to_1_biomass_products_to_heat',                 color: '#2ca02c'},
           {left: 'coal_and_coal_products',       right: 'heat',                      gquery: 'sankey_0_to_1_coal_and_coal_products_to_heat',           color: '#252525'},
           {left: 'solar_thermal',                right: 'heat',                      gquery: 'sankey_0_to_1_solar_thermal_to_heat',                    color: '#4465c6'},
           {left: 'uranium',                      right: 'heat',                      gquery: 'sankey_0_to_1_uranium_to_heat',                          color: '#ff7f0e'},
@@ -122,9 +121,10 @@ D3.sankey =
 
           {left: 'electricity',                  right: 'heat',                      gquery: 'sankey_1_to_1_electricity_to_heat',                      color: '#1f77b4'},
           {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                         color: '#87cfeb'},
+          {left: 'oil_and_oil_products',         right: 'heat',                      gquery: 'sankey_1_to_1_oil_and_oil_products_to_heat',             color: '#cc0000'},
           {left: 'waste_mix',                    right: 'heat',                      gquery: 'sankey_1_to_1_waste_mix_to_heat',                        color: '#CE7013'},
           {left: 'network_gas',                  right: 'heat',                      gquery: 'sankey_1_to_1_network_gas_to_heat',                      color: '#7f7f7f'},
-          {left: 'biofuels',                     right: 'heat',                      gquery: 'sankey_1_to_1_biofuels_to_heat',                         color: '#1ce6d6'},
+          {left: 'biofuels',                     right: 'heat',                      gquery: 'sankey_1_to_1_biofuels_to_heat',                         color: '#cc0000'},
 
 
           {left: 'electricity',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_electricity_to_hydrogen',                  color: '#1f77b4'},
@@ -134,7 +134,7 @@ D3.sankey =
           {left: 'methanol',                     right: 'hydrogen',                  gquery: 'sankey_1_to_1_methanol_to_hydrogen',                     color: '#FF8C8C'},
           {left: 'ammonia',                      right: 'hydrogen',                  gquery: 'sankey_1_to_1_ammonia_to_hydrogen',                      color: '#1ce6d6'},
           {left: 'network_gas',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_network_gas_to_hydrogen',                  color: '#7f7f7f'},
-          {left: 'biofuels',                     right: 'hydrogen',                  gquery: 'sankey_1_to_1_biofuels_to_hydrogen',                     color: '#1ce6d6'},
+          {left: 'biofuels',                     right: 'hydrogen',                  gquery: 'sankey_1_to_1_biofuels_to_hydrogen',                     color: '#FF8C8C'},
 
           {left: 'electricity',                  right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_electricity_to_oil_and_oil_products',      color: '#1f77b4'},
           {left: 'heat',                         right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_heat_to_oil_and_oil_products',             color: '#cc0000'},
@@ -287,16 +287,16 @@ D3.sankey =
 
           {left: 'waste_mix',                    right: 'feedstock',                 gquery: 'sankey_1_to_2_waste_mix_to_feedstock',                   color: '#CE7013'},
 
-          {left: 'biofuels',                     right: 'agriculture',               gquery: 'sankey_1_to_2_biofuels_to_agriculture',                  color: '#8c564b'},
-          {left: 'biofuels',                     right: 'households',                gquery: 'sankey_1_to_2_biofuels_to_households',                   color: '#8c564b'},
-          {left: 'biofuels',                     right: 'buildings',                 gquery: 'sankey_1_to_2_biofuels_to_buildings',                    color: '#8c564b'},
-          {left: 'biofuels',                     right: 'transport',                 gquery: 'sankey_1_to_2_biofuels_to_transport',                    color: '#8c564b'},
-          {left: 'biofuels',                     right: 'industry',                  gquery: 'sankey_1_to_2_biofuels_to_industry',                     color: '#8c564b'},
-          {left: 'biofuels',                     right: 'energy',                    gquery: 'sankey_1_to_2_biofuels_to_energy',                       color: '#8c564b'},
-          {left: 'biofuels',                     right: 'other',                     gquery: 'sankey_1_to_2_biofuels_to_other',                        color: '#8c564b'},
-          {left: 'biofuels',                     right: 'bunkers',                   gquery: 'sankey_1_to_2_biofuels_to_bunkers',                      color: '#8c564b'},
-          {left: 'biofuels',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_biofuels_to_feedstock',                    color: '#8c564b'},
-          {left: 'biofuels',                     right: 'export',                    gquery: 'sankey_1_to_2_biofuels_to_export',                       color: '#8c564b'},
+          {left: 'biofuels',                     right: 'agriculture',               gquery: 'sankey_1_to_2_biofuels_to_agriculture',                  color: '#246D24'},
+          {left: 'biofuels',                     right: 'households',                gquery: 'sankey_1_to_2_biofuels_to_households',                   color: '#246D24'},
+          {left: 'biofuels',                     right: 'buildings',                 gquery: 'sankey_1_to_2_biofuels_to_buildings',                    color: '#246D24'},
+          {left: 'biofuels',                     right: 'transport',                 gquery: 'sankey_1_to_2_biofuels_to_transport',                    color: '#246D24'},
+          {left: 'biofuels',                     right: 'industry',                  gquery: 'sankey_1_to_2_biofuels_to_industry',                     color: '#246D24'},
+          {left: 'biofuels',                     right: 'energy',                    gquery: 'sankey_1_to_2_biofuels_to_energy',                       color: '#246D24'},
+          {left: 'biofuels',                     right: 'other',                     gquery: 'sankey_1_to_2_biofuels_to_other',                        color: '#246D24'},
+          {left: 'biofuels',                     right: 'bunkers',                   gquery: 'sankey_1_to_2_biofuels_to_bunkers',                      color: '#246D24'},
+          {left: 'biofuels',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_biofuels_to_feedstock',                    color: '#246D24'},
+          {left: 'biofuels',                     right: 'export',                    gquery: 'sankey_1_to_2_biofuels_to_export',                       color: '#246D24'},
           {left: 'biofuels',                     right: 'losses',                    gquery: 'sankey_1_to_2_biofuels_to_loss',                         color: '#DCDCDC'},
 
           {left: 'ammonia',                      right: 'agriculture',               gquery: 'sankey_1_to_2_ammonia_to_agriculture',                   color: '#1ce6d6'},

@@ -5,17 +5,38 @@ ___
 ## Verwachte wijzigingen
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <ul>
-    <li><b>Oktober</b>: een nieuwe dataset voor Nederland wordt toegevoegd met startjaar 2023.</li>
-    <li><b>Oktober</b>: de bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdatet naar startjaar 2023.</li>
-    <p>
-      <details>
-        <summary><u>Wat betekent dit voor bestaande scenario's?</u></summary>
-          Bestaande scenario's voor Nederlandse gemeentes, provincies of RES-regio's hebben nu 2019 als startjaar. Als er geen actie wordt ondernomen, worden deze scenario's automatisch bijgewerkt naar starjaar 2023 , die gebaseerd zijn op meer recente en kwalitatief betere data. Let op: de resultaten van deze scenario's kunnen veranderen door de update naar 2023. Als veranderingen in scenarioresultaten onwenselijk zijn, kunnen deze scenario's worden overgezet naar de stabiele versie <code>#2025-01</code> <b>voor oktober</b>. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie over modelversies of <a href="https://my.energytransitionmodel.com/contact" target="_blank">neem contact op</a> bij vragen. Scenario's die voor Nederland zijn gemaakt met startjaar 2019 zullen niet veranderen, aangezien deze dataset behouden blijft.
-      </details>
-    </p>
-  </ul>
+  <b>November</b>: er worden nieuwe productietechnologieën toegevoegd waarmee transportbrandstoffen en grondstoffen voor de chemiesector kunnen worden geproduceerd, zoals Fischer-Tropsch en pyrolyse. Ook wordt de inzet van brandstoffen in de transportsector en grondstoffen in de chemiesector uitgebreid waardoor de finale vraag naar bestaande en nieuwe dragers (waaronder biomethanol en bionafta) in deze sectoren beter kan worden gemodelleerd.
 </div>
+
+___
+
+## October 2025
+
+#### Nieuwe Nederlandse dataset 2023 toegevoegd
+
+#### Update van regionale Nederlandse datasets naar 2023
+De datasets voor Nederlandse gemeenten, provincies en RES regio's zijn geüpdatet naar startjaar 2023. Deze updates omvatten onder andere:
+
+* Geactualiseerde waarden voor de finale vraag en energieproductie van alle sectoren, gebaseerd op nationale bronnen zoals Klimaatmonitor en CBS
+* Verbetering in het bepalen van de finale vraag in de industrie, waarbij meer aansluiting is gevonden bij de nationale energiebalans
+* Verbetering in data op gebied van warmtevraag in de gebouwde omgeving, zoals isolatiewaarde en nuttige warmtevraag, door gebruik van actuele en kwalitatief betere bronnen
+
+Ga naar de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de data en databronnen voor de datasets in te zien.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  Bestaande scenario's gemaakt met een Nederlandse regionale dataset hadden startjaar 2019. Deze scenario's zijn automatisch bijgewerkt naar de geüpdate datasets met startjaar 2023. Deze update kan ertoe hebben geleid dat scenarioresultaten zijn gewijzigd.
+</div>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * De energetische CO<sub>2</sub>-emissies van de industriesector werden incorrect berekend, waardoor een overschatting werd gedaan van de <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub>-emissies</a> van deze sector. Dit probleem is verholpen.
+  * Voor verschillende Europese datasets is een correctie doorgevoerd in de kolenvraag voor hoogovens in de <a href="/scenario/demand/industry/steel" target="_blank">staalsector</a>. Hiermee is een bug verholpen die zorgde voor incorrecte data in het startjaar. Ga naar de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de data voor een specifieke dataset in te zien.
+  * Door een bug werd de uurlijkse elektriciteitsvraag van <a href="/scenario/demand/buildings/cooling" target="_blank">koelingtechnologieën</a> bij gebouwen incorrect berekend. Deze bug is verholpen.
+
+</details>
+
+</br>
 
 ___
 

@@ -5,17 +5,38 @@ ___
 ## Upcoming changes
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <ul>
-    <li><b>October</b>: a new dataset for the Netherlands with start year 2023 will be added.</li>
-    <li><b>October</b>: the existing Dutch municipal, provincial and RES region datasets will be updated to start year 2023.</li>
-    <p>
-      <details>
-        <summary><u>What does this mean for existing scenarios?</u></summary>
-        Existing scenarios created for Dutch municipalities, provinces and RES regions now have 2019 as their start year. If no action is taken, these scenarios will automatically be updated to start year 2023, which relies on more recent and higher-quality data. Note: results for these scenarios are expected to change as a result of this update. If changes in scenario results are undesirable, the scenarios can be transferred to the stable version <code>#2025-01</code> <b>before October</b>. See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information about model versions or get in <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact</a> if you have questions. Scenarios created for the Netherlands with start year 2019 will not be affected, as this dataset will remain available.
-      </details>
-    </p>
-  </ul>
+  <b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded, making it possible to better model the final demand of existing and newly added carriers (such as biomethanol and bionaphtha) in these sectors.
 </div>
+
+___
+
+## October 2025
+
+#### New dataset Netherlands 2023 added
+
+#### Update of regional Dutch datasets to 2023
+The datasets for Dutch municipalities, provinces and RES regions have been updated to the start year 2023. These updates include, among others:
+
+*	Updated values for final demand and energy production across all sectors, based on national sources such as Klimaatmonitor and CBS
+* Improvements in determining final demand in the industry sector, with closer alignment to the national energy balance
+* Enhancements in data on heat demand in the built environment, such as insulation values and useful heat demand, by using more up-to-date and higher-quality sources
+
+Go to the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to see the data and data sources for these datasets.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  Existing scenarios created with a Dutch regional dataset had 2019 as start year. These scenarios have been automatically updated to the updated datasets with start year 2023. This update may have caused changes in scenario results.
+</div>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * The energetic CO<sub>2</sub> emissions of the industry sector were being calculatud incorrectly, leading to an overestimation of this sector’s  <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. This issue has been fixed.
+  * For several European datasets, a correction has been made to coal demand for blast furnaces in the <a href="/scenario/demand/industry/steel" target="_blank">steel sector</a>. This resolves a bug that caused incorrect data in the start year. Go to the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view this data for a specific dataset.
+  * Due to an issue, the hourly electricity demand of <a href="/scenario/demand/buildings/cooling" target="_blank">cooling technologies</a> in buildings were incorrectly calculated. This issue has been fixed.
+
+</details>
+
+</br>
 
 ___
 

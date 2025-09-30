@@ -5,16 +5,17 @@ ___
 ## Upcoming changes
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded, making it possible to better model the final demand of existing and newly added carriers (such as biomethanol and bionaphtha) in these sectors.
+  <ul>
+    <li><b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded for existing and newly added carriers (such as biomethanol and bionaphtha).</li>
+    <li><b>November</b>: PyETM will be formally released. It is a Python package to interact with the API of the ETM in a standardized way.
+  </ul>
 </div>
 
 ___
 
 ## October 2025
 
-#### New dataset Netherlands 2023 added
-
-#### Update of regional Dutch datasets to 2023
+**Update of regional Dutch datasets to 2023**
 The datasets for Dutch municipalities, provinces and RES regions have been updated to the start year 2023. These updates include, among others:
 
 *	Updated values for final demand and energy production across all sectors, based on national sources such as Klimaatmonitor and CBS
@@ -30,9 +31,9 @@ Go to the <a href="https://data.energytransitionmodel.com/" target="_blank">Data
 <details>
   <summary>**Bug fixes**</summary>
 
-  * The energetic CO<sub>2</sub> emissions of the industry sector were being calculatud incorrectly, leading to an overestimation of this sector’s  <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. This issue has been fixed.
-  * For several European datasets, a correction has been made to coal demand for blast furnaces in the <a href="/scenario/demand/industry/steel" target="_blank">steel sector</a>. This resolves a bug that caused incorrect data in the start year. Go to the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view this data for a specific dataset.
-  * Due to an issue, the hourly electricity demand of <a href="/scenario/demand/buildings/cooling" target="_blank">cooling technologies</a> in buildings were incorrectly calculated. This issue has been fixed.
+  * After the addition of naphtha in the August release, the energetic CO<sub>2</sub> emissions of the industry sector wrongly included non-energetic emissions for naphtha, leading to an overestimation of this sector’s <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. The original emissions are now restored by excluding non-energetic naphtha.
+  * For <a href="/scenario/demand/industry/steel" target="_blank">steel</a> producing European countries (excluding the Netherlands), the transformation input of cokes in blast furnaces was counted twice in the start year data. This issue has been fixed. The flows of the Eurostat energy balance, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a>, are now more accurately represented in the ETM.
+  * In some charts, the hourly electricity demand of <a href="/scenario/demand/buildings/cooling" target="_blank">cooling</a> in buildings did not cover all cooling technologies. This has been fixed.
 
 </details>
 

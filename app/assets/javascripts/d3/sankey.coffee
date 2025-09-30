@@ -123,7 +123,7 @@ D3.sankey =
           {left: 'methanol',                     right: 'hydrogen',                  gquery: 'sankey_1_to_1_methanol_to_hydrogen',                     color: '#FF8C8C'},
           {left: 'ammonia',                      right: 'hydrogen',                  gquery: 'sankey_1_to_1_ammonia_to_hydrogen',                      color: '#1ce6d6'},
           {left: 'network_gas',                  right: 'hydrogen',                  gquery: 'sankey_1_to_1_network_gas_to_hydrogen',                  color: '#7f7f7f'},
-          {left: 'biofuels',                     right: 'hydrogen',                  gquery: 'sankey_1_to_1_biofuels_to_hydrogen',                     color: '#FF8C8C'},
+          {left: 'biofuels',                     right: 'hydrogen',                  gquery: 'sankey_1_to_1_biofuels_to_hydrogen',                     color: '#2ca02c'},
 
           {left: 'electricity',                  right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_electricity_to_oil_and_oil_products',      color: '#1f77b4'},
           {left: 'heat',                         right: 'oil_and_oil_products',      gquery: 'sankey_1_to_1_heat_to_oil_and_oil_products',             color: '#cc0000'},

@@ -22,6 +22,7 @@ Replacing 2019 as the start year, 2023 is now set as the default for new scenari
 -> <img src="/assets/pages/whats_new/co2_emissions_2023_en.png" width="800" /> <-
 
 This start year update also includes improvements in data quality, among others:
+
 *	Updated values for final demand and energy production across all sectors, based on recognized data sources as Eurostat, CBS, Klimaatmonitor and Emissieregistratie.
 * Enhancements in data on heat demand in the built environment, such as insulation values and useful heat demand, by using more up-to-date and higher-quality sources.
 * Significant improvements in hourly supply and profiles, aligning with recognized data sources as the Pan-European Climate Database (PECD).

@@ -6,16 +6,42 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>October</b>: a new dataset for the Netherlands with start year 2023 will be added.</li>
-    <li><b>October</b>: the existing Dutch municipal, provincial and RES region datasets will be updated to start year 2023.</li>
-    <p>
-      <details>
-        <summary><u>What does this mean for existing scenarios?</u></summary>
-        Existing scenarios created for Dutch municipalities, provinces and RES regions now have 2019 as their start year. If no action is taken, these scenarios will automatically be updated to start year 2023, which relies on more recent and higher-quality data. Note: results for these scenarios are expected to change as a result of this update. If changes in scenario results are undesirable, the scenarios can be transferred to the stable version <code>#2025-01</code> <b>before October</b>. See the <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentation</a> for more information about model versions or get in <a href="https://my.energytransitionmodel.com/contact" target="_blank">contact</a> if you have questions. Scenarios created for the Netherlands with start year 2019 will not be affected, as this dataset will remain available.
-      </details>
-    </p>
+    <li><b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded for existing and newly added carriers (such as biomethanol and bionaphtha).</li>
+    <li><b>November</b>: PyETM will be formally released. It is a Python package to interact with the API of the ETM in a standardized way.</li>
   </ul>
 </div>
+
+___
+
+## October 2025
+
+**New start year 2023 for the Netherlands**
+
+Replacing 2019 as the start year, 2023 is now set as the default for new scenarios for the Netherlands and all its regions: municipalities, provinces and RES regions.
+
+-> <img src="/assets/pages/whats_new/co2_emissions_2023_en.png" width="650" /> <-
+
+This start year update also includes improvements in data quality, among others:
+
+*	Updated values for final demand and energy production across all sectors, based on recognized data sources such as Eurostat, CBS, Klimaatmonitor and Emissieregistratie.
+* Enhancements in data on heat demand in the built environment, such as insulation values and useful heat demand, by using more up-to-date and higher-quality sources.
+* Significant improvements in hourly supply and profiles, aligning with recognized data sources such as the Pan-European Climate Database (PECD).
+* Overall improvements in data transparency and documentation, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> for the regional datasets and <a href="https://github.com/quintel/etdataset-public/tree/master/data/nl/2023" target="_blank">ETDataset</a> for the national dataset.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <b>Note:</b> the national dataset is <b>added</b> to the model, which means that all existing scenarios with start year 2019 remain unaffected. The regional datasets however are <b>updated</b> to 2023, which means that all existing scenarios with start year 2019 have been changed to the new start year. As a result, scenario results may have changed.
+</div>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * After the addition of naphtha in the August release, the energetic CO<sub>2</sub> emissions of the industry sector were wrongly included non-energetic emissions for naphtha, leading to an overestimation of this sector’s <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. The original emissions are now restored by excluding non-energetic naphtha.
+  * For <a href="/scenario/demand/industry/steel" target="_blank">steel</a>-producing European countries (excluding the Netherlands), the transformation input of cokes in blast furnaces was counted twice in the start year data. This issue has been fixed. The flows of the Eurostat energy balance, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a>, are now more accurately represented in the ETM.
+  * In some charts, the hourly electricity demand of <a href="/scenario/demand/buildings/cooling" target="_blank">cooling</a> in buildings did not cover all cooling technologies. This has been fixed.
+
+</details>
+
+</br>
 
 ___
 

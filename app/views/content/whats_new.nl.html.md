@@ -6,16 +6,42 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>Oktober</b>: een nieuwe dataset voor Nederland wordt toegevoegd met startjaar 2023.</li>
-    <li><b>Oktober</b>: de bestaande datasets voor Nederlandse gemeentes, provincies en RES-regio's worden geüpdatet naar startjaar 2023.</li>
-    <p>
-      <details>
-        <summary><u>Wat betekent dit voor bestaande scenario's?</u></summary>
-          Bestaande scenario's voor Nederlandse gemeentes, provincies of RES-regio's hebben nu 2019 als startjaar. Als er geen actie wordt ondernomen, worden deze scenario's automatisch bijgewerkt naar starjaar 2023 , die gebaseerd zijn op meer recente en kwalitatief betere data. Let op: de resultaten van deze scenario's kunnen veranderen door de update naar 2023. Als veranderingen in scenarioresultaten onwenselijk zijn, kunnen deze scenario's worden overgezet naar de stabiele versie <code>#2025-01</code> <b>voor oktober</b>. Zie de <a href="https://docs.energytransitionmodel.com/main/user_manual/model-versions#move-scenarios-between-versions" target="_blank">documentatie</a> voor meer informatie over modelversies of <a href="https://my.energytransitionmodel.com/contact" target="_blank">neem contact op</a> bij vragen. Scenario's die voor Nederland zijn gemaakt met startjaar 2019 zullen niet veranderen, aangezien deze dataset behouden blijft.
-      </details>
-    </p>
+    <li><b>November</b>: nieuwe productietechnologieën worden toegevoegd waarmee transportbrandstoffen en grondstoffen voor de chemiesector kunnen worden geproduceerd, zoals Fischer-Tropsch en pyrolyse. Ook wordt de inzet van brandstoffen in de transportsector en grondstoffen in de chemiesector uitgebreid met bestaande en nieuw toegevoegde dragers (zoals biomethanol en bionafta).</li>
+    <li><b>November</b>: PyETM zal officiëel worden gelanceerd. Dit is een Python package waarmee op een gestandaardiseerde manier met de API van het ETM kan worden gecommuniceerd.</li>
   </ul>
 </div>
+
+___
+
+## October 2025
+
+**Nieuw startjaar 2023 voor Nederland**
+
+Ter vervanging van 2019 is nu 2023 het standaard startjaar voor nieuwe scenario's voor Nederland en alle bijbehorende regio's: gemeenten, provincies en RES-regio's.
+
+-> <img src="/assets/pages/whats_new/co2_emissions_2023_en.png" width="650" /> <-
+
+Deze update van het startjaar bevat verbeteringen in de datakwaliteit, waaronder:
+
+* Geactualiseerde waarden voor de finale vraag en energieproductie van alle sectoren, gebaseerd op erkende databronnen zoals Eurostat, CBS, Klimaatmonitor en Emissieregistratie.
+* Verbetering in data op gebied van warmtevraag in de gebouwde omgeving, zoals isolatiewaarden en nuttige warmtevraag, door gebruik van actuele en kwalitatief betere bronnen.
+* Aanzienlijke verbeteringen in uurlijkse vraag- en aanbodprofielen, in lijn met erkende databronnen zoals de Pan-European Climate Database (PECD).
+* Algehele verbeteringen in transparantie en documentatie, zie de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> voor de regionale datasets en <a href="https://github.com/quintel/etdataset-public/tree/master/data/nl/2023" target="_blank">ETDataset</a> voor de nationale dataset.
+
+<div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
+  <b>Note:</b> de nationale dataset is <b>toegevoegd</b> aan het model, wat betekent dat bestaande scenario's met startjaar 2019 onveranderd blijven. De regionale datasets zijn echter <b>geüpdatet</b> naar 2023, wat betekent dat bestaande scenario's met startjaar 2019 zijn bijgewerkt naar het nieuwe startjaar. Deze update kan tot gewijzigde scenarioresultaten hebben geleid.
+</div>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Na de toevoeging van nafta in de release van augustus, werden ten onrechte de niet-energetische emissies van naftaverbruik meegenomen in de energetische CO<sub>2</sub>-emissies van de industriesector, waardoor de <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub>-emissies</a> van deze sector werden overschat. De oorpronkelijke emissies zijn hersteld door de niet-energetische emissies van naftaverbruik uit te sluiten.
+  * Voor <a href="/scenario/demand/industry/steel" target="_blank">staalproducerende</a> Europese landen (exclusief Nederland) zat er een dubbeltelling in de transformatie-input van kooks in hoogovens in het startjaar. Dit probleem is verholpen. De energiestromen van de Eurostat energiebalans, zie de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a>, worden nu beter meegenomen in het ETM.
+  * Bij bepaalde grafieken werden niet alle koelingstechnologieën meegenomen in de uurlijkse elektriciteitsvraag voor <a href="/scenario/demand/buildings/cooling" target="_blank">koeling</a> bij gebouwen. Dit is opgelost.
+
+</details>
+
+</br>
 
 ___
 

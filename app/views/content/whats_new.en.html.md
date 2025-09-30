@@ -7,7 +7,7 @@ ___
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
     <li><b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded for existing and newly added carriers (such as biomethanol and bionaphtha).</li>
-    <li><b>November</b>: PyETM will be formally released. It is a Python package to interact with the API of the ETM in a standardized way.
+    <li><b>November</b>: PyETM will be formally released. It is a Python package to interact with the API of the ETM in a standardized way.</li>
   </ul>
 </div>
 
@@ -15,17 +15,20 @@ ___
 
 ## October 2025
 
-**Update of regional Dutch datasets to 2023**
-The datasets for Dutch municipalities, provinces and RES regions have been updated to the start year 2023. These updates include, among others:
+**New start year 2023 for the Netherlands**
 
-*	Updated values for final demand and energy production across all sectors, based on national sources such as Klimaatmonitor and CBS
-* Improvements in determining final demand in the industry sector, with closer alignment to the national energy balance
-* Enhancements in data on heat demand in the built environment, such as insulation values and useful heat demand, by using more up-to-date and higher-quality sources
+Replacing 2019 as the start year, 2023 is now set as the default for new scenarios for the Netherlands and all its regions: municipalities, provinces and RES regions.
 
-Go to the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to see the data and data sources for these datasets.
+-> <img src="/assets/pages/whats_new/co2_emissions_2023_en.png" width="800" /> <-
+
+This start year update also includes improvements in data quality, among others:
+*	Updated values for final demand and energy production across all sectors, based on recognized data sources as Eurostat, CBS, Klimaatmonitor and Emissieregistratie.
+* Enhancements in data on heat demand in the built environment, such as insulation values and useful heat demand, by using more up-to-date and higher-quality sources.
+* Significant improvements in hourly supply and profiles, aligning with recognized data sources as the Pan-European Climate Database (PECD).
+* Overall improvements in data transparency and documentation, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> for the regional datasets and <a href="https://github.com/quintel/etdataset-public/tree/master/data/nl/2023" target="_blank">ETDataset</a> for the national dataset.
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  Existing scenarios created with a Dutch regional dataset had 2019 as start year. These scenarios have been automatically updated to the updated datasets with start year 2023. This update may have caused changes in scenario results.
+  <b>Note:</b> the national dataset is <b>added</b> to the model, which means that all existing scenarios with start year 2019 remain unaffected. The regional datasets however are <b>updated</b> to 2023, which means that all existing scenarios with start year 2019 have been updated to the new start year. As a result, scenario results may have changed.
 </div>
 
 <details>

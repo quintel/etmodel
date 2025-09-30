@@ -19,24 +19,24 @@ ___
 
 Replacing 2019 as the start year, 2023 is now set as the default for new scenarios for the Netherlands and all its regions: municipalities, provinces and RES regions.
 
--> <img src="/assets/pages/whats_new/co2_emissions_2023_en.png" width="800" /> <-
+-> <img src="/assets/pages/whats_new/co2_emissions_2023_en.png" width="650" /> <-
 
 This start year update also includes improvements in data quality, among others:
 
-*	Updated values for final demand and energy production across all sectors, based on recognized data sources as Eurostat, CBS, Klimaatmonitor and Emissieregistratie.
+*	Updated values for final demand and energy production across all sectors, based on recognized data sources such as Eurostat, CBS, Klimaatmonitor and Emissieregistratie.
 * Enhancements in data on heat demand in the built environment, such as insulation values and useful heat demand, by using more up-to-date and higher-quality sources.
-* Significant improvements in hourly supply and profiles, aligning with recognized data sources as the Pan-European Climate Database (PECD).
+* Significant improvements in hourly supply and profiles, aligning with recognized data sources such as the Pan-European Climate Database (PECD).
 * Overall improvements in data transparency and documentation, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> for the regional datasets and <a href="https://github.com/quintel/etdataset-public/tree/master/data/nl/2023" target="_blank">ETDataset</a> for the national dataset.
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
-  <b>Note:</b> the national dataset is <b>added</b> to the model, which means that all existing scenarios with start year 2019 remain unaffected. The regional datasets however are <b>updated</b> to 2023, which means that all existing scenarios with start year 2019 have been updated to the new start year. As a result, scenario results may have changed.
+  <b>Note:</b> the national dataset is <b>added</b> to the model, which means that all existing scenarios with start year 2019 remain unaffected. The regional datasets however are <b>updated</b> to 2023, which means that all existing scenarios with start year 2019 have been changed to the new start year. As a result, scenario results may have changed.
 </div>
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * After the addition of naphtha in the August release, the energetic CO<sub>2</sub> emissions of the industry sector wrongly included non-energetic emissions for naphtha, leading to an overestimation of this sector’s <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. The original emissions are now restored by excluding non-energetic naphtha.
-  * For <a href="/scenario/demand/industry/steel" target="_blank">steel</a> producing European countries (excluding the Netherlands), the transformation input of cokes in blast furnaces was counted twice in the start year data. This issue has been fixed. The flows of the Eurostat energy balance, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a>, are now more accurately represented in the ETM.
+  * After the addition of naphtha in the August release, the energetic CO<sub>2</sub> emissions of the industry sector were wrongly included non-energetic emissions for naphtha, leading to an overestimation of this sector’s <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. The original emissions are now restored by excluding non-energetic naphtha.
+  * For <a href="/scenario/demand/industry/steel" target="_blank">steel</a>-producing European countries (excluding the Netherlands), the transformation input of cokes in blast furnaces was counted twice in the start year data. This issue has been fixed. The flows of the Eurostat energy balance, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a>, are now more accurately represented in the ETM.
   * In some charts, the hourly electricity demand of <a href="/scenario/demand/buildings/cooling" target="_blank">cooling</a> in buildings did not cover all cooling technologies. This has been fixed.
 
 </details>

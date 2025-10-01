@@ -39,13 +39,16 @@ en:
         is located. "
     transport_plane_using_kerosene_mix_share:
       title: Kerosene (mix)
-      short_description: ''
-      description: "With this slider you can set the percentage of total passenger kilometers
-        in domestic aviation traveled by airplanes using kerosene.  </br></br>
+      short_description:
+      description: |
+        This slider sets the percentage of total passenger kilometers
+        in domestic aviation traveled by airplanes using kerosene mix.</br></br>
         Kerosene is the most dominant fuel used in aviation due to its high energy content and
         low freezing temperature. This means planes can fly large distances and
         the kerosene does not solidify when flying on high altitudes. </br></br>
-        Checkout the technical and financial properties below for more information."
+        Within the kerosene mix, the share of biokerosene can be adjusted. Go to
+        <a href="/scenario/demand/transport_fuels/domestic-aviation">transport fuels</a>
+        to adjust the share of biokerosene in the kerosene mix.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
@@ -374,8 +377,8 @@ en:
       title: Methanol (mix)
       short_description:
       description: |
-        This slider sets the share of international shipping fuel supplied by methanol.</br></br>Go to 
-        <a href="/scenario/demand/transport_fuels/international-navigation">Transport fuels</a> to 
+        This slider sets the share of international shipping fuel supplied by methanol.</br></br>Go to
+        <a href="/scenario/demand/transport_fuels/international-navigation">transport fuels</a> to
         configure the share of methanol in the fuel mix.
     bunkers_aviation_using_electricity_share:
       title: Electricity
@@ -616,8 +619,8 @@ en:
       title: Methanol (mix)
       short_description:
       description: |
-       This slider sets the percentage of inland shipping kilometers traveled by vessels running on 
-       methanol.</br></br>Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport 
+       This slider sets the percentage of inland shipping kilometers traveled by vessels running on
+       methanol.</br></br>Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
        fuels</a> to configure the share of methanol in the fuel mix.
     transport_trucks_share:
       title: Trucks

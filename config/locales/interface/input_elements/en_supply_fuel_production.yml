@@ -6,8 +6,24 @@ en:
       short_description:
       description: |
         This slider sets the annual useful production of oil refineries.<br/><br/>
-        If there is no refinery in the start year, the output fractions of refinery products
+        The input of the transformation process of oil refineries consists of <b>crude oil</b>.
+        The following output products can be produced from oil refineries:
+        <ul>
+        <li><b>diesel</b></li>
+        <li><b>gasoline</b></li>
+        <li><b>liquefied petroleum gas (LPG)</b></li>
+        <li><b>kerosene</b></li>
+        <li><b>heavy fuel oil (HFO)</b></li>
+        <li><b>naphtha</b></li>
+        <li><b>other oil products</b></li>
+        <li><b>refinery gas</b></li>
+        </ul><br/>
+        If there is no oil refinery in the scenario in the start year (since there are no oil
+        refineries present in the selected region), the output fractions of refinery output products
         are determined based on a refinery archetype.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/oil-refineries">oil refineries</a>
+        section to make assumptions in efficiency improvements and in technologies used for heat
+        production in oil refineries.<br/><br/>
         The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
         Liquid fuels and feedstock flows</a> shows the liquid fuels production and final demand.
     output_of_energy_production_fischer_tropsch:
@@ -24,7 +40,6 @@ en:
         <li><b>biogenic waste</b></li>
         <li><b>dry biomass</b></li>
         </ul><br/>
-
         The output of Fischer-Tropsch consists of the following fuels and feedstock:
         <ul>
         <li><b>kerosene</b> (main product)</li>

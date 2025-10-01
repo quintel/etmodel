@@ -51,7 +51,7 @@ D3.sankey =
           {id: 'losses',                       column: 2, label: 'losses',                            color: '#DCDCDC'}
         ]
 
-        links: [         
+        links: [
 
           {left: 'natural_gas',                  right: 'biofuels',                  gquery: 'sankey_0_to_1_natural_gas_to_biofuels',          color: '#7f7f7f'},
           {left: 'not_defined',                  right: 'biofuels',                  gquery: 'sankey_0_to_1_not_defined_to_biofuels',          color: '#DCDCDC'},
@@ -1042,6 +1042,7 @@ D3.sankey =
           {left: 'dry_biomass',                           right: 'pyrolysis_fractionation',           gquery: 'dry_biomass_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#228B22'},
           {left: 'fuel_import',                           right: 'pyrolysis_fractionation',           gquery: 'fuel_import_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'biofuel_import',                        right: 'pyrolysis_fractionation',           gquery: 'biofuel_import_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#90EE90'},
+          {left: 'hydrogen',                              right: 'pyrolysis_fractionation',            gquery: 'hydrogen_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#87CEEB'},
 
           # INPUTS TO HVO biokerosene and biodiesel
           {left: 'hydrogen',                              right: 'hvo_bio_kerosene',                   gquery: 'hydrogen_to_hvo_bio_kerosene_in_liquid_fuels_sankey', color: '#87CEEB'},
@@ -1053,7 +1054,6 @@ D3.sankey =
           # WET BIOMASS TO BIOETHANOL PRODUCTION
           {left: 'wet_biomass',                           right: 'bio_ethanol_production',             gquery: 'wet_biomass_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#2E8B57'},
 
-          {left: 'hydrogen',                              right: 'pyrolysis_fractionation',            gquery: 'hydrogen_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#87CEEB'},
 
           # FOSSIL REFINERY OUTPUTS
           {left: 'fossil_refinery',                       right: 'diesel',                            gquery: 'fossil_refinery_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},

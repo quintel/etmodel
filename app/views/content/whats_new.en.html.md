@@ -38,9 +38,14 @@ This start year update also includes improvements in data quality, among others:
   * After the addition of naphtha in the August release, the energetic CO<sub>2</sub> emissions of the industry sector were wrongly included non-energetic emissions for naphtha, leading to an overestimation of this sector’s <a href="/scenario/overview/introduction/total-co2-emissions" target="_blank">CO<sub>2</sub> emissions</a>. The original emissions are now restored by excluding non-energetic naphtha.
   * For <a href="/scenario/demand/industry/steel" target="_blank">steel</a>-producing European countries (excluding the Netherlands), the transformation input of cokes in blast furnaces was counted twice in the start year data. This issue has been fixed. The flows of the Eurostat energy balance, see the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a>, are now more accurately represented in the ETM.
   * In some charts, the hourly electricity demand of <a href="/scenario/demand/buildings/cooling" target="_blank">cooling</a> in buildings did not cover all cooling technologies. This has been fixed.
-
 </details>
 
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * Changelog of the area codes related to the update of Dutch datasets: <a href="/assets/pages/whats_new/changelog/202510_changelog_area_code.csv" download>202510_changelog_area_code.csv</a>
+
+</details>
 </br>
 
 ___

@@ -121,9 +121,13 @@ module ScenarioHelper
   # Public: Returns true if there is a special warning for the scenario
   #
   # Current use: dataset 2023 update for Dutch regions. Show banner
-  # when scenario on latest with elegible dataset
+  # when scenario on latest with elegible dataset and last updated before Oct 2, 2025
   def warning_for(scenario)
-    %w[GM RES PV].any? { |code| scenario.area_code.start_with?(code) }
+    return false unless %w[GM ES PV].any? { |code| scenario.area_code.start_with?(code) }  && scenario.area_code != "ES_spain"
+    return false unless scenario.updated_at
+
+    cutoff_date = Date.new(2025, 10, 2)
+    scenario.updated_at.to_date < cutoff_date
   end
 
   # Public: Renders the HTML for an electricity interconnector price curve

@@ -41,14 +41,17 @@ nl:
         haven zich bevindt."
     transport_plane_using_kerosene_mix_share:
       title: Kerosine (mix)
-      short_description: ''
-      description: "Met deze slider kun je het percentage van de totale passagiers
-        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door
-        kerosine vliegtuigen. </br></br>
+      short_description:
+      description: |
+        Met deze slider kan het percentage worden ingesteld van de totale passagiers
+        kilometers in de binnenlandse luchtvaart die worden afgelegd door
+        vliegtuigen op kerosinemix.</br></br>
         Kerosine is de meest dominante brandstof in de luchtvaart vanwege de hoge energie-inhoud en het
         lage vriespunt. Dit betekent dat vliegtuigen lange afstanden kunnen afleggen en de
         kerosine niet stolt bij het vliegen op grote hoogte. </br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie."
+        In de kerosinemix kan het aandeel biokerosine worden aangepast. Ga naar
+        <a href="/scenario/demand/transport_fuels/domestic-aviation">transportbrandstoffen</a>
+        om het aandeel biokerosine in de kerosinemix aan te passen.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
@@ -395,9 +398,9 @@ nl:
       title: Methanol (mix)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart 
+        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart
         wordt ingevuld met methanol.</br></br>Ga naar <a href="/scenario/demand/transport_fuels/
-        international-navigation">Transportbrandstoffen</a> om de samenstelling van methanol in te 
+        international-navigation">transportbrandstoffen</a> om de samenstelling van methanol in te
         stellen.
     bunkers_aviation_using_electricity_share:
       title: Elektriciteit

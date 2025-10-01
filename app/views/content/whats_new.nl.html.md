@@ -41,6 +41,12 @@ Deze update van het startjaar bevat verbeteringen in de datakwaliteit, waaronder
 
 </details>
 
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * Changelog voor de area codes gerelateerd aan de update van Nedelandse datasets: <a href="/assets/pages/whats_new/changelog/202510_changelog_area_code.csv" download>202510_changelog_area_code.csv</a>
+
+</details>
 </br>
 
 ___

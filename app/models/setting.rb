@@ -138,9 +138,6 @@ class Setting
     @end_year = end_year.to_i
   end
 
-  def use_network_calculations?
-    area.try(:use_network_calculations?)
-  end
 
   def allow_merit_order?
     area.attributes[:has_merit_order]

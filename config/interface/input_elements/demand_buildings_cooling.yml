@@ -34,11 +34,3 @@
   related_node: buildings_cooling_airconditioning_electricity
   position: 5
   slide_key: demand_buildings_cooling
-- key: buildings_cooling_collective_cooling_network_electricity_share
-  share_group: cooling_buildings
-  step_value: 0.1
-  unit: "%"
-  related_node: buildings_cooling_collective_cooling_network_electricity
-  position: 6
-  dependent_on: has_cold_network
-  slide_key: demand_buildings_cooling

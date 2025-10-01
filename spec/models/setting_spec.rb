@@ -178,29 +178,6 @@ describe Setting do
     end
   end
 
-  describe "#use_network_calculations?" do
-    {
-      :use_network_calculations? => :use_network_calculations?
-    }.each do |setting_method_name, area_method_name|
-      describe "##{setting_method_name} should be true if area##{area_method_name} is true" do
-        before do
-          area = Engine::Area.new
-          allow(area).to receive(area_method_name).and_return(true)
-          allow(@setting).to receive(:area).and_return(area)
-        end
-
-        specify { expect(@setting.send(setting_method_name)).to be_truthy }
-      end
-
-      describe "##{setting_method_name} with no area should be false" do
-        before do
-          allow(@setting).to receive(:area).and_return(nil)
-        end
-
-        specify { expect(@setting.send(setting_method_name)).to be_falsey }
-      end
-    end
-  end
 
   describe ".load_from_scenario" do
     let(:setting) do

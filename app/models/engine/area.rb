@@ -20,24 +20,15 @@ class Engine::Area < ActiveResource::Base
   DEPENDABLE_ATTRIBUTES = [
     :_always_hidden,
     :has_agriculture,
-    :has_buildings,
     :has_climate,
     :has_coastline,
-    :has_cold_network,
-    :has_employment,
     :has_industry,
     :has_lignite,
     :has_merit_order,
-    :has_metal,
     :has_mountains,
     :has_old_technologies,
-    :has_other,
     :has_solar_csp,
-    :use_network_calculations,
-    :has_electricity_storage,
     :has_weather_curves,
-    :has_detailed_chemical_industry,
-    :has_aggregated_chemical_industry,
     :has_coal_oil_for_heating_built_environment
   ]
 
@@ -74,9 +65,6 @@ class Engine::Area < ActiveResource::Base
     all_by_area_code.keys
   end
 
-  def use_network_calculations?
-    !!attributes[:use_network_calculations]
-  end
 
   def country?
     %w[province province_vanuatu municipality_dk municipality_be municipality neighborhood neighbourhood_be region res].exclude?(group)

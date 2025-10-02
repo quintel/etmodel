@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
   delegate :email, :roles, :admin?, to: :identity_user, allow_nil: true
 
-  has_many :multi_year_charts, dependent: :destroy
   has_one  :esdl_suite_id, dependent: :destroy
   has_one  :survey, dependent: :destroy
 

@@ -5,142 +5,447 @@ nl:
       title: Olieraffinaderijen
       short_description:
       description: |
-        Stel hier de nuttige jaarlijkse productie in van fossiele olieraffinage.<br/><br/>
-        Indien er in het startjaar nog geen fossiele raffinage aanwezig is, worden de outputfracties
-        van fossiele raffinageproducten bepaald op basis van een archetype raffinage.<br/><br/>
+        Deze slider bepaalt de jaarlijkse nuttige productie van olieraffinaderijen.<br/><br/> 
+        De input van het transformatieproces van olieraffinaderijen bestaat uit <b>ruwe olie</b>. 
+        De volgende outputproducten kunnen worden geproduceerd door olieraffinaderijen:
+        <ul>
+        <li><b>diesel</b></li>
+        <li><b>benzine</b></li>
+        <li><b>vloeibaar petroleumgas (LPG)</b></li>
+        <li><b>kerosine</b></li>
+        <li><b>zware stookolie (HFO)</b></li>
+        <li><b>nafta</b></li>
+        <li><b>overige olieproducten</b></li>
+        <li><b>raffinaderijgas</b></li>
+        </ul><br/>
+        Als er in het scenario in het startjaar geen olieraffinaderij aanwezig is (omdat er geen 
+        olieraffinaderijen in de geselecteerde regio aanwezig zijn), worden de outputfracties van 
+        raffinaderijproducten bepaald op basis van een raffinaderijarchetype.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a> 
+        om aannames te doen over efficiëntieverbeteringen en de technologieën die worden gebruikt voor 
+        warmteproductie in olieraffinaderijen.<br/><br/>
         De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Vloeibare brandstof- en grondstofstromen</a> toont de productie en het finaal eindgebruik van
-        vloeibare brandstoffen.
+        Vloeibare brandstof- en grondstofstromen</a> toont de productie van vloeibare brandstoffen en de 
+        uiteindelijke vraag.
     output_of_energy_production_fischer_tropsch:
       title: Fischer-Tropsch
       short_description:
       description: |
-        Stel hier de nuttige jaarlijkse productie in van vloeibare brandstoffen en grondstoffen uit Fischer-Tropsch.<br/><br/>
-        Het proces van Fischer-Tropsch zet syngas (een mengsel van grotendeels CO en waterstof) om in vloeibare koolwaterstoffen.
-        In het ETM kunnen de volgende brandstoffen en grondstoffen via Fischer-Tropsch worden geproduceerd:
-        <ul>
-        <li>Hoofdproduct: kerosine</li>
-        <li>Bijproducten: nafta, diesel</li>
-        </ul><br/>
-        Verschillende soorten grondstoffen kunnen worden gebruikt om syngas te produceren. Afhankelijk van
-        het type grondstof zullen de geproduceerde producten uit Fischer-Tropshc synthetisch, biogeen of niet-biogeen van aard zijn.<br/><br/>
-        In de sectie <a href="/scenario/supply/fuel_production/fischer-tropsch">Fischer-Tropsch</a> kan het
-        aandeel van de verschillende grondstofroutes voor syngasproductie voor Fischer-Tropsch worden ingesteld.<br/><br/>
-        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Vloeibare brandstof- en grondstofstromen</a> toont de productie en finaal eindgebruik van
-        vloeibare brandstoffen en grondstoffen.
+        Deze slider bepaalt de jaarlijkse nuttige productie van vloeibare brand- en grondstoffen uit 
+        Fischer-Tropsch. Het Fischer-Tropsch proces zet syngas (een mengsel van voornamelijk CO 
+        en waterstof) om in vloeibare koolwaterstoffen.<br/><br/> De volgende grondstoffen (routes) 
+        kunnen worden gebruikt voor de productie van syngas voor Fischer-Tropsch en vertegenwoordigen 
+        daarom de grondstoffen die in dit proces worden gebruikt:  
+        <ul>  
+        <li><b>waterstof, elektriciteit en CO<sub>2</sub></b></li>  
+        <li><b>niet-biogeen afval</b></li>
+        <li><b>biogeen afval</b></li>
+        <li><b>droge biomassa</b></li>
+        </ul><br/>  
+        De output van Fischer-Tropsch bestaat uit de volgende brand- en grondstoffen:  
+        <ul>  
+        <li><b>kerosine</b> (hoofdproduct)</li>  
+        <li><b>diesel</b></li>  
+        <li><b>nafta</b></li>  
+        </ul><br/>  
+        Afhankelijk van het type grondstof dat het proces binnenkomt, verschillen de geproduceerde 
+        producten van Fischer-Tropsch in de mate waarin ze synthetisch, biogeen of niet-biogeen zijn.
+        <br/><br/>Ga naar de sectie <a href="/scenario/supply/fuel_production/fischer-tropsch">
+        Fischer-Tropsch</a> om de aandelen van de grondstoffenroutes die syngas produceren voor 
+        Fischer-Tropsch in te stellen.<br/><br/>De grafiek <a href="#" class="open_chart" 
+        data-chart-key="liquid_fuels" data-chart-location="side">Vloeibare brandstoffen en 
+        grondstofstromen</a> toont de productie en uiteindelijke vraag van vloeibare brand- 
+        en grondstoffen.
     output_of_energy_production_methanol_synthesis:
       title: Methanolsynthese
       short_description:
       description: |
-        Stel hier de nuttige jaarlijkse productie in van methanol uit methanolsynthese.<br/><br/>
-        Methanol kan wordt geproduceerd door syngas (een mengsel van grotendeels CO en waterstof) om te zetten. Verschillende soorten
-        grondstoffen kunnen worden gebruikt om syngas te produceren. Afhankelijk van
-        het type grondstof zal de geproduceerde methanol synthetisch, biogeen of niet-biogeen van aard zijn.<br/><br/>
-        In de sectie <a href="/scenario/supply/fuel_production/methanol-synthesis">Methanolsynthese</a> kan het
-        aandeel van de verschillende grondstofroutes voor syngasproductie voor methanolsynthese worden ingesteld.<br/><br/>
-        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Vloeibare brandstof- en grondstofstromen</a> toont de productie en finaal eindgebruik van
-        vloeibare brandstoffen en grondstoffen.
+        Deze slider bepaalt de jaarlijkse nuttige productie van methanol uit methanolsynthese. 
+        In dit proces wordt syngas (een mengsel van voornamelijk CO en waterstof) omgezet in 
+        methanol.<br/><br/> De volgende grondstoffen (routes) kunnen worden gebruikt voor de 
+        productie van syngas voor methanolsynthese en vertegenwoordigen daarom de grondstoffen 
+        die in dit proces worden gebruikt:  
+        <ul>  
+        <li><b>waterstof, elektriciteit en CO<sub>2</sub></b></li>  
+        <li><b>niet-biogeen afval</b></li>  
+        <li><b>biogeen afval</b></li>  
+        <li><b>droge biomassa</b></li>  
+        </ul><br/>  
+        Het enige outputproduct is <b>methanol</b>. Afhankelijk van het type gebruikte grondstof 
+        verschilt de geproduceerde methanol in de mate waarin deze synthetisch, biogeen of niet-
+        biogeen is.<br/><br/> In de sectie <a href="/scenario/supply/fuel_production/methanol-synthesis">Methanolsynthese</a> kunnen de aandelen van de verschillende 
+        grondstoffenroutes voor syngasproductie worden ingesteld.<br/><br/>  
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" 
+        data-chart-location="side">Vloeibare brand- en grondstofstromen</a> toont de 
+        productie en uiteindelijke vraag van vloeibare brand- en grondstoffen.  
     output_of_energy_production_fractionation_pyrolysis_oil:
       title: Pyrolyse-olie fractionering
       short_description:
       description: |
-        Stel hier de nuttige jaarlijkse productie in van vloeibare brandstoffen en grondstoffen uit fractionering van
-        pyrolyse-olie.<br/><br/>
-        In dit proces wordt pyrolyse-olie opgewaardeerd via hydrotreatment waarvoor waterstof wordt gebruikt. In het ETM
-        kunnen de volgendende brandstoffen en grondstoffen uit fractionering van pyrolyse-olie worden geproduceerd:
-        <ul>
-        <li>diesel</li>
-        <li>nafta</li>
-        </ul><br/>
-        De pyrolyse-olie die benodigd is voor dit proces kan lokaal worden geproduceerd of worden geïmporteerd. Ga naar
-        de sectie <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Fractionering van pyrolyse-olie</a> om
-        de lokale productie van pyrolyse-olie in te stellen. Indien de lokale productie van pyrolyse-olie lager is dan
-        de hoeveelheid die benodigd is voor fractionering, wordt het tekort geïmporteerd.<br/><br/>
+        Deze slider bepaalt de jaarlijkse nuttige productie van vloeibare brand- en 
+        grondstoffen uit de fractionering van (niet-biogene) pyrolyse-olie. In dit proces 
+        wordt pyrolyse-olie opgewaardeerd via hydrobehandeling.<br/><br/> De pyrolyse-olie 
+        die nodig is voor fractionering kan worden geproduceerd door snelle pyrolyse van 
+        grondstoffen. Pyrolyse-olie (niet-biogeen) kan alleen worden geproduceerd met 
+        <b>niet-biogeen afval</b>. Bovendien is er een input van <b>waterstof</b> nodig in 
+        het hydrobehandelingsproces van fractionering van pyrolyse-olie.<br/><br/>De volgende 
+        brand- en grondstoffen kunnen worden geproduceerd uit pyrolyse-olie fractionering:  
+        <ul>  
+        <li><b>diesel</b></li>  
+        <li><b>nafta</b></li>  
+        </ul><br/>  
+        Het model gaat ervan uit dat de benodigde pyrolyse-olie voor het fractioneringsproces 
+        of voor baseload export lokaal wordt geproduceerd. Dit kan worden aangepast door import 
+        van pyrolyse-olie in te stellen, wat de lokale productie vervangt.<br/><br/>  
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">
+        Pyrolyse-olie fractionering</a> om de import van pyrolyse-olie in te stellen.<br/><br/>  
         De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Vloeibare brandstof- en grondstofstromen</a> toont de productie en het finaal eindgebruik van
-        vloeibare brandstoffen en grondstoffen.
+        Vloeibare brand- en grondstofstromen</a> toont de productie en uiteindelijke vraag 
+        van vloeibare brand- en grondstoffen.
     output_of_energy_production_fractionation_bio_pyrolysis_oil:
       title: Biogene pyrolyse-olie fractionering
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt de jaarlijkse nuttige productie van vloeibare brand- en grondstoffen 
+        uit de fractionering van biogene pyrolyse-olie (hierna biogene pyrolyse-olie genoemd). 
+        In dit proces wordt biogene pyrolyse-olie opgewaardeerd via hydrobehandeling.<br/><br/>  
+        De biogene pyrolyse-olie, benodigd voor fractionering, kan worden geproduceerd door snelle 
+        pyrolyse van grondstoffen. Biogene pyrolyse-olie kan worden geproduceerd met de volgende 
+        grondstoffen:  
+        <ul>  
+        <li><b>biogeen afval</b></li>  
+        <li><b>droge biomassa</b></li>  
+        </ul><br/>  
+        Bovendien is een input van <b>waterstof</b> vereist in het hydrobehandelingsproces van 
+        de fractionering van biogene pyrolyse-olie.<br/><br/> De volgende brand- en grondstoffen 
+        kunnen worden geproduceerd uit de fractionering van biogene pyrolyse-olie:  
+        <ul>  
+        <li><b>biodiesel</b></li>  
+        <li><b>bionafta</b></li>  
+        </ul><br/>  
+        Het model gaat ervan uit dat de benodigde biogene pyrolyse-olie voor het fractioneringsproces 
+        of voor baseload export lokaal wordt geproduceerd. Dit kan worden aangepast door import 
+        van biogene pyrolyse-olie in te stellen, wat de lokale productie van pyrolyse-olie vervangt.
+        <br/><br/>Ga naar de sectie <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Fractionering van pyrolyse-olie</a> om de import van biogene 
+        pyrolyse-olie in te stellen en om de aandelen van de gebruikte grondstoffen voor biogene 
+        pyrolyse-olieproductie te bepalen.<br/><br/>De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">Vloeibare brand- en grondstofstromen</a> 
+        toont de productie en uiteindelijke vraag van vloeibare brand- en grondstoffen.
     output_of_energy_production_hvo_bio_kerosene:
       title: Hydrotreatment naar HVO (biokerosine)
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt de jaarlijkse nuttige productie van HVO-biokerosine (Duurzame 
+        Luchtvaartbrandstof, SAF), afkomstig van hydrobehandeling van oliehoudende biomassa, 
+        zoals plantaardige oliën en dierlijke vetten.<br/><br/> Het proces voor de productie van 
+        HVO-biokerosine en HVO-biodiesel is zeer vergelijkbaar. Het belangrijkste verschil is dat 
+        een extra verwerkingsstap van kraken nodig is voor HVO-biokerosine om lichtere fracties 
+        te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/>De grondstoffeninput voor 
+        hydrobehandeling (voor zowel HVO-biokerosine als biodiesel) bestaat uit <b>oliehoudende 
+        biomassa</b> en <b>waterstof</b> voor het hydrobehandelingsproces.<br/><br/>De outputproducten 
+        van hydrobehandeling naar HVO-biokerosine zijn:  
+        <ul>  
+        <li><b>biokerosine</b> (hoofdproduct)</li>  
+        <li><b>bionafta</b></li>  
+        </ul><br/>  
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Vloeibare brand- en grondstofstromen</a> toont de productie en uiteindelijke vraag van 
+        vloeibare brand- en grondstoffen.
     output_of_energy_production_hvo_biodiesel:
       title: Hydrotreatment naar HVO (biodiesel)
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt de jaarlijkse nuttige productie van hernieuwbare HVO diesel (hierna 
+        HVO-biodiesel genoemd), afkomstig van hydrobehandeling van oliehoudende biomassa, 
+        zoals plantaardige oliën en dierlijke vetten.<br/><br/> Het proces voor de productie 
+        van HVO-biokerosine en HVO-biodiesel is zeer vergelijkbaar. Het belangrijkste verschil 
+        is dat een extra verwerkingsstap van kraken nodig is voor HVO-biokerosine om lichtere 
+        fracties te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/> De 
+        grondstoffeninput voor hydrobehandeling (voor zowel HVO-biokerosine als biodiesel) 
+        bestaat uit <b>oliehoudende biomassa</b> en <b>waterstof</b> voor het 
+        hydrobehandelingsproces.<br/><br/> De outputproducten van hydrobehandeling naar 
+        HVO-biodiesel zijn:  
+        <ul>  
+        <li><b>biodiesel</b> (hoofdproduct)</li>  
+        <li><b>bionafta</b></li>  
+        </ul><br/>  
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Vloeibare brand- en grondstofstromen</a> toont de productie en uiteindelijke vraag van 
+        vloeibare brand- en grondstoffen.
     output_of_energy_production_bio_ethanol:
       title: Bio-ethanolvergisting
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt de jaarlijkse nuttige productie van bio-ethanol afkomstig van de 
+        vergisting van natte biomassa, zoals landbouwreststromen en geteelde graanproducten.
+        <br/><br/> In dit proces wordt bio-ethanol geproduceerd door de koolhydraten in natte 
+        biomassa te hydrolyseren tot suikers, waarna gist of bacteriën deze suikers omzetten in 
+        ethanol. De enige input van dit proces is <b>natte biomassa</b>, het outputproduct is 
+        <b>bio-ethanol</b>.<br/><br/>  
+        De grafiek <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Vloeibare brand- en grondstofstromen</a> toont de productie en uiteindelijke vraag van 
+        vloeibare brand- en grondstoffen.
     energy_production_fischer_tropsch_synthetic_share:
       title: Waterstof, elektriciteit en CO<sub>2</sub>
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse brandstofproductie uit Fischer-Tropsch 
+        met de synthetische route, gebruikmakend van waterstof, elektriciteit en CO<sub>2</sub>. 
+        Deze grondstoffen worden gebruikt om syngas te produceren (een mengsel van voornamelijk 
+        CO en waterstof) dat nodig is voor het Fischer-Tropsch-proces.<br/><br/> De output van 
+        Fischer-Tropsch met de route waterstof, elektriciteit en CO<sub>2</sub> bestaat uit de 
+        volgende brand- en grondstoffen:  
+        <ul>  
+        <li><b>kerosine</b> (hoofdproduct)</li>  
+        <li><b>nafta</b></li>  
+        </ul><br/>  
+        Ga naar de <a href="/scenario/supply/fuel_production/overview">overzichtspagina</a> om 
+        de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen of om de capaciteit van 
+        flexibele productie van Fischer-Tropsch met deze grondstoffenroute in te stellen.<br/><br/>  
+        De volgende grafieken geven meer inzicht in de impact van Fischer-Tropsch met de 
+        grondstoffenroute waterstof, elektriciteit en CO<sub>2</sub>:  
+        <ul>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">grafiek</a> toont de productie van synthetische kerosine uit 
+          Fischer-Tropsch.</li>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          grafiek</a> toont het CO<sub>2</sub>-gebruik voor Fischer-Tropsch met deze grondstoffenroute.</li>  
+        </ul>
     energy_production_fischer_tropsch_non_biogenic_waste_ccs_share:
       title: Vergassing van niet-biogeen afval
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse brandstofproductie uit Fischer-Tropsch 
+        via vergassing van niet-biogeen afval. Het vergassingsproces levert het syngas 
+        (een mengsel van voornamelijk CO en waterstof) dat nodig is voor het Fischer-Tropsch-proces.
+        <br/><br/>De output van Fischer-Tropsch via vergassing van niet-biogeen afval bestaat uit 
+        de volgende brand- en grondstoffen:  
+        <ul>  
+        <li><b>kerosine</b> (hoofdproduct)</li>  
+        <li><b>diesel</b></li>  
+        <li><b>nafta</b></li>  
+        </ul><br/>  
+        <em>Let op:</em> standaard wordt aangenomen dat de CO<sub>2</sub>-emissies van het 
+        vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan worden opgeslagen 
+        of benut.<br/><br/>Ga naar de <a href="/scenario/supply/fuel_production/overview">
+        overzichtspagina</a> om de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen. 
+        Ga naar de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a>-
+        sectie om aannames te maken over het gebruik en de opslag van afgevangen CO<sub>2</sub>.
+        <br/><br/>De volgende grafieken geven meer inzicht in de impact van Fischer-Tropsch via 
+        vergassing van niet-biogeen afval:  
+        <ul>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">grafiek</a> toont de productie van kerosine uit Fischer-Tropsch.</li>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          grafiek</a> toont de afgevangen CO<sub>2</sub> van Fischer-Tropsch met deze grondstoffenroute.</li>  
+        </ul>
     energy_production_fischer_tropsch_biogenic_waste_ccs_share:
       title: Vergassing van biogeen afval
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse brandstofproductie uit Fischer-Tropsch 
+        via vergassing van biogeen afval. Het vergassingsproces levert het syngas (een mengsel 
+        van voornamelijk CO en waterstof) dat nodig is voor het Fischer-Tropsch-proces.<br/><br/>
+        De output van Fischer-Tropsch via vergassing van biogeen afval bestaat uit de volgende 
+        brand- en grondstoffen:  
+        <ul>  
+        <li><b>biokerosine</b> (hoofdproduct)</li>  
+        <li><b>biodiesel</b></li>  
+        <li><b>bionafta</b></li>  
+        </ul><br/>  
+        <em>Let op:</em> standaard wordt aangenomen dat de CO<sub>2</sub>-emissies van het 
+        vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan worden opgeslagen 
+        of benut. Omdat deze grondstoffenroute biogene grondstoffen gebruikt, worden de afgevangen 
+        emissies als negatieve emissies meegenomen.<br/><br/>Ga naar de <a href="/scenario/supply/fuel_production/overview">
+        overzichtspagina</a> om de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen. 
+        Ga naar de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a>-sectie 
+        om aannames te maken over het gebruik en de opslag van afgevangen CO<sub>2</sub>.<br/><br/>
+        De volgende grafieken geven meer inzicht in de impact van Fischer-Tropsch via vergassing van 
+        biogeen afval:  
+        <ul>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">grafiek</a> toont de productie van biokerosine uit Fischer-Tropsch.</li>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          grafiek</a> toont de afgevangen CO<sub>2</sub> van Fischer-Tropsch met deze grondstoffenroute.</li>  
+        </ul>
     energy_production_fischer_tropsch_dry_biomass_ccs_share:
       title: Vergassing van droge biomassa
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse brandstofproductie uit Fischer-Tropsch 
+        via vergassing van droge biomassa. Het vergassingsproces levert het syngas (een mengsel 
+        van voornamelijk CO en waterstof) dat nodig is voor het Fischer-Tropsch-proces.<br/><br/>  
+        De output van Fischer-Tropsch via vergassing van droge biomassa bestaat uit de volgende 
+        brand- en grondstoffen:  
+        <ul>  
+        <li><b>biokerosine</b> (hoofdproduct)</li>  
+        <li><b>biodiesel</b></li>  
+        <li><b>bionafta</b></li>  
+        </ul><br/>  
+        <em>Let op:</em> standaard wordt aangenomen dat de CO<sub>2</sub>-emissies van het 
+        vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan worden opgeslagen 
+        of benut. Omdat deze grondstoffenroute biogene grondstoffen gebruikt, worden de afgevangen 
+        emissies als negatieve emissies meegenomen.<br/><br/>Ga naar het <a href="/scenario/supply/fuel_production/overview">Overzicht</a> 
+        om de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen. Ga naar de 
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a>-sectie om aannames 
+        te maken over het gebruik en de opslag van afgevangen CO<sub>2</sub>.<br/><br/>  
+        De volgende grafieken geven meer inzicht in de impact van Fischer-Tropsch via vergassing 
+        van droge biomassa:  
+        <ul>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">grafiek</a> toont de productie van biokerosine uit Fischer-Tropsch.</li>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side"
+          >grafiek</a> toont de afgevangen CO<sub>2</sub> van Fischer-Tropsch met deze grondstoffenroute.</li>  
+        </ul>
     energy_production_methanol_synthesis_synthetic_share:
       title: Waterstof, elektriciteit en CO<sub>2</sub>
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse methanolproductie uit methanolsynthese 
+        via de synthetische route, waarbij waterstof, elektriciteit en CO<sub>2</sub> worden 
+        gebruikt. Deze grondstoffen worden gebruikt om syngas te produceren (een mengsel van 
+        voornamelijk CO en waterstof) dat nodig is voor het methanolsyntheseproces.<br/><br/>
+        De output van methanolsynthese met deze grondstoffenroute bestaat uitsluitend uit 
+        <b>methanol</b>.<br/><br/>Ga naar het <a href="/scenario/supply/fuel_production/overview">
+        Overzicht</a> om de jaarlijkse methanolproductie uit methanolsynthese te wijzigen.<br/><br/>
+        Open deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+        grafiek</a> om het CO<sub>2</sub>-gebruik voor methanolsynthese met de grondstoffenroute 
+        waterstof, elektriciteit en CO<sub>2</sub> te bekijken.
     energy_production_methanol_synthesis_non_biogenic_waste_ccs_share:
       title: Vergassing van niet-biogeen afval
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse methanolproductie uit methanolsynthese 
+        via vergassing van niet-biogene afvalstoffen. Het vergassingsproces levert syngas op 
+        (een mengsel van voornamelijk CO en waterstof) dat nodig is voor het methanolsyntheseproces.
+        <br/><br/> De output van methanolsynthese met deze grondstoffenroute bestaat uitsluitend uit 
+        <b>methanol</b>.<br/><br/><em>Let op:</em> standaard wordt aangenomen dat de CO<sub>2</sub>-
+        emissies van het vergassingsproces worden afgevangen. Het afgevangen CO<sub>2</sub> kan 
+        worden opgeslagen of benut.<br/><br/> Ga naar het <a href="/scenario/supply/fuel_production/overview">Overzicht</a> 
+        om de jaarlijkse methanolproductie uit methanolsynthese te wijzigen. Ga naar de 
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a>-sectie om aannames 
+        te doen over het gebruik en de opslag van afgevangen CO<sub>2</sub>.<br/><br/> Open deze 
+        <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">grafiek</a> 
+        om het afgevangen CO<sub>2</sub> van methanolsynthese met deze grondstoffenroute te bekijken.
     energy_production_methanol_synthesis_biogenic_waste_ccs_share:
       title: Vergassing van biogeen afval
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse methanolproductie uit methanolsynthese 
+        via vergassing van biogene afvalstoffen. Het vergassingsproces levert syngas op 
+        (een mengsel van voornamelijk CO en waterstof) dat nodig is voor het methanolsyntheseproces.
+        <br/><br/> De output van methanolsynthese met deze grondstoffenroute bestaat uitsluitend uit 
+        <b>biomethanol</b>.<br/><br/><em>Let op:</em> standaard wordt aangenomen dat de CO<sub>2</sub>-
+        emissies van het vergassingsproces worden afgevangen. Het afgevangen CO<sub>2</sub> kan 
+        worden opgeslagen of benut. Omdat deze grondstoffenroute biogene grondstoffen gebruikt, 
+        worden de afgevangen emissies als negatieve emissies meegeteld.<br/><br/> Ga naar het <a href="/scenario/supply/fuel_production/overview">Overzicht</a> om de jaarlijkse methanolproductie uit 
+        methanolsynthese te wijzigen. Ga naar de <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">
+        CCUS</a>-sectie om aannames te doen over het gebruik en de opslag van afgevangen 
+        CO<sub>2</sub>.<br/><br/>Open deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" 
+        data-chart-location="side">grafiek</a> om het afgevangen CO<sub>2</sub> van methanolsynthese 
+        met deze grondstoffenroute te bekijken.
     energy_production_methanol_synthesis_dry_biomass_ccs_share:
       title: Vergassing van droge biomassa
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse methanolproductie uit methanolsynthese 
+        via vergassing van droge biomassa. Het vergassingsproces levert syngas op (een mengsel 
+        van voornamelijk CO en waterstof) dat nodig is voor het methanolsyntheseproces.<br/><br/>
+        De output van methanolsynthese met deze grondstoffenroute bestaat uitsluitend uit 
+        <b>biomethanol</b>.<br/><br/><em>Let op:</em> standaard wordt aangenomen dat de CO<sub>2</sub>-
+        emissies van het vergassingsproces worden afgevangen. Het afgevangen CO<sub>2</sub> kan 
+        worden opgeslagen of benut. Omdat deze grondstoffenroute biogene grondstoffen gebruikt, 
+        worden de afgevangen emissies als negatieve emissies meegeteld.<br/><br/> Ga naar het 
+        <a href="/scenario/supply/fuel_production/overview">Overzicht</a> om de jaarlijkse 
+        methanolproductie uit methanolsynthese te wijzigen. Ga naar de <a href="/scenario/emissions/ccus/
+        utilisation-and-storage-of-co2">CCUS</a>-sectie om aannames te doen over het gebruik en 
+        de opslag van afgevangen CO<sub>2</sub>.<br/><br/>Open deze <a href="#" class="open_chart" 
+        data-chart-key="ccus_sankey" data-chart-location="side">grafiek</a> om het afgevangen 
+        CO<sub>2</sub> van methanolsynthese met deze grondstoffenroute te bekijken.
     volume_of_baseload_import_pyrolysis_oil:
       title: Pyrolyse-olie
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt de jaarlijkse baseload-import van pyrolyse-olie (niet-biogeen).
+        <br/><br/> Geïmporteerde pyrolyse-olie vervangt de lokale productie die nodig is 
+        voor het fractioneringsproces of voor export.<br/><br/> Ga naar het <a href="/scenario/
+        supply/fuel_production/overview">Overzicht</a> om de jaarlijkse productie van pyrolyse-olie 
+        fractionering aan te passen, waarvoor lokale productie of import vereist is. Ga naar de 
+        <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a>-sectie om 
+        de baseload-export van pyrolyse-olie in te stellen.<br/><br/> Deze <a href="#" class="open_chart" 
+        data-chart-key="liquid_fuels" data-chart-location="side">grafiek</a> toont de benodigde 
+        import van pyrolyse-olie voor fractionering en export.
     volume_of_baseload_import_bio_pyrolysis_oil:
       title: Biogene pyrolyse-olie
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt de jaarlijkse baseload-import van biogene pyrolyse-olie (biogene 
+        pyrolyse-olie).<br/><br/> Geïmporteerde biogene pyrolyse-olie vervangt de lokale productie 
+        die nodig is voor het fractioneringsproces of voor export.<br/><br/> Ga naar het 
+        <a href="/scenario/supply/fuel_production/overview">Overzicht</a> om de jaarlijkse 
+        productie van biogene pyrolyse-olie fractionering aan te passen, waarvoor lokale productie 
+        of import vereist is. Ga naar de <a href="/scenario/demand/export_energy/
+        export-volumes-per-carrier">export</a>-sectie om de baseload-export van biogene 
+        pyrolyse-olie in te stellen.<br/><br/> Deze <a href="#" class="open_chart" 
+        data-chart-key="liquid_fuels" data-chart-location="side">grafiek</a> toont de benodigde 
+        import van biogene pyrolyse-olie voor fractionering en export.
     energy_production_pyrolysis_biogenic_waste_share:
       title: Biogeen afval
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse productie van biogene pyrolyse-olie 
+        uit biogeen afval. Biogene pyrolyse-olie kan zowel uit biogeen afval als uit droge 
+        biomassa worden geproduceerd.<br/><br/> Als fractionering van biogene pyrolyse-olie 
+        of baseload-export van biogene pyrolyse-olie is ingesteld, gaat het model ervan uit 
+        dat de benodigde biogene pyrolyse-olie lokaal wordt geproduceerd. Lokale productie 
+        van biogene pyrolyse-olie kan worden vervangen door het instellen van import van 
+        biogene pyrolyse-olie.<br/><br/>Ga naar het <a href="/scenario/supply/fuel_production/
+        overview">Overzicht</a> om de jaarlijkse brandstofproductie uit de fractionering van 
+        biogene pyrolyse-olie te wijzigen. Ga naar de <a href="/scenario/demand/export_energy/
+        export-volumes-per-carrier">export</a>-sectie om de baseload-export van biogene 
+        pyrolyse-olie in te stellen.<br/><br/> Deze <a href="#" class="open_chart" 
+        data-chart-key="liquid_fuels" data-chart-location="side">grafiek</a> toont het 
+        benodigde biogene afval voor de productie van biogene pyrolyse-olie.
     energy_production_pyrolysis_dry_biomass_share:
       title: Droge biomassa
       short_description:
-      description:
+      description: |
+        Deze slider bepaalt het aandeel van de jaarlijkse productie van biogene pyrolyse-olie 
+        uit droge biomassa. biogene pyrolyse-olie kan zowel uit biogeen afval als uit droge 
+        biomassa worden geproduceerd.<br/><br/> Als fractionering van biogene pyrolyse-olie 
+        of baseload-export van biogene pyrolyse-olie is ingesteld, gaat het model ervan uit 
+        dat de benodigde biogene pyrolyse-olie lokaal wordt geproduceerd. Lokale productie 
+        kan worden vervangen door import van biogene pyrolyse-olie.<br/><br/> Ga naar het 
+        <a href="/scenario/supply/fuel_production/overview">Overzicht</a> om de jaarlijkse 
+        productie van biogene pyrolyse-olie aan te passen. Ga naar de <a href="/scenario/
+        demand/export_energy/export-volumes-per-carrier">export</a>-sectie om de baseload-export 
+        van biogene pyrolyse-olie in te stellen.<br/><br/> Deze <a href="#" class="open_chart" 
+        data-chart-key="liquid_fuels" data-chart-location="side">grafiek</a> toont de benodigde 
+        droge biomassa voor de productie van biogene pyrolyse-olie.
     capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable:
       title: Fischer-Tropsch (met waterstof, elektriciteit en CO<sub>2</sub>)
       description: |
-        Met deze schuif wordt het geïnstalleerd regelbaar vermogen (in elektrisch inputvermogen) voor de productie van synthetische
-        kerosine en nafta met Fischer-Tropsch ingesteld. Syngas voor het Fischer-Tropsch proces wordt geproduceerd met input van
-        afgevangen CO<sub>2</sub>, waterstof en elektriciteit.<br/><br/>
-        Het regelbare vermogen is elektriciteitsprijsgestuurd en wordt in het ETM daarom als een flexibele elektriciteitsvraagtechnologie beschouwd.
-        De technologie zal produceren wanneer de elektriciteitsprijs lager is dan de betalingsbereidheid (<i>willingness to pay</i>).<br/><br/>
-        Ga naar de sectie <a href="/scenario/flexibility/flexibility_conversion/conversion-to-fuels">
-        Flexibiliteit</a> om de betalingsbereidheid van deze technologie in te stellen. Raadplaag de
-        <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand"
-        target="_blank">documentatie</a> voor meer informatie over flexibele elektriciteitsvraagtechnologieën.<br/><br/>
-        De volgende grafieken geven meer inzicht in de impact van deze technologie:
-        <ul><li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">grafiek</a>
-        toont vraag en aanbod van kerosine</li>
-        <li>Deze <a href="#" class="open_chart" data-chart-key="merit_order_hourly_flexibility" data-chart-location="side">grafiek</a>
-        toont de uurlijkse elektriciteitsvraag van flexibele vraagtechnologieën</li>
-        <li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_co2_demand_supply" data-chart-location="side">grafiek</a>
-        toont vraag en aanbod van afgevangen CO<sub>2</sub></li></ul>
+        Deze slider bepaalt de geïnstalleerde inzetbare capaciteit (uitgedrukt in 
+        elektriciteitsinvoer) voor Fischer-Tropsch met de synthetische route, gebruikmakend 
+        van waterstof, elektriciteit en CO<sub>2</sub>. Deze grondstoffen worden gebruikt om 
+        syngas te produceren (een mengsel van voornamelijk CO en waterstof) dat nodig is voor het 
+        Fischer-Tropsch-proces.<br/><br/> De output van Fischer-Tropsch met de route waterstof, 
+        elektriciteit en CO<sub>2</sub> bestaat uit de volgende brand- en grondstoffen:  
+        <ul>  
+        <li><b>kerosine</b> (hoofdproduct)</li>  
+        <li><b>nafta</b></li>  
+        </ul><br/>  
+        De flexibele productie van Fischer-Tropsch wordt bepaald door de elektriciteitsprijs 
+        en wordt daarom beschouwd als een technologie voor flexibele elektriciteitsvraag. De 
+        technologie produceert wanneer de elektriciteitsprijs lager is dan de bereidheid tot 
+        betalen.<br/><br/>Ga naar de sectie <a href="/scenario/flexibility/flexibility_conversion/
+        conversion-to-fuels">Flexibiliteit</a> om de bereidheid tot betalen van deze technologie 
+        in te stellen. Raadpleeg de <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand" target="_blank">
+        documentatie</a> voor meer informatie over technologieën voor flexibele elektriciteitsvraag.
+        <br/><br/> De volgende grafieken geven meer inzicht in de impact van Fischer-Tropsch met 
+        de grondstoffenroute waterstof, elektriciteit en CO<sub>2</sub>:  
+        <ul>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="merit_order_hourly_flexibility" 
+          data-chart-location="side">grafiek</a> toont de uurverbruik van elektriciteit door flexibele 
+          vraagtechnologieën.</li>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" 
+          data-chart-location="side">grafiek</a> toont de productie van synthetische kerosine uit 
+          Fischer-Tropsch.</li>  
+          <li>Deze <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          grafiek</a> toont het CO<sub>2</sub>-gebruik voor Fischer-Tropsch met deze grondstoffenroute.</li>  
+        </ul>

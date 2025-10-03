@@ -72,14 +72,6 @@ nl:
       title: Waterstofturbine-WKK - elektriciteit
       description: |
         Efficiëntie van elektriciteitsoutput van WKK
-    external_coupling_energy_production_synthetic_kerosene_demand:
-      title: Synthetische kerosineproductie
-      description: |
-        Energetische productie van kerosine uit afgevangen CO2
-    external_coupling_energy_production_synthetic_methanol_demand:
-      title: Synthetische methanolproductie
-      description: |
-        Energetische productie van methanol uit afgevangen CO2
     external_coupling_industry_metal_aluminium_fixed_om_costs:
       title: Vaste onderhoudskosten
       description: |
@@ -484,6 +476,10 @@ nl:
       title: Naftaketel
       description: |
         Aandeel van naftaketel in energetische warmtevraag
+    external_coupling_industry_chemical_other_burner_bionaphtha_share:
+      title: Bionaftaketel
+      description: |
+        Aandeel van bionaftaketel in energetische warmtevraag
     external_coupling_industry_chemical_other_non_energetic_naphtha_share:
       title: Nafta
       description: |
@@ -680,18 +676,18 @@ nl:
       title: Bio-olie
       description: |
         Aandeel van bio-olie in de input van industriële transformatie
-    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_bio_oil_output_share:
-      title: Bio-olie
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_bionaphtha_output_share:
+      title: Bionafta
       description: |
-        Aandeel van bio-olie in de output van industriële transformatie
-    external_coupling_energy_chemical_other_transformation_external_coupling_node_bio_oil_output_share:
-      title: Bio-olie
+        Aandeel van bionafta in de output van industriële transformatie
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_bionaphtha_output_share:
+      title: Bionafta
       description: |
-        Aandeel van bio-olie in de output van industriële transformatie
-    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_bio_oil_output_share:
-      title: Bio-olie
+        Aandeel van bionafta in de output van industriële transformatie
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_bionaphtha_output_share:
+      title: Bionafta
       description: |
-        Aandeel van bio-olie in de output van industriële transformatie
+        Aandeel van bionafta in de output van industriële transformatie
     external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_bio_kerosene_output_share:
       title: Biokerosine
       description: |
@@ -1112,6 +1108,10 @@ nl:
       title: Biomassa
       description: |
         Aandeel houtpellets in nuttige niet-energetische vraag
+    external_coupling_industry_chemical_other_non_energetic_bionaphtha_share:
+      title: Bionafta
+      description: |
+        Aandeel bionafta naar niet-energetische vraag
     external_coupling_industry_metal_aluminium_technical_lifetime:
       title: Technische levensduur
       description: |
@@ -1167,7 +1167,8 @@ nl:
     external_coupling_energy_chemical_refineries_transformation_external_coupling_node_total_demand:
       title: Vraag voor transformatie
       description: |
-        Nuttige energetische vraag van industriële transformatie
+        Nuttige energetische <b>vraag</b> van industriële transformatie. Merk op dat dit een uitzondering
+        is op de andere schuifjes in deze sectie (die de nuttige output instellen).
     external_coupling_energy_heat_production_ht_residual_heat_wacc:
       title: WACC
       description: |

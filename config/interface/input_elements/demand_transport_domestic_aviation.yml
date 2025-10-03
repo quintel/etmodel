@@ -1,0 +1,15 @@
+---
+- key: transport_aviation_mixer_kerosene_kerosene_share
+  share_group: transport_kerosene_aviation
+  step_value: 0.1
+  unit: "%"
+  interface_group: kerosene_mix
+  position: 100
+  slide_key: demand_transport_domestic_aviation
+- key: transport_aviation_mixer_kerosene_bio_kerosene_share
+  share_group: transport_kerosene_aviation
+  step_value: 0.1
+  unit: "%"
+  interface_group: kerosene_mix
+  position: 110
+  slide_key: demand_transport_domestic_aviation

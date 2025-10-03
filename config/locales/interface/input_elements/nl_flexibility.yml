@@ -1403,20 +1403,21 @@ nl:
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm</a></li></ul>
     wtp_of_energy_production_synthetic_kerosene_dispatchable:
-      title: Regelbare kerosine voor de industrie
+      title: Fischer-Tropsch uit syngas (van waterstof, elektriciteit en CO<sub>2</sub>)
       short_description:
       description: |
-        Elektriciteit, waterstof en koolstofdioxide kunnen worden gebruikt om synthetische kerosine te produceren.
-        In het ETM kan capaciteit worden ingesteld voor synthetische kerosineproductie als een flexibele
-        vraagtechnologie, wat betekent dat kerosine alleen wordt geproduceerd wanneer de bereidheid om te betalen voor
+        Deze schuif stelt de maximumprijs in die de producent
+        bereid is te betalen voor de benodigde elektriciteit in het productieproces.<br/><br/>
+        Elektriciteit, waterstof en CO<sub>2</sub> kunnen worden gebruikt om syngas te produceren, wat weer in het
+        Fischer-Tropsch kan worden toegepast voor de productie van synthetische brandstoffen en chemiegrondstoffen.
+        In het ETM kan capaciteit worden ingesteld voor deze technologie als een flexibele
+        vraagtechnologie, wat betekent dat er alleen wordt geproduceerd wanneer de bereidheid om te betalen voor
         elektriciteit voor het productieproces hoger is dan de uurlijkse elektriciteitsprijs.
-        </br></br>Deze schuif stelt de maximumprijs in die producenten van synthetische kerosine
-        bereid zijn te betalen voor de benodigde elektriciteit in het productieproces. Let op, er moet voor deze schuif
-        capaciteit geïnstalleerd zijn van de
-        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">regelbare synthetische kerosineproductie</a>
+        </br></br>Let op, er moet voor deze schuif
+        capaciteit geïnstalleerd zijn van regelbare Fischer-Tropsch in de sectie
+        <a href="/scenario/supply/fuel_production/overview">Vloeibare brandstoffen</a>
         om effect te hebben.</br></br>
-        Er zijn verschillende grafieken beschikbaar die inzicht bieden in het effect van de betalingsbereidheid voor elektriciteit
-        in kerosineproductie:
+        Er zijn verschillende grafieken beschikbaar die inzicht bieden in het effect van de betalingsbereidheid voor elektriciteit:
         </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         Het jaarlijkse gebruik van elektriciteit door flexibele vraagtechnologieën.</a></li>

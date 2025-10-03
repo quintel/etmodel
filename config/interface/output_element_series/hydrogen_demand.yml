@@ -205,6 +205,42 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: energy_synthetic_products_from_hydrogen_hydrogen_demand
+- label: energy_bio_pyrolysis_oil_fractionation_from_hydrogen
+  color: "#2ECC71"
+  order_by: 70
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_bio_pyrolysis_oil_fractionation_hydrogen_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: energy_bio_pyrolysis_oil_fractionation_from_hydrogen_hydrogen_demand
+- label: energy_pyrolysis_oil_fractionation_from_hydrogen
+  color: "#708090"
+  order_by: 75
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_pyrolysis_oil_fractionation_hydrogen_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: energy_pyrolysis_oil_fractionation_from_hydrogen_hydrogen_demand
+- label: energy_hvo_production_from_hydrogen
+  color: "#27AE60"
+  order_by: 80
+  group: ''
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_hvo_production_hydrogen_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: energy_hvo_production_from_hydrogen_hydrogen_demand
 - label: exported_hydrogen_baseload
   color: "#485f60"
   order_by: 75

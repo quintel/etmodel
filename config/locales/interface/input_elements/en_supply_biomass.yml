@@ -43,32 +43,49 @@ en:
     max_demand_of_biogenic_waste:
       title: Biogenic waste
       short_description:
-      description: With this slider you can set the potential of biogenic waste that
-        is available for combustion in waste incinerators or waste CHPs.
+      description: |
+        This slider sets the annual energy potential of biogenic waste. <br/><br/>Biogenic waste, 
+        such as food scraps, garden waste, and animal manure, can be converted into energy through 
+        combustion in waste incineration plants or combined heat and power (CHP) systems. It can
+        also be used for the production of transport fuels or as a raw material for the chemical 
+        industry.
+    max_demand_of_non_biogenic_waste:
+      title: Non-biogenic waste
+      short_description:
+      description: |
+        This slider sets the annual energy potential of non-biogenic waste.<br/><br/>Non-biogenic 
+        waste, such as plastics, textiles, and other household or industrial residuals 
+        not of biological origin, can be converted into energy through combustion in waste 
+        incineration plants or combined heat and power (CHP) systems. It can also be used for 
+        the production of transport fuels or as a raw material for the chemical industry
     max_demand_of_wet_biomass:
       title: Wet biomass
       short_description:
-      description: 'Wet biomass is biomass with a moisture percentage of at least
-        40-50%. This includes: residues from the food and beverage industry, agricultural
-        residual streams, sewage sludge, aquatic biomass, cultivated grain products,
-        etc.'
+      description: |
+        This slider sets the annual energy potential of wet biomass.<br/><br/> Wet biomass 
+        contains at least 40–50% moisture and includes residues from the food and beverage 
+        industry, agricultural by-products, sewage sludge, aquatic biomass, and cultivated 
+        grains.<br/><br/>View the chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     max_demand_of_dry_biomass:
       title: Dry biomass
       short_description:
-      description: 'Dry biomass consists of relatively dry organic material, like
-        wood. Dry biomass is ''simple biomass'': it requires no processing and provides
-        a high return. There is therefore a great demand for clean, woody biomass.
-        Examples of woody biomass are residual streams from forestry (tree tops, stumps,
-        bark, branches), recycled waste wood, residual streams from agriculture (straw),
-        and fast-growing bio-energy crops (elephant grass, willow, poplar).'
+      description: |
+        This slider sets the annual energy potential of dry biomass.<br/><br/> Dry biomass 
+        has a low moisture content, requires no pre-treatment, and provides high energy yield. 
+        Examples include wood, recycled wood, agricultural residues (straw), and fast-growing 
+        crops.<br/><br/>View the chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     max_demand_of_oily_biomass:
       title: Oil-containing biomass
       short_description:
-      description: 'Oil-containing biomass is biomass with seeds that contain oil.
-        Crude biodiesel is produced by pressing oil seeds. This can be converted into
-        biodiesel in an esterification process with the addition of methanol. Examples
-        of oil-containing biomass are: rapeseed, sunflower seeds, oil palm. Used frying
-        fats also fall within this category.'
+      description: |
+        This slider sets the annual energy potential of oil-rich biomass.<br/><br/> Oil-rich 
+        biomass consists of oil-containing seeds. After pressing, crude biodiesel is obtained, 
+        which is then converted into biodiesel through esterification with methanol. Examples 
+        include rapeseed, sunflower seeds, palm oil, and used frying oils.<br/><br/> View the 
+        chart <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Future biomass flows</a> to see how the biomass is utilized.
     energy_biogas_fermentation_share:
       title: Anaerobic digestion
       short_description:

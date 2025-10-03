@@ -72,14 +72,6 @@ en:
       title: Hydrogen turbine CHP - electricity
       description: |
         Electricity output efficiency of CHP
-    external_coupling_energy_production_synthetic_kerosene_demand:
-      title: Synthetic kerosene production
-      description: |
-        Energetic production of kerosene from captured CO2
-    external_coupling_energy_production_synthetic_methanol_demand:
-      title: Synthetic methanol production
-      description: |
-        Energetic production of methanol from captured CO2
     external_coupling_industry_metal_aluminium_fixed_om_costs:
       title: Fixed operation and maintenance costs
       description: |
@@ -472,6 +464,10 @@ en:
       title: Naphtha-fired heater
       description: |
         Share of naphtha burner in energetic heat demand
+    external_coupling_industry_chemical_other_burner_bionaphtha_share:
+      title: Bionaphtha-fired heater
+      description: |
+        Share of bionaphtha burner in energetic heat demand
     external_coupling_industry_chemical_other_non_energetic_naphtha_share:
       title: Naphtha
       description: |
@@ -668,18 +664,18 @@ en:
       title: Bio-oil
       description: |
         Share of bio-oil in input of industrial transformation
-    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_bio_oil_output_share:
-      title: Bio-oil
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_bionaphtha_output_share:
+      title: Bionaphtha
       description: |
-        Share of bio-oil in output of industrial transformation
-    external_coupling_energy_chemical_other_transformation_external_coupling_node_bio_oil_output_share:
-      title: Bio-oil
+        Share of bionaphtha in output of industrial transformation
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_bionaphtha_output_share:
+      title: Bionaphtha
       description: |
-        Share of bio-oil in output of industrial transformation
-    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_bio_oil_output_share:
-      title: Bio-oil
+        Share of bionaphtha in output of industrial transformation
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_bionaphtha_output_share:
+      title: Bionaphtha
       description: |
-        Share of bio-oil in output of industrial transformation
+        Share of bionaphtha in output of industrial transformation
     external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_bio_kerosene_output_share:
       title: Biokerosene
       description: |
@@ -1100,6 +1096,10 @@ en:
       title: Biomass
       description: |
         Share of wood pellets in useful non-energetic demand
+    external_coupling_industry_chemical_other_non_energetic_bionaphtha_share:
+      title: Bionaphtha
+      description: |
+        Share of bionaphtha in non-energetic demand
     external_coupling_industry_metal_aluminium_technical_lifetime:
       title: Technical lifetime
       description: |
@@ -1155,7 +1155,8 @@ en:
     external_coupling_energy_chemical_refineries_transformation_external_coupling_node_total_demand:
       title: Demand for transformation
       description: |
-        Useful energetic demand of industrial transformation
+        This slider sets the useful energetic <b>demand</b> of industrial transformation. Note that this is
+        an exception to the other sliders in this section (for which the useful output is set).
     external_coupling_energy_heat_production_ht_residual_heat_wacc:
       title: WACC
       description: |

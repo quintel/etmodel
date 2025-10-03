@@ -1,4 +1,52 @@
 ---
+- label: coal_and_derivatives
+  color: "#333333"
+  order_by: 10
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_coal_and_derivatives_energetic_in_bezier
+  is_1990: false
+  dependent_on:
+  output_element_key: final_demand_per_carrier_energetic
+  key: coal_and_derivatives_final_demand_per_carrier_energetic
+- label: oil_and_derivatives
+  color: "#854321"
+  order_by: 20
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_oil_and_derivatives_energetic_in_bezier
+  is_1990: false
+  dependent_on:
+  output_element_key: final_demand_per_carrier_energetic
+  key: oil_and_derivatives_final_demand_per_carrier_energetic
+- label: natural_gas_and_derivatives
+  color: "#CCCCCC"
+  order_by: 30
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_natural_gas_and_derivatives_energetic_in_bezier
+  is_1990: false
+  dependent_on:
+  output_element_key: final_demand_per_carrier_energetic
+  key: gas_and_derivatives_final_demand_per_carrier_energetic
+- label: heat
+  color: "#8B0000"
+  order_by: 40
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_heat_energetic_in_bezier
+  is_1990: false
+  dependent_on:
+  output_element_key: final_demand_per_carrier_energetic
+  key: heat_final_demand_per_carrier_energetic
 - label: ambient
   color: "#ADDE4C"
   order_by: 100
@@ -8,7 +56,7 @@
   target_line_position:
   gquery: final_demand_of_ambient_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
   key: ambient_final_demand_per_carrier_energetic
 - label: ammonia
@@ -20,7 +68,7 @@
   target_line_position:
   gquery: final_demand_of_ammonia_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
   key: ammonia_final_demand_per_carrier_energetic
 - label: biomass_products
@@ -32,21 +80,9 @@
   target_line_position:
   gquery: final_demand_of_biomass_products_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
   key: biomass_products_final_demand_per_carrier_energetic
-- label: coal_and_derivatives
-  color: "#333333"
-  order_by: 115
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: final_demand_of_coal_and_derivatives_energetic_in_bezier
-  is_1990: false
-  dependent_on: 
-  output_element_key: final_demand_per_carrier_energetic
-  key: coal_and_derivatives_final_demand_per_carrier_energetic
 - label: electricity
   color: "#4169E1"
   order_by: 120
@@ -56,7 +92,7 @@
   target_line_position:
   gquery: final_demand_of_electricity_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
   key: electricity_final_demand_per_carrier_energetic
 - label: geothermal
@@ -68,21 +104,9 @@
   target_line_position:
   gquery: final_demand_of_geothermal_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
   key: geothermal_final_demand_per_carrier_energetic
-- label: heat
-  color: "#8B0000"
-  order_by: 130
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: final_demand_of_heat_energetic_in_bezier
-  is_1990: false
-  dependent_on: 
-  output_element_key: final_demand_per_carrier_energetic
-  key: heat_final_demand_per_carrier_energetic  
 - label: hydrogen
   color: "#87CEEB"
   order_by: 135
@@ -92,33 +116,9 @@
   target_line_position:
   gquery: final_demand_of_hydrogen_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
-  key: hydrogen_final_demand_per_carrier_energetic    
-- label: natural_gas_and_derivatives
-  color: "#CCCCCC"
-  order_by: 140
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: final_demand_of_natural_gas_and_derivatives_energetic_in_bezier
-  is_1990: false
-  dependent_on: 
-  output_element_key: final_demand_per_carrier_energetic
-  key:   gas_and_derivatives_final_demand_per_carrier_energetic
-- label: oil_and_derivatives
-  color: "#854321"
-  order_by: 145
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: final_demand_of_oil_and_derivatives_energetic_in_bezier
-  is_1990: false
-  dependent_on: 
-  output_element_key: final_demand_per_carrier_energetic
-  key: oil_and_derivatives_final_demand_per_carrier_energetic 
+  key: hydrogen_final_demand_per_carrier_energetic
 - label: solar
   color: "#FFD900"
   order_by: 150
@@ -128,6 +128,18 @@
   target_line_position:
   gquery: final_demand_of_solar_energetic_in_bezier
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: final_demand_per_carrier_energetic
-  key: solar_final_demand_per_carrier_energetic    
+  key: solar_final_demand_per_carrier_energetic
+- label: methanol
+  color: "#FF8C8C"
+  order_by: 160
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_methanol_energetic_in_bezier
+  is_1990: false
+  dependent_on:
+  output_element_key: final_demand_per_carrier_energetic
+  key: methanol_final_demand_per_carrier_energetic

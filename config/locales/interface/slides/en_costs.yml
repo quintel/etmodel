@@ -20,8 +20,11 @@ en:
       description: What will CO<sub>2</sub> storage cost on average?
     costs_co2_utilisation:
       title: CO<sub>2</sub> utilisation
-      short_description: ''
-      description: What will CO<sub>2</sub> utilisation cost on average?
+      short_description:
+      description: |
+        Go to the <a href="/scenario/costs/costs_fuel_production/costs-of-liquid-fuels-production-processes">
+        Liquid fuels</a> section to change the costs of processes that use CO<sub>2</sub> for the production
+        of liquid fuels and feedstock (Fischer-Tropsch and methanol synthesis).
     costs_co2_transport:
       title: CO<sub>2</sub> transport
       short_description: ''
@@ -43,31 +46,31 @@ en:
       title: Fossil fuels
       short_description: test
       description: Nobody can predict future fuel prices. This makes electricity costs
-        hard to predict. What do you think these fuels will cost in the future?        
+        hard to predict. What do you think these fuels will cost in the future?
     costs_flexibility_demand_curtailment:
       title: Value of Lost Load
       short_description:
       description: |
         In hours when the total electricity demand exceeds the total electricity supply,
         a <a href="https://docs.energytransitionmodel.com/main/loss-of-load-expectation/"
-        target ="_blank">loss of load</a> occurs. The electricity price during these hours 
-        is represented in the model by the Value of Lost Load (VoLL). This is the value that 
-        electricity consumers attribute to receiving an uninterupted electricity supply, or 
+        target ="_blank">loss of load</a> occurs. The electricity price during these hours
+        is represented in the model by the Value of Lost Load (VoLL). This is the value that
+        electricity consumers attribute to receiving an uninterupted electricity supply, or
         in other words, the costs they would incur for a supply disruption.
     costs_flexibility_conversion:
       title: Electricity conversion
       short_description:
       description: |
         Electricity can be <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies">
-        converted</a> to other energy carriers, like hydrogen or heat. Below, you can specify how much the investment costs 
-        will change for power-to-heat boilers. The investment costs for power-to-gas can be adjusted on the 
+        converted</a> to other energy carriers, like hydrogen or heat. Below, you can specify how much the investment costs
+        will change for power-to-heat boilers. The investment costs for power-to-gas can be adjusted on the
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hydrogen production costs</a> page.
     costs_flexibility_storage:
       title: Electricity storage
       short_description:
       description: |
         Electricity can be <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
-        stored</a> in different technologies. Below you can specify how the investment costs and the 
+        stored</a> in different technologies. Below you can specify how the investment costs and the
         round-trip efficiency of electricity storage will change in the future.
     costs_heat_network:
       title: Costs district heating infrastructure
@@ -91,7 +94,7 @@ en:
       short_description:
       description: What do you think the costs for hydrogen storage volume will be in the
         future? The future costs can be adjusted for hydrogen storage volume in salt caverns and
-        in depleted gas fields. 
+        in depleted gas fields.
     costs_hydrogen_transport:
       title: Hydrogen transport
       short_description:
@@ -111,11 +114,18 @@ en:
       title: Costs of imported hydrogen
       short_description:
       description:
+    costs_fuel_production_processes:
+      title: Costs of liquid fuels production processes
+      short_description:
+      description: |
+        In this section, assumptions can ben made about the investment and operational costs of various processes for
+        the production of liquid fuels and feedstock. Go to the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section to set the output of these processes.
     costs_nuclear_fuel:
       title: Nuclear fuels
       short_description: ''
       description: How much will nuclear fuel cost compared to today's prices? On
-        the right you can see that nuclear power is not so sensitive to uranium prices.    
+        the right you can see that nuclear power is not so sensitive to uranium prices.
     costs_wacc:
       title: Weighted average cost of capital (WACC)
       short_description:
@@ -127,7 +137,7 @@ en:
     specs_electricity_renewable_wind_turbines:
       title: Wind turbines
       short_description:
-      description: 'How will the costs and efficiencies of wind turbines change in the future? 
+      description: 'How will the costs and efficiencies of wind turbines change in the future?
       Many factors are influential: steel prices, environmental laws, technological breakthroughs, etc.'
     specs_electricity_renewable_hydro_electric:
       title: Hydroelectric power
@@ -138,7 +148,7 @@ en:
       short_description:
       description: |
         How will the costs and efficiencies of solar power change in the future?
-        The sliders below allows you to make assumptions about this. A higher efficiency means 
+        The sliders below allows you to make assumptions about this. A higher efficiency means
         that a solar panel produces more electricity and has a higher (peak) capacity. Click on '?' for more information.
     specs_electricity_renewable_waste_power:
       title: Waste power
@@ -173,8 +183,8 @@ en:
       short_description:
       description: |
         How will the efficiencies of heating technologies in households, buildings and agriculture change in the future? </br></br>
-        The chart on the right shows the final demand for heating and hot water in households. You can also view the final demand 
-        for heating in 
+        The chart on the right shows the final demand for heating and hot water in households. You can also view the final demand
+        for heating in
         <a href="#" class="open_chart" data-chart-key="source_of_heat_in_buildings" data-chart-location="side">buildings</a> or
         <a href="#" class="open_chart" data-chart-key="source_of_heat_in_agriculture" data-chart-location="side">agriculture</a>.
         Note that these sliders do not affect the efficiency of hot water production.

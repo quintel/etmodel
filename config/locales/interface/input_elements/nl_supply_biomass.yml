@@ -43,38 +43,53 @@ nl:
     max_demand_of_biogenic_waste:
       title: Biogeen afval
       short_description:
-      description: Met deze slider zet je de potentie biogeen afval wat beschikbaar
-        is om te worden verbrand afvalverbrandingsinstallaties (AVIs) en/of afval
-        WKKs.
+      description: |
+        Deze slider bepaalt de jaarlijkse energetische potentie van biogeen afval. </br></br> 
+        Biogeen afval, zoals voedselresten, tuinafval en dierlijke mest, kan worden omgezet in 
+        energie via verbranding in afvalverbrandingsinstallaties of warmtekrachtkoppelingen 
+        (WKK’s). Het kan daarnaast ook worden gebruikt voor de productie van transportbrandstoffen 
+        of als grondstof voor de chemische industrie.
+    max_demand_of_non_biogenic_waste:
+      title: Niet-biogeen afval
+      short_description:
+      description: |
+        Deze slider bepaalt de jaarlijkse energetische potentie van niet-biogeen afval.</br></br>
+        Niet-biogeen afval, zoals kunststoffen, textiel en ander huishoudelijk of industrieel 
+        restafval dat niet uit biologische oorsprong komt, kan worden omgezet in energie via 
+        verbranding in afvalverbrandingsinstallaties of warmtekrachtkoppelingen (WKK’s). Het kan 
+        daarnaast ook worden gebruikt voor de productie van transportbrandstoffen of als grondstof 
+        voor de chemische industrie.
     max_demand_of_wet_biomass:
       title: Natte biomassa
       short_description:
-      description: 'Natte biomassa is biomassa met een vochtpercentage van minimaal
-        40-50%. Hieronder valt: resten van de voedings- en genootmiddelindustrie (VGI),
-        agrarische reststrommen, rioolsib, aquatische biomassa, geteelde graanproducten
-        etc.'
+      description: |
+        Deze slider bepaalt de jaarlijkse energetische potentie van natte biomassa. </br></br> 
+        Natte biomassa bevat minimaal 40–50% vocht en omvat onder andere reststromen uit de 
+        voedings- en genotmiddelenindustrie (VGI), agrarische bijproducten, rioolslib, aquatische 
+        biomassa en geteelde granen.</br></br> Bekijk de grafiek <a href="#" class="open_chart" 
+        data-chart-key="biomass_sankey" data-chart-location="side">Toekomstige biomassa stromen
+        </a> om in te zien hoe de biomassa wordt ingezet.
     max_demand_of_dry_biomass:
       title: Droge biomassa
       short_description:
-      description: 'Droge biomassa bestaat uit relatief droge organische stoffen,
-        zoals hout. Droge biomassa is ‘eenvoudige biomassa’: het heeft geen bewerking
-        nodig en levert een hoog rendement op. Er is dan ook veel vraag naar schone,
-        houtige biomassa. Voorbeelden van houtige biomassa zijn reststromen uit de
-        bosbouw (boomtoppen, stompen, schors, takken), gerecycled afvalhout, reststromen
-        uit de landbouw (stro), en snelgroeiende bio-energiegewassen (olifantsgras,
-        wilg, populier). '
+      description: |
+        Deze slider bepaalt de jaarlijkse energetische potentie van droge biomassa. </br></br> 
+        Droge biomassa heeft een laag vochtgehalte, vereist geen bewerking en levert een hoog 
+        rendement op. Voorbeelden zijn hout, gerecycled afvalhout, agrarische reststromen (stro) 
+        en snelgroeiende gewassen.</br></br> Bekijk de grafiek <a href="#" class="open_chart" 
+        data-chart-key="biomass_sankey" data-chart-location="side">Toekomstige biomassa stromen
+        </a> om in te zien hoe de biomassa wordt ingezet.
     max_demand_of_oily_biomass:
       title: Oliehoudende biomassa
       short_description:
-      description: 'Oliehoudende biomassa is biomassa met zaden waarin olie zit. Door
-        het uitpersen van oliehoudende zaden ontstaat ruwe biodiesel. Deze olie kan
-        in een veresteringsproces met toevoeging van methanol worden omgezet in biodiesel.
-        Voorbeelden van oliehoudende biomassa zijn: koolzaad, zonnebloempitten, oliepalm.
-        Ook gebruikte frituurvetten vallen binnen deze categorie. Van alle biodiesel
-        in Nederland is rond 70 procent gemaakt uit gebruikt frituurvet. Onlangs kwam
-        aan het licht dat er met eenderde van alle biodiesel in Nederland gefraudeerd
-        is (voor meer informatie lees <a href="https://www.volkskrant.nl/nieuws-achtergrond/fraude-met-eenderde-van-alle-biodiesel-kampens-bedrijf-zou-miljoenen-hebben-verdiend~b01c604b/?referer=https%3A%2F%2Fwww.google.com%2F"
-        target="_blank">dit Volkskrant-artikel</a>)'
+      description: |
+        Deze slider bepaalt de jaarlijkse energetische potentie van oliehoudende biomassa.
+        </br><br>  Oliehoudende biomassa bestaat uit zaden rijk aan olie. Na het uitpersenontstaat 
+        ruwe biodiesel, die door verestering met methanol wordt omgezet in biodiesel. Voorbeelden 
+        zijn koolzaad, zonnebloempitten, palmolie en gebruikte frituurvetten.</br></br> Bekijk de 
+        grafiek <a href="#" class="open_chart" data-chart-key="biomass_sankey" 
+        data-chart-location="side">Toekomstige biomassa stromen</a> om in te zien hoe de biomassa 
+        wordt ingezet.
     energy_biogas_fermentation_share:
       title: Vergisting
       short_description:

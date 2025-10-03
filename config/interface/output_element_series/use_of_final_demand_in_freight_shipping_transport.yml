@@ -107,3 +107,27 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_freight_shipping_transport
   key: ammonia_use_of_final_demand_in_freight_shipping_transport
+- label: methanol
+  color: "#FF8C8C"
+  order_by: 140
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_methanol_in_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: methanol_use_of_final_demand_in_freight_shipping_transport
+- label: bio_methanol
+  color: "#6AB04C"
+  order_by: 145
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: final_demand_of_bio_methanol_in_shipping_transport_energetic
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_freight_shipping_transport
+  key: bio_methanol_use_of_final_demand_in_freight_shipping_transport

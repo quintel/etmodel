@@ -619,39 +619,41 @@ en:
     green_gas_total_share:
       title: Green gas
       short_description: ''
-      description: This slider sets the percentage of green gas in the gas network.
-        Green gas is conventionally produced by bacteria that digest biological material
-        with an upgrading step to natural gas quality. In the future green gas can
-        also be produced through gasification, which can be chosen in <a href="/scenario/supply/biomass/green-gas-production">green
-        gas production</a>.
+      description: |
+        This slider sets the share of the gas mix that comes from green gas.<br/><br/>
+        Green gas is usually produced by bacteria digesting organic material, followed 
+        by upgrading to natural gas quality. In the future, green gas can also be produced 
+        by biomass gasification.<br/><br/>Go to <a href="/scenario/supply/biomass/green-gas-production">
+        Green Gas Production</a> to configure biomass-based green gas production.
     natural_gas_total_share:
       title: Natural gas
       short_description: ''
-      description: "This slider determines which percentage of all gas used is natural gas.
-        Natural gas is a relatively clean fossil fuel that is mostly used to generate
-        heat and electricity. It is hardly used as a transport fuel yet.\r\n\r\n<br/>Apart
-        from CO<sub>2</sub> emissions gas combustion also tends to produce NO<sub>x</sub>."
+      description: |
+        This slider sets the share of the gas mix that comes from natural gas.<br/><br/>
+        Natural gas is a relatively clean fossil fuel, mainly used for heat and electricity. 
+        Its use in transport is currently limited. Besides CO<sub>2</sub>, gas combustion 
+        can also produce NO<sub>x</sub> emissions.
     propane_gas_total_share:
       title: Propane
       short_description: ''
       description: |
-        This slider determines which percentage of all gas used is propane.
-        Propane can be added to the gas mixture to increase the heating value of network gas.
-        For example, this can be relevant when there is a need to compensate for the lower heating value of other
-        network gas components, such as biogas.
+        This slider sets the share of the gas mix that comes from propane.<br/><br/>
+        Propane can be blended into the gas mix to increase the energy content of network gas. 
+        This is useful, for example, to compensate for a lower energy content of other blended 
+        gases, such as biogas.
     energy_treatment_natural_gas_share:
       title: Natural gas
       short_description:
-      description: Which percentage of the natural gas in the national gas network
-        is natural gas?
+      description: |
+        This slider sets the share of fossil natural gas in the national gas network.
     energy_regasification_lng_share:
       title: Regasified LNG
       short_description:
-      description: Which percentage of the natural gas in the national gas network
-        is regasified LNG? LNG is mainly imported from Norway and the Middle East,
-        then regasified to natural gas at import terminals and fed into the national
-        gas network. In liquid form (hence, as LNG) it is only used in the transport
-        sector.
+      description: |
+        This slider sets the share of regasified liquefied natural gas (LNG) in the 
+        national gas network.<br/><br/>LNG is imported, regasified at import terminals, 
+        and then fed into the gas network. In liquid form, LNG is only used in the 
+        transport sector.
     share_of_energy_steel_energy_production_coal_gas:
       title: Energy production
       description: |

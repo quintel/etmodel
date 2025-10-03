@@ -21,8 +21,11 @@ nl:
       description: Wat zullen de gemiddelde kosten van CO<sub>2</sub> opslag zijn?
     costs_co2_utilisation:
       title: CO<sub>2</sub> hergebruik
-      short_description: ''
-      description: Wat zullen de gemiddelde kosten van CO<sub>2</sub> hergebruik zijn?
+      short_description:
+      description: |
+        Ga naar de sectie <a href="/scenario/costs/costs_fuel_production/costs-of-liquid-fuels-production-processes">
+        Vloeibare brandstoffen</a> om de kosten te wijzigen van processen die CO<sub>2</sub> benutten voor de productie
+        van vloeibare brandstoffen en grondstoffen (Fischer-Tropsch en methanolsynthese).
     costs_co2_transport:
       title: CO<sub>2</sub> transport
       short_description: ''
@@ -50,19 +53,19 @@ nl:
       title: Value of Lost Load
       description: |
         Er treedt <a href="https://docs.energytransitionmodel.com/main/loss-of-load-expectation/"
-        target ="_blank">onvermogen (loss of load)</a> op in uren waar de totale elektriciteitsvraag 
+        target ="_blank">onvermogen (loss of load)</a> op in uren waar de totale elektriciteitsvraag
         groter is dan het totale aanbod. In deze uren wordt in het model de Value of Lost Load (VoLL)
-        gebruikt als representatie van de elektriciteitsprijs. Dit is de waarde die consumenten 
-        toekennen aan een ononderbroken elektriciteitslevering, of in andere woorden, de kosten die 
+        gebruikt als representatie van de elektriciteitsprijs. Dit is de waarde die consumenten
+        toekennen aan een ononderbroken elektriciteitslevering, of in andere woorden, de kosten die
         ze zouden maken als het aanbod verstoord wordt.
     costs_flexibility_conversion:
       title: Conversie elektriciteit
       short_description:
       description: |
-        Elektriciteit kan worden 
+        Elektriciteit kan worden
         <a href="/scenario/flexibility/flexibility_conversion/conversion-by-flexible-demand-technologies">
         geconverteerd</a> naar andere energiedragers, zoals waterstof of warmte. Hieronder kun je aangeven hoe
-        de investeringskosten van power-to-heat boilers zullen veranderen in de toekomst. 
+        de investeringskosten van power-to-heat boilers zullen veranderen in de toekomst.
         De investeringskosten voor power-to-gas elektrolysers kunnen worden aangepast op de
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production">waterstofproductie</a> pagina.
     costs_flexibility_storage:
@@ -71,7 +74,7 @@ nl:
       description: |
         Elektriciteit kan in verschillende technologieën worden
         <a href="/scenario/flexibility/flexibility_storage/behaviour-of-storage-technologies">
-        opgeslagen</a>. Hieronder kun je bepalen hoeveel de investeringskosten en retourefficiëntie 
+        opgeslagen</a>. Hieronder kun je bepalen hoeveel de investeringskosten en retourefficiëntie
         van elektriciteitsoplag zullen veranderen.
     costs_heat_network:
       title: Kosten warmtenetinfrastructuur
@@ -115,6 +118,13 @@ nl:
       title: Kosten van geïmporteerde waterstof
       short_description:
       description:
+    costs_fuel_production_processes:
+      title: Kosten van vloeibare brandstoffenproductie
+      short_description:
+      description: |
+        In deze sectie kunnen aannames worden gedaan over de investerings- en operationele kosten van diverse processen
+        voor de productie van vloeibare brandstoffen en grondstoffen. Ga naar de sectie <a href="/scenario/supply/fuel_production/overview"
+        >Vloeibare brandstoffen</a> om de output van deze processen in te stellen.
     costs_nuclear_fuel:
       title: Kernbrandstoffen
       short_description: ''
@@ -139,12 +149,12 @@ nl:
     specs_electricity_renewable_wind_turbines:
       title: Windmolens
       short_description:
-      description: 'Hoe zullen de kosten voor 
+      description: 'Hoe zullen de kosten voor
       windturbines in de toekomst veranderen? Veel dingen spelen mee: staalprijzen, milieuwetgeving, technologische doorbraken, enz.'
     specs_electricity_renewable_hydro_electric:
       title: Waterkracht
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       waterkrachtcentrales in de toekomst veranderen?'
     specs_electricity_renewable_solar_power:
       title: Zonne-energie
@@ -156,7 +166,7 @@ nl:
     specs_electricity_renewable_waste_power:
       title: Afvalverbrandingscenrales
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       afvalverbrandingscentrales in de toekomst veranderen?'
     specs_electricity_renewable_hydrogen_plants:
       title: Waterstofcentrales
@@ -165,35 +175,35 @@ nl:
     specs_electricity_renewable_biomass_plants:
       title: Biomassacentrales
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       biomassacentrales in de toekomst veranderen?'
     specs_electricity_coal_plants:
       title: Kolencentrales
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       kolencentrales in de toekomst veranderen?'
     specs_electricity_gas_plants:
       title: Gascentrales
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       gascentrales in de toekomst veranderen?'
     specs_electricity_oil_plants:
       title: Oliecentrales
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       oliecentrales in de toekomst veranderen?'
     specs_electricity_nuclear_plant:
       title: Kerncentrales
       short_description:
-      description: 'Hoe zullen de kosten en efficiëncties voor 
+      description: 'Hoe zullen de kosten en efficiëncties voor
       kerncentrales in de toekomst veranderen?'
     costs_heat_built_environment:
       title: Efficiënties verwarming gebouwde omgeving
       short_description:
       description: |
         Hoe zullen de efficiëncties voor verwarmingstechnologieën in huishoudens, gebouwen en de landbouw veranderen? </br></br>
-        De grafiek rechts laat het eindgebruik voor verwarming en warm tapwater in huizen zien. Je kunt ook het eindgebruik zien 
-        voor verwarming in 
+        De grafiek rechts laat het eindgebruik voor verwarming en warm tapwater in huizen zien. Je kunt ook het eindgebruik zien
+        voor verwarming in
         <a href="#" class="open_chart" data-chart-key="source_of_heat_in_buildings" data-chart-location="side">gebouwen</a> of de
         <a href="#" class="open_chart" data-chart-key="source_of_heat_in_agriculture" data-chart-location="side">landbouw</a>.
         Onderstaande schuifjes hebben geen effect op de efficiëntie van warmwaterproductie.

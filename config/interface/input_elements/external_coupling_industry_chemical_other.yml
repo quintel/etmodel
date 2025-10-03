@@ -63,6 +63,14 @@
   share_group: external_coupling_chemical_other_heat
   interface_group: external_coupling_industry_chemical_other_energetic
   coupling_icon: true
+- key: external_coupling_industry_chemical_other_burner_bionaphtha_share
+  step_value: 0.1
+  unit: '%'
+  position: 133
+  slide_key: demand_industry_chemical_other
+  share_group: external_coupling_chemical_other_heat
+  interface_group: external_coupling_industry_chemical_other_energetic
+  coupling_icon: true
 - key: external_coupling_industry_chemical_other_heatpump_water_water_electricity_share
   step_value: 0.1
   unit: '%'
@@ -163,6 +171,14 @@
   step_value: 0.1
   unit: '%'
   position: 315
+  slide_key: demand_industry_chemical_other
+  share_group: external_coupling_chemical_other_non_energetic
+  interface_group: external_coupling_industry_chemical_other_non_energetic
+  coupling_icon: true
+- key: external_coupling_industry_chemical_other_non_energetic_bionaphtha_share
+  step_value: 0.1
+  unit: '%'
+  position: 320
   slide_key: demand_industry_chemical_other
   share_group: external_coupling_chemical_other_non_energetic
   interface_group: external_coupling_industry_chemical_other_non_energetic
@@ -383,7 +399,7 @@
   share_group: external_coupling_chemical_other_transformation_output
   interface_group: external_coupling_industry_chemical_other_transformation_output
   coupling_icon: true
-- key: external_coupling_energy_chemical_other_transformation_external_coupling_node_bio_oil_output_share
+- key: external_coupling_energy_chemical_other_transformation_external_coupling_node_bionaphtha_output_share
   step_value: 0.1
   unit: '%'
   position: 580

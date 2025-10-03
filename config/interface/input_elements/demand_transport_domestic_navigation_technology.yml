@@ -34,3 +34,10 @@
   position: 5
   related_node: transport_ship_using_ammonia
   slide_key: demand_transport_domestic_navigation_technology
+- key: transport_ship_using_methanol_mix_share
+  share_group: transport_marine
+  step_value: 0.1
+  unit: "%"
+  position: 6
+  related_node: transport_ship_using_methanol_mix
+  slide_key: demand_transport_domestic_navigation_technology

@@ -5,8 +5,12 @@ nl:
       title: Diesel
       short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele diesel in de
-        dieselmix van wegverkeer. </br></br>
+        Dit schuifje bepaalt het energetische aandeel van diesel in de
+        dieselmix van wegverkeer.</br></br>
+        Deze diesel kan bestaan uit fossiele diesel, synthetische diesel of diesel geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van diesel in te stellen.</br></br>
         Diesel heeft een hogere energie-inhoud dan benzine, en dieselmotoren
         zijn vaak efficiënter dan benzinemotoren. Wel stoten dieselvoertuigen meer
         fijnstof uit en daarom worden in veel delen van de wereld roetfilters verplicht
@@ -99,8 +103,12 @@ nl:
       title: Diesel
       short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele diesel in de
+        Dit schuifje bepaalt het energetische aandeel van diesel in de
         dieselmix van treinverkeer. </br></br>
+        Deze diesel kan bestaan uit fossiele diesel, synthetische diesel of diesel geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van diesel in te stellen.</br></br>
         Diesel is de fossiele brandstof van keuze voor treinen in meer
         'afgelegen' gebieden waar geen elektrisch spoor is. Dieseltreinen zijn efficiënt
         en betrouwbaar. Omdat dieselmotoren fijnstof produceren worden in steeds meer
@@ -136,8 +144,12 @@ nl:
       title: Diesel
       short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van diesel in de gecombineerde brandstofmix
+        Dit schuifje stelt het energetische aandeel in van diesel in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
+        Deze diesel kan bestaan uit fossiele diesel, synthetische diesel of diesel geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van diesel in te stellen.</br></br>
         Grote schepen verbranden een teer-achtige substantie die als afvalproduct
         overblijft bij alle behalve de meest moderne raffinaderijen. Hierdoor is deze
         brandstof zeer goedkoop en energierijk. Hoe kleiner het schip wordt, hoe vaker
@@ -217,12 +229,17 @@ nl:
         afvalproduct uit alle behalve de meest  geavanceerde raffinaderijen komen.
         Omdat deze fracties verder weinig toepassingen hebben zonder verder afgebroken
         te worden, zijn ze relatief goedkoop.
-    transport_shipping_mixer_methanol_methanol_share: # is dit te technisch? (In de nieuwe slider teksten is het ook wel technisch)
+    transport_shipping_mixer_methanol_methanol_share:
       title: Methanol
       short_description:
       description: |
         Deze slider bepaalt het energetische aandeel van methanol in de brandstofmix van binnenlandse
-        scheepvaart.</br></br>Methanol is een veelbelovende alternatieve brandstof met een lagere
+        scheepvaart.</br></br>
+        Deze methanol kan bestaan uit synthetische methanol of methanol geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.</br></br>
+        Methanol is een veelbelovende alternatieve brandstof met een lagere
         uitstoot dan diesel of zware stookolie. Het is vloeibaar bij omgevingstemperatuur en relatief
         eenvoudig te transporteren, maar vereist aangepaste motoren en infrastructuur.
     transport_shipping_mixer_methanol_biomethanol_share:
@@ -239,6 +256,10 @@ nl:
       description: |
         Dit schuifje bepaalt het energetische aandeel van kerosine in de
         kerosine mix. </br></br>
+        Deze kerosine kan bestaan uit fossiele kerosine, synthetische kerosine of kerosine geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.<br/><br/>
         Er zijn verschillende brandstoffen om op te vliegen,
         maar verreweg het grootste volume bestaat uit (fossiele) kerosine. Alle grote vliegtuigen
         vliegen op kerosine.
@@ -260,7 +281,12 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt het energetisch aandeel van methanol in de methanolmix
-        van internationale scheepvaart.<br/><br/>Methanol is een veelbelovende alternatieve brandstof met
+        van internationale scheepvaart.<br/><br/>
+        Deze methanol kan bestaan uit synthetische methanol of methanol geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.<br/><br/>
+        Methanol is een veelbelovende alternatieve brandstof met
         een lagere uitstoot dan diesel of zware stookolie. Het is vloeibaar bij omgevingstemperatuur en
         relatief eenvoudig te transporteren, maar vereist aangepaste motoren en infrastructuur.
     bunkers_ship_using_biomethanol_share:
@@ -275,7 +301,12 @@ nl:
       title: Kerosine
       short_description:
       description: |
-        Deze slider bepaalt het energetische aandeel van kerosine in de kerosinemix van nationale luchtvaart.
+        Deze slider bepaalt het energetische aandeel van kerosine in de kerosinemix van nationale
+        luchtvaart.</br><br/>
+        Deze kerosine kan bestaan uit fossiele kerosine, synthetische kerosine of kerosine geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.
     transport_aviation_mixer_kerosene_bio_kerosene_share:
       title: Biokerosine
       short_description:

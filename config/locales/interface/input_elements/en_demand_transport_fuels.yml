@@ -5,8 +5,10 @@ en:
       title: Diesel
       short_description: ''
       description: |
-        This slider sets the energetic share of fossil diesel in the diesel mix used
-        by road transport. </br></br>
+        This slider sets the energetic share of diesel in the diesel mix used
+        by road transport. This diesel can consist of fossil diesel, synthetic diesel
+        or diesel produced from non-biogenic waste. Go to the <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for diesel.</br></br>
         Diesel has a higher energy content than gasoline, and diesel engines
         tend to be more energy efficient than gasoline engines. Due to emissions of
         fine particulate matter, filters are becoming mandatory in most parts of the
@@ -97,6 +99,10 @@ en:
       description: |
         This slider sets the energetic share of fossil diesel in the diesel mix
         used by train transport. </br></br>
+        This diesel can consist of fossil diesel, synthetic diesel
+        or diesel produced from non-biogenic waste. Go to the
+        <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for diesel.</br></br>
         Diesel is the standard fossil fuel for trains in 'remote' areas
         that lack an electric rail system. Diesel engines are quite efficient and
         sturdy. Due to emissions of fine particulate matter, filters are becoming
@@ -130,8 +136,12 @@ en:
       title: Diesel
       short_description:
       description: |
-        With this slider you set the energetic share of diesel in the aggregate fuel mix of ships
+        This slider sets the energetic share of diesel in the aggregate fuel mix of ships
         with single, dual and multifuel engines. </br></br>
+        This diesel can consist of fossil diesel, synthetic diesel
+        or diesel produced from non-biogenic waste . Go to the
+        <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for diesel.</br></br>
         Large ships use tar-like fractions of oil, which tend to be a waste
         product of all but the most advanced refineries. This makes this fuel very
         cheap (and rich in energy). The smaller a ship becomes, the more often diesel is
@@ -211,6 +221,9 @@ en:
       short_description:
       description: |
         This slider sets the energetic share of methanol in the fuel mix for inland shipping.</br></br>
+        This methanol can consist of synthetic methanol or methanol produced from non-biogenic waste.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for methanol.</br></br>
         Methanol is a promising alternative fuel with lower emissions than diesel or heavy fuel oil. It
         is liquid at ambient temperature and relatively easy to transport, but requires modified engines
         and infrastructure.
@@ -226,7 +239,10 @@ en:
       title: Kerosene
       short_description:
       description: |
-        This slider sets the energetic share of kerosene in the kerosene mix. </br></br>
+        This slider sets the energetic share of kerosene in the kerosene mix.</br></br>
+        This kerosene can consist of fossil kerosene, synthetic kerosene or kerosene produced from
+        non-biogenic waste.  Go to the <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for kerosene.
         For international aviation mainly large aircrafts are used and
         they consume primarily kerosene.
     bunkers_plane_using_bio_kerosene_share:
@@ -245,7 +261,11 @@ en:
       short_description:
       description: |
         This slider sets the energetic share of methanol in the methanol mix for international
-        shipping.<br/><br/>Methanol is a promising alternative fuel with lower emissions than diesel or
+        shipping.<br/><br/>
+        This methanol can consist of synthetic methanol or methanol produced from non-biogenic waste.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for methanol.<br/><br/>
+        Methanol is a promising alternative fuel with lower emissions than diesel or
         heavy fuel oil. It is liquid at ambient temperature and relatively easy to transport, but
         requires modified engines and infrastructure.
     bunkers_ship_using_biomethanol_share:
@@ -260,12 +280,15 @@ en:
       title: Kerosene
       short_description:
       description: |
-        This slider sets the energetic share of kerosene in the kerosene mix for national aviation.
+        This slider sets the share of kerosene in the kerosene mix for national aviation.<br/><br/>
+        This kerosene can consist of fossil kerosene, synthetic kerosene or kerosene produced from
+        non-biogenic waste. Go to the <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production technologies for kerosene.
     transport_aviation_mixer_kerosene_bio_kerosene_share:
       title: Biokerosene
       short_description:
       description: |
-        This slider sets the energy share of biokerosene in the kerosene mix for national aviation.
+        This slider sets the share of biokerosene in the kerosene mix for national aviation.
         </br></br>biokerosene is a sustainable alternative to fossil kerosene and can be used in
         existing aircraft engines without modifications. However, its availability is limited by the
         amount of arable land available for biofuel production, which affects scalability.

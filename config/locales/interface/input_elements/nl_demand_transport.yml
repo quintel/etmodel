@@ -49,9 +49,8 @@ nl:
         Kerosine is de meest dominante brandstof in de luchtvaart vanwege de hoge energie-inhoud en het
         lage vriespunt. Dit betekent dat vliegtuigen lange afstanden kunnen afleggen en de
         kerosine niet stolt bij het vliegen op grote hoogte. </br></br>
-        In de kerosinemix kan het aandeel biokerosine worden aangepast. Ga naar
-        <a href="/scenario/demand/transport_fuels/domestic-aviation">transportbrandstoffen</a>
-        om het aandeel biokerosine in de kerosinemix aan te passen.
+        Het aandeel van kerosine en biokerosine in de kerosinemix kan worden ingesteld in de sectie
+        <a href="/scenario/demand/transport_fuels/domestic-aviation">transportbrandstoffen</a>.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
@@ -399,9 +398,10 @@ nl:
       short_description:
       description: |
         Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart
-        wordt ingevuld met methanol.</br></br>Ga naar <a href="/scenario/demand/transport_fuels/
-        international-navigation">transportbrandstoffen</a> om de samenstelling van methanol in te
-        stellen.
+        wordt ingevuld met methanol.</br></br>
+        Ga naar <a href="/scenario/demand/transport_fuels/
+        international-navigation">transportbrandstoffen</a> om het aandeel methanol en biomethanol
+        in de methanolmix in te stellen.
     bunkers_aviation_using_electricity_share:
       title: Elektriciteit
       short_description:
@@ -653,7 +653,8 @@ nl:
       description: |
         Deze slider bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen
         die op methanol varen.</br></br>Ga naar <a href="/scenario/demand/transport_fuels/domestic-navigation">
-        transportbrandstoffen</a> om de samenstelling van methanol in te stellen.
+        transportbrandstoffen</a> om het aandeel methanol en biomethanol in de methanolmix in te
+        stellen.
     transport_trucks_share:
       title: Vrachtwagens
       short_description: ''

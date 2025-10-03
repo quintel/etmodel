@@ -642,14 +642,15 @@ en:
       title: Fischer-Tropsch
       short_description:
       description: |
-        In this section, the share of various feedstock routes in the production from Fischer-Tropsch
+        In this section, the share of various feedstock routes in the fuel production from Fischer-Tropsch
         can be set.
     supply_fuel_production_pyrolysis:
       title: Pyrolysis oil fractionation
       short_description:
       description: |
         In this section, the share of feedstock in the production of pyrolysis bio-oil can be set.
-        Additionally, the baseload import of pyrolysis oil and pyrolysis bio-oil can be set.
+        Non-biogenic pyrolysis oil can only be produced from non-biogenic waste.
+        Additionally, the baseload import of pyrolysis oil and pyrolysis bio-oil can be set below.
     supply_fuel_production_methanol_synthesis:
       title: Methanol synthesis
       short_description:

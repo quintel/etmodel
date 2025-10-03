@@ -686,15 +686,23 @@ nl:
     supply_fuel_production_fischer_tropsch:
       title: Fischer-Tropsch
       short_description:
-      description:
+      description: |
+        Hier kan het aandeel van de diverse feedstockroutes in brandstofproductie uit Fischer-Tropsch
+        worden ingesteld.
     supply_fuel_production_pyrolysis:
       title: Pyrolyse-olie fractionering
       short_description:
-      description:
+      description: |
+        Hier kan het aandeel van biogene feedstock in productie van biogene pyrolyse-olie
+        worden ingesteld. Niet-biogene pyrolyse-olie kan alleen met niet-biogeen afval worden
+        geproduceerd. Daarnaast kan hieronder import van pyrolyse-olie en biogene pyrolyse-olie
+        worden ingesteld.
     supply_fuel_production_methanol_synthesis:
       title: Methanolsynthese
       short_description:
-      description:
+      description: |
+        Hier kan het aandeel van de diverse feedstockroutes in methanolproductie uit
+        methanolsynthese worden ingesteld.
     supply_fuel_fossil_refinery:
       title: Olieraffinaderijen
       short_description:

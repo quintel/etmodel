@@ -23,9 +23,7 @@ en:
         are determined based on a refinery archetype.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/oil-refineries">oil refineries</a>
         section to make assumptions in efficiency improvements and in technologies used for heat
-        production in oil refineries.<br/><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the liquid fuels production and final demand.
+        production in oil refineries.
     output_of_energy_production_fischer_tropsch:
       title: Fischer-Tropsch
       short_description:
@@ -49,9 +47,7 @@ en:
         Depending on the type of feedstock going into the process, the produced products from Fischer-Tropsch will
         differ in the extent to which they are synthetic, biogenic or non-biogenic.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/fischer-tropsch">Fischer-Tropsch</a> section to set
-        the shares the feedstock routes that produce syngas for Fischer-Tropsch.<br/><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        the shares the feedstock routes that produce syngas for Fischer-Tropsch.
     output_of_energy_production_methanol_synthesis:
       title: Methanol synthesis
       short_description:
@@ -69,9 +65,7 @@ en:
         The only output product is <b>methanol</b>. Depending on the type of used feedstock, the produced methanol
         will differ in the extent to which it is synthetic, biogenic or non-biogenic.<br/><br/>
         In the <a href="/scenario/supply/fuel_production/methanol-synthesis">Methanol synthesis</a> section
-        the shares of the different feedstock routes for syngas production for methanol synthesis can be set.<br/><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        the shares of the different feedstock routes for syngas production for methanol synthesis can be set.
     output_of_energy_production_fractionation_pyrolysis_oil:
       title: Pyrolysis oil fractionation
       short_description:
@@ -90,9 +84,7 @@ en:
         setting import of pyrolysis oil, which will substitute the local production of pyrolysis oil.<br/><br/>
         Go to the section
         <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
-        of pyrolysis oil.<br/><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        of pyrolysis oil.
     output_of_energy_production_fractionation_bio_pyrolysis_oil:
       title: Pyrolysis bio-oil fractionation
       short_description:
@@ -115,15 +107,13 @@ en:
         setting import of pyrolysis bio-oil, which will substitute the local production of pyrolysis oil.<br/><br/>
         Go to the section
         <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
-        of pyrolysis bio-oil and to set the shares of feedstock used for pyrolysis bio-oil production.<br/><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        of pyrolysis bio-oil and to set the shares of feedstock used for pyrolysis bio-oil production.
     output_of_energy_production_hvo_bio_kerosene:
       title: Hydrotreatment to HVO (biokerosene)
       short_description:
       description: |
-        This slider sets the annual useful production of HVO biokerosene (Sustainable Aviation Fuel, SAF) from hydrotreatment
-        of oily biomass, such as vegetable oils and animal fats.<br/><br/>
+        This slider sets the annual useful production of Hydrotreated Vegetable Oil (HVO) biokerosene
+        from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
         The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
         processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
         The feedstock input of hydrotreatment (for both HVO biokerosene and biodiesel) consists of <b>oily biomass</b> and
@@ -133,14 +123,15 @@ en:
         <li><b>biokerosene</b> (main product)</li>
         <li><b>bionaphtha</b></li>
         </ul><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        <b>Note:</b> other, smaller fractions of output products can also be produced in this process,
+        but are not modelled and therefore considered as loss. See the technical specs below for
+        more information.
     output_of_energy_production_hvo_biodiesel:
       title: Hydrotreatment to HVO (biodiesel)
       short_description:
       description: |
-        This slider sets the annual useful production of HVO renewable diesel (further referred to
-        as HVO biodiesel) from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
+        This slider sets the annual useful production of Hydrotreated Vegetable Oil (HVO) biodiesel
+        from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
         The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
         processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
         The feedstock input of hydrotreatment (for both HVO biokerosene and biodiesel) consists of <b>oily biomass</b> and
@@ -150,8 +141,9 @@ en:
         <li><b>biodiesel</b> (main product)</li>
         <li><b>bionaphtha</b></li>
         </ul><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        <b>Note:</b> other, smaller fractions of output products can also be produced in this process,
+        but are not modelled and therefore considered as loss. See the technical specs below for
+        more information.
     output_of_energy_production_bio_ethanol:
       title: Bio-ethanol fermentation
       short_description:
@@ -161,8 +153,9 @@ en:
         In this process, bio-ethanol is produced by hydrolysing carbohydrates in wet biomass to sugars, subsequently
         using yeast or bacteria to convert these sugars into ethanol. The only input of this
         process is <b>wet biomass</b>, the output product is <b>bio-ethanol</b>.<br/><br/>
-        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        Liquid fuels and feedstock flows</a> shows the production and final demand of liquid fuels and feedstock.
+        <b>Note:</b> other, smaller fractions of output products can also be produced in this process,
+        but are not modelled and therefore considered as loss. See the technical specs below for
+        more information.
     energy_production_fischer_tropsch_synthetic_share:
       title: Hydrogen, electricity and CO<sub>2</sub>
       short_description:
@@ -177,6 +170,11 @@ en:
         <li><b>kerosene</b> (main product)</li>
         <li><b>naphtha</b></li>
         </ul><br/>
+        <b>Note:</b> in the other feedstock routes for Fischer-Tropsch, diesel is also an
+        output product. In this feedstock route, an output of diesel causes circularity in the
+        modelling, which cannot be calculated by the
+        model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
+        the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual fuel production from Fischer-Tropsch or to set the capacity of flexible
         production from Fischer-Tropsch with this feedstock route.<br/><br/>
@@ -350,8 +348,8 @@ en:
         or import of pyrolysis oil. Go to the
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
         to set the baseload export of pyrolysis oil.<br/><br/>
-        This <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        chart</a> shows the required pyrolysis oil import for fractionation and export.
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
     volume_of_baseload_import_bio_pyrolysis_oil:
       title: Pyrolysis bio-oil
       short_description:
@@ -364,8 +362,8 @@ en:
         or import of pyrolysis bio-oil. Go to the
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
         to set the baseload export of pyrolysis bio-oil.<br/><br/>
-        This <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        chart</a> shows the required pyrolysis bio-oil import for fractionation and export.
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
     energy_production_pyrolysis_biogenic_waste_share:
       title: Biogenic waste
       short_description:
@@ -379,8 +377,8 @@ en:
         the annualfuel production from pyrolysis bio-oil fractionation. Go to the
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
         to set the baseload export of pyrolysis bio-oil.<br/><br/>
-        This <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        chart</a> shows the required biogenic waste for pyrolysis bio-oil production.
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
     energy_production_pyrolysis_dry_biomass_share:
       title: Dry biomass
       short_description:
@@ -394,8 +392,8 @@ en:
         the annual fuel production from pyrolysis bio-oil fractionation. Go to the
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
         to set the baseload export of pyrolysis bio-oil.<br/><br/>
-        This <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
-        chart</a> shows the required dry biomass for pyrolysis bio-oil production.
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
     capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable:
       title: Fischer-Tropsch (with hydrogen, electricity and CO<sub>2</sub>)
       description: |
@@ -409,6 +407,11 @@ en:
         <li><b>kerosene</b> (main product)</li>
         <li><b>naphtha</b></li>
         </ul><br/>
+        <b>Note:</b> in the other feedstock routes for Fischer-Tropsch, diesel is also an
+        output product. In this feedstock route, an output of diesel causes circularity in the
+        modelling, which cannot be calculated by the
+        model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
+        the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
         The flexible production from Fischer-Tropsch is electricity price-driven and is therefore
         considered as flexible electricity demand technology. The technology will produce when the
         electricity price is lower than the willingness to pay.<br/><br/>

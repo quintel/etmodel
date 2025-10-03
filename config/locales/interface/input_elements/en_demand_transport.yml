@@ -46,9 +46,9 @@ en:
         Kerosene is the most dominant fuel used in aviation due to its high energy content and
         low freezing temperature. This means planes can fly large distances and
         the kerosene does not solidify when flying on high altitudes. </br></br>
-        Within the kerosene mix, the share of biokerosene can be adjusted. Go to
+        The share of kerosene and biokerosene in the kerosene mix can be adjusted in the
         <a href="/scenario/demand/transport_fuels/domestic-aviation">transport fuels</a>
-        to adjust the share of biokerosene in the kerosene mix.
+        section.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
       short_description: ''
@@ -121,7 +121,7 @@ en:
     transport_car_using_diesel_mix_share:
       title: Diesel
       short_description: ''
-      description: "What percentage of all cars will use conventional diesel fueled
+      description: "What percentage of all cars will use diesel fueled
         internal combustion engine (ICE) technology? \r\n<br/><br/>\r\n
         In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
         section</a> you can set the diesel mix for road transport."
@@ -191,7 +191,7 @@ en:
     transport_truck_using_diesel_mix_share:
       title: Diesel
       short_description: ''
-      description: "What percentage of all trucks will use conventional diesel fueled
+      description: "What percentage of all trucks will use diesel fueled
         internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nSome people
         believe trucks will use ICE technology for quite a while longer, as electric
         trucks are a technological challenge. Note
@@ -281,7 +281,7 @@ en:
     transport_bus_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "What percentage of all cars will use conventional diesel fueled
+      description: "What percentage of all cars will use diesel fueled
         internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nToday, nearly
         all of the buses use diesel as the primary source of fuel; however, competition
         with alternative technologies will most likely induce a change in the demand
@@ -377,9 +377,9 @@ en:
       title: Methanol (mix)
       short_description:
       description: |
-        This slider sets the share of international shipping fuel supplied by methanol.</br></br>Go to
-        <a href="/scenario/demand/transport_fuels/international-navigation">transport fuels</a> to
-        configure the share of methanol in the fuel mix.
+        This slider sets the share of international shipping fuel supplied by methanol.</br></br>
+        Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
+        fuels</a> to set the shares of methanol and biomethanol in the fuel mix.
     bunkers_aviation_using_electricity_share:
       title: Electricity
       short_description:
@@ -620,8 +620,9 @@ en:
       short_description:
       description: |
        This slider sets the percentage of inland shipping kilometers traveled by vessels running on
-       methanol.</br></br>Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
-       fuels</a> to configure the share of methanol in the fuel mix.
+       methanol mix.</br></br>
+       Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
+       fuels</a> to set the shares of methanol and biomethanol in the fuel mix.
     transport_trucks_share:
       title: Trucks
       short_description: ''

@@ -15,6 +15,7 @@ module AreaDependent
   # Load Areadependencies to YModel::Base descendents
   module YModel
     def area_dependent
+      return false unless respond_to?(:dependent_on)
       return false if dependent_on.blank?
 
       dependent_on ? !Current.setting.area.attributes[dependent_on] : false

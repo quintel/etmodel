@@ -26,7 +26,6 @@ class Engine::Area < ActiveResource::Base
     :has_lignite,
     :has_merit_order,
     :has_mountains,
-    :has_old_technologies,
     :has_solar_csp,
     :has_weather_curves,
     :has_coal_oil_for_heating_built_environment

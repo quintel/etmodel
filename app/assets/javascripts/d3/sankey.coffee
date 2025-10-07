@@ -1045,6 +1045,7 @@ D3.sankey =
           {left: 'hydrogen',                              right: 'pyrolysis_fractionation',            gquery: 'hydrogen_to_pyrolysis_fractionation_in_liquid_fuels_sankey', color: '#87CEEB'},
 
           # INPUTS TO HVO biokerosene and biodiesel
+          {left: 'network_gas',                           right: 'hvo_bio_kerosene',                   gquery: 'network_gas_to_hvo_bio_kerosene_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'hydrogen',                              right: 'hvo_bio_kerosene',                   gquery: 'hydrogen_to_hvo_bio_kerosene_in_liquid_fuels_sankey', color: '#87CEEB'},
           {left: 'oily_biomass',                          right: 'hvo_bio_kerosene',                   gquery: 'oily_biomass_to_hvo_bio_kerosene_in_liquid_fuels_sankey', color: '#3CB371'},
 
@@ -1052,6 +1053,7 @@ D3.sankey =
           {left: 'oily_biomass',                          right: 'hvo_biodiesel',                       gquery: 'oily_biomass_to_hvo_biodiesel_in_liquid_fuels_sankey', color: '#3CB371'},
 
           # WET BIOMASS TO BIOETHANOL PRODUCTION
+          {left: 'network_gas',                           right: 'bio_ethanol_production',             gquery: 'network_gas_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'wet_biomass',                           right: 'bio_ethanol_production',             gquery: 'wet_biomass_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#2E8B57'},
 
 
@@ -1101,9 +1103,9 @@ D3.sankey =
 
           # PYROLYSIS AND FRACTIONATION OUTPUTS
           {left: 'pyrolysis_fractionation',               right: 'diesel',                            gquery: 'pyrolysis_fractionation_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
-          {left: 'pyrolysis_fractionation',               right: 'naphtha',                           gquery: 'pyrolysis_fractionation_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
+          {left: 'pyrolysis_fractionation',               right: 'gasoline',                          gquery: 'pyrolysis_fractionation_to_gasoline_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'pyrolysis_fractionation',               right: 'biodiesel',                         gquery: 'pyrolysis_fractionation_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
-          {left: 'pyrolysis_fractionation',               right: 'bionaphtha',                        gquery: 'pyrolysis_fractionation_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
+          {left: 'pyrolysis_fractionation',               right: 'bio_ethanol',                       gquery: 'pyrolysis_fractionation_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'pyrolysis_fractionation',               right: 'pyrolysis_oil',                     gquery: 'pyrolysis_fractionation_to_pyrolysis_oil_in_liquid_fuels_sankey', color: '#8B7D6B'},
           {left: 'pyrolysis_fractionation',               right: 'bio_pyrolysis_oil',                 gquery: 'pyrolysis_fractionation_to_bio_pyrolysis_oil_in_liquid_fuels_sankey', color: '#6B8E23'},
           {left: 'pyrolysis_fractionation',               right: 'losses',                            gquery: 'pyrolysis_fractionation_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},

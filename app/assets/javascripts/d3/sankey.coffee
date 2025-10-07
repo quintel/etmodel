@@ -79,9 +79,9 @@ D3.sankey =
           {left: 'not_defined',                  right: 'hydrogen',                  gquery: 'sankey_0_to_1_not_defined_to_hydrogen',                  color: '#DCDCDC'},
 
           {left: 'extracted_oil',                right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_crude_oil_to_oil_and_oil_products',                       color: '#8c564b'},
-          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_and_oil_products_to_oil_and_oil_products',   color: '#8c564b'},
           {left: 'natural_gas',                  right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_natural_gas_to_oil_and_oil_products',                     color: '#7f7f7f'},
           {left: 'non_biogenic_waste',           right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_non_biogenic_waste_to_oil_and_oil_products',              color: '#BA7D40'},
+          {left: 'imported_oil',                 right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_imported_oil_and_oil_products_to_oil_and_oil_products',   color: '#8c564b'},
           {left: 'not_defined',                  right: 'oil_and_oil_products',      gquery: 'sankey_0_to_1_not_defined_to_oil_and_oil_products',                      color: '#DCDCDC'},
 
           {left: 'biomass_products',             right: 'waste_mix',                 gquery: 'sankey_0_to_1_biomass_products_to_waste_mix',            color: '#2ca02c'},

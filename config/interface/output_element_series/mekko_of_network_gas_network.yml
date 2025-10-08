@@ -192,6 +192,30 @@
   dependent_on:
   output_element_key: mekko_of_network_gas_network
   key: biomass_torrefaction_for_network_gas_mekko
+- label: bio_ethanol_for_network_gas_mekko
+  color: '#d87093'
+  order_by: 250
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_bio_ethanol_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: bio_ethanol_for_network_gas_mekko
+- label: hvo_bio_kerosene_for_network_gas_mekko
+  color: '#d87093'
+  order_by: 250
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: demand_for_hvo_biokerosene_for_network_gas_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_network_gas_network
+  key: hvo_bio_kerosene_for_network_gas_mekko
 - label: greengas_export_network_gas_mekko
   color: '#68862B'
   order_by: 260

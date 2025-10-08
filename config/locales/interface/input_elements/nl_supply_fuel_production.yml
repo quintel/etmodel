@@ -82,11 +82,11 @@ nl:
         die nodig is voor fractionering kan worden geproduceerd door snelle pyrolyse van
         feedstock. De niet-biogene pyrolyse-olie kan in het model alleen worden geproduceerd met
         <b>niet-biogeen afval</b>. Daarnaast is er input van <b>waterstof</b> nodig in
-        het hydrotreatmentproces van fractionering van pyrolyse-olie.<br/><br/>De volgende
-        brandstoffen en grondstoffen kunnen worden geproduceerd uit pyrolyse-olie fractionering:
+        het hydrotreatmentproces van fractionering van pyrolyse-olie.<br/><br/>
+        De volgende brandstoffen kunnen worden geproduceerd uit pyrolyse-olie fractionering:
         <ul>
         <li><b>diesel</b></li>
-        <li><b>nafta</b></li>
+        <li><b>benzine</b></li>
         </ul><br/>
         Het model gaat ervan uit dat de benodigde pyrolyse-olie voor het fractioneringsproces
         of voor export (basislast) lokaal wordt geproduceerd. Dit kan worden aangepast door import
@@ -101,19 +101,23 @@ nl:
         uit de fractionering van biogene pyrolyse-olie.
         In dit proces wordt biogene pyrolyse-olie opgewaardeerd via hydrotreatment.<br/><br/>
         De biogene pyrolyse-olie die benodigd is voor fractionering, kan worden geproduceerd door snelle
-        pyrolyse van feedstock. Biogene pyrolyse-olie kan worden geproduceerd met de volgende
-        feedstock:
+        pyrolyse van feedstock.<br/><br/>
+        Biogene pyrolyse-olie kan worden geproduceerd met de volgende feedstock:
         <ul>
         <li><b>biogeen afval</b></li>
         <li><b>droge biomassa</b></li>
         </ul><br/>
         Daarnaast is input van <b>waterstof</b> vereist in het hydrotreatmentproces van
-        de fractionering van biogene pyrolyse-olie.<br/><br/> De volgende brandstoffen en grondstoffen
+        de fractionering van biogene pyrolyse-olie.<br/><br/> De volgende brandstoffen
         kunnen worden geproduceerd uit de fractionering van biogene pyrolyse-olie:
         <ul>
         <li><b>biodiesel</b></li>
-        <li><b>bionafta</b></li>
+        <li><b>bio-ethanol</b>*</li>
         </ul><br/>
+        <i>* De daadwerkelijke output zou biobenzine moeten zijn, echter wordt deze drager
+        tot nog toe niet gemodelleerd in het ETM. In plaats daarvan modelleert het ETM finale
+        vraag naar biobenzine (volgens nationale energiebalansen) als bio-ethanol. Daarom is
+        voor dit proces de output van biobenzine gemodelleerd als bio-ethanol.</i><br/><br/>
         Het model gaat ervan uit dat de benodigde biogene pyrolyse-olie voor het fractioneringsproces
         of voor export (basislast) lokaal wordt geproduceerd. Dit kan worden aangepast door import
         van biogene pyrolyse-olie in te stellen, wat de lokale productie van pyrolyse-olie vervangt.
@@ -131,17 +135,22 @@ nl:
         zoals plantaardige oliën en dierlijke vetten.<br/><br/> Het proces voor de productie van
         HVO biokerosine en HVO biodiesel is zeer vergelijkbaar. Het belangrijkste verschil is dat
         een extra verwerkingsstap van kraken nodig is voor HVO biokerosine om lichtere fracties
-        te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/>De feedstockinput voor
-        hydrotreatment (voor zowel HVO biokerosine als biodiesel) bestaat uit <b>oliehoudende
-        biomassa</b> en <b>waterstof</b> voor het hydrotreatmentproces.<br/><br/>De outputproducten
-        van hydrotreatment naar HVO biokerosine zijn:
+        te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/>
+        De inputdragers voor dit proces bestaan uit:
+        <ul>
+        <li><b>oliehoudende biomassa</b></li>
+        <li><b>waterstof</b></li>
+        <li><b>netwerkgas</b></li>
+        </ul><br/>
+        De outputproducten van hydrotreatment naar HVO biokerosine zijn:
         <ul>
         <li><b>biokerosine</b> (hoofdproduct)</li>
         <li><b>bionafta</b></li>
         </ul><br/>
         <b>Let op:</b> andere, kleinere fracties van outputproducten kunnen ook worden geproduceerd,
-        maar worden niet gemodelleerd. Deze zijn als verlies aangenomen. Raadpleeg de technische
-        specificaties hieronder voor meer informatie.
+        maar worden niet gemodelleerd. De outputfracties van biokerosine en bionaphtha zijn proportioneel
+        verhoogd om rekening te houden met niet-gemodelleerde, nuttige brandstofoutput. Raadpleeg de
+        technische specificaties hieronder voor meer informatie.
     output_of_energy_production_hvo_biodiesel:
       title: Hydrotreatment naar HVO (biodiesel)
       short_description:
@@ -151,18 +160,21 @@ nl:
         zoals plantaardige oliën en dierlijke vetten.<br/><br/> Het proces voor de productie
         van HVO biokerosine en HVO biodiesel is zeer vergelijkbaar. Het belangrijkste verschil
         is dat een extra verwerkingsstap van kraken nodig is voor HVO biokerosine om lichtere
-        fracties te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/> De
-        feedstockinput voor hydrotreatment (voor zowel HVO biokerosine als biodiesel)
-        bestaat uit <b>oliehoudende biomassa</b> en <b>waterstof</b> voor het
-        hydrotreatmentproces.<br/><br/> De outputproducten van hydrotreatment naar
-        HVO biodiesel zijn:
+        fracties te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/>
+        De inputdragers voor dit proces bestaan uit:
+        <ul>
+        <li><b>oliehoudende biomassa</b></li>
+        <li><b>waterstof</b></li>
+        </ul><br/>
+        De outputproducten van hydrotreatment naar HVO biokerosine zijn:
         <ul>
         <li><b>biodiesel</b> (hoofdproduct)</li>
         <li><b>bionafta</b></li>
         </ul><br/>
         <b>Let op:</b> andere, kleinere fracties van outputproducten kunnen ook worden geproduceerd,
-        maar worden niet gemodelleerd. Deze zijn als verlies aangenomen. Raadpleeg de technische
-        specificaties hieronder voor meer informatie.
+        maar worden niet gemodelleerd. De outputfracties van biokerosine en bionaphtha zijn proportioneel
+        verhoogd om rekening te houden met niet-gemodelleerde, nuttige brandstofoutput. Raadpleeg de
+        technische specificaties hieronder voor meer informatie.
     output_of_energy_production_bio_ethanol:
       title: Bio-ethanolvergisting
       short_description:
@@ -171,11 +183,17 @@ nl:
         vergisting van natte biomassa, zoals reststromen avn landbouw en geteelde graanproducten.
         <br/><br/> In dit proces wordt bio-ethanol geproduceerd door de koolhydraten in natte
         biomassa te hydrolyseren tot suikers, waarna gist of bacteriën deze suikers omzetten in
-        ethanol. De enige input van dit proces is <b>natte biomassa</b>, het outputproduct is
-        <b>bio-ethanol</b>.<br/><br/>
-        <b>Let op:</b> andere, kleinere fracties van outputproducten kunnen ook worden geproduceerd,
-        maar worden niet gemodelleerd. Deze zijn als verlies aangenomen. Raadpleeg de technische
-        specificaties hieronder voor meer informatie.
+        ethanol.
+        De inputdragers voor dit proces bestaan uit:
+        <ul>
+        <li><b>natte biomassa</b></li>
+        <li><b>netwerkgas</b></li>
+        </ul><br/>
+        Het outputproduct is <b>bio-ethanol</b>. Daarnaast heeft proces productie van
+        <i>distillers' dried grains (DDG)</i>, welke niet gemodelleerd wordt in het ETM en
+        waarvan wordt aangenomen dat het geen relevante energiedoeleinden heeft. Deze output
+        wordt daarom aagenomen als verlies. Raadpleeg de technische specificaties hieronder voor
+        meer informatie.
     energy_production_fischer_tropsch_synthetic_share:
       title: Waterstof, elektriciteit en CO<sub>2</sub>
       short_description:

@@ -155,6 +155,18 @@
   dependent_on:
   output_element_key: network_gas_demand
   key: hydrogen_demand_network_gas_network_gas_demand
+- label: liquid_biofuels_demand_network_gas
+  color: "#8FBC8F"
+  order_by: 67
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: liquid_biofuels_production_network_gas_input_curve
+  is_1990:
+  dependent_on:
+  output_element_key: network_gas_demand
+  key: liquid_biofuels_demand_network_gas_network_gas_demand
 - label: network_gas_storage_input
   color: "#DFE4EA"
   order_by: 70

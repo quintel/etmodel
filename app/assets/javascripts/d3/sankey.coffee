@@ -167,7 +167,7 @@ D3.sankey =
           {left: 'waste_mix',                    right: 'biofuels',                  gquery: 'sankey_1_to_1_waste_mix_to_biofuels',                    color: '#CE7013'},
           {left: 'methanol',                     right: 'biofuels',                  gquery: 'sankey_1_to_1_methanol_to_biofuels',                     color: '#FF8C8C'},
           {left: 'ammonia',                      right: 'biofuels',                  gquery: 'sankey_1_to_1_ammonia_to_biofuels',                      color: '#1ce6d6'},
-          {left: 'network_gas',                  right: 'biofuels',                  gquery: 'sankey_1_to_1_network_gas_to_biofuels',                  color: '#1ce6d6'},
+          {left: 'network_gas',                  right: 'biofuels',                  gquery: 'sankey_1_to_1_network_gas_to_biofuels',                  color: '#7f7f7f'},
 
 
           {left: 'electricity',                  right: 'natural_gas',               gquery: 'sankey_1_to_0_electricity_to_natural_gas',               color: '#1f77b4'},

@@ -192,7 +192,7 @@
   is_1990: false
   dependent_on:
   output_element_key: costs_overview_detailed
-  key: costs_production_biomass_costs_overview_detailed
+  key: costs_production_biomass_costs_overview_detailed  
 - label: costs_production_chp_plants
   color: "#cadb6f"
   order_by: 310
@@ -253,6 +253,18 @@
   dependent_on:
   output_element_key: costs_overview_detailed
   key: costs_production_power_plants_costs_overview_detailed
+- label: costs_production_liquid_fuels
+  color: "#C5D75F"
+  order_by: 360
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: costs_production_liquid_fuels
+  is_1990: false
+  dependent_on:
+  output_element_key: costs_overview_detailed
+  key: costs_production_liquid_fuels_costs_overview_detailed
 
 - label: costs_storage_and_conversion_p2p
   color: "#CAB39E"

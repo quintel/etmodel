@@ -6,8 +6,8 @@ en:
       description: "Biomass can be used in different places throughout the model:\r\n<ul>\r\n
         \ <li>as <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\">green
         gas</a> in the gas network</li>\r\n  <li>in biomass heaters for <a href=\"/scenario/supply/heat/heat-sources\">(local)
-        heat networks</a></li>\r\n  <li>as <a href=\"/scenario/supply/transport_fuels/road-transport\">transport
-        fuel</a>: bio-ethanol, biodiesel, bio-LNG and bio-kerosene</li>\r\n  <li>as
+        heat networks</a></li>\r\n  <li>as <a href=\"/scenario/demand/transport_fuels/road-transport\">transport
+        fuel</a>: bio-ethanol, biodiesel, bio-LNG and biokerosene</li>\r\n  <li>as
         co-firing in <a href=\"/scenario/supply/electricity/coal-plants\" >coal plants</a></li>\r\n
         \ <li>as <a href=\"/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants\">biocoal
         or bio-oil</a> in power plants</li>\r\n  <li>to produce <a href=\"/scenario/supply/hydrogen/hydrogen-production\">hydrogen</a>
@@ -44,10 +44,10 @@ en:
         there are not many practical examples on which the costs can be based.\r\n<br
         /><br />"
     supply_biomass_potential:
-      title: Potential of biomass
+      title: Potential of biomass and waste
       short_description:
-      description: 'The ETM distinguishes four resource categories: wet, dry, oil-containing
-        biomass and biogenic waste. How much biomass will be available within your
+      description: 'The ETM distinguishes five resource categories: wet, dry, oil-containing
+        biomass, biogenic waste, and non-biogenic waste. How much biomass will be available within your
         region in the future? We have made estimations based on national potentials
         (for more information see our <a href="https://docs.energytransitionmodel.com/main/biomass"
         target="_blank">documentation</a>). When you would like to adjust the potential,
@@ -110,10 +110,11 @@ en:
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">Export</a> section.
     supply_ccus_utilisation_storage:
       title: Utilisation and storage of CO<sub>2</sub>
-      description: "Captured CO<sub>2</sub> can be stored under the ground or re-used to produce fuels or (basic) chemicals.
-        Below you can specify how the captured CO<sub>2</sub> in your scenario is used. If more CO<sub>2</sub> is stored or
-        utilised (CO<sub>2</sub> demand) than captured (CO<sub>2</sub> supply), the ETM shows a CO<sub>2</sub> 'deficit'.
-        If more is captured than used, the ETM shows a CO<sub>2</sub> surplus."
+      description: |
+        Captured CO<sub>2</sub> can be stored under the ground or re-used to produce fuels or (basic) chemicals.
+        Below, the amount stored or re-used CO<sub>2</sub> can be set. Go to the section
+        <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        to set processes that use CO<sub>2</sub> to produce transport fuels and chemical feedstock.
     supply_ccus_transport:
       title: Transport of CO<sub>2</sub>
       description: "Below you can specify how captured CO<sub>2</sub> will be transported in the future.
@@ -614,72 +615,8 @@ en:
       title: Woody biomass
       short_description:
       description:
-    supply_transport_compressed_gas:
-      title: Compressed gas for road transport
-      short_description:
-      description:
-    supply_transport_diesel:
-      title: Diesel for road transport
-      short_description:
-      description:
-    supply_transport_useful_demand_trains:
-      title: Rail
-      short_description:
-      description:
-    supply_transport_gasoline:
-      title: Gasoline for road transport
-      short_description:
-      description:
-    supply_transport_international_aviation:
-      title: International aviation
-      short_description:
-      description: "Will bio-kerosene contribute more to the aviation fuels mix in
-        the future? You can choose your blend of kerosene here. \r\n</br></br>\r\n
-        Kerosene can also be produced synthetically, with captured CO<sub>2</sub>,
-        hydrogen, and electricity. This option can be chosen in the
-        <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
-        > CCUS section</a>. "
-    supply_transport_international_shipping:
-      title: International navigation
-      short_description:
-      description: The transport fuels for international navigation depend directly
-        on the type of ship engines you choose. In the <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
-        >international navigation section</a> you can select the engines (HFO or LNG)
-        your international ships will be equipped with. Note that use biofuels is
-        not yet possible for this sector.
-    supply_transport_marine_fuels:
-      title: Domestic navigation
-      short_description: ''
-      description: |
-        Which fuels will be used to power ships with diesel engines and ships with LNG engines?
-        In the <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >domestic navigation</a> section you can determine the share of these engines in the total
-        freight transport by inland shipping.
-    supply_transport_public_transport_technologies:
-      title: Public transport fuels
-      short_description:
-      description:
-    supply_transport_road_transport:
-      title: Road transport
-      short_description:
-      description: |
-        How much of the fuels used in road transport will come from renewable
-        sources? Do consider the impact on land (and sea) use for growing the required
-        crops. By changing the road transport technologies in the
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">passenger</a>
-        and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a>
-        transport section, you can determine which engines, and therefore which transport fuels
-        are used.
-    supply_transport_trains:
-      title: Rail transport
-      short_description: ''
-      description: How much of the fuel used by diesel trains will come from renewable
-        sources? Do not forget that the arable land used for growing the required
-        crops for biodiesel competes with food production. In the <a href="/scenario/demand/transport_passenger_transport/train-technology"
-        >passenger train section</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
-        >freight train section</a> you can specify your train technology.
-    future_fuel_production:
-      title: Future production of primary carriers
+    supply_fuel_extraction:
+      title: Extraction of primary fuels
       short_description: ''
       description: |
         Coal, oil, gas and uranium oxide are defined as ‘primary carriers’ of energy and are converted to other energy carriers such as electricity, heat or gasoline.
@@ -694,3 +631,37 @@ en:
         </br></br>
         N.B. the ETM does not keep track of potential production capacity or the presence of
         energy reserves in your area.
+    supply_fuel_production_overview:
+      title: Overview
+      short_description:
+      description: |
+        In this section, the annual production of liquid fuels and feedstock by various
+        processes can be set. Additionally, the electricity
+        input capacity of flexible production from Fischer-Tropsch can be set.
+    supply_fuel_production_fischer_tropsch:
+      title: Fischer-Tropsch
+      short_description:
+      description: |
+        In this section, the share of various feedstock routes in the fuel production from Fischer-Tropsch
+        can be set.
+    supply_fuel_production_pyrolysis:
+      title: Pyrolysis oil fractionation
+      short_description:
+      description: |
+        In this section, the share of feedstock in the production of pyrolysis bio-oil can be set.
+        Non-biogenic pyrolysis oil can only be produced from non-biogenic waste.
+        Additionally, the baseload import of pyrolysis oil and pyrolysis bio-oil can be set below.
+    supply_fuel_production_methanol_synthesis:
+      title: Methanol synthesis
+      short_description:
+      description: |
+        In this section, the share of various feedstock routes in the production of methanol from methanol
+        synthesis can be set.
+    supply_fuel_fossil_refinery:
+      title: Oil refineries
+      short_description:
+      description: |
+        In this section, assumptions in efficiency improvements of oil refineries and used
+        technologies for heat production can be made. Go to the
+        <a href="/scenario/supply/fuel_production/overview">overview</a> to change the annual
+        useful production of fuels and feedstock from oil refineries.

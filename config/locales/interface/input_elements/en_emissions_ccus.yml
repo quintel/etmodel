@@ -97,7 +97,7 @@ en:
         If <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biocoal</a> is
         used, capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
         You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
-        <br/><br/> 
+        <br/><br/>
         You can find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
@@ -114,7 +114,7 @@ en:
         If <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biocoal</a> is
         used, capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
         You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
-        <br/><br/> 
+        <br/><br/>
         Youcan find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
@@ -139,7 +139,7 @@ en:
         <a href="/scenario/supply/electricity/gas-plants">the Supply → Electricity → Gas plants section</a>.
         <br/><br/>
         If <a href="/scenario/supply/biomass/gas-mix-in-gas-network">green gas</a> is used,
-        capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions. 
+        capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
         You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
         <br/><br/>
         You can find more information on this in the
@@ -168,7 +168,7 @@ en:
     share_of_energy_hydrogen_autothermal_reformer_ccs_must_run:
       title: Autothermal reforming (must-run) + CCS
       description: |
-        Adjust the share of must-run autothermal reformers (ATR) capacity that will be equipped with 
+        Adjust the share of must-run autothermal reformers (ATR) capacity that will be equipped with
         a CO<sub>2</sub> capture unit using this slider.
         <br/><br/>
         The amount of installed autothermal reforming plants can be set in the
@@ -205,86 +205,23 @@ en:
         research used can be found on
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
-    output_of_energy_production_synthetic_kerosene_must_run:
-      title: Synthetic kerosene
-      description: |
-        This slider sets the amount of synthetic kerosene produced in your scenario. Synthetic
-        kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
-        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) are used in
-        this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
-        <br/><br/>
-        If you would like to know the total demand and supply of kerosene in your
-        scenario, have a look at the
-        <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply">demand and supply of kerosene</a>
-        chart. Any excess production is automatically exported, any deficit is imported.
-        <br/><br/>
-        Energy demand of international aviation is not taken into account in the ETM by default.
-        You can change this assumption
-        in the <a href="/scenario/demand/transport_international_transport/international-transport">
-        International transport</a> section.
-        <br/><br/>
-        Please note: this slider does not automatically reduce the production of fossil-based
-        kerosene in the refineries sector. If you would like to replace fossil kerosene with
-        synthetic kerosene in your scenario, you can reduce the market share of refineries in the
-        <a href="/scenario/demand/industry/refineries">Refineries</a> section.
-    capacity_of_energy_production_synthetic_kerosene_dispatchable:
-      title: Synthetic kerosene
-      description: |
-        This slider sets the amount of installed dispatchable capacity for synthetic kerosene production (in electric input capacity)
-        in your scenario. Synthetic kerosene is made from captured CO<sub>2</sub>, hydrogen and electricity. If renewable
-        electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) are used in
-        this process, it is possible to produce carbon neutral fuels for (e.g.) aviation.
-        The dispatchable kerosene production is dependent on the electricity, it is therefore flexible demand for the electricity system.
-        When the electricity price is lower than the willingness to pay, the dispatchable kerosene will run.
-        When the electricity price is higher than the willingness to pay, it will not run.
-        <br/><br/> The willingness to pay for dispatchable synthetic kerosene production can be set in the
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-industry">
-        Flexibility</a> section.
-        <br/><br/>If you would like to know the total demand and supply of kerosene in your
-        scenario, have a look at the
-        <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">demand and supply of kerosene</a>
-        chart. Any excess production is automatically exported, any deficit is imported.
-        <br/><br/>
-        Energy demand of international aviation is not taken into account in the ETM by default.
-        This means that by default there is no kerosene demand for aviation. You can change this assumption
-        in the <a href="/scenario/demand/transport_international_transport/international-transport">
-        International transport</a> section.
-        <br/><br/>
-        Please note: this slider does not automatically reduce the production of fossil-based
-        kerosene in the refineries sector. If you would like to replace fossil kerosene with
-        synthetic kerosene in your scenario, you can reduce the market share of refineries in the
-        <a href="/scenario/demand/industry/refineries">Refineries</a> section.
-    output_of_energy_production_synthetic_methanol:
-      title: Synthetic methanol
-      description: |
-        Methanol is one of the most widely used chemicals in the chemical industry sector. For
-        example, it is used for the production of plastics and polyester. In addition, methanol can
-        be used as a fuel. Currently, methanol is mainly produced using natural gas. However, it is
-        possible to make synthetic methanol using CO<sub>2</sub>, hydrogen and electricity. If
-        renewable electricity, green hydrogen and green CO<sub>2</sub> (e.g. Direct Air Capture) is
-        used, this production process can be fully carbon neutral.
-        <br/><br/>
-        This slider allows you to set the amount of synthetic methanol produced in your scenario,
-        but does not affect the production of methanol and other chemical products in the
-        conventional chemical industry sector. You can change this in
-        <a href="/scenario/demand/industry/chemicals">the Demand → Industry → Chemicals section</a>.
     demand_of_molecules_other_utilisation_co2:
       title: Other utilisation
       description: |
         This slider sets the amount of CO<sub>2</sub>  used for 'other' purposes. This encompasses
         all utilisation of CO<sub>2</sub> that is not modelled explicitly in the ETM. Examples
         include utilisation of CO<sub>2</sub> as a propellant gas for beer and soda, for the
-        production of the fertilizer urea or for the cultivation of crops in greenhouses. In the 
+        production of the fertilizer urea or for the cultivation of crops in greenhouses. In the
         future, captured CO<sub>2</sub> may even be used to produce plastics. </br></br>
-        For most of the examples above, the CO<sub>2</sub> is only stored for a short time: when 
-        soda or beer is consumed, the CO<sub>2</sub> is released. The resulting emissions of this 
-        type of 'Other utilisation' are therefore defined as 'delayed emissions'. By default, all 
-        delayed emissions are assumed to be take place within the same year as they are captured and 
+        For most of the examples above, the CO<sub>2</sub> is only stored for a short time: when
+        soda or beer is consumed, the CO<sub>2</sub> is released. The resulting emissions of this
+        type of 'Other utilisation' are therefore defined as 'delayed emissions'. By default, all
+        delayed emissions are assumed to be take place within the same year as they are captured and
         therefore count towards the total emissions in your scenario. </br></br>
-        For some of the examples above, like the production of plastics, the captured CO<sub>2</sub> 
-        can actually be stored for a very long time. These emissions are assumed to be 'delayed indefinitely' 
-        and are therefore excluded from the total emissions. You can determine which share of 
-        delayed emissions is delayed indefinitely in the 
+        For some of the examples above, like the production of plastics, the captured CO<sub>2</sub>
+        can actually be stored for a very long time. These emissions are assumed to be 'delayed indefinitely'
+        and are therefore excluded from the total emissions. You can determine which share of
+        delayed emissions is delayed indefinitely in the
         <a href="/scenario/emissions/other_emissions/delayed-emissions"> Greenhouse gases section</a>.
     share_of_molecules_transport_pipelines_co2:
       title: Pipelines
@@ -343,12 +280,12 @@ en:
       description: |
         A CHP produces both heat and electricity. Here you can set the
         must-run installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. 
+        heating networks with CCS technology.
         The total installed capacity can be set in the
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
-        The full-load hours of these plants can be set in the 
+        The full-load hours of these plants can be set in the
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
         </br></br>
         Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
@@ -361,7 +298,7 @@ en:
       description: |
         A CHP produces both heat and electricity. Here you can set the dispatchable
         installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. 
+        heating networks with CCS technology.
         The total installed capacity can be set in the
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The share of HT and MT heat can then be set in the
@@ -382,7 +319,7 @@ en:
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The share of HT and MT heat can then be set in the
         <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocation of heat from CHPs</a> section.
-        The full-load hours of these plants can be set in the 
+        The full-load hours of these plants can be set in the
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
         </br></br>
         Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
@@ -395,7 +332,7 @@ en:
       description: |
         A CHP produces both heat and electricity. Here you can set the dispatchable
         installed electrical capacity of biomass CHP plants that supply heat for district
-        heating networks with CCS technology. 
+        heating networks with CCS technology.
         The total installed capacity can be set in the
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
         The share of HT and MT heat can then be set in the
@@ -410,11 +347,11 @@ en:
       short_description:
       description: |
         A biomass power plant produces electricity. Here you can set the share of
-        installed electrical capacity of must-run biomass power plants that will 
+        installed electrical capacity of must-run biomass power plants that will
         equipped with a CO<sub>2</sub> capture technology.
         The total installed capacity of these power plants can be set in the
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomass</a> section.
-        The full-load hours of these plants can be set in the 
+        The full-load hours of these plants can be set in the
         <a href="/scenario/costs/specs_renewable_electricity/biomass-plants">Cost & efficiencies</a> section.
         </br></br>
         Please note: this power plant emits biogenic CO<sub>2</sub>. When this biogenic
@@ -444,16 +381,16 @@ en:
       short_description:
       description: |
         By increasing the full load hours for the must-run biomass power plants with CCS, more
-        electricity will be produced with the same installed capacity. 
+        electricity will be produced with the same installed capacity.
     flh_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
       title: Biomass MT CHP + CCS (must-run)
       short_description:
       description: |
         By increasing the full load hours for the must-run biomass medium temperature (MT) CHP with CCS, more
-        electricity and heat will be produced with the same installed capacity. 
+        electricity and heat will be produced with the same installed capacity.
     flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
       title: Biomass HT CHP + CCS (must-run)
       short_description:
       description: |
         By increasing the full load hours for the must-run biomass high temperature (MT) CHP with CCS, more
-        electricity and heat will be produced with the same installed capacity. 
+        electricity and heat will be produced with the same installed capacity.

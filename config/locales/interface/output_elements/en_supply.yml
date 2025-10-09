@@ -39,10 +39,15 @@ en:
         This chart shows the road transport fuel mix in the present and
         future. The latter is the result of your settings in sections 'Demand' and
         'Supply'.
-    refinery:
-      title: Net flow of refinery products
-      short_description: ''
-      description: ''
+    liquid_fuels:
+      title: Liquid fuels and feedstock flows
+      short_description:
+      description: |
+        This chart shows the annual flows of liquid fuels and feedstock. The (primary) carriers,
+        production processes, end products and final demand in demand sectors are shown.<br></br>
+        The chart only shows the processes for which the annual production can be set.
+        Go to the <a href="/scenario/supply/fuel_production/overview">liquid fuels</a> section
+        to adjust the production of liquid fuels and feedstock from various processes.
     kerosene_production_in_bunkers:
       title: Kerosene production for international transport
       short_description: ''

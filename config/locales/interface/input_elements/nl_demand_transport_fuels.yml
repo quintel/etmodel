@@ -5,8 +5,12 @@ nl:
       title: Diesel
       short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele diesel in de 
-        dieselmix van wegverkeer. </br></br>
+        Dit schuifje bepaalt het energetische aandeel van diesel in de
+        dieselmix van wegverkeer.</br></br>
+        Deze diesel kan bestaan uit fossiele diesel, synthetische diesel of diesel geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van diesel in te stellen.</br></br>
         Diesel heeft een hogere energie-inhoud dan benzine, en dieselmotoren
         zijn vaak efficiënter dan benzinemotoren. Wel stoten dieselvoertuigen meer
         fijnstof uit en daarom worden in veel delen van de wereld roetfilters verplicht
@@ -15,7 +19,7 @@ nl:
       title: Biodiesel
       short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van biodiesel in de 
+        Dit schuifje bepaalt het energetische aandeel van biodiesel in de
         dieselmix van wegverkeer. </br></br>
         Biodiesel kun je maken van verschillende plantaardige en dierlijke
         vetten. Vooral zaadoliën zijn erg populair. Tegenwoordig is men nogal gecharmeerd
@@ -31,7 +35,7 @@ nl:
       title: Benzine
       short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele benzine in de 
+        Dit schuifje bepaalt het energetische aandeel van fossiele benzine in de
         benzinemix van wegverkeer. </br></br>
         Ooit was benzine een afvalproduct van het raffinageproces! Nu is
         het nog net de meest gebruikte brandstof voor personenauto's, terwijl de motoren
@@ -40,7 +44,7 @@ nl:
       title: Bio-ethanol
       short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van bio-ethanol in de 
+        Dit schuifje bepaalt het energetische aandeel van bio-ethanol in de
         benzinemix van wegverkeer. </br></br>
         Bio-ethanol kan gebruikt worden om een deel van het benzinegebruik
         te vervangen. Motoren kunnen het verbranden zonder dat ze anders afgesteld
@@ -51,9 +55,9 @@ nl:
         op GitHub</a> voor meer informatie over de gebruikte getallen.
     transport_road_mixer_lng_lng_share:
       title: Vloeibaar aardgas (LNG)
-      short_description: 
+      short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele LNG in de 
+        Dit schuifje bepaalt het energetische aandeel van fossiele LNG in de
         LNG-mix van wegverkeer. </br></br>
         Vloeibaar aardgas is een relatief schone fossiele brandstof. Liquefactie
         maakt aardgas veel rijker in energie en daarom interessant voor lange afstand
@@ -67,9 +71,9 @@ nl:
         geen probleem vormt.
     transport_road_mixer_lng_bio_lng_share:
       title: Bio-LNG
-      short_description: 
+      short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van bio-LNG in de 
+        Dit schuifje bepaalt het energetische aandeel van bio-LNG in de
         LNG-mix van wegverkeer. </br></br>
         Door anaërobe vergisting van organische materialen wordt biogas
         geproduceerd. Dit bestaat grotendeels uit biomethaan, maar ook uit koolstofdioxide
@@ -80,9 +84,9 @@ nl:
         gemaakt.
     transport_rail_mixer_diesel_biodiesel_share:
       title: Biodiesel
-      short_description: 
+      short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van biodiesel in de 
+        Dit schuifje bepaalt het energetische aandeel van biodiesel in de
         dieselmix van treinverkeer. </br></br>
         Biodiesel kun je maken van verschillende plantaardige en dierlijke
         vetten. Vooral zaadoliën zijn erg populair. Tegenwoordig zijn mensen nogal
@@ -97,19 +101,23 @@ nl:
         op GitHub</a> voor meer informatie over de gebruikte getallen.
     transport_rail_mixer_diesel_diesel_share:
       title: Diesel
-      short_description: 
+      short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele diesel in de 
+        Dit schuifje bepaalt het energetische aandeel van diesel in de
         dieselmix van treinverkeer. </br></br>
+        Deze diesel kan bestaan uit fossiele diesel, synthetische diesel of diesel geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van diesel in te stellen.</br></br>
         Diesel is de fossiele brandstof van keuze voor treinen in meer
         'afgelegen' gebieden waar geen elektrisch spoor is. Dieseltreinen zijn efficiënt
         en betrouwbaar. Omdat dieselmotoren fijnstof produceren worden in steeds meer
         delen van de wereld filters voorgeschreven.
     transport_shipping_mixer_lng_lng_share:
       title: Vloeibaar aardgas (LNG)
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van LNG in de brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van LNG in de brandstofmix
         van schepen met LNG-motoren bepalen. </br></br>
         Vloeibaar aardgas is een opkomende brandstof in de scheepvaart.
         Normaliter gebruiken grote schepen zware oliefracties en varen kleinere schepen
@@ -122,22 +130,26 @@ nl:
         brandstof is, is het een interessant alternatief voor conventionele brandstoffen.
     transport_shipping_mixer_lng_bio_lng_share:
       title: Bio-LNG
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van bio-LNG in de brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van bio-LNG in de brandstofmix
         van schepen met LNG-motoren bepalen. </br></br>
         Biobrandstoffen worden nu nog nauwelijks in schepen ingezet. Een aandachtspunt bij
-        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen 
-        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het 
-        potentieel in jouw gebied in 
+        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen
+        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het
+        potentieel in jouw gebied in
         <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
         deze grafiek</a>.
     transport_shipping_mixer_diesel_diesel_share:
       title: Diesel
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van diesel in de gecombineerde brandstofmix 
+        Dit schuifje stelt het energetische aandeel in van diesel in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
+        Deze diesel kan bestaan uit fossiele diesel, synthetische diesel of diesel geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van diesel in te stellen.</br></br>
         Grote schepen verbranden een teer-achtige substantie die als afvalproduct
         overblijft bij alle behalve de meest moderne raffinaderijen. Hierdoor is deze
         brandstof zeer goedkoop en energierijk. Hoe kleiner het schip wordt, hoe vaker
@@ -145,21 +157,21 @@ nl:
         doorgaans vrij klein zijn, is diesel een veelgebruikte brandstof.
     transport_shipping_mixer_diesel_biodiesel_share:
       title: Biodiesel
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van biodiesel in de gecombineerde brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van biodiesel in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
         Biobrandstoffen worden nu nog nauwelijks in schepen ingezet. Een aandachtspunt bij
-        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen 
-        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het 
-        potentieel in jouw gebied in 
+        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen
+        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het
+        potentieel in jouw gebied in
         <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
         deze grafiek</a>.
     transport_shipping_mixer_diesel_lng_share:
       title: Vloeibaar aardgas (LNG)
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van LNG in de gecombineerde brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van LNG in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
         Vloeibaar aardgas (LNG) is een opkomende brandstof in de scheepvaart.
         Normaliter gebruiken grote schepen zware oliefracties en varen kleinere schepen
@@ -170,72 +182,138 @@ nl:
         maken wordt deze dichtheid met een factor 600 vergroot - meer dan genoeg om
         te concurreren met diesel. Aangezien vloeibaar aardgas ook een schone fossiele
         brandstof is, is het een interessant alternatief voor conventionele brandstoffen. </br></br>
-        LNG kan niet in conventionele dieselmotoren worden gebruikt. Om zowel bio-LNG als 
-        diesel te kunnen gebruiken moet een schip zijn uitgerust met dual-fuel motoren. Omdat 
-        de levensduur van conventionele dieselmotoren 10 tot 20 of zelfs 50 jaar kan zijn, kan 
+        LNG kan niet in conventionele dieselmotoren worden gebruikt. Om zowel bio-LNG als
+        diesel te kunnen gebruiken moet een schip zijn uitgerust met dual-fuel motoren. Omdat
+        de levensduur van conventionele dieselmotoren 10 tot 20 of zelfs 50 jaar kan zijn, kan
         het tijd kosten om de transitie naar dual-fuel motoren te maken.
     transport_shipping_mixer_diesel_bio_lng_share:
       title: Bio-LNG
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van bio-LNG in de gecombineerde brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van bio-LNG in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
         Biobrandstoffen worden nu nog nauwelijks in schepen ingezet. Een aandachtspunt bij
-        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen 
-        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het 
-        potentieel in jouw gebied in 
+        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen
+        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het
+        potentieel in jouw gebied in
         <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
         deze grafiek</a>. </br></br>
-        Bio-LNG kan niet in conventionele dieselmotoren worden gebruikt. Om zowel bio-LNG als 
-        diesel te kunnen gebruiken moet een schip zijn uitgerust met dual-fuel motoren. Omdat 
-        de levensduur van conventionele dieselmotoren 10 tot 20 of zelfs 50 jaar kan zijn, kan 
+        Bio-LNG kan niet in conventionele dieselmotoren worden gebruikt. Om zowel bio-LNG als
+        diesel te kunnen gebruiken moet een schip zijn uitgerust met dual-fuel motoren. Omdat
+        de levensduur van conventionele dieselmotoren 10 tot 20 of zelfs 50 jaar kan zijn, kan
         het tijd kosten om de transitie naar dual-fuel motoren te maken.
     transport_shipping_mixer_diesel_bio_ethanol_share:
       title: Bio-ethanol
       short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van bio-ethanol in de gecombineerde brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van bio-ethanol in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
         Biobrandstoffen worden nu nog nauwelijks in schepen ingezet. Een aandachtspunt bij
-        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen 
-        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het 
-        potentieel in jouw gebied in 
+        de inzet van biobrandstoffen is dat het productiepotentieel beperkt is door beperkingen
+        aan landgebruik. Je kunt het totale gebruik van biobrandstoffen vergelijken met het
+        potentieel in jouw gebied in
         <a href="#" class="open_chart" data-chart-key="biomass_demand_by_category" data-chart-location="side">
         deze grafiek</a>. </br></br>
-        Bio-ethanol kan niet in conventionele dieselmotoren worden gebruikt. Om bio-ethanol te 
-        gebruiken moeten schepen worden uitgerust met multi-fuel motoren. Dit is een type motor 
-        die nog meer geavanceerd is dan de dual-fuel motor, omdat het tussen meerdere brandstoffen 
+        Bio-ethanol kan niet in conventionele dieselmotoren worden gebruikt. Om bio-ethanol te
+        gebruiken moeten schepen worden uitgerust met multi-fuel motoren. Dit is een type motor
+        die nog meer geavanceerd is dan de dual-fuel motor, omdat het tussen meerdere brandstoffen
         moet kunnen wisselen. Het kan tijd kosten voordat deze technologie ruim beschikbaar is.
     transport_shipping_mixer_diesel_heavy_fuel_oil_share:
       title: Zware stookolie
-      short_description: 
+      short_description:
       description: |
-        Met dit schuifje kun je het energetische aandeel van zware stookolie in de gecombineerde brandstofmix 
+        Met dit schuifje kun je het energetische aandeel van zware stookolie in de gecombineerde brandstofmix
         van schepen met single-, dual- en multi-fuel motoren bepalen. </br></br>
         Hoe groter een schip wordt, hoe zwaarder de oliefractie die het
         gebruikt. De grote oceaanschepen gebruiken teer-achtige substanties die als
         afvalproduct uit alle behalve de meest  geavanceerde raffinaderijen komen.
         Omdat deze fracties verder weinig toepassingen hebben zonder verder afgebroken
         te worden, zijn ze relatief goedkoop.
+    transport_shipping_mixer_methanol_methanol_share:
+      title: Methanol
+      short_description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van methanol in de brandstofmix van binnenlandse
+        scheepvaart.</br></br>
+        Deze methanol kan bestaan uit synthetische methanol of methanol geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.</br></br>
+        Methanol is een veelbelovende alternatieve brandstof met een lagere
+        uitstoot dan diesel of zware stookolie. Het is vloeibaar bij omgevingstemperatuur en relatief
+        eenvoudig te transporteren, maar vereist aangepaste motoren en infrastructuur.
+    transport_shipping_mixer_methanol_biomethanol_share:
+      title: Biomethanol
+      short_description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van biomethanol in de brandstofmix van binnenlandse
+        scheepvaart.</br></br>Biomethanol wordt geproduceerd uit duurzame grondstoffen en kan de
+        klimaatimpact van scheepvaart aanzienlijk verminderen. Net als methanol vereist het aangepaste
+        motoren, en de beschikbaarheid is momenteel nog beperkt.
     bunkers_plane_using_kerosene_share:
       title: Kerosine
-      short_description: 
+      short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van fossiele kerosine in de 
+        Dit schuifje bepaalt het energetische aandeel van kerosine in de
         kerosine mix. </br></br>
-        Er zijn verschillende fossiele brandstoffen om op te vliegen,
-        maar verreweg het grootste volume bestaat uit kerosine. Alle grote vliegtuigen
+        Deze kerosine kan bestaan uit fossiele kerosine, synthetische kerosine of kerosine geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.<br/><br/>
+        Er zijn verschillende brandstoffen om op te vliegen,
+        maar verreweg het grootste volume bestaat uit (fossiele) kerosine. Alle grote vliegtuigen
         vliegen op kerosine.
     bunkers_plane_using_bio_kerosene_share:
       title: Biokerosine
-      short_description: 
+      short_description:
       description: |
-        Dit schuifje bepaalt het energetische aandeel van biokerosine in de 
+        Dit schuifje bepaalt het energetische aandeel van biokerosine in de
         kerosine mix. </br></br>
-        Naast fossiele kerosine kan ook biokerosine gebruikt worden in
-        dezelfde vliegtuigmotoren; het is een zogenaamde "drop-in brandstof". Op
+        Biokerosine kan worden gebruikt in dezelfde vliegtuigmotoren waar fossiele kerosine wordt
+        toegepast; het is een zogenaamde "drop-in brandstof". Op
         dit moment zijn er vier gecertificieerde technologiën die biokerosine mogen
         leveren aan de commerciële luchtvaart, waarvan in 90% van de gevallen de Hydrotreated
         Esters and Fatty Acids (HEFA) technologie gebruikt wordt. Houd rekening met
         de impact op landgebruik (of zeegebruik) als hiervoor gewassen geteeld moeten
         worden.
+    bunkers_ship_using_methanol_share:
+      title: Methanol
+      short_description:
+      description: |
+        Deze slider bepaalt het energetisch aandeel van methanol in de methanolmix
+        van internationale scheepvaart.<br/><br/>
+        Deze methanol kan bestaan uit synthetische methanol of methanol geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.<br/><br/>
+        Methanol is een veelbelovende alternatieve brandstof met
+        een lagere uitstoot dan diesel of zware stookolie. Het is vloeibaar bij omgevingstemperatuur en
+        relatief eenvoudig te transporteren, maar vereist aangepaste motoren en infrastructuur.
+    bunkers_ship_using_biomethanol_share:
+      title: Biomethanol
+      short_description:
+      description: |
+        Deze slider bepaalt het energetisch aandeel van biomethanol in de methanolmix van internationale
+        scheepvaart.</br></br>Biomethanol wordt geproduceerd uit duurzame grondstoffen en kan de
+        klimaatimpact van scheepvaart aanzienlijk verminderen. Net als methanol vereist het aangepaste
+        motoren, en de beschikbaarheid is momenteel nog beperkt.
+    transport_aviation_mixer_kerosene_kerosene_share:
+      title: Kerosine
+      short_description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van kerosine in de kerosinemix van nationale
+        luchtvaart.</br><br/>
+        Deze kerosine kan bestaan uit fossiele kerosine, synthetische kerosine of kerosine geproduceerd
+        uit niet-biogeen afval. Ga naar de sectie
+        <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.
+    transport_aviation_mixer_kerosene_bio_kerosene_share:
+      title: Biokerosine
+      short_description:
+      description: |
+        Deze slider bepaalt het energetisch aandeel van biokerosine in de kerosinemix van
+        nationale luchtvaart.</br></br> Biokerosine is een duurzaam alternatief voor
+        fossiele kerosine en kan zonder aanpassingen worden gebruikt in de bestaande
+        vliegtuigmotoren. De beschikbaarheid van biokerosine is echter beperkt door de
+        hoeveelheid beschikbare landbouwgrond voor biobrandstofproductie, wat invloed heeft op
+        de schaalbaarheid.

@@ -47,6 +47,18 @@
   dependent_on: 
   output_element_key: use_of_transport_fuels
   key: kerosene_domestic_aviation_use_of_transport_fuels
+- label: bio_kerosene_national_transport
+  color: "#A0B872"
+  order_by: 117
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_kerosene_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: bio_kerosene_domestic_aviation_use_of_transport_fuels
 - label: diesel_national_transport
   color: "#854321"
   order_by: 120
@@ -179,10 +191,34 @@
   dependent_on: 
   output_element_key: use_of_transport_fuels
   key: ammonia_national_transport_use_of_transport_fuels
+- label: methanol_national_transport
+  color: "#FAB9B9"
+  order_by: 175
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: methanol_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: methanol_national_transport_use_of_transport_fuels
+- label: bio_methanol_national_transport
+  color: "#ACDB97"
+  order_by: 175
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_methanol_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: bio_methanol_national_transport_use_of_transport_fuels
 
 
 - label: bio_kerosene_international_transport
-  color: "#5D7929"
+  color: "#84A348"
   order_by: 200
   group: 
   show_at_first: 
@@ -266,8 +302,27 @@
   dependent_on: 
   output_element_key: use_of_transport_fuels
   key: hydrogen_international_transport_use_of_transport_fuels
-
-
-
-
-
+- label: methanol_international_transport
+  color: "#FF8C8C"
+  order_by: 235
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: methanol_international_transport_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: methanol_international_transport_use_of_transport_fuels
+- label: bio_methanol_international_transport
+  color: "#6AB04C"
+  order_by: 240
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_methanol_international_transport_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on: 
+  output_element_key: use_of_transport_fuels
+  key: bio_methanol_international_transport_use_of_transport_fuels

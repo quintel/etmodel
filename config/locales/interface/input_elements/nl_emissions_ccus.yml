@@ -11,7 +11,7 @@ nl:
         aanpassen op de <a href="/scenario/demand/industry/steel">pagina voor de staalsector</a>.
         <br/><br/>Het ETM berekent de impact van CO<sub>2</sub>-afvang op de uitstoot,
         het energiegebruik en de kosten.<br/><br/> In de link hieronder kun je de specificaties
-        bekijken van afvang bij hoogovens.<br/> 
+        bekijken van afvang bij hoogovens.<br/>
     share_of_industry_chemicals_refineries_captured_co2:
       title: Raffinage-industrie
       description: |
@@ -182,7 +182,7 @@ nl:
         Pas met deze slider het percentage van de niet-regelbare autothermische reformers (ATR) capaciteit aan dat wordt
         uitgerust met CO<sub>2</sub> afvanginstallatie.
         <br/><br/>
-        De totale capaciteit van autothermische reforming centrales kan ingesteld worden in de 
+        De totale capaciteit van autothermische reforming centrales kan ingesteld worden in de
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie.
     demand_of_molecules_direct_air_capture_co2:
       title: Direct air capture (DAC)
@@ -215,87 +215,22 @@ nl:
         Een overzicht van de gebruikte data staat op
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/eu/2015/11_area/11_ccs_offshore_storage_potential_per_year.xls">
         ETDataset</a>.
-    output_of_energy_production_synthetic_kerosene_must_run:
-      title: Synthetische kerosine
-      description: |
-        Met deze schuif geef je aan hoeveel synthetische kerosine er wordt
-        geproduceerd in jouw scenario. Synthetische kerosine wordt gemaakt uit
-        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
-        elektriciteit, groene waterstof en groene CO<sub>2</sub>
-        (bijvoorbeeld via Direct Air Capture) worden gebruikt, is het mogelijk om een CO<sub>2</sub>-neutrale
-        brandstof te maken voor vliegtuigen.
-        <br/><br/>Voor het instellen van deze schuif is het handig om te weten wat de totale
-        vraag en aanbod van kerosine in jouw scenario is. Bekijk hiervoor
-        <a href=\"#\" class=\"open_chart\"\r\n  data-chart-key=\"mekko_of_kerosene_demand_supply\"\r\n>deze</a> grafiek.
-        Een overschot aan kerosineproductie wordt door het ETM automatisch geëxporteerd. Bij een tekort
-        wordt kerosine uit het buitenland gehaald.
-        <br/><br/>
-        De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
-        Deze aanname kun je veranderen bij <a href="/scenario/demand/transport_international_transport/international-transport">
-        Internationaal transport</a>.
-        <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
-        raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
-        kerosine, verklein dan de omvang van <a href="/scenario/demand/industry/refineries">Raffinaderijen</a>.
-    capacity_of_energy_production_synthetic_kerosene_dispatchable:    
-      title: Synthetische kerosine
-      description: |
-        Met deze schuif stel je het geïnstalleerd regelbaar vermogen in voor productie van synthetische kerosine (in elektrisch inputvermogen) in 
-        in jouw scenario. Synthetische kerosine wordt gemaakt uit
-        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
-        elektriciteit, groene waterstof en groene CO<sub>2</sub>
-        (bijvoorbeeld via Direct Air Capture) worden gebruikt, is het mogelijk om een CO<sub>2</sub>-neutrale
-        brandstof te maken voor vliegtuigen.
-        De regelbare kerosine productie is afhankelijk van de elektriciteitsprijs, hiermee is het flexibele vraag voor de elektriciteitsmarkt.
-        Wanneer de elektriciteitsprijs lager is dan de betalingsbereidheid, zal de regelbare kerosine produceren.
-        Wanneer de elektricitetisprijs hoger is dan de betalingsbereidheid, zal de regelbare kerosine niet produceren.
-        <br/><br/> De betalingsbereidheid (willingness to pay) voor regelbare synthetische kerosineproductie 
-        kan worden ingesteld in de sectie
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-kerosene-for-industry">
-        Flexibiliteit</a>.
-        <br/><br/>Voor het instellen van deze schuif is het handig om te weten wat de totale
-        vraag en aanbod van kerosine in jouw scenario is. Bekijk hiervoor de grafiek
-        <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
-        vraag en aanbod van kerosine</a>. Een overschot aan kerosineproductie wordt door het ETM 
-        automatisch geëxporteerd. Bij een tekort wordt kerosine uit het buitenland gehaald.
-        <br/><br/>
-        De energievraag van internationale luchtvaart wordt standaard niet meegenomen in het ETM.
-        Dit betekent dat er in eerste instantie geen vraag naar kerosine is voor de internationale luchtvaart.
-        Deze aanname kun je aanpassen in de sectie <a href="/scenario/demand/transport_international_transport/international-transport">
-        Internationaal transport</a>.
-        <br/><br/>Let op: deze schuif vermindert niet automatisch de productie van fossiele kerosine door
-        raffinaderijen. Als je in jouw scenario fossiele kerosine wilt vervangen door synthetische
-        kerosine, verklein dan de omvang van <a href="/scenario/demand/industry/refineries">Raffinaderijen</a>.
-    output_of_energy_production_synthetic_methanol:
-      title: Synthetische methanol
-      description: |
-        Methanol is een van de meest gebruikte grondstoffen in de chemische industrie,
-        bijvoorbeeld voor de productie van plastics en polyester. Daarnaast kan methanol ook
-        als brandstof gebruikt worden. Op dit moment wordt methanol voornamelijk geproduceerd
-        uit aardgas. Het is echter ook mogelijk om synthetische methanol te maken uit
-        CO<sub>2</sub>, waterstof en elektriciteit. Als er voor dit proces hernieuwbare
-        elektriciteit wordt gebruikt, groene waterstof en groene CO<sub>2</sub>
-        (bijvoorbeeld via Direct Air Capture) kan dit productieproces volledig CO<sub>2</sub>-neutraal
-        zijn.<br/><br/>
-        Met deze schuif geef je aan hoeveel synthetische methanol er wordt
-        geproduceerd in jouw scenario. Deze schuif heeft geen invloed op de productie van
-        methanol en andere producten in de conventionele chemiesector. Aannames hierover kun je
-        doen op de <a href="/scenario/demand/industry/chemicals">chemiepagina</a>.<br/>
     demand_of_molecules_other_utilisation_co2:
       title: Overig gebruik
       description: |
         Met deze schuif kun je instellen hoeveel CO<sub>2</sub> er wordt gebruikt voor
         "overige" toepassingen. Hieronder vallen alle toepassingen die niet expliciet gemodelleerd zijn in
-        het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor bier of frisdrank, de productie van de 
-        kunstmeststof ureum, of in de kassenteelt. In de toekomst zou afgevangen CO<sub>2</sub> ook gebruikt 
+        het ETM. Denk bijvoorbeeld aan CO<sub>2</sub>-gebruik voor bier of frisdrank, de productie van de
+        kunstmeststof ureum, of in de kassenteelt. In de toekomst zou afgevangen CO<sub>2</sub> ook gebruikt
         kunnen worden om plastic te produceren. </br></br>
-        Voor veel van de bovenstaande voorbeelden geldt dat de afgevangen CO<sub>2</sub> alleen tijdelijk 
+        Voor veel van de bovenstaande voorbeelden geldt dat de afgevangen CO<sub>2</sub> alleen tijdelijk
         wordt opgeslagen: zodra het bier of de frisdrank wordt geconsumeerd komt de CO<sub>2</sub> weer vrij.
-        De emissies die hieruit voortkomen zijn daarom gedefinieerd als "uitgestelde emissies". Standaard 
+        De emissies die hieruit voortkomen zijn daarom gedefinieerd als "uitgestelde emissies". Standaard
         wordt aangenomen dat alle uitgestelde emissies plaatsvinden in hetzelfde jaar als ze afgevangen zijn,
         waardoor ze meetellen aan de totale uitstoot van jouw scenario. </br></br>
-        For sommige voorbeelden, zoals de productie van plastics, geldt echter dat de afgevangen CO<sub>2</sub>
-        voor zeer lange tijd wordt opgeslagen. Deze emissies zijn "uitgesteld voor onbepaalde tijd" en zijn 
-        tellen daarom niet mee aan de totale uitstoot. Je kunt bepalen welk aandeel voor onbepaalde tijd wordt 
+        Voor sommige voorbeelden, zoals de productie van plastics, geldt echter dat de afgevangen CO<sub>2</sub>
+        voor zeer lange tijd wordt opgeslagen. Deze emissies zijn "uitgesteld voor onbepaalde tijd" en zijn
+        tellen daarom niet mee aan de totale uitstoot. Je kunt bepalen welk aandeel voor onbepaalde tijd wordt
         uitgesteld in de <a href="/scenario/emissions/other_emissions/delayed-emissions"> Broeikasgassensectie</a>.
     share_of_molecules_transport_pipelines_co2:
       title: Leidingen
@@ -415,7 +350,7 @@ nl:
         Het totaal opgestelde vermogen is in te stellen in de sectie
         <a href="/scenario/supply/electricity_renewable/biomass-plants">Biomassacentrales</a>.
         De verhouding tussen levering van HT- en MT-warmte is vervolgens in te stellen in de sectie
-        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.   
+        <a href="/scenario/supply/heat/allocation-of-heat-from-chps">Allocatie warmte uit WKK's</a>.
         <br><br>
         Let op: deze energiecentrale stoot biogene CO<sub>2</sub> uit. Wanneer deze
         biogene CO<sub>2</sub> wordt afgevangen, kan het verkocht worden op de markt voor biogene
@@ -454,22 +389,22 @@ nl:
     volume_of_molecules_import_co2_baseload:
       title: Import CO<sub>2</sub>
       description: |
-        Met deze schuif kan de import van CO<sub>2</sub> aangepast worden.     
+        Met deze schuif kan de import van CO<sub>2</sub> aangepast worden.
     flh_of_energy_power_wood_pellets_ccs_must_run:
       title: Biomassacentrale + CCS (must-run)
       short_description:
       description: |
         Door het aantal vollasturen te verhogen voor de must-run biomassacentrale met CCS, wordt
-        jaarlijks meer elektriciteit geproduceerd met hetzelfde opgesteld vermogen. 
+        jaarlijks meer elektriciteit geproduceerd met hetzelfde opgesteld vermogen.
     flh_of_energy_chp_local_mt_wood_pellets_ccs_must_run:
       title: Biomassa-WKK MT + CCS (must-run)
       short_description:
       description: |
         Door het aantal vollasturen te verhogen voor de must-run biomassacentrale medium teperatuur (MT) met CCS, wordt
-        jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen. 
+        jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen.
     flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
       title: Biomassa-WKK HT + CCS (must-run)
       short_description:
       description: |
         Door het aantal vollasturen te verhogen voor de must-run biomassacentrale hoge teperatuur (HT) met CCS, wordt
-        jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen. 
+        jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen.

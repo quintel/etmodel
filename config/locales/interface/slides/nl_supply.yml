@@ -7,7 +7,7 @@ nl:
       description: "Biomassa kan op verschillende plekken in het model worden ingezet:\r\n<ul>\r\n
         \ <li>als <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\">groen gas</a>
         in het gas netwerk</li>\r\n  <li>in biomassaketels voor <a href=\"/scenario/supply/heat/heat-sources\">(lokale)
-        warmtenetten</a></li>\r\n  <li>als <a href=\"/scenario/supply/transport_fuels/road-transport\">transportbrandstof</a>:
+        warmtenetten</a></li>\r\n  <li>als <a href=\"/scenario/demand/transport_fuels/road-transport\">transportbrandstof</a>:
         bio-ethanol, biodiesel, bio-LNG and biokerosine</li>\r\n  <li>als meestook
         in <a href=\"/scenario/supply/electricity/coal-plants\" >kolencentrales</a></li>\r\n
         \ <li>als <a href=\"/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants\">biokolen
@@ -44,14 +44,15 @@ nl:
         zijn namelijk redelijk nieuw, dus er zijn minder praktische voorbeelden om
         de kosten op te baseren.\r\n<br /><br />"
     supply_biomass_potential:
-      title: Potentie van biomassa
+      title: Potentie van biomassa en afval
       short_description:
-      description: 'Het ETM maakt onderscheid tussen vier grondstofcategorieën: natte,
-        droge, oliehoudende biomassa en biogeen afval. Hoeveel grondstoffen zullen
-        er in de toekomst beschikbaar zijn binnen jouw regio? Wij hebben inschattingen
-        gemaakt o.b.v. nationale potenties, zie hiervoor onze <a href="https://docs.energytransitionmodel.com/main/biomass"
-        target="_blank">documentatie</a>. Indien je de potenties wil aanpassen, kan
-        je dat hier doen.'
+      description: |
+        Het ETM maakt onderscheid tussen vijf grondstofcategorieën: natte, droge,
+        oliehoudende biomassa, biogeen afval en niet-biogeen afval. Hoeveel grondstoffen
+        zullen er in de toekomst beschikbaar zijn binnen jouw regio? Wij hebben
+        inschattingen gemaakt o.b.v. nationale potenties, zie hiervoor onze
+        <a href="https://docs.energytransitionmodel.com/main/biomass" target="_blank">documentatie</a>.
+        Indien je de potenties wil aanpassen, kan je dat hier doen.
     supply_bunker_fuels_international_aviation:
       title: Internationale luchtvaart
       short_description:
@@ -119,10 +120,12 @@ nl:
         <a href="/scenario/demand/export_energy/export-volumes-per-carrier">Export</a>.
     supply_ccus_utilisation_storage:
       title: Gebruik en opslag van CO<sub>2</sub>
-      description: "Afgevangen CO<sub>2</sub> kan worden opgeslagen onder de grond of kan worden hergebruikt
-        voor de productie van brandstoffen of chemische (basis)producten. Hieronder kun je aangeven wat er
-        gebeurt met de afgevangen CO<sub>2</sub> in jouw scenario. Als je meer CO<sub>2</sub> afvangt of hergebruikt
-        dan er is afgevangen, laat het ETM een 'tekort' aan CO<sub>2</sub> zien."
+      description: |
+        Afgevangen CO<sub>2</sub> kan worden opgeslagen onder de grond of kan worden hergebruikt
+        voor de productie van brandstoffen of chemische grondstoffen. Stel hieronder in hoeveel CO<sub>2</sub>
+        wordt opgeslagen of hergebruikt voor overig gebruik. Stel in de sectie
+        <a href="/scenario/supply/fuel_production/overview">Vloeibare brandstoffen</a>
+        processen in die CO<sub>2</sub> benutten voor productie van brandstoffen en grondstoffen.
     supply_ccus_transport:
       title: Transport van CO<sub>2</sub>
       description: "Hieronder kun je aangeven op welke manier de afgevangen CO<sub>2</sub> wordt getransporteerd.
@@ -657,72 +660,8 @@ nl:
       title: Houtige biomassa
       short_description:
       description:
-    supply_transport_compressed_gas:
-      title: Gas onder druk voor wegtransport
-      short_description:
-      description:
-    supply_transport_diesel:
-      title: Diesel voor wegtransport
-      short_description:
-      description:
-    supply_transport_international_aviation:
-      title: Internationale luchtvaart
-      short_description:
-      description: "Hoeveel zal bio-kerosene gebruikt worden in de toekomstige internationale
-        luchtvaart? Hier kan je het aandeel bepalen.\r\n</br></br>\r\n
-        Het is ook mogelijk om synthetische kerosine te produceren, met afgevangen CO<sub>2</sub>,
-        elektriciteit en waterstof. Dit kun je kiezen in
-        <a href=\"/scenario/emissions/ccus/utilisation-and-storage-of-co2\"
-        > de CCUS sectie</a>. "
-    supply_transport_international_shipping:
-      title: Internationale scheepvaart
-      short_description:
-      description: 'De brandstoffen voor internationale scheepvaart hangen direct
-        af van het type motor wat je voor deze schepen hebt gekozen. In de <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
-        >internationale scheepvaart</a> kan je het type motor (HFO of LNG) kiezen.
-        Merk op dat het nog niet mogelijk is om biobrandstoffen in te zetten in deze
-        sector. '
-    supply_transport_useful_demand_trains:
-      title: Treinen
-      short_description:
-      description:
-    supply_transport_gasoline:
-      title: Benzine voor wegtransport
-      short_description:
-      description:
-    supply_transport_marine_fuels:
-      title: Binnenlandse scheepvaart
-      short_description: ''
-      description: |
-        Welke brandstoffen zullen worden gebruikt voor schepen met dieselmotoren en schepen
-        met LNG-motoren? In de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >binnenvaart</a> sectie kun je het aandeel van deze motoren in het totale vrachtvervoer door binnenvaart
-        bepalen.
-    supply_transport_public_transport_technologies:
-      title: Energiedragers openbaar vervoer
-      short_description:
-      description:
-    supply_transport_road_transport:
-      title: Wegverkeer
-      short_description:
-      description: |
-        Hoeveel van de gebruikte brandstof voor het wegverkeer komt van
-        hernieuwbare bronnen? Houd rekening met de impact op landgebruik (of zeegebruik)
-        als hiervoor gewassen geteeld moeten worden. Door de wegverkeertechnologieën in de
-        <a href="/scenario/demand/transport_passenger_transport/car-technology">personen-</a>
-        en <a href="/scenario/demand/transport_freight_transport/truck-technology">vrachtvervoer</a>
-        aan te passen, kun je bepalen welke motoren en dus welke transportbrandstoffen
-        gebruikt worden.
-    supply_transport_trains:
-      title: Treinverkeer
-      short_description: ''
-      description: Hoeveel van de gebruikte brandstof voor dieseltreinen komt van
-        hernieuwbare bronnen? Vergeet niet dat het telen van gewassen hiervoor deels
-        ten koste gaat van voedselproductie. In de <a href="/scenario/demand/transport_passenger_transport/train-technology"
-        >technologie passagierstreinen</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
-        >technologie goederentreinen</a> kun je de treintechnologie specificeren.
-    future_fuel_production:
-      title: Toekomstige productie van primaire energiedragers
+    supply_fuel_extraction:
+      title: Productie van primaire brandstoffen
       short_description: ''
       description: |
         Kolen, olie, gas en uranium oxide worden gedefinieerd als ‘primaire dragers’ van energie en worden omgezet
@@ -737,3 +676,38 @@ nl:
         startjaar door te kiezen voor de grafiek 'Huidige energie-import' onder de knop 'meer grafieken bekijken'.
         </br> </br>
         N.B. het ETM houdt niet bij wat de potentiële productiecapaciteit is of de energiereserves zijn in jouw gebied.
+    supply_fuel_production_overview:
+      title: Overzicht
+      short_description:
+      description: |
+        Stel hier de jaarlijkse productie van vloeibare brandstoffen en grondstoffen
+        door verschillende processen in. Daarnaast kan het elektriciteitsinputvermogen
+        van flexibele productie uit Fischer-Tropsch worden ingesteld.
+    supply_fuel_production_fischer_tropsch:
+      title: Fischer-Tropsch
+      short_description:
+      description: |
+        Hier kan het aandeel van de diverse feedstockroutes in brandstofproductie uit Fischer-Tropsch
+        worden ingesteld.
+    supply_fuel_production_pyrolysis:
+      title: Pyrolyse-olie fractionering
+      short_description:
+      description: |
+        Hier kan het aandeel van biogene feedstock in productie van biogene pyrolyse-olie
+        worden ingesteld. Niet-biogene pyrolyse-olie kan alleen met niet-biogeen afval worden
+        geproduceerd. Daarnaast kan hieronder import van pyrolyse-olie en biogene pyrolyse-olie
+        worden ingesteld.
+    supply_fuel_production_methanol_synthesis:
+      title: Methanolsynthese
+      short_description:
+      description: |
+        Hier kan het aandeel van de diverse feedstockroutes in methanolproductie uit
+        methanolsynthese worden ingesteld.
+    supply_fuel_fossil_refinery:
+      title: Olieraffinaderijen
+      short_description:
+      description: |
+        In deze sectie kunnen aannames worden gedaan in efficiëntieverbetering binnen olieraffinaderijen
+        en in de technologieën voor warmteproductie. Ga naar
+        <a href="/scenario/supply/fuel_production/overzicht">overzicht</a> om de jaarlijkse nuttige
+        productie van brandstoffen en grondstoffen door olieraffinaderijen aan te passen.

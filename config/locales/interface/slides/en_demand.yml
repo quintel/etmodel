@@ -73,7 +73,7 @@ en:
       description: |
         The energy demand of a building depends strongly on its function,
         but also on building characteristics such as the level of insulation.
-        The typical heat demand for buildings can be set here per construction period. See the 
+        The typical heat demand for buildings can be set here per construction period. See the
         <a href="https://docs.energytransitionmodel.com/main/demand#buildings" target=\"_blank\">documentation</a>
         for more information.
     demand_buildings_lighting:
@@ -133,9 +133,9 @@ en:
         <br/>
     demand_households_overview:
       title: Overview
-      short_description: 
+      short_description:
       description: |
-        Population and housing stock are important drivers of total household demand. 
+        Population and housing stock are important drivers of total household demand.
         The demand is broken down into applications:
         space heating and hot water, cooling, cooking, appliances and lighting.
     demand_households_appliances:
@@ -173,19 +173,19 @@ en:
         The allocation of the technologies to residences of a specific type and construction period
         is determined in the
         <a href="/scenario/demand/households_heating_order/merit-order">
-        Merit order</a> section. The resulting allocation is visualized in 
+        Merit order</a> section. The resulting allocation is visualized in
         <a href="#" class="open_chart" data-chart-key="residential_heating_technologies" data-chart-location="side">
-        this chart</a>. See the 
+        this chart</a>. See the
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentation</a>
         for more information.
     demand_households_insulation:
       title: Heat demand & insulation
       short_description:
       description: |
-        The energy demand of a residence depends on building characteristics, especially 
-        the level of insulation, but other factors such as behaviour and desired comfort 
+        The energy demand of a residence depends on building characteristics, especially
+        the level of insulation, but other factors such as behaviour and desired comfort
         also play a role. The typical heat demand for residences can be set here, per
-        residence type and construction period. See the 
+        residence type and construction period. See the
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentation</a>
         for more information.
     demand_households_lighting:
@@ -197,7 +197,7 @@ en:
       title: Population & housing stock
       short_description:
       description: |
-        Populations grow or decline over time. New residences can be constructed 
+        Populations grow or decline over time. New residences can be constructed
         and old residences can demolished.
     demand_households_heating_producers_order:
       title: Merit order
@@ -205,30 +205,30 @@ en:
       description: |
         In the <a href="/scenario/demand/households/space-heating-and-hot-water">
         Space heating & hot water</a> section, the mix of heating technologies is set.
-        How the technologies are allocated to residences of a specific type and 
+        How the technologies are allocated to residences of a specific type and
         construction period (see
         <a href="/scenario/demand/households/population-and-housing-stock">
         Population & housing stock</a>) is determined here. </br></br>
-        It is assumed that the preference of technologies is to supply to the most 
-        recently constructed residences. The technology that is first in the merit order 
+        It is assumed that the preference of technologies is to supply to the most
+        recently constructed residences. The technology that is first in the merit order
         has first pick and will be installed in the newest residences, typically with the best
-        insulation. The technology that is last in the merit order will then supply the 
-        oldest residences that are typically badly insulated. See the 
+        insulation. The technology that is last in the merit order will then supply the
+        oldest residences that are typically badly insulated. See the
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentation</a>
         for more information.
     demand_households_heating_technologies:
       title: Capacities
-      short_description: 
+      short_description:
       description: |
         In the <a href="/scenario/demand/households/space-heating-and-hot-water">
         Space heating & hot water</a> section, the mix of heating technologies is set.
         The dimensioning of these techologies can be adjusted here. </br></br>
-        It can occur that the default heat capacity of a technology is too low to meet the demand 
-        of the residence in which it is installed. One option is then to dimension the 
-        technology properly, by changing the heat capacity below. Another option is to 
+        It can occur that the default heat capacity of a technology is too low to meet the demand
+        of the residence in which it is installed. One option is then to dimension the
+        technology properly, by changing the heat capacity below. Another option is to
         install a different technology, which can be done by changing the
         <a href="/scenario/demand/households_heating_order/merit-order">
-        Merit order</a>. See the 
+        Merit order</a>. See the
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentation</a>
         for more information.
     demand_households_solar_panels:
@@ -271,17 +271,9 @@ en:
     demand_industry_chemical_refineries:
       title: Refineries
       short_description:
-      description: "Refineries turn crude oil into oil products. These oil products
-        are used as fuel in the transport sector or feedstock in the chemical industry.
-        Refineries make most of their money by selling transport fuels. The demand
-        for these fuels will most probably change as transport technologies change.
-        You can set these technologies in <a href=\"/scenario/demand/transport\" >
-        the transport sector</a>.\r\n<br/><br/>\r\nIn the ETM the output of the refineries
-        is not directly coupled to domestic demand for transport fuels. Potential
-        shortages can be imported and excess production can be exported. This also
-        holds for oil products that are used as feedstock in the chemical industry.
-        Below you can set the growth and efficiency improvements of the refineries
-        separately. Note that the demand for refinery products is set by global markets. "
+      description: |
+        Assumptions about oil refineries can be made in the
+        <a href="/scenario/supply/fuel_production/overview">liquid fuels</a> section.
     demand_industry_chemical_fertilizers:
       title: Fertilizers
       short_description:
@@ -355,7 +347,7 @@ en:
       short_description:
       description:  Will there be a shift away from cars that run on fossil fuels? How
         will a massive roll-out of electric cars affect energy use? Please indicate
-        what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine which fuel blends cars will use
+        what cars we drive in the future. In the <a href="/scenario/demand/transport_fuels/road-transport">road fuels section</a> you can determine which fuel blends cars will use
         and in the <a href="/scenario/flexibility/flexibility_demand/demand-response-electric-vehicles">demand response ev section</a> you can determine where electric cars will
         charge.
     demand_transport_bicycle_technology:
@@ -368,7 +360,7 @@ en:
       description: |
         Will there be a shift away from cars that run on fossil fuels?
         How will a massive roll-out of electric cars affect energy use? Please indicate
-        what cars we drive in the future. In the <a href="/scenario/supply/transport_fuels/road-transport"
+        what cars we drive in the future. In the <a href="/scenario/demand/transport_fuels/road-transport"
         >road fuels section</a> you can determine which fuel blends cars will use
         and in the <a href="/scenario/flexibility/flexibility_net_load/demand-response-electric-vehicles"
         >demand response - electric vehicles section</a> you can determine where electric cars will
@@ -385,7 +377,7 @@ en:
         Will ship owners replace these with dual or even multifuel diesel engines? Or will they switch
         to ships that are powered by entirely different fuels, such as LNG, hydrogen, electricity
         or ammonia? </br></br>
-        In the <a href="/scenario/supply/transport_fuels/road-transport">Transport fuels</a> section
+        In the <a href="/scenario/demand/transport_fuels/domestic-navigation">transport fuels</a> section
         you can determine which fuel mix diesel and LNG engines will use.
     demand_transport_international_transport:
       title: International transport
@@ -417,7 +409,7 @@ en:
       short_description:
       description: 'For international aviation primarily large aircrafts are used
         that mostly consume kerosene. In the future, planes using electricity or hydrogen could be possible.
-        In the <a href="/scenario/supply/transport_fuels/international-aviation"
+        In the <a href="/scenario/demand/transport_fuels/international-aviation"
         >fuels</a> section it is possible to choose the blend of kerosene for your
         planes.'
     demand_transport_freight_train_technology:
@@ -425,7 +417,7 @@ en:
       short_description:
       description: Which train technologies will be mostly used? Electric trains are
         cleaner and more efficient than diesel trains, but require more infrastructure
-        to run. In the <a href="/scenario/supply/transport_fuels/rail-transport" >train
+        to run. In the <a href="/scenario/demand/transport_fuels/rail-transport" >train
         fuels section</a> you can determine which fuels diesel trains will use.
     demand_transport_freight_transport:
       title: Applications
@@ -474,7 +466,7 @@ en:
       description: |
         Which train technologies will be mostly used? Electric trains are
         cleaner and more efficient than diesel or coal-powered ones, but require more
-        infrastructure to run. In the <a href="/scenario/supply/transport_fuels/rail-transport"
+        infrastructure to run. In the <a href="/scenario/demand/transport_fuels/rail-transport"
         >train fuels section</a> you can determine which fuels diesel trains will
         use.
     demand_transport_tram_technology:
@@ -485,12 +477,12 @@ en:
       title: Truck technology
       short_description: ''
       description: Will there be a shift away from trucks that run on fossil fuels? How
-        does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine the fuelmix.
+        does this affect energy use? In the <a href="/scenario/demand/transport_fuels/road-transport">road fuels section</a> you can determine the fuelmix.
     demand_transport_van_technology:
       title: Van technology
       short_description: ''
       description: Will there be a shift away from vans that run on fossil fuels? How
-        does this affect energy use? In the <a href="/scenario/supply/transport_fuels/road-transport">road fuels section</a> you can determine the fuelmix.
+        does this affect energy use? In the <a href="/scenario/demand/transport_fuels/road-transport">road fuels section</a> you can determine the fuelmix.
     demand_agriculture_oil_mix:
       title: Oil mix
       short_description:
@@ -511,3 +503,53 @@ en:
       short_description:
       description: |
         With the sliders below the oil mix for final demand in industry can be determined.
+    demand_transport_international_aviation:
+      title: International aviation
+      short_description:
+      description: |
+        Here, the share of kerosene and biokerosene in the kerosene mix for international aviation
+        can be set.
+    demand_transport_international_shipping:
+      title: International navigation
+      short_description:
+      description: The transport fuels for international navigation depend directly
+        on the type of ship engines you choose. In the <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
+        >international navigation section</a> you can select the engines (HFO or LNG)
+        your international ships will be equipped with. Note that use biofuels is
+        not yet possible for this sector.
+    demand_transport_marine_fuels:
+      title: Domestic navigation
+      short_description: ''
+      description: |
+        Which fuels will be used to power ships with diesel engines, ships with LNG engines, and ships
+        with methanol engines? In the <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >domestic navigation</a> section you can determine the share of these engines in the total
+        freight transport by inland shipping.
+    demand_transport_domestic_aviation:
+      title: Domestic aviation
+      short_description:
+      description: |
+        Will biokerosene contribute more to the aviation fuels mix in the future? You can choose your blend of kerosene here.
+    supply_transport_public_transport_technologies:
+      title: Public transport fuels
+      short_description:
+      description:
+    demand_transport_road_transport:
+      title: Road transport
+      short_description:
+      description: |
+        How much of the fuels used in road transport will come from renewable
+        sources? Do consider the impact on land (and sea) use for growing the required
+        crops. By changing the road transport technologies in the
+        <a href="/scenario/demand/transport_passenger_transport/car-technology">passenger</a>
+        and <a href="/scenario/demand/transport_freight_transport/truck-technology">freight</a>
+        transport section, you can determine which engines, and therefore which transport fuels
+        are used.
+    demand_transport_trains:
+      title: Rail transport
+      short_description: ''
+      description: How much of the fuel used by diesel trains will come from renewable
+        sources? Do not forget that the arable land used for growing the required
+        crops for biodiesel competes with food production. In the <a href="/scenario/demand/transport_passenger_transport/train-technology"
+        >passenger train section</a> and <a href="/scenario/demand/transport_freight_transport/train-technology"
+        >freight train section</a> you can specify your train technology.

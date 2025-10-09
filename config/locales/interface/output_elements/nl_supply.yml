@@ -37,10 +37,17 @@ nl:
       description: 'Deze grafiek geeft de brandstofmix voor wegtransport als gevolg
         van jouw instellingen in de onderdelen ''Vraag'' en ''Aanbod'', vergeleken
         met de mix van nu. '
-    refinery:
-      title: Netto stroom van raffinageproducten
-      short_description: ''
-      description: ''
+    liquid_fuels:
+      title: Vloeibare brandstof- en grondstofstromen
+      short_description:
+      description: |
+        Deze grafiek laat de jaarlijkse stromen van vloeibare brandstoffen en grondsoffen zien. De
+        (primaire) dragers, productieprocessen, eindproducten en eindverbruik in vraagsectoren
+        worden getoond.<br/><br/>
+        De grafiek toont alleen de processen waarvoor de jaarlijkse productie kan worden ingesteld.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productie van vloeibare brandstoffen en grondstoffen
+        uit verschillende processen aan te passen.
     kerosene_production_in_bunkers:
       title: Kerosineproductie voor internationaal transport
       short_description: ''

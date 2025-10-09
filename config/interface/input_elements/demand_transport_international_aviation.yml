@@ -4,10 +4,12 @@
   step_value: 0.1
   unit: "%"
   position: 1
-  slide_key: supply_transport_international_aviation
+  interface_group: kerosene_mix
+  slide_key: demand_transport_international_aviation
 - key: bunkers_plane_using_bio_kerosene_share
   share_group: supply_bunkers_aviation
   step_value: 0.1
   unit: "%"
   position: 2
-  slide_key: supply_transport_international_aviation
+  interface_group: kerosene_mix
+  slide_key: demand_transport_international_aviation

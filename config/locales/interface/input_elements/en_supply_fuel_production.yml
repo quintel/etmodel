@@ -1,23 +1,449 @@
 ---
 en:
   input_elements:
-    fuel_production_coal:
-      title: Coal 
+    industry_useful_demand_for_chemical_refineries:
+      title: Oil refineries
       short_description:
-      description: With this slider you can estimate the future production of coal within your area.
-    fuel_production_lignite:
-      title: Lignite
+      description: |
+        This slider sets the annual useful production of oil refineries.<br/><br/>
+        The input of the transformation process of oil refineries consists of <b>crude oil</b>.
+        The following output products can be produced from oil refineries:
+        <ul>
+        <li><b>diesel</b></li>
+        <li><b>gasoline</b></li>
+        <li><b>liquefied petroleum gas (LPG)</b></li>
+        <li><b>kerosene</b></li>
+        <li><b>heavy fuel oil (HFO)</b></li>
+        <li><b>naphtha</b></li>
+        <li><b>other oil products</b></li>
+        <li><b>refinery gas</b></li>
+        </ul><br/>
+        If there is no oil refinery in the scenario in the start year (since there are no oil
+        refineries present in the selected region), the output fractions of refinery output products
+        are determined based on a refinery archetype.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/oil-refineries">oil refineries</a>
+        section to make assumptions in efficiency improvements and in technologies used for heat
+        production in oil refineries.
+    output_of_energy_production_fischer_tropsch:
+      title: Fischer-Tropsch
       short_description:
-      description: With this slider you can estimate the future production of coal within your area.
-    fuel_production_crude_oil:
-      title: Oil
+      description: |
+        This slider sets the annual useful production of liquid fuels and feedstock from Fischer-Tropsch.
+        The process of Fischer-Tropsch converts syngas (a mixture of mainly CO and hydrogen) into liquid hydrocarbons.<br/><br/>
+        The following feedstock (routes) can be used for syngas production for Fischer-Tropsch, and therefore
+        represent feedstock going into this process:
+        <ul>
+        <li><b>hydrogen, electricity and CO<sub>2</sub></b></li>
+        <li><b>non-biogenic waste</b></li>
+        <li><b>biogenic waste</b></li>
+        <li><b>dry biomass</b></li>
+        </ul><br/>
+        The output of Fischer-Tropsch consists of the following fuels and feedstock:
+        <ul>
+        <li><b>kerosene</b> (main product)</li>
+        <li><b>diesel</b></li>
+        <li><b>naphtha</b></li>
+        </ul><br/>
+        Depending on the type of feedstock going into the process, the produced products from Fischer-Tropsch will
+        differ in the extent to which they are synthetic, biogenic or non-biogenic.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/fischer-tropsch">Fischer-Tropsch</a> section to set
+        the shares the feedstock routes that produce syngas for Fischer-Tropsch.
+    output_of_energy_production_methanol_synthesis:
+      title: Methanol synthesis
       short_description:
-      description: With this slider you can estimate the future production of oil within your area.
-    fuel_production_natural_gas:
-      title: Natural gas
+      description: |
+        This slider sets the annual useful production of methanol from methanol synthesis.
+        In this process, syngas (a mixture of mainly CO and hydrogen) is converted to methanol.<br/><br/>
+        The following feedstock (routes) can be used for syngas production for methanol synthesis, and therefore
+        represent feedstock going into this process:
+        <ul>
+        <li><b>hydrogen, electricity and CO<sub>2</sub></b></li>
+        <li><b>non-biogenic waste</b></li>
+        <li><b>biogenic waste</b></li>
+        <li><b>dry biomass</b></li>
+        </ul><br/>
+        The only output product is <b>methanol</b>. Depending on the type of used feedstock, the produced methanol
+        will differ in the extent to which it is synthetic, biogenic or non-biogenic.<br/><br/>
+        In the <a href="/scenario/supply/fuel_production/methanol-synthesis">Methanol synthesis</a> section
+        the shares of the different feedstock routes for syngas production for methanol synthesis can be set.
+    output_of_energy_production_fractionation_pyrolysis_oil:
+      title: Pyrolysis oil fractionation
       short_description:
-      description: With this slider you can estimate the future production of natural gas within your area.
-    fuel_production_uranium_oxide:
-      title: Uranium oxide
+      description: |
+        This slider sets the annual useful production of liquid fuels and feedstock from fractionation of
+        pyrolysis oil (non-biogenic). In this process, pyrolysis oil is upgraded through hydrotreatment.<br/><br/>
+        The pyrolysis oil, required for fractionation, can be produced through fast pyrolysis of feedstock.
+        Pyrolysis oil (non-biogenic) can only be produced with <b>non-biogenic waste</b>. Furthermore, there is
+        input of <b>hydrogen</b> in the hydrotreatment process of fractionation of pyrolysis oil.<br/><br/>
+        The following fuels can be produced from pyrolysis oil fractionation:
+        <ul>
+        <li><b>diesel</b></li>
+        <li><b>gasoline</b></li>
+        </ul><br/>
+        The model assumes that required pyrolysis oil for the fractionation process or for baseload export is produced locally. This can be altered by
+        setting import of pyrolysis oil, which will substitute the local production of pyrolysis oil.<br/><br/>
+        Go to the section
+        <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
+        of pyrolysis oil.
+    output_of_energy_production_fractionation_bio_pyrolysis_oil:
+      title: Pyrolysis bio-oil fractionation
       short_description:
-      description: With this slider you can estimate the future production of uranium oxide within your area.
+      description: |
+        This slider sets the annual useful production of liquid fuels and feedstock from fractionation of biogenic
+        pyrolysis oil (further referred to as pyrolysis bio-oil). In this process, pyrolysis bio-oil is upgraded through hydrotreatment.<br/><br/>
+        The pyrolysis bio-oil, required for fractionation, can be produced through fast pyrolysis of feedstock.
+        Pyrolysis bio-oil can be produced with the following feedstock:
+        <ul>
+        <li><b>biogenic waste</b></li>
+        <li><b>dry biomass</b></li>
+        </ul><br/>
+        Furthermore, input of <b>hydrogen</b> is required in the hydrotreatment process of fractionation of pyrolysis bio-oil.<br/><br/>
+        The following fuels can be produced from pyrolysis bio-oil fractionation:
+        <ul>
+        <li><b>biodiesel</b></li>
+        <li><b>bioethanol</b>*</li>
+        </ul><br/>
+        <i>* The actual output product should be biogasoline. However, the carrier biogasoline is
+        as of yet not modelled in the ETM. Instead, the ETM models final demand for
+        biogasoline (from national energy balances) as bioethanol. Therefore, output of biogasoline
+        from this process is assumed to be bioethanol.</i><br/><br/>
+        The model assumes that required pyrolysis bio-oil for the fractionation process or for baseload export is produced locally. This can be altered by
+        setting import of pyrolysis bio-oil, which will substitute the local production of pyrolysis oil.<br/><br/>
+        Go to the section
+        <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
+        of pyrolysis bio-oil and to set the shares of feedstock used for pyrolysis bio-oil production.
+    output_of_energy_production_hvo_bio_kerosene:
+      title: Hydrotreatment to HVO (biokerosene)
+      short_description:
+      description: |
+        This slider sets the annual useful production of Hydrotreated Vegetable Oil (HVO) biokerosene
+        from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
+        The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
+        processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
+        The carrier input for this process consists of:
+        <ul>
+        <li><b>oily biomass</b></li>
+        <li><b>hydrogen</b></li>
+        <li><b>network gas</b></li>
+        </ul><br/>
+        The output products of hydrotreatment to HVO biokerosene are:
+        <ul>
+        <li><b>biokerosene</b> (main product)</li>
+        <li><b>bionaphtha</b></li>
+        </ul><br/>
+        <b>Note:</b> other, smaller fractions of output products can also be produced in this process,
+        but are not modelled in the ETM. The output fractions of biokerosene and bionaphtha are
+        increased proportionally to account for not modelled useful fuel output.
+        See the technical specs below for more information.
+    output_of_energy_production_hvo_biodiesel:
+      title: Hydrotreatment to HVO (biodiesel)
+      short_description:
+      description: |
+        This slider sets the annual useful production of Hydrotreated Vegetable Oil (HVO) biodiesel
+        from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
+        The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
+        processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
+        The carrier input for this process consists of:
+        <ul>
+        <li><b>oily biomass</b></li>
+        <li><b>hydrogen</b></li>
+        </ul><br/>
+        The output products of hydrotreatment to HVO biodiesel are:
+        <ul>
+        <li><b>biodiesel</b> (main product)</li>
+        <li><b>bionaphtha</b></li>
+        </ul><br/>
+        <b>Note:</b> other, smaller fractions of output products can also be produced in this process,
+        but are not modelled in the ETM. The output fractions of biodiesel and bionaphtha are
+        increased proportionally to account for not modelled useful fuel output.
+        See the technical specs below for more information.
+    output_of_energy_production_bio_ethanol:
+      title: Bio-ethanol fermentation
+      short_description:
+      description: |
+        This slider sets the annual useful production of bio-ethanol from fermentation of wet
+        biomass, such as agricultural residues and cultivated grain products.<br/><br/>
+        In this process, bio-ethanol is produced by hydrolysing carbohydrates in wet biomass to sugars, subsequently
+        using yeast or bacteria to convert these sugars into ethanol.<br/><br/>
+        The carrier input of this process consists of:
+        <ul>
+        <li><b>wet biomass</b></li>
+        <li><b>network gas</b></li>
+        </ul><br/>
+        The output product is <b>bio-ethanol</b>. Note that this process has output of
+        distillers' dried grains (DDG), which is not modelled in the ETM and is assumed to have
+        no relevant energy purpose. This is therefore considered as loss.
+        See the technical specs below for more information.
+    energy_production_fischer_tropsch_synthetic_share:
+      title: Hydrogen, electricity and CO<sub>2</sub>
+      short_description:
+      description: |
+        This slider sets the share of the annual fuel production from Fischer-Tropsch with the
+        synthetic route, using hydrogen, electricity and CO<sub>2</sub>. These feedstocks are
+        used to produce the syngas (a mixture of mainly CO and hydrogen) required for the
+        Fischer-Tropsch process.<br/><br/>
+        The output of Fischer-Tropsch with the hydrogen, electricity and CO<sub>2</sub> route consists
+        of the following fuels and feedstock:
+        <ul>
+        <li><b>kerosene</b> (main product)</li>
+        <li><b>naphtha</b></li>
+        </ul><br/>
+        <b>Note:</b> in the other feedstock routes for Fischer-Tropsch, diesel is also an
+        output product. In this feedstock route, an output of diesel causes circularity in the
+        modelling, which cannot be calculated by the
+        model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
+        the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual fuel production from Fischer-Tropsch or to set the capacity of flexible
+        production from Fischer-Tropsch with this feedstock route.<br/><br/>
+        The following charts give more insight in the impact of Fischer-Tropsch with the feedstock
+        route hydrogen, electricity and CO<sub>2</sub>:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
+          chart</a> shows the production of synthetic kerosene from Fischer-Tropsch.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          chart</a> shows the CO<sub>2</sub> use for Fischer-Tropsch with this feedstock route.</li>
+        </ul>
+    energy_production_fischer_tropsch_non_biogenic_waste_ccs_share:
+      title: Gasification of non-biogenic waste
+      short_description:
+      description: |
+        This slider sets the share of the annual fuel production from Fischer-Tropsch via
+        gasification of non-biogenic waste. The gasification process yields the syngas (a mixture of
+        mainly CO and hydrogen) required for the Fischer-Tropsch process.<br/><br/>
+        The output of Fischer-Tropsch via gasification of non-biogenic waste consists
+        of the following fuels and feedstock:
+        <ul>
+        <li><b>kerosene</b> (main product)</li>
+        <li><b>diesel</b></li>
+        <li><b>naphtha</b></li>
+        </ul><br/>
+        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        captured. The captured CO<sub>2</sub> can be stored or utilised.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual fuel production from Fischer-Tropsch. Go to the
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
+        to make assumptions in utilisation and storage of captured CO<sub>2</sub>.<br/><br/>
+        The following charts give more insight in the impact of Fischer-Tropsch via gasification
+        of non-biogenic waste:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
+          chart</a> shows the production of kerosene from Fischer-Tropsch.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          chart</a> shows the captured CO<sub>2</sub> from Fischer-Tropsch with this feedstock route.</li>
+        </ul>
+    energy_production_fischer_tropsch_biogenic_waste_ccs_share:
+      title: Gasification of biogenic waste
+      short_description:
+      description: |
+        This slider sets the share of the annual fuel production from Fischer-Tropsch via
+        gasification of biogenic waste. The gasification process yields the syngas (a mixture of
+        mainly CO and hydrogen) required for the Fischer-Tropsch process.<br/><br/>
+        The output of Fischer-Tropsch via gasification of biogenic waste consists
+        of the following fuels and feedstock:
+        <ul>
+        <li><b>biokerosene</b> (main product)</li>
+        <li><b>biodiesel</b></li>
+        <li><b>bionaphtha</b></li>
+        </ul><br/>
+        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
+        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual fuel production from Fischer-Tropsch. Go to the
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
+        to make assumptions in utilisation and storage of captured CO<sub>2</sub>.<br/><br/>
+        The following charts give more insight in the impact of Fischer-Tropsch via gasification
+        of biogenic waste:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
+          chart</a> shows the production of biokerosene from Fischer-Tropsch.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          chart</a> shows the captured CO<sub>2</sub> from Fischer-Tropsch with this feedstock route.</li>
+        </ul>
+    energy_production_fischer_tropsch_dry_biomass_ccs_share:
+      title: Gasification of dry biomass
+      short_description:
+      description: |
+        This slider sets the share of the annual fuel production from Fischer-Tropsch via
+        gasification of dry biomass. The gasification process yields the syngas (a mixture of
+        mainly CO and hydrogen) required for the Fischer-Tropsch process.<br/><br/>
+        The output of Fischer-Tropsch via gasification of dry biomass consists
+        of the following fuels and feedstock:
+        <ul>
+        <li><b>biokerosene</b> (main product)</li>
+        <li><b>biodiesel</b></li>
+        <li><b>bionaphtha</b></li>
+        </ul><br/>
+        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
+        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual fuel production from Fischer-Tropsch. Go to the
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
+        to make assumptions in utilisation and storage of captured CO<sub>2</sub>.<br/><br/>
+        The following charts give more insight in the impact of Fischer-Tropsch via gasification
+        of dry biomass:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
+          chart</a> shows the production of biokerosene from Fischer-Tropsch.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          chart</a> shows the captured CO<sub>2</sub> from Fischer-Tropsch with this feedstock route.</li>
+        </ul>
+    energy_production_methanol_synthesis_synthetic_share:
+      title: Hydrogen, electricity and CO<sub>2</sub>
+      short_description:
+      description: |
+        This slider sets the share of the annual methanol production from methanol synthesis with the
+        synthetic route, using hydrogen, electricity and CO<sub>2</sub>. These feedstocks are
+        used to produce the syngas (a mixture of mainly CO and hydrogen) required for the
+        methanol synthesis process.<br/><br/>
+        The output of methanol synthesis with this feedstock route consists of only <b>methanol</b>.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual methanol production from methanol synthesis.<br/><br/>
+        Open this <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+        chart</a> to see the CO<sub>2</sub> use for methanol synthesis with the feedstock route of
+        hydrogen, electricity and CO<sub>2</sub>.
+    energy_production_methanol_synthesis_non_biogenic_waste_ccs_share:
+      title: Gasification of non-biogenic waste
+      short_description:
+      description: |
+        This slider sets the share of the annual methanol production from methanol synthesis via
+        gasification of non-biogenic waste. The gasification process yields the syngas (a mixture of
+        mainly CO and hydrogen) required for the methanol synthesis process.<br/><br/>
+        The output of methanol synthesis with this feedstock route consists of only <b>methanol</b>.<br/><br/>
+        <em>Note</em>: it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        captured. The captured CO<sub>2</sub> can be stored or utilised.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual methanol production from methanol synthesis. Go to the
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
+        to make assumptions in utilisation and storage of captured CO<sub>2</sub>.<br/><br/>
+        Open this <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+        chart</a> to see the captured CO<sub>2</sub> from methanol synthesis with this feedstock route.
+    energy_production_methanol_synthesis_biogenic_waste_ccs_share:
+      title: Gasification of biogenic waste
+      short_description:
+      description: |
+        This slider sets the share of the annual methanol production from methanol synthesis via
+        gasification of biogenic waste. The gasification process yields the syngas (a mixture of
+        mainly CO and hydrogen) required for the methanol synthesis process.<br/><br/>
+        The output of methanol synthesis with this feedstock route consists of only <b>biomethanol</b>.<br/><br/>
+        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
+        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual methanol production from methanol synthesis. Go to the
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
+        to make assumptions in utilisation and storage of captured CO<sub>2</sub>.<br/><br/>
+        Open this <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+        chart</a> to see the captured CO<sub>2</sub> from methanol synthesis with this feedstock route.
+    energy_production_methanol_synthesis_dry_biomass_ccs_share:
+      title: Gasification of dry biomass
+      short_description:
+      description: |
+        This slider sets the share of the annual methanol production from methanol synthesis via
+        gasification of dry biomass. The gasification process yields the syngas (a mixture of
+        mainly CO and hydrogen) required for the methanol synthesis process.<br/><br/>
+        The output of methanol synthesis with this feedstock route consists of only <b>biomethanol</b>.<br/><br/>
+        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
+        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual methanol production from methanol synthesis. Go to the
+        <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
+        to make assumptions in utilisation and storage of captured CO<sub>2</sub>.<br/><br/>
+        Open this <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+        chart</a> to see the captured CO<sub>2</sub> from methanol synthesis with this feedstock route.
+    volume_of_baseload_import_pyrolysis_oil:
+      title: Pyrolysis oil
+      short_description:
+      description: |
+        This slider sets the annual baseload import of pyrolysis oil (non-biogenic).<br/><br/>
+        Imported pyrolysis oil substitutes the local production of pyrolysis oil requried for the
+        fractionation process or for export.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual production from pyrolysis oil fractionation, which requires either local production
+        or import of pyrolysis oil. Go to the
+        <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
+        to set the baseload export of pyrolysis oil.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
+    volume_of_baseload_import_bio_pyrolysis_oil:
+      title: Pyrolysis bio-oil
+      short_description:
+      description: |
+        This slider sets the annual baseload import of pyrolysis bio-oil (biogenic pyrolysis oil).<br/><br/>
+        Imported pyrolysis bio-oil substitutes the local production of pyrolysis bio-oil required for the
+        fractionation process or for export.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual production from pyrolysis bio-oil fractionation, which requires either local production
+        or import of pyrolysis bio-oil. Go to the
+        <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
+        to set the baseload export of pyrolysis bio-oil.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
+    energy_production_pyrolysis_biogenic_waste_share:
+      title: Biogenic waste
+      short_description:
+      description: |
+        This slider sets the share of the annual pyrolysis bio-oil production
+        from biogenic waste. Pyrolysis bio-oil can either be produced with biogenic waste or dry biomass.<br/><br/>
+        If fractionation of pyrolysis bio-oil or baseload export of pyrolysis bio-oil is set, the
+        model assumes that the required pyrolysis bio-oil will be produced locally. Local production of pyrolysis
+        bio-oil can be substituted by setting the import of pyrolysis bio-oil.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annualfuel production from pyrolysis bio-oil fractionation. Go to the
+        <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
+        to set the baseload export of pyrolysis bio-oil.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
+    energy_production_pyrolysis_dry_biomass_share:
+      title: Dry biomass
+      short_description:
+      description: |
+        This slider sets the share of the annual pyrolysis bio-oil production
+        from dry biomass. Pyrolysis bio-oil can either be produced with biogenic waste or dry biomass.<br/><br/>
+        If fractionation of pyrolysis bio-oil or baseload export of pyrolysis bio-oil is set, the
+        model assumes that the required pyrolysis bio-oil will be produced locally. Local production of pyrolysis
+        bio-oil can be substituted by setting the import of pyrolysis bio-oil.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
+        the annual fuel production from pyrolysis bio-oil fractionation. Go to the
+        <a href="/scenario/demand/export_energy/export-volumes-per-carrier">export</a> section
+        to set the baseload export of pyrolysis bio-oil.<br/><br/>
+        The chart <a href="#" class="open_chart" data-chart-key="liquid_fuels" data-chart-location="side">
+        Liquid fuels and feedstock flows</a> shows the required dry biomass for pyrolysis bio-oil production.
+    capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable:
+      title: Fischer-Tropsch (with hydrogen, electricity and CO<sub>2</sub>)
+      description: |
+        This slider sets the installed dispatchable capacity (in electricity input capacity)
+        of Fischer-Tropsch with the synthetic route, using hydrogen, electricity and CO<sub>2</sub>.
+        These feedstocks are used to produce the syngas (a mixture of mainly CO and hydrogen) required for the
+        Fischer-Tropsch process.<br/><br/>
+        The output of Fischer-Tropsch with the hydrogen, electricity and CO<sub>2</sub> route consists
+        of the following fuels and feedstock:
+        <ul>
+        <li><b>kerosene</b> (main product)</li>
+        <li><b>naphtha</b></li>
+        </ul><br/>
+        <b>Note:</b> in the other feedstock routes for Fischer-Tropsch, diesel is also an
+        output product. In this feedstock route, an output of diesel causes circularity in the
+        modelling, which cannot be calculated by the
+        model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
+        the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
+        The flexible production from Fischer-Tropsch is electricity price-driven and is therefore
+        considered as flexible electricity demand technology. The technology will produce when the
+        electricity price is lower than the willingness to pay.<br/><br/>
+        Go to the <a href="/scenario/flexibility/flexibility_conversion/conversion-to-fuels">
+        Flexibility</a> section to set the willingness to pay of this technology.
+        Consult the <a href="https://docs.energytransitionmodel.com/main/flexibility#definitions-of-flexible-and-inflexible-supply-and-demand"
+        target=\"_blank\">documentation</a> for more information on flexible electricity demand technologies.<br/><br/>
+        The following charts give more insight in the impact of Fischer-Tropsch with the feedstock
+        route hydrogen, electricity and CO<sub>2</sub>:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="merit_order_hourly_flexibility" data-chart-location="side">chart</a>
+          shows the hourly electricity demand of flexible demand technologies</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="mekko_of_kerosene_demand_supply" data-chart-location="side">
+          chart</a> shows the production of synthetic kerosene from Fischer-Tropsch.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="ccus_sankey" data-chart-location="side">
+          chart</a> shows the CO<sub>2</sub> use for Fischer-Tropsch with this feedstock route.</li>
+        </ul>

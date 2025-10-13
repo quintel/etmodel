@@ -13,7 +13,6 @@
   percentage_bar_query: share_of_buildings_in_final_demand
   tab_key: demand
   position: 2
-  dependent_on: has_buildings
 - key: transport
   section: demand
   percentage_bar_query: share_of_transport_in_final_demand
@@ -52,7 +51,6 @@
   percentage_bar_query: share_of_other_in_final_demand
   tab_key: demand
   position: 6
-  dependent_on: has_other
 - key: export_energy
   section: demand
   tab_key: demand
@@ -70,7 +68,6 @@
   section: costs
   tab_key: costs
   position: 3
-  dependent_on: use_network_calculations
 - key: costs_heat
   section: costs
   tab_key: costs
@@ -157,7 +154,6 @@
 - key: flexibility_storage
   tab_key: flexibility
   position: 1
-  dependent_on: has_electricity_storage
 - key: flexibility_forecast_storage_order
   tab_key: flexibility
   position: 1
@@ -198,7 +194,6 @@
   section: emissions
   tab_key: emissions
   position: 1
-  dependent_on: has_other_emissions_section
 - key: ccus
   section: emissions
   tab_key: emissions
@@ -207,4 +202,3 @@
   section: emissions
   tab_key: emissions
   position: 3
-  dependent_on: has_other_emissions_section

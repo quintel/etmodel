@@ -980,6 +980,7 @@ D3.sankey =
           {id: 'hvo_bio_kerosene',                column: 1, label: 'hvo_bio_kerosene',          color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'hvo_biodiesel',                   column: 1, label: 'hvo_biodiesel',             color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'bio_ethanol_production',          column: 1, label: 'bio_ethanol_production',    color: '#228B22'},        # Forest green - biogenic processing
+          {id: 'bio_ethanol_to_jet',              column: 1, label: 'bio_ethanol_to_jet',        color: '#228B22'},        # Forest green - biogenic processing
 
           # FUEL PRODUCTS (Column 2)
           {id: 'diesel',                          column: 2, label: 'diesel',                    color: '#8B4513'},        # Brown - fossil fuel
@@ -1056,6 +1057,9 @@ D3.sankey =
           {left: 'network_gas',                           right: 'bio_ethanol_production',             gquery: 'network_gas_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'wet_biomass',                           right: 'bio_ethanol_production',             gquery: 'wet_biomass_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#2E8B57'},
 
+          {left: 'hydrogen',                              right: 'bio_ethanol_to_jet',                 gquery: 'hydrogen_to_bio_ethanol_to_jet_in_liquid_fuels_sankey', color: '#87CEEB'},
+          {left: 'bio_ethanol',                           right: 'bio_ethanol_to_jet',                 gquery: 'bio_ethanol_to_bio_ethanol_to_jet_in_liquid_fuels_sankey', color: '#90EE90'},          
+
 
           # FOSSIL REFINERY OUTPUTS
           {left: 'fossil_refinery',                       right: 'diesel',                            gquery: 'fossil_refinery_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
@@ -1123,6 +1127,12 @@ D3.sankey =
           # BIO ETHANOL PRODUCTION OUTPUTS
           {left: 'bio_ethanol_production',                right: 'bio_ethanol',                       gquery: 'bio_ethanol_production_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'bio_ethanol_production',                right: 'losses',                            gquery: 'bio_ethanol_production_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
+
+
+          # HVO BIO_KEROSENE OUTPUTS
+          {left: 'bio_ethanol_to_jet',                    right: 'bio_kerosene',                      gquery: 'bio_ethanol_to_jet_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
+          {left: 'bio_ethanol_to_jet',                    right: 'biodiesel',                         gquery: 'bio_ethanol_to_jet_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
+          {left: 'bio_ethanol_to_jet',                    right: 'losses',                            gquery: 'bio_ethanol_to_jet_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           # DIRECT IMPORTS
           {left: 'fuel_import',                           right: 'diesel',                            gquery: 'fuel_import_to_diesel_in_liquid_fuels_sankey', color: '#A0522D'},

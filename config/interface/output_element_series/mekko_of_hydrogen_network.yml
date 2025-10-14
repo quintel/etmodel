@@ -227,6 +227,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_hvo_production_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: energy_bio_ethanol_to_jet_from_hydrogen_for_mekko
+  color: "#4bd786"
+  order_by: 285
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_bio_ethanol_to_jet_from_hydrogen_for_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_bio_ethanol_to_jet_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: hydrogen_demand_transformation_chemical_fertilizers_industry
   color: "#ddd3d3"
   group: demand

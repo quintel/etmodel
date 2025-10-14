@@ -252,9 +252,21 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_supply_bio_ethanol_to_jet_mekko_of_kerosene_demand_supply
+- label: bio_kerosene_supply_biomethanol_to_jet
+  color: "#98ad98"
+  order_by: 245
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_kerosene_supply_biomethanol_to_jet
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: bio_kerosene_supply_biomethanol_to_jet_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_import
   color: "#90EE90"
-  order_by: 240
+  order_by: 245
   group: supply
   show_at_first: false
   is_target_line: false
@@ -288,6 +300,18 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: kerosene_supply_refineries_mekko_of_kerosene_demand_supply
+- label: kerosene_supply_methanol_to_jet
+  color: "#a97b63"
+  order_by: 265
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_supply_methanol_to_jet
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_supply_methanol_to_jet_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_transformation
   color: "#9A9C9C"
   order_by: 270

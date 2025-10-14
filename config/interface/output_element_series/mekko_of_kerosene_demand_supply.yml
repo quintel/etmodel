@@ -240,6 +240,18 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_supply_hvo_mekko_of_kerosene_demand_supply
+- label: bio_kerosene_supply_bio_ethanol_to_jet
+  color: "#bfd9bf"
+  order_by: 235
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_kerosene_supply_bio_ethanol_to_jet
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: bio_kerosene_supply_bio_ethanol_to_jet_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_import
   color: "#90EE90"
   order_by: 240

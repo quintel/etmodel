@@ -229,7 +229,7 @@
   key: energy_hvo_production_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_bio_ethanol_to_jet_from_hydrogen_for_mekko
   color: "#4bd786"
-  order_by: 285
+  order_by: 290
   group: demand
   show_at_first:
   is_target_line: false
@@ -239,10 +239,34 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_bio_ethanol_to_jet_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: energy_biomethanol_to_jet_from_hydrogen_for_mekko
+  color: "#2d8150"
+  order_by: 300
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_biomethanol_to_jet_from_hydrogen_for_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_biomethanol_to_jet_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: energy_methanol_to_jet_from_hydrogen_for_mekko
+  color: "#384048"
+  order_by: 310
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_methanol_to_jet_from_hydrogen_for_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_methanol_to_jet_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network  
 - label: hydrogen_demand_transformation_chemical_fertilizers_industry
   color: "#ddd3d3"
   group: demand
-  order_by: 290
+  order_by: 370
   show_at_first: false
   is_target_line: false
   target_line_position:
@@ -253,7 +277,7 @@
   key: hydrogen_demand_transformation_chemical_fertilizers_industry_mekko_of_hydrogen_network
 - label: hydrogen_demand_transformation_chemical_other_industry
   color: "#f8f1f1"
-  order_by: 300
+  order_by: 380
   group: demand
   show_at_first: false
   is_target_line: false
@@ -265,7 +289,7 @@
   key: hydrogen_demand_transformation_chemical_other_industry_mekko_of_hydrogen_network
 - label: hydrogen_demand_transformation_chemical_refineries_industry
   color: "#747373"
-  order_by: 310
+  order_by: 390
   group: demand
   show_at_first: false
   is_target_line: false

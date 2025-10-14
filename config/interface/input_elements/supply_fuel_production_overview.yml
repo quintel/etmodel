@@ -59,6 +59,20 @@
   unit: PJ
   position: 180
   slide_key: supply_fuel_production_overview  
+- key: output_of_energy_production_biomethanol_to_jet
+  interface_group: fuel_production
+  related_node: energy_production_biomethanol_to_jet
+  step_value: 0.1
+  unit: PJ
+  position: 190
+  slide_key: supply_fuel_production_overview 
+- key: output_of_energy_production_methanol_to_jet
+  interface_group: fuel_production
+  related_node: energy_production_methanol_to_jet
+  step_value: 0.1
+  unit: PJ
+  position: 195
+  slide_key: supply_fuel_production_overview       
 
 - key: capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable
   step_value: 1.0

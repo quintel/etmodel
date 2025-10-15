@@ -132,17 +132,14 @@ en:
         The efficiency of solar panels can be adjusted <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Concentrated solar power
-      short_description: ''
-      description: "This builds a 50 MWe concentrated solar power (CSP) plant with
-        heat storage. Such a plant is very attractive in sunny desert-like areas,
-        but less so in Northern Europe. It needs direct sunlight, which is concentrated
-        by concave mirrors to produce heat and generate electricity. A plan called
-        'Desertec' has been launched to build a huge number of CSP plants in northern
-        Africa and the Middle East, which are to export a lot of their power to Europe.
-        This requires vast investments in infrastructure, but could potentially supply
-        a huge amount of power. \r\n\r\n<br/><br/>\r\nThis type of plant stores the
-        heat, allowing it to keep on producing electricity until several hours after
-        sundown.\r\n\r\n<br/><br/> \r\n<a href=\"/units\">More information on units...</a>\r\n\r\n"
+      short_description:
+      description: |
+        This builds a 50 MWe concentrated solar power (CSP) plant with heat storage. Such a plant is
+        very attractive in sunny desert-like areas, but less so in Northern Europe. It needs direct
+        sunlight, which is concentrated by concave mirrors to produce heat and generate electricity.
+        <br/><br/>
+        This type of plant stores the heat, allowing it to keep on producing electricity until
+        several hours after sundown.
     capacity_of_energy_battery_solar_pv_solar_radiation:
       title: Solar PV plants onshore with battery system
       short_description: ''

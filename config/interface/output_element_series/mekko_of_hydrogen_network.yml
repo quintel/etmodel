@@ -94,7 +94,7 @@
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: transport_losses_demand_mekko_of_hydrogen_network  
+  key: transport_losses_demand_mekko_of_hydrogen_network
 - label: transport_final_demand_hydrogen_for_mekko
   color: "#0984E3"
   order_by: 180
@@ -179,18 +179,30 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: industry_heat_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: energy_synthetic_products_from_hydrogen_for_mekko
-  color: "#7bed9f"
+- label: energy_fischer_tropsch_from_hydrogen_for_mekko
+  color: "#538C65"
   order_by: 250
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_synthetic_products_from_hydrogen_for_mekko
+  gquery: energy_fischer_tropsch_from_hydrogen_for_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_synthetic_products_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+  key: energy_fischer_tropsch_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: energy_methanol_synthesis_from_hydrogen_for_mekko
+  color: "#7bed9f"
+  order_by: 255
+  group: demand
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_methanol_synthesis_from_hydrogen_for_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_hydrogen_network
+  key: energy_methanol_synthesis_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_bio_pyrolysis_oil_fractionation_from_hydrogen_for_mekko
   color: "#2ECC71"
   order_by: 260
@@ -262,7 +274,7 @@
   is_1990:
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_methanol_to_jet_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network  
+  key: energy_methanol_to_jet_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: hydrogen_demand_transformation_chemical_fertilizers_industry
   color: "#ddd3d3"
   group: demand
@@ -372,7 +384,7 @@
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_electrolysis_solar_electricity_for_mekko_supply_mekko_of_hydrogen_network  
+  key: energy_hydrogen_electrolysis_solar_electricity_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_steam_methane_reformer_must_run_for_mekko
   color: "#8A8F94"
   order_by: 460
@@ -504,7 +516,7 @@
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_import_hydrogen_baseload_for_mekko_supply_mekko_of_hydrogen_network    
+  key: energy_import_hydrogen_baseload_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_imported_hydrogen_backup
   color: "#A7A1C5"
   order_by: 570
@@ -516,7 +528,7 @@
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_import_hydrogen_backup_for_mekko_supply_mekko_of_hydrogen_network    
+  key: energy_import_hydrogen_backup_for_mekko_supply_mekko_of_hydrogen_network
 - label: hydrogen_supply_transformation_chemical_fertilizers_industry
   color: "#d8eded"
   order_by: 580

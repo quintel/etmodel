@@ -306,7 +306,7 @@ D3.sankey =
           #{left: 'network_gas',                 right: 'export',                    gquery: 'sankey_1_to_2_network_gas_to_export',                   color: '#7f7f7f'},
           {left: 'network_gas',                  right: 'losses',                      gquery: 'sankey_1_to_2_network_gas_to_loss',                     color: '#DCDCDC'},
 
-
+          {left: 'methanol',                     right: 'transport',                 gquery: 'sankey_1_to_2_methanol_to_transport',                    color: '#FF8C8C'},
           {left: 'methanol',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_methanol_to_feedstock',                    color: '#FF8C8C'},
           {left: 'methanol',                     right: 'export',                    gquery: 'sankey_1_to_2_methanol_to_export',                       color: '#FF8C8C'},
           {left: 'methanol',                     right: 'losses',                    gquery: 'sankey_1_to_2_methanol_to_loss',                         color: '#DCDCDC'}

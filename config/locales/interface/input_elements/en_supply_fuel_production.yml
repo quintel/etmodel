@@ -158,7 +158,7 @@ en:
         increased proportionally to account for not modelled useful fuel output.
         See the technical specs below for more information.
     output_of_energy_production_bio_ethanol:
-      title: Bio-ethanol fermentation
+      title: Bio-ethanol production
       short_description:
       description: |
         This slider sets the annual useful production of bio-ethanol from fermentation of wet
@@ -186,8 +186,8 @@ en:
         <li><b>bio-ethanol</b></li>
         <li><b>hydrogen</b></li>
         </ul><br/>
-        The required bio-ethanol can be produced via bio-ethanol fermentation (slider
-        above). If no bio-ethanol production is set, it is assumed by default
+        The required bio-ethanol can be produced via fermentation of wet biomass (can be set
+        with the slider above). If no bio-ethanol production is set, it is assumed by default
         that the required bio-ethanol is imported.<br/><br/>
         The output products of this process are:
         <ul>

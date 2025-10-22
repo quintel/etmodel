@@ -354,17 +354,54 @@ nl:
         breder worden doordat de windmolen vaker draait op hogere capaciteit.
         Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
         in het effect van het aantal vollasturen op het windprofiel.
-    flh_of_solar_pv_solar_radiation:
-      title: Zon-PV
+    flh_of_households_solar_pv_solar_radiation:
+      title: Zon op dak huishoudens
       short_description:
-      description: "Hier kun je aannames maken over hoe zonnig het is in jouw scenario. Door de vollasturen te verhogen voor zonnepanelen
-        zal er meer elektriciteit geproduceerd worden met hetzelfde aantal panelen.
-        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met dit schuifje,
-        maar verandert tegelijkertijd ook het productieprofiel per uur voor zon. Bij een
-        toenemend aantal vollasturen zullen de pieken breder worden doordat
-        het paneel langer op hogere capaciteit elektriciteit produceert. Bekijk de
-        'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht in het effect
-        van het aantal vollasturen op het zonneprofiel.\r\n</br></br>\r\n "
+      description: |
+        Door het aantal vollasturen voor zonnepanelen te verhogen, wordt er meer elektriciteit
+        geproduceerd met hetzelfde aantal panelen. Dit schuifje kan worden gebruikt om te
+        simuleren dat er meer zonlicht beschikbaar is (een zonnig jaar) of dat de panelen beter in
+        staat zijn het aanwezige zonlicht op te vangen (bijvoorbeeld door een betere oriëntatie).
+        Omgekeerd kunnen de vollasturen worden verlaagd om een minder zonnig jaar te simuleren.
+        <br/><br/>
+        Dit schuifje verhoogt niet alleen het aantal vollasturen, maar past daarop ook de vorm van
+        het uurlijkse productieprofiel aan.
+    flh_of_buildings_solar_pv_solar_radiation:
+      title: Zon op dak gebouwen
+      short_description:
+      description: |
+        Door het aantal vollasturen voor zonnepanelen te verhogen, wordt er meer elektriciteit
+        geproduceerd met hetzelfde aantal panelen. Dit schuifje kan worden gebruikt om te
+        simuleren dat er meer zonlicht beschikbaar is (een zonnig jaar) of dat de panelen beter in
+        staat zijn het aanwezige zonlicht op te vangen (bijvoorbeeld door een betere oriëntatie).
+        Omgekeerd kunnen de vollasturen worden verlaagd om een minder zonnig jaar te simuleren.
+        <br/><br/>
+        Dit schuifje verhoogt niet alleen het aantal vollasturen, maar past daarop ook de vorm van
+        het uurlijkse productieprofiel aan.
+    flh_of_energy_power_solar_pv_solar_radiation:
+      title: Zon op veld
+      short_description:
+      description: |
+        Door het aantal vollasturen voor zonnepanelen te verhogen, wordt er meer elektriciteit
+        geproduceerd met hetzelfde aantal panelen. Dit schuifje kan worden gebruikt om te
+        simuleren dat er meer zonlicht beschikbaar is (een zonnig jaar) of dat de panelen beter in
+        staat zijn het aanwezige zonlicht op te vangen (bijvoorbeeld door een betere oriëntatie).
+        Omgekeerd kunnen de vollasturen worden verlaagd om een minder zonnig jaar te simuleren.
+        <br/><br/>
+        Dit schuifje verhoogt niet alleen het aantal vollasturen, maar past daarop ook de vorm van
+        het uurlijkse productieprofiel aan.
+    flh_of_energy_power_solar_pv_offshore:
+      title: Zon op zee
+      short_description:
+      description: |
+        Door het aantal vollasturen voor zonnepanelen te verhogen, wordt er meer elektriciteit
+        geproduceerd met hetzelfde aantal panelen. Dit schuifje kan worden gebruikt om te
+        simuleren dat er meer zonlicht beschikbaar is (een zonnig jaar) of dat de panelen beter in
+        staat zijn het aanwezige zonlicht op te vangen (bijvoorbeeld door een betere oriëntatie).
+        Omgekeerd kunnen de vollasturen worden verlaagd om een minder zonnig jaar te simuleren.
+        <br/><br/>
+        Dit schuifje verhoogt niet alleen het aantal vollasturen, maar past daarop ook de vorm van
+        het uurlijkse productieprofiel aan.
     capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:

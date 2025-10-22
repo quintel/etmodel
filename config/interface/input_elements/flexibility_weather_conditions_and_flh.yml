@@ -4,36 +4,56 @@
   unit: degC
   interface_group: temperature
   command_type: value
-  position: 1
+  position: 100
+  slide_key: flexibility_temperature_and_flh
+
+- key: flh_of_energy_power_wind_turbine_inland
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 200
   slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_power_wind_turbine_coastal
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 3
+  position: 210
   dependent_on: has_coastline
-  slide_key: flexibility_temperature_and_flh
-- key: flh_of_energy_power_wind_turbine_inland
-  step_value: 1.0
-  unit: "#"
-  interface_group: full_load_hours
-  position: 2
   slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_power_wind_turbine_offshore
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 4
+  position: 220
   slide_key: flexibility_temperature_and_flh
 - key: flh_of_energy_hydrogen_wind_turbine_offshore
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 6
+  position: 230
   slide_key: flexibility_temperature_and_flh
-- key: flh_of_solar_pv_solar_radiation
+
+- key: flh_of_households_solar_pv_solar_radiation
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 7
+  position: 300
+  slide_key: flexibility_temperature_and_flh
+- key: flh_of_buildings_solar_pv_solar_radiation
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 310
+  slide_key: flexibility_temperature_and_flh
+- key: flh_of_energy_power_solar_pv_solar_radiation
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 320
+  slide_key: flexibility_temperature_and_flh
+- key: flh_of_energy_power_solar_pv_offshore
+  step_value: 1.0
+  unit: "#"
+  interface_group: full_load_hours
+  position: 330
   slide_key: flexibility_temperature_and_flh

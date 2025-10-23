@@ -106,7 +106,7 @@ D3.sankey =
           {left: 'oil_and_oil_products',         right: 'electricity',               gquery: 'sankey_1_to_1_oil_and_oil_products_to_electricity',      color: '#8c564b'},
           {left: 'waste_mix',                    right: 'electricity',               gquery: 'sankey_1_to_1_waste_mix_to_electricity',                 color: '#CE7013'},
           {left: 'network_gas',                  right: 'electricity',               gquery: 'sankey_1_to_1_network_gas_to_electricity',               color: '#7f7f7f'},
-          {left: 'biofuels',                     right: 'electricity',               gquery: 'sankey_1_to_1_biofuels_to_electricity',                  color: '#FF8C8C'},
+          {left: 'biofuels',                     right: 'electricity',               gquery: 'sankey_1_to_1_biofuels_to_electricity',                  color: '#2ca02c'},
 
           {left: 'electricity',                  right: 'heat',                      gquery: 'sankey_1_to_1_electricity_to_heat',                      color: '#1f77b4'},
           {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                         color: '#87cfeb'},

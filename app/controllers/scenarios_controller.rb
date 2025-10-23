@@ -209,12 +209,52 @@ class ScenariosController < ApplicationController
   end
 
   def inputs
-    filename = "inputs.#{@scenario.id}"
-    respond_to do |format|
-      format.csv do
-        response.headers['Content-Disposition'] = "attachment; filename=\"#{filename}.csv\""
-      end
+    default_values = @scenario.inputs(engine_client)
+
+    csv = CSV.generate do |row|
+      row << [
+        t("slides.data_export_inputs.headers.sidebar_item"),
+        t("slides.data_export_inputs.headers.item_key"),
+        t("slides.data_export_inputs.headers.title_for_description"),
+        t("slides.data_export_inputs.headers.raw_key_title"),
+        t("slides.data_export_inputs.headers.raw_key"),
+        t("slides.data_export_inputs.headers.user_value"),
+        t("slides.data_export_inputs.headers.min_value"),
+        t("slides.data_export_inputs.headers.max_value"),
+        t("slides.data_export_inputs.headers.default_value"),
+        t("slides.data_export_inputs.headers.unit")
+      ]
+
+      InputElement.all.reject(&:area_dependent)
+        .sort_by { |ie| [
+          ie.slide.sidebar_item.tab_key,
+          ie.slide.sidebar_item_key,
+          ie.slide.title_for_description,
+          ie.key
+        ] }
+        .each do |ie|
+          value_attrs = default_values[ie.key] || {"min" => 0, "max" => 0, "default" => 0}
+
+          row << [
+            t("tabs.#{ie.slide.sidebar_item.tab_key}"),
+            t("sidebar_items.#{ie.slide.sidebar_item_key}.title"),
+            t(ie.slide.title_for_description),
+            t("input_elements.#{ie.key}.title"),
+            ie.key,
+            @scenario.user_values[ie.key],
+            value_attrs["min"],
+            value_attrs["max"],
+            value_attrs["default"],
+            ie.unit
+          ]
+        end
     end
+
+    send_data(
+      csv,
+      type: "text/csv; charset=utf-8; header=present",
+      disposition: "attachment; filename=inputs.#{@scenario.id}.csv"
+    )
   end
 
   private

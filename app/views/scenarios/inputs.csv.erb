@@ -1,4 +1,0 @@
-<%= t("slides.data_export_inputs.headers.sidebar_item")%>;<%= t("slides.data_export_inputs.headers.item_key")%>;<%= t("slides.data_export_inputs.headers.name")%>;<%= t("slides.data_export_inputs.headers.raw_key")%>;<%= t("slides.data_export_inputs.headers.user_value")%>;<%= t("slides.data_export_inputs.headers.unit")%>
-<%-InputElement.all.reject(&:area_dependent).sort_by(&:key).each do |ie| %>
-<%=raw t("tabs.#{ie.slide.sidebar_item.tab_key}")%>;<%=raw t("sidebar_items.#{ie.slide.sidebar_item_key}.title")%>;<%=raw t(ie.slide.title_for_description)%>;<%=ie.key%>;<%=@scenario.user_values[ie.key]%>;<%=ie.unit%>
-<%-end%>

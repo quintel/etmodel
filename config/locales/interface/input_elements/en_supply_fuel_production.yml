@@ -47,7 +47,7 @@ en:
         Depending on the type of feedstock going into the process, the produced products from Fischer-Tropsch will
         differ in the extent to which they are synthetic, biogenic or non-biogenic.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/fischer-tropsch">Fischer-Tropsch</a> section to set
-        the shares the feedstock routes that produce syngas for Fischer-Tropsch.
+        the shares of the feedstock routes that produce syngas for Fischer-Tropsch.
     output_of_energy_production_methanol_synthesis:
       title: Methanol synthesis
       short_description:
@@ -158,7 +158,7 @@ en:
         increased proportionally to account for not modelled useful fuel output.
         See the technical specs below for more information.
     output_of_energy_production_bio_ethanol:
-      title: Bio-ethanol fermentation
+      title: Bio-ethanol production
       short_description:
       description: |
         This slider sets the annual useful production of bio-ethanol from fermentation of wet
@@ -174,6 +174,81 @@ en:
         distillers' dried grains (DDG), which is not modelled in the ETM and is assumed to have
         no relevant energy purpose. This is therefore considered as loss.
         See the technical specs below for more information.
+    output_of_energy_production_bio_ethanol_to_jet:
+      title: Bio-ethanol-to-jet
+      short_description:
+      description: |
+        This slider sets the annual useful production of liquid fuels from
+        bio-ethanol-to-jet (also known as alcohol-to-jet). This is one of the possible processes
+        through which Sustainable Aviation Fuel (SAF) can be produced.<br/><br/>
+        The input carriers for this process consist of:
+        <ul>
+        <li><b>bio-ethanol</b></li>
+        <li><b>hydrogen</b></li>
+        </ul><br/>
+        The required bio-ethanol can be produced via fermentation of wet biomass (can be set
+        with the slider above). If no bio-ethanol production is set, it is assumed by default
+        that the required bio-ethanol is imported.<br/><br/>
+        The output products of this process are:
+        <ul>
+        <li><b>biokerosene</b> (main product)</li>
+        <li><b>biodiesel</b></li>
+        </ul><br/>
+        <b>Note:</b> biogasoline is also an output product of this process. Since bio-gasoline
+        is not modelled as a carrier in the ETM, the output fractions of biokerosene and
+        biodiesel are proportionally increased. See the technical specs below for more information.
+    output_of_energy_production_methanol_to_jet:
+      title: Methanol-to-jet
+      short_description:
+      description: |
+        This slider sets the annual useful production of liquid fuels from
+        methanol-to-jet. This is one of the possible processes through which Sustainable Aviation
+        Fuel (SAF) can be produced.<br/><br/>
+        The input carriers for this process consist of:
+        <ul>
+        <li><b>methanol</b></li>
+        <li><b>hydrogen</b></li>
+        </ul><br/>
+        The required methanol can be produced via methanol synthesis (slider
+        above). If no methanol production is set, it is assumed by default that
+        the required methanol is imported.<br/><br/>
+        The output products of this process are:
+        <ul>
+        <li><b>kerosene</b> (main product)</li>
+        <li><b>gasoline</b></li>
+        </ul><br/>
+        <b>Note:</b> in this process, a mixture of light gases with energetic value is also
+        produced as a by-product. This gas mixture is not explicitly modelled in the ETM. Instead,
+        the output fractions of kerosene and gasoline are proportionally increased.
+        See the technical specs below for more information.
+    output_of_energy_production_biomethanol_to_jet:
+      title: Biomethanol-to-jet
+      short_description:
+      description: |
+        This slider sets the annual useful production of liquid fuels from
+        biomethanol-to-jet (the biogenic variant of methanol-to-jet). This is one of the possible
+        processes through which Sustainable Aviation Fuel (SAF) can be produced.<br/><br/>
+        The input carriers for this process consist of:
+        <ul>
+        <li><b>biomethanol</b></li>
+        <li><b>hydrogen</b></li>
+        </ul><br/>
+        The required biomethanol can be produced via methanol synthesis (slider
+        above). If no biomethanol production is set, it is assumed by default that
+        the required biomethanol is imported.<br/><br/>
+        The output products of this process are:
+        <ul>
+        <li><b>biokerosene</b> (main product)</li>
+        <li><b>bio-ethanol</b>*</li>
+        </ul><br/>
+        <i>* The actual output product should be biogasoline. However, the carrier biogasoline is
+        as of yet not modelled in the ETM. Instead, the ETM models final demand for
+        biogasoline (from national energy balances) as bioethanol. Therefore, output of biogasoline
+        from this process is assumed to be bioethanol.</i><br/><br/>
+        <b>Note:</b> in this process, a mixture of light gases with energetic value is also produced
+        as a by-product. This gas mixture is not explicitly modelled in the ETM. Instead,
+        the output fractions of biokerosene and bio-ethanol are proportionally increased.
+        See the technical specs below for more information.
     energy_production_fischer_tropsch_synthetic_share:
       title: Hydrogen, electricity and CO<sub>2</sub>
       short_description:
@@ -188,9 +263,10 @@ en:
         <li><b>kerosene</b> (main product)</li>
         <li><b>naphtha</b></li>
         </ul><br/>
-        <b>Note:</b> in the other feedstock routes for Fischer-Tropsch, diesel is also an
-        output product. In this feedstock route, an output of diesel causes circularity in the
-        modelling, which cannot be calculated by the
+        <b>Note:</b> there is an inconsistency in the way the ETM models this particular
+        Fischer-Tropsch feedstock route. In the other feedstock routes for Fischer-Tropsch,
+        diesel is also an output product. In this particular feedstock route, an output of diesel
+        causes circularity in the modelling, which cannot be calculated by the
         model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
         the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
@@ -218,7 +294,7 @@ en:
         <li><b>diesel</b></li>
         <li><b>naphtha</b></li>
         </ul><br/>
-        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual fuel production from Fischer-Tropsch. Go to the
@@ -246,7 +322,7 @@ en:
         <li><b>biodiesel</b></li>
         <li><b>bionaphtha</b></li>
         </ul><br/>
-        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
         biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
@@ -275,7 +351,7 @@ en:
         <li><b>biodiesel</b></li>
         <li><b>bionaphtha</b></li>
         </ul><br/>
-        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
         biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
@@ -312,7 +388,7 @@ en:
         gasification of non-biogenic waste. The gasification process yields the syngas (a mixture of
         mainly CO and hydrogen) required for the methanol synthesis process.<br/><br/>
         The output of methanol synthesis with this feedstock route consists of only <b>methanol</b>.<br/><br/>
-        <em>Note</em>: it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        <b>Note</b>: it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual methanol production from methanol synthesis. Go to the
@@ -328,7 +404,7 @@ en:
         gasification of biogenic waste. The gasification process yields the syngas (a mixture of
         mainly CO and hydrogen) required for the methanol synthesis process.<br/><br/>
         The output of methanol synthesis with this feedstock route consists of only <b>biomethanol</b>.<br/><br/>
-        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
         biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
@@ -345,7 +421,7 @@ en:
         gasification of dry biomass. The gasification process yields the syngas (a mixture of
         mainly CO and hydrogen) required for the methanol synthesis process.<br/><br/>
         The output of methanol synthesis with this feedstock route consists of only <b>biomethanol</b>.<br/><br/>
-        <em>Note:</em> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
+        <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
         biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
@@ -425,9 +501,10 @@ en:
         <li><b>kerosene</b> (main product)</li>
         <li><b>naphtha</b></li>
         </ul><br/>
-        <b>Note:</b> in the other feedstock routes for Fischer-Tropsch, diesel is also an
-        output product. In this feedstock route, an output of diesel causes circularity in the
-        modelling, which cannot be calculated by the
+        <b>Note:</b> there is an inconsistency in the way the ETM models this particular
+        Fischer-Tropsch feedstock route. In the other feedstock routes for Fischer-Tropsch,
+        diesel is also an output product. In this particular feedstock route, an output of diesel
+        causes circularity in the modelling, which cannot be calculated by the
         model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
         the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
         The flexible production from Fischer-Tropsch is electricity price-driven and is therefore

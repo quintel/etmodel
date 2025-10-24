@@ -148,7 +148,7 @@ nl:
         <li><b>bionafta</b></li>
         </ul><br/>
         <b>Let op:</b> andere, kleinere fracties van outputproducten kunnen ook worden geproduceerd,
-        maar worden niet gemodelleerd. De outputfracties van biokerosine en bionaphtha zijn proportioneel
+        maar worden niet gemodelleerd. De outputfracties van biokerosine en bionafta zijn proportioneel
         verhoogd om rekening te houden met niet-gemodelleerde, nuttige brandstofoutput. Raadpleeg de
         technische specificaties hieronder voor meer informatie.
     output_of_energy_production_hvo_biodiesel:
@@ -172,11 +172,11 @@ nl:
         <li><b>bionafta</b></li>
         </ul><br/>
         <b>Let op:</b> andere, kleinere fracties van outputproducten kunnen ook worden geproduceerd,
-        maar worden niet gemodelleerd. De outputfracties van biokerosine en bionaphtha zijn proportioneel
+        maar worden niet gemodelleerd. De outputfracties van biokerosine en bionafta zijn proportioneel
         verhoogd om rekening te houden met niet-gemodelleerde, nuttige brandstofoutput. Raadpleeg de
         technische specificaties hieronder voor meer informatie.
     output_of_energy_production_bio_ethanol:
-      title: Bio-ethanolvergisting
+      title: Bio-ethanolproductie
       short_description:
       description: |
         Dit schuifje bepaalt de jaarlijkse nuttige productie van bio-ethanol uit
@@ -194,6 +194,82 @@ nl:
         waarvan wordt aangenomen dat het geen relevante energiedoeleinden heeft. Deze output
         wordt daarom aagenomen als verlies. Raadpleeg de technische specificaties hieronder voor
         meer informatie.
+    output_of_energy_production_bio_ethanol_to_jet:
+      title: Bio-ethanol-to-jet
+      short_description:
+      description: |
+        Dit schuifje bepaalt de jaarlijkse nuttige productie van vloeibare brandstoffen uit
+        bio-ethanol-to-jet (ook wel alcohol-to-jet genoemd). Dit is één van de mogelijke processen
+        waarmee <i>Sustainable Aviation Fuel (SAF)</i> kan worden geproduceerd.<br/><br/>
+        De inputdragers voor dit proces bestaan uit:
+        <ul>
+        <li><b>bio-ethanol</b></li>
+        <li><b>waterstof</b></li>
+        </ul><br/>
+        Benodigde bio-ethanol kan worden geproduceerd uit vergisting van natte biomassa
+        (instelbaar met het schuifje hierboven). Als er geen productie van bio-ethanol is ingesteld,
+        wordt standaard aangenomen dat benodigde bio-ethanol wordt geïmporteerd.<br/><br/>
+        De outputproducten van dit proces zijn:
+        <ul>
+        <li><b>biokerosine</b> (hoofdproduct)</li>
+        <li><b>biodiesel</b></li>
+        </ul><br/>
+        <b>Let op:</b> biobenzine is ook een outputproduct van dit proces. Aangezien biobenzine
+        niet wordt gemodelleerd als drager in het ETM, zijn de outputfracties van biokerosine en
+        biodiesel proportioneel verhoogd. Raadpleeg de technische specificaties hieronder voor
+        meer informatie.
+    output_of_energy_production_methanol_to_jet:
+      title: Methanol-to-jet
+      short_description:
+      description: |
+        Dit schuifje bepaalt de jaarlijkse nuttige productie van vloeibare brandstoffen uit
+        methanol-to-jet. Dit is één van de mogelijke processen waarmee <i>Sustainable Aviation
+        Fuel (SAF)</i> kan worden geproduceerd.<br/><br/>
+        De inputdragers voor dit proces bestaan uit:
+        <ul>
+        <li><b>methanol</b></li>
+        <li><b>waterstof</b></li>
+        </ul><br/>
+        Benodigde methanol kan worden geproduceerd uit methanolsynthese (schuifje
+        hierboven). Als er geen productie van methanol is ingesteld, wordt standaard aangenomen dat
+        benodigde methanol wordt geïmporteerd.<br/><br/>
+        De outputproducten van dit proces zijn:
+        <ul>
+        <li><b>kerosine</b> (hoofdproduct)</li>
+        <li><b>benzine</b></li>
+        </ul><br/>
+        <b>Let op:</b> in dit proces wordt ook een mengsel van lichte gassen met energetisch nut
+        als bijproduct geproduceerd. Dit gasmengsel wordt niet expliciet in het ETM gemodelleerd.
+        In plaats daarvan zijn de outputfracties van kerosine en benzine proportioneel
+        verhoogd. Raadpleeg de technische specificaties hieronder voor meer informatie.
+    output_of_energy_production_biomethanol_to_jet:
+      title: Biomethanol-to-jet
+      short_description:
+      description: |
+        Dit schuifje bepaalt de jaarlijkse nuttige productie van vloeibare brandstoffen uit
+        biomethanol-to-jet (de biogene variant van methanol-to-jet). Dit is één van de mogelijke
+        processen waarmee <i>Sustainable Aviation Fuel (SAF)</i> kan worden geproduceerd.<br/><br/>
+        De inputdragers voor dit proces bestaan uit:
+        <ul>
+        <li><b>biomethanol</b></li>
+        <li><b>waterstof</b></li>
+        </ul><br/>
+        Benodigde biomethanol kan worden geproduceerd uit methanolsynthese (schuifje
+        hierboven). Als er geen productie van biomethanol is ingesteld, wordt
+        standaard aangenomen dat benodigde biomethanol wordt geïmporteerd.<br/><br/>
+        De outputproducten van dit proces zijn:
+        <ul>
+        <li><b>biokerosine</b> (hoofdproduct)</li>
+        <li><b>bio-ethanol</b>*</li>
+        </ul><br/>
+        <i>* De daadwerkelijke output zou biobenzine moeten zijn, echter wordt deze drager
+        tot nog toe niet gemodelleerd in het ETM. In plaats daarvan modelleert het ETM finale
+        vraag naar biobenzine (volgens nationale energiebalansen) als bio-ethanol. Daarom is
+        voor dit proces de output van biobenzine gemodelleerd als bio-ethanol.</i><br/><br/>
+        <b>Let op:</b> in dit proces wordt ook een mengsel van lichte gassen met energetisch nut
+        als bijproduct geproduceerd. Dit gasmengsel wordt niet expliciet in het ETM gemodelleerd.
+        In plaats daarvan zijn de outputfracties van biokerosine en bio-ethanol proportioneel
+        verhoogd. Raadpleeg de technische specificaties hieronder voor meer informatie.
     energy_production_fischer_tropsch_synthetic_share:
       title: Waterstof, elektriciteit en CO<sub>2</sub>
       short_description:
@@ -208,9 +284,10 @@ nl:
         <li><b>kerosine</b> (hoofdproduct)</li>
         <li><b>nafta</b></li>
         </ul><br/>
-        <b>Let op:</b> bij de andere feedstockroutes voor Fischer-Tropsch is diesel ook een
-        outputproduct. In deze feedstockroute ontstaat met een output van diesel een circularitiet
-        in de modellering, wat het model tot dusver niet
+        <b>Let op:</b> er is een inconsistentie in hoe het ETM deze specifieke Fischer-Tropsch
+        feedstockroute modelleert. Bij de andere feedstockroutes voor Fischer-Tropsch is diesel
+        ook een outputproduct. In deze specifieke feedstockroute ontstaat met een output van diesel
+        een circularitiet in de modellering, wat het model tot dusver niet
         kan doorrekeken. Daarom is er in deze feedstockroute geen output van diesel. In plaats
         daarvan zijn de outputfracties van kerosine en nafta proportioneel verhoogd. Raadpleeg de
         technische specificaties hieronder voor meer informatie.<br/><br/>
@@ -457,9 +534,10 @@ nl:
         <li><b>kerosine</b> (hoofdproduct)</li>
         <li><b>nafta</b></li>
         </ul><br/>
-        <b>Let op:</b> bij de andere feedstockroutes voor Fischer-Tropsch is diesel ook een
-        outputproduct. In deze feedstockroute ontstaat met een output van diesel een circularitiet
-        in de modellering, wat het model tot dusver niet
+        <b>Let op:</b> er is een inconsistentie in hoe het ETM deze specifieke Fischer-Tropsch
+        feedstockroute modelleert. Bij de andere feedstockroutes voor Fischer-Tropsch is diesel
+        ook een outputproduct. In deze specifieke feedstockroute ontstaat met een output van diesel
+        een circularitiet in de modellering, wat het model tot dusver niet
         kan doorrekeken. Daarom is er in deze feedstockroute geen output van diesel. In plaats
         daarvan zijn de outputfracties van kerosine en nafta proportioneel verhoogd.
         Raadpleeg de technische specificaties hieronder voor meer informatie.<br/><br/>

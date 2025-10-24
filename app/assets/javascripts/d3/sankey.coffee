@@ -106,7 +106,7 @@ D3.sankey =
           {left: 'oil_and_oil_products',         right: 'electricity',               gquery: 'sankey_1_to_1_oil_and_oil_products_to_electricity',      color: '#8c564b'},
           {left: 'waste_mix',                    right: 'electricity',               gquery: 'sankey_1_to_1_waste_mix_to_electricity',                 color: '#CE7013'},
           {left: 'network_gas',                  right: 'electricity',               gquery: 'sankey_1_to_1_network_gas_to_electricity',               color: '#7f7f7f'},
-          {left: 'biofuels',                     right: 'electricity',               gquery: 'sankey_1_to_1_biofuels_to_electricity',                  color: '#FF8C8C'},
+          {left: 'biofuels',                     right: 'electricity',               gquery: 'sankey_1_to_1_biofuels_to_electricity',                  color: '#2ca02c'},
 
           {left: 'electricity',                  right: 'heat',                      gquery: 'sankey_1_to_1_electricity_to_heat',                      color: '#1f77b4'},
           {left: 'hydrogen',                     right: 'heat',                      gquery: 'sankey_1_to_1_hydrogen_to_heat',                         color: '#87cfeb'},
@@ -306,7 +306,7 @@ D3.sankey =
           #{left: 'network_gas',                 right: 'export',                    gquery: 'sankey_1_to_2_network_gas_to_export',                   color: '#7f7f7f'},
           {left: 'network_gas',                  right: 'losses',                      gquery: 'sankey_1_to_2_network_gas_to_loss',                     color: '#DCDCDC'},
 
-
+          {left: 'methanol',                     right: 'transport',                 gquery: 'sankey_1_to_2_methanol_to_transport',                    color: '#FF8C8C'},
           {left: 'methanol',                     right: 'feedstock',                 gquery: 'sankey_1_to_2_methanol_to_feedstock',                    color: '#FF8C8C'},
           {left: 'methanol',                     right: 'export',                    gquery: 'sankey_1_to_2_methanol_to_export',                       color: '#FF8C8C'},
           {left: 'methanol',                     right: 'losses',                    gquery: 'sankey_1_to_2_methanol_to_loss',                         color: '#DCDCDC'}
@@ -980,6 +980,9 @@ D3.sankey =
           {id: 'hvo_bio_kerosene',                column: 1, label: 'hvo_bio_kerosene',          color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'hvo_biodiesel',                   column: 1, label: 'hvo_biodiesel',             color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'bio_ethanol_production',          column: 1, label: 'bio_ethanol_production',    color: '#228B22'},        # Forest green - biogenic processing
+          {id: 'methanol_to_jet',                 column: 1, label: 'methanol_to_jet',           color: '#696969'},        # Forest green - biogenic processing
+          {id: 'bio_ethanol_to_jet',              column: 1, label: 'bio_ethanol_to_jet',        color: '#228B22'},        # Forest green - biogenic processing
+          {id: 'biomethanol_to_jet',              column: 1, label: 'biomethanol_to_jet',        color: '#228B22'},        # Forest green - biogenic processing
 
           # FUEL PRODUCTS (Column 2)
           {id: 'diesel',                          column: 2, label: 'diesel',                    color: '#8B4513'},        # Brown - fossil fuel
@@ -991,8 +994,8 @@ D3.sankey =
           {id: 'naphtha',                         column: 2, label: 'naphtha',                   color: '#B8860B'},        # Dark goldenrod brown - fossil fuel
           {id: 'refinery_gas',                    column: 2, label: 'refinery_gas',              color: '#BC8F8F'},        # Rosy brown - fossil fuel
           {id: 'pyrolysis_oil',                   column: 2, label: 'pyrolysis_oil',             color: '#8B7D6B'},        # Dark khaki brown - fossil fuel
-          {id: 'methanol',                        column: 2, label: 'methanol',                  color: '#A0522D'},        # Saddle brown - fossil fuel
-          {id: 'biomethanol',                     column: 2, label: 'biomethanol',               color: '#228B22'},        # Forest green - biogenic fuel
+          {id: 'methanol',                        column: 2, label: 'methanol',                  color: '#BF8877'},        # Saddle brown - fossil fuel
+          {id: 'biomethanol',                     column: 2, label: 'biomethanol',               color: '#95B15C'},        # Forest green - biogenic fuel
           {id: 'bio_kerosene',                    column: 2, label: 'bio_kerosene',              color: '#32CD32'},        # Lime green - biogenic fuel
           {id: 'biodiesel',                       column: 2, label: 'biodiesel',                 color: '#9ACD32'},        # Yellow green - biogenic fuel
           {id: 'bionaphtha',                      column: 2, label: 'bionaphtha',                color: '#3CB371'},        # Medium sea green - biogenic fuel
@@ -1056,6 +1059,14 @@ D3.sankey =
           {left: 'network_gas',                           right: 'bio_ethanol_production',             gquery: 'network_gas_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'wet_biomass',                           right: 'bio_ethanol_production',             gquery: 'wet_biomass_to_bio_ethanol_production_in_liquid_fuels_sankey', color: '#2E8B57'},
 
+          {left: 'hydrogen',                              right: 'bio_ethanol_to_jet',                 gquery: 'hydrogen_to_bio_ethanol_to_jet_in_liquid_fuels_sankey', color: '#87CEEB'},
+          {left: 'bio_ethanol',                           right: 'bio_ethanol_to_jet',                 gquery: 'bio_ethanol_to_bio_ethanol_to_jet_in_liquid_fuels_sankey', color: '#90EE90'},
+
+          {left: 'hydrogen',                              right: 'biomethanol_to_jet',                 gquery: 'hydrogen_to_biomethanol_to_jet_in_liquid_fuels_sankey', color: '#87CEEB'},
+          {left: 'biomethanol',                           right: 'biomethanol_to_jet',                 gquery: 'biomethanol_to_biomethanol_to_jet_in_liquid_fuels_sankey', color: '#95B15C'},
+
+          {left: 'hydrogen',                              right: 'methanol_to_jet',                    gquery: 'hydrogen_to_methanol_to_jet_in_liquid_fuels_sankey', color: '#87CEEB'},
+          {left: 'methanol',                              right: 'methanol_to_jet',                    gquery: 'methanol_to_methanol_to_jet_in_liquid_fuels_sankey', color: '#BF8877'},
 
           # FOSSIL REFINERY OUTPUTS
           {left: 'fossil_refinery',                       right: 'diesel',                            gquery: 'fossil_refinery_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
@@ -1066,7 +1077,7 @@ D3.sankey =
           {left: 'fossil_refinery',                       right: 'hfo',                               gquery: 'fossil_refinery_to_hfo_in_liquid_fuels_sankey', color: '#8B7355'},
           {left: 'fossil_refinery',                       right: 'naphtha',                           gquery: 'fossil_refinery_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
           {left: 'fossil_refinery',                       right: 'refinery_gas',                      gquery: 'fossil_refinery_to_refinery_gas_in_liquid_fuels_sankey', color: '#BC8F8F'},
-          {left: 'fossil_refinery',                       right: 'methanol',                          gquery: 'fossil_refinery_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
+          {left: 'fossil_refinery',                       right: 'methanol',                          gquery: 'fossil_refinery_to_methanol_in_liquid_fuels_sankey', color: '#BF8877'},
           {left: 'fossil_refinery',                       right: 'bio_kerosene',                      gquery: 'fossil_refinery_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'fossil_refinery',                       right: 'biodiesel',                         gquery: 'fossil_refinery_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
           {left: 'fossil_refinery',                       right: 'bionaphtha',                        gquery: 'fossil_refinery_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
@@ -1080,7 +1091,7 @@ D3.sankey =
           {left: 'chemical_fertilizer',                  right: 'kerosene',                          gquery: 'fertilizers_chemical_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'chemical_fertilizer',                  right: 'hfo',                               gquery: 'fertilizers_chemical_to_hfo_in_liquid_fuels_sankey', color: '#8B7355'},
           {left: 'chemical_fertilizer',                  right: 'naphtha',                           gquery: 'fertilizers_chemical_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
-          {left: 'chemical_fertilizer',                  right: 'methanol',                          gquery: 'fertilizers_chemical_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
+          {left: 'chemical_fertilizer',                  right: 'methanol',                          gquery: 'fertilizers_chemical_to_methanol_in_liquid_fuels_sankey', color: '#BF8877'},
           {left: 'chemical_fertilizer',                  right: 'bio_kerosene',                      gquery: 'fertilizers_chemical_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'chemical_fertilizer',                  right: 'biodiesel',                         gquery: 'fertilizers_chemical_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
           {left: 'chemical_fertilizer',                  right: 'bionaphtha',                        gquery: 'fertilizers_chemical_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
@@ -1097,8 +1108,8 @@ D3.sankey =
           {left: 'fischer_tropsch',                       right: 'losses',                            gquery: 'fischer_tropsch_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           # METHANOL SYNTHESIS OUTPUTS
-          {left: 'methanol_synthesis',                    right: 'methanol',                          gquery: 'methanol_synthesis_to_methanol_in_liquid_fuels_sankey', color: '#A0522D'},
-          {left: 'methanol_synthesis',                    right: 'biomethanol',                       gquery: 'methanol_synthesis_to_biomethanol_in_liquid_fuels_sankey', color: '#228B22'},
+          {left: 'methanol_synthesis',                    right: 'methanol',                          gquery: 'methanol_synthesis_to_methanol_in_liquid_fuels_sankey', color: '#BF8877'},
+          {left: 'methanol_synthesis',                    right: 'biomethanol',                       gquery: 'methanol_synthesis_to_biomethanol_in_liquid_fuels_sankey', color: '#95B15C'},
           {left: 'methanol_synthesis',                    right: 'losses',                            gquery: 'methanol_synthesis_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           # PYROLYSIS AND FRACTIONATION OUTPUTS
@@ -1123,6 +1134,22 @@ D3.sankey =
           # BIO ETHANOL PRODUCTION OUTPUTS
           {left: 'bio_ethanol_production',                right: 'bio_ethanol',                       gquery: 'bio_ethanol_production_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'bio_ethanol_production',                right: 'losses',                            gquery: 'bio_ethanol_production_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
+
+
+          # BIO_ETHANOL_TO_JET OUTPUTS
+          {left: 'bio_ethanol_to_jet',                    right: 'bio_kerosene',                      gquery: 'bio_ethanol_to_jet_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
+          {left: 'bio_ethanol_to_jet',                    right: 'biodiesel',                         gquery: 'bio_ethanol_to_jet_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
+          {left: 'bio_ethanol_to_jet',                    right: 'losses',                            gquery: 'bio_ethanol_to_jet_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
+
+          # BIOMETHANOL_TO_JET OUTPUTS
+          {left: 'biomethanol_to_jet',                    right: 'bio_kerosene',                      gquery: 'biomethanol_to_jet_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
+          {left: 'biomethanol_to_jet',                    right: 'bio_ethanol',                       gquery: 'biomethanol_to_jet_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
+          {left: 'biomethanol_to_jet',                    right: 'losses',                            gquery: 'biomethanol_to_jet_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
+
+          # METHANOL_TO_JET OUTPUTS
+          {left: 'methanol_to_jet',                       right: 'gasoline',                          gquery: 'methanol_to_jet_to_gasoline_in_liquid_fuels_sankey', color: '#A0522D'},
+          {left: 'methanol_to_jet',                       right: 'kerosene',                          gquery: 'methanol_to_jet_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
+          {left: 'methanol_to_jet',                       right: 'losses',                            gquery: 'methanol_to_jet_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           # DIRECT IMPORTS
           {left: 'fuel_import',                           right: 'diesel',                            gquery: 'fuel_import_to_diesel_in_liquid_fuels_sankey', color: '#A0522D'},
@@ -1203,15 +1230,15 @@ D3.sankey =
           {left: 'biodiesel',                             right: 'export',                            gquery: 'biodiesel_to_export_in_liquid_fuels_sankey', color: '#9ACD32'},
 
           # FUEL PRODUCTS TO END USES - METHANOL
-          {left: 'methanol',                              right: 'transport',                         gquery: 'methanol_to_transport_in_liquid_fuels_sankey', color: '#A0522D'},
-          {left: 'methanol',                              right: 'industry',                          gquery: 'methanol_to_industry_in_liquid_fuels_sankey', color: '#A0522D'},
-          {left: 'methanol',                              right: 'bunkers',                           gquery: 'methanol_to_bunkers_in_liquid_fuels_sankey', color: '#A0522D'},
-          {left: 'methanol',                              right: 'export',                            gquery: 'methanol_to_export_in_liquid_fuels_sankey', color: '#A0522D'},
+          {left: 'methanol',                              right: 'transport',                         gquery: 'methanol_to_transport_in_liquid_fuels_sankey', color: '#BF8877'},
+          {left: 'methanol',                              right: 'industry',                          gquery: 'methanol_to_industry_in_liquid_fuels_sankey', color: '#BF8877'},
+          {left: 'methanol',                              right: 'bunkers',                           gquery: 'methanol_to_bunkers_in_liquid_fuels_sankey', color: '#BF8877'},
+          {left: 'methanol',                              right: 'export',                            gquery: 'methanol_to_export_in_liquid_fuels_sankey', color: '#BF8877'},
 
-          {left: 'biomethanol',                           right: 'transport',                         gquery: 'biomethanol_to_transport_in_liquid_fuels_sankey', color: '#228B22'},
-          {left: 'biomethanol',                           right: 'bunkers',                           gquery: 'biomethanol_to_bunkers_in_liquid_fuels_sankey', color: '#228B22'},
-          {left: 'biomethanol',                           right: 'industry',                          gquery: 'biomethanol_to_industry_in_liquid_fuels_sankey', color: '#228B22'},
-          {left: 'biomethanol',                           right: 'export',                            gquery: 'biomethanol_to_export_in_liquid_fuels_sankey', color: '#228B22'},
+          {left: 'biomethanol',                           right: 'transport',                         gquery: 'biomethanol_to_transport_in_liquid_fuels_sankey', color: '#95B15C'},
+          {left: 'biomethanol',                           right: 'bunkers',                           gquery: 'biomethanol_to_bunkers_in_liquid_fuels_sankey', color: '#95B15C'},
+          {left: 'biomethanol',                           right: 'industry',                          gquery: 'biomethanol_to_industry_in_liquid_fuels_sankey', color: '#95B15C'},
+          {left: 'biomethanol',                           right: 'export',                            gquery: 'biomethanol_to_export_in_liquid_fuels_sankey', color: '#95B15C'},
 
           # FUEL PRODUCTS TO END USES - OIL PRODUCTS
           {left: 'oil_products',                          right: 'export',                            gquery: 'oil_products_to_export_in_liquid_fuels_sankey', color: '#8B4513'},

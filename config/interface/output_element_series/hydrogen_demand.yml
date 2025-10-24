@@ -193,57 +193,21 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: energy_heat_from_hydrogen_hydrogen_demand
-- label: energy_synthetic_products_from_hydrogen
-  color: "#7bed9f"
+- label: energy_production_liquid_fuels_hydrogen_demand
+  color: "#538C65"
   order_by: 70
   group: ''
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_synthetic_products_hydrogen_non_energetic_input_curve
+  gquery: energy_production_liquid_fuels_hydrogen_demand_input_curve
   is_1990:
   dependent_on:
   output_element_key: hydrogen_demand
-  key: energy_synthetic_products_from_hydrogen_hydrogen_demand
-- label: energy_bio_pyrolysis_oil_fractionation_from_hydrogen
-  color: "#2ECC71"
-  order_by: 70
-  group: ''
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: energy_bio_pyrolysis_oil_fractionation_hydrogen_input_curve
-  is_1990:
-  dependent_on:
-  output_element_key: hydrogen_demand
-  key: energy_bio_pyrolysis_oil_fractionation_from_hydrogen_hydrogen_demand
-- label: energy_pyrolysis_oil_fractionation_from_hydrogen
-  color: "#708090"
-  order_by: 75
-  group: ''
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: energy_pyrolysis_oil_fractionation_hydrogen_input_curve
-  is_1990:
-  dependent_on:
-  output_element_key: hydrogen_demand
-  key: energy_pyrolysis_oil_fractionation_from_hydrogen_hydrogen_demand
-- label: energy_hvo_production_from_hydrogen
-  color: "#27AE60"
-  order_by: 80
-  group: ''
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: energy_hvo_production_hydrogen_input_curve
-  is_1990:
-  dependent_on:
-  output_element_key: hydrogen_demand
-  key: energy_hvo_production_from_hydrogen_hydrogen_demand
+  key: energy_production_liquid_fuels_hydrogen_demand
 - label: exported_hydrogen_baseload
   color: "#485f60"
-  order_by: 75
+  order_by: 140
   group: ''
   show_at_first: false
   is_target_line: false
@@ -257,7 +221,7 @@
 # Flex
 - label: exported_hydrogen_backup
   color: "#6f7373"
-  order_by: 100
+  order_by: 200
   group: ''
   show_at_first: false
   is_target_line: false
@@ -269,7 +233,7 @@
   key: exported_hydrogen_backup_hydrogen_demand
 - label: hydrogen_storage_depleted_gas_field_input
   color: "#87CEEB"
-  order_by: 105
+  order_by: 205
   group: ''
   show_at_first: false
   is_target_line: false
@@ -281,7 +245,7 @@
   key: hydrogen_storage_depleted_gas_field_input_hydrogen_demand
 - label: hydrogen_storage_salt_cavern_input
   color: "#5e9aa4"
-  order_by: 110
+  order_by: 210
   group: ''
   show_at_first: false
   is_target_line: false
@@ -295,7 +259,7 @@
 #Transport loss
 - label: hydrogen_transport_losses
   color: "#FF0000"
-  order_by: 115
+  order_by: 215
   group: ''
   show_at_first: false
   is_target_line: false

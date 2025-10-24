@@ -38,9 +38,11 @@ en:
         <li><b>biogenic waste</b></li>
         <li><b>dry biomass</b></li>
         </ul><br/>
-        The output of Fischer-Tropsch consists of the following fuels and feedstock:
+        Depending on the feedstock route, the output of Fischer-Tropsch can consist of the following
+        fuels and feedstock:
         <ul>
-        <li><b>kerosene</b> (main product)</li>
+        <li><b>kerosene</b></li>
+        <li><b>gasoline</b></li>
         <li><b>diesel</b></li>
         <li><b>naphtha</b></li>
         </ul><br/>
@@ -257,18 +259,20 @@ en:
         synthetic route, using hydrogen, electricity and CO<sub>2</sub>. These feedstocks are
         used to produce the syngas (a mixture of mainly CO and hydrogen) required for the
         Fischer-Tropsch process.<br/><br/>
+        Fischer-Tropsch via hydrogen, electricity and CO<sub>2</sub> favors the formation
+        of lighter hydrocarbons, compared to the other feedstock routes for Fischer-Tropsch where
+        gasification of feedstock is applied. This results in different output products for
+        the various feedstock routes.<br/><br/>
         The output of Fischer-Tropsch with the hydrogen, electricity and CO<sub>2</sub> route consists
-        of the following fuels and feedstock:
+        of the following fuels:
         <ul>
-        <li><b>kerosene</b> (main product)</li>
-        <li><b>naphtha</b></li>
+        <li><b>kerosene</b></li>
+        <li><b>gasoline</b></li>
         </ul><br/>
-        <b>Note:</b> there is an inconsistency in the way the ETM models this particular
-        Fischer-Tropsch feedstock route. In the other feedstock routes for Fischer-Tropsch,
-        diesel is also an output product. In this particular feedstock route, an output of diesel
-        causes circularity in the modelling, which cannot be calculated by the
-        model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
-        the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
+        <b>Note:</b> the process yields output of light gases as well. This is not modelled in the
+        ETM. Instead, the output fractions of kerosene and gasoline are proportionally increased.
+        Furthermore, the process produces excess heat. This is ignored and therefore considered
+        as loss. See the technical specs below for more information.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual fuel production from Fischer-Tropsch or to set the capacity of flexible
         production from Fischer-Tropsch with this feedstock route.<br/><br/>
@@ -495,18 +499,20 @@ en:
         of Fischer-Tropsch with the synthetic route, using hydrogen, electricity and CO<sub>2</sub>.
         These feedstocks are used to produce the syngas (a mixture of mainly CO and hydrogen) required for the
         Fischer-Tropsch process.<br/><br/>
+        Fischer-Tropsch via hydrogen, electricity and CO<sub>2</sub> favors the formation
+        of lighter hydrocarbons, compared to the other feedstock routes for Fischer-Tropsch where
+        gasification of feedstock is applied. This results in different output products for
+        the various feedstock routes.<br/><br/>
         The output of Fischer-Tropsch with the hydrogen, electricity and CO<sub>2</sub> route consists
-        of the following fuels and feedstock:
+        of the following fuels:
         <ul>
-        <li><b>kerosene</b> (main product)</li>
-        <li><b>naphtha</b></li>
+        <li><b>kerosene</b></li>
+        <li><b>gasoline</b></li>
         </ul><br/>
-        <b>Note:</b> there is an inconsistency in the way the ETM models this particular
-        Fischer-Tropsch feedstock route. In the other feedstock routes for Fischer-Tropsch,
-        diesel is also an output product. In this particular feedstock route, an output of diesel
-        causes circularity in the modelling, which cannot be calculated by the
-        model so far. Therefore, this feedstock route does not have an output of diesel. Instead,
-        the output fractions of kerosene and naphtha are proporionally increased.<br/><br/>
+        <b>Note:</b> the process yields output of light gases as well. This is not modelled in the
+        ETM. Instead, the output fractions of kerosene and gasoline are proportionally increased.
+        Furthermore, the process produces excess heat. This is ignored and therefore considered
+        as loss. See the technical specs below for more information.<br/><br/>
         The flexible production from Fischer-Tropsch is electricity price-driven and is therefore
         considered as flexible electricity demand technology. The technology will produce when the
         electricity price is lower than the willingness to pay.<br/><br/>

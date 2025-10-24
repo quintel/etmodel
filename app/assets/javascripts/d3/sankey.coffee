@@ -1099,6 +1099,7 @@ D3.sankey =
 
           # FISCHER-TROPSCH OUTPUTS
           {left: 'fischer_tropsch',                       right: 'diesel',                            gquery: 'fischer_tropsch_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'fischer_tropsch',                       right: 'gasoline',                          gquery: 'fischer_tropsch_to_gasoline_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'fischer_tropsch',                       right: 'kerosene',                          gquery: 'fischer_tropsch_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'fischer_tropsch',                       right: 'naphtha',                           gquery: 'fischer_tropsch_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
 

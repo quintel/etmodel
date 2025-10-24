@@ -42,7 +42,8 @@ nl:
         Afhankelijk van de feedstockroute, bestaat de output van Fischer-Tropsch uit de volgende
         brandstoffen en grondstoffen:
         <ul>
-        <li><b>kerosine</b> (hoofdproduct)</li>
+        <li><b>kerosine</b></li>
+        <li><b>benzine</b></li>
         <li><b>diesel</b></li>
         <li><b>nafta</b></li>
         </ul><br/>
@@ -277,20 +278,22 @@ nl:
         Dit schuifje bepaalt het aandeel van de jaarlijkse brandstofproductie uit Fischer-Tropsch
         met de synthetische route, gebruikmakend van waterstof, elektriciteit en CO<sub>2</sub>.
         Deze feedstocks worden gebruikt om syngas te produceren (een mengsel van voornamelijk
-        CO en waterstof) dat nodig is voor het Fischer-Tropsch-proces.<br/><br/> De output van
-        Fischer-Tropsch met de route waterstof, elektriciteit en CO<sub>2</sub> bestaat uit de
-        volgende brandstoffen en grondstoffen:
+        CO en waterstof) dat nodig is voor het Fischer-Tropsch-proces.<br/><br/>
+        Fischer-Tropsch via waterstof, elektriciteit en CO<sub>2</sub> vormt met name lichtere
+        koolwaterstoffen in vergelijking tot de andere feedstockroutes voor Fischer-Tropsch, waarbij
+        vergassing van de feestock wordt toegepast. Dit resulteert in verschillende outputproducten
+        voor de diverse feedstockroutes.<br/><br/>
+        De output van Fischer-Tropsch met de route waterstof, elektriciteit en CO<sub>2</sub>
+        bestaat uit de volgende brandstoffen:
         <ul>
-        <li><b>kerosine</b> (hoofdproduct)</li>
-        <li><b>nafta</b></li>
+        <li><b>kerosine</b></li>
+        <li><b>benzine</b></li>
         </ul><br/>
-        <b>Let op:</b> er is een inconsistentie in hoe het ETM deze specifieke Fischer-Tropsch
-        feedstockroute modelleert. Bij de andere feedstockroutes voor Fischer-Tropsch is diesel
-        ook een outputproduct. In deze specifieke feedstockroute ontstaat met een output van diesel
-        een circularitiet in de modellering, wat het model tot dusver niet
-        kan doorrekeken. Daarom is er in deze feedstockroute geen output van diesel. In plaats
-        daarvan zijn de outputfracties van kerosine en nafta proportioneel verhoogd. Raadpleeg de
-        technische specificaties hieronder voor meer informatie.<br/><br/>
+        <b>Let op:</b> bij dit proces worden ook lichte gassen geproduceerd. Dit wordt niet
+        gemodelleerd in het ETM. In plaats daarvan zijn de outputfracties van kerosine en benzine
+        proportioneel verhoogd. Daarnaast produceert het proces overtollige warmte. Dit is
+        genegeerd en wordt beschouwd als verlies. Zie de technische specificaties hieronder voor
+        meer informatie.<br/><br/>
         Ga naar de <a href="/scenario/supply/fuel_production/overview">overzichtspagina</a> om
         de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen of om de capaciteit van
         flexibele productie van Fischer-Tropsch met deze feedstockroute in te stellen.<br/><br/>
@@ -528,19 +531,22 @@ nl:
         elektriciteitsinvoer) voor Fischer-Tropsch met de synthetische route, gebruikmakend
         van waterstof, elektriciteit en CO<sub>2</sub>. Deze grondstoffen worden gebruikt om
         syngas te produceren (een mengsel van voornamelijk CO en waterstof) dat nodig is voor het
-        Fischer-Tropsch-proces.<br/><br/> De output van Fischer-Tropsch met de feedstockroute waterstof,
-        elektriciteit en CO<sub>2</sub> bestaat uit de volgende brandstoffen en grondstoffen:
+        Fischer-Tropsch-proces.<br/><br/>
+        Fischer-Tropsch via waterstof, elektriciteit en CO<sub>2</sub> vormt met name lichtere
+        koolwaterstoffen in vergelijking tot de andere feedstockroutes voor Fischer-Tropsch, waarbij
+        vergassing van de feestock wordt toegepast. Dit resulteert in verschillende outputproducten
+        voor de diverse feedstockroutes.<br/><br/>
+        De output van Fischer-Tropsch met de route waterstof, elektriciteit en CO<sub>2</sub>
+        bestaat uit de volgende brandstoffen:
         <ul>
-        <li><b>kerosine</b> (hoofdproduct)</li>
-        <li><b>nafta</b></li>
+        <li><b>kerosine</b></li>
+        <li><b>benzine</b></li>
         </ul><br/>
-        <b>Let op:</b> er is een inconsistentie in hoe het ETM deze specifieke Fischer-Tropsch
-        feedstockroute modelleert. Bij de andere feedstockroutes voor Fischer-Tropsch is diesel
-        ook een outputproduct. In deze specifieke feedstockroute ontstaat met een output van diesel
-        een circularitiet in de modellering, wat het model tot dusver niet
-        kan doorrekeken. Daarom is er in deze feedstockroute geen output van diesel. In plaats
-        daarvan zijn de outputfracties van kerosine en nafta proportioneel verhoogd.
-        Raadpleeg de technische specificaties hieronder voor meer informatie.<br/><br/>
+        <b>Let op:</b> bij dit proces worden ook lichte gassen geproduceerd. Dit wordt niet
+        gemodelleerd in het ETM. In plaats daarvan zijn de outputfracties van kerosine en benzine
+        proportioneel verhoogd. Daarnaast produceert het proces overtollige warmte. Dit is
+        genegeerd en wordt beschouwd als verlies. Zie de technische specificaties hieronder voor
+        meer informatie.<br/><br/>
         De flexibele productie van Fischer-Tropsch wordt bepaald door de elektriciteitsprijs
         en wordt daarom beschouwd als een technologie voor flexibele elektriciteitsvraag. De
         technologie produceert wanneer de elektriciteitsprijs lager is dan de bereidheid tot

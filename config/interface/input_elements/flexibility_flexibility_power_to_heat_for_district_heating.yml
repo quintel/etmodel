@@ -27,4 +27,10 @@
   related_node: energy_heat_flexibility_p2h_heatpump_ht_electricity
   position: 4
   slide_key: flexibility_flexibility_power_to_heat_for_district_heating
-
+- key: temperature_cutoff_of_energy_flexibility_p2h
+  step_value: 0.1
+  unit: "degC"
+  interface_group: thermostat
+  related_node:
+  position: 5
+  slide_key: flexibility_flexibility_power_to_heat_for_district_heating

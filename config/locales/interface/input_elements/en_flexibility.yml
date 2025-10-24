@@ -1281,6 +1281,17 @@ en:
         The integral costs of flexible demand technologies.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         A table overview of the use of flexible demand technologies.</a></li></ul>
+    temperature_cutoff_of_energy_flexibility_p2h:
+      title: Temperature setpoint
+      short_description:
+      description: |
+        By changing this slider, users can determine the temperature setpoint of the power-to-heat technologies.
+        <ul><li>In hours where the outside temperature is above the temperature
+        setpoint, the availability of the power-to-heat technologies is set to 0%</li>
+        <li>In hours where the outside temperature is below the temperature
+        setpoint, the availability of the power-to-heat technologies is set to 100%</li></ul>
+        When the availability is at a 100%, the electricity market and willingness to pay will determine
+        the actual production
     wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler for refineries
       short_description:

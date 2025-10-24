@@ -1332,6 +1332,17 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    temperature_cutoff_of_energy_flexibility_p2h:
+      title: Temperatuur drempelwaarde
+      short_description:
+      description: |
+        Met deze schuif kunnen gebruikers de temperatuur drempelwaarde van de power-to-heat technologieën instellen.
+        <ul><li>In uren waar de buitentemperatuur boven de temperatuur
+        drempelwaarde ligt, wordt de beschikbaarheid van de power-to-heat technologieën op 0% gezet</li>
+        <li>In uren waar de buitentemperatuur onder de temperatuur
+        drempelwaarde ligt, wordt de beschikbaarheid van de power-to-heat technologieën op 100% gezet</li></ul>
+        Wanneer de beschikbaarheid op 100% staat, zullen de elektriciteitsmarkt en de betalingsbereidheid de
+        werkelijke productie bepalen
     wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor raffinaderijen
       short_description:

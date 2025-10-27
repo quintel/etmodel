@@ -977,10 +977,10 @@ D3.sankey =
           {id: 'methanol_synthesis',              column: 1, label: 'methanol_synthesis',        color: '#708090'},        # Slate grey - mixed processing
           {id: 'pyrolysis',                       column: 1, label: 'pyrolysis',                 color: '#556B2F'},        # Dark olive green - biomass processing
           {id: 'pyrolysis_fractionation',         column: 1, label: 'pyrolysis_fractionation',   color: '#556B2F'},        # Dark olive green - biomass processing
+          {id: 'methanol_to_jet',                 column: 1, label: 'methanol_to_jet',           color: '#696969'},        # Forest green - biogenic processing
           {id: 'hvo_bio_kerosene',                column: 1, label: 'hvo_bio_kerosene',          color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'hvo_biodiesel',                   column: 1, label: 'hvo_biodiesel',             color: '#2E8B57'},        # Sea green - biogenic processing
           {id: 'bio_ethanol_production',          column: 1, label: 'bio_ethanol_production',    color: '#228B22'},        # Forest green - biogenic processing
-          {id: 'methanol_to_jet',                 column: 1, label: 'methanol_to_jet',           color: '#696969'},        # Forest green - biogenic processing
           {id: 'bio_ethanol_to_jet',              column: 1, label: 'bio_ethanol_to_jet',        color: '#228B22'},        # Forest green - biogenic processing
           {id: 'biomethanol_to_jet',              column: 1, label: 'biomethanol_to_jet',        color: '#228B22'},        # Forest green - biogenic processing
 

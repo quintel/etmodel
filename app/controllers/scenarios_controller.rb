@@ -251,7 +251,7 @@ class ScenariosController < ApplicationController
     end
 
     send_data(
-      csv,
+      "\uFEFF" + csv,
       type: "text/csv; charset=utf-8; header=present",
       disposition: "attachment; filename=inputs.#{@scenario.id}.csv"
     )

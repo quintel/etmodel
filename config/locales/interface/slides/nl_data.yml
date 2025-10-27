@@ -50,16 +50,20 @@ nl:
         voor meer informatie.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/inputs.csv"><span class="name">Schuifjesinstellingen</span>
+            <a href="/scenarios/%{scenario_id}/inputs.csv"><span class="name">Schuifjesinstellingen</span>
             <span class="filetype">100KB CSV</span></a>
           </li>
         </ul>
       headers:
-        sidebar_item: "Zijbalkitem"
-        item_key: "Item sleutel"
-        name: "Naam"
-        raw_key: "Ruwe sleutel"
+        sidebar_item: "Zijbalk"
+        item_key: "Sectie"
+        title_for_description: "Groep"
+        raw_key_title: "Naam"
+        raw_key: "Sleutel"
         user_value: "Gebruikerswaarde"
+        min_value: "Min. waarde"
+        max_value: "Max. waarde"
+        default_value: "Standaardwaarde"
         unit: "Eenheid"
     data_export_costs:
       title: Specificaties jaarlijkse kosten

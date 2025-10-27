@@ -1,0 +1,25 @@
+---
+- label: air_temperature
+  color: "#888"
+  order_by: 2
+  group: flexibility
+  show_at_first: true
+  is_target_line: false
+  target_line_position: ''
+  gquery: weather_air_temperature_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_temperature_setpoint_line
+  key: outside_air_temperature_flexibility_temperature_setpoint_line
+- label: temperature_setpoint
+  color: "#E67E22"
+  order_by: 3
+  group: flexibility
+  show_at_first: true
+  is_target_line: false
+  target_line_position: ''
+  gquery: temperature_cutoff_p2h
+  is_1990: false
+  dependent_on:
+  output_element_key: flexibility_temperature_setpoint_line
+  key: temperature_setpoint_p2h_flexibility_temperature_setpoint_line

@@ -253,6 +253,12 @@ nl:
         In onze <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentatie</a>
         hebben we gedefinieerd welke types waterstofvraag worden gezien als flexibel/basislast en
         welke types waterstofaanbod worden gezien als flexibel/inflexibel.
+    flexibility_temperature_setpoint_line:
+      title: Uurlijkse buitentemperatuur en temperatuurinstelling
+      description: |
+        Deze grafiek toont de buitentemperatuur en de temperatuurinstelling die door de thermostaat is ingesteld.
+        Als de buitentemperatuur boven het niveau van de thermostaat ligt, wordt de beschikbaarheid van power-to-heat-technologieën op nul gezet. Anders wordt deze op honderd procent gezet.
+        Je kunt meer lezen over de temperatuurinstelling in de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#power-to-heat" target="_blank">documentatie</a>.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulatieve onbalans per maand
     merit_order:

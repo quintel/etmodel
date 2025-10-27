@@ -282,6 +282,13 @@ en:
         It is defined in the <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">documentation</a>
         which types of hydrogen supply are considered flexible/inflexible and
         which types of hydrogen demand are considered flexible/baseload.
+    flexibility_temperature_setpoint_line:
+      title: Hourly air temperature and temperature setpoint
+      description: |
+        This chart shows the outside air temperature and the temperature setpoint set by the thermostat.
+        If the air temperature is above the thermostat's level, the availability of power to heat
+        technologies is set to zero. Otherwise it is set to one hundred percent.
+        You can read more about the temperature setpoint in the <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#power-to-heat" target=\"_blank\">documentation</a>.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month
     merit_order:

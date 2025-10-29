@@ -285,8 +285,8 @@ en:
     flexibility_temperature_setpoint_line:
       title: Hourly air temperature and temperature setpoint
       description: |
-        This chart shows the outside air temperature and the temperature setpoint set by the thermostat.
-        If the air temperature is above the thermostat's level, the availability of power to heat
+        This chart shows the outside air temperature and the temperature setpoint.
+        If the air temperature is above the level of the temperature setpoint, the availability of power to heat
         technologies is set to zero. Otherwise it is set to one hundred percent.
         You can read more about the temperature setpoint in the <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#power-to-heat" target=\"_blank\">documentation</a>.
     flexibility_monthly_carriers_cumulative_imbalance:

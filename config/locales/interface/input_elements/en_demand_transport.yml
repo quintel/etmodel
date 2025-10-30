@@ -377,9 +377,10 @@ en:
       title: Methanol (mix)
       short_description:
       description: |
-        This slider sets the share of international shipping fuel supplied by methanol.</br></br>
-        Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
-        fuels</a> to set the shares of methanol and biomethanol in the fuel mix.
+        This slider sets the share of international shipping fuel supplied by methanol. Used
+        methanol is composed of fossil, synthetic and biomethanol. Go to
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
+        fuels</a> to set methanol mix.
     bunkers_aviation_using_electricity_share:
       title: Electricity
       short_description:
@@ -402,10 +403,10 @@ en:
       title: Kerosene (mix)
       short_description:
       description: |
-        Kerosene-powered aviation is the standard practie.
-        In the <a href="/scenario/demand/transport_fuels/international-aviation"
-        >Fuels</a> section it is possible to choose the blend of kerosene for your
-        planes.
+        Kerosene-powered aviation is the standard practice. Used kerosene is composed of fossil,
+        synthetic and biokerosene. Go to the
+        <a href="/scenario/demand/transport_fuels/international-aviation" >Transport fuels</a>
+        section to set the kerosene mix.
     bunkers_ship_using_ammonia_share:
       title: Ammonia
       short_description:
@@ -620,9 +621,9 @@ en:
       short_description:
       description: |
        This slider sets the percentage of inland shipping kilometers traveled by vessels running on
-       methanol mix.</br></br>
+       methanol mix. Used methanol can consist of fossil, synthetic and biomethanol.
        Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
-       fuels</a> to set the shares of methanol and biomethanol in the fuel mix.
+       fuels</a> to set the methanol mix.
     transport_trucks_share:
       title: Trucks
       short_description: ''

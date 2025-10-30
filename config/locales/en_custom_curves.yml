@@ -42,20 +42,20 @@ en:
       too_many_columns: Curve must contain only a single numeric value on each line; multiple values separated by commas are not permitted
       wrong_length: Curve must have 8760 numeric values, one for each hour in a typical year
     groups:
-      agriculture: Agriculture
-      heat_production: "Supply: Heat"
-      electricity_production: "Supply: Electricity"
-      buildings: "Demand: Buildings"
-      households: "Demand: Households"
-      industry_electricity: "Demand: Industry electricity"
-      industry_heat: "Demand: Industry heat"
-      interconnectors: "Import/export: Interconnectors"
-      must_run_interconnectors: "Import/export: Must-run interconnectors"
-      transport: "Demand: Transport"
-      gas_import_export: "Import/export: Gases"
-      weather: Weather data
-      bunkers: "Demand: International transport"
-      power_to_heat_availability: "Flexibility: Power to Heat"
+      agriculture: "Demand: agriculture"
+      heat_production: "Supply: heat"
+      electricity_production: "Supply: electricity"
+      buildings: "Demand: buildings"
+      households: "Demand: households"
+      industry_electricity: "Demand: industry electricity"
+      industry_heat: "Demand: industry heat"
+      interconnectors: "Import/export: interconnectors"
+      must_run_interconnectors: "Import/export: must-run interconnectors"
+      transport: "Demand: national transport"
+      gas_import_export: "Import/export: gases"
+      weather: "Flexibility: weather data"
+      bunkers: "Demand: international transport"
+      power_to_heat_availability: "Flexibility: power-to-heat"
     names:
       weather/agriculture_heating: Agriculture heat demand
       agriculture_electricity: Agriculture electricity demand
@@ -172,10 +172,10 @@ en:
       weather/insulation_detached_houses_high: Contemporary detached houses (from 2005) heat demand
       weather/insulation_detached_houses_medium: Modern detached houses (1965-2004) heat demand
       weather/insulation_detached_houses_low: Old detached houses (before 1964) heat demand
-      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Power-to-heat boiler HT availability
-      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Power-to-heat boiler MT availability
-      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Power-to-heat heatpump HT availability
-      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Power-to-heat heatpump HT availability
+      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Boiler (HT) availability
+      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Boiler (MT) availability
+      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Heat pump (HT) availability
+      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Heat pump (MT) availability
     types:
       availability:
         default: Default availability

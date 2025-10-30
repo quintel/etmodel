@@ -58,6 +58,7 @@ nl:
       gas_import_export: "Import/export: Gassen"
       weather: Weerdata
       bunkers: "Vraag: Internationaal transport"
+      power_to_heat_availability: "Flexibiliteit: Power to Heat"
     names:
       weather/agriculture_heating: Landbouw warmtevraag
       agriculture_electricity: Landbouw elektriciteitsvraag
@@ -174,10 +175,10 @@ nl:
       weather/insulation_detached_houses_high: Hedendaagse vrijstaande huizen (vanaf 2005) warmtevraag
       weather/insulation_detached_houses_medium: Moderne vrijstaande huizen (1965-2004) warmtevraag
       weather/insulation_detached_houses_low: Oude vrijstaande huizen (tot 1964) warmtevraag
-      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Beschikbaarheid van hoge temperatuur power-to-heat boiler
-      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Beschikbaarheid van middel temperatuur power-to-heat boiler
-      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Beschikbaarheid van hoge temperatuur power-to-heat warmtepomp
-      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Beschikbaarheid van middel temperatuur power-to-heat warmtepomp
+      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Power-to-heat boiler HT beschikbaarheid
+      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Power-to-heat boiler MT beschikbaarheid
+      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Power-to-heat warmtepomp HT beschikbaarheid
+      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Power-to-heat warmtepomp MT beschikbaarheid
     types:
       availability:
         default: Standaard beschikbaarheid

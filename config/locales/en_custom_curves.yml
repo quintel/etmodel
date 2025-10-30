@@ -55,6 +55,7 @@ en:
       gas_import_export: "Import/export: Gases"
       weather: Weather data
       bunkers: "Demand: International transport"
+      power_to_heat_availability: "Flexibility: Power to Heat"
     names:
       weather/agriculture_heating: Agriculture heat demand
       agriculture_electricity: Agriculture electricity demand
@@ -171,10 +172,10 @@ en:
       weather/insulation_detached_houses_high: Contemporary detached houses (from 2005) heat demand
       weather/insulation_detached_houses_medium: Modern detached houses (1965-2004) heat demand
       weather/insulation_detached_houses_low: Old detached houses (before 1964) heat demand
-      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Availability of high temperature power-to-heat boiler
-      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Availability of medium temperature power-to-heat boiler
-      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Availability of high temperature power-to-heat heatpump
-      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Availability of medium temperature power-to-heat heatpump
+      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Power-to-heat boiler HT availability
+      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Power-to-heat boiler MT availability
+      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Power-to-heat heatpump HT availability
+      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Power-to-heat heatpump HT availability
     types:
       availability:
         default: Default availability

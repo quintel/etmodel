@@ -16,21 +16,21 @@
 - key: wtp_of_energy_heat_flexibility_p2h_boiler_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: willingness_to_pay
+  interface_group: price_dependent
   related_node: energy_heat_flexibility_p2h_boiler_ht_electricity
   position: 3
   slide_key: flexibility_flexibility_power_to_heat_for_district_heating
 - key: wtp_of_energy_heat_flexibility_p2h_heatpump_electricity
   step_value: 0.1
   unit: "€/MWh"
-  interface_group: willingness_to_pay
+  interface_group: price_dependent
   related_node: energy_heat_flexibility_p2h_heatpump_ht_electricity
   position: 4
   slide_key: flexibility_flexibility_power_to_heat_for_district_heating
 - key: temperature_cutoff_of_energy_flexibility_p2h
   step_value: 0.1
   unit: "degC"
-  interface_group: temperature
+  interface_group: temperature_dependent
   related_node:
   position: 5
   slide_key: flexibility_flexibility_power_to_heat_for_district_heating

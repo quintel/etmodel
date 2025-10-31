@@ -283,12 +283,13 @@ en:
         which types of hydrogen supply are considered flexible/inflexible and
         which types of hydrogen demand are considered flexible/baseload.
     flexibility_temperature_setpoint_line:
-      title: Hourly air temperature and temperature setpoint
+      title: Hourly air temperature
       description: |
-        This chart shows the outside air temperature and the temperature setpoint.
-        If the air temperature is above the level of the temperature setpoint, the availability of power to heat
-        technologies is set to zero. Otherwise it is set to one hundred percent.
-        You can read more about the temperature setpoint in the <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#power-to-heat" target=\"_blank\">documentation</a>.
+        This chat show the outside air temperature on an hourly basis. It also shows the cut-off
+        point for the availability of power-to-heat technologies. These technologies can be foudn in
+        the section <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
+        Flexibility</a>. For more information, see the
+        <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#power-to-heat" target=\"_blank\">documentation</a>.
     flexibility_monthly_carriers_cumulative_imbalance:
       title: Cumulative imbalance per month
     merit_order:

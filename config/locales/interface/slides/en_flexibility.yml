@@ -312,14 +312,13 @@ en:
       short_description:
       description: |
         Electricity can be used to produce heat through electric boilers or heat pumps, which is
-        also known as power-to-heat. In the ETM, power-to-heat is a flexible demand technology, which
-        means that heat is only produced when the willingness to pay of power-to-heat exceeds the hourly
-        electricity price. See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
+        also known as power-to-heat. These technologies only produce heat when the willingness to
+        pay exceeds the hourly electricity price and the outside air temperature is below the cut-off.
+        See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> for more information. </br></br>
-        Note that a 1 MWth power-to-heat boiler uses more electricity than a 1 MWth power-to-heat heat
-        pump, even though they produce the same amount of heat per hour. The produced heat is delivered
-        to the district heating network. You can then determine whether it supplies medium or high temperature
-        heat in the <a href="/scenario/supply/heat/allocation-of-power-to-heat">District heating</a> section.
+        The produced heat is delivered to the district heating network. You can determine
+        whether it supplies medium or high temperature heat in the
+        <a href="/scenario/supply/heat/allocation-of-power-to-heat">District heating</a> section.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversion to heat for industry
       short_description:

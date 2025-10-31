@@ -1332,13 +1332,28 @@ nl:
         De integrale kosten van flexible vraagtechnnologieën</a></li>
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
+    temperature_cutoff_of_energy_flexibility_p2h:
+      title: Temperatuur grenswaarde
+      short_description:
+      description: |
+        Met dit schuifje kan de beschikbaarheid van power-to-heat technologieën worden beïnvloed: </br></br>
+        <ul><li>In uren waar de buitentemperatuur <b>boven</b> de grenswaarde ligt, wordt de
+        beschikbaarheid van de power-to-heat technologieën op 0% gezet.</li>
+        <li>In uren waar de buitentemperatuur <b>onder</b> de grenswaarde ligt, wordt de
+        beschikbaarheid van de power-to-heat technologieën op 100% gezet.</li></ul> </br>
+        Of en hoeveel de power-to-heat technologieën produceren als de beschikbaarheid op 100% staat,
+        is afhankelijk van het opgesteld vermogen, de betalingsbereidheid en de balans van de
+        elektriciteitsmarkt in elk uur. </br></br>
+        Zie de
+        <a href="https://docs.energytransitionmodel.com/main/electricity-conversion#power-to-heat" target=\"_blank\">documentatie</a>
+        voor meer informatie.
     wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor raffinaderijen
       short_description:
       description: |
         Dit schuifje bepaalt wat de maximale prijs is die power-to-heat boilers in
         <a href="/scenario/demand/industry/refineries">raffinaderijen</a> willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze boilers en
+        voor elektriciteit. Let op dat dit schuifje alleen effect heeft als er ook vermogen voor deze boilers en
         gas- of waterstofketels in raffinaderijen geïnstalleerd is. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay van power-to-heat is: </br></br>

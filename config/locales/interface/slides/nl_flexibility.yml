@@ -325,15 +325,13 @@ nl:
       short_description:
       description: |
         Elektriciteit kan worden gebruikt om warmte te produceren door middel van elektrische
-        boilers of warmtepompen, wat ook wel power-to-heat wordt genoemd. In het ETM is power-to-heat
-        een flexibele vraagtechnologie, wat betekent dat warmte alleen geproduceerd wordt wanneer
-        de willingness-to-pay van power-to-heat hoger is dan de uurlijkse elektriciteitsprijs.
+        boilers of warmtepompen, wat ook wel power-to-heat wordt genoemd. Deze technologieën
+        produceren alleen warmte als de betalingsbereidheid hoger is dan de uurlijkse
+        elektriciteitsprijs en de buitentemperatuur lager is dan grenswaarde.
         Zie de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentatie</a> voor meer informatie. </br></br>
-        Houd er rekening mee dat 1 MWth power-to-heat boiler meer elektriciteit gebruikt dan 1 MWth
-        power-to-heat warmtepomp, ondanks dat ze dezelfde hoeveelheid warmte produceren per uur. De
-        geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kunt vervolgens bepalen
-        of er midden of hoge temperatuur warmte wordt geproduceerd in de sectie
+        De geproduceerde warmte wordt aan het residentiële warmtenet geleverd. Je kunt bepalen of er
+        midden of hoge temperatuur warmte wordt geproduceerd in de sectie
         <a href="/scenario/supply/heat/allocation-of-power-to-heat">Warmtenetten</a>.
     flexibility_flexibility_power_to_heat_for_industry:
       title: Conversie naar warmte voor industrie

@@ -284,6 +284,8 @@ nl:
     external_coupling_industry_other_paper_general: "waarde"
     external_coupling_industry_other_non_specified_general: "waarde"
     external_coupling_industry_other_food_general: "waarde"
+    temperature_dependent: "temperatuur"
+    price_dependent: "betalingsbereidheid"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -737,7 +739,9 @@ nl:
     present: "Heden"
     future: "Toekomst"
     biomass_input: "Input biomassa"
-    biomass_products: "Biomassa producten"
+    biomass_products: "Biomassaproducten"
+    temperature_dependent: "Temperatuurgestuurd gedrag"
+    price_dependent: "Prijsgestuurd gedrag"
 
   "or": "of"
   "go": "ga"

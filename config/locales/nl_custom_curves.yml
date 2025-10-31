@@ -45,19 +45,20 @@ nl:
       too_many_columns: Profiel mag per regel maar één getal bevatten; meerdere getallen gescheiden door een komma zijn niet toegestaan.
       wrong_length: Profiel moet 8760 getallen bevatten (één getal voor elk uur in een jaar)
     groups:
-      agriculture: Landbouw
-      heat_production: "Aanbod: Warmte"
-      electricity_production: "Aanbod: Elektriciteit"
-      buildings: "Vraag: Gebouwen"
-      households: "Vraag: Huishoudens"
-      industry_electricity: "Vraag: Industrie elektriciteit"
-      industry_heat: "Vraag: Industrie warmte"
-      interconnectors: "Import/export: Interconnectoren"
-      must_run_interconnectors: "Import/export: Must-run interconnectors"
-      transport: "Vraag: Transport"
-      gas_import_export: "Import/export: Gassen"
-      weather: Weerdata
-      bunkers: "Vraag: Internationaal transport"
+      agriculture: "Vraag: landbouw"
+      heat_production: "Aanbod: warmte"
+      electricity_production: "Aanbod: elektriciteit"
+      buildings: "Vraag: gebouwen"
+      households: "Vraag: huishoudens"
+      industry_electricity: "Vraag: industrie elektriciteit"
+      industry_heat: "Vraag: industrie warmte"
+      interconnectors: "Import/export: interconnectoren"
+      must_run_interconnectors: "Import/export: must-run interconnectoren"
+      transport: "Vraag: nationaal ransport"
+      gas_import_export: "Import/export: gassen"
+      weather: "Flexibiliteit: weerdata"
+      bunkers: "Vraag: internationaal transport"
+      power_to_heat_availability: "Flexibiliteit: power-to-heat"
     names:
       weather/agriculture_heating: Landbouw warmtevraag
       agriculture_electricity: Landbouw elektriciteitsvraag
@@ -174,6 +175,10 @@ nl:
       weather/insulation_detached_houses_high: Hedendaagse vrijstaande huizen (vanaf 2005) warmtevraag
       weather/insulation_detached_houses_medium: Moderne vrijstaande huizen (1965-2004) warmtevraag
       weather/insulation_detached_houses_low: Oude vrijstaande huizen (tot 1964) warmtevraag
+      energy_heat_flexibility_p2h_boiler_ht_electricity_availability: Boiler (HT) beschikbaarheid
+      energy_heat_flexibility_p2h_boiler_mt_electricity_availability: Boiler (MT) beschikbaarheid
+      energy_heat_flexibility_p2h_heatpump_ht_electricity_availability: Warmtepomp (HT) beschikbaarheid
+      energy_heat_flexibility_p2h_heatpump_mt_electricity_availability: Warmtepomp (MT) beschikbaarheid
     types:
       availability:
         default: Standaard beschikbaarheid

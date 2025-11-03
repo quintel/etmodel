@@ -128,22 +128,22 @@ nl:
         pyrolyse-olie in te stellen en om de aandelen van de gebruikte feedstockroutes voor biogene
         pyrolyse-olieproductie te bepalen.
     output_of_energy_production_hvo_bio_kerosene:
-      title: Hydrotreatment naar HVO (biokerosine)
+      title: HVO biokerosineproductie
       short_description:
       description: |
-        Dit schuifje bepaalt de jaarlijkse nuttige productie van <i>Hydrotreated Vegetable Oil</i>
-        (HVO) biokerosine uit hydrotreatment van oliehoudende biomassa,
-        zoals plantaardige oliën en dierlijke vetten.<br/><br/> Het proces voor de productie van
-        HVO biokerosine en HVO biodiesel is zeer vergelijkbaar. Het belangrijkste verschil is dat
-        een extra verwerkingsstap van kraken nodig is voor HVO biokerosine om lichtere fracties
-        te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/>
+        Dit schuifje bepaalt de jaarlijkse nuttige productie van biokerosine via
+        <i>Hydrotreated Vegetable Oil</i> (HVO): hydrotreatment van oliehoudende biomassa,
+        zoals plantaardige oliën en dierlijke vetten. <br/><br/>
+        Het proces voor de productie van HVO biodiesel en biokerosine is zeer vergelijkbaar. Het
+        belangrijkste verschil is dat een extra verwerkingsstap van kraken nodig is voor biokerosine
+        om lichtere fracties te verkrijgen die geschikt zijn als vliegtuigbrandstof. <br/><br/>
         De inputdragers voor dit proces bestaan uit:
         <ul>
         <li><b>oliehoudende biomassa</b></li>
         <li><b>waterstof</b></li>
         <li><b>netwerkgas</b></li>
         </ul><br/>
-        De outputproducten van hydrotreatment naar HVO biokerosine zijn:
+        De outputproducten van hydrotreatment naar biokerosine zijn:
         <ul>
         <li><b>biokerosine</b> (hoofdproduct)</li>
         <li><b>bionafta</b></li>
@@ -153,21 +153,21 @@ nl:
         verhoogd om rekening te houden met niet-gemodelleerde, nuttige brandstofoutput. Raadpleeg de
         technische specificaties hieronder voor meer informatie.
     output_of_energy_production_hvo_biodiesel:
-      title: Hydrotreatment naar HVO (biodiesel)
+      title: HVO biodieselproductie
       short_description:
       description: |
         Dit schuifje bepaalt de jaarlijkse nuttige productie van <i>Hydrotreated Vegetable Oil</i>
         (HVO) biodiesel uit hydrotreatment van oliehoudende biomassa,
         zoals plantaardige oliën en dierlijke vetten.<br/><br/> Het proces voor de productie
-        van HVO biokerosine en HVO biodiesel is zeer vergelijkbaar. Het belangrijkste verschil
-        is dat een extra verwerkingsstap van kraken nodig is voor HVO biokerosine om lichtere
+        van HVO biodiesel en biokerosine is zeer vergelijkbaar. Het belangrijkste verschil
+        is dat een extra verwerkingsstap van kraken nodig is voor biokerosine om lichtere
         fracties te verkrijgen die geschikt zijn als vliegtuigbrandstof.<br/><br/>
         De inputdragers voor dit proces bestaan uit:
         <ul>
         <li><b>oliehoudende biomassa</b></li>
         <li><b>waterstof</b></li>
         </ul><br/>
-        De outputproducten van hydrotreatment naar HVO biokerosine zijn:
+        De outputproducten van hydrotreatment naar HVO biodiesel zijn:
         <ul>
         <li><b>biodiesel</b> (hoofdproduct)</li>
         <li><b>bionafta</b></li>
@@ -316,7 +316,7 @@ nl:
         <br/><br/>De output van Fischer-Tropsch via vergassing van niet-biogeen afval bestaat uit
         de volgende brandstoffen en grondstoffen:
         <ul>
-        <li><b>kerosine</b> (hoofdproduct)</li>
+        <li><b>kerosine</b></li>
         <li><b>diesel</b></li>
         <li><b>nafta</b></li>
         </ul><br/>
@@ -343,14 +343,16 @@ nl:
         De output van Fischer-Tropsch via vergassing van biogeen afval bestaat uit de volgende
         brandstoffen en grondstoffen:
         <ul>
-        <li><b>biokerosine</b> (hoofdproduct)</li>
+        <li><b>biokerosine</b></li>
         <li><b>biodiesel</b></li>
         <li><b>bionafta</b></li>
         </ul><br/>
         <b>Let op:</b> standaard wordt aangenomen dat de CO<sub>2</sub>-emissies van het
         vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan worden opgeslagen
         of benut. Omdat deze feedstockroute biogene grondstoffen gebruikt, worden de afgevangen
-        emissies als negatieve emissies meegenomen.<br/><br/>Ga naar de <a href="/scenario/supply/fuel_production/overview">
+        emissies als negatieve emissies meegenomen als deze permanent worden vastgelegd of
+        geëxporteerd.<br/><br/>
+        Ga naar de <a href="/scenario/supply/fuel_production/overview">
         overzichtspagina</a> om de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen.
         Ga naar de sectie <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a>
         om aannames te doen over het gebruik en de opslag van afgevangen CO<sub>2</sub>.<br/><br/>
@@ -371,14 +373,15 @@ nl:
         De output van Fischer-Tropsch via vergassing van droge biomassa bestaat uit de volgende
         brandstoffen en grondstoffen:
         <ul>
-        <li><b>biokerosine</b> (hoofdproduct)</li>
+        <li><b>biokerosine</b></li>
         <li><b>biodiesel</b></li>
         <li><b>bionafta</b></li>
         </ul><br/>
         <b>Let op:</b> standaard wordt aangenomen dat de CO<sub>2</sub>-emissies van het
         vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan worden opgeslagen
         of benut. Omdat deze feedstockroute biogene grondstoffen gebruikt, worden de afgevangen
-        emissies als negatieve emissies meegenomen.<br/><br/>Ga naar de
+        emissies als negatieve emissies meegenomen als deze permanent worden vastgelegd of
+        geëxporteerd.<br/><br/>Ga naar de
         <a href="/scenario/supply/fuel_production/overview">overzichtspagina</a>
         om de jaarlijkse brandstofproductie van Fischer-Tropsch te wijzigen. Ga naar de secite
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> om aannames
@@ -433,7 +436,8 @@ nl:
         <b>biomethanol</b>.<br/><br/><b>Let op:</b> standaard wordt aangenomen dat de CO<sub>2</sub>-
         emissies van het vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan
         worden opgeslagen of benut. Omdat deze feedstockroute biogene grondstoffen gebruikt,
-        worden de afgevangen emissies als negatieve emissies geregistreerd.<br/><br/>
+        worden de afgevangen emissies als negatieve emissies geregistreerd als deze permanent worden
+        vastgelegd of geëxporteerd.<br/><br/>
         Ga naar de <a href="/scenario/supply/fuel_production/overview">overzichtspagina</a> om de
         jaarlijkse methanolproductie uit methanolsynthese te wijzigen.
         Ga naar de sectie <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">
@@ -452,7 +456,8 @@ nl:
         <b>biomethanol</b>.<br/><br/><b>Let op:</b> standaard wordt aangenomen dat de CO<sub>2</sub>-
         emissies van het vergassingsproces worden afgevangen. De afgevangen CO<sub>2</sub> kan
         worden opgeslagen of benut. Omdat deze feedstockroute biogene grondstoffen gebruikt,
-        worden de afgevangen emissies als negatieve emissies geregistreerd.<br/><br/> Ga naar de
+        worden de afgevangen emissies als negatieve emissies geregistreerd als deze permanent worden
+        vastgelegd of geëxporteerd.<br/><br/> Ga naar de
         <a href="/scenario/supply/fuel_production/overview">overzichtspagina</a> om de jaarlijkse
         methanolproductie uit methanolsynthese te wijzigen. Ga naar de sectie
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> om aannames te

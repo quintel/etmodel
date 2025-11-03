@@ -115,20 +115,21 @@ en:
         <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">Pyrolysis oil fractionation</a> to set the import
         of pyrolysis bio-oil and to set the shares of feedstock used for pyrolysis bio-oil production.
     output_of_energy_production_hvo_bio_kerosene:
-      title: Hydrotreatment to HVO (biokerosene)
+      title: HVO biokerosene production
       short_description:
       description: |
-        This slider sets the annual useful production of Hydrotreated Vegetable Oil (HVO) biokerosene
-        from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
-        The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
-        processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
+        This slider sets the annual useful production of biokerosene via Hydrotreated Vegetable Oil
+        (HVO): hydrotreatment of oily biomass, such as vegetable oils and animal fats. <br/><br/>
+        The process of producing HVO biodiesel and biokerosene is very similar. The main difference
+        is that an extra processing step of cracking is required for biokerosene to obtain lighter
+        fractions suitable for aviation fuel. <br/><br/>
         The carrier input for this process consists of:
         <ul>
         <li><b>oily biomass</b></li>
         <li><b>hydrogen</b></li>
         <li><b>network gas</b></li>
         </ul><br/>
-        The output products of hydrotreatment to HVO biokerosene are:
+        The output products of hydrotreatment to biokerosene are:
         <ul>
         <li><b>biokerosene</b> (main product)</li>
         <li><b>bionaphtha</b></li>
@@ -138,13 +139,13 @@ en:
         increased proportionally to account for not modelled useful fuel output.
         See the technical specs below for more information.
     output_of_energy_production_hvo_biodiesel:
-      title: Hydrotreatment to HVO (biodiesel)
+      title: HVO biodiesel production
       short_description:
       description: |
         This slider sets the annual useful production of Hydrotreated Vegetable Oil (HVO) biodiesel
         from hydrotreatment of oily biomass, such as vegetable oils and animal fats.<br/><br/>
-        The process of producing HVO biokerosene and HVO biodiesel is very similar. The main difference is that an extra
-        processing step of cracking is required for HVO biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
+        The process of producing HVO biodiesel and biokerosene is very similar. The main difference is that an extra
+        processing step of cracking is required for biokerosene to obtain lighter fractions suitable for aviation fuel.<br/><br/>
         The carrier input for this process consists of:
         <ul>
         <li><b>oily biomass</b></li>
@@ -294,7 +295,7 @@ en:
         The output of Fischer-Tropsch via gasification of non-biogenic waste consists
         of the following fuels and feedstock:
         <ul>
-        <li><b>kerosene</b> (main product)</li>
+        <li><b>kerosene</b></li>
         <li><b>diesel</b></li>
         <li><b>naphtha</b></li>
         </ul><br/>
@@ -322,13 +323,14 @@ en:
         The output of Fischer-Tropsch via gasification of biogenic waste consists
         of the following fuels and feedstock:
         <ul>
-        <li><b>biokerosene</b> (main product)</li>
+        <li><b>biokerosene</b></li>
         <li><b>biodiesel</b></li>
         <li><b>bionaphtha</b></li>
         </ul><br/>
         <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
-        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        biogenic feedstock, the captured emissions are accounted for as negative emissions if these
+        emissions are permanently sequestered or exported.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual fuel production from Fischer-Tropsch. Go to the
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
@@ -351,13 +353,14 @@ en:
         The output of Fischer-Tropsch via gasification of dry biomass consists
         of the following fuels and feedstock:
         <ul>
-        <li><b>biokerosene</b> (main product)</li>
+        <li><b>biokerosene</b></li>
         <li><b>biodiesel</b></li>
         <li><b>bionaphtha</b></li>
         </ul><br/>
         <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
-        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        biogenic feedstock, the captured emissions are accounted for as negative emissions if these
+        emissions are permanently sequestered or exported.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual fuel production from Fischer-Tropsch. Go to the
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
@@ -410,7 +413,8 @@ en:
         The output of methanol synthesis with this feedstock route consists of only <b>biomethanol</b>.<br/><br/>
         <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
-        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        biogenic feedstock, the captured emissions are accounted for as negative emissions if these
+        emissions are permanently sequestered or exported.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual methanol production from methanol synthesis. Go to the
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section
@@ -427,7 +431,8 @@ en:
         The output of methanol synthesis with this feedstock route consists of only <b>biomethanol</b>.<br/><br/>
         <b>Note:</b> it is assumed by default that the CO<sub>2</sub> emissions from the gasification process are
         captured. The captured CO<sub>2</sub> can be stored or utilised. As this feedstock route uses
-        biogenic feedstock, the captured emissions are accounted for as negative emissions.<br/><br/>
+        biogenic feedstock, the captured emissions are accounted for as negative emissions if these
+        emissions are permanently sequestered or exported.<br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">overview</a> to change
         the annual methanol production from methanol synthesis. Go to the
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS</a> section

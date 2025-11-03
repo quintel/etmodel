@@ -637,7 +637,9 @@ en:
       description: |
         In this section, the annual production of liquid fuels and feedstock by various
         processes can be set. Additionally, the electricity
-        input capacity of flexible production from Fischer-Tropsch can be set.
+        input capacity of flexible production from Fischer-Tropsch can be set. Go to the
+        <a href="https://docs.energytransitionmodel.com/main/liquid-fuels"
+        target="_blank">documentation</a> for more information.
     supply_fuel_production_fischer_tropsch:
       title: Fischer-Tropsch
       short_description:
@@ -648,9 +650,10 @@ en:
       title: Pyrolysis oil fractionation
       short_description:
       description: |
-        In this section, the share of feedstock in the production of pyrolysis bio-oil can be set.
-        Non-biogenic pyrolysis oil can only be produced from non-biogenic waste.
-        Additionally, the baseload import of pyrolysis oil and pyrolysis bio-oil can be set below.
+        In this section, the share of biogenic waste and dry biomass in the production of
+        pyrolysis bio-oil can be set. Non-biogenic pyrolysis oil can only be produced from
+        non-biogenic waste. Additionally, the baseload import of pyrolysis oil and pyrolysis bio-oil
+        can be set below.
     supply_fuel_production_methanol_synthesis:
       title: Methanol synthesis
       short_description:

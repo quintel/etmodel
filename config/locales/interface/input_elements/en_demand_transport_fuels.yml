@@ -239,23 +239,31 @@ en:
       title: Kerosene
       short_description:
       description: |
-        This slider sets the energetic share of kerosene in the kerosene mix.</br></br>
+        This slider sets the energetic share of kerosene in the kerosene mix.
         This kerosene can consist of fossil kerosene, synthetic kerosene or kerosene produced from
-        non-biogenic waste.  Go to the <a href="/scenario/supply/fuel_production/overview">
+        non-biogenic waste.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
         liquid fuels</a> section to set the production technologies for kerosene.
-        For international aviation mainly large aircrafts are used and
-        they consume primarily kerosene.
+        Open <a href="#" class="open_chart"
+        data-chart-key="use_of_final_demand_in_international_transport" data-chart-location="side">
+        this chart</a> to see how much fossil, synthetic and biokerosene is used in
+        international aviation.
     bunkers_plane_using_bio_kerosene_share:
       title: Biokerosene
       short_description:
       description: |
         This slider sets the energetic share of biokerosene in the kerosene mix. </br></br>
         Biokerosene can be used in the same type of engines for which fossil kerosene is used;
-        it is a so-called "drop-in fuel". At the moment
-        four technologies are certified to supply biokerosene to commercial aviation,
-        of which the Hydrotreated Esters and Fatty Acids (HEFA) technology is used
-        in 90% of the cases. Do consider the impact on land (and sea) use for growing
-        the required crops.
+        it is a so-called "drop-in fuel". Various processes are certified to supply
+        biokerosene to commercial aviation, such as Hydrotreated Esters and Fatty Acids (HEFA)
+        and biokerosene from Hydrotreated Vegetable Oils (HVO). These technology routes
+        are quite similar since they both use hydrotreatment.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        liquid fuels</a> section to set the production of biokerosene from various processes.
+        Open <a href="#" class="open_chart"
+        data-chart-key="use_of_final_demand_in_international_transport" data-chart-location="side">
+        this chart</a> to see how much fossil, synthetic and biokerosene is used in
+        international aviation.
     bunkers_ship_using_methanol_share:
       title: Methanol
       short_description:

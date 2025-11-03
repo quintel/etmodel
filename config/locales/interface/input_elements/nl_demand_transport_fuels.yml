@@ -260,9 +260,10 @@ nl:
         uit niet-biogeen afval. Ga naar de sectie
         <a href="/scenario/supply/fuel_production/overview">
         vloeibare brandstoffen</a> om de productiemethoden van methanol in te stellen.<br/><br/>
-        Er zijn verschillende brandstoffen om op te vliegen,
-        maar verreweg het grootste volume bestaat uit (fossiele) kerosine. Alle grote vliegtuigen
-        vliegen op kerosine.
+        Open <a href="#" class="open_chart"
+        data-chart-key="use_of_final_demand_in_international_transport" data-chart-location="side">
+        deze grafiek</a> om te zien hoeveel fossiele, synthetische en biokerosine er wordt
+        gebruik in internationale luchtvaart.
     bunkers_plane_using_bio_kerosene_share:
       title: Biokerosine
       short_description:
@@ -270,12 +271,18 @@ nl:
         Dit schuifje bepaalt het energetische aandeel van biokerosine in de
         kerosine mix. </br></br>
         Biokerosine kan worden gebruikt in dezelfde vliegtuigmotoren waar fossiele kerosine wordt
-        toegepast; het is een zogenaamde "drop-in brandstof". Op
-        dit moment zijn er vier gecertificieerde technologiën die biokerosine mogen
-        leveren aan de commerciële luchtvaart, waarvan in 90% van de gevallen de Hydrotreated
-        Esters and Fatty Acids (HEFA) technologie gebruikt wordt. Houd rekening met
-        de impact op landgebruik (of zeegebruik) als hiervoor gewassen geteeld moeten
-        worden.
+        toegepast; het is een zogenaamde "drop-in brandstof". Diverse processen zijn
+        gecertificeerd om biokerosine te leveren aan de commerciële luchtvaart, zoals
+        <i>Hydrotreated Esters and Fatty Acids (HEFA)</i> en biokerosine uit <i>Hydrotreated Vegetable
+        Oils (HVO)</i>. Deze technologieroutes zijn vrij vergelijkbaar omdat beide hydrotreatment
+        gebruiken. <br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        vloeibare brandstoffen</a> om de productie van biokerosine uit diverse processes in te
+        stellen.<br/><br/>
+        Open <a href="#" class="open_chart"
+        data-chart-key="use_of_final_demand_in_international_transport" data-chart-location="side">
+        deze grafiek</a> om te zien hoeveel fossiele, synthetische en biokerosine er wordt
+        gebruik in internationale luchtvaart.
     bunkers_ship_using_methanol_share:
       title: Methanol
       short_description:

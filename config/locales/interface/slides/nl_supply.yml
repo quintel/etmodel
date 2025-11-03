@@ -682,7 +682,9 @@ nl:
       description: |
         Stel hier de jaarlijkse productie van vloeibare brandstoffen en grondstoffen
         door verschillende processen in. Daarnaast kan het elektriciteitsinputvermogen
-        van flexibele productie uit Fischer-Tropsch worden ingesteld.
+        van flexibele productie uit Fischer-Tropsch worden ingesteld. Ga naar de
+        <a href="https://docs.energytransitionmodel.com/main/liquid-fuels"
+        target="_blank">documentatie</a> voor meer informatie.
     supply_fuel_production_fischer_tropsch:
       title: Fischer-Tropsch
       short_description:
@@ -693,10 +695,10 @@ nl:
       title: Pyrolyse-olie fractionering
       short_description:
       description: |
-        Hier kan het aandeel van biogene feedstock in productie van biogene pyrolyse-olie
-        worden ingesteld. Niet-biogene pyrolyse-olie kan alleen met niet-biogeen afval worden
-        geproduceerd. Daarnaast kan hieronder import van pyrolyse-olie en biogene pyrolyse-olie
-        worden ingesteld.
+        Hier kan het aandeel van biogeen afval en droge biomassa in de productie van biogene
+        pyrolyse-olie worden ingesteld. Niet-biogene pyrolyse-olie kan alleen met niet-biogeen afval
+        worden geproduceerd. Daarnaast kan hieronder import van pyrolyse-olie en biogene
+        pyrolyse-olie worden ingesteld.
     supply_fuel_production_methanol_synthesis:
       title: Methanolsynthese
       short_description:

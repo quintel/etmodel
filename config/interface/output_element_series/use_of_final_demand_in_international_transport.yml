@@ -47,7 +47,7 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: bio_kerosene_demand_international_aviation
+  gquery: bio_kerosene_demand_international_aviation_transport_fuels
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
@@ -63,7 +63,7 @@
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
-  key: hydrogen_planes_use_of_final_demand_in_international_transport       
+  key: hydrogen_planes_use_of_final_demand_in_international_transport
 - label: electricity_planes
   color: "#41b9e1"
   order_by: 210
@@ -75,7 +75,7 @@
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
-  key: electricity_planes_use_of_final_demand_in_international_transport 
+  key: electricity_planes_use_of_final_demand_in_international_transport
 
 
 
@@ -126,7 +126,7 @@
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
-  key: electricity_ships_use_of_final_demand_in_international_transport  
+  key: electricity_ships_use_of_final_demand_in_international_transport
 - label: methanol_ships
   color: "#FF8C8C"
   order_by: 320

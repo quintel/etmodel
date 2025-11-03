@@ -19,43 +19,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_144436) do
     t.index ["user_id"], name: "index_esdl_suite_ids_on_user_id", unique: true
   end
 
-  create_table "featured_scenarios", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "saved_scenario_id", null: false
-    t.string "group"
-    t.string "title_en", null: false
-    t.string "title_nl", null: false
-    t.text "description_en"
-    t.text "description_nl"
-    t.string "featured_owner"
-    t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
-  end
-
-  create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "saved_scenario_id", null: false
-    t.integer "role_id", null: false
-    t.integer "user_id"
-    t.string "user_email"
-    t.index ["saved_scenario_id", "user_email"], name: "saved_scenario_users_saved_scenario_id_user_email_idx", unique: true
-    t.index ["saved_scenario_id", "user_id", "role_id"], name: "saved_scenario_users_saved_scenario_id_user_id_role_id_idx"
-    t.index ["saved_scenario_id", "user_id"], name: "saved_scenario_users_saved_scenario_id_user_id_idx", unique: true
-    t.index ["user_email"], name: "saved_scenario_users_user_email_idx"
-  end
-
-  create_table "saved_scenarios", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.integer "scenario_id", null: false
-    t.text "scenario_id_history"
-    t.string "title", null: false
-    t.text "description"
-    t.string "area_code", null: false
-    t.integer "end_year", null: false
-    t.boolean "private", default: false
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-    t.datetime "discarded_at"
-    t.index ["discarded_at"], name: "index_saved_scenarios_on_discarded_at"
-    t.index ["scenario_id"], name: "index_saved_scenarios_on_scenario_id"
-  end
-
   create_table "sessions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "session_id", limit: 191, null: false
     t.text "data", size: :medium
@@ -85,6 +48,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_144436) do
   end
 
   add_foreign_key "esdl_suite_ids", "users"
-  add_foreign_key "featured_scenarios", "saved_scenarios"
   add_foreign_key "surveys", "users"
 end

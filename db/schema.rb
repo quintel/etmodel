@@ -10,27 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_03_140901) do
-  create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "dependent_on"
-    t.text "description"
-    t.integer "dependable_id"
-    t.string "dependable_type", limit: 191
-    t.index ["dependable_id", "dependable_type"], name: "index_area_dependencies_on_dependable_id_and_dependable_type"
-  end
-
-  create_table "descriptions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.text "content_en", size: :medium
-    t.text "short_content_en"
-    t.integer "describable_id"
-    t.string "describable_type", limit: 191
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-    t.text "content_nl", size: :medium
-    t.text "short_content_nl"
-    t.index ["describable_id", "describable_type"], name: "index_descriptions_on_describable_id_and_describable_type"
-  end
-
+ActiveRecord::Schema[7.1].define(version: 2025_11_03_142812) do
   create_table "esdl_suite_ids", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "access_token", limit: 2048
@@ -48,13 +28,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_140901) do
     t.text "description_nl"
     t.string "featured_owner"
     t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
-  end
-
-  create_table "multi_year_chart_scenarios", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "multi_year_chart_id", null: false
-    t.integer "scenario_id", null: false
-    t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
-    t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
   end
 
   create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

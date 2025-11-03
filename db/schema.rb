@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_03_133933) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_03_140901) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -50,10 +50,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_133933) do
     t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
   end
 
-  create_table "roles", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
+  create_table "multi_year_chart_scenarios", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
+    t.bigint "multi_year_chart_id", null: false
+    t.integer "scenario_id", null: false
+    t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
+    t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
   end
 
   create_table "saved_scenario_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -104,51 +105,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_133933) do
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
-  create_table "texts", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "key", limit: 191
-    t.text "content_en", size: :medium
-    t.text "content_nl", size: :medium
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-    t.string "title_en"
-    t.string "title_nl"
-    t.text "short_content_en"
-    t.text "short_content_nl"
-    t.index ["key"], name: "index_translations_on_key"
-  end
-
   create_table "users", id: :bigint, default: nil, charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users_old", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", limit: 191, null: false
-    t.string "company_school"
-    t.boolean "allow_news", default: false
-    t.string "heared_first_at", default: ".."
-    t.string "crypted_password"
-    t.string "password_salt"
-    t.string "persistence_token", null: false
-    t.string "perishable_token", null: false
-    t.integer "login_count", default: 0, null: false
-    t.integer "failed_login_count", default: 0, null: false
-    t.datetime "last_request_at", precision: nil
-    t.datetime "current_login_at", precision: nil
-    t.datetime "last_login_at", precision: nil
-    t.string "current_login_ip"
-    t.string "last_login_ip"
-    t.integer "role_id"
-    t.boolean "hide_results_tip", default: false, null: false
-    t.datetime "created_at", precision: nil
-    t.datetime "updated_at", precision: nil
-    t.string "phone_number"
-    t.string "group"
-    t.integer "teacher_id"
-    t.integer "student_id"
-    t.index ["email"], name: "index_users_old_on_email"
   end
 
   add_foreign_key "esdl_suite_ids", "users"

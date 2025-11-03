@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
   delegate :email, :roles, :admin?, to: :identity_user, allow_nil: true
 
-  has_one  :esdl_suite_id, dependent: :destroy
   has_one  :survey, dependent: :destroy
 
   validates :name, presence: true

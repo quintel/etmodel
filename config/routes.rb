@@ -43,10 +43,6 @@ Rails.application.routes.draw do
       get  'energy_mix' => 'energy_mix#show'
       # Legacy name for the energy mix
       get  'factsheet', to: redirect('scenarios/%{id}/energy_mix')
-
-      get  'export'                => 'export_scenario#index'
-      post 'export/esdl'           => 'export_scenario#esdl'
-      get  'export/mondaine_drive' => 'export_scenario#mondaine_drive'
     end
   end
 
@@ -102,11 +98,6 @@ Rails.application.routes.draw do
 
   # ESDL
   get  '/import_esdl'         => 'import_esdl#index'
-  post '/import_esdl/create'  => 'import_esdl#create', as: :import_esdl_create
-  get  '/esdl_suite/login'    => 'esdl_suite#login'
-  get  '/esdl_suite/redirect' => 'esdl_suite#redirect'
-  get  '/esdl_suite/browse'   => 'esdl_suite#browse'
-
 
   # Incoming webhooks
   get '/incoming_webhooks/verify' => 'incoming_webhooks#verify'

@@ -1,33 +1,4 @@
 - content_for(:page_title) { "Import ESDL - #{t('meta.name')}" }
-.background_wrapper
-  #esdl
-    .half_page.with_bar
-      %h1= t('esdl.title')
-
-      .description
-        = t('esdl.description').html_safe
-    .half_page.two_parts
-      #mondaine_drive{class: ('disabled' unless current_user)}
-        - unless current_user
-          %h2.please_log_in= t('esdl.please_log_in')
-
-        - if @esdl_tree
-          %h2= t('esdl.mondaine_drive.browse')
-          = render partial: 'browse', locals: { esdl_tree: @esdl_tree }
-        - else
-          %h2= t('esdl.mondaine_drive.use')
-          = render partial: 'login_to_drive'
-
-      %h2= t('esdl.or')
-
-      = form_with url: import_esdl_create_path, id: 'import_esdl' do |f|
-        = f.hidden_field :mondaine_drive_path, value: ''
-        .upload_file
-          %h2 #{t('esdl.upload')}
-          = f.file_field :esdl_file, required: true, accept: '.esdl'
-          %span{ class: 'fa fa-times' }
-        = f.submit "#{t('esdl.start')} →", class: 'button'
-        .wait
-          = image_tag 'layout/ajax-loader.gif'
-          = t('esdl.creating')
-          &hellip;
+.static-page
+  %h2= t('esdl.title')
+  %p= t('esdl.description').html_safe

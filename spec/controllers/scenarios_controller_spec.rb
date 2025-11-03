@@ -272,29 +272,6 @@ describe ScenariosController, vcr: true do
         end
       end
 
-      describe '#weighted_merge' do
-        it 'compares them' do
-          post :perform_weighted_merge, params: {
-            'merge_scenarios' => { '925863' => 1.0, '925864' => 2.0 }
-          }
-
-          expect(response).to be_redirect
-        end
-      end
-
-      pending '#merge' do
-        pending 'discontinued feature'
-        it 'creates a remote scenario with the average values' do
-          post :merge, params: {
-            inputs: 'average',
-            inputs_avg: { households_number_of_inhabitants: 1.0 }.to_yaml,
-            inputs_def: { households_number_of_inhabitants: 1.0 }.to_yaml
-          }
-
-          expect(response).to be_successful
-        end
-      end
-
       describe '#update_couplings' do
         before do
           allow(UncoupleAPIScenario).to receive(:call).and_return(ServiceResult.success(scenario_mock))

@@ -21,13 +21,8 @@
 //= require esdl
 //= require export
 //= require flowplayer.playlist-3.0.8.min
-//= require admin
 //= require common_interface
 //= require fancybox
 //= require sortable.min
-//= require sign_up_form
-//= require embeds
-//= require load_pico_embed
-//= require copy_link_box
 //= require header
 //= require featured_scenario

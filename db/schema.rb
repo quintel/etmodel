@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_17_111511) do
+ActiveRecord::Schema[7.1].define(version: 2025_11_03_133933) do
   create_table "area_dependencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "dependent_on"
     t.text "description"
@@ -48,32 +48,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_17_111511) do
     t.text "description_nl"
     t.string "featured_owner"
     t.index ["saved_scenario_id"], name: "index_featured_scenarios_on_saved_scenario_id", unique: true
-  end
-
-  create_table "multi_year_chart_saved_scenarios", primary_key: ["multi_year_chart_id", "saved_scenario_id"], charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "multi_year_chart_id", null: false
-    t.bigint "saved_scenario_id", null: false
-    t.index ["multi_year_chart_id"], name: "index_multi_year_chart_saved_scenarios_on_multi_year_chart_id"
-    t.index ["saved_scenario_id"], name: "index_multi_year_chart_saved_scenarios_on_saved_scenario_id"
-  end
-
-  create_table "multi_year_chart_scenarios", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "multi_year_chart_id", null: false
-    t.integer "scenario_id", null: false
-    t.index ["multi_year_chart_id"], name: "index_multi_year_chart_scenarios_on_multi_year_chart_id"
-    t.index ["scenario_id"], name: "index_multi_year_chart_scenarios_on_scenario_id"
-  end
-
-  create_table "multi_year_charts", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "title", null: false
-    t.string "area_code"
-    t.integer "end_year"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "discarded_at"
-    t.boolean "interpolation", default: true
-    t.index ["discarded_at"], name: "index_multi_year_charts_on_discarded_at"
-    t.index ["user_id"], name: "index_multi_year_charts_on_user_id"
   end
 
   create_table "roles", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
@@ -179,6 +153,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_17_111511) do
 
   add_foreign_key "esdl_suite_ids", "users"
   add_foreign_key "featured_scenarios", "saved_scenarios"
-  add_foreign_key "multi_year_charts", "users"
   add_foreign_key "surveys", "users"
 end

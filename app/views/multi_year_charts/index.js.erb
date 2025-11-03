@@ -1,7 +1,0 @@
-$("#existing-myc-sessions ul.myc-list").append(
-  '<%= escape_javascript render(partial: 'multi_year_chart', collection: @multi_year_charts) %>'
-);
-
-$("#myc-session-paginator").html(
-  '<%= escape_javascript link_to_next_page(@multi_year_charts, 'More...', remote: true) %>'
-)

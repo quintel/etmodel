@@ -939,46 +939,6 @@ table.default
     margin-top: 50px
     font-weight: 500
 
-#new-collection
-  h2
-    margin-bottom: 50px
-
-  form.no-click .multi_year_chart_saved_scenarios
-    label:not(:has(input:checked))
-      opacity: 0.5
-      pointer-events: none;
-      &:hover
-        cursor: default
-        span
-          background: #d0d0d0
-
-  .multi_year_chart_saved_scenarios
-    display: flex
-    flex-wrap: wrap
-    margin-bottom: 50px !important
-    label
-      margin: 10px 10px 6px auto
-      width: auto
-      span
-        background: #d0d0d0
-        color: #000
-        border-radius: 14px
-        white-space: nowrap
-        padding: 5px 20px
-        font-size: 0.74rem
-        border: 1px solid #d0d0d0
-      &:hover
-        cursor: pointer
-        span
-          background: darken(#d0d0d0, 14%)
-    input
-      display: none
-    input:checked+span
-      border: 1px solid $landing-green
-      background: #fff
-      &:hover
-        background: lighten($landing-green, 14%)
-
 .scenario-cards
   display: flex
   flex-wrap: wrap

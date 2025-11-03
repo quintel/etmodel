@@ -34,4 +34,3 @@
 //= require header
 //= require featured_scenario
 //= require saved_scenario_history
-//= require multi_year_charts

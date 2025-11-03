@@ -170,14 +170,4 @@ RSpec.configure do |config|
   config.before(:suite) { DatabaseCleaner.strategy = :transaction }
   config.before(:each)  { DatabaseCleaner.start                   }
   config.after(:each)   { DatabaseCleaner.clean                   }
-
-  # Stub out Partner.all.
-  [ :controller, :request ].each do |type|
-    config.before(:each, type: type) do
-      allow(Partner).to receive(:all).and_return([
-        Partner.new(name: 'StarTale',   key: 'st', img: '', kind: 'primary'),
-        Partner.new(name: 'TeamLiquid', key: 'tl', img: '', kind: 'general')
-      ])
-    end
-  end
 end

@@ -21,27 +21,6 @@ namespace :maintenance do
   task :check_ref => :environment do
     puts "Use FORCE=1 parameter to actually delete stuff"
     @deleted = 0
-    puts "* Area dependencies"
-    AreaDependency.find_each do |a|
-      unless a.dependable
-        puts "! Missing dependable, id=#{a.id}"
-        if ENV["FORCE"]
-          a.destroy
-          @deleted += 1
-        end
-      end
-    end
-
-    puts "* Descriptions"
-    Description.find_each do |a|
-      if a.describable_id.blank? || !a.describable
-        puts "! Missing describable, id=#{a.id}"
-        if ENV["FORCE"]
-          a.destroy
-          @deleted += 1
-        end
-      end
-    end
 
     puts "* Output Element Series"
     OutputElementSerie.find_each do |a|

@@ -176,4 +176,19 @@ module ScenarioHelper
 
     tag.span(number_with_delimiter(count), class: "count #{options[:class]}".strip)
   end
+
+  def area_flag(area_code)
+    area = Engine::Area.find_by_country_memoized(area_code)
+
+    return unless area.country? && area.area != 'UKNI01_northern_ireland'
+
+    capture_haml do
+      haml_tag(
+        'img',
+        src: icon_for_area_code(area_code),
+        title: I18n.t("areas.#{area_code}"),
+        width: 16
+      )
+    end
+  end
 end

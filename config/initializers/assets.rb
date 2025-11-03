@@ -21,7 +21,6 @@ Rails.application.config.assets.precompile += %w[
   i18n.js
   i18n/en.js
   i18n/nl.js
-  multi_year_charts.css
   report.css
   pico.css
   pico.js

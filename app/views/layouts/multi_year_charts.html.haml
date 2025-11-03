@@ -1,8 +1,0 @@
-- content_for :head do
-  = render "layouts/etm/javascript_globals"
-  = stylesheet_link_tag 'multi_year_charts'
-
-- content_for :content do
-  %main= yield
-
-= render template: 'layouts/application', locals: { body_id: 'multi-year-charts' }

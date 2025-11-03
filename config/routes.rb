@@ -10,11 +10,9 @@ Rails.application.routes.draw do
   get 'gql/search'
 
   # Single GET routes
-  get '/texts/:id' => 'texts#show'
   get '/descriptions/charts/:id' => 'descriptions#charts'
 
   # Restricted routes
-  resources :password_resets, only: %i[new create edit update]
   resources :areas, only: %i[index show]
   resources :dashboard_items, only: :show
   resource :settings, only: %i[edit update]
@@ -30,27 +28,11 @@ Rails.application.routes.draw do
   put '/survey/:question',     to: 'survey#answer_question'
   get '/my_etm/:page',         to: 'my_etm_passthru#set_cookie_and_redirect', as: :my_etm
 
-  # Admin namespace
-  namespace :admin do
-    root to: 'pages#index'
-    get 'map',         to: 'pages#map',         as: :map
-    post 'clear_cache' => 'pages#clear_cache',  as: :clear_cache
-    get 'surveys',     to: 'pages#surveys',     as: :surveys
-
-    # Managing texts in admin (omits :show).
-    resources :texts, except: [:show]
-  end
-
   # Scenarios
   # except: [:new, :edit] => leaving index, create, show, update, destroy
   resources :scenarios, except: %i[new edit] do
     collection do
       post :load
-      get  :compare
-      post :merge
-
-      get  :weighted_merge
-      post 'weighted_merge' => :perform_weighted_merge
     end
 
     member do
@@ -81,7 +63,6 @@ Rails.application.routes.draw do
   get '/scenario/new'               => 'scenarios#new'
   get '/scenario/reset'             => 'scenarios#reset'
   get '/scenario/confirm_reset'     => 'scenarios#confirm_reset'
-  get '/scenario/grid_investment_needed' => 'scenarios#grid_investment_needed'
 
   # Passthru
   get '/passthru/:id/*rest', to: 'api_passthru#passthru', constraints: { rest: /.*/ }, as: :api_passthru
@@ -106,16 +87,10 @@ Rails.application.routes.draw do
   match '/ete_proxy(/*url)', to: 'api_proxy#default', via: :all
 
   # Misc pages
-  get '/show_all_countries'  => 'pages#show_all_countries'
-  get '/show_flanders'       => 'pages#show_flanders'
   put '/set_locale(/:locale)' => 'pages#set_locale', as: :set_locale
   get '/unsupported-browser' => 'pages#unsupported_browser', as: :unsupported_browser
   get '/update_footer'       => 'pages#update_footer'
   get '/regions/:dataset_locale', to: 'pages#dataset', as: :region
-
-  # Contact
-  get  '/contact' => 'contact#index', as: :contact
-  post '/contact' => 'contact#send_message'
 
   # Info pages
   get '/about'          => 'content#about',          as: :about
@@ -124,11 +99,6 @@ Rails.application.routes.draw do
   get '/terms-of-service' => 'content#terms_of_service', as: :terms_of_service
   get '/whats-new'      => 'content#whats_new',      as: :whats_new
 
-  # Local-global comparisons
-  get '/local-global'      => 'compare#index', as: :local_global
-  get '/local-global/:ids' => 'compare#show',  as: :local_global_scenarios
-
-  get '/light' => 'light#index', as: :light
 
   # ESDL
   get  '/import_esdl'         => 'import_esdl#index'
@@ -137,10 +107,6 @@ Rails.application.routes.draw do
   get  '/esdl_suite/redirect' => 'esdl_suite#redirect'
   get  '/esdl_suite/browse'   => 'esdl_suite#browse'
 
-  # Embeds namespace
-  namespace :embeds do
-    resource :pico, only: [:show]
-  end
 
   # Incoming webhooks
   get '/incoming_webhooks/verify' => 'incoming_webhooks#verify'
@@ -149,11 +115,6 @@ Rails.application.routes.draw do
   namespace :api, path: '/api/v1' do
     put '/user'    => 'user#update'
     delete '/user' => 'user#destroy'
-
-    # Restrict to known actions
-    resources :saved_scenarios, only: %i[index show create update destroy]
-
-    resources :transition_paths, only: %i[index show create update destroy] # TODO: Re-route to a helpful error page
   end
 
   %w[404 422 500].each do |code|

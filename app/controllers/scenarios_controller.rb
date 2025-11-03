@@ -155,59 +155,6 @@ class ScenariosController < ApplicationController
     play
   end
 
-  def compare
-    @default_values = @scenarios.first.inputs(engine_client)
-    @average_values = {}
-    @average_values_using_defaults = {}
-  end
-
-  def merge
-    inputs = params[:inputs_def]
-    @inputs = YAML.load inputs
-    end_year = params[:end_year].to_i
-    end_year = 2050 unless end_year.between?(2010, 2050)
-
-    @scenario = CreateAPIScenario.call(
-      engine_client,
-      {
-        source: 'ETM',
-        user_values: @inputs,
-        area_code: params[:area_code] || 'nl',
-        end_year: end_year
-      }
-    ).unwrap
-  end
-
-  def weighted_merge
-  end
-
-  def perform_weighted_merge
-    scenarios = params.require(:merge_scenarios).permit!.to_h
-
-    req_body = scenarios.map do |id, weight|
-      { scenario_id: id, weight: weight }
-    end
-
-    result = HTTParty.post("#{Settings.ete_url}/api/v3/scenarios/merge", {
-      body: { scenarios: req_body }.to_json,
-      headers: {
-        'Accept'       => 'application/json',
-        'Content-Type' => 'application/json'
-      }
-    })
-
-    body = JSON.parse(result.body)
-
-    if (400..499).include?(result.code)
-      @errors = body['errors']
-      setup_comparison
-
-      render :weighted_merge
-    else
-      redirect_to(scenario_url(body['id']))
-    end
-  end
-
   def inputs
     default_values = @scenario.inputs(engine_client)
 
@@ -288,41 +235,6 @@ class ScenariosController < ApplicationController
     response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
     response.headers['Pragma'] = 'no-cache'
     response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
-  end
-
-  def setup_comparison
-    scenario_ids = params[:scenario_ids] || []
-    @scenarios = scenario_ids.filter_map { |id| FetchAPIScenario.call(engine_client, id).or(nil) }
-    if @scenarios.empty?
-      flash[:error] = "Please select one or more scenarios"
-      redirect_to scenarios_path and return
-    end
-  end
-
-  def redirect_compare
-    if params[:merge]
-      redirect_to(
-        weighted_merge_scenarios_url(params.permit(scenario_ids: []))
-      )
-
-      return
-    end
-
-    if params[:combine]
-      redirect_to(local_global_comparison_url)
-      return
-    end
-  end
-
-  def local_global_comparison_url
-    ids = (params.permit(scenario_ids: [])[:scenario_ids] || [])
-      .map(&:to_i).reject(&:zero?)
-
-    if ids.empty?
-      scenarios_url
-    else
-      local_global_scenarios_url(ids.join(','))
-    end
   end
 
   # Internal: For requests originating in the "multi-year charts" application,

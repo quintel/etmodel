@@ -26,11 +26,8 @@
 //= require fancybox
 //= require sortable.min
 //= require sign_up_form
-//= require saved_scenario
-//= require saved_scenario_user
 //= require embeds
 //= require load_pico_embed
 //= require copy_link_box
 //= require header
 //= require featured_scenario
-//= require saved_scenario_history

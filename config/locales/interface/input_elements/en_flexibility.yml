@@ -314,7 +314,7 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the coastal wind profile.
     flh_of_energy_power_wind_turbine_inland:
-      title: Wind inland
+      title: Wind onshore
       short_description:
       description: By increasing
         the full load hours for this type of wind turbine, more electricity will be
@@ -338,7 +338,7 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the offshore wind profile.
     flh_of_energy_hydrogen_wind_turbine_offshore:
-      title: Offshore wind turbine for H<sub>2</sub>
+      title: Wind offshore (with electrolyser)
       short_description:
       description: By increasing
         the full load hours for this type of wind turbine, more electricity will be
@@ -348,7 +348,7 @@ en:
         with increasing full load hours as the turbine spends more time running
         at higher capacity.
     flh_of_households_solar_pv_solar_radiation:
-      title: Solar PV households
+      title: Solar rooftop (households)
       short_description:
       description: |
         By increasing the full load hours for solar panels, more electricity will be produced with
@@ -360,7 +360,7 @@ en:
         The slider not only increases the number of full load hours but also changes the shape of
         the hourly production profile accordingly.
     flh_of_buildings_solar_pv_solar_radiation:
-      title: Solar PV buildings
+      title: Solar rooftop (buildings)
       short_description:
       description: |
         By increasing the full load hours for solar panels, more electricity will be produced with
@@ -372,7 +372,7 @@ en:
         The slider not only increases the number of full load hours but also changes the shape of
         the hourly production profile accordingly.
     flh_of_energy_power_solar_pv_solar_radiation:
-      title: Solar PV plants onshore
+      title: Solar on land
       short_description:
       description: |
         By increasing the full load hours for solar panels, more electricity will be produced with
@@ -385,7 +385,7 @@ en:
         the hourly production profile accordingly. This slider also affects solar PV plants onshore
         with a battery system and plants for decidated hydrogen production through electrolysis.
     flh_of_energy_power_solar_pv_offshore:
-      title: Solar PV plants offshore
+      title: Solar offshore
       short_description:
       description: |
         By increasing the full load hours for solar panels, more electricity will be produced with

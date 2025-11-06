@@ -1,4 +1,6 @@
 - content_for(:page_title) { "Import ESDL - #{t('meta.name')}" }
 .static-page
+  %div{style: "border: 1px solid red; border-radius: 5px; color: red; padding: 0.25rem 1rem;"}
+    %h4= t('esdl.warning')
   %h2= t('esdl.title')
   %p= t('esdl.description').html_safe

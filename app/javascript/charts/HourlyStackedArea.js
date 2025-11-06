@@ -34,13 +34,18 @@ export default class HourlyStackedArea extends HourlyBase {
 
   draw() {
     super.draw();
-    this.drawLegend(this.series, 2);
+    this.drawLegend(this.getLegendSeries(), 2);
 
     // Add a "negative region" which shades area of the chart representing values below zero.
     const [negativeRect, updateNegativeRect] = negativeRegionRect(this.width, this.yScale);
 
     this.updateNegativeRegion = updateNegativeRect;
     this.svg.node().append(negativeRect);
+  }
+
+  getLegendSeries() {
+    // Filter series whose values are all zero.
+    return this.series.filter(serie => _.some(serie.future_value()));
   }
 
   /**

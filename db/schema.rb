@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_03_144436) do
-  create_table "esdl_suite_ids", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "access_token", limit: 2048
-    t.string "refresh_token", limit: 2048
-    t.datetime "expires_at", precision: nil
-    t.index ["user_id"], name: "index_esdl_suite_ids_on_user_id", unique: true
-  end
-
+ActiveRecord::Schema[7.1].define(version: 2025_11_03_155831) do
   create_table "sessions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "session_id", limit: 191, null: false
     t.text "data", size: :medium
@@ -47,6 +39,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_144436) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "esdl_suite_ids", "users"
   add_foreign_key "surveys", "users"
 end

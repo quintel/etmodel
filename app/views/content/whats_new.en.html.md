@@ -6,7 +6,7 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>December</b>: the full load hours sliders and custom profiles will be expanded to enable setting full load hours and custom profiles for the individual solar PV technologies: on rooftop of households, on rooftop of buildings, onshore solar PV plants and offshore solar PV plants.</li>
+    <li><b>December</b>: it will be possible to set full load hours and upload custom profiles separately for the follwoing solar PV technologies: solar rooftop (households), solar rooftop (buildings), solar on land and solar offshore.</li>
   </ul>
 </div>
 
@@ -15,19 +15,34 @@ ___
 ## November 2025
 
 **Improved carbon modelling**
-Describing improvements of carbon modelling
 
+The modelling of carbon-containing liquid fuels has been improved by adding new production processes and expanding final demand of the transport sector (national and international) and chemical industry.
+
+-> <img src="/assets/pages/whats_new/carbon_modelling_sankey_en.png" width="650" /> <-
+
+This improvement includes various new features and changes, among others:
+
+* A new section <a href="/scenario/supply/fuel_production/overview" target="_blank">Liquid fuels and feedstock</a> has been added, containing existing and new processes for liquid fuels production. Go to the <a href="https://docs.energytransitionmodel.com/main/liquid-fuels" target="_blank">documentation</a> for more information.
+* The following energy carriers have been added to the model: bionaphtha, biomethanol, pyrolysis oil and pyrolysis bio-oil.
+* Final demand in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a> has been expanded to include energetic demand for bionaphtha and non-energetic demand for bionaphtha, methanol and biomethanol.
+* Final demand in <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">national</a> and <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">international</a> navigation has been expanded with demand for methanol and biomethanol. Additionally, final demand for biokerosene has been added to <a href="/scenario/demand/transport_international_transport/international-aviation-technology" target="_blank">national</a> aviation. The mix of these non-biogenic and biogenic fuels can be set in the <a href="/scenario/demand/transport_fuels/domestic-navigation" target="_blank">Transport fuels</a> section.
+* Improvements have been made in the calculation of primary demand for biogenic carriers. This may have resulted in changes to existing scenarios.
 
 **Other new features**
+
 * Power-to-heat temperature cut-off
 * PyETM
+* Various existing sections and sliders have been relocated or renamed in the model:
+  * Oil refineries have been moved to the new <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Liquid fuels and feedstock</a> section. Note that production from oil refineries can be set in the <a href="/scenario/supply/fuel_production/overview" target="_blank">Overview</a> slide of this section, whereas additional assumptions  can be set in the dedicated <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Oil refineries</a> slide.
+  * The Transport fuels section has been moved to the demand sector <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport</a>
+  * The Fuel production section has been renamed to <a href="/scenario/supply/fuel_extraction/extraction-of-primary-fuels" target="_blank">Fuel extraction</a>
 
 <details>
   <summary>**Bug fixes**</summary>
 
   * Fever curve fix starting in April
-  * Biomass potential bug
-  * Aluminium production Norway and Serbia
+  * There was an error in the biomass potentials in the start year data of regional Dutch datasets. This error has been rectified; the datasets now contain the correct biomass potentials. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view the potentials for a specific region.
+  * The datasets of Norway and Serbia contained incorrect values for aluminium production in the start year. These values have been updated. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to see the country-specific values.
 </details>
 
 <details>

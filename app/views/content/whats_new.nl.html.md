@@ -6,10 +6,52 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>November</b>: nieuwe productietechnologieën worden toegevoegd waarmee transportbrandstoffen en grondstoffen voor de chemiesector kunnen worden geproduceerd, zoals Fischer-Tropsch en pyrolyse. Ook wordt de inzet van brandstoffen in de transportsector en grondstoffen in de chemiesector uitgebreid met bestaande en nieuw toegevoegde dragers (zoals biomethanol en bionafta).</li>
-    <li><b>November</b>: PyETM zal officiëel worden gelanceerd. Dit is een Python package waarmee op een gestandaardiseerde manier met de API van het ETM kan worden gecommuniceerd.</li>
+    <li><b>December</b>: het wordt mogelijk om voor de volgende zon-PV technologieën afzonderlijk de vollasturen in te stellen en eigen profielen te uploaden: zon op dak (huishoudens), zon op dak (gebouwen), zon op land en zon op zee.</li>
   </ul>
 </div>
+
+___
+
+## November 2025
+
+**Verbeterde koolstofmodellering**
+
+De modellering van koolstofhoudende vloeibare brandstoffen is verbeterd door nieuwe productieprocessen toe te voegen en bestaande processen te verbeteren, en door de finale vraag van de transportsector (nationaal en internationaal) en de chemiesector uit te breiden met bestaande en nieuwe energiedragers.
+
+-> <img src="/assets/pages/whats_new/carbon_modelling_sankey_nl.png" width="650" /> <-
+
+Deze verbetering omvat diverse nieuwe functies en aanpassingen, waaronder:
+
+* Een nieuwe sectie <a href="/scenario/supply/fuel_production/overview" target="_blank">Vloeibare brandstoffen en grondstoffen</a> is toegevoegd, met bestaande en nieuwe processen voor de productie van vloeibare brandstoffen. Ga naar de <a href="https://docs.energytransitionmodel.com/main/liquid-fuels" target="_blank">documentatie</a> voor meer informatie.
+* De volgende energiedragers zijn toegevoegd aan het model: bionafta, biomethanol, pyrolyse-olie en pyrolyse-bio-olie.
+* De finale vraag in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a> is uitgebreid met energetisch gebruik van bionafta en niet-energetisch gebruik van bionafta, methanol en biomethanol.
+* De finale vraag in de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">nationale</a> en <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">internationale</a> scheepvaart is uitgebreid met vraag naar methanol en biomethanol. Daarnaast is de finale vraag naar biokerosine toegevoegd aan de <a href="/scenario/demand/transport_international_transport/international-aviation-technology" target="_blank">nationale</a> luchtvaart. De mix van deze niet-biogene en biogene brandstoffen kan worden ingesteld in de sectie <a href="/scenario/demand/transport_fuels/domestic-navigation" target="_blank">Transportbrandstoffen</a>.
+* Er zijn verbeteringen aangebracht in de berekening van de primaire vraag naar biogene energiedragers. Dit kan hebben geleid tot veranderde resultaten in bestaande scenario’s.
+
+**Overige nieuwe functies**
+
+* Power-to-heat temperature cut-off
+* PyETM
+* Diverse bestaande secties en schuifjes zijn verplaatst of hernoemd in het model:
+  * Olieraffinaderijen zijn verplaatst naar de nieuwe sectie  <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Vloeibare brandstoffen en grondstoffen</a>. Let op: de productie uit olieraffinaderijen kan worden ingesteld in de <a href="/scenario/supply/fuel_production/overview" target="_blank">Overzicht</a> pagina van deze sectie, aanvullende aannames kunnen worden ingesteld in de specifieke <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Olieraffinaderijen</a> pagina.
+  * De sectie Transportbrandstoffen is verplaatst naar de vraagsector <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport</a>
+  * De sectie Brandstofproductie is hernoemd naar <a href="/scenario/supply/fuel_extraction/extraction-of-primary-fuels" target="_blank">Brandstofextractie</a>
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Fever curve fix starting in April
+  * Er zat een fout in de biomassapotenties in de startjaardata van regionale Nederlandse datasets. Deze fout is gecorrigeerd; de datasets bevatten nu de juiste biomassapotenties. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de potenties voor een specifieke regio te bekijken.
+  * De datasets voor Noorwegen en Servië bevatten onjuiste waarden voor aluminiumproductie in het startjaar. Deze waarden zijn bijgewerkt. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de waarden voor deze landen te bekijken.
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * <a href="/assets/pages/whats_new/changelog/202511_changelog_inputs.csv" download>202511_changelog_inputs.csv</a>
+
+</details>
+</br>
 
 ___
 

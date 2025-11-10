@@ -6,10 +6,37 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded for existing and newly added carriers (such as biomethanol and bionaphtha).</li>
-    <li><b>November</b>: PyETM will be formally released. It is a Python package to interact with the API of the ETM in a standardized way.</li>
+    <li><b>December</b>: the full load hours sliders and custom profiles will be expanded to enable setting full load hours and custom profiles for the individual solar PV technologies: on rooftop of households, on rooftop of buildings, onshore solar PV plants and offshore solar PV plants.</li>
   </ul>
 </div>
+
+___
+
+## November 2025
+
+**Improved carbon modelling**
+Describing improvements of carbon modelling
+
+
+**Other new features**
+* Power-to-heat temperature cut-off
+* PyETM
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * Fever curve fix starting in April
+  * Biomass potential bug
+  * Aluminium production Norway and Serbia
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * <a href="/assets/pages/whats_new/changelog/202511_changelog_inputs.csv" download>202511_changelog_inputs.csv</a>
+
+</details>
+</br>
 
 ___
 

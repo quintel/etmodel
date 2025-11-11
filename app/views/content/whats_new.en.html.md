@@ -6,7 +6,7 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>December</b>: it will be possible to set full load hours and upload custom profiles separately for the follwoing solar PV technologies: solar rooftop (households), solar rooftop (buildings), solar on land and solar offshore.</li>
+    <li><b>December</b>: it will be possible to set full load hours and upload custom profiles separately for the following solar PV technologies: solar on roof (households), solar on roof (buildings), solar on land and solar offshore.</li>
   </ul>
 </div>
 
@@ -30,8 +30,8 @@ This improvement includes various new features and changes, among others:
 
 **Other new features**
 
-* Power-to-heat temperature cut-off
-* PyETM
+* The hourly availability of the power-to-heat technologies for district heating in the <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating" target="_blank">Flexibility</a> section is now temperature-dependent.
+* PyETM is the standard Python package used to connect to the API of the ETM. A completely renewed version is now available as a pre-release on <a href="https://pypi.org/project/pyetm/2.0.0b0/" target="_blank">PyPI</a>.
 * Various existing sections and sliders have been relocated or renamed in the model:
   * Oil refineries have been moved to the new <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Liquid fuels and feedstock</a> section. Note that production from oil refineries can be set in the <a href="/scenario/supply/fuel_production/overview" target="_blank">Overview</a> slide of this section, whereas additional assumptions  can be set in the dedicated <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Oil refineries</a> slide.
   * The Transport fuels section has been moved to the demand sector <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport</a>
@@ -40,7 +40,7 @@ This improvement includes various new features and changes, among others:
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Fever curve fix starting in April
+  * The hourly profiles in the <a href="/scenario/data/data_export/hourly-curves-for-heat-in-the-built-environment" target="_blank">data exports</a> for heat in the built environment started on the 1st of April. They have been corrected to start at the 1st of January.
   * There was an error in the biomass potentials in the start year data of regional Dutch datasets. This error has been rectified; the datasets now contain the correct biomass potentials. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view the potentials for a specific region.
   * The datasets of Norway and Serbia contained incorrect values for aluminium production in the start year. These values have been updated. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to see the country-specific values.
 </details>

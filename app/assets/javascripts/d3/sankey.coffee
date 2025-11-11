@@ -1114,10 +1114,10 @@ D3.sankey =
           {left: 'methanol_synthesis',                    right: 'losses',                            gquery: 'methanol_synthesis_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           # PYROLYSIS AND FRACTIONATION OUTPUTS
-          {left: 'pyrolysis_fractionation',               right: 'diesel',                            gquery: 'pyrolysis_fractionation_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
-          {left: 'pyrolysis_fractionation',               right: 'gasoline',                          gquery: 'pyrolysis_fractionation_to_gasoline_in_liquid_fuels_sankey', color: '#A0522D'},
-          {left: 'pyrolysis_fractionation',               right: 'biodiesel',                         gquery: 'pyrolysis_fractionation_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
-          {left: 'pyrolysis_fractionation',               right: 'bio_ethanol',                       gquery: 'pyrolysis_fractionation_to_bio_ethanol_in_liquid_fuels_sankey', color: '#90EE90'},
+          {left: 'pyrolysis_fractionation',               right: 'kerosene',                          gquery: 'pyrolysis_fractionation_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
+          {left: 'pyrolysis_fractionation',               right: 'naphtha',                           gquery: 'pyrolysis_fractionation_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
+          {left: 'pyrolysis_fractionation',               right: 'bio_kerosene',                      gquery: 'pyrolysis_fractionation_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
+          {left: 'pyrolysis_fractionation',               right: 'bionaphtha',                        gquery: 'pyrolysis_fractionation_to_bionaphtha_in_liquid_fuels_sankey', color: '#3CB371'},
           {left: 'pyrolysis_fractionation',               right: 'pyrolysis_oil',                     gquery: 'pyrolysis_fractionation_to_pyrolysis_oil_in_liquid_fuels_sankey', color: '#8B7D6B'},
           {left: 'pyrolysis_fractionation',               right: 'bio_pyrolysis_oil',                 gquery: 'pyrolysis_fractionation_to_bio_pyrolysis_oil_in_liquid_fuels_sankey', color: '#6B8E23'},
           {left: 'pyrolysis_fractionation',               right: 'losses',                            gquery: 'pyrolysis_fractionation_to_loss_in_liquid_fuels_sankey', color: '#DCDCDC'},

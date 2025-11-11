@@ -79,8 +79,8 @@ en:
         input of <b>hydrogen</b> in the hydrotreatment process of fractionation of pyrolysis oil.<br/><br/>
         The following fuels can be produced from pyrolysis oil fractionation:
         <ul>
-        <li><b>diesel</b></li>
-        <li><b>gasoline</b></li>
+        <li><b>kerosene</b></li>
+        <li><b>naphtha</b></li>
         </ul><br/>
         The model assumes that required pyrolysis oil for the fractionation process or for baseload export is produced locally. This can be altered by
         setting import of pyrolysis oil, which will substitute the local production of pyrolysis oil.<br/><br/>
@@ -102,13 +102,9 @@ en:
         Furthermore, input of <b>hydrogen</b> is required in the hydrotreatment process of fractionation of pyrolysis bio-oil.<br/><br/>
         The following fuels can be produced from pyrolysis bio-oil fractionation:
         <ul>
-        <li><b>biodiesel</b></li>
-        <li><b>bioethanol</b>*</li>
+        <li><b>biokerosene</b></li>
+        <li><b>bionaphtha</b></li>
         </ul><br/>
-        <i>* The actual output product should be biogasoline. However, the carrier biogasoline is
-        as of yet not modelled in the ETM. Instead, the ETM models final demand for
-        biogasoline (from national energy balances) as bioethanol. Therefore, output of biogasoline
-        from this process is assumed to be bioethanol.</i><br/><br/>
         The model assumes that required pyrolysis bio-oil for the fractionation process or for baseload export is produced locally. This can be altered by
         setting import of pyrolysis bio-oil, which will substitute the local production of pyrolysis oil.<br/><br/>
         Go to the section

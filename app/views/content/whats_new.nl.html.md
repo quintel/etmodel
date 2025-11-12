@@ -14,9 +14,9 @@ ___
 
 ## November 2025
 
-**Verbeterde koolstofmodellering**
+**Vloeibare brandstoffen verbeteringen**
 
-De modellering van koolstofhoudende vloeibare brandstoffen is verbeterd door nieuwe productieprocessen toe te voegen en bestaande processen te verbeteren, en door de finale vraag van de transportsector (nationaal en internationaal) en de chemiesector uit te breiden met bestaande en nieuwe energiedragers.
+De modellering van vloeibare brandstoffen productie en consumptie is verbeterd door toevoeging van nieuwe productieprocessen en uitbreiding van finale vraagsectoren.
 
 -> <img src="/assets/pages/whats_new/carbon_modelling_sankey_nl.png" width="650" /> <-
 
@@ -24,25 +24,24 @@ Deze verbetering omvat diverse nieuwe functies en aanpassingen, waaronder:
 
 * Een nieuwe sectie <a href="/scenario/supply/fuel_production/overview" target="_blank">Vloeibare brandstoffen en grondstoffen</a> is toegevoegd, met bestaande en nieuwe processen voor de productie van vloeibare brandstoffen. Ga naar de <a href="https://docs.energytransitionmodel.com/main/liquid-fuels" target="_blank">documentatie</a> voor meer informatie.
 * De volgende energiedragers zijn toegevoegd aan het model: bionafta, biomethanol, pyrolyse-olie en pyrolyse-bio-olie.
-* De finale vraag in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a> is uitgebreid met energetisch gebruik van bionafta en niet-energetisch gebruik van bionafta, methanol en biomethanol.
-* De finale vraag in de <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">nationale</a> en <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">internationale</a> scheepvaart is uitgebreid met vraag naar methanol en biomethanol. Daarnaast is de finale vraag naar biokerosine toegevoegd aan de <a href="/scenario/demand/transport_international_transport/international-aviation-technology" target="_blank">nationale</a> luchtvaart. De mix van deze niet-biogene en biogene brandstoffen kan worden ingesteld in de sectie <a href="/scenario/demand/transport_fuels/domestic-navigation" target="_blank">Transportbrandstoffen</a>.
+* De finale vraag in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a>, <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">nationaal</a> en <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">internationaal</a> transport is uitgebreid met bestaande en nieuwe energiedragers.
 * Er zijn verbeteringen aangebracht in de berekening van de primaire vraag naar biogene energiedragers. Dit kan hebben geleid tot veranderde resultaten in bestaande scenario’s.
+* De bestaande secties <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Olieraffinaderijen</a> en <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transportbrandstoffen</a> hebben een nieuwe locatie in het model die hun rol binnen het energiesysteem beter representeert. De bestaande sectie Brandstofproductie is hernoemd naar <a href="/scenario/supply/fuel_extraction/extraction-of-primary-fuels" target="_blank">Brandstofextractie</a>.
 
 **Overige nieuwe functies**
 
-* Power-to-heat temperature cut-off
-* PyETM
-* Diverse bestaande secties en schuifjes zijn verplaatst of hernoemd in het model:
-  * Olieraffinaderijen zijn verplaatst naar de nieuwe sectie  <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Vloeibare brandstoffen en grondstoffen</a>. Let op: de productie uit olieraffinaderijen kan worden ingesteld in de <a href="/scenario/supply/fuel_production/overview" target="_blank">Overzicht</a> pagina van deze sectie, aanvullende aannames kunnen worden ingesteld in de specifieke <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Olieraffinaderijen</a> pagina.
-  * De sectie Transportbrandstoffen is verplaatst naar de vraagsector <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport</a>
-  * De sectie Brandstofproductie is hernoemd naar <a href="/scenario/supply/fuel_extraction/extraction-of-primary-fuels" target="_blank">Brandstofextractie</a>
+* De uurlijkse beschikbaarheid van power-to-heat technologieën voor warmtenetten in de sectie <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating" target="_blank">Flexibiliteit</a> is nu temperatuurafhankelijk. Ga naar de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#district-heating-network" target="_blank">documentatie</a> voor meer informatie.
+* PyETM is het standaard Python package om met de API van het ETM te communiceren. Een nieuwe versie is nu beschikbaar als pre-release op <a href="https://pypi.org/project/pyetm/2.0.0b0/" target="_blank">PyPI</a>.
+* Diverse verbeteringen in gebruikerservaring zijn gedaan, zoals het automatisch herschalen van grafieken in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> bij het wisselen van eenheid en verbeterde functionaliteit voor het wijzigen van <a href="https://my.energytransitionmodel.com/collections" target="_blank">scenariocollecties</a> in MyETM.
 
 <details>
   <summary>**Bug fixes**</summary>
 
-  * Fever curve fix starting in April
+  * De uurlijkse profielen in de <a href="/scenario/data/data_export/hourly-curves-for-heat-in-the-built-environment" target="_blank">data-exports</a> voor warmte in de gebouwde omgeving begonnen op 1 april. Dit is gecorrigeerd waardoor deze nu op 1 januari beginnen.
   * Er zat een fout in de biomassapotenties in de startjaardata van regionale Nederlandse datasets. Deze fout is gecorrigeerd; de datasets bevatten nu de juiste biomassapotenties. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de potenties voor een specifieke regio te bekijken.
   * De datasets voor Noorwegen en Servië bevatten onjuiste waarden voor aluminiumproductie in het startjaar. Deze waarden zijn bijgewerkt. Raadpleeg de <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> om de waarden voor deze landen te bekijken.
+  * Voor een aantal regionale Nederlandse datasets is een bug in de uurlijkse profielen verholpen. Net als bij de andere regionale datasets, worden nu de uurlijkse profielen van de landelijke dataset gebruikt.
+
 </details>
 
 <details>

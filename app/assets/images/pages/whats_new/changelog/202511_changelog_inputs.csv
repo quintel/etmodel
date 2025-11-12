@@ -1,64 +1,64 @@
 ﻿Deploy,Subject,Status,Previous inputs,New inputs,Previous unit,New unit,Explanation
-November,Carbon modelling,New,-,output_of_energy_production_bio_ethanol,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_bio_ethanol_to_jet,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_biomethanol_to_jet,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_fischer_tropsch,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_fractionation_bio_pyrolysis_oil,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_fractionation_pyrolysis_oil,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_hvo_bio_kerosene,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_hvo_biodiesel,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_methanol_synthesis,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,output_of_energy_production_methanol_to_jet,-,PJ,Production output for new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_fischer_tropsch_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_fischer_tropsch_dry_biomass_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_fischer_tropsch_non_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_fischer_tropsch_synthetic_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_methanol_synthesis_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_methanol_synthesis_dry_biomass_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_methanol_synthesis_non_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_methanol_synthesis_synthetic_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_pyrolysis_biogenic_waste_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,New,-,energy_production_pyrolysis_dry_biomass_share,-,%,Share of feedstock route in new liquid fuels production processes
-November,Carbon modelling,Removed,output_of_energy_production_synthetic_kerosene_must_run,-,PJ,-,Replaced by input for Fischer-Tropsch production output and input for share of synthetic feedstock route
-November,Carbon modelling,Removed,output_of_energy_production_synthetic_methanol,-,PJ,-,Replaced by input for methanol synthesis production output and input for share of synthetic feedstock route
-November,Carbon modelling,Renamed,capacity_of_energy_production_synthetic_kerosene_dispatchable,capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable,MW,-,"Renamed input, represents flexible Fischer-Tropsch via synthetic feedstock route"
-November,Carbon modelling,Changed,industry_useful_demand_for_chemical_refineries,-,%,PJ,Changed to set as absolute value instead of relative value
-November,Carbon modelling,New,-,volume_of_baseload_import_bio_pyrolysis_oil,-,PJ,Baseload import of pyrolysis bio-oil
-November,Carbon modelling,New,-,volume_of_baseload_import_pyrolysis_oil,-,PJ,Baseload import of pyrolysis oil
-November,Carbon modelling,New,-,volume_of_baseload_export_bio_ethanol,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_bio_kerosene,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_bio_pyrolysis_oil,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_biodiesel,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_biomethanol,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_bionaphtha,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_methanol,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,volume_of_baseload_export_pyrolysis_oil,-,PJ,Baseload export of fuel
-November,Carbon modelling,New,-,investment_costs_fischer_tropsch,-,%,Relative change in investment costs of production process
-November,Carbon modelling,New,-,investment_costs_fractionation_pyrolysis_oil,-,%,Relative change in investment costs of production process
-November,Carbon modelling,New,-,investment_costs_hvo,-,%,Relative change in investment costs of production process
-November,Carbon modelling,New,-,investment_costs_methanol_synthesis,-,%,Relative change in investment costs of production process
-November,Carbon modelling,New,-,investment_costs_pyrolysis,-,%,Relative change in investment costs of production process
-November,Carbon modelling,New,-,om_costs_fischer_tropsch,-,%,Relative change in O&M costs of production process
-November,Carbon modelling,New,-,om_costs_fractionation_pyrolysis_oil,-,%,Relative change in O&M costs of production process
-November,Carbon modelling,New,-,om_costs_hvo,-,%,Relative change in O&M costs of production process
-November,Carbon modelling,New,-,om_costs_methanol_synthesis,-,%,Relative change in O&M costs of production process
-November,Carbon modelling,New,-,om_costs_pyrolysis,-,%,Relative change in O&M costs of production process
-November,Carbon modelling,Removed,investment_costs_co2_utilisation,-,%,-,Replaced by new inputs for Fischer-Tropsch and methanol synthesis (that set costs of synthetic feedstock route using CO2)
-November,Carbon modelling,Removed,om_costs_co2_utilisation,-,%,-,Replaced by new inputs for Fischer-Tropsch and methanol synthesis (that set costs of synthetic feedstock route using CO2)
-November,Carbon modelling,New,-,bunkers_ship_using_biomethanol_share,-,%,Share of biomethanol in methanol mix for international navigation
-November,Carbon modelling,New,-,bunkers_ship_using_methanol_share,-,%,Share of methanol in methanol mix for international navigation
-November,Carbon modelling,New,-,bunkers_ship_using_methanol_mix_share,-,%,Share of ships using methanol mix in international navigation
-November,Carbon modelling,New,-,transport_ship_using_methanol_mix_share,-,%,Share of ships using methanol mix in national navigation
-November,Carbon modelling,New,-,transport_shipping_mixer_methanol_biomethanol_share,-,%,Share of biomethanol in methanol mix for national navigation
-November,Carbon modelling,New,-,transport_shipping_mixer_methanol_methanol_share,-,%,Share of methanol in methanol mix for national navigation
-November,Carbon modelling,New,-,transport_aviation_mixer_kerosene_bio_kerosene_share,-,%,Share of biokerosene in kerosene mix for national aviation
-November,Carbon modelling,New,-,transport_aviation_mixer_kerosene_kerosene_share,-,%,Share of kerosene in kerosene mix for national aviation
-November,Carbon modelling,Changed,transport_plane_using_kerosene_share,transport_plane_using_kerosene_mix_share,-,%,Share of planes using kerosene mix for national aviation
-November,Carbon modelling,New,-,industry_chemicals_other_methanol_non_energetic_share,-,%,Non-energetic final demand of methanol in chemical other industry
-November,Carbon modelling,New,-,industry_chemicals_other_biomethanol_non_energetic_share,-,%,Non-energetic final demand of biomethanol in chemical other industry
-November,Carbon modelling,New,-,industry_chemicals_other_bionaphtha_non_energetic_share,-,%,Non-energetic final demand of bionaphtha in chemical other industry
-November,Carbon modelling,New,-,industry_chemicals_other_burner_bionaphtha_share,-,%,Energetic final demand of bionaphtha in chemical other industry
-November,Carbon modelling,New,-,max_demand_of_non_biogenic_waste,-,PJ,Domestic potential of non-biogenic waste
+November,Liquid fuels,New,-,output_of_energy_production_bio_ethanol,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_bio_ethanol_to_jet,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_biomethanol_to_jet,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_fischer_tropsch,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_fractionation_bio_pyrolysis_oil,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_fractionation_pyrolysis_oil,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_hvo_bio_kerosene,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_hvo_biodiesel,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_methanol_synthesis,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_methanol_to_jet,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_dry_biomass_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_non_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_synthetic_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_dry_biomass_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_non_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_synthetic_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_pyrolysis_biogenic_waste_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_pyrolysis_dry_biomass_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,Removed,output_of_energy_production_synthetic_kerosene_must_run,-,PJ,-,Replaced by input for Fischer-Tropsch production output and input for share of synthetic feedstock route
+November,Liquid fuels,Removed,output_of_energy_production_synthetic_methanol,-,PJ,-,Replaced by input for methanol synthesis production output and input for share of synthetic feedstock route
+November,Liquid fuels,Renamed,capacity_of_energy_production_synthetic_kerosene_dispatchable,capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable,MW,-,"Renamed input, represents flexible Fischer-Tropsch via synthetic feedstock route"
+November,Liquid fuels,Changed,industry_useful_demand_for_chemical_refineries,industry_useful_demand_for_chemical_refineries,%,PJ,Changed to set as absolute value instead of relative value
+November,Liquid fuels,New,-,volume_of_baseload_import_bio_pyrolysis_oil,-,PJ,Baseload import of pyrolysis bio-oil
+November,Liquid fuels,New,-,volume_of_baseload_import_pyrolysis_oil,-,PJ,Baseload import of pyrolysis oil
+November,Liquid fuels,New,-,volume_of_baseload_export_bio_ethanol,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_bio_kerosene,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_bio_pyrolysis_oil,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_biodiesel,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_biomethanol,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_bionaphtha,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_methanol,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_pyrolysis_oil,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,investment_costs_fischer_tropsch,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_fractionation_pyrolysis_oil,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_hvo,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_methanol_synthesis,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_pyrolysis,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,om_costs_fischer_tropsch,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_fractionation_pyrolysis_oil,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_hvo,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_methanol_synthesis,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_pyrolysis,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,Removed,investment_costs_co2_utilisation,-,%,-,Replaced by new inputs for Fischer-Tropsch and methanol synthesis (that set costs of synthetic feedstock route using CO2)
+November,Liquid fuels,Removed,om_costs_co2_utilisation,-,%,-,Replaced by new inputs for Fischer-Tropsch and methanol synthesis (that set costs of synthetic feedstock route using CO2)
+November,Liquid fuels,New,-,bunkers_ship_using_biomethanol_share,-,%,Share of biomethanol in methanol mix for international navigation
+November,Liquid fuels,New,-,bunkers_ship_using_methanol_share,-,%,Share of methanol in methanol mix for international navigation
+November,Liquid fuels,New,-,bunkers_ship_using_methanol_mix_share,-,%,Share of ships using methanol mix in international navigation
+November,Liquid fuels,New,-,transport_ship_using_methanol_mix_share,-,%,Share of ships using methanol mix in national navigation
+November,Liquid fuels,New,-,transport_shipping_mixer_methanol_biomethanol_share,-,%,Share of biomethanol in methanol mix for national navigation
+November,Liquid fuels,New,-,transport_shipping_mixer_methanol_methanol_share,-,%,Share of methanol in methanol mix for national navigation
+November,Liquid fuels,New,-,transport_aviation_mixer_kerosene_bio_kerosene_share,-,%,Share of biokerosene in kerosene mix for national aviation
+November,Liquid fuels,New,-,transport_aviation_mixer_kerosene_kerosene_share,-,%,Share of kerosene in kerosene mix for national aviation
+November,Liquid fuels,Renamed,transport_plane_using_kerosene_share,transport_plane_using_kerosene_mix_share,-,%,Share of planes using kerosene mix for national aviation
+November,Liquid fuels,New,-,industry_chemicals_other_methanol_non_energetic_share,-,%,Non-energetic final demand of methanol in chemical other industry
+November,Liquid fuels,New,-,industry_chemicals_other_biomethanol_non_energetic_share,-,%,Non-energetic final demand of biomethanol in chemical other industry
+November,Liquid fuels,New,-,industry_chemicals_other_bionaphtha_non_energetic_share,-,%,Non-energetic final demand of bionaphtha in chemical other industry
+November,Liquid fuels,New,-,industry_chemicals_other_burner_bionaphtha_share,-,%,Energetic final demand of bionaphtha in chemical other industry
+November,Liquid fuels,New,-,max_demand_of_non_biogenic_waste,-,PJ,Domestic potential of non-biogenic waste
 November,Power-to-heat,New,-,temperature_cutoff_of_energy_flexibility_p2h,-,degC,Temperature cut-off for P2H technologies
 November,Power-to-heat,New,-,energy_heat_flexibility_p2h_boiler_ht_electricity_availability,-,-,"Curve for availability of P2H boiler HT. Note that this is not a regular input, but should be set by uploading a curve"
 November,Power-to-heat,New,-,energy_heat_flexibility_p2h_boiler_mt_electricity_availability,-,-,"Curve for availability of P2H boiler MT. Note that this is not a regular input, but should be set by uploading a curve"

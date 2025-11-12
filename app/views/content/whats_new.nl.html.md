@@ -23,16 +23,16 @@ De modellering van vloeibare brandstoffen productie en consumptie is verbeterd d
 Deze verbetering omvat diverse nieuwe functies en aanpassingen, waaronder:
 
 * Een nieuwe sectie <a href="/scenario/supply/fuel_production/overview" target="_blank">Vloeibare brandstoffen en grondstoffen</a> is toegevoegd, met bestaande en nieuwe processen voor de productie van vloeibare brandstoffen. Ga naar de <a href="https://docs.energytransitionmodel.com/main/liquid-fuels" target="_blank">documentatie</a> voor meer informatie.
-* De volgende energiedragers zijn toegevoegd aan het model: bionafta, biomethanol, pyrolyse-olie en pyrolyse-bio-olie.
+* De volgende energiedragers zijn toegevoegd aan het model: bionafta, biomethanol, pyrolyse-olie en pyrolyse bio-olie.
 * De finale vraag in de <a href="/scenario/demand/industry/chemicals" target="_blank">chemiesector</a>, <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">nationaal</a> en <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">internationaal</a> transport is uitgebreid met bestaande en nieuwe energiedragers.
 * Er zijn verbeteringen aangebracht in de berekening van de primaire vraag naar biogene energiedragers. Dit kan hebben geleid tot veranderde resultaten in bestaande scenario’s.
-* De bestaande secties <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Olieraffinaderijen</a> en <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transportbrandstoffen</a> hebben een nieuwe locatie in het model die hun rol binnen het energiesysteem beter representeert. De bestaande sectie Brandstofproductie is hernoemd naar <a href="/scenario/supply/fuel_extraction/extraction-of-primary-fuels" target="_blank">Brandstofextractie</a>.
+* De bestaande secties <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Olieraffinaderijen</a> en <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transportbrandstoffen</a> hebben een nieuwe locatie in het model die hun rol binnen het energiesysteem beter representeert.
 
 **Overige nieuwe functies**
 
 * De uurlijkse beschikbaarheid van power-to-heat technologieën voor warmtenetten in de sectie <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating" target="_blank">Flexibiliteit</a> is nu temperatuurafhankelijk. Ga naar de <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#district-heating-network" target="_blank">documentatie</a> voor meer informatie.
 * PyETM is het standaard Python package om met de API van het ETM te communiceren. Een nieuwe versie is nu beschikbaar als pre-release op <a href="https://pypi.org/project/pyetm/2.0.0b0/" target="_blank">PyPI</a>.
-* Diverse verbeteringen in gebruikerservaring zijn gedaan, zoals het automatisch herschalen van grafieken in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> bij het wisselen van eenheid en verbeterde functionaliteit voor het wijzigen van <a href="https://my.energytransitionmodel.com/collections" target="_blank">scenariocollecties</a> in MyETM.
+* Diverse verbeteringen in gebruikerservaring zijn gedaan, zoals het automatisch herschalen van grafieken in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> bij het wisselen van eenheden en verbeterde functionaliteit voor het wijzigen van <a href="https://my.energytransitionmodel.com/collections" target="_blank">scenariocollecties</a> in MyETM.
 
 <details>
   <summary>**Bug fixes**</summary>

@@ -26,7 +26,7 @@ This improvement includes various new features and changes, among others:
 * The following energy carriers have been added to the model: bionaphtha, biomethanol, pyrolysis oil and pyrolysis bio-oil.
 * Final demand in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a>, <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">national</a> and <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">international</a> transport has been expanded with existing and new energy carriers.
 * Improvements have been made in the calculation of primary demand for biogenic carriers. This may have resulted in changes to existing scenarios.
-* The existing <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Oil refineries</a> and <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport fuels</a> sections have been relocated in the model to be better fit their role in the energy system. The existing Fuel production section has been renamed to <a href="/scenario/supply/fuel_extraction/extraction-of-primary-fuels" target="_blank">Fuel extraction</a>.
+* The existing <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Oil refineries</a> and <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport fuels</a> sections have been relocated in the model to be better fit their role in the energy system.
 
 **Other new features**
 

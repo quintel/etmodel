@@ -168,30 +168,18 @@
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_demand_export_mekko_of_kerosene_demand_supply
 
-- label: kerosene_supply_fischer_tropsch_synthetic_dispatchable
+- label: kerosene_supply_fischer_tropsch_synthetic
   color: "#4682B4"
   order_by: 200
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: kerosene_supply_fischer_tropsch_synthetic_dispatchable
+  gquery: kerosene_supply_fischer_tropsch_synthetic
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_supply_fischer_tropsch_synthetic_dispatchable_mekko_of_kerosene_demand_supply
-- label: kerosene_supply_fischer_tropsch_synthetic_must_run
-  color: "#87cfeb"
-  order_by: 210
-  group: supply
-  show_at_first: false
-  is_target_line: false
-  target_line_position: ''
-  gquery: kerosene_supply_fischer_tropsch_synthetic_must_run
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_kerosene_demand_supply
-  key: kerosene_supply_fischer_tropsch_synthetic_must_run_mekko_of_kerosene_demand_supply
+  key: kerosene_supply_fischer_tropsch_synthetic_mekko_of_kerosene_demand_supply
 - label: kerosene_supply_fischer_tropsch_non_biogenic_waste_ccs
   color: "#2F4F4F"
   order_by: 215
@@ -228,6 +216,30 @@
   dependent_on:
   output_element_key: mekko_of_kerosene_demand_supply
   key: bio_kerosene_supply_fischer_tropsch_dry_biomass_ccs_mekko_of_kerosene_demand_supply
+- label: kerosene_supply_fractionation_pyrolysis_oil
+  color: "#63B19C"
+  order_by: 225
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: kerosene_supply_fractionation_pyrolysis_oil
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: kerosene_supply_fractionation_pyrolysis_oil_mekko_of_kerosene_demand_supply
+- label: bio_kerosene_supply_fractionation_bio_pyrolysis_oil
+  color: "#A0EAD6"
+  order_by: 225
+  group: supply
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_kerosene_supply_fractionation_bio_pyrolysis_oil
+  is_1990: false
+  dependent_on:
+  output_element_key: mekko_of_kerosene_demand_supply
+  key: bio_kerosene_supply_fractionation_bio_pyrolysis_oil_mekko_of_kerosene_demand_supply
 - label: bio_kerosene_supply_hvo
   color: "#8FBC8F"
   order_by: 230

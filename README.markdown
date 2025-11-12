@@ -1,9 +1,9 @@
-# The Energy Transition Model (ETM) Professional
+# Energy Transition Model
 
 
 ![](https://docs.energytransitionmodel.com/img/docs/20181031_etmodel_screenshot.png)
 
-This is the source code of the [ETM Pro](https://pro.energytransitionmodel.com/):
+This is the source code of the [ETM](https://energytransitionmodel.com/):
 an online web app that let you create a future energy scenario for various countries, municipalities, neighbourhoods and more.
 This software is [Open Source](LICENSE.txt), so you can fork it and alter at your will.
 
@@ -19,12 +19,12 @@ If you have any questions, please [contact us](http://quintel.com/contact).
 
 ## License
 
-The ETM pro is released under the [MIT License](LICENSE.txt).
+The ETM  is released under the [MIT License](LICENSE.txt).
 
 ## Branches
 
-* **master**: Working branch and is tracked by [the ETM beta server](https://beta-pro.energytransitionmodel.com/)
-* **production**: Tracks [the ETM production server](https://pro.energytransitionmodel.com/)
+* **master**: Working branch and is tracked by [the ETM beta server](https://beta.energytransitionmodel.com/)
+* **production**: Tracks [the ETM production server](https://energytransitionmodel.com/)
 
 ## Installation with Docker
 

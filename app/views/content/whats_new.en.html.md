@@ -6,10 +6,50 @@ ___
 
 <div style="padding: 10px; background-color: #E7F3FF; color: #333; margin-bottom: 15px;">
   <ul>
-    <li><b>November</b>: new production technologies will be added for the production of transport fuels and feedstock for the chemical industry, such as Fischer-Tropsch and pyrolysis. In addition, the use of transport fuels and feedstock for the chemical industry will be expanded for existing and newly added carriers (such as biomethanol and bionaphtha).</li>
-    <li><b>November</b>: PyETM will be formally released. It is a Python package to interact with the API of the ETM in a standardized way.</li>
+    <li><b>December</b>: it will be possible to set full load hours and upload custom profiles separately for the following solar PV technologies: solar on roof (households), solar on roof (buildings), solar on land and solar offshore.</li>
   </ul>
 </div>
+
+___
+
+## November 2025
+
+**Liquid fuels improvements**
+
+The modelling of liquid fuels production and consumption has been improved by adding new production processes and expanding final demand sectors.
+
+-> <img src="/assets/pages/whats_new/carbon_modelling_sankey_en.png" width="650" /> <-
+
+This improvement includes various new features and changes, among others:
+
+* A new section <a href="/scenario/supply/fuel_production/overview" target="_blank">Liquid fuels and feedstock</a> has been added, containing existing and new processes for liquid fuels production. Go to the <a href="https://docs.energytransitionmodel.com/main/liquid-fuels" target="_blank">documentation</a> for more information.
+* The following energy carriers have been added to the model: bionaphtha, biomethanol, pyrolysis oil and pyrolysis bio-oil.
+* Final demand in the <a href="/scenario/demand/industry/chemicals" target="_blank">chemical industry</a>, <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology" target="_blank">national</a> and <a href="/scenario/demand/transport_international_transport/international-navigation-technology" target="_blank">international</a> transport has been expanded with existing and new energy carriers.
+* Improvements have been made in the calculation of primary demand for biogenic carriers. This may have resulted in changes to existing scenarios.
+* The existing <a href="/scenario/supply/fuel_production/oil-refineries" target="_blank">Oil refineries</a> and <a href="/scenario/demand/transport_fuels/road-transport" target="_blank">Transport fuels</a> sections have been relocated in the model to be better fit their role in the energy system.
+
+**Other new features**
+
+* The hourly availability of the power-to-heat technologies for district heating in the <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating" target="_blank">Flexibility</a> section is now temperature-dependent. Go to the <a href="https://docs.energytransitionmodel.com/main/electricity-conversion/#district-heating-network" target="_blank">documentation</a> for more information.
+* PyETM is the standard Python package used to connect to the API of the ETM. A completely renewed version is now available as a pre-release on <a href="https://pypi.org/project/pyetm/2.0.0b0/" target="_blank">PyPI</a>.
+* Various improvements in user experience have been made, such as automatic chart rescaling in <a href="https://collections.energytransitionmodel.com/" target="_blank">Collections</a> when switching units and enhanced functionality for editing <a href="https://my.energytransitionmodel.com/collections" target="_blank">scenario collections</a> in MyETM.
+
+<details>
+  <summary>**Bug fixes**</summary>
+
+  * The hourly profiles in the <a href="/scenario/data/data_export/hourly-curves-for-heat-in-the-built-environment" target="_blank">data exports</a> for heat in the built environment started on the 1st of April. They have been corrected to start at the 1st of January.
+  * There was an error in the biomass potentials in the start year data of regional Dutch datasets. This error has been rectified; the datasets now contain the correct biomass potentials. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to view the potentials for a specific region.
+  * The datasets of Norway and Serbia contained incorrect values for aluminium production in the start year. These values have been updated. Consult the <a href="https://data.energytransitionmodel.com/" target="_blank">Dataset Manager</a> to see the country-specific values.
+  * For some regional Dutch datasets, a bug has been solved in the hourly profiles. Similar to the other regional datsets, the hourly profiles are now based on the national dataset.
+</details>
+
+<details>
+  <summary>**Technical changelog**</summary>
+
+  * <a href="/assets/pages/whats_new/changelog/202511_changelog_inputs.csv" download>202511_changelog_inputs.csv</a>
+
+</details>
+</br>
 
 ___
 

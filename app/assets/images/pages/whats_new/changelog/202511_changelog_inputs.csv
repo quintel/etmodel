@@ -1,0 +1,127 @@
+﻿Deploy,Subject,Status,Previous inputs,New inputs,Previous unit,New unit,Explanation
+November,Liquid fuels,New,-,output_of_energy_production_bio_ethanol,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_bio_ethanol_to_jet,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_biomethanol_to_jet,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_fischer_tropsch,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_fractionation_bio_pyrolysis_oil,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_fractionation_pyrolysis_oil,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_hvo_bio_kerosene,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_hvo_biodiesel,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_methanol_synthesis,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,output_of_energy_production_methanol_to_jet,-,PJ,Production output for new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_dry_biomass_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_non_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_fischer_tropsch_synthetic_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_dry_biomass_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_non_biogenic_waste_ccs_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_methanol_synthesis_synthetic_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_pyrolysis_biogenic_waste_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,New,-,energy_production_pyrolysis_dry_biomass_share,-,%,Share of feedstock route in new liquid fuels production processes
+November,Liquid fuels,Removed,output_of_energy_production_synthetic_kerosene_must_run,-,PJ,-,Replaced by input for Fischer-Tropsch production output and input for share of synthetic feedstock route
+November,Liquid fuels,Removed,output_of_energy_production_synthetic_methanol,-,PJ,-,Replaced by input for methanol synthesis production output and input for share of synthetic feedstock route
+November,Liquid fuels,Renamed,capacity_of_energy_production_synthetic_kerosene_dispatchable,capacity_of_energy_production_fischer_tropsch_synthetic_dispatchable,MW,-,"Renamed input, represents flexible Fischer-Tropsch via synthetic feedstock route"
+November,Liquid fuels,Changed,industry_useful_demand_for_chemical_refineries,industry_useful_demand_for_chemical_refineries,%,PJ,Changed to set as absolute value instead of relative value
+November,Liquid fuels,New,-,volume_of_baseload_import_bio_pyrolysis_oil,-,PJ,Baseload import of pyrolysis bio-oil
+November,Liquid fuels,New,-,volume_of_baseload_import_pyrolysis_oil,-,PJ,Baseload import of pyrolysis oil
+November,Liquid fuels,New,-,volume_of_baseload_export_bio_ethanol,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_bio_kerosene,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_bio_pyrolysis_oil,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_biodiesel,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_biomethanol,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_bionaphtha,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_methanol,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,volume_of_baseload_export_pyrolysis_oil,-,PJ,Baseload export of fuel
+November,Liquid fuels,New,-,investment_costs_fischer_tropsch,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_fractionation_pyrolysis_oil,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_hvo,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_methanol_synthesis,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,investment_costs_pyrolysis,-,%,Relative change in investment costs of production process
+November,Liquid fuels,New,-,om_costs_fischer_tropsch,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_fractionation_pyrolysis_oil,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_hvo,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_methanol_synthesis,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,New,-,om_costs_pyrolysis,-,%,Relative change in O&M costs of production process
+November,Liquid fuels,Removed,investment_costs_co2_utilisation,-,%,-,Replaced by new inputs for Fischer-Tropsch and methanol synthesis (that set costs of synthetic feedstock route using CO2)
+November,Liquid fuels,Removed,om_costs_co2_utilisation,-,%,-,Replaced by new inputs for Fischer-Tropsch and methanol synthesis (that set costs of synthetic feedstock route using CO2)
+November,Liquid fuels,New,-,bunkers_ship_using_biomethanol_share,-,%,Share of biomethanol in methanol mix for international navigation
+November,Liquid fuels,New,-,bunkers_ship_using_methanol_share,-,%,Share of methanol in methanol mix for international navigation
+November,Liquid fuels,New,-,bunkers_ship_using_methanol_mix_share,-,%,Share of ships using methanol mix in international navigation
+November,Liquid fuels,New,-,transport_ship_using_methanol_mix_share,-,%,Share of ships using methanol mix in national navigation
+November,Liquid fuels,New,-,transport_shipping_mixer_methanol_biomethanol_share,-,%,Share of biomethanol in methanol mix for national navigation
+November,Liquid fuels,New,-,transport_shipping_mixer_methanol_methanol_share,-,%,Share of methanol in methanol mix for national navigation
+November,Liquid fuels,New,-,transport_aviation_mixer_kerosene_bio_kerosene_share,-,%,Share of biokerosene in kerosene mix for national aviation
+November,Liquid fuels,New,-,transport_aviation_mixer_kerosene_kerosene_share,-,%,Share of kerosene in kerosene mix for national aviation
+November,Liquid fuels,Renamed,transport_plane_using_kerosene_share,transport_plane_using_kerosene_mix_share,-,%,Share of planes using kerosene mix for national aviation
+November,Liquid fuels,New,-,industry_chemicals_other_methanol_non_energetic_share,-,%,Non-energetic final demand of methanol in chemical other industry
+November,Liquid fuels,New,-,industry_chemicals_other_biomethanol_non_energetic_share,-,%,Non-energetic final demand of biomethanol in chemical other industry
+November,Liquid fuels,New,-,industry_chemicals_other_bionaphtha_non_energetic_share,-,%,Non-energetic final demand of bionaphtha in chemical other industry
+November,Liquid fuels,New,-,industry_chemicals_other_burner_bionaphtha_share,-,%,Energetic final demand of bionaphtha in chemical other industry
+November,Liquid fuels,New,-,max_demand_of_non_biogenic_waste,-,PJ,Domestic potential of non-biogenic waste
+November,Power-to-heat,New,-,temperature_cutoff_of_energy_flexibility_p2h,-,degC,Temperature cut-off for P2H technologies
+November,Power-to-heat,New,-,energy_heat_flexibility_p2h_boiler_ht_electricity_availability,-,-,"Curve for availability of P2H boiler HT. Note that this is not a regular input, but should be set by uploading a curve"
+November,Power-to-heat,New,-,energy_heat_flexibility_p2h_boiler_mt_electricity_availability,-,-,"Curve for availability of P2H boiler MT. Note that this is not a regular input, but should be set by uploading a curve"
+November,Power-to-heat,New,-,energy_heat_flexibility_p2h_heatpump_ht_electricity_availability,-,-,"Curve for availability of P2H heat pump HT. Note that this is not a regular input, but should be set by uploading a curve"
+November,Power-to-heat,New,-,energy_heat_flexibility_p2h_heatpump_mt_electricity_availability,-,-,"Curve for availability of P2H heat pump MT. Note that this is not a regular input, but should be set by uploading a curve"
+August,Naphtha,New,-,volume_of_baseload_export_naphtha,-,PJ,Baseload export of naphtha added
+August,Naphtha,New,-,industry_chemicals_other_burner_naphtha_share,-,%,Energetic final demand of naphtha added to chemical other industry
+August,Naphtha,New,-,industry_chemicals_other_naphtha_non_energetic_share,-,%,Non-energetic final demand of naphtha added to chemical other industry
+August,Modifiable profiles,Changed,-,-,-,-,"Profiles with type 'capacity profile' are now downloaded in the same format as they should be uploaded (sum tothe  total number of full load hours). Previously, a normalised profile was obtained. "
+June,Households appliances efficiency,New,-,households_appliances_electricity_efficiency,-,%,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_clothes_dryer_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_computer_media_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_dishwasher_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_fridge_freezer_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_other_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_television_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_vacuum_cleaner_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households appliances efficiency,Removed,households_appliances_washing_machine_electricity_efficiency,-,%,-,Inputs per application are replaced by a single input for overall efficiency improvements of appliances
+June,Households behaviour,Removed,households_behavior_low_temperature_washing,-,%,-,Redundant behaviour sliders are removed
+June,Households behaviour,Removed,households_behavior_standby_killer_turn_off_appliances,-,%,-,Redundant behaviour sliders are removed
+June,Households behaviour,Removed,households_behavior_turn_off_the_light,-,%,-,Redundant behaviour sliders are removed
+June,Custom profiles,Changed,flh_of_hydro_river,flh_of_hydro_river_user_curve,hours,hours,"Changed input is introduced with a bug fix in custom profile upload. This input is automatically set when a custom profile is uploaded, and should thus not be set manually."
+June,Custom profiles,Changed,flh_of_solar_thermal,flh_of_solar_thermal_user_curve,hours,hours,"Changed input is introduced with a bug fix in custom profile upload. This input is automatically set when a custom profile is uploaded, and should thus not be set manually."
+June,Custom profiles,Removed,flh_of_geothermal_heat,-,hours,-,Input is replaced with separate inputs that are set when a custom profile for deep or shallow geothermal is uploaded.
+June,Custom profiles,New,-,flh_of_geothermal_heat_deep_user_curve,-,hours,"New input that is automatically set when a custom profile for deep geothermal is uploaded, and should thus not be set manually"
+June,Custom profiles,New,-,flh_of_geothermal_heat_shallow_user_curve,-,hours,"New input that is automatically set when a custom profile for shallow geothermal is uploaded, and should thus not be set manually"
+February,WTP,Changed,wtp_of_industry_chemicals_fertilizers_flexibility_p2h_electricity,-,euro,euro,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,WTP,Changed,wtp_of_industry_chemicals_other_flexibility_p2h_electricity,-,euro,euro,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,WTP,Changed,wtp_of_industry_chemicals_refineries_flexibility_p2h_electricity,-,euro,euro,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,WTP,Changed,wtp_of_industry_other_food_flexibility_p2h_electricity,-,euro,euro,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,WTP,Changed,wtp_of_industry_other_paper_flexibility_p2h_electricity,-,euro,euro,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,External coupling,Removed,external_coupling_industry_chemical_fertilizers_p2h_wtp,-,euro,-,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,External coupling,Removed,external_coupling_industry_chemical_other_p2h_wtp,-,euro,-,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,External coupling,Removed,external_coupling_industry_chemical_refineries_p2h_wtp,-,euro,-,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,External coupling,Removed,external_coupling_industry_other_food_p2h_wtp,-,euro,-,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,External coupling,Removed,external_coupling_industry_other_paper_p2h_wtp,-,euro,-,Migrated functionality of external coupling inputs to regular inputs for WTP
+February,External coupling,Changed,external_coupling_industry_metal_aluminium_technical_lifetime,-,year,year,Change minimum value from 0 to 1
+February,External coupling,Changed,external_coupling_industry_metal_other_metals_technical_lifetime,-,year,year,Change minimum value from 0 to 1
+February,External coupling,Changed,external_coupling_industry_metal_steel_technical_lifetime,-,year,year,Change minimum value from 0 to 1
+February,Insulation,Changed,buildings_insulation_level_buildings_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,buildings_insulation_level_buildings_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_apartments_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_detached_houses_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_semi_detached_houses_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_1945_1964,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_1965_1984,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_1985_2004,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_2005_present,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_before_1945,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Insulation,Changed,households_insulation_level_terraced_houses_future,-,kWh/m2,kWh/m2,Decrease allowable minimum value to 1.0
+February,Appliances,Changed,households_behavior_standby_killer_turn_off_appliances,-,%,%,"Removing buildings appliances from input, it should only set households behaviour"

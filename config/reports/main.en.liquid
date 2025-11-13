@@ -273,7 +273,7 @@
       <p>
         District heating in your scenario can be used to heat houses and
         buildings and provide heat to agricultural sectors. There are three types of district heating networks: high-temperature (HT), medium-temperature (MT) and low temperature (LT).
-        
+
         The Sankey diagram below shows:
         <ul>
             <li><strong>which sources</strong> deliver heat to the district heating networks (left column);</li>
@@ -289,7 +289,7 @@
       {% if future.final_demand_of_ht_heat_total > 0.0 %}
         {% if future.unused_heat_in_ht_heat_network > 0.0 %}
           <p>
-            In the <strong>HT network</strong>, there is 
+            In the <strong>HT network</strong>, there is
             {{ future.ht_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
             of excess heat produced which is not used by other sectors.
           </p>
@@ -303,7 +303,7 @@
           </ul>
         {% else %}
           <p>
-            In the <strong>HT network</strong>, there is 
+            In the <strong>HT network</strong>, there is
             {{ future.heat_production_from_backup_burner_ht_network_gas | autoscale: 'MJ'}}
             insufficient heat produced to satisfy the heat demand. A backup
             gas heater is deployed to satisfy the deficit.
@@ -322,7 +322,7 @@
       {% if future.final_demand_of_mt_heat_total > 0.0 %}
         {% if future.unused_heat_in_mt_heat_network > 0.0 %}
           <p>
-            In the <strong>MT network</strong>, there is 
+            In the <strong>MT network</strong>, there is
             {{ future.mt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
             of excess heat produced which is not used by other sectors.
           </p>
@@ -336,7 +336,7 @@
           </ul>
         {% else %}
           <p>
-            In the <strong>MT network</strong>, there is 
+            In the <strong>MT network</strong>, there is
             {{ future.heat_production_from_backup_burner_mt_network_gas | autoscale: 'MJ'}}
             insufficient heat produced to satisfy the heat demand. A backup
             gas heater is deployed to satisfy the deficit.
@@ -355,7 +355,7 @@
       {% if future.final_demand_of_lt_heat_total > 0.0 %}
         {% if future.unused_heat_in_lt_heat_network > 0.0 %}
           <p>
-            In the <strong>LT network</strong>, there is 
+            In the <strong>LT network</strong>, there is
             {{ future.lt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
             of excess heat produced which is not used by other sectors.
           </p>
@@ -369,7 +369,7 @@
           </ul>
         {% else %}
           <p>
-            In the <strong>LT network</strong>, there is 
+            In the <strong>LT network</strong>, there is
             {{ future.heat_production_from_backup_burner_lt_network_gas | autoscale: 'MJ'}}
             insufficient heat produced to satisfy the heat demand. A backup
             gas heater is deployed to satisfy the deficit.
@@ -429,25 +429,6 @@
       </ul>
     {% endif %}
 
-    <h2>Flow-diagram of CO<sub>2</sub> emissions</h2>
-
-    <p>
-     The Sankey diagram below shows:
-     <ul>
-        <li><strong>which</strong> carriers are primarily responsible for CO<sub>2</sub> emissions (left column)</li>
-        <li><strong>where</strong> in the system CO<sub>2</sub> is produced (centre column)</li>
-        <li><strong>which part</strong> of the CO<sub>2</sub> is captured and emitted (right column)</li>
-      </ul>
-    </p>
-
-    {% chart co2_sankey %}
-      Sankey diagram showing which carriers and sectors are primarily responsible for CO<sub>2</sub> emissions.
-    {% endchart %}
-
-    <p>
-      You can build carbon capture and storage (CCS) power plants in the supply section of the ETM to
-      reduce CO<sub>2</sub> emissions of electricity generation.
-    </p>
 <!--     <h2>CO<sub>2</sub> emissions of biomass</h2>
 
     <p>

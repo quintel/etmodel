@@ -367,7 +367,7 @@
 
     <h2 class="banner">B. Warmtenetten</h2>
     <p>
-    Er zijn drie typen warmtenetten in het ETM opgenomen: hoge-temperatuur (HT), midden-temperatuur (MT) en lage-temperatuur (LT). 
+    Er zijn drie typen warmtenetten in het ETM opgenomen: hoge-temperatuur (HT), midden-temperatuur (MT) en lage-temperatuur (LT).
 
     Het Sankey diagram hieronder toont
         <ul>
@@ -376,8 +376,8 @@
             <li><strong>welke gebruikers</strong> warmte uit elk type warmtenet afnemen (rechterkolom)</li>
           </ul>
       </p>
-    
-    Wanneer er te	weinig warmteaanbod is in het scenario, dan springt er een gas back-up ketel aan. Eventuele overschotten van warmte worden per temperatuurniveau ook in het diagram getoond. 
+
+    Wanneer er te	weinig warmteaanbod is in het scenario, dan springt er een gas back-up ketel aan. Eventuele overschotten van warmte worden per temperatuurniveau ook in het diagram getoond.
         {% chart sankey_heat_networks %}
         Aanbod (links) en vraag (rechts) op de warmtenetten in {{ settings.end_year }}.
         {% endchart %}
@@ -386,9 +386,9 @@
     {% if future.final_demand_of_ht_heat_total > 0.0 %}
       {% if future.unused_heat_in_ht_heat_network > 0.0 %}
         <p>
-          In het <strong>HT warmtenet</strong> wordt er 
+          In het <strong>HT warmtenet</strong> wordt er
           {{ future.ht_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
-          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut. 
+          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
@@ -416,9 +416,9 @@
     {% if future.final_demand_of_mt_heat_total > 0.0 %}
       {% if future.unused_heat_in_mt_heat_network > 0.0 %}
         <p>
-          In het <strong>MT warmtenet</strong> wordt er 
+          In het <strong>MT warmtenet</strong> wordt er
           {{ future.mt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
-          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut. 
+          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
@@ -446,9 +446,9 @@
     {% if future.final_demand_of_lt_heat_total > 0.0 %}
       {% if future.unused_heat_in_lt_heat_network > 0.0 %}
         <p>
-          In het <strong>LT warmtenet</strong> wordt er 
+          In het <strong>LT warmtenet</strong> wordt er
           {{ future.lt_network_to_unused_heat_in_sankey_heat_networks | autoscale: 'PJ'}}
-          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut. 
+          aan overtollige warmte geproduceerd die niet door andere sectoren wordt benut.
         </p>
 
         <p>Je kunt vraag en aanbod als volgt op elkaar afstemmen:</p>
@@ -868,27 +868,6 @@
 
     </ul>
 
-
-      <h2>Sankey-diagram van CO<sub>2</sub>-uitstoot</h2>
-
-      <p>
-       Het onderstaande Sankey diagram toont:
-       <ul>
-          <li><strong>welke</strong> energiedragers met name verantwoordelijk zijn voor CO<sub>2</sub>-uitstoot
-            (linker kolom)</li>
-          <li><strong>waar</strong> in het systeem CO<sub>2</sub> wordt uitgestoten (middelste kolom)</li>
-          <li><strong>welk deel</strong> van de CO<sub>2</sub> wordt opgeslagen of uitgestoten (rechter kolom)</li>
-        </ul>
-      </p>
-
-      {% chart co2_sankey %}
-        Sankey diagram van de dragers en sectoren welke verantwoordelijk zijn voor CO<sub>2</sub>-uitstoot.
-      {% endchart %}
-
-      <p>
-        Je kunt Carbon Capture and Storage (CCS) centrales bouwen in het 'Aanbod' deel van het ETM om de
-        CO<sub>2</sub>-uitstoot van elektriciteitsopwek te verkleinen.
-      </p>
 
   <!--     <h2>CO<sub>2</sub> emissions of biomass</h2>
 

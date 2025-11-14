@@ -11,8 +11,8 @@ nl:
         agriculture_heat: "Landbouw warmtevraag"
         all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve: "Inclusief correctie"
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Exclusief correctie"
-        battery_wind_inland:  "Wind op land met batterijsysteem"
-        battery_solar_PV:  "Zon op land met batterijsysteem"
+        battery_wind_inland:  "Wind op land (met batterijsysteem)"
+        battery_solar_PV:  "Zon op land (met batterijsysteem)"
         costs_building_and_installations: "Gebouwen/Installaties"
         costs_storage_and_conversion: "Flexibiliteit en opslag"
         costs_production: "Productiemiddelen"
@@ -575,12 +575,12 @@ nl:
         energy_battery_solar_pv: "Zon op land (batterij)"
         energy_battery_wind_turbine_inland: 'Wind op land (batterij)'
         energy_battery_wind_electricity: 'Wind op land (batterij)'
-        energy_power_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zonneparken'
-        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: 'Productieverlaging zonneparken op zee'
-        energy_power_solar_pv_electricity_output_curve: 'Opwek zonneparken'
-        energy_power_solar_pv_offshore_electricity_output_curve: 'Opwek zonneparken op zee'
-        energy_battery_solar_pv_electricity_output_curve: 'Opwek zonneparken met batterij'
-        energy_battery_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zonneparken met batterij'
+        energy_power_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zon op land'
+        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: 'Productieverlaging zon op zee'
+        energy_power_solar_pv_electricity_output_curve: 'Opwek zon op land'
+        energy_power_solar_pv_offshore_electricity_output_curve: 'Opwek zon op zee'
+        energy_battery_solar_pv_electricity_output_curve: 'Opwek zon op land (met batterijsysteem)'
+        energy_battery_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zon op land (met batterijsysteem)'
         energy_power_solar_pv_solar_radiation: 'Zon op land'
         energy_power_offshore_solar_pv: 'Zon op zee'
         energy_power_supercritical_coal: 'Kolen conventioneel'
@@ -598,7 +598,7 @@ nl:
         energy_power_wind_turbine_coastal: 'Wind aan kust'
         energy_power_wind_turbine_inland: 'Wind op land'
         energy_power_wind_turbine_offshore: 'Wind op zee'
-        energy_power_hybrid_wind_turbine_offshore: 'Wind op zee (hybride)'
+        energy_power_hybrid_wind_turbine_offshore: 'Wind op zee (met hybride aansluiting)'
         energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Productieverlaging hybride windmolens op zee'
         energy_export_hydrogen_baseload_for_mekko: 'Export (basislast)'
         energy_export_hydrogen_backup_for_mekko: 'Export (overschot)'
@@ -1113,8 +1113,8 @@ nl:
         local_chp_biogas: "Biogas-WKK (must-run)"
         local_electrolysis: "Lokale elektrolyse"
         locally_produced_heat: "Lokaal geproduceerde warmte"
-        local_solar_pv_households: "Zon PV Huishoudens"
-        local_solar_pv_buildings: "Zon PV Gebouwen"
+        local_solar_pv_households: "Zon op dak (huishoudens)"
+        local_solar_pv_buildings: "Zon op dak (gebouwen)"
         losses_of_export: "Verliezen van export"
         low_voltage_network: "Laagspanningsnet"
         lpg: "LPG"
@@ -1277,8 +1277,8 @@ nl:
         offshore: "Op zee"
         offshore_net: "Net op zee"
         offshore_wind_turbines: "Wind op zee"
-        offshore_hybrid_wind_turbines: "Wind op zee (hybride)"
-        hybrid_offshore_wind_output_capacity: "Wind op zee (hybride)"
+        offshore_hybrid_wind_turbines: "Wind op zee (met hybride aansluiting)"
+        hybrid_offshore_wind_output_capacity: "Wind op zee (met hybride aansluiting)"
         hybrid_offshore_electrolyser_input_capacity: "Elektrolyser op zee"
         hybrid_offshore_cable_input_capacity: "Elektriciteitskabel op zee"
         oil: "Olie"
@@ -1581,7 +1581,7 @@ nl:
         other: "Overig"
         transport: "Binnenlands transport"
         transport_generic: "Transport"
-        wind_coastal_production: "Wind aan de kust"
+        wind_coastal_production: "Wind aan kust"
         solar_thermal_heat_production: "Zonthermie"
         residences_before_1945: "Woningen voor 1945"
         residences_1945_1964: "Woningen 1945 - 1964"

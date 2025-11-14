@@ -11,8 +11,8 @@ en:
         agriculture_heat: "Agriculture heat"
         all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve: "Including correction"
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Excluding correction"
-        battery_wind_inland:  "Wind inland with battery system"
-        battery_solar_PV:  "Solar PV plants with battery system"
+        battery_wind_inland:  "Wind onshore (with battery system)"
+        battery_solar_PV:  "Solar on land (with battery system)"
         costs_building_and_installations: "Building and installations"
         costs_storage_and_conversion: "Storage and conversion"
         costs_production: "Energy production"
@@ -585,9 +585,9 @@ en:
         energy_power_nuclear_gen3_uranium_oxide: 'Nuclear 3rd Gen'
         energy_power_nuclear_small_modular_reactor_uranium_oxide: 'Nuclear small modular reactor'
         energy_power_solar_csp_solar_radiation: 'Concentrated solar power'
-        energy_power_solar_pv_solar_radiation: 'Solar PV plants'
-        energy_power_offshore_solar_pv: 'Solar PV plants offshore'
-        energy_power_solar_pv_offshore: 'Solar PV plants offshore'
+        energy_power_solar_pv_solar_radiation: 'Solar on land'
+        energy_power_offshore_solar_pv: 'Solar offshore'
+        energy_power_solar_pv_offshore: 'Solar offshore'
         energy_power_supercritical_coal: 'Coal conventional'
         energy_power_supercritical_waste_mix: 'Waste incinerator'
         energy_power_supercritical_ccs_waste_mix: 'Waste incinerator CCS'
@@ -604,8 +604,8 @@ en:
         energy_power_wind_turbine_coastal: 'Wind coastal'
         energy_power_wind_turbine_inland: 'Wind onshore'
         energy_power_wind_turbine_offshore: 'Wind offshore'
-        energy_power_hybrid_wind_turbine_offshore: 'Wind offshore (hybrid)'
-        energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Curtailment wind offshore (hybrid)'
+        energy_power_hybrid_wind_turbine_offshore: 'Wind offshore (with hybrid connection)'
+        energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Curtailment wind offshore (with hybrid connection)'
         energy_power_wood_pellets_must_run: 'Biomass power plant (must-run)'
         energy_power_wood_pellets_dispatchable: 'Biomass power plant (dispatchable)'
         energy_power_wood_pellets_ccs_must_run: 'Biomass power plant + CCS (must-run)'
@@ -1267,8 +1267,8 @@ en:
         offshore: "Offshore"
         offshore_net: "Offshore net"
         offshore_wind_turbines: "Wind offshore"
-        offshore_hybrid_wind_turbines: "Wind offshore (hybrid)"
-        hybrid_offshore_wind_output_capacity: "Wind offshore (hybrid)"
+        offshore_hybrid_wind_turbines: "Wind offshore (with hybrid connection)"
+        hybrid_offshore_wind_output_capacity: "Wind offshore (with hybrid connection)"
         hybrid_offshore_electrolyser_input_capacity: "Offshore electrolyser"
         hybrid_offshore_cable_input_capacity: "Offshore electricity cable"
         oil: "Oil"
@@ -1484,9 +1484,9 @@ en:
         with_im_export_1990: "with im export 1990"
         with_im_export_2010: "with im export 2010"
         with_im_export_20xx: "with im export 20xx"
-        wind_inland: "Wind inland"
-        wind_inland_small: "Wind inland (small-scale)"
-        wind_inland_large: "Wind inland (large-scale)"
+        wind_inland: "Wind onshore"
+        wind_inland_small: "Wind onshore (small-scale)"
+        wind_inland_large: "Wind onshore (large-scale)"
         wind_offshore: "Wind offshore"
         wind_offshore_production: "Wind offshore production"
         wind_onshore_production: "Wind onshore production"

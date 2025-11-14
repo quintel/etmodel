@@ -139,7 +139,7 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand" target=\"_blank\">
         documentation</a> which types of electricity demand are considered flexible. This chart shows the hourly use of these technologies.
     solar_pv_curtailment:
-      title: Curtailment of solar PV
+      title: Curtailment of solar energy
       short_description:
       description:
     hourly_solar_pv_curtailment:
@@ -406,11 +406,11 @@ en:
         By default, the chart shows the <i>daily</i> peak capacity of the profile for the whole year.
         Select a month or week in the dropdown menu to see the <i>hourly</i> values.
     flexibility_hourly_battery_wind:
-      title: Hourly production of wind onshore with battery
+      title: Hourly production of wind onshore with battery system
       short_description:
       description: |
-        This chart shows the hourly production of wind onshore turbines that
-        have an integrated battery system and a reduced grid connection capacity. </br></br>
+        This chart shows the hourly production of wind onshore that
+        has an integrated battery system and a reduced grid connection capacity. </br></br>
         You can install these types of turbines and learn more about how they work in
         the Supply section, under
         <a href="/scenario/supply/electricity_renewable/wind-turbines">
@@ -419,7 +419,7 @@ en:
         <a href="/scenario/flexibility/flexibility_storage/wind-parks-with-storage-systems">
         Electricity storage</a>.
     flexibility_hourly_battery_solar:
-      title: Hourly production of solar PV with battery
+      title: Hourly production of solar on land with battery system
       short_description:
       description: |
         This chart shows the hourly production of solar PV plants that

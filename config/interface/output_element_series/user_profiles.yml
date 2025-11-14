@@ -286,19 +286,55 @@
   is_1990:
   dependent_on:
   output_element_key: user_profiles
-  key: wind_coastal_production_user_profiles  
-- label: solar_pv_production
+  key: wind_coastal_production_user_profiles
+- label: solar_pv_energy_power_solar_pv_solar_radiation_production
   color: lightgreen
   order_by: 320
   group: electricity_production_curves
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: solar_pv_curve
+  gquery: solar_pv_energy_power_solar_pv_solar_radiation_curve
   is_1990:
   dependent_on:
   output_element_key: user_profiles
-  key: solar_pv_production_user_profiles  
+  key: solar_pv_energy_power_solar_pv_solar_radiation_user_profiles
+- label: solar_pv_households_solar_pv_solar_radiation_production
+  color: lightgreen
+  order_by: 330
+  group: electricity_production_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_pv_households_solar_pv_solar_radiation_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: solar_pv_households_solar_pv_solar_radiation_user_profiles
+- label: solar_pv_buildings_solar_pv_solar_radiation_production
+  color: lightgreen
+  order_by: 340
+  group: electricity_production_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_pv_buildings_solar_pv_solar_radiation_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: solar_pv_buildings_solar_pv_solar_radiation_user_profiles
+- label: solar_pv_energy_power_solar_pv_offshore_production
+  color: lightgreen
+  order_by: 350
+  group: electricity_production_curves
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_pv_energy_power_solar_pv_offshore_curve
+  is_1990:
+  dependent_on:
+  output_element_key: user_profiles
+  key: solar_pv_energy_power_solar_pv_offshore_user_profiles
 - label: geothermal_heat_production
   color: lightgreen
   order_by: 400

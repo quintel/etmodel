@@ -73,8 +73,8 @@ nl:
         Of het nu een aantrekkelijke optie is, wordt deels bepaald door hoe diep ondergronds
         het water zich bevindt, met temperaturen die hoog genoeg zijn."
     capacity_of_buildings_solar_pv_solar_radiation:
-      title: Zon op dak gebouwen
-      short_description: ''
+      title: Zon op dak (gebouwen)
+      short_description:
       description: |
         Met dit schuifje stel je het totale geïnstalleerde vermogen aan
         zonnestroominstallaties op de daken van gebouwen in. <br/><br/>
@@ -90,8 +90,8 @@ nl:
         De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
         />
     capacity_of_households_solar_pv_solar_radiation:
-      title: Zon op dak huishoudens
-      short_description: ''
+      title: Zon op dak (huishoudens)
+      short_description:
       description: |
         Met dit schuifje stel je het totale geïnstalleerde vermogen aan
         zonnestroominstallaties op de daken van huishoudens in. <br/><br/>
@@ -108,7 +108,7 @@ nl:
         />
     capacity_of_energy_power_solar_pv_solar_radiation:
       title: Zon op land
-      short_description: ''
+      short_description:
       description: |
         Met dit schuifje bouw je een zonnepark op land. <br/><br/>
         Net als windstroom is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
@@ -121,8 +121,8 @@ nl:
         De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier </a> aangepast worden.<br
         />
     capacity_of_energy_battery_solar_pv_solar_radiation:
-      title: Zon op land met batterijsysteem
-      short_description: ''
+      title: Zon op land (met batterijsysteem)
+      short_description:
       description: |
         Anders dan gewone installaties voor zon op land zijn deze centrales standaard uitgerust met een
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
@@ -142,7 +142,7 @@ nl:
         relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide
         meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in
         de Flexibiliteit sectie, onder
-         <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+         <a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
         Opslag elektriciteit</a>. <br/><br/>
         Klik op de 'Technische parameters en kosten' om de specificaties van de zonnecentrale
         PV zonder het batterijsysteem te zien. In
@@ -155,7 +155,7 @@ nl:
         </a>
         kun je het uurlijkse gedrag van deze zonnecentrales zien.
     capacity_of_energy_power_solar_pv_offshore:
-      title: Zonnecentrales PV op zee
+      title: Zon op zee
       short_description:
       description: |
         Met dit schuifje bouw je een grootschalig zonnepark. Dit type zonnepark drijft op zee. </br></br>
@@ -448,8 +448,8 @@ nl:
         schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
         hierboven omschreven."
     capacity_of_energy_power_wind_turbine_inland:
-      title: Op land
-      short_description: ''
+      title: Wind op land
+      short_description:
       description: "Met deze schuif bouw je windmolens op land. Windmolens produceren minder stroom per MWe vermogen
         dan kolencentrales, omdat het niet altijd even hard waait. Windmolens op land
         produceren ~25% van de tijd op maximaal vermogen.\r\n<br/><br/>\r\nSpanningsfluctuaties
@@ -472,8 +472,8 @@ nl:
         Het scenario rekent wel met de elektriciteitsproductie zoals die in de nationale
         statistieken wordt gerapporteerd."
     capacity_of_energy_power_wind_turbine_coastal:
-      title: Aan kust
-      short_description: ''
+      title: Wind aan kust
+      short_description:
       description: "Met deze schuif bouw je windmolens aan de kust. Deze windmolens worden op dijken
         of net in het water neergezet. Windmolens produceren minder stroom per MWe
         vermogen dan kolencentrales, omdat het niet altijd even hard waait. Windmolens
@@ -496,8 +496,8 @@ nl:
         het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
         zoals die in de nationale statistieken wordt gerapporteerd."
     capacity_of_energy_power_wind_turbine_offshore:
-      title: Op zee
-      short_description: ''
+      title: Wind op zee
+      short_description:
       description: "Met deze schuif bouw je windmolens op zee. Windmolens produceren minder stroom
         per MWe vermogen dan kolencentrales, omdat het niet altijd even hard waait.
         Windmolens op land produceren ~40% van de tijd op maximaal vermogen, als er
@@ -520,7 +520,7 @@ nl:
         het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
         zoals die in de nationale statistieken wordt gerapporteerd."
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
-      title: Op zee met hybride aansluiting
+      title: Wind op zee (met hybride aansluiting)
       short_description:
       description:
         In tegenstelling tot reguliere windturbines op zee kan de elektriciteit geproduceerd door
@@ -539,8 +539,8 @@ nl:
         Daarnaast toont deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a>
         ook de geïnstalleerde vermogens en piekbelastingen van de verschillende componenten.
     capacity_of_energy_battery_wind_turbine_inland:
-      title: Op land met batterijsysteem
-      short_description: ''
+      title: Wind op land (met batterijsysteem)
+      short_description:
       description: |
         Anders dan gewone windmolens op land, zijn deze windmolens standaard uitgerust met een
         batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
@@ -560,7 +560,7 @@ nl:
         relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide
         meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in
         de Flexibiliteit sectie, onder
-         <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+         <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
         Opslag elektriciteit</a>. <br/><br/>
         Klik op de 'Technische parameters en kosten' om de specificaties van de windmolens
         zonder het batterijsysteem te zien. In
@@ -663,8 +663,8 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt welk aandeel van de gasmix uit groen gas bestaat.<br/><br/>
-        Groen gas wordt meestal geproduceerd door bacteriën die biologisch materiaal 
-        verteren, gevolgd door een opwerking tot aardgaskwaliteit. In de toekomst kan 
+        Groen gas wordt meestal geproduceerd door bacteriën die biologisch materiaal
+        verteren, gevolgd door een opwerking tot aardgaskwaliteit. In de toekomst kan
         groen gas ook worden gemaakt door vergassing van biomassa.
         <br/><br/>Ga naar <a href="/scenario/supply/biomass/green-gas-production">
         Groengasproductie</a> om de productie van groen gas uit biomassa in te stellen.
@@ -673,17 +673,17 @@ nl:
       short_description: ''
       description: |
         Deze slider bepaalt welk aandeel van de gasmix uit aardgas bestaat.<br/><br/>
-        Aardgas is een relatief schone fossiele brandstof die vooral wordt gebruikt 
-        voor warmte en elektriciteit. Voor transport wordt het nauwelijks ingezet. 
-        Naast CO<sub>2</sub> kan de verbranding van gas ook leiden tot uitstoot van 
+        Aardgas is een relatief schone fossiele brandstof die vooral wordt gebruikt
+        voor warmte en elektriciteit. Voor transport wordt het nauwelijks ingezet.
+        Naast CO<sub>2</sub> kan de verbranding van gas ook leiden tot uitstoot van
         NO<sub>x</sub>.
     propane_gas_total_share:
       title: Propaan
       short_description: ''
       description: |
         Deze slider bepaalt welk aandeel van de gasmix uit propaan bestaat.<br/><br/>
-        Propaan kan worden bijgemengd in de gasmix om de energetische waarde van het 
-        netwerkgas te verhogen. Dit is bijvoorbeeld relevant om een lagere energetische 
+        Propaan kan worden bijgemengd in de gasmix om de energetische waarde van het
+        netwerkgas te verhogen. Dit is bijvoorbeeld relevant om een lagere energetische
         waarde van andere bijgemengde gassen, zoals biogas, te compenseren.
     energy_treatment_natural_gas_share:
       title: Aardgas
@@ -694,9 +694,9 @@ nl:
       title: Hervergast LNG
       short_description:
       description: |
-        Deze slider bepaalt het aandeel van hervergast vloeibaar aardgas (LNG) in het 
-        nationale gasnetwerk.<br/><br/>LNG wordt geïmporteerd, wordt hervergast bij 
-        importterminals en vervolgens in het gasnetwerk ingevoerd. In vloeibare vorm 
+        Deze slider bepaalt het aandeel van hervergast vloeibaar aardgas (LNG) in het
+        nationale gasnetwerk.<br/><br/>LNG wordt geïmporteerd, wordt hervergast bij
+        importterminals en vervolgens in het gasnetwerk ingevoerd. In vloeibare vorm
         wordt LNG alleen in de transportsector gebruikt.
     share_of_energy_steel_energy_production_coal_gas:
       title: Energieproductie

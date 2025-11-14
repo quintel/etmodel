@@ -1,5 +1,9 @@
 body#root
   font-family: $landing-font-family
+  #wrapper
+    background: no-repeat linear-gradient(-45deg, #d0e0f7, $landing-background-color, $dark-cream, #89a9ec), $soft-grey
+    background-size: 400% 80vh
+    animation: gradient 60s ease infinite
 
   &, #wrapper, #content
     height: auto
@@ -7,6 +11,17 @@ body#root
 
   footer
     display: none
+
+
+@keyframes gradient
+  0%
+    background-position: 0% 0%
+  50%
+    background-position: 100% 0%
+  100%
+    background-position: 0% 0%
+
+
 
 #landing
   margin: 0 auto

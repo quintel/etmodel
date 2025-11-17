@@ -1152,14 +1152,15 @@ en:
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Present import
       short_description:
-      description: "The average emission in gram CO<sub>2</sub> emissions per kWh
-        of the Dutch electricity grid is 527 gram  <a href=\"https://www.cbs.nl/nl-nl/achtergrond/2017/06/rendementen-en-co2-emissie-elektriciteitsproductie-2015\"
-        target =\"_blank\">(CBS, 2015)</a>.\r\n\r\n</p>\r\n\r\nThe European electricity
-        mix has an average of 275.9  gram CO<sub>2</sub> emissions per kWh <a href=\"https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-3#tab-googlechartid_chart_11_filters=%7B%22rowFilters%22%3A%7B%7D%3B%22columnFilters%22%3A%7B%22pre_config_ugeo%22%3A%5B%22European%20Union%20(28%20countries)%22%5D%7D%7D\"
-        target =\"_blank\">(EEA, 2014)</a>. \r\n\r\n</p>\r\n\r\nYou can find more
-        information about carrier, technology, and country specific emissions per
-        kWh in our <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\"
-        target =\"_blank\">documentation</a>. "
+      description: |
+        This slider sets the CO<sub>2</sub> emissions per kWh of imported electricity in the present
+        year.<br/><br/>
+        The ETM allocates CO<sub>2</sub> emissions to the area where the energy
+        is <i>used</i>, rather than the <i>location</i> of the emissions. This is why
+        emissions associated with electricity production are allocated to scenarios by default
+        for imported electricity. See the
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors#imported-carriers"
+        target=\"_blank\">documentation</a> for more information.
     electricity_interconnector_2_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_3_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
@@ -1174,22 +1175,15 @@ en:
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Future import
       short_description:
-      description: "In some scenarios you will import electricity from outside your
-        area. The production and distribution of this electricity could have caused
-        CO<sub>2</sub> emissions elsewhere. How much of these emissions do you want
-        to attribute to your region? As a default, gram CO<sub>2</sub> per kWh of
-        imported electricity is set equal to the Dutch electricity mix.
-        \r\n\r\n</p>\r\nThis electricity could come from renewable sources
-        like sun and wind, with an emission close to 0 gram CO<sub>2</sub>/kWh. \r\n\r\n</p>\r\n\r\nOn
-        the other hand, this imported electricity could also be a peak demand just
-        when there is not much wind and sun available. In this case this electricity
-        could come from gas (380 -1000 gCO<sub>2</sub>/kWh), coal (660 -1050 gCO<sub>2</sub>/kWh),
-        or even lignite (800 -1300 gCO<sub>2</sub>/kWh) with quite high CO<sub>2</sub>
-        emissions per kWh. <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\"
-        target =\"_blank\">(Turconi et al, 2013)</a>. \r\n\r\n\r\n</p>\r\n\r\nYou
-        can find more information about carrier, technology, and country specific
-        emissions per kWh in our <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\"
-        target =\"_blank\">documentation</a>. "
+      description: |
+        This slider sets the CO<sub>2</sub> emissions per kWh of imported electricity in the future
+        year.<br/><br/>
+        The ETM allocates CO<sub>2</sub> emissions to the area where the energy
+        is <i>used</i>, rather than the <i>location</i> of the emissions. This is why
+        emissions associated with electricity production are allocated to scenarios by default
+        for imported electricity. See the
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors#imported-carriers"
+        target=\"_blank\">documentation</a> for more information.
     electricity_interconnector_2_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_3_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future

@@ -86,8 +86,8 @@ nl:
         het hydrotreatmentproces van fractionering van pyrolyse-olie.<br/><br/>
         De volgende brandstoffen kunnen worden geproduceerd uit pyrolyse-olie fractionering:
         <ul>
-        <li><b>diesel</b></li>
-        <li><b>benzine</b></li>
+        <li><b>kerosine</b></li>
+        <li><b>nafta</b></li>
         </ul><br/>
         Het model gaat ervan uit dat de benodigde pyrolyse-olie voor het fractioneringsproces
         of voor export (basislast) lokaal wordt geproduceerd. Dit kan worden aangepast door import
@@ -112,19 +112,15 @@ nl:
         de fractionering van biogene pyrolyse-olie.<br/><br/> De volgende brandstoffen
         kunnen worden geproduceerd uit de fractionering van biogene pyrolyse-olie:
         <ul>
-        <li><b>biodiesel</b></li>
-        <li><b>bio-ethanol</b>*</li>
+        <li><b>biokerosine</b></li>
+        <li><b>bionafta</b></li>
         </ul><br/>
-        <i>* De daadwerkelijke output zou biobenzine moeten zijn, echter wordt deze drager
-        tot nog toe niet gemodelleerd in het ETM. In plaats daarvan modelleert het ETM finale
-        vraag naar biobenzine (volgens nationale energiebalansen) als bio-ethanol. Daarom is
-        voor dit proces de output van biobenzine gemodelleerd als bio-ethanol.</i><br/><br/>
         Het model gaat ervan uit dat de benodigde biogene pyrolyse-olie voor het fractioneringsproces
         of voor export (basislast) lokaal wordt geproduceerd. Dit kan worden aangepast door import
         van biogene pyrolyse-olie in te stellen, wat de lokale productie van pyrolyse-olie vervangt.
         <br/><br/>Ga naar de sectie
         <a href="/scenario/supply/fuel_production/pyrolysis-oil-fractionation">
-        Fractionering van pyrolyse-olie</a> om de import van biogene
+        Pyrolyse-olie fractionering</a> om de import van biogene
         pyrolyse-olie in te stellen en om de aandelen van de gebruikte feedstockroutes voor biogene
         pyrolyse-olieproductie te bepalen.
     output_of_energy_production_hvo_bio_kerosene:
@@ -237,7 +233,7 @@ nl:
         De outputproducten van dit proces zijn:
         <ul>
         <li><b>kerosine</b> (hoofdproduct)</li>
-        <li><b>benzine</b></li>
+        <li><b>nafta</b></li>
         </ul><br/>
         <b>Let op:</b> in dit proces wordt ook een mengsel van lichte gassen met energetisch nut
         als bijproduct geproduceerd. Dit gasmengsel wordt niet expliciet in het ETM gemodelleerd.
@@ -261,12 +257,8 @@ nl:
         De outputproducten van dit proces zijn:
         <ul>
         <li><b>biokerosine</b> (hoofdproduct)</li>
-        <li><b>bio-ethanol</b>*</li>
+        <li><b>bionafta</b></li>
         </ul><br/>
-        <i>* De daadwerkelijke output zou biobenzine moeten zijn, echter wordt deze drager
-        tot nog toe niet gemodelleerd in het ETM. In plaats daarvan modelleert het ETM finale
-        vraag naar biobenzine (volgens nationale energiebalansen) als bio-ethanol. Daarom is
-        voor dit proces de output van biobenzine gemodelleerd als bio-ethanol.</i><br/><br/>
         <b>Let op:</b> in dit proces wordt ook een mengsel van lichte gassen met energetisch nut
         als bijproduct geproduceerd. Dit gasmengsel wordt niet expliciet in het ETM gemodelleerd.
         In plaats daarvan zijn de outputfracties van biokerosine en bio-ethanol proportioneel

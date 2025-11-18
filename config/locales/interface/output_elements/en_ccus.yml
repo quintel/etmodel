@@ -4,10 +4,10 @@ en:
     mekko_of_co2_demand_supply:
       title: Demand and supply of captured CO<sub>2</sub> (CCUS)
       short_description: ''
-      description: 'This chart shows the amount of captured CO<sub>2</sub> (supply) and the demand for CO<sub>2</sub> from utilisation, storage and export. 
-        <br/><br/> <strong>Note</strong>: it is important to balance the supply and demand of CO<sub>2</sub> in your system. The ETM assumes 
+      description: 'This chart shows the amount of captured CO<sub>2</sub> (supply) and the demand for CO<sub>2</sub> from utilisation, storage and export.
+        <br/><br/> <strong>Note</strong>: it is important to balance the supply and demand of CO<sub>2</sub> in your system. The ETM assumes
         that excess CO<sub>2</sub> is exported when supply of CO<sub>2</sub> is higher than demand. In reality, it is desirable to
-        avoid an excess supply of CO<sub>2</sub>. Therefore, you should improve the settings of supply and demand of CO<sub>2</sub> 
+        avoid an excess supply of CO<sub>2</sub>. Therefore, you should improve the settings of supply and demand of CO<sub>2</sub>
         in your scenario to avoid export of excess CO<sub>2</sub>.'
     ccus_sankey:
       title: "Captured CO<sub>2</sub> flows"
@@ -29,7 +29,10 @@ en:
       short_description:
       description: |
         This chart describes how the captured CO<sub>2</sub> streams affect the net total CO<sub>2</sub> emissions.
-        The chart contains 6 streams:
+        Go to the <a href="https://docs.energytransitionmodel.com/main/co2-ccus"
+        target=\"_blank\">documentation</a> for more information on CO<sub>2</sub> flows in the
+        ETM.<br/><br/>
+        The chart contains the following streams:
         <ol>
         <li><b>Captured:</b> this stream contains all the captured CO<sub>2</sub> in the system,
         both non-biogenic as biogenic. Its influence on the net total CO<sub>2</sub> emissions is
@@ -40,13 +43,9 @@ en:
         influence on the net total CO<sub>2</sub> emissions is positive since it adds to the
         captured CO<sub>2</sub> in the system. If the CO<sub>2</sub> of this stream is unused, it
         could be emitted and therefore adding to the net total CO<sub>2</sub> emissions.
-        See the <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">documentation</a>
-        for more information on imported CO<sub>2</sub>.
         </li>
         <li><b>Exported:</b> this stream contains the exported CO<sub>2</sub> from the system.
         Its influence on the net total is negative since the CO<sub>2</sub> is removed from the system.
-        See the <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target=\"_blank\">documentation</a>
-        for more information on exported CO<sub>2</sub>.
         </li>
         <li><b>Stored:</b> this stream contains all permanently stored CO<sub>2</sub> in the system.
         This stream has a negative effect since the permanently stored CO<sub>2</sub> cannot be emitted

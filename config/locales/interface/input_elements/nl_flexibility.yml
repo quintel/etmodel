@@ -1201,14 +1201,15 @@ nl:
     electricity_interconnector_1_co2_emissions_present: &interconnector_co2_present
       title: Huidige import
       short_description:
-      description: "De gemiddelde emissie van de Nederlandse elektriciteitsmix is
-        527 gram CO<sub>2</sub> per kWh  <a href=\"https://www.cbs.nl/nl-nl/achtergrond/2017/06/rendementen-en-co2-emissie-elektriciteitsproductie-2015\"
-        target =\"_blank\">(CBS, 2015)</a>.\r\n\r\n</p>\r\n\r\nDe Europese elektriciteitsmix
-        heeft een gemiddelde emissie van 275.9 gram CO<sub>2</sub> per kWh <a href=\"https://www.eea.europa.eu/data-and-maps/daviz/co2-emission-intensity-3#tab-googlechartid_chart_11_filters=%7B%22rowFilters%22%3A%7B%7D%3B%22columnFilters%22%3A%7B%22pre_config_ugeo%22%3A%5B%22European%20Union%20(28%20countries)%22%5D%7D%7D\"
-        target =\"_blank\">(EEA, 2014)</a>. \r\n\r\n</p>\r\n\r\nJe kan meer emissies
-        in gram CO<sub>2</sub> per kWh vinden per type drager, technologie en land
-        in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\"
-        target =\"_blank\">documentation</a>. "
+      description: |
+        Dit schuifje stelt de emissiefactor van geïmporteerde elektriciteit in voor het
+        startjaar.<br/><br/>
+        In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de
+        energie wordt <i>gebruikt</i> in plaats van op basis van de <i>locatie</i> van vrijgekomen
+        emissies. Dit betekent dat er standaard geassocieerde CO<sub>2</sub>-emissies worden
+        toegekend aan geïmporteerde elektriciteit. Ga naar de
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors#imported-carriers"
+        target=\"_blank\">documentatie</a> voor meer informatie.
     electricity_interconnector_2_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_3_co2_emissions_present: *interconnector_co2_present
     electricity_interconnector_4_co2_emissions_present: *interconnector_co2_present
@@ -1223,20 +1224,15 @@ nl:
     electricity_interconnector_1_co2_emissions_future: &interconnector_co2_future
       title: Toekomstige import
       short_description:
-      description: "In sommige scenario's is het nodig om elektriciteit te importeren
-        van buiten jouw gebied. De productie en distributie van deze elektriciteit
-        kan CO<sub>2</sub>-emissies hebben veroorzaakt. Hoeveel van deze emissies
-        wil je toekennen aan jouw gebied? Op dit moment is de gemiddelde elektriciteitsmix
-        van Nederland genomen als startwaarde.
-        \r\n\r\n</p>\r\nKomt dit met name van hernieuwbaar zon of wind, dan gaan de
-        emissies richting de 0 gram CO<sub>2</sub>/kWh.   \r\n\r\n</p>\r\n\r\nOf moet
-        er tijdens de piekvraag met weinig zon en wind juist elektriciteit van bijvoorbeeld
-        van gas (380 -1000 gCO<sub>2</sub>/kWh), kolen (660 -1050 gCO<sub>2</sub>/kWh),
-        of bruinkolen (800 -1300 gCO<sub>2</sub>/kWh) geïmporteerd worden. <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\"
-        target =\"_blank\">(Turconi et al, 2013)</a>. \r\n\r\n\r\n</p>\r\n\r\nJe kan
-        meer emissies in gram CO<sub>2</sub> per kWh vinden per type drager, technologie
-        en land in onze <a href=\"https://docs.energytransitionmodel.com/main/co2-emissions-import-export\"
-        target =\"_blank\">documentation</a>. "
+      description: |
+        Dit schuifje stelt de emissiefactor van geïmporteerde elektriciteit in voor het
+        toekomstjaar.<br/><br/>
+        In het ETM worden CO<sub>2</sub>-emissies toegekend aan de regio waar de
+        energie wordt <i>gebruikt</i> in plaats van op basis van de <i>locatie</i> van vrijgekomen
+        emissies. Dit betekent dat er standaard geassocieerde CO<sub>2</sub>-emissies worden
+        toegekend aan geïmporteerde elektriciteit. Ga naar de
+        <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors#imported-carriers"
+        target=\"_blank\">documentatie</a> voor meer informatie.
     electricity_interconnector_2_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_3_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_4_co2_emissions_future: *interconnector_co2_future

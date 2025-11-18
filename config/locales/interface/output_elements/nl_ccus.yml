@@ -5,8 +5,8 @@ nl:
       title: Vraag en aanbod van afgevangen CO<sub>2</sub>
       short_description: ''
       description: 'Deze grafiek laat de hoeveelheid afgevangen CO<sub>2</sub> zien (aanbod) en de vraag naar CO<sub>2</sub> (ondergrondse opslag, hergebruik, export).
-        <br/><br/><strong>Let op:</strong> het is belangrijk dat aanbod van en vraag naar CO<sub>2</sub> in evenwicht zijn in je scenario. Het ETM gaat 
-        ervan uit dat een overschot aan afgevangen CO<sub>2</sub> wordt geëxporteerd. In werkelijkheid is het onwenselijk om een overschot aan 
+        <br/><br/><strong>Let op:</strong> het is belangrijk dat aanbod van en vraag naar CO<sub>2</sub> in evenwicht zijn in je scenario. Het ETM gaat
+        ervan uit dat een overschot aan afgevangen CO<sub>2</sub> wordt geëxporteerd. In werkelijkheid is het onwenselijk om een overschot aan
         CO<sub>2</sub> te verkrijgen. Daarom moeten vraag en aanbod van CO<sub>2</sub> in je scenario dusdanig ingesteld zijn zodat een overschot (in
         dit geval dus export) aan CO<sub>2</sub> wordt vermeden.'
     ccus_sankey:
@@ -29,7 +29,10 @@ nl:
       short_description:
       description: |
         Deze chart beschrijft hoe de afgevangen CO<sub>2</sub> stromen de nettototale CO<sub>2</sub> emissies beïnvloeden.
-        De chart beschrijft 6 stromen:
+        Ga naar de <a href="https://docs.energytransitionmodel.com/main/co2-ccus"
+        target="_blank">documentatie</a> voor meer informatie over CO<sub>2</sub>-stromen in het
+        ETM.<br/><br/>
+        De grafiek beschrijft de volgende stromen:
         <ol>
         <li><b>Afgevangen:</b> deze stroom bevat alle afgevangen CO<sub>2</sub> in het systeem, zowel biogeen als niet-biogeen. De invloed ervan op
         de nettotale CO<sub>2</sub> emissies is positief, aangezien wanneer de afgevangen CO<sub>2</sub> ongebruikt blijft, deze
@@ -38,13 +41,9 @@ nl:
         <li><b>Geïmporteerd:</b> deze stroom bevat de geïmporteerde CO<sub>2</sub> in het systeem.
         De invloed hiervan op de nettototale CO<sub>2</sub> emissies is positief, aangezien wanneer deze CO<sub>2</sub> ongebruikt blijft,
         deze weer uitgestoten kan worden en dus bijdragen aan de totale emissies.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target="_blank">documentatie</a>
-        voor meer informatie over de aannames van geïmporteerde CO<sub>2</sub>.
         </li>
         <li><b>Geëxporteerd:</b> deze stroom bevat de geëxporteerde CO<sub>2</sub> uit het systeem.
         De invloed ervan op de nettototale CO<sub>2</sub> emissies is negatief, omdat de CO<sub>2</sub> uit het systeem wordt verwijderd.
-        Zie de <a href="https://docs.energytransitionmodel.com/main/co2-emissions-import-export" target="_blank">documentatie</a> voor meer
-        informatie over de aannames van geëxporteerde CO<sub>2</sub>.
         </li>
         <li><b>Geëxporteerd:</b> deze stroom bevat alle CO<sub>2</sub> die permanent wordt opgeslagen in het systeem.
         Deze stroom heeft een negatieve invloed, omdat door permanente opslag deze CO<sub>2</sub> niet meer kan
@@ -63,5 +62,5 @@ nl:
         gerelateerd aan CO<sub>2</sub> emissies.
         </li></ol>
         <strong>Let op:</strong> het is belangrijk dat aanbod van en vraag naar CO<sub>2</sub> in
-        evenwicht zijn in je scenario. Standaard gaat het ETM ervan uit dat een overschot aan 
+        evenwicht zijn in je scenario. Standaard gaat het ETM ervan uit dat een overschot aan
         afgevangen CO<sub>2</sub> wordt geëxporteerd.

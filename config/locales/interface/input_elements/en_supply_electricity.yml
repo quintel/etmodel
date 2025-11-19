@@ -78,8 +78,8 @@ en:
         or greenhouses. Whether it is an attractive option is partly determined by
         how far underground these high temperatures are found."
     capacity_of_households_solar_pv_solar_radiation:
-      title: Solar PV households
-      short_description: ''
+      title: Solar rooftop (households)
+      short_description:
       description: |
         With this slider you set the total installed capacity of solar PV panels
         on rooftop areas of households. <br/><br/>
@@ -96,12 +96,11 @@ en:
         The efficiency of solar panels can be adjusted <a href"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
         />
     capacity_of_buildings_solar_pv_solar_radiation:
-      title: Solar PV buildings
-      short_description: ''
+      title: Solar rooftop (buildings)
+      short_description:
       description: |
         With this slider you set the capacity of rooftop solar PV installations on
-        rooftop areas of buildings.
-
+        rooftop areas of buildings. </br></br>
         This technology is developing rapidly and solar panels
         are becoming ever more efficient and cheaper. Solar panels produce electricity
         on site, so transport of electricity is not always required. This avoids losses
@@ -114,8 +113,8 @@ en:
         panels <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
         The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
     capacity_of_energy_power_solar_pv_solar_radiation:
-      title: Solar PV plants onshore
-      short_description: ''
+      title: Solar on land
+      short_description:
       description: |
         With this slider you can build centralized plants of photovoltaic
         solar power panels. These are not mounted on roofs, but are usually placed
@@ -141,8 +140,8 @@ en:
         This type of plant stores the heat, allowing it to keep on producing electricity until
         several hours after sundown.
     capacity_of_energy_battery_solar_pv_solar_radiation:
-      title: Solar PV plants onshore with battery system
-      short_description: ''
+      title: Solar on land (with battery system)
+      short_description:
       description: |
         Different from regular solar PV plants, these plants are fitted with a battery and
         a reduced grid connection capacity by default, as an integrated system. These plants are typically
@@ -161,7 +160,7 @@ en:
         relative to the installed capacity. They will therefore both change accordingly if
         you adjust this slider. You can also change the relative ratios in the Flexibility
         section, under
-        <a href="/scenario/flexibility/flexibility_storage/solar-plants-with-storage-systems">
+        <a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
         Electricity storage</a>. <br/><br/>
         You can click on the 'Technical and financial properties' to see the specifications of
         the solar PV plants without the batteries. See
@@ -174,7 +173,7 @@ en:
         </a>
         for the hourly behaviour of these solar plants.
     capacity_of_energy_power_solar_pv_offshore:
-      title: Solar PV plants offshore
+      title: Solar offshore
       short_description:
       description: |
         With this slider you can build centralized plants of photovoltaic solar power panels.
@@ -416,8 +415,8 @@ en:
         25% co-firing in total.\r\n<br/><br/>\r\nThe input of the slider (in MW) is
         converted to a (partial) number of the plant described above."
     capacity_of_energy_power_wind_turbine_inland:
-      title: Onshore inland
-      short_description: ''
+      title: Wind onshore
+      short_description:
       description: "This slider builds wind turbines on land. Wind turbines produce
         less electricity per MWe than fossil fired plants do, because of varying wind
         conditions (so called intermittency). Inland wind turbines produce at maximum
@@ -440,8 +439,8 @@ en:
         electricity production from wind turbines in the start scenario is equal to
         that reported in the country's energy statistics."
     capacity_of_energy_power_wind_turbine_coastal:
-      title: Onshore coast
-      short_description: ''
+      title: Wind coastal
+      short_description:
       description: "Here you choose how mucht capacity of wind turbines to build on
         land at the coastline. These wind turbines are built on dikes
         or just next to them in the water. Wind turbines produce less electricity
@@ -466,8 +465,8 @@ en:
         turbines in the start scenario is equal to that reported in the country's
         energy statistics."
     capacity_of_energy_power_wind_turbine_offshore:
-      title: Offshore
-      short_description: ''
+      title: Wind offshore
+      short_description:
       description: "Here you choose how much capacity of wind turbines to build at
         sea. Wind turbines produce less electricity per MWe than fossil-fired or nuclear plants
         do because of varying wind conditions. Offshore wind turbines produce at maximum
@@ -491,7 +490,7 @@ en:
         turbines in the start scenario is equal to that reported in the country's
         energy statistics."
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
-      title: Offshore with hybrid connection
+      title: Wind offshore (with hybrid connection)
       short_description:
       description:
         Different from regular offshore wind turbines, hybrid offshore windturbines can either
@@ -511,7 +510,7 @@ en:
         data-chart-location="side">table</a> also shows the installed capacities and peak loads of
         the different components.
     capacity_of_energy_battery_wind_turbine_inland:
-      title: Onshore inland with battery system
+      title: Wind onshore (with battery system)
       short_description: ''
       description: |
         Different from regular wind turbines on land, these turbines are fitted with a battery and
@@ -529,7 +528,7 @@ en:
         relative to the installed capacity. They will therefore both change accordingly if
         you adjust this slider. You can also change the relative ratios in the Flexibility
         section, under
-        <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
         Electricity storage</a>. <br/><br/>
         You can click on the 'Technical and financial properties' to see the specifications of the
         wind turbines without the batteries. See
@@ -618,8 +617,8 @@ en:
       short_description: ''
       description: |
         This slider sets the share of the gas mix that comes from green gas.<br/><br/>
-        Green gas is usually produced by bacteria digesting organic material, followed 
-        by upgrading to natural gas quality. In the future, green gas can also be produced 
+        Green gas is usually produced by bacteria digesting organic material, followed
+        by upgrading to natural gas quality. In the future, green gas can also be produced
         by biomass gasification.<br/><br/>Go to <a href="/scenario/supply/biomass/green-gas-production">
         Green Gas Production</a> to configure biomass-based green gas production.
     natural_gas_total_share:
@@ -627,16 +626,16 @@ en:
       short_description: ''
       description: |
         This slider sets the share of the gas mix that comes from natural gas.<br/><br/>
-        Natural gas is a relatively clean fossil fuel, mainly used for heat and electricity. 
-        Its use in transport is currently limited. Besides CO<sub>2</sub>, gas combustion 
+        Natural gas is a relatively clean fossil fuel, mainly used for heat and electricity.
+        Its use in transport is currently limited. Besides CO<sub>2</sub>, gas combustion
         can also produce NO<sub>x</sub> emissions.
     propane_gas_total_share:
       title: Propane
       short_description: ''
       description: |
         This slider sets the share of the gas mix that comes from propane.<br/><br/>
-        Propane can be blended into the gas mix to increase the energy content of network gas. 
-        This is useful, for example, to compensate for a lower energy content of other blended 
+        Propane can be blended into the gas mix to increase the energy content of network gas.
+        This is useful, for example, to compensate for a lower energy content of other blended
         gases, such as biogas.
     energy_treatment_natural_gas_share:
       title: Natural gas
@@ -647,9 +646,9 @@ en:
       title: Regasified LNG
       short_description:
       description: |
-        This slider sets the share of regasified liquefied natural gas (LNG) in the 
-        national gas network.<br/><br/>LNG is imported, regasified at import terminals, 
-        and then fed into the gas network. In liquid form, LNG is only used in the 
+        This slider sets the share of regasified liquefied natural gas (LNG) in the
+        national gas network.<br/><br/>LNG is imported, regasified at import terminals,
+        and then fed into the gas network. In liquid form, LNG is only used in the
         transport sector.
     share_of_energy_steel_energy_production_coal_gas:
       title: Energy production

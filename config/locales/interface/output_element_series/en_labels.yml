@@ -11,8 +11,8 @@ en:
         agriculture_heat: "Agriculture heat"
         all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve: "Including correction"
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Excluding correction"
-        battery_wind_inland:  "Wind inland with battery system"
-        battery_solar_PV:  "Solar PV plants with battery system"
+        battery_wind_inland: "Wind onshore (battery)"
+        battery_solar_pv: "Solar on land (battery)"
         costs_building_and_installations: "Building and installations"
         costs_storage_and_conversion: "Storage and conversion"
         costs_production: "Energy production"
@@ -316,7 +316,7 @@ en:
         buildings_solar_pv: 'Buildings'
         buildings_solar_pv_curtailed_electricity_output_curve: 'Curtailment buildings'
         buildings_solar_pv_electricity_output_curve: 'Production buildings'
-        buildings_solar_pv_solar_radiation: 'Solar panels buildings'
+        buildings_solar_pv_solar_radiation: 'Solar rooftop (buildings)'
         busses: "Buses"
         capaciteit_bezet_mva: "Capacity used - [MVA]"
         capaciteit_totaal_mva: "Capacity - total [MVA]"
@@ -412,7 +412,7 @@ en:
         coal_trains: "Coal trains"
         coal_national_transport: "Coal - national transport"
         coastal: "Coastal"
-        coastal_wind_turbines: "Coastal wind turbines"
+        coastal_wind_turbines: "Wind coastal"
         collective: "Collective heating (district heating)"
         collective_heat_demand: "Collective heat demand (district heating)"
         individual_heat_demand: "Individual heat demand"
@@ -585,9 +585,12 @@ en:
         energy_power_nuclear_gen3_uranium_oxide: 'Nuclear 3rd Gen'
         energy_power_nuclear_small_modular_reactor_uranium_oxide: 'Nuclear small modular reactor'
         energy_power_solar_csp_solar_radiation: 'Concentrated solar power'
-        energy_power_solar_pv_solar_radiation: 'Solar PV plants'
-        energy_power_offshore_solar_pv: 'Solar PV plants offshore'
-        energy_power_solar_pv_offshore: 'Solar PV plants offshore'
+        energy_power_solar_pv_solar_radiation: 'Solar on land'
+        energy_power_offshore_solar_pv: 'Solar offshore'
+        energy_power_solar_pv_offshore: 'Solar offshore'
+        energy_power_solar_pv_solar_radiation: 'Solar on land'
+        energy_power_offshore_solar_pv: 'Solar offshore'
+        energy_power_solar_pv_offshore: 'Solar offshore'
         energy_power_supercritical_coal: 'Coal conventional'
         energy_power_supercritical_waste_mix: 'Waste incinerator'
         energy_power_supercritical_ccs_waste_mix: 'Waste incinerator CCS'
@@ -601,11 +604,11 @@ en:
         energy_power_ultra_supercritical_lignite: 'Coal Lignite'
         energy_power_ultra_supercritical_network_gas: 'Gas conventional'
         energy_power_ultra_supercritical_oxyfuel_ccs_lignite: 'Lignite oxyfuel CCS'
-        energy_power_wind_turbine_coastal: 'Wind turbines onshore coastal'
-        energy_power_wind_turbine_inland: 'Wind turbines onshore inland'
-        energy_power_wind_turbine_offshore: 'Wind offshore turbines'
-        energy_power_hybrid_wind_turbine_offshore: 'Hybrid offshore wind turbines'
-        energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Curtailment hybrid offshore wind turbines'
+        energy_power_wind_turbine_coastal: 'Wind coastal'
+        energy_power_wind_turbine_inland: 'Wind onshore'
+        energy_power_wind_turbine_offshore: 'Wind offshore'
+        energy_power_hybrid_wind_turbine_offshore: 'Wind offshore (with hybrid connection)'
+        energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Curtailment wind offshore (with hybrid connection)'
         energy_power_wood_pellets_must_run: 'Biomass power plant (must-run)'
         energy_power_wood_pellets_dispatchable: 'Biomass power plant (dispatchable)'
         energy_power_wood_pellets_ccs_must_run: 'Biomass power plant + CCS (must-run)'
@@ -626,19 +629,19 @@ en:
         energy_heat_flexibility_p2h_heatpump_mt_electricity: "Converted to heat for MT district heating (heat pump)"
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomass gasification'
         energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomass gasification + CCS"
-        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Hybrid offshore electrolyser"
-        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Solar PV"
+        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Wind offshore (electrolyser)"
+        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Wind offshore (hybrid)"
+        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Solar on land (electrolyser)"
         energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
-        energy_hydrogen_solar_pv_solar_radiation: "Solar PV"
+        energy_hydrogen_solar_pv_solar_radiation: "Solar on land (electrolyser)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko: "SMR + CCS (must-run)"
         energy_hydrogen_steam_methane_reformer_must_run_for_mekko: "SMR (must-run)"
         energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko: "SMR (dispatchable)"
         energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko: "ATR + CCS (must-run)"
         energy_hydrogen_autothermal_reformer_must_run_for_mekko: "ATR (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable_for_mekko: "ATR (dispatchable)"
-        energy_hydrogen_wind_turbine_offshore: "Offshore wind"
-        energy_hydrogen_hybrid_wind_turbine_offshore: "Hybrid offshore electrolyser"
+        energy_hydrogen_wind_turbine_offshore: "Wind offshore (electrolyser)"
+        energy_hydrogen_hybrid_wind_turbine_offshore: "Wind offshore (hybrid)"
         energy_hydrogen_ammonia_reformer_must_run_for_mekko: "Ammonia reformer (must-run)"
         energy_hydrogen_ammonia_reformer_dispatchable_for_mekko: "Ammonia reformer (dispatchable)"
         energy_imported_hydrogen: "Imported hydrogen"
@@ -826,7 +829,7 @@ en:
         households_solar_pv: 'Households'
         households_solar_pv_curtailed_electricity_output_curve: 'Curtailment households'
         households_solar_pv_electricity_output_curve: 'Production households'
-        households_solar_pv_solar_radiation: 'Solar panels households'
+        households_solar_pv_solar_radiation: 'Solar rooftop (households)'
         households_space_heater_coal: "Coal-fired heater"
         households_space_heater_combined_hydrogen: "Condensing combi boiler (hydrogen)"
         households_space_heater_combined_network_gas: "Condensing combi boiler (gas)"
@@ -903,9 +906,9 @@ en:
         hydrogen_production_cost_curve: "Levelised costs of hydrogen per hour"
         energy_hydrogen_biomass_gasification: "Biomass gasification"
         energy_hydrogen_biomass_gasification_ccs: "Biomass gasification + CCS"
-        energy_hydrogen_electrolysis_solar_electricity: "Solar PV plant for H2"
-        energy_hydrogen_electrolysis_wind_electricity: "Offshore wind turbine for H2"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity: "Hybrid offshore electrolyser"
+        energy_hydrogen_electrolysis_solar_electricity: "Solar on land (electrolyser)"
+        energy_hydrogen_electrolysis_wind_electricity: "Wind offshore (electrolyser)"
+        energy_hydrogen_hybrid_electrolysis_wind_electricity: "Wind offshore (hybrid)"
         energy_hydrogen_flexibility_p2g_electricity: "Power-to-gas"
         energy_hydrogen_steam_methane_reformer_must_run: "Steam methane reforming (must-run)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run: "Steam methane reforming + CCS (must-run)"
@@ -926,16 +929,16 @@ en:
         energy_imported_hydrogen_backup: "Hydrogen import (backup)"
         energy_imported_hydrogen_baseload : "Hydrogen import (baseload)"
         energy_greengas_production_costs: "Average production costs green gas"
-        energy_power_solar_pv: "Solar PV plants"
-        energy_battery_wind_electricity: "Wind turbines onshore inland with battery"
-        energy_battery_wind_turbine_inland: "Onshore wind turbines with battery"
-        energy_battery_solar_pv: "Solar PV plants with battery"
-        energy_power_solar_pv_curtailed_electricity_output_curve: "Curtailment solar PV plants"
-        energy_power_solar_pv_electricity_output_curve: "Production solar PV plants"
-        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: "Curtailment solar PV plants offshore"
-        energy_power_solar_pv_offshore_electricity_output_curve: "Production solar PV plants offshore"
-        energy_battery_solar_pv_electricity_output_curve: "Production solar PV plants with battery"
-        energy_battery_solar_pv_curtailed_electricity_output_curve: "Curtailment solar PV plants with battery"
+        energy_power_solar_pv: "Solar on land"
+        energy_battery_wind_electricity: "Wind onshore (battery)"
+        energy_battery_wind_turbine_inland: "Wind onshore (battery)"
+        energy_battery_solar_pv: "Solar on land (battery)"
+        energy_power_solar_pv_curtailed_electricity_output_curve: "Curtailment solar on land"
+        energy_power_solar_pv_electricity_output_curve: "Production solar on land"
+        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: "Curtailment solar offshore"
+        energy_power_solar_pv_offshore_electricity_output_curve: "Production solar offshore"
+        energy_battery_solar_pv_electricity_output_curve: "Production solar on land (battery)"
+        energy_battery_solar_pv_curtailed_electricity_output_curve: "Curtailment solar on land (battery)"
         greengas_price: "Green gas price"
         hydrogen_demand: "Hydrogen demand"
         hydrogen_price: "Hydrogen price"
@@ -1100,8 +1103,8 @@ en:
         local_chp_biogas: "Biogas CHP (must-run)"
         local_electrolysis: "Local electrolysis"
         locally_produced_heat: "Locally produced heat"
-        local_solar_pv_households: "Solar PV Households"
-        local_solar_pv_buildings: "Solar PV Buildings"
+        local_solar_pv_households: "Solar rooftop (households)"
+        local_solar_pv_buildings: "Solar rooftop (buildings)"
         losses_of_export: "Losses for export"
         low_voltage_network: "Low voltage network"
         lpg: "LPG"
@@ -1266,9 +1269,9 @@ en:
         number_of_excess_events: "Number of excess electricity events per year"
         offshore: "Offshore"
         offshore_net: "Offshore net"
-        offshore_wind_turbines: "Offshore wind turbines"
-        offshore_hybrid_wind_turbines: "Offshore hybrid wind turbines"
-        hybrid_offshore_wind_output_capacity: "Offshore hybrid wind turbines"
+        offshore_wind_turbines: "Wind offshore"
+        offshore_hybrid_wind_turbines: "Wind offshore (with hybrid connection)"
+        hybrid_offshore_wind_output_capacity: "Wind offshore (with hybrid connection)"
         hybrid_offshore_electrolyser_input_capacity: "Offshore electrolyser"
         hybrid_offshore_cable_input_capacity: "Offshore electricity cable"
         oil: "Oil"
@@ -1290,7 +1293,7 @@ en:
         oily_biomass: "Oil-containing biomass"
         old_residences: "Old residences"
         onshore: "Onshore"
-        onshore_wind_turbines: "Onshore wind turbines"
+        onshore_wind_turbines: "Wind onshore"
         operation_maintenance_cost: "Operation & maintenance cost"
         opex: "OPEX"
         optimal_threshold: "Cost-optimal threshold"
@@ -1365,21 +1368,24 @@ en:
         ships: "Domestic navigation"
         salt_cavern: "Salt cavern"
         solar: "Solar"
-        solar_csp: "Solar CSP plant"
+        solar_csp: "Concentrated solar power"
         solar_panels: "Solar panels"
-        solar_pv: "Solar PV (stacked)"
-        solar_pv_households: "Solar PV households"
+        solar_pv: "Solar energy (stacked)"
+        solar_pv_households: "Solar rooftop (households)"
         solar_pvt_households: "Solar PVT households"
-        solar_pv_buildings: "Solar PV buildings"
-        solar_pv_onshore: "Solar PV plants onshore"
-        solar_pv_production: "Solar PV production"
-        solar_pv_total_curtailed_electricity_curve: "Curtailment of solar PV"
+        solar_pv_buildings: "Solar rooftop (buildings)"
+        solar_pv_onshore: "Solar on land"
+        solar_pv_energy_power_solar_pv_solar_radiation_production: "Solar on land"
+        solar_pv_households_solar_pv_solar_radiation_production: "Solar rooftop (households)"
+        solar_pv_buildings_solar_pv_solar_radiation_production: "Solar rooftop (buildings)"
+        solar_pv_energy_power_solar_pv_offshore_production: "Solar offshore"
+        solar_pv_total_curtailed_electricity_curve: "Curtailment of solar energy"
         solar_thermal: "Solar thermal"
         solar_thermal_hot_water: "Solar thermal (for hot water)"
         solar_thermal_heating: "Solar thermal (for heating)"
         solar_thermal_heaters: "Solar thermal heaters"
-        solar_thermal_households: "Solar thermal households"
-        solar_thermal_buildings: "Solar thermal buildings"
+        solar_thermal_households: "Solar thermal (households)"
+        solar_thermal_buildings: "Solar thermal (buildings)"
         solar_termal_heat_production: "Solar themal heat production"
         solid_biomass: "Solid biomass"
         space_heating: "Space heating"
@@ -1481,12 +1487,15 @@ en:
         with_im_export_1990: "with im export 1990"
         with_im_export_2010: "with im export 2010"
         with_im_export_20xx: "with im export 20xx"
-        wind_inland: "Wind inland"
-        wind_inland_small: "Wind inland (small-scale)"
-        wind_inland_large: "Wind inland (large-scale)"
+        wind_inland: "Wind onshore"
+        wind_inland_small: "Wind onshore (small-scale)"
+        wind_inland_large: "Wind onshore (large-scale)"
+        wind_inland: "Wind onshore"
+        wind_inland_small: "Wind onshore (small-scale)"
+        wind_inland_large: "Wind onshore (large-scale)"
         wind_offshore: "Wind offshore"
-        wind_offshore_production: "Wind offshore production"
-        wind_onshore_production: "Wind onshore production"
+        wind_offshore_production: "Wind offshore"
+        wind_onshore_production: "Wind onshore"
         wind_turbines: "Wind"
         wood_pellets: "Wood pellets"
         wood_pellets_chp_ht_must_run: "Biomass CHP (HT) (must-run)"
@@ -1612,10 +1621,10 @@ en:
         lignite_power_for_electricity_network_mekko: "Lignite power plant"
         nuclear_power_for_electricity_network_mekko: "Nuclear power plant"
         oil_power_for_electricity_network_mekko: "Oil power plant"
-        solar_csp_for_electricity_network_mekko: "Solar CSP"
-        solar_pv_offshore_for_electricity_network_mekko: "Solar PV offshore"
-        solar_pv_on_land_for_electricity_network_mekko: "Solar PV onshore"
-        solar_pv_roof_for_electricity_network_mekko: "Solar PV on roof"
+        solar_csp_for_electricity_network_mekko: "Concentrated solar power"
+        solar_pv_offshore_for_electricity_network_mekko: "Solar offshore"
+        solar_pv_on_land_for_electricity_network_mekko: "Solar on land"
+        solar_pv_roof_for_electricity_network_mekko: "Solar rooftop"
         waste_chp_for_electricity_network_mekko: "Waste CHP"
         waste_power_for_electricity_network_mekko: "Waste power plant"
         wind_offshore_for_electricity_network_mekko: "Wind offshore"

@@ -477,7 +477,7 @@ The costs export functionality of the ETM has undergone a major update! The down
 
 -> <img src="/assets/pages/whats_new/costs_specification_costs_functionality_en.png" width="600" /> <-
 
-### Solar PV households and buildings capacity sliders moved to Supply
+### Solar rooftop (households) and buildings capacity sliders moved to Supply
 The sliders for solar PV capacities on rooftops of households and buildings now allow users to directly indicate installed capacities for these technologies (in MW). The sliders have been moved to the **[Renewable electricity](/scenario/supply/electricity_renewable/solar-power)** section.
 
 ### Land use of solar and wind visualization available

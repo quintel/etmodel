@@ -3,10 +3,10 @@
   position: 1
   sidebar_item_key: flexibility_weather
   alt_output_element_key:
-  output_element_key: final_energy_demand_per_sector_joule
+  output_element_key: hourly_solar_pv_curtailment
 - key: flexibility_weather_years
   position: 2
   sidebar_item_key: flexibility_weather
   alt_output_element_key:
-  output_element_key: final_energy_demand_per_sector_joule
+  output_element_key: hourly_solar_pv_curtailment
   dependent_on: has_weather_curves

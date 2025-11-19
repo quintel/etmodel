@@ -314,7 +314,7 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the coastal wind profile.
     flh_of_energy_power_wind_turbine_inland:
-      title: Wind inland
+      title: Wind onshore
       short_description:
       description: By increasing
         the full load hours for this type of wind turbine, more electricity will be
@@ -338,7 +338,7 @@ en:
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the offshore wind profile.
     flh_of_energy_hydrogen_wind_turbine_offshore:
-      title: Offshore wind turbine for H<sub>2</sub>
+      title: Wind offshore (with electrolyser)
       short_description:
       description: By increasing
         the full load hours for this type of wind turbine, more electricity will be
@@ -347,18 +347,55 @@ en:
         for this type of wind turbine. Typically, the peaks will become broader
         with increasing full load hours as the turbine spends more time running
         at higher capacity.
-    flh_of_solar_pv_solar_radiation:
-      title: Solar PV
+    flh_of_households_solar_pv_solar_radiation:
+      title: Solar rooftop (households)
       short_description:
-      description: "With this slider you can make assumptions about the amount of sunshine in
-        your scenario. By increasing the full load hours for solar panels, more electricity will
-        be produced with the same number of panels.
-        The slider not only increases the number of full load
-        hours but also changes the shape of the hourly production profile for solar
-        PV. Typically, the peaks will become broader with increasing
-        full load hours as the solar PV panels spend more time at higher capacity.
-        Take a look at the ‘Electricity production per hour’-chart to see the effect
-        of your changes on the solar PV production profile.\r\n</br></br>\r\n"
+      description: |
+        By increasing the full load hours for solar panels, more electricity will be produced with
+        the same number of panels. This can be used to simulate that there is more sunlight
+        available (a sunny year), or that these panels are better at capturing the sunlight that
+        there is (for example due to better orientation). Reversely, the full load hours can be
+        decreased to simulate a less sunny year.
+        </br></br>
+        The slider not only increases the number of full load hours but also changes the shape of
+        the hourly production profile accordingly.
+    flh_of_buildings_solar_pv_solar_radiation:
+      title: Solar rooftop (buildings)
+      short_description:
+      description: |
+        By increasing the full load hours for solar panels, more electricity will be produced with
+        the same number of panels. This can be used to simulate that there is more sunlight
+        available (a sunny year), or that these panels are better at capturing the sunlight that
+        there is (for example due to better orientation). Reversely, the full load hours can be
+        decreased to simulate a less sunny year.
+        </br></br>
+        The slider not only increases the number of full load hours but also changes the shape of
+        the hourly production profile accordingly.
+    flh_of_energy_power_solar_pv_solar_radiation:
+      title: Solar on land
+      short_description:
+      description: |
+        By increasing the full load hours for solar panels, more electricity will be produced with
+        the same number of panels. This can be used to simulate that there is more sunlight
+        available (a sunny year), or that these panels are better at capturing the sunlight that
+        there is (for example due to better orientation). Reversely, the full load hours can be
+        decreased to simulate a less sunny year.
+        </br></br>
+        The slider not only increases the number of full load hours but also changes the shape of
+        the hourly production profile accordingly. This slider also affects Solar on land
+        with a battery system and plants for decidated hydrogen production through electrolysis.
+    flh_of_energy_power_solar_pv_offshore:
+      title: Solar offshore
+      short_description:
+      description: |
+        By increasing the full load hours for solar panels, more electricity will be produced with
+        the same number of panels. This can be used to simulate that there is more sunlight
+        available (a sunny year), or that these panels are better at capturing the sunlight that
+        there is (for example due to better orientation). Reversely, the full load hours can be
+        decreased to simulate a less sunny year.
+        </br></br>
+        The slider not only increases the number of full load hours but also changes the shape of
+        the hourly production profile accordingly.
     capacity_of_energy_heat_flexibility_p2h_boiler_electricity:
       title: Power-to-heat boiler
       short_description:
@@ -510,28 +547,28 @@ en:
     electricity_interconnector_11_marginal_costs: *interconnector_marginal_costs
     electricity_interconnector_12_marginal_costs: *interconnector_marginal_costs
     curtailment_of_households_solar_pv_solar_radiation:
-      title: Solar PV households
+      title: Solar rooftop (households)
       short_description:
       description: With this slider you set the curtailment as a percentage of the
-        peak power. Solar panels on houses are connected to the LV-net in the ETM.
+        peak power. Solar panels on the rooftops of households are connected to the LV-net in the ETM.
         The installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
     curtailment_of_buildings_solar_pv_solar_radiation:
-      title: Solar PV buildings
+      title: Solar rooftop (buildings)
       short_description:
       description: With this slider you set the curtailment as a percentage of the
-        peak power. Solar panels on buildings are connected to the LV-net in the ETM.
+        peak power. Solar panels on the rooftops of buildings are connected to the LV-net in the ETM.
         The installed capacity can be adjusted <a href="/scenario/demand/buildings/solar-panels">here</a>.
     curtailment_of_energy_power_solar_pv_solar_radiation:
-      title: Solar PV plants
+      title: Solar on land
       short_description:
       description: With this slider you set the curtailment as a percentage of the
-        peak power. Solar PV plants are connected to the HV-net in the ETM. The installed
+        peak power. Solar on land is connected to the HV-net in the ETM. The installed
         capacity can be adjusted <a href="/scenario/supply/electricity_renewable/solar-power">here</a>.
     curtailment_of_energy_power_solar_pv_offshore:
-      title: Solar PV plants offshore
+      title: Solar offshore
       short_description:
       description: With this slider you set the curtailment as a percentage of the
-        peak power. Offshore solar PV plants are connected to the offshore-net in the ETM.
+        peak power. Offshore solar plants are connected to the offshore-net in the ETM.
         The installed capacity can be adjusted <a href="/scenario/demand/households/solar-panels">here</a>.
     relative_capacity_of_electrolyser:
       title: Offshore electrolyser

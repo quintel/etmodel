@@ -11,8 +11,8 @@ nl:
         agriculture_heat: "Landbouw warmtevraag"
         all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve: "Inclusief correctie"
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Exclusief correctie"
-        battery_wind_inland:  "Wind op land met batterijsysteem"
-        battery_solar_PV:  "Zon op land met batterijsysteem"
+        battery_wind_inland: "Wind op land (batterij)"
+        battery_solar_pv: "Zon op land (batterij)"
         costs_building_and_installations: "Gebouwen/Installaties"
         costs_storage_and_conversion: "Flexibiliteit en opslag"
         costs_production: "Productiemiddelen"
@@ -302,7 +302,7 @@ nl:
         buildings_solar_pv: 'Gebouwen'
         buildings_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging gebouwen'
         buildings_solar_pv_electricity_output_curve: 'Opwek gebouwen'
-        buildings_solar_pv_solar_radiation: 'Zonnepanelen gebouwen'
+        buildings_solar_pv_solar_radiation: 'Zon op dak (gebouwen)'
         busses: "Bussen"
         capaciteit_bezet_mva: "Capaciteit - gebruikt [MVA]"
         capaciteit_totaal_mva: "Capaciteit - totaal [MVA]"
@@ -387,7 +387,7 @@ nl:
         coal_to_heat: "Kolenketel"
         coal_trains: "Kolentreinen"
         coastal: "Kust"
-        coastal_wind_turbines: "Windmolens aan de kust"
+        coastal_wind_turbines: "Wind aan kust"
         collective: "Collectieve verwarming (warmtenet)"
         collective_heat_demand: "Collectieve warmtevraag (warmtenetten)"
         individual_heat_demand: "Individuele warmtevraag"
@@ -503,7 +503,7 @@ nl:
         electricity_converted_to_kerosene: "Omgezet naar synthetische kerosine"
         electricity_exported: "Geëxporteerd"
         electricity_curtailed: "Productiebeperking must-run en volatiele bronnen"
-        electricity_curtailed_solar_pv: "Productiebeperking zon PV"
+        electricity_curtailed_solar_pv: "Productiebeperking zonne-energie"
         electrical_appliances: "Elektrische apparaten"
         electricity_revenue: "Integrale opbrengsten voor elektriciteitsopslag"
         eletricity_from_coal: "Elektriciteit uit kolen"
@@ -567,22 +567,22 @@ nl:
         energy_power_nuclear_gen3_uranium_oxide: 'Kern 3e Gen'
         energy_power_nuclear_small_modular_reactor_uranium_oxide: 'Kern kleine modulaire reactor'
         energy_power_solar_csp_solar_radiation: 'Geconcentreerde zonne-energie'
-        energy_power_solar_pv: 'Zonnecentrales PV'
+        energy_power_solar_pv: 'Zon op land'
         energy_power_wood_pellets_must_run: 'Biomassacentrale (must-run)'
         energy_power_wood_pellets_dispatchable: 'Biomassacentrale (regelbaar)'
         energy_power_wood_pellets_ccs_must_run: 'Biomassacentrale + CCS (must-run)'
         energy_power_wood_pellets_ccs_dispatchable: 'Biomassacentrale + CCS (regelbaar)'
-        energy_battery_solar_pv: "Zonnecentrales PV met batterij"
-        energy_battery_wind_turbine_inland: 'Windmolens op land met batterij'
-        energy_battery_wind_electricity: 'Windmolens op land met batterij'
-        energy_power_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zonneparken'
-        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: 'Productieverlaging zonneparken op zee'
-        energy_power_solar_pv_electricity_output_curve: 'Opwek zonneparken'
-        energy_power_solar_pv_offshore_electricity_output_curve: 'Opwek zonneparken op zee'
-        energy_battery_solar_pv_electricity_output_curve: 'Opwek zonneparken met batterij'
-        energy_battery_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zonneparken met batterij'
-        energy_power_solar_pv_solar_radiation: 'Zonnecentrales PV'
-        energy_power_offshore_solar_pv: 'Zonnecentrales PV op zee'
+        energy_battery_solar_pv: "Zon op land (batterij)"
+        energy_battery_wind_turbine_inland: 'Wind op land (batterij)'
+        energy_battery_wind_electricity: 'Wind op land (batterij)'
+        energy_power_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zon op land'
+        energy_power_solar_pv_offshore_curtailed_electricity_output_curve: 'Productieverlaging zon op zee'
+        energy_power_solar_pv_electricity_output_curve: 'Opwek zon op land'
+        energy_power_solar_pv_offshore_electricity_output_curve: 'Opwek zon op zee'
+        energy_battery_solar_pv_electricity_output_curve: 'Opwek zon op land (batterij)'
+        energy_battery_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging zon op land (batterij)'
+        energy_power_solar_pv_solar_radiation: 'Zon op land'
+        energy_power_offshore_solar_pv: 'Zon op zee'
         energy_power_supercritical_coal: 'Kolen conventioneel'
         energy_power_supercritical_waste_mix: 'Afvalverbranding'
         energy_power_supercritical_ccs_waste_mix: 'Afvalverbranding CCS'
@@ -595,11 +595,11 @@ nl:
         energy_power_ultra_supercritical_lignite: 'Bruinkolen'
         energy_power_ultra_supercritical_network_gas: 'Gas conventioneel'
         energy_power_ultra_supercritical_oxyfuel_ccs_lignite: "Bruinkolen 'oxyfuel' CCS"
-        energy_power_wind_turbine_coastal: 'Windmolens aan kust'
-        energy_power_wind_turbine_inland: 'Windmolens op land'
-        energy_power_wind_turbine_offshore: 'Windmolens op zee'
-        energy_power_hybrid_wind_turbine_offshore: 'Hybride windmolens op zee'
-        energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Productieverlaging hybride windmolens op zee'
+        energy_power_wind_turbine_coastal: 'Wind aan kust'
+        energy_power_wind_turbine_inland: 'Wind op land'
+        energy_power_wind_turbine_offshore: 'Wind op zee'
+        energy_power_hybrid_wind_turbine_offshore: 'Wind op zee (hybride)'
+        energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Productieverlaging wind op zee (hybride)'
         energy_export_hydrogen_baseload_for_mekko: 'Export (basislast)'
         energy_export_hydrogen_backup_for_mekko: 'Export (overschot)'
         energy_hydrogen_storage_unused_for_mekko: 'Ongebruikte waterstof vanuit opslag'
@@ -609,21 +609,21 @@ nl:
         conversion_losses_lohc: "Conversie verliezen LOHC"
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomassavergassing'
         energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomassavergassing + CCS"
-        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Offshore wind"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Hybride elektrolyser op zee"
-        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Zonnecentrales"
+        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Wind op zee (elektrolyser)"
+        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Wind op zee (hyrbide)"
+        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Zon op land (elektrolyser)"
         energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
-        energy_hydrogen_solar_pv_solar_radiation: "Zonnecentrales"
-        energy_power_solar_pv_offshore: "Zonnecentrales op zee"
-        energy_power_offshore_solar_pv: "Zonnecentrales op zee"
+        energy_hydrogen_solar_pv_solar_radiation: "Zon op land (elektrolyser)"
+        energy_power_solar_pv_offshore: "Zon op zee"
+        energy_power_offshore_solar_pv: "Zon op zee"
         energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko: "SMR + CCS (must-run)"
         energy_hydrogen_steam_methane_reformer_must_run_for_mekko: "SMR (must-run)"
         energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko: "SMR (regelbaar)"
         energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko: "ATR + CCS (must-run)"
         energy_hydrogen_autothermal_reformer_must_run_for_mekko: "ATR (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable_for_mekko: "ATR (regelbaar)"
-        energy_hydrogen_wind_turbine_offshore: "Offshore wind"
-        energy_hydrogen_hybrid_wind_turbine_offshore: "Hybride offshore electrolyser"
+        energy_hydrogen_wind_turbine_offshore: "Wind op zee (elektrolyser)"
+        energy_hydrogen_hybrid_wind_turbine_offshore: "Wind op zee (hybride)"
         energy_hydrogen_ammonia_reformer_must_run_for_mekko: "Ammoniak reformer (must-run)"
         energy_hydrogen_ammonia_reformer_dispatchable_for_mekko: "Ammoniak reformer (regelbaar)"
         hydrogen_demand_transformation_chemical_fertilizers_industry: "Transformatie vraag (kunstmestsector)"
@@ -837,7 +837,7 @@ nl:
         households_solar_pv: 'Huishoudens'
         households_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging huishoudens'
         households_solar_pv_electricity_output_curve: 'Opwek huishoudens'
-        households_solar_pv_solar_radiation: 'Zonnepanelen huishoudens'
+        households_solar_pv_solar_radiation: 'Zon op dak (huishoudens)'
         households_space_heater_coal: "Kolenketel"
         households_space_heater_combined_hydrogen:  "HR combiketel (waterstof)"
         households_space_heater_combined_network_gas: "HR combiketel (gas)"
@@ -915,9 +915,9 @@ nl:
         energy_hydrogen_storage: "Waterstofopslag (gestapeld)"
         energy_hydrogen_biomass_gasification: "Biomassavergassing"
         energy_hydrogen_biomass_gasification_ccs: "Biomassavergassing CCS"
-        energy_hydrogen_electrolysis_solar_electricity: "Zonnecentrale PV voor H2"
-        energy_hydrogen_electrolysis_wind_electricity: "Windmolen op zee voor H2"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity: "Hybride elektrolyser op zee"
+        energy_hydrogen_electrolysis_solar_electricity: "Zon op land (elektrolyser)"
+        energy_hydrogen_electrolysis_wind_electricity: "Wind op zee (elektrolyser)"
+        energy_hydrogen_hybrid_electrolysis_wind_electricity: "Wind op zee (hybride)"
         energy_hydrogen_flexibility_p2g_electricity: "Power-to-gas"
         energy_hydrogen_steam_methane_reformer_must_run: "Stoomreforming met aardgas (must-run)"
         energy_hydrogen_steam_methane_reformer_ccs_must_run: "Stoomreforming met aardgas + CCS (must-run)"
@@ -1113,8 +1113,8 @@ nl:
         local_chp_biogas: "Biogas-WKK (must-run)"
         local_electrolysis: "Lokale elektrolyse"
         locally_produced_heat: "Lokaal geproduceerde warmte"
-        local_solar_pv_households: "Zon PV Huishoudens"
-        local_solar_pv_buildings: "Zon PV Gebouwen"
+        local_solar_pv_households: "Zon op dak (huishoudens)"
+        local_solar_pv_buildings: "Zon op dak (gebouwen)"
         losses_of_export: "Verliezen van export"
         low_voltage_network: "Laagspanningsnet"
         lpg: "LPG"
@@ -1276,9 +1276,9 @@ nl:
         number_of_excess_events: "Aantal keer elektriciteitsoverschotten per jaar"
         offshore: "Op zee"
         offshore_net: "Net op zee"
-        offshore_wind_turbines: "Windmolens op zee"
-        offshore_hybrid_wind_turbines: "Hybride windmolens op zee"
-        hybrid_offshore_wind_output_capacity: "Hybride windturbines op zee"
+        offshore_wind_turbines: "Wind op zee"
+        offshore_hybrid_wind_turbines: "Wind op zee (met hybride aansluiting)"
+        hybrid_offshore_wind_output_capacity: "Wind op zee (met hybride aansluiting)"
         hybrid_offshore_electrolyser_input_capacity: "Elektrolyser op zee"
         hybrid_offshore_cable_input_capacity: "Elektriciteitskabel op zee"
         oil: "Olie"
@@ -1300,7 +1300,7 @@ nl:
         oily_biomass: "Oliehoudende biomassa"
         old_residences: "Oude woningen"
         onshore: "Op land"
-        onshore_wind_turbines: "Windmolens op land"
+        onshore_wind_turbines: "Wind op land"
         operation_maintenance_cost: "Onderhoud en beheer"
         opex: "OPEX"
         optimal_threshold: "Kostenoptimaal omslagpunt"
@@ -1375,22 +1375,25 @@ nl:
         salt_cavern: "Zoutcaverne"
         ships: "Binnenvaartschepen"
         solar: "Zon"
-        solar_pv_buildings: "Zon op dak gebouwen"
-        solar_csp: "Zon CSP"
-        solar_pv_households: "Zon op dak huishoudens"
-        solar_pvt_households: "Zon-PVT op dak huishoudens"
+        solar_pv_buildings: "Zon op dak (gebouwen)"
+        solar_csp: "Concentrated solar power"
+        solar_pv_households: "Zon op dak (huishoudens)"
+        solar_pvt_households: "Zon-PVT op dak (huishoudens)"
         solar_pv_onshore: "Zon op land"
         solar_panels: "Zonnepanelen"
-        solar_pv: "Zon PV (gestapeld)"
-        solar_pv_production: "Zon PV productie"
-        solar_pv_total_curtailed_electricity_curve: "Productiebeperking zon PV"
+        solar_pv: "Zonne-energie (gestapeld)"
+        solar_pv_energy_power_solar_pv_solar_radiation_production: "Zon op land"
+        solar_pv_households_solar_pv_solar_radiation_production: "Zon op dak (huishoudens)"
+        solar_pv_buildings_solar_pv_solar_radiation_production: "Zon op dak (gebouwen)"
+        solar_pv_energy_power_solar_pv_offshore_production: "Zon op zee"
+        solar_pv_total_curtailed_electricity_curve: "Productiebeperking zonne-energie"
         solar_thermal: "Zonthermie"
         solar_thermal_hot_water: "Zonthermie (voor warm water)"
         solar_thermal_heating: "Zonthermie (voor verwarming)"
         solar_thermal_heaters: "Zonneboilers"
         solar_termal_heat_production: "Zonthermie warmteproductie"
-        solar_thermal_households: "Zonthermie op dak huishoudens"
-        solar_thermal_buildings: "Zonthermie op dak gebouwen"
+        solar_thermal_households: "Zonthermie op dak (huishoudens)"
+        solar_thermal_buildings: "Zonthermie op dak (gebouwen)"
         solid_biomass: "Vaste biomassa"
         space_heating: "Ruimteverwarming"
         steam_methane_reforming: "Aardgas reforming"
@@ -1488,8 +1491,8 @@ nl:
         wind_farms_prod: "Wind park (prod.)"
         wind_inland: "Wind op land"
         wind_offshore: "Wind op zee"
-        wind_offshore_production: "Wind op zee productie"
-        wind_onshore_production: "Wind op land productie"
+        wind_offshore_production: "Wind op zee"
+        wind_onshore_production: "Wind op land"
         wind_turbines: "Wind"
         with_im_export_1990: "Met im- en export 1990"
         with_im_export_2010: "Met im- en export 2010"
@@ -1578,7 +1581,7 @@ nl:
         other: "Overig"
         transport: "Binnenlands transport"
         transport_generic: "Transport"
-        wind_coastal_production: "Wind aan de kust"
+        wind_coastal_production: "Wind aan kust"
         solar_thermal_heat_production: "Zonthermie"
         residences_before_1945: "Woningen voor 1945"
         residences_1945_1964: "Woningen 1945 - 1964"
@@ -1609,10 +1612,10 @@ nl:
         lignite_power_for_electricity_network_mekko: "Bruinkoolcentrale"
         nuclear_power_for_electricity_network_mekko: "Kerncentrale"
         oil_power_for_electricity_network_mekko: "Oliecentrale"
-        solar_csp_for_electricity_network_mekko: "Zon CSP"
-        solar_pv_offshore_for_electricity_network_mekko: "Zon PV op zee"
-        solar_pv_on_land_for_electricity_network_mekko: "Zon PV op land"
-        solar_pv_roof_for_electricity_network_mekko: "Zon PV op dak"
+        solar_csp_for_electricity_network_mekko: "Geconcentreerde zonne-energie"
+        solar_pv_offshore_for_electricity_network_mekko: "Zon op zee"
+        solar_pv_on_land_for_electricity_network_mekko: "Zon op land"
+        solar_pv_roof_for_electricity_network_mekko: "Zon op dak"
         waste_chp_for_electricity_network_mekko: "Afval-WKK"
         waste_power_for_electricity_network_mekko: "Afvalverbrandingscentrale"
         wind_offshore_for_electricity_network_mekko: "Wind op zee"

@@ -1,11 +1,11 @@
-- if show_whats_new_banner?
-  #whats-new
+- if show_releases_banner?
+  #releases
     .content
       %p
         %strong= t('updated.title').html_safe
         = t('updated.description').html_safe
       %p
-        %strong= link_to "#{t('more_information')} →", whats_new_path
+        %strong= link_to "#{t('more_information')} →", releases_external_url
 
 #landing
   #blurb
@@ -21,12 +21,12 @@
   .header-container.loose
     %h4.title= t('intro.features.title')
   #other-features
-    .feature.whats-new
-      %h4= t('intro.whats_new.title')
-      %p= t('intro.whats_new.description')
+    .feature.releases
+      %h4= t('intro.releases.title')
+      %p= t('intro.releases.description')
       %p
-        = link_to(whats_new_path) do
-          = t('intro.whats_new.link')
+        = link_to(releases_external_url) do
+          = t('intro.releases.link')
           →
     .feature.dataset
       %h4= t('intro.dataset.title')

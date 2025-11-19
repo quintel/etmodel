@@ -40,10 +40,13 @@ live_server: false
 # mixer_url: http://mixer.et-model.com
 # etflex_url: http://light.et-model.com
 
-# Shows the "What's new?" banner on the home page, with a short description of recent changes in the
-# ETM and a link to the "whats new?" page. Once the cutoff date is reached the banner will be
+# Base URL for the public documentation site. Used to build links to release notes and guides.
+documentation_base_url: https://docs.energytransitionmodel.com/
+
+# Shows the "Releases" banner on the home page, with a short description of recent changes in the
+# ETM and a link to the "releases" page. Once the cutoff date is reached the banner will be
 # hidden.
-whats_new_cutoff: 2019-10-07
+releases_cutoff: 2019-10-07
 
 # E-mail address to which feedback should be sent.
 feedback_email: info@energytransitionmodel.com

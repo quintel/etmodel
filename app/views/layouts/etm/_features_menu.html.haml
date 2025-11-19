@@ -3,7 +3,7 @@
     = t('app_nav.features')
   .dropdown-menu.learn-dropdown.features{ 'aria-labelledby': 'locale-button' }
     %ul
-      %li= learn_link t('app_nav.whats_new'), whats_new_path
+      %li= learn_link t('app_nav.releases'), releases_external_url
       - if current_user
         = link_to t('app_nav.collections'), my_etm_path("collections")
       %li= learn_link t('app_nav.api'), 'https://docs.energytransitionmodel.com/api/intro'

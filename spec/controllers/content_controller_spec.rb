@@ -3,11 +3,10 @@
 describe ContentController, vcr: true do
   render_views
 
-  describe 'whats new' do
-    it 'renders an h1' do
-      # Assert markdown rendering works
-      get :whats_new
-      expect(response.body).to have_css('.whats_new h1', text: /april/i)
+  describe 'releases' do
+    it 'redirects to the documentation site' do
+      get :releases
+      expect(response).to redirect_to(ApplicationController.helpers.releases_external_url)
     end
   end
 end

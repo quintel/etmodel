@@ -1,9 +1,6 @@
-require 'uri'
-
 module ApplicationHelper
-  def releases_external_url
-    base_url = Settings.documentation_base_url || 'https://docs.energytransitionmodel.com/'
-    URI.join(base_url, 'main/releases/').to_s
+  def releases_url
+    "#{Settings.documentation_base_url || 'https://docs.energytransitionmodel.com/'}main/releases/"
   end
 
   def has_active_scenario?

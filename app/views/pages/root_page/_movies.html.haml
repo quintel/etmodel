@@ -5,7 +5,7 @@
       %strong= t('updated.title')
       = t('updated.description')
       %br
-      = link_to "#{t('more_information')} →", releases_external_url
+      = link_to "#{t('more_information')} →", releases_url, target: '_blank', rel: 'noopener noreferrer'
 
   %h1= t 'intro.introduction'
   %p= t 'intro.root_text'

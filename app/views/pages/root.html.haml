@@ -5,7 +5,7 @@
         %strong= t('updated.title').html_safe
         = t('updated.description').html_safe
       %p
-        %strong= link_to "#{t('more_information')} →", releases_external_url
+        %strong= link_to "#{t('more_information')} →", releases_url, target: '_blank', rel: 'noopener noreferrer'
 
 #landing
   #blurb
@@ -25,7 +25,7 @@
       %h4= t('intro.releases.title')
       %p= t('intro.releases.description')
       %p
-        = link_to(releases_external_url) do
+        = link_to(releases_url, target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.releases.link')
           →
     .feature.dataset

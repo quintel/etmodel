@@ -19,21 +19,21 @@ en:
         >space heating in households</a> or explore <a href="/scenario/demand/transport/overview"
         >transport and mobility</a>. </br>
         <i>Optional: advanced users can use the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"
-        >Flexibility</a> section to match demand and supply on specific timescales, the 
-        <a href="/scenario/emissions/other_emissions/overview">Emissions</a> section for assumptions on other greenhouse gas emissions 
+        >Flexibility</a> section to match demand and supply on specific timescales, the
+        <a href="/scenario/emissions/other_emissions/overview">Emissions</a> section for assumptions on other greenhouse gas emissions
         or CCUS and the <a href="/scenario/costs/fuel_costs/fossil-fuels">Costs & efficiencies</a> section for cost assumptions or efficiency adjustments. </i></li>
-        <li> The ETM will immediately show you the result of your actions: at the bottom of your screen, 
+        <li> The ETM will immediately show you the result of your actions: at the bottom of your screen,
         indicators show the impact on the entire system (e.g. CO<sub>2</sub> reduction, energy savings, costs).
-        On the right, charts display specific information for each section of the model. If you lock the chart 
+        On the right, charts display specific information for each section of the model. If you lock the chart
         it will remain visible as you navigate through the model. You can add charts by clicking "see more charts"
         (top right). </br>
         For a more complete overview of results you can take a look at the scenario report under the header <a href="/scenario/data/data_visuals/scenario-report"
         >Results & data</a>. You can always return to a certain part of the model to make more changes. </li>
-        <li>You can share your scenario with others by saving your scenario: click on 
+        <li>You can share your scenario with others by saving your scenario: click on
         'Save scenario' (top right) and share the scenario link. <br/>
         <i>Please note: the ETM is updated periodically. Save your scenario to ensure that outcomes
         stay stable over time! </i></li></ol></br>
-        You are in the driver's seat. The ETM contains no hidden assumptions, like price or technology 
+        You are in the driver's seat. The ETM contains no hidden assumptions, like price or technology
         developments over time etc. If you do nothing, the future will not change. </br></br>
         The ETM is fully open source: under the header <a href="/scenario/data/data_sources/region_data">Results & data</a>
         you can see the data sources that are used in the model. </br></br>
@@ -46,11 +46,11 @@ en:
         in your region?\r\n</br></br>\r\n
         The chart on the right compares CO<sub>2</sub> emissions between
         1990, the present and the future. The year 1990 is often used as a reference
-        year for CO<sub>2</sub> emissions targets.\r\n</br></br>\r\nThe ETM takes into account energetic CO<sub>2</sub> emissions, 
-        which are emitted in domestic energy use and production, as well as non-energetic CO<sub>2</sub> emissions in the Fertilizers sector. 
-        Non-energetic CO<sub>2</sub> emissions in other sectors and other green house gases (e.g. methane) can be changed within the  
-        <a href=\"/scenario/emissions/other_emissions/overview\">Emissions</a> section. 
-        You can find more information in the 
+        year for CO<sub>2</sub> emissions targets.\r\n</br></br>\r\nThe ETM takes into account energetic CO<sub>2</sub> emissions,
+        which are emitted in domestic energy use and production, as well as non-energetic CO<sub>2</sub> emissions in the Fertilizers sector.
+        Non-energetic CO<sub>2</sub> emissions in other sectors and other green house gases (e.g. methane) can be changed within the
+        <a href=\"/scenario/emissions/other_emissions/overview\">Emissions</a> section.
+        You can find more information in the
         <a href=\"https://docs.energytransitionmodel.com/main/co2-overview-per-sector\"
         target=\"_blank\">documentation</a>.
         \r\n</br></br>\r\nThe percentage of CO<sub>2</sub>-reduction with
@@ -74,3 +74,43 @@ en:
         to the use of the electricity market module: it is not used in the current
         year and is used in the future year (the <a href =\"/scenario/supply/merit_order/merit-order\">Merit
         order</a> section has more information about the electricity market module)."
+    scenario_overview:
+      title: Scenario overview
+      short_description:
+      description: "This overview shows the main results of your scenario at a glance.
+        \r\n</br></br>\r\nThe Sankey diagram on the right gives
+        a complete picture of the energy flows in your region, from energy sources
+        to final energy demand. The thickness of the arrows indicates the amount
+        of energy. You can click on different parts of the diagram to zoom in on
+        specific energy flows."
+    electricity:
+      title: Electricity
+      short_description:
+      description: "The ETM includes an electricity network model that calculates
+        the flows of electricity through the transmission and distribution networks.
+        \r\n</br></br>\r\nThe diagram on the right shows the interconnections
+        between different regions. The arrows indicate the direction of electricity
+        flow, while the thickness of the arrows represents the amount of electricity
+        being transmitted."
+    heat:
+      title: Heat
+      short_description:
+      description: "The ETM includes a heat network model that simulates the distribution
+        of heat through district heating systems. \r\n</br></br>\r\nThe diagram
+        on the right illustrates the structure of the heat networks in your region,
+        showing the connections between heat sources and consumers. The thickness
+        of the lines represents the amount of heat being distributed."
+    carbon:
+      title: Carbon
+      short_description:
+      description: "This section provides an overview of carbon-related aspects
+        of your energy scenario. \r\n</br></br>\r\nThe diagram on the right illustrates
+        the liquid fuels flows in your region, from production to consumption. The thickness
+        of the arrows indicates the amount of liquid fuels being produced and consumed."
+    hydrogen:
+      title: Hydrogen
+      short_description:
+      description: "The ETM includes a hydrogen network model that simulates
+        the production, distribution, and consumption of hydrogen. \r\n</br></br>\nThe
+        diagram on the right illustrates the structure of the hydrogen network in your region."
+

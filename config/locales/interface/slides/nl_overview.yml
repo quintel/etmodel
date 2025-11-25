@@ -81,3 +81,41 @@ nl:
         gebruik van de elektriciteitsmarktsmodule: deze wordt namelijk niet gebruikt
         in het huidige jaar en wel in het toekomstige jaar (de sectie <a href=\"/scenario/supply/merit_order/merit-order\"
         >Merit order</a> bevat meer informatie over de elektriciteitsmarkt)."
+    scenario_overview:
+      title: Scenario overzicht
+      short_description:
+      description: "Dit overzicht toont in één oogopslag de belangrijkste resultaten van je scenario.
+        \r\n</br></br>\r\nHet Sankey-diagram aan de rechterkant geeft
+        een volledig beeld van de energiestromen in je regio, van energiebronnen
+        tot eindgebruik. De dikte van de pijlen geeft de hoeveelheid energie aan.
+        Je kunt op verschillende delen van het diagram klikken om in te zoomen op
+        specifieke energiestromen."
+    electricity:
+      title: Elektricteit
+      short_description:
+      description: "Het ETM bevat een elektriciteitsnetwerkmodel dat de stromen
+        van elektriciteit door de transmissie- en distributienetwerken berekent.
+        \r\n</br></br>\r\nHet diagram aan de rechterkant toont de interconnecties
+        tussen verschillende regio's. De pijlen geven de richting van de elektriciteitsstroom
+        aan, terwijl de dikte van de pijlen de hoeveelheid doorgegeven elektriciteit weergeeft."
+    heat:
+      title: Warmte
+      short_description:
+      description: "Het ETM bevat een warmtenetwerkmodel dat de distributie van
+        warmte door stadsverwarmingssystemen simuleert. \r\n</br></br>\r\nHet diagram
+        aan de rechterkant illustreert de structuur van de warmtenetten in je regio
+        en toont de verbindingen tussen warmtebronnen en verbruikers. De dikte
+        van de lijnen geeft de hoeveelheid gedistribueerde warmte weer."
+    carbon:
+      title: Koolstof
+      short_description:
+      description: "Deze sectie geeft een overzicht van koolstofgerelateerde aspecten
+        van je energiescenario. \r\n</br></br>\r\nHet diagram aan de rechterkant illustreert
+        de vloeibare brandstofstromen in je regio, van productie tot verbruik. De dikte
+        van de pijlen geeft de hoeveelheid geproduceerde en verbruikte vloeibare brandstoffen aan."
+    hydrogen:
+      title: Waterstof
+      short_description:
+      description: "Het ETM bevat een waterstofnetwerkmodel dat de productie,
+        distributie en consumptie van waterstof simuleert. \r\n</br></br>\nHet
+        diagram aan de rechterkant illustreert de structuur van het waterstofnetwerk in je regio."

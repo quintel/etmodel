@@ -25,7 +25,7 @@
         .inner-alert
           .fa.fa-exclamation-triangle
           = t("scenario.dataset_warning.desc")
-          %a{href: whats_new_path}= t("scenario.dataset_warning.learn_more")
+          %a{href: releases_url, target: '_blank', rel: 'noopener noreferrer'}= t("scenario.dataset_warning.learn_more")
 
       - if @scenario.description
         = formatted_scenario_description(@scenario.description)

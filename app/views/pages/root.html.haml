@@ -1,11 +1,11 @@
-- if show_whats_new_banner?
-  #whats-new
+- if show_releases_banner?
+  #releases
     .content
       %p
         %strong= t('updated.title').html_safe
         = t('updated.description').html_safe
       %p
-        %strong= link_to "#{t('more_information')} →", whats_new_path
+        %strong= link_to "#{t('more_information')} →", releases_url, target: '_blank', rel: 'noopener noreferrer'
 
 #landing
   #blurb
@@ -21,18 +21,23 @@
   .header-container.loose
     %h4.title= t('intro.features.title')
   #other-features
-    .feature.whats-new
-      %h4= t('intro.whats_new.title')
-      %p= t('intro.whats_new.description')
+    .feature.releases
+      %h4= t('intro.releases.title')
+
+      %p= t('intro.releases.description')
+
       %p
-        = link_to(whats_new_path) do
-          = t('intro.whats_new.link')
+        = "#{t('intro.releases.date')}: #{l(ETModel::Version::DATE, format: :long)}"
+
+      %p
+        = link_to(releases_url, target: '_blank', rel: 'noopener noreferrer') do
+          = t('intro.releases.link')
           →
     .feature.dataset
       %h4= t('intro.dataset.title')
       %p= t('intro.dataset.description')
       %p
-        = link_to("https://data.energytransitionmodel.com") do
+        = link_to("https://data.energytransitionmodel.com", target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.dataset.link')
           →
     - if Settings.collections_url
@@ -47,21 +52,21 @@
       %h4= t('intro.docs.title')
       %p= t('intro.docs.description')
       %p
-        = link_to("https://docs.energytransitionmodel.com") do
+        = link_to("https://docs.energytransitionmodel.com", target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.docs.link')
           →
     .feature.api
       %h4= t('intro.api.title')
       %p= t('intro.api.description')
       %p
-        = link_to("https://docs.energytransitionmodel.com/api/intro") do
+        = link_to("https://docs.energytransitionmodel.com/api/intro", target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.api.link')
           →
     .feature.quintel
       %h4= t('intro.about_us.title')
       %p= t('intro.about_us.description')
       %p
-        = link_to('https://quintel.com') do
+        = link_to('https://quintel.com', target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.about_us.learn_more')
           →
 

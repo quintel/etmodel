@@ -93,8 +93,6 @@ Rails.application.routes.draw do
   get '/development'    => 'content#development',    as: :development
   get '/privacy-policy' => 'content#privacy_statement', as: :privacy_statement
   get '/terms-of-service' => 'content#terms_of_service', as: :terms_of_service
-  get '/whats-new'      => 'content#whats_new',      as: :whats_new
-
 
   # ESDL
   get  '/import_esdl'         => 'import_esdl#index'

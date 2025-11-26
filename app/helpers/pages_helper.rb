@@ -1,9 +1,9 @@
 module PagesHelper
-  # Public: Determines if the "What's new in the ETM?" banner should be shown
+  # Public: Determines if the "Releases" banner should be shown
   # in staging and production environments.
-  def show_whats_new_banner?
-    if Settings.whats_new_cutoff
-      Date.today < Settings.whats_new_cutoff
+  def show_releases_banner?
+    if Settings.releases_cutoff
+      Date.today < Settings.releases_cutoff
     else
       Rails.env.development?
     end

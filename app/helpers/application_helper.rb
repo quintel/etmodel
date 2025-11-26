@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def releases_url
+    "#{Settings.documentation_base_url || 'https://docs.energytransitionmodel.com/'}main/releases/"
+  end
+
   def has_active_scenario?
     Current.setting.active_scenario? || @active_scenario
   end

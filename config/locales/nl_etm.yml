@@ -158,12 +158,10 @@ nl:
     summary:             "Samenvattend"
 
   updated:
-    name: "Laatste updates"
-    title: Het ETM is geüpdatet!
+    name: "Releases"
+    title: Nieuwe ETM-releases beschikbaar!
     description:
-      Het is nu mogelijk om CO2 afvang, opslag en hergebruik toe te voegen aan je scenario om zo
-      emissies te verlagen. Het koppelen van andere modellen is door deze update makkelijker en
-      met de nieuwe toolbar kun je eenvoudig je scenario opslaan.
+      Lees de releasenotes op onze documentatiewebsite voor de laatste wijzigingen.
 
   # Main Application Nav ---------------------------------------------------------------------------
 
@@ -196,7 +194,7 @@ nl:
     title: Information
     transition_paths: Collecties
     updates: Updates
-    whats_new: Laatste updates
+    releases: Releases
 
   # Pages ------------------------------------------------------------------------------------------
 
@@ -216,8 +214,8 @@ nl:
       title: Development
     features:
       title: Features
-    whats_new:
-      title: Wat is er nieuw in het Energietransitiemodel?
+    releases:
+      title: Releases
 
   # ----------- Dashbord titles ----------- #
   dashboard:
@@ -359,7 +357,7 @@ nl:
         Dit is nodig om te zorgen dat het scenario compatibel blijft met de nieuwe versie van het
         model, en dat de bedoelingen van de auteur zo goed mogelijk bewaard blijven.
       slider_changes_header: Veranderingen schuifjes-instellingen
-      view_updates: Bekijk recente modelupdates
+      view_releases: Bekijk releasenotes
     created_by: "Gemaakt door"
     other: "Overig&hellip;"
     actueel: "Actueel"

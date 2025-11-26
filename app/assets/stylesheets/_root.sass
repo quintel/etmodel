@@ -47,34 +47,34 @@ body#root
     grid-template-rows: repeat(3, min-content)
     gap: 20px
     .feature
-      background: $soft-grey asset-url("pages/home/local_global.svg") 20px 20px no-repeat
+      background: $soft-grey asset-url("pages/home/local_global.svg") 20px 2.6rem no-repeat
       background-size: 32px
       display: block
-      padding-left: 68px
-      &.whats-new
+      padding: 2.6rem 1.3rem 2.6rem 68px
+      &.releases
         background-image: asset-url("pages/home/whats-new.svg")
         grid-column-start: 1
-        grid-column-end: span 2
+        grid-column-end: span 3
         grid-row-start: 1
       &.multi-year-charts
         background-image: asset-url("pages/home/multi_year_charts.svg")
-        grid-column-start: 3
-        grid-column-end: span 2
+        grid-column-start: 4
+        grid-column-end: span 3
         grid-row-start: 1
       &.dataset
-        grid-row-start: 1
-        grid-column-start: 5
+        grid-row-start: 2
+        grid-column-start: 1
         grid-column-end: span 2
       &.docs
         background-image: asset-url("pages/home/game.png")
         grid-row-start: 2
-        grid-column-start: 1
-        grid-column-end: span 3
+        grid-column-start: 3
+        grid-column-end: span 2
       &.api
         background-image: asset-url("pages/home/rubik.png")
         grid-row-start: 2
-        grid-column-start: 4
-        grid-column-end: span 3
+        grid-column-start: 5
+        grid-column-end: span 2
       &.quintel
         background-image: asset-url("pages/home/quintel.svg")
         grid-row-start: 3
@@ -497,7 +497,7 @@ body#root
       a
         color: $landing-grey
 
-#whats-new
+#releases
   background: #fffced
   line-height: 1.5
   padding: 20px 0

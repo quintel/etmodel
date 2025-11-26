@@ -22,17 +22,17 @@
     %h4.title= t('intro.features.title')
   #other-features
     .feature.releases
-      %div
-        %h4= t('intro.releases.title')
+      %h4= t('intro.releases.title')
 
-        %p= t('intro.releases.description')
-        %p
-          = link_to(releases_url, target: '_blank', rel: 'noopener noreferrer') do
-            = t('intro.releases.link')
-            →
-      .dates
-        %p= t('intro.releases.date')
-        %span= l(ETModel::Version::DATE, format: :long)
+      %p= t('intro.releases.description')
+
+      %p
+        = "#{t('intro.releases.date')}: #{l(ETModel::Version::DATE, format: :long)}"
+
+      %p
+        = link_to(releases_url, target: '_blank', rel: 'noopener noreferrer') do
+          = t('intro.releases.link')
+          →
     .feature.dataset
       %h4= t('intro.dataset.title')
       %p= t('intro.dataset.description')

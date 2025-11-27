@@ -4,804 +4,847 @@ nl:
     bunkers_allocated_percentage_aviation:
       title: Internationale luchtvaart
       short_description:
-      description: "Welke percentage van het energiegebruik van internationale luchtvaart
-        moet meegenomen worden in jouw scenario? Het totale energiegebruik omvat alle
-        vliegtuigbrandstoffen die zijn getankt voor internationale luchtvaart en dus
-        niet de brandstoffen die gebruikt zijn door luchtvaartmaatschappijen voor
-        hun wegtransport. De verdeling nationaal/internationaal wordt bepaald op basis
-        van de vertrek- en landingslocaties en niet op basis van de nationaliteit
-        van de luchtvaartmaatschappij.\r\n<br/><br/>\r\nInternationale luchtvaart
-        is niet opgenomen in het Parijse Klimaatakkoord.  Ondertussen is internationale
-        luchtvaart verantwoordelijk voor 3% van de broeikasgassen die Europa uitstoot
-        en meer dan 2% van de wereldwijde broeikasgassen. Sommige mensen beschouwen
-        internationale luchtvaart als een land op zich, als dat het geval zou zijn,
-        dan zou het in de top 10 grootste uitstoters vallen. (<a href=\"https://ec.europa.eu/clima/policies/transport/aviation_en\">EC
-        Climate Action</a>)\r\n<br/><br/>\r\nMerk op dat deze slider een percentage
-        neemt van de totale nationale energievraag van internationale luchtvaart.
-        Dit maakt het mogelijk om bijvoorbeeld de totale nationale energievraag van
-        internationale luchtvaart toe te kennen aan de gemeente waar het internationale
-        vliegveld zich bevindt."
+      description: |
+        Dit schuifje bepaalt welk percentage van het energiegebruik van internationale luchtvaart
+        wordt meegenomen binnen dit scenario, inclusief alle getankte vliegtuigbrandstoffen voor
+        internationale vluchten. Internationaal transport wordt standaard niet meegenomen in het
+        ETM: het schuifje staat daarmee standaard op nul.<br/><br/>
+        <b>Let op</b>: het onderscheid in nationale en internationale luchtvaart wordt bepaald
+        op basis van de vertrek- en landingslocaties, dus niet op basis van de nationaliteit van de
+        luchtvaartmaatschappij.<br/><br/>
+        Ga naar
+        <a href="/scenario/demand/transport_international_transport/international-aviation-technology">
+        Technologie internationale luchtvaart</a> om de technologieën voor internationale luchtvaart
+        in te stellen.
     bunkers_allocated_percentage_shipping:
       title: Internationale scheepvaart
       short_description:
-      description: "Welke percentage van het energiegebruik van internationale scheepvaart
-        moet meegenomen worden in jouw scenario? Het totale energieverbruik omvat
-        alle brandstoffen die getankt worden voor internationale scheepvaart. De verdeling
-        nationaal/internationaal wordt bepaald op basis van de aankomsthaven en vertrekhaven
-        en niet door de herkomst van het schip.\r\n<br/><br/>\r\nInternationale scheepvaart
-        is ontzettend belangrijk voor het transporteren van goederen over de hele
-        wereld. Deze sector is dan ook verantwoordelijk voor ongeveer 2.5% van de
-        GHG emissions wereldwijd. Vanaf 2018 moeten grote schepen die gebruikmaken
-        van Europese havens hun jaarlijkse emissies rapporteren; dit is de eerste
-        stap in de aanpak om hun uitstoot te reduceren. \r\n(<a href=\"https://ec.europa.eu/clima/policies/transport/shipping_en\">EC
-        Climate Action</a>)\r\n<br/><br/>\r\nMerk op dat deze slider een percentage
-        neemt van de totale nationale energievraag van internationale scheepvaart.
-        Dit maakt het mogelijk om bijvoorbeeld de totale nationale energievraag van
-        internationale luchtvaart toe te kennen aan de gemeente waar de internationale
-        haven zich bevindt."
+      description: |
+        Dit schuifje bepaalt welk percentage van het energiegebruik van internationale scheepvaart
+        wordt meegenomen in dit scenario, inclusief alle getankte brandstoffen voor
+        internationale scheepvaart. Internationaal transport wordt standaard niet meegenomen in het
+        ETM: het schuifje staat daarmee standaard op nul.<br/><br/>
+        <b>Let op</b>: het onderscheid in nationale en internationale scheepvaart wordt bepaald
+        op basis van de vertek- en aankomsthaven, dus niet op basis van de herkomst van
+        schepen.<br/><br/>
+        Ga naar
+        <a href="/scenario/demand/transport_international_transport/international-navigation-technology">
+        Technologie internationale scheepvaart</a> om de technologieën voor internationale
+        scheepvaart in te stellen.
     transport_plane_using_kerosene_mix_share:
       title: Kerosine (mix)
       short_description:
       description: |
-        Met deze slider kan het percentage worden ingesteld van de totale passagiers
-        kilometers in de binnenlandse luchtvaart die worden afgelegd door
-        vliegtuigen op kerosinemix.</br></br>
+        Dit schuifje stelt het percentage in van de totale passagierskilometers in de binnenlandse
+        luchtvaart die worden afgelegd door vliegtuigen op kerosinemix.<br/><br/>
         Kerosine is de meest dominante brandstof in de luchtvaart vanwege de hoge energie-inhoud en het
         lage vriespunt. Dit betekent dat vliegtuigen lange afstanden kunnen afleggen en de
-        kerosine niet stolt bij het vliegen op grote hoogte. </br></br>
+        kerosine niet stolt bij het vliegen op grote hoogte.<br/><br/>
         Het aandeel van kerosine en biokerosine in de kerosinemix kan worden ingesteld in de sectie
-        <a href="/scenario/demand/transport_fuels/domestic-aviation">transportbrandstoffen</a>.
+        <a href="/scenario/demand/transport_fuels/domestic-aviation">Transportbrandstoffen</a>.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van (bio)kerosine in te stellen.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
-      short_description: ''
-      description: "Met deze slider kun je het percentage van de totale passagiers
-        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door
-        bio-ethanol vliegtuigen. </br></br>
-        Bio-ethanol of andere soorten bio-brandstoffen worden gewonnen uit planten of afval. De energie-inhoud
-        van bio-ethanol is lager in vergelijking met kerosine en de productie is beperkt. Dit verklaart
-        het huidige schaarse gebruik van bio-ethanol in vliegtuigen. Met een (aangepaste) verbrandingsmotor
-        kunnen vliegtuigen hun vlucht uitsluitend met biobrandstoffen voltooien. </br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie."
+      short_description:
+      description: |
+        Dit schuifje stelt het percentage in van de totale passagierskilometers in de binnenlandse
+        luchtvaart die worden afgelegd door vliegtuigen op bio-ethanol.<br/><br/>
+        De energie-inhoud van bio-ethanol is lager dan dat van kerosine en de huidige productie van
+        bio-ethanol is beperkt. Daarom wordt er weinig gebruikgemaakt van bio-ethanol voor
+        vliegtuigen. Met een (aangepaste) verbrandingsmotor kunnen vliegtuigen hun vlucht uitsluitend
+        met biobrandstoffen voltooien.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van bio-ethanol in te stellen.
     transport_plane_using_gasoline_share:
       title: Benzine
       short_description:
-      description: "Met deze slider kun je het percentage van de totale passagiers
-        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door
-        benzine vliegtuigen. </br></br>
-        Benzine wordt voornamelijk gebruikt in kleinere vliegtuigen. Door de lagere energie-inhoud in vergelijking met
-        kerosine kunnen vliegtuigen die benzine gebruiken geen grote afstanden afleggen. </br></br>
-        Bekijk de technische en financiële eigenschappen hieronder voor meer informatie."
+      description: |
+        Dit schuifje stelt het percentage in van de totale passagierskilometers in de binnenlandse
+        luchtvaart die worden afgelegd door vliegtuigen op benzine.<br/><br/>
+        Benzine wordt voornamelijk toegepast in kleinere vliegtuigen. Door de lagere energie-inhoud
+        in vergelijking tot kerosine kunnen vliegtuigen op benzine beperkte afstanden
+        afleggen.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productieprocessen voor benzine in te
+        stellen.
     transport_plane_using_electricity_share:
-      title: Elektrisch
+      title: Elektriciteit
       short_description:
-      description: "Met deze slider kun je het percentage van de totale passagiers
-        kilometers in de binnenlandse luchtvaart instellen die worden afgelegd door
-        elektrische vliegtuigen. </br></br>
-        Elektrische vliegtuigen gebruiken batterijen om te vliegen. Batterijen in combinatie
-        met een elektrische motor zijn ongeveer twee keer zo efficiënt vergeleken met
-        een verbrandingsmotor. Elektrische vliegtuigen zitten nog in een ontwikkelingsfase
-        aangezien de huidige batterij technologie nog niet in staat is om efficiënt
-        lange afstanden te vliegen met een groot vliegtuig. </br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie."
+      description: |
+        Dit schuifje stelt het percentage in van de totale passagierskilometers in de binnenlandse
+        luchtvaart die worden afgelegd door vliegtuigen op elektriciteit.<br/><br/>
+        Elektrische vliegtuigen hebben een elektrische motor en batterijen, en zijn hiermee
+        twee keer zo efficiënt als verbrandingsmotoren. Elektrische vliegtuigen zitten nog in een
+        ontwikkelingsfase aangezien de huidige technologie niet geschikt is voor grote
+        vliegtuigen met lange afstanden.
     transport_plane_using_hydrogen_share:
       title: Waterstof
       short_description:
-      description: "Met deze slider kun je het percentage instellen van de totale
-        passagiers kilometers in de binnenlandse luchtvaart die worden afgelegd door
-        waterstof vliegtuigen.  </br></br>
-        Waterstof vliegtuigen gebruiken een brandstofcel om te vliegen. Een brandstofcel
+      description: |
+        Dit schuifje stelt het percentage in van de totale passagierskilometers in de binnenlandse
+        luchtvaart die worden afgelegd door vliegtuigen op waterstof.<br/><br/>
+        Vliegtuigen op waterstof gebruiken een brandstofcel om te vliegen. Een brandstofcel
         in combinatie met een elektrische motor zijn ongeveer twee keer zo efficiënt
         vergeleken met een verbrandingsmotor. Waterstof vliegtuigen zitten nog in een
-        ontwikkelingsfase aangezien er nog geen waterstof infrastructuur is om in
-        de vraag te voorzien. </br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie."
+        ontwikkelingsfase aangezien de waterstofinfrastructuur nog onvoldoende is om in
+        de vraag te voorzien.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a>
+        om de productieprocessen voor waterstof in te stellen.
     transport_bicycle_using_human_power_share:
       title: Fiets
       short_description:
-      description: "Welk percentage van de fietsen zullen nog klassieke door de mens
-        aangedreven fietsen zijn in de toekomst?\r\n<br/><br/>\r\nFietsen is ouderwetse
-        maar nog steeds erg populaire vorm van transport en komt misschien zelfs meer
-        in trek door zijn gezonde en milieuvriendelijke karakter."
+      description: |
+        Dit schuifje bepaalt welk percentage van de fiets-reizigerskilometers met een gewone fiets
+        wordt afgelegd.
     transport_bicycle_using_electricity_share:
       title: E-bike
       short_description:
-      description: "Zal het aandeel van elektrische bikes (e-bikes) toenemen in de
-        toekomst?\r\n<br/><br/>\r\nElektrische fietsen spelen een belangrijk rol in
-        het uitbreiden van de markt voor fietsen, omdat ze twee voordelen hebben t.o.v.
-        de traditionele fiets: meer snelheid met minder moeite. Hierdoor fietsen op
-        dit moment o.a. veel oudere mensen op e-bikes. Maar ook bedrijven die bijv.
-        eten bezorgen investeren in e-bikes vanwege de financiële voordelen maar ook
-        voor het vergroten van hun groene imago."
-    transport_car_using_electricity_share:
-      title: Elektrisch
-      short_description: ''
       description: |
-        Welk deel van de auto's rijdt in de toekomst op elektriciteit? <br/><br/>
-        Elektrische auto's gebruiken typisch minder energie dan de brandstofconsumptie
-        van brandstofauto's zoals diesel- of benzineauto's, gemeten van bron tot wielen. <br/><br/>
-        Als je hybride auto's wilt opnemen in je scenario zou je kunnen aanenemen dat
-        één elektrische auto gelijk is aan 3 plug-in hybride
-        auto's met 'range extender'. Dit zijn elektrische auto's die aan het net opgeladen
-        kunnen worden, maar een kleine batterij hebben. Een 'range extender' is een kleine
-        benzinemotor, die de batterij oplaadt zodra deze leeg is. <br/><br/>
-        Vergeet niet dat de elektricteit voor de auto's
-        nog wel ergens moet worden opgewekt. Als dat met hernieuwbare stroom gebeurt, kunnen
-        elektrische auto's sterk bijdragen aan een hernieuwbare samenleving. Als kolenstroom
-        wordt gebruikt is dat minder het geval.
+        Dit schuifje bepaalt welk percentage van de fiets-reizigerskilometers wordt afgelegd met
+        elektrische fietsen.
+    transport_car_using_electricity_share:
+      title: Elektriciteit
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met
+        elektrische auto's. Elektrische auto's gebruiken typisch minder energie dan brandstofauto's
+        zoals diesel- en benzineauto's.<br/><br/>
+        Het laadgedrag van elektrische auto's kan worden aangepast in de sectie
+        <a href="/scenario/flexibility/flexibility_net_load/demand-response-electric-cars">
+        Netbelasting</a>. Daarnaast kunnen de batterijen van elektrische voertuigen worden ingezet
+        voor elektriciteitsopslag. Ga naar de sectie
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Opslag elektriciteit</a> om dit in te stellen.
     transport_car_using_diesel_mix_share:
       title: Diesel
-      short_description: ''
-      description: "Welk percentage van alle auto's zal op diesel blijven rijden in
-        de toekomst? \r\n<br/><br/>\r\nHet is mogelijk dat de efficiëntie van deze
-        auto's sneller zal verbeteren als de concurrentie van elektrische auto's sterker
-        wordt.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van diesel voor wergverkeer vaststellen.</br></br>"
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met
+        dieselauto's. <br/><br/>
+        De diesel voor dieselauto's kan bestaan uit een mix van diesel en biodiesel. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van diesel en biodiesel in de dieselmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_car_using_gasoline_mix_share:
       title: Benzine
-      short_description: ''
-      description: "Welk percentage van alle auto's zal op benzine blijven rijden
-        in de toekomst? <br/><br/> \r\nHet is mogelijk dat de efficiëntie van deze
-        auto's sneller zal verbeteren als de concurrentie van elektrische auto's sterker
-        wordt.\r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met
+        benzineauto's. <br/><br/>
+        De benzine voor benzineauto's kan bestaan uit een mix van benzine en bio-ethanol.
+        Ga naar <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van benzine en bio-ethanol in de mix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_car_using_lpg_share:
       title: LPG
-      short_description: ''
-      description: "Welk percentage van alle auto's zal op LPG rijden in de toekomst?\r\nDeze
-        auto's rijden ook op benzine als 'back up' brandstof."
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met
+        auto's die rijden op <i>Liquefied Petroleum Gas (LPG)</i>.<br/><br/>
+        In vergelijking met diesel of benzine heeft LPG typisch een lagere
+        CO<sub>2</sub>-uitstoot.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van LPG via olieraffinaderijen
+        in te stellen.
     transport_car_using_compressed_natural_gas_share:
-      title: Gas onder druk (CNG)
-      short_description: ''
-      description: "Welk percentage van alle auto's zal op aardgas onder druk rijden
-        in de toekomst? \r\n<br/><br/>\r\nAardgasauto's zijn schoner dan benzine of
-        dieselauto's. Wat energie-efficiëntie betreft, zou je kunnen zeggen dat gas
-        het best kan worden gebruikt om warmte en elektriciteit te maken (WKK) op
-        de plaats waar het gebruikt wordt, dan voor auto's. Verbrandingsmotoren zullen
-        nog wel wat efficiënter worden, maar kunnen nooit zo efficiënt worden als
-        WKK's. Wat vervuiling betreft, zou je kunnen zeggen dat gas het beste gebruikt
-        kan worden om centraal elektriciteit te maken, zodat verbrandingsgassen kunnen
-        worden gezuiverd of zelf afgevangen. De geproduceerde elektriciteit kan dan
-        gebruikt worden om auto's aan te drijven.\r\n<br/><br/>\r\nAardgas onder druk
-        komt van het gasnetwerk. Als in dit scenario groen gas wordt bijgemengd in
-        het gasnetwerk dan zullen deze voertuigen ook deels op groen gas rijden."
+      title: Gecomprimeerd aardgas (CNG)
+      short_description:
+      description:
+        Dit schuifje bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met
+        auto's die rijden op gecomprimeerd aardgas (<i>Compressed Natural Gas, CNG</i>).<br/><br/>
+        Auto's die rijden op CNG stoten minder CO<sub>2</sub> uit dan zowel benzine- als LPG-auto's.
+        Bovendien is het mogelijk om groen gas bij te mengen, wat de milieu-impact verder
+        vermindert.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomassa</a> om het aandeel
+        groen gas in het gasnetwerk te verhogen, zodat het aandeel groen gas in auto's op CNG
+        ook toeneemt.
     transport_car_using_hydrogen_share:
       title: Waterstof
       short_description:
-      description: "Welk percentage van alle auto's zal op waterstof rijden in de
-        toekomst? Waterstofauto's worden aan de ene kant veel geprezen, maar aan de
-        andere kant ook stevig bekritiseerd. Zoals voor veel keuzes, hangt de waarde
-        van een waterstofauto af van andere keuzes die je maakt. Waterstof is een
-        energiedrager - geen energiebron -,  dus het zal eerst geproduceerd moeten
-        worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\" >waterstofproductiesectie</a>
-        kun je bepalen hoe dat gedaan wordt - door het reformen van methaan (een krachtig
-        broeikasgas) of door groene elektrolyse.\r\n<br/><br/>\r\nWaterstofauto's
-        (in het ETM) zijn Fuel Cell Electric Vehicles (FCEVs), ofwel elektrische auto's
-        met een brandstofcel. Waterstof wordt onder een hele hoge druk van 700 bar
-        opgeslagen in personenauto's om een grote actieradius (van ongeveer 500 km)
-        te garanderen. Waterstof wordt gevoed aan geschakelde groep brandstofcellen,
-        waar het een chemische (redox) reactie ondergaat met zuurstof, elektriciteit
-        genereert en water uitstoot. Op deze manier produceert de brandstofcel de
-        elektriciteit die de (elektro)motor aandrijft. Waterstofauto's zijn daarom
-        ook elektrische auto's, maar zij verschillen van elektrische auto's in de
-        zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar tijdens
-        het gebruik in de auto gegenereerd wordt.\r\n<br/><br/>\r\nIn combinatie met
-        slimme stroomnetten en energie opslag technologie, kunnen elektrische auto's
-        en waterstofauto's niet alleen mogelijk onze afhankelijkheid van fossiele
-        brandstoffen flink verlagen, maar zelfs functioneren als energie opslag medium
-        of productie technologie. <a href=\"https://www.thegreenvillage.org/projects/hydrolectric\"a>The
-        Green Village</a>, een initiatief van de Technische Universiteit Delft, doet
-        onderzoek naar hoe elektrische auto's gebruikt kunnen worden als meer dan
-        enkel een vervoersmiddel - bijvoorbeeld als minicentrale en voor energie opslag."
+      description: |
+        Dit schuifje bepaalt welk percentage van de auto-reizigerskilometers wordt afgelegd met
+        waterstofauto's. <br/><br/>
+        Voertuigen op waterstof en elektriciteit hebben veel potentie om CO<sub>2</sub>-emissies in
+        de transportsector te verlagen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     transport_truck_using_gasoline_mix_share:
       title: Benzine
-      short_description: ''
-      description: "Welk percentage van alle vrachtwagens zal op benzine rijden in
-        de toekomst? \r\n<br/><br/>\r\nZie onze <a href=\"https://github.com/quintel/etdataset-public/tree/master/nodes_source_analyses/energy/transport\">documentatie
-        op GitHub</a> voor meer informatie over de gebruikte getallen en bronnen.
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
+      short_description:
+      description:
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers door vrachtwagens wordt
+        afgelegd met benzinevrachtwagens. <br/><br/>
+        De benzine kan bestaan uit een mix van benzine en bio-ethanol. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van benzine en bio-ethanol in de mix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_truck_using_diesel_mix_share:
       title: Diesel
-      short_description: ''
-      description: "Welk percentage van alle vrachtwagens zal op diesel blijven rijden
-        in de toekomst? \r\n<br/><br/> \r\nVeel mensen denken dat dit type vrachtwagens
-        nog wel een tijdje gebruikt zullen worden, doordat elektrische vrachtwagens
-        met een goed bereik moeilijker te realiseren zijn dan elektrische auto's.
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van diesel voor wergverkeer vaststellen.</br></br>"
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers door vrachtwagens wordt
+        afgelegd met dieselvrachtwagens. <br/><br/>
+        De diesel kan bestaan uit een mix van diesel en biodiesel. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van diesel en biodiesel in de dieselmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_truck_using_electricity_share:
-      title: Elektrisch
-      short_description: ''
-      description: "Welk percentage van alle vrachtwagens zal volledig elektrisch
-        aangedreven zijn in de toekomst?\r\n<br/><br/>\r\nVeel mensen denken dat dieselvrachtwagens
-        nog wel een tijdje gebruikt zullen worden, doordat elektrische vrachtwagens
-        met een goed bereik moeilijker te realiseren zijn dan elektrische auto's.
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+      title: Elektriciteit
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers door vrachtwagens wordt
+        afgelegd met elektrische vrachtwagens. <br/><br/>
+        Elektrische vrachtwagens zijn efficiënter in energiegebruik vergeleken met vrachtwagens
+        op verbrandingsmotoren, zoals dieselvrachtwagens. Daarnaast hebben elektrische
+        vrachtwagens geen directe uitstoot.<br/><br/>
+        De batterijen van elektrische voertuigen kunnen worden ingezet voor elektriciteitsopslag.
+        Ga naar de sectie
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Flexibiliteit</a> om dit in te stellen.
     transport_truck_using_compressed_natural_gas_share:
-      title: Gas onder druk (CNG)
-      short_description: ''
-      description: "Welk percentage van alle vrachtwagens zal op aardgas onder druk
-        rijden in de toekomst? Op dit moment rijden in deze categorie vooral bussen
-        voor openbaar vervoer op deze brandstof.\r\n<br/><br/>\r\nAardgas onder druk
-        komt van het gasnetwerk. Als in dit scenario groen gas wordt bijgemengd in
-        het gasnetwerk dan zullen deze voertuigen ook deels op groen gas rijden.
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+      title: Gecomprimeerd aardgas (CNG)
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers wordt afgelegd met
+        vrachtwagens die rijden op gecomprimeerd aardgas (<i>Compressed Natural Gas, CNG</i>).<br/><br/>
+        Vrachtwagens die rijden op CNG stoten minder CO<sub>2</sub> uit dan benzine- en
+        dieselvrachtwagens. Bovendien is het mogelijk om groen gas bij te mengen, wat de
+        milieu-impact verder vermindert.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomassa</a> om het aandeel
+        groen gas in het gasnetwerk te verhogen, zodat het aandeel groen gas in vrachtwagens op CNG
+        ook toeneemt.
     transport_truck_using_lng_mix_share:
       title: Vloeibaar aardgas (LNG)
       short_description:
-      description: "Welk percentage van alle vrachtwagen zal op vloeibaar aardgas
-        (LNG) rijden in de toekomst? LNG vrachtwagens kunnen verder rijden op een
-        tanklading dan vrachtwagens op gas onder druk, omdat de energie inhoud van
-        LNG hoger is. LNG vrachtwagens hebben daarentegen wel dure, goed isolerende
-        tanks nodig.
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van LNG voor wergverkeer vaststellen.</br></br>"
+      description:
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers door vrachtwagens wordt
+        afgelegd met vrachtwagens die rijden op vloeibaar aardgas (<i>Liquefied Natural Gas,
+        LNG</i>). <br/><br/>
+        Vrachtwagens op LNG kunnen verder rijden op een tank dan vrachtwagens op gecomprimeerd
+        aardgas vanwege de hogere energie-inhoud van LNG. Daarentegen hebben vrachtwagens op LNG
+        wel dure, goed geïsoleerde tanks nodig.<br/><br/>
+        LNG kan bestaan uit een mix van LNG en bio-LNG. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a> om de
+        samenstelling van LNG en bio-LNG in de mix in te stellen.
     transport_truck_using_hydrogen_share:
       title: Waterstof
       short_description:
-      description: "Welk percentage van alle vrachtwagens zal op waterstof rijden
-        in de toekomst? <br/><br/>\r\nWaterstof is een energiedrager - geen energiebron
-        -,  dus het zal eerst geproduceerd moeten worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >waterstofproductiesectie</a> kun je bepalen hoe dat gedaan wordt - door het
-        reformen van methaan (een krachtig broeikasgas) of door groene elektrolyse.\r\n
-        <br/><br/>\r\nWaterstofvrachtwagens (in het ETM) zijn Fuel Cell Electric Vehicles
-        (FCEVs), ofwel elektrische vrachtwagens met een brandstofcel. Waterstof wordt
-        onder een hele hoge druk van 350 bar opgeslagen in vrachtwagens. Waterstofvoertuigen
-        zijn daarom elektrische voertuigen, maar zij verschillen van elektrische voertuigen
-        in de zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar
-        tijdens het gebruik gegenereerd wordt.
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers door vrachtwagens wordt
+        afgelegd met waterstofvrachtwagens. <br/><br/>
+        Voertuigen op waterstof en elektriciteit hebben veel potentie om CO<sub>2</sub>-emissies
+        in de transportsector te verlagen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     transport_bus_using_electricity_share:
-      title: Elektrisch
+      title: Elektriciteit
       short_description:
-      description: "Welke percentage bussen zal volledig elektrisch worden in de toekomst?\r\n<br/><br/>\r\nElektrische
-        bussen worden vanuit verschillende landelijke overheden gestimuleerd om één
-        van de primaire vervoersmiddelen te worden. Daarbij worden elektrische bussen
-        ook betaalbaarder doordat de prijs van lithium-ion batterijen blijft afnemen.
-        \r\n<br/><br/>\r\nDeze beide factoren spelen een rol bij het bepalen van het
-        aantal elektrische bussen in de toekomst. Hoe verwacht jij dat het huidige
-        aandeel van elektrische bussen zal veranderen?"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met
+        elektrische bussen. <br/><br/>
+        Elektrische bussen zijn efficiënter in energiegebruik vergeleken met bussen
+        op verbrandingsmotoren, zoals dieselbussen. Daarnaast hebben elektrische
+        bussen geen directe uitstoot, wat bijdraagt aan schonere lucht in stedelijk
+        gebied.<br/><br/>
+        De batterijen van elektrische voertuigen kunnen worden ingezet voor elektriciteitsopslag.
+        Ga naar de sectie
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Flexibiliteit</a> om dit in te stellen.
     transport_bus_using_hydrogen_share:
       title: Waterstof
       short_description:
-      description: "Welk percentage van alle bussen zal op waterstof rijden in de
-        toekomst? \r\n<br/><br/>\r\nHet gebruik van waterstof voor transport wordt
-        aan de ene kant veel geprezen, maar aan de andere kant ook stevig bekritiseerd.
-        Zoals voor veel keuzes, hangt de waarde van een waterstofbus af van andere
-        keuzes die je maakt. Waterstof is een energiedrager - geen energiebron -,
-        \ dus het zal eerst geproduceerd moeten worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >waterstofproductiesectie</a> kun je bepalen hoe dat gedaan wordt - door het
-        reformen van methaan (een krachtig broeikasgas) of door groene elektrolyse.\r\n<br/><br/>\r\nWaterstofbussen
-        (in het ETM) zijn Fuel Cell Electric Vehicles (FCEVs), ofwel elektrische voertuigen
-        met een brandstofcel. Waterstof wordt gevoed aan geschakelde groep brandstofcellen,
-        waar het een chemische (redox) reactie ondergaat met zuurstof, elektriciteit
-        genereert en water uitstoot. Op deze manier produceert de brandstofcel de
-        elektriciteit die de (elektro)motor aandrijft. Waterstofbussen zijn daarom
-        ook elektrische bussen, maar zij verschillen van elektrische bussen in de
-        zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar tijdens
-        het gebruik gegenereerd wordt.\r\n<br/><br/>\r\nIn combinatie met slimme stroomnetten
-        en energieopslag-technologiën, kunnen elektrische bussen en waterstofbussen
-        niet alleen mogelijk onze afhankelijkheid van fossiele brandstoffen flink
-        verlagen, maar zelfs functioneren als energieopslag medium of productie technologie."
+      description: |
+        Dit schuifje bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met
+        waterstofbussen.<br/><br/>
+        Voertuigen op waterstof en elektriciteit hebben veel potentie om CO<sub>2</sub>-emissies
+        in de transportsector te verlagen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     transport_bus_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "Welk percentage van alle bussen zal op diesel blijven rijden in
-        de toekomst? \r\n<br/><br/>\r\nOp dit moment rijden bijna alle bussen op diesel,
-        maar wellicht heeft de concurrentie van alternatieve aandrijvingstechnologiën
-        invloed op het aantal dieselbussen.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van diesel voor wergverkeer vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met
+        dieselbussen. <br/><br/>
+        De diesel kan bestaan uit een mix van diesel en biodiesel. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van diesel en biodiesel in de dieselmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_bus_using_gasoline_mix_share:
       title: Benzine
       short_description:
-      description: "Welk percentage van alle bussen zal op benzine blijven rijden
-        in de toekomst? <br/><br/> \r\nHet is mogelijk dat de efficiëntie van deze
-        bussen sneller zal verbeteren als de concurrentie van elektrische bussen sterker
-        wordt.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met
+        bussen op benzine. <br/><br/>
+        De benzine kan bestaan uit een mix van benzine en bio-ethanol. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van benzine en bio-ethanol in de mix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_bus_using_lng_share:
       title: Vloeibaar aardgas (LNG)
       short_description:
-      description: "Welke percentage van alle bussen zullen rijden op vloeibaar aardgas
-        (liquefied natural gas = LNG)?\r\n<br/><br/>\r\nNaarmate de milieuaspecten
-        steeds zwaarder zullen wegen in de transportsector, kan het zo zijn dat LNG
-        meer gebruikt gaat worden omdat het een hogere energiedichtheid heeft vergeleken
-        met diesel. Daarbij is het zo dat LNG een relatief stabielere prijscurve heeft
-        dan andere (fossiele) brandstoffen.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van LNG voor wergverkeer vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met
+        bussen die rijden op vloeibaar aardgas (<i>Liquefied Natural Gas, LNG</i>). <br/><br/>
+        Bussen op LNG kunnen verder rijden op een tank dan bussen op gecomprimeerd
+        aardgas vanwege de hogere energie-inhoud van LNG. Daarentegen hebben bussen op LNG
+        wel dure, goed geïsoleerde tanks nodig.<br/><br/>
+        LNG kan bestaan uit een mix van LNG en bio-LNG. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a> om de
+        samenstelling van LNG en bio-LNG in de mix in te stellen.
     transport_bus_using_compressed_natural_gas_share:
-      title: Gas onder druk (CNG)
+      title: Gecomprimeerd aardgas (CNG)
       short_description:
-      description: "Welk percentage van alle bussen zal op aardgas onder druk rijden
-        in de toekomst? \r\n<br/><br/>\r\nAardgasbussen zijn schoner dan benzine of
-        dieselbussen, die momenteel het meest gebruikt worden. Wat energie-efficiëntie
-        betreft, zou je kunnen zeggen dat gas het best kan worden gebruikt om warmte
-        en elektriciteit te maken (WKK) op de plaats waar het gebruikt wordt, dan
-        voor transport. Verbrandingsmotoren zullen nog wel wat efficiënter worden,
-        maar kunnen nooit zo efficiënt worden als WKK's. Wat vervuiling betreft, zou
-        je kunnen zeggen dat gas het beste gebruikt kan worden om centraal elektriciteit
-        te maken, zodat verbrandingsgassen kunnen worden gezuiverd of zelf afgevangen.
-        De geproduceerde elektriciteit kan dan gebruikt worden om bijvoorbeeld bussen
-        aan te drijven.\r\n<br/><br/>\r\nAardgas onder druk komt van het gasnetwerk.
-        Als in dit scenario groen gas wordt bijgemengd in het gasnetwerk dan zullen
-        deze voertuigen ook deels op groen gas rijden."
+      description: |
+        Dit schuifje bepaalt welk percentage van de bus-reizigerskilometers wordt afgelegd met
+        bussen die rijden op gecomprimeerd aardgas (<i>Compressed Natural Gas, CNG</i>).<br/><br/>
+        Bussen die rijden op CNG stoten minder CO<sub>2</sub> uit dan benzine- en
+        dieselbussen. Bovendien is het mogelijk om groen gas bij te mengen, wat de
+        milieu-impact verder vermindert.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomassa</a> om het aandeel
+        groen gas in het gasnetwerk te verhogen, zodat het aandeel groen gas in bussen op CNG
+        ook toeneemt.
     bunkers_ship_using_heavy_fuel_oil_share:
-      title: HFO
+      title: Zware stookolie (HFO)
       short_description:
-      description: 'Grote internationale vrachtschepen verbruiken over het algemeen
-        zware stookolie, wat de zwaarste brandstof is dat van ruwe olie verkregen
-        kan worden. '
+      description: |
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        scheepvaart wordt ingevuld met zware stookolie (<i>Heavy Fuel Oil, HFO</i>).<br/><br/>
+        HFO wordt met name toegepast in grote vrachtschepen voor internationaal vrachttransport
+        vanwege de relatief lage kosten en hoge energie-inhoud. <br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van HFO via olieraffinaderijen
+        in te stellen.
     bunkers_ship_using_lng_share:
-      title: LNG
+      title: Vloeibaar aardgas (LNG)
       short_description:
-      description: "Vloeibaar aardgas (LNG) is een opkomende brandstof in de scheepvaart.
-        Internationale schepen transporteren zware ladingen over grote afstanden en
-        hebben daarom zeer krachtige motoren en energierijke brandstoffen nodig. Aardgas
-        is een ongeschikte brandstof voor de scheepvaart doordat de energetische dichtheid
-        erg laag is, maar door het vloeibaar te maken wordt deze dichtheid met een
-        factor 600 vergroot - meer dan genoeg om te concurreren met HFO. \r\n</br></br>\r\nVergeleken
-        met HFO, stoot LNG 20% minder broeikasgassen uit door de lagere koolstofinhoud.
-        Daarbij veroorzaakt LNG minder luchtvervuiling; er komt bijvoorbeeld minder
-        NO<sub>x</sub>, SO<sub>x</sub> en fijnstof vrij bij de verbranding. Kortom,
-        LNG is een interessant alternatief voor conventionele brandstoffen."
+      description: |
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        scheepvaart wordt ingevuld met vloeibaar aardgas
+        (<i>Liquefied Natural Gas, LNG</i>).<br/><br/>
+        LNG is een opkomende brandstof in de scheepvaart en kan een geschikt alternatief zijn voor
+        HFO schepen vanwege de hoge energiedichtheid en de lagere CO<sub>2</sub>-uitstoot.
+        Daarnaast komt bij verbranding van LNG minder NO<sub>x</sub>, SO<sub>x</sub> en fijnstof
+        vrij.<br/><br/>
+        Het is in het model nog niet mogelijk om een aandeel bio-LNG bij te mengen in LNG voor
+        internationale scheepvaart.
     bunkers_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Waterstof-aangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
-        Er zijn voor deze technologie daarom nog verschillende ontwerpen mogelijk, bijvoorbeeld of er een interne
-        verbrandingsmotor of een brandstofcel gebruikt wordt om de waterstof om te zetten. </br></br>
-        Het is technisch mogelijk om CO<sub>2</sub>-vrije waterstof te produceren. Inzet van waterstof
-        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
-        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de waterstof is geproduceerd.
-        In de <a href=/scenario/supply/hydrogen/hydrogen-production>Waterstofproductie</a>-sectie
-        kun je bepalen hoe dat gedaan wordt.
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        scheepvaart wordt ingevuld met waterstof.<br/><br/>
+        Waterstofaangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
+        Afhankelijk van het productieproces van waterstof, kan inzet van waterstof in de scheepvaart
+        bijdragen aan decarbonisatie.<br/><br/>
+        Ga naar <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     bunkers_ship_using_electricity_share:
       title: Elektriciteit
       short_description:
       description: |
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        scheepvaart wordt ingevuld met elektriciteit. Dit schuifje kan worden gebruikt om de vraag
+        van walstroom te modelleren.<br/><br/>
         Stroomaangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
-        Het is aannemelijk dat deze schepen gebruik zullen maken van grote batterijen.
-        </br></br>
-        Ook kan met deze slider de vraag naar walstroom gemodelleerd worden.
-        Met walstroom wordt het schip aan het elektriciteitsnetwerk aangesloten zodat minder fossiele brandstoffen gebruikt hoeven te worden tijdens goederenoverslag.
-        </br></br>
+        Door de omvang van de schepen en de grote afstanden die ze afleggen, is het
+        aannamelijk dat deze schepen gebruik zullen maken van grote batterijen.
     bunkers_ship_using_methanol_mix_share:
       title: Methanol (mix)
       short_description:
       description: |
-        Deze slider bepaalt welk percentage van het brandstofgebruik in de internationale scheepvaart
-        wordt ingevuld met methanol. De gebruikte methanol kan bestaan uit fossiele,
-        synthetische en biomethanol. Ga naar <a href="/scenario/demand/transport_fuels/
-        international-navigation">transportbrandstoffen</a> om de methanolmix in te stellen.
-    bunkers_aviation_using_electricity_share:
-      title: Elektriciteit
-      short_description:
-      description: |
-        Stroomaangedreven vliegtuitgen vormen een nieuwe technologie die in de ontwikkelfase is.
-        Het is aannemelijk dat deze vliegtuigen gebruik zullen maken van grote batterijen.
-    bunkers_aviation_using_kerosene_mix_share:
-      title: Kerosine (mix)
-      short_description:
-      description: |
-        Kerosine is de meest gebruikte brandstof vorm voor vliegtuigen op het moment. De gebruikte
-        kerosine kan bestaan uit fossiele, synthetische en biokerosine. Ga naar
-        <a href="/scenario/demand/transport_fuels/international-aviation" >Transportbrandstoffen
-        </a> om de kerosinemix in te stellen.
-    bunkers_aviation_using_hydrogen_share:
-      title: Waterstof
-      short_description:
-      description: |
-        Luchtvaart op waterstof is een nieuwe technologie die zich nog in de ontwikkelingsfase bevindt.
-        Voor deze technologie zijn verschillende ontwerpen mogelijk, bijvoorbeeld of er een verbrandingsmotor
-        (ICE) of een brandstofcel (FC) zal worden gebruikt om de waterstof om te zetten. </br></br>
-        Het is technisch mogelijk om koolstofvrije waterstof te produceren. Overschakelen naar luchtvaart op waterstof
-        biedt dus een manier om het transport per vliegtuig te verduurzamen. Hoeveel uitstoot je daadwerkelijk vermindert
-        door over te schakelen op waterstof hangt af van de manier waarop het wordt geproduceerd. In de
-        <a href=/scenario/supply/hydrogen/hydrogen-production> Waterstofproductie</a>
-        sectie kun je bepalen hoe dit gebeurt.
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        scheepvaart wordt ingevuld met methanol.<br/><br/>
+        Methanol heeft potentie als alternatief voor zware stookolie vanwege lagere emissies van
+        zwaveloxiden en fijnstof. Afhankelijk van de productiemethode van methanol, kunnen
+        methanolschepen de CO<sub>2</sub>-uitstoot van de scheepvaart substantieel
+        verlagen.<br/><br/>
+        De gebruikte methanol kan bestaan uit fossiele, synthetische en biomethanol.
+        Ga naar <a href="/scenario/demand/transport_fuels/international-navigation"
+        >Transportbrandstoffen</a> om de methanolmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen
+        in te stellen.
     bunkers_ship_using_ammonia_share:
       title: Ammoniak
       short_description:
       description: |
-        Net zoals waterstof-aangedreven schepen, zijn ammoniak-aangedreven schepen een nieuwe technologie.
-        Een enkel dominant ontwerp moet voor dit type schip nog ontstaan. </br></br>
-        Het is technisch mogelijk om CO<sub>2</sub>-vrije ammonia te produceren. Inzet van ammoniak
-        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
-        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de ammonia is geproduceerd.
-        In de <a href=/scenario/supply/hydrogen/ammonia-production>Ammoniakproductie</a>-sectie
-        kun je bepalen hoe dat gedaan wordt. </br></br>
-        Vergeleken met waterstof-aangedreven schepen is het voornaamste voordeel van ammoniak dat het
-        gemakkelijker opgeslagen kan worden. Ammoniak wordt vloeibaar bij een temperatuur die veel dichter
-        bij 0 ligt dan waterstof. Hierdoor is vloeibare opslag van ammoniak minder energie-intensief.
-        Als alternatief heeft gecomprimeerde ammoniak bij gelijke druk een substantieel hogere energiedichtheid
-        dan waterstof, waardoor minder ruimte nodig is om dezelfde hoeveelheid brandstof te vervoeren.
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        scheepvaart wordt ingevuld met ammoniak. <br/><br/>
+        Net zoals waterstofaangedreven schepen, zijn ammoniakaangedreven schepen een vrij nieuwe
+        technologie. Het voornaamste voordeel van ammoniak ten opzichte van waterstof is dat
+        ammoniak gemakkelijker opgeslagen kan worden doordat deze vloeibaar is bij een temperatuur
+        die veel dichter bij nul ligt dan waterstof. Daarmee is de opslag van vloeibare ammoniak
+        minder energie-intensief.<br/><br/>
+        Het ETM gaat er standaard van uit dat ammoniak on-site wordt geproduceerd in de
+        <a href="/scenario/demand/industry/fertilizers">kunstmestsector</a>. Deze lokale productie
+        kan vervangen worden door import van ammoniak, wat kan worden ingesteld in de sectie
+        <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a>.
+    bunkers_aviation_using_electricity_share:
+      title: Elektriciteit
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        luchtvaart wordt ingevuld met elektriciteit. <br/><br/>
+        Stroomaangedreven vliegtuigen vormen een nieuwe technologie die in de ontwikkelfase is.
+        Door de omvang van de vliegtuigen en grote afstanden die moeten worden afgelegd, is het
+        aannemelijk dat deze vliegtuigen gebruik zullen maken van grootschalige batterijen.
+    bunkers_aviation_using_kerosene_mix_share:
+      title: Kerosine (mix)
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale
+        luchtvaart wordt ingevuld met kerosine. <br/><br/>
+        Kerosine is de meest dominante brandstof in de luchtvaart vanwege de hoge energie-inhoud en
+        het lage vriespunt. Dit betekent dat vliegtuigen lange afstanden kunnen afleggen en de
+        kerosine niet stolt bij het vliegen op grote hoogte.<br/><br/>
+        De gebruikte kerosine kan bestaan uit fossiele, synthetische en biokerosine. Ga naar
+        <a href="/scenario/demand/transport_fuels/international-aviation">Transportbrandstoffen
+        </a> om de kerosinemix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen
+        in te stellen.
+    bunkers_aviation_using_hydrogen_share:
+      title: Waterstof
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van het brandstofgebruik in de internationale luchtvaart
+        wordt ingevuld met waterstof. <br/><br/>
+        Luchtvaart op waterstof is een nieuwe technologie die zich nog in de ontwikkelingsfase
+        bevindt. Afhankelijk van het productieproces van waterstof, kan inzet van waterstof in de
+        luchtvaart bijdragen aan verduurzaming van de internationale luchtvaart.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om
+        de methode voor waterstofproductie te kiezen.
     transport_passenger_train_using_coal_share:
       title: Kolen
-      short_description: ''
-      description: "Kolentreinen zijn nogal ouderwets, maar in minder ontwikkelde
-        delen van de wereld komen ze nog veel voor. Bijna overal is het aantrekkelijk
-        om deze te vervangen door dieseltreinen, omdat die minder energie gebruiken
-        en schoner zijn.\r\n<br/>\r\n<br/>\r\nMinder ontwikkelde landen met grote
-        kolenvoorraden zouden kunnen kiezen om treinen op kolen te laten rijden om
-        zo hun afhankelijkheid van buitenlandse energiebronnen te verlagen."
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met
+        treinen op kolen. Kolentreinen zijn ouderwets, maar komen in minder ontwikkelde delen van
+        de wereld nog veel voor.
     transport_passenger_train_using_diesel_mix_share:
       title: Diesel
-      short_description: ''
-      description: Dieseltreinen komen nog redelijk veel voor, omdat ze niet afhankelijk
-        zijn van een dure elektrische infrastructuur. Ze zijn zeer geschikt voor afgelegen
-        en dunbevolkte gebieden. Omdat Europa nog een lappendeken van standaarden
-        is voor elektrische bovenleidingen, kunnen elektrische treinen vaak niet probleemloos
-        nationale grenzen passeren
-        In de <a href=/scenario/demand/transport_fuels/rail-transport>Treinverkeer</a>-sectie
-        kun je de samenstelling van diesel vaststellen.</br></br>
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met
+        dieseltreinen. <br/><br/>
+        Dieseltreinen komen nog redelijk veel voor, omdat ze niet afhankelijk
+        zijn van een elektrische infrastructuur. Daarmee zijn ze geschikt voor afgelegen
+        en dunbevolkte gebieden.<br/><br/>
+        De diesel kan bestaan uit een mix van diesel en biodiesel. Ga naar
+        <a href="/scenario/demand/transport_fuels/rail-transport">Transportbrandstoffen</a>
+        om de samenstelling van diesel en biodiesel in de dieselmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_passenger_train_using_electricity_share:
-      title: Elektrisch
-      short_description: ''
-      description: Elektrische treinen zijn de standaard in alle ontwikkelde gebieden
-        in de wereld. Ze zijn zeer energie-efficiënt en schoon, maar niet erg flexibel.
-        Bovendien zijn ze afhankelijk van dure elektrische infrastructuur en daarom
-        zullen ze nooit volledig de dieseltrein vervangen.
+      title: Elektriciteit
+      short_description:
+      description:
+        Dit schuifje bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met
+        elektrische treinen. <br/><br/>
+        Elektrische treinen zijn de standaard in alle ontwikkelde gebieden
+        in de wereld. Ze zijn energie-efficiënt en produceren geen directe CO<sub>2</sub>-uitstoot.
+        Wel zijn elektrische treinen afhankelijk van elektrische infrastructuur.
     transport_passenger_train_using_hydrogen_share:
       title: Waterstof
-      short_description: ''
-      description: "Welk percentage van alle passagierstreinen zal op waterstof rijden in de
-        toekomst? \r\n<br/><br/>\r\nHet gebruik van waterstof voor transport wordt
-        aan de ene kant veel geprezen, maar aan de andere kant ook stevig bekritiseerd.
-        Zoals voor veel keuzes, hangt de waarde van een waterstoftrein af van andere
-        keuzes die je maakt. Waterstof is een energiedrager - geen energiebron -
-        \ dus het zal eerst geproduceerd moeten worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >waterstofproductiesectie</a> kun je bepalen hoe dat gedaan wordt - door het
-        reformen van methaan (een krachtig broeikasgas) of door groene elektrolyse.\r\n<br/><br/>\r\nWaterstoftreinen
-        (in het ETM) zijn Fuel Cell Electric Vehicles (FCEVs), ofwel elektrische voertuigen
-        met een brandstofcel. Waterstof wordt gevoed aan geschakelde groep brandstofcellen,
-        waar het een chemische (redox) reactie ondergaat met zuurstof, elektriciteit
-        genereert en water uitstoot. Op deze manier produceert de brandstofcel de
-        elektriciteit die de (elektro)motor aandrijft. Waterstoftreinen zijn daarom
-        ook elektrische treinen, maar zij verschillen van elektrische treinen in de
-        zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar tijdens
-        het gebruik gegenereerd wordt.\r\n<br/><br/>\r\nIn combinatie met slimme stroomnetten
-        en energieopslag-technologiën, kunnen elektrische treinen en waterstoftreinen
-        niet alleen mogelijk onze afhankelijkheid van fossiele brandstoffen flink
-        verlagen, maar zelfs functioneren als energieopslag medium of productie technologie."
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de trein-reizigerskilometers wordt afgelegd met
+        waterstoftreinen. <br/><br/>
+        Voertuigen op waterstof en elektriciteit hebben veel potentie om CO<sub>2</sub>-uitstoot
+        in de transportsector te verlagen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     transport_cars_share:
       title: Auto's
-      short_description: ''
-      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
-        afgelegd wordt met de auto.
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de auto.
     transport_passenger_trains_share:
       title: Treinen
-      short_description: ''
-      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
-        afgelegd wordt met de trein.
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de trein.
     transport_planes_share:
       title: Binnenlandse vliegtuigen
-      short_description: ''
-      description: 'Hier kun je aangeven hoeveel procent van de kilometers die we
-        reizen afgelegd wordt met het vliegtuig. Let op: het gaat hier om binnenlandse
-        vluchten. Voor internationaal vliegverkeer, zie <a href="/scenario/demand/transport_international_transport/international-transport">internationaal
-        transport</a>.'
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met
+        binnenlandse vliegtuigen.
     transport_useful_demand_passenger_kms:
       title: Passagiersvervoer
       short_description:
-      description: Denk jij dat mensen meer of minder zullen gaan reizen in de toekomst?
-        Hier geef je aan met hoeveel procent per jaar het aantal reizigerskilometers
-        zal veranderen.
+      description: |
+        Dit schuifje bepaalt de jaarlijkse stijging of daling van de reizigerskilometers.<br/><br/>
+        Het aantal reizigerskilometers heeft direct invloed op de energievraag: een afname in
+        reizigerskilometers leidt tot een lagere energievraag, terwijl een toename juist resulteert
+        in een hogere energievraag.
     transport_busses_share:
       title: Bussen
       short_description:
-      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
-        afgelegd wordt met de bus.
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met bussen.
     transport_trams_share:
       title: Trams/metro's
       short_description:
-      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
-        afgelegd wordt met tram en metro.
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de tram
+        en metro.
     transport_bicycles_share:
       title: Fietsen
       short_description:
-      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
-        afgelegd wordt met de fiets.
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de fiets.
     transport_motorcycles_share:
       title: Motorfietsen
       short_description:
-      description: Hier kun je aangeven hoeveel procent van de kilometers die we reizen
-        afgelegd wordt met motors en scooters.
+      description: |
+        Dit schuifje bepaalt welk percentage van de reizigerskilometers wordt afgelegd met de
+        motorfiets en scooter.
     transport_motorcycle_using_gasoline_mix_share:
       title: Benzine
       short_description:
-      description: "Welk percentage van alle motorfietsen zal benzine gebruiken in
-        de toekomst?\r\n<br/><br/>\r\nHet overgrote deel van alle motorfietsen gebruikt
-        benzine als brandstof. Met name in ontwikkelende steden neemt het aantal benzinemotorfietsen
-        toe, omdat ze gemakkelijk te gebruiken zijn op plekken waar auto's vaak teveel
-        ruimte in nemen. Maar tegelijkertijd komt er ook steeds strengere wetgeving
-        voor benzinemotorfietsen in steden, omdat ze een bijdragen aan luchtvervuiling.
-        Er wordt bijvoorbeeld per 2018 in Amsterdam een milieuzone voor brom- en snorfietsen
-        uit 2010 en ouder ingevoerd.
-        \r\n<br/><br/>\r\n
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-        kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de motorfiets-reizigerskilometers wordt afgelegd
+        met motorfietsen op benzine. <br/><br/>
+        De benzine kan bestaan uit een mix van benzine en bio-ethanol. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van benzine en bio-ethanol in de mix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_motorcycle_using_electricity_share:
-      title: Elektrisch
+      title: Elektriciteit
       short_description:
-      description: "Welk percentage van alle motorfietsen zal elektrisch zijn in de
-        toekomst?\r\n<br/><br/>\r\nOp dit moment is het aantal elektrische motorfietsen
-        nog niet zo hoog. De competitie met auto's bij oplaadstations en ook de relatief
-        kleine afzetmarkt zouden redenen hiervoor kunnen zijn. Tegelijkertijd komen
-        er nieuwe innovatieve motorfietsen op de markt, die wellicht populair kunnen
-        worden. Met name in dichtbevolkte steden hebben elektrische motorfietsen veel
-        potentie."
+      description: |
+        Dit schuifje bepaalt welk percentage van de motorfiets-reizigerskilometers wordt afgelegd
+        met elektrische motorfietsen op benzine. <br/><br/>
+        Elektrische motoren zijn efficiënter en hebben geen directe CO<sub>2</sub>-uitstoot, wat
+        bijdraagt aan schonere lucht in stedelijk gebied.
     bunkers_useful_demand_planes:
       title: Internationale luchtvaart
       short_description:
-      description: 'Geef hier aan hoe je verwacht dat het aantal internationale vluchten
-        per jaar zal gaan veranderen in de toekomst. '
+      description: |
+        Dit schuifje bepaalt de jaarlijkse stijging of daling van internationale luchtvaart.
     bunkers_useful_demand_ships:
       title: Internationale scheepvaart
       short_description:
-      description: Geef hier aan hoe je verwacht dat de internationale scheepvaart
-        per jaar zal gaan veranderen in de toekomst.
+      description: |
+        Dit schuifje bepaalt de jaarlijkse stijging of daling van internationale scheepvaart.
     transport_ship_using_diesel_mix_share:
       title: Diesel (single / dual / multi-fuel motor)
       short_description:
       description: |
-        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in
-        de binnenvaart die worden afgelegd door schepen met dieselmotoren. </br></br>
+        Dit schuifje bepaalt welk percentage van de binnenvaart-ladingtonkilometers wordt afgelegd
+        door schepen met dieselmotoren.<br/><br/>
         Schepen voor de binnenvaart worden doorgaans aangedreven door conventionele
         dieselmotoren. Er zijn echter ook dual-fuel motoren beschikbaar die kunnen wisselen
         tussen twee brandstoffen, typisch vloeibaar aardgas (LNG) en diesel. Er zijn ook
         nog meer geavanceerde multifuel motoren in ontwikkeling die, naast LNG en diesel,
-        ook brandstoffen zoals bio-ethanol kunnen gebruiken. </br></br>
-        Met dit schuifje stel je het aandeel van alle typen dieselmotoren gezamenlijk in.
-        Vervolgens kun je de gecombineerde brandstofmix instellen in de
-        <a href="/scenario/demand/transport_fuels/domestic-navigation">transportbrandstoffen</a>
-        sectie. Bekijk de technische parameters en kosten hieronder voor meer informatie.
+        ook brandstoffen zoals bio-ethanol kunnen gebruiken. <br/><br/>
+        Dit schuifje stelt het aandeel van alle typen dieselmotoren gezamenlijk in. De gecombineerde
+        brandstofmix kan worden ingesteld in de sectie
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transportbrandstoffen</a>.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_ship_using_lng_mix_share:
       title: Vloeibaar aardgas (LNG) (mix)
       short_description:
       description: |
-        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in
-        de binnenvaart die worden afgelegd door LNG schepen. </br></br>
-        (Vloeibaar) aardgas-motoren zijn een relatief nieuwe motortechnologie.
-        Dit zijn Ottomotoren die op lage druk werken en geoptimaliseerd zijn voor
-        vloeibaar aardgas (LNG). Hierdoor werken zij enkel op LNG, maar zijn de prestaties
-        wel beter dan die van dual fuel-motoren. Aan de andere kant zorgen dual fuel-motoren
-        wel voor meer flexibiliteit, omdat schepen dan minder afhankelijk zijn van
-        de beschikbaarheid van brandstoffen.</br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie.
-        <br/><br/>
-        In de <a href=/scenario/demand/transport_fuels/domestic-navigation>Binnenlandse scheepvaart</a>-sectie
-        kun je de samenstelling van benzine voor scheepvaart vaststellen.</br></br>
+        Dit schuifje bepaalt welk percentage van de binnenvaart-ladingtonkilometers wordt afgelegd
+        door schepen op vloeibaar aardgas (<i>Liquefied Natural Gas, LNG</i>).<br/><br/>
+        LNG is een opkomende brandstof in de scheepvaart en kan een geschikt alternatief zijn voor
+        dieselschepen vanwege de hoge energiedichtheid en de lagere CO<sub>2</sub>-uitstoot.
+        Daarnaast komt bij verbranding van LNG minder NO<sub>x</sub>, SO<sub>x</sub> en fijnstof
+        vrij.<br/><br/>
+        LNG voor binnenscheepvaart kan worden samengesteld uit LNG en bio-LNG. Ga naar
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transportbrandstoffen</a>
+        om de samenstelling van LNG en bio-LNG in de mix in te stellen.
     transport_ship_using_hydrogen_share:
       title: Waterstof
       short_description:
       description: |
-        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in
-        de binnenvaart die worden afgelegd door waterstof schepen. </br></br>
-        Waterstof-aangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
-        Er zijn voor deze technologie daarom nog verschillende ontwerpen mogelijk, bijvoorbeeld of er een interne
-        verbrandingsmotor of een brandstofcel gebruikt wordt om de waterstof om te zetten.
-        Hier is ervoor gekozen om de specificaties van een schip met brandstofcel te gebruiken.
-        Zie de "Technische parameters en kosten" voor meer informatie. </br></br>
-        Het is technisch mogelijk om CO<sub>2</sub>-vrije waterstof te produceren. Inzet van waterstof
-        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
-        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de waterstof is geproduceerd.
-        In de <a href=/scenario/supply/hydrogen/hydrogen-production>Waterstofproductie</a>-sectie
-        kun je bepalen hoe dat gedaan wordt.
+        Dit schuifje bepaalt welk percentage van de binnenvaart-ladingtonkilometers wordt afgelegd
+        door schepen op waterstof.<br/><br/>
+        Waterstofaangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
+        Afhankelijk van het productieproces van waterstof, kan inzet van waterstof in de scheepvaart
+        bijdragen aan decarbonisatie.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a>
+        om de methode voor waterstofproductie te kiezen.
     transport_ship_using_electricity_share:
-      title: Elektrisch
+      title: Elektriciteit
       short_description:
       description: |
-        Met dit schuifje kun je het percentage instellen van de totale vrachtkilometers in
-        de binnenvaart die worden afgelegd door elektrische schepen. </br></br>
-        (Volledig) elektrische schepen gebruiken batterijen om vracht te vervoeren. Batterijen in combinatie
-        met een elektrische motor zijn ongeveer twee keer zo efficiënt vergeleken met een verbrandingsmotor.
-        Met de huidige batterij technologie is het niet mogelijk om efficiënt grote afstanden te
-        overbruggen waardoor batterijen vaak opnieuw opgeladen of vervangen moeten worden. </br></br>
-        Ook kan met deze slider de vraag naar walstroom gemodelleerd worden.
-        Met walstroom wordt het schip aan het elektriciteitsnetwerk aangesloten zodat minder fossiele brandstoffen gebruikt hoeven te worden tijdens goederenoverslag.
-        </br></br>
-        Bekijk de technische parameters en kosten hieronder voor meer informatie.
+        Dit schuifje bepaalt welk percentage van de binnenvaart-ladingtonkilometers wordt afgelegd
+        door elektrische schepen. Dit schuifje kan worden gebruikt om de vraag
+        van walstroom te modelleren.<br/><br/>
+        Stroomaangedreven schepen vormen een nieuwe technologie die in de ontwikkelfase is.
+        Door de omvang van de schepen en de grote afstanden die ze afleggen, is het
+        aannamelijk dat deze schepen gebruik zullen maken van grote batterijen.
     transport_ship_using_ammonia_share:
       title: Ammoniak
       short_description:
       description: |
-        Net zoals waterstof-aangedreven schepen, zijn ammoniak-aangedreven schepen een nieuwe technologie.
-        Een enkel dominant ontwerp moet voor dit type schip nog ontstaan. Hier hebben we ervoor gekozen om
-        de specificaties van een ammoniak-aangedreven schip met een interne verbrandingsmotor te gebruiken.
-        Zie de "Technische parameters en kosten" voor meer informatie. </br></br>
-        Het is technisch mogelijk om CO<sub>2</sub>-vrije ammonia te produceren. Inzet van ammoniak
-        in de scheepvaart kan daarom bijdragen aan de decarbonisatie van vrachtvervoer door schepen.
-        Hoeveel emissies je daadwerkelijk reduceert hangt af van de manier waarop de ammonia is geproduceerd.
-        In de <a href=/scenario/supply/hydrogen/ammonia-production>Ammoniakproductie</a>-sectie
-        kun je bepalen hoe dat gedaan wordt. </br></br>
-        Vergeleken met waterstof-aangedreven schepen is het voornaamste voordeel van ammoniak dat het
-        gemakkelijker opgeslagen kan worden. Ammoniak wordt vloeibaar bij een temperatuur die veel dichter
-        bij 0 ligt dan waterstof. Hierdoor is vloeibare opslag van ammoniak minder energie-intensief.
-        Als alternatief heeft gecomprimeerde ammoniak bij gelijke druk een substantieel hogere energiedichtheid
-        dan waterstof, waardoor minder ruimte nodig is om dezelfde hoeveelheid brandstof te vervoeren.
+        Dit schuifje bepaalt welk percentage van de binnenvaart-ladingtonkilometers wordt afgelegd
+        door schepen op ammoniak. <br/><br/>
+        Net zoals waterstofaangedreven schepen, zijn ammoniakaangedreven schepen een vrij nieuwe
+        technologie. Het voornaamste voordeel van ammoniak ten opzichte van waterstof is dat
+        ammoniak gemakkelijker opgeslagen kan worden doordat deze vloeibaar is bij een temperatuur
+        die veel dichter bij nul ligt dan waterstof. Daarmee is de opslag van vloeibare ammoniak
+        minder energie-intensief.<br/><br/>
+        Het ETM gaat er standaard van uit dat ammoniak on-site wordt geproduceerd in de
+        <a href="/scenario/demand/industry/fertilizers">kunstmestsector</a>. Deze lokale productie
+        kan vervangen worden door import van ammoniak, wat kan worden ingesteld in de sectie
+        <a href="/scenario/supply/hydrogen/ammonia-production">Ammoniakproductie</a>.
     transport_ship_using_methanol_mix_share:
       title: Methanol (mix)
       short_description:
       description: |
-        Dit schuifje bepaalt welk percentage van de binnenvaartkilometers wordt afgelegd met binnenvaartschepen
-        die op methanol varen. De gebruikte methanol kan bestaan uit fossiele,
-        synthetische en biomethanol. Ga naar
-        <a href="/scenario/demand/transport_fuels/domestic-navigation" >transportbrandstoffen</a>
-        om de methanolmix in te stellen.
+        Dit schuifje bepaalt welk percentage van de binnenvaart-ladingtonkilometers wordt afgelegd
+        door schepen op methanol. <br/><br/>
+        Methanol heeft potentie als alternatief voor bijvoorbeeld dieselschepen vanwege lagere
+        emissies van zwaveloxiden en fijnstof. Afhankelijk van de productiemethode van methanol,
+        kunnen methanolschepen de CO<sub>2</sub>-uitstoot van de scheepvaart substantieel
+        verlagen.<br/><br/>
+        De gebruikte methanol kan bestaan uit fossiele, synthetische en biomethanol.
+        Ga naar <a href="/scenario/demand/transport_fuels/international-navigation"
+        >Transportbrandstoffen</a> om de methanolmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen
+        in te stellen.
     transport_trucks_share:
       title: Vrachtwagens
-      short_description: ''
-      description: "Zal het goederenvervoer per vrachtwagen toenemen? In vergelijking
-        met de binnenvaart en het spoor zijn vrachtwagens relatief inefficiënt en
-        vervuilend. Ze zijn wel erg praktisch om goederen precies op hun bestemming
-        te krijgen. Ze zijn dan ook het best geschikt voor transport over korte afstanden.\r\n<br/><br/>\r\n
-        Merk op dat, afhankelijk van de geselecteerde regio, mobiele werktuigen ook onder
-        vrachtwagens vallen. Ga naar de <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Brondata</a> om te zien of dit het geval is voor jouw regio."
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers wordt afgelegd met
+        vrachtwagens.
     transport_ships_share:
       title: Binnenvaartschepen
-      short_description: ''
-      description: Gaat goederenvervoer met de binnenvaart toenemen of afnemen? Schepen
-        zijn zeer efficiënt, maar afhankelijk van een goede infrastructuur. Daarnaast
-        zijn ze nogal langzaam. Ze zijn dan ook niet geschikt voor vervoer over korte
-        afstanden.
+      short_description:
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers wordt afgelegd met
+        binnenvaartschepen.
     transport_useful_demand_freight_tonne_kms:
       title: Vrachtvervoer
       short_description:
-      description: Denk jij dat er meer of minder goederen zullen worden getransporteerd?
-        Hier kan je aangeven met hoeveel procent per jaar het aantal 'ladingtonkilometers'
-        zal veranderen.
+      description: |
+        Dit schuifje bepaalt de jaarlijkse stijging of daling van de ladingtonkilometers. <br/><br/>
+        Het aantal ladingtonkilometers heeft direct invloed op de energievraag: een afname in
+        ladingtonkilometers leidt tot een lagere energievraag, terwijl een toename juist resulteert
+        in een hogere energievraag.
     transport_freight_trains_share:
       title: Treinen
       short_description:
-      description: Denk jij dat het vrachtvervoer per trein gaat toenemen of afnemen?
-        Treinen zijn erg efficiënt, maar afhankelijk van goede infrastructuur.
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers wordt afgelegd met
+        treinen.
     transport_freight_train_using_electricity_share:
-      title: Elektrisch
+      title: Elektriciteit
       short_description:
-      description: "Elektrische treinen zijn de standaard in alle ontwikkelde gebieden
-        in de wereld. Ze zijn zeer energie-efficiënt en schoon, maar niet erg flexibel.
-        Bovendien zijn ze afhankelijk van dure elektrische infrastructuur en daarom
-        zullen ze nooit volledig de dieseltrein vervangen."
+      description: |
+        Dit schuifje bepaalt welk percentage van de trein-ladingtonkilometers wordt afgelegd met
+        elektrische treinen. <br/><br/>
+        Elektrische treinen zijn de standaard in alle ontwikkelde gebieden
+        in de wereld. Ze zijn energie-efficiënt en produceren geen directe CO<sub>2</sub>-uitstoot.
+        Wel zijn elektrische treinen afhankelijk van elektrische infrastructuur.
     transport_freight_train_using_hydrogen_share:
       title: Waterstof
       short_description:
-      description: "Welk percentage van alle goederentreinen zal op waterstof rijden in de
-        toekomst? \r\n<br/><br/>\r\nHet gebruik van waterstof voor transport wordt
-        aan de ene kant veel geprezen, maar aan de andere kant ook stevig bekritiseerd.
-        Zoals voor veel keuzes, hangt de waarde van een waterstoftrein af van andere
-        keuzes die je maakt. Waterstof is een energiedrager - geen energiebron -
-        \ dus het zal eerst geproduceerd moeten worden. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >waterstofproductiesectie</a> kun je bepalen hoe dat gedaan wordt - door het
-        reformen van methaan (een krachtig broeikasgas) of door groene elektrolyse.\r\n<br/><br/>\r\nWaterstoftreinen
-        (in het ETM) zijn Fuel Cell Electric Vehicles (FCEVs), ofwel elektrische voertuigen
-        met een brandstofcel. Waterstof wordt gevoed aan geschakelde groep brandstofcellen,
-        waar het een chemische (redox) reactie ondergaat met zuurstof, elektriciteit
-        genereert en water uitstoot. Op deze manier produceert de brandstofcel de
-        elektriciteit die de (elektro)motor aandrijft. Waterstoftreinen zijn daarom
-        ook elektrische treinen, maar zij verschillen van elektrische treinen in de
-        zin dat de elektriciteit niet aan boord in een accu opgeslagen is, maar tijdens
-        het gebruik gegenereerd wordt.\r\n<br/><br/>\r\nIn combinatie met slimme stroomnetten
-        en energieopslag-technologiën, kunnen elektrische treinen en waterstoftreinen
-        niet alleen mogelijk onze afhankelijkheid van fossiele brandstoffen flink
-        verlagen, maar zelfs functioneren als energieopslag medium of productie technologie."
+      description: |
+        Dit schuifje bepaalt welk percentage van de trein-ladingtonkilometers wordt afgelegd met
+        waterstoftreinen. <br/><br/>
+        Voertuigen op waterstof en elektriciteit hebben veel potentie om CO<sub>2</sub>-uitstoot
+        in de transportsector te verlagen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     transport_freight_train_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "Dieseltreinen komen nog redelijk veel voor, omdat ze niet afhankelijk
-        zijn van een dure elektrische infrastructuur. Ze zijn zeer geschikt voor afgelegen
-        en dunbevolkte gebieden, of voor internationaal goederentransport. Omdat Europa
-        nog een lappendeken van standaarden is voor elektrische bovenleidingen, kunnen
-        elektrische treinen vaak niet probleemloos nationale grenzen passeren.
-        In de <a href=/scenario/demand/transport_fuels/road-transport>Treinverkeer</a>-sectie
-        kun je de samenstelling van diesel voor treinen vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de trein-ladingtonkilometers wordt afgelegd met
+        dieseltreinen. <br/><br/>
+        Dieseltreinen komen nog redelijk veel voor, omdat ze niet afhankelijk
+        zijn van een elektrische infrastructuur. Daarmee zijn ze geschikt voor afgelegen
+        en dunbevolkte gebieden.<br/><br/>
+        De diesel kan bestaan uit een mix van diesel en biodiesel. Ga naar
+        <a href="/scenario/demand/transport_fuels/rail-transport">Transportbrandstoffen</a>
+        om de samenstelling van diesel en biodiesel in de dieselmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_vehicle_using_electricity_efficiency:
       title: Elektrische voertuigen
-      short_description: ''
-      description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat elektrische
-        voertuigen ieder jaar zullen worden. Elektrische voertuigen zijn alle voertuigen
-        die geëlektrificeerd kunnen worden: auto's, treinen, vrachtwagens, trams,
-        metro's, bussen, motorfietsen en e-bikes.\r\n<br/><br/>\r\nDe grootste efficiëntieverbeteringen
-        verwacht men voor de accu's, aangezien elektromotoren al heel efficiënt zijn
-        van nature. De meeste verliezen vinden dan ook plaats bij het laden en ontladen."
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse toename in efficiëntie van elektrische voertuigen in.
+        Dit schuifje is van toepassing op de volgende voertuigen die elektrisch kunnen worden
+        aangedreven: auto's, motorfietsen, e-bikes, bussen, trams, metro's, bestelbussen en
+        vrachtwagens. <br/><br/>
+        De grootste efficiëntieverbeteringen worden verwacht voor de accu's, aangezien
+        elektromotoren van nature efficiënt zijn en de meeste verliezen plaatsvinden bij het laden
+        en ontladen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/demand/transport/overview">Transport</a> om aannames te doen in
+        het aandeel elektrische voertuigen in verschillende transportmodi.
     transport_vehicle_combustion_engine_efficiency:
-      title: Brandstofvoertuigen
-      short_description: ''
-      description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat voertuigen
-        die op fossiele brandstoffen rijden ieder jaar worden. Bijvoorbeeld: nieuwe
-        auto's worden elk jaar ongeveer 2% efficiënter. \r\n<br/><br/>\r\nSommige
-        mensen geloven dat deze voertuigen nog veel zuiniger gaan worden als de concurrentie
-        van elektrische voertuigen toeneemt."
+      title: Verbrandingsmotorvoertuigen
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse toename in efficiëntie van voertuigen met
+        verbrandingsmotoren in. Dit schuifje is van toepassing op de volgende voertuigen met
+        verbrandingsmotoren: auto's, motorfietsen, bussen, bestelbussen en vrachtwagens.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/demand/transport/overview">Transport</a> om aannames te doen in
+        het aandeel van voertuigen met verbrandingsmotoren in verschillende transportmodi.
     transport_ships_efficiency:
       title: Schepen
-      short_description: ''
-      description: "Geef hier aan hoeveel efficiënter schepen volgens jou ieder jaar
-        zullen worden. <br/><br/>\r\nSchepen zijn al een behoorlijk efficiënte vorm
-        van vervoer, maar er is nog ruimte voor verbetering. "
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse toename in efficiëntie van schepen in.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >Technologie binnenvaartschepen</a> om aannames te doen in het aandeel van diverse
+        scheepvaarttechnologieën voor binnenvaart.
+        Ga naar de sectie
+        <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
+        >Technologie internationale scheepvaart</a> om dit voor internationale scheepvaart in te
+        stellen.
     transport_planes_efficiency:
       title: Vliegtuigen
-      short_description: ''
-      description: "Geef hier aan hoeveel efficienter jij denkt dat vliegtuigen ieder
-        jaar zullen worden. \r\n<br/> <br/>\r\nHier bestaat nog ruimte voor verbetering,
-        maar niet heel veel."
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse toename in efficiëntie van vliegtuigen in.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/demand/transport_passenger_transport/domestic-aviation-technology"
+        >Technologie binnenlandse luchtvaart</a> om aannames te doen in het aandeel van diverse
+        technologieën voor binnenlandse luchtvaart.
+        Ga naar de sectie
+        <a href="/scenario/demand/transport_international_transport/international-aviation-technology"
+        >Technologie internationale luchtvaart</a> om dit voor internationale luchtvaart in te
+        stellen.
     transport_trains_efficiency:
       title: Treinen
-      short_description: ''
-      description: Hier kun je aangeven hoeveel efficiënter treinen in de toekomst
-        volgens jou zullen zijn. Treinen hebben nu al een zeer goede energie-efficiëntie.
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse toename in efficiëntie van treinen in.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/demand/transport_passenger_transport/train-technology"
+        >Technologie passagierstreinen</a> om aannames te doen in het aandeel van diverse
+        technologieën voor passagierstreinen.
+        Ga naar de sectie
+        <a href="/scenario/demand/transport_freight_transport/train-technology"
+        >Technologie goederentreinen</a> om dit voor goederentreinen in te
+        stellen.
     transport_vehicle_using_hydrogen_efficiency:
       title: Waterstofvoertuigen
       short_description:
-      description: "Hier kun je aangeven hoeveel efficiënter jij denkt dat voertuigen
-        die op waterstof rijden ieder jaar worden. Waterstofvoertuigen zijn alle voertuigen
-        die op waterstof kunnen rijden: auto's, bussen and vrachtwagens. \r\n<br/><br/>\r\nAangezien
-        waterstofvoertuigen een vrij nieuwe technologie zijn, is er nog relatief veel
-        ruimte voor verbeteringen. De elektrische motor is al zeer efficiënt, maar
-        de waterstofcellen (het onderdeel van de elektrische auto dat elektriciteit
-        genereert) kunnen beter presteren."
+      description: |
+        Dit schuifje stelt de jaarlijkse toename in efficiëntie van voertuigen op
+        waterstof in. Dit schuifje is van toepassing op de volgende voertuigen die kunnen
+        opereren op waterstof: auto's, bussen, bestelbussen en vrachtwagens.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/demand/transport/overview">Transport</a> om aannames te doen in
+        het aandeel van voertuigen op waterstof in verschillende transportmodi.
     transport_van_using_electricity_share:
-      title: Elektrisch
+      title: Elektriciteit
       short_description:
-      description: "Welk percentage van alle bestelbussen zal volledig elektrisch
-        aangedreven zijn in de toekomst?"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bestelbus-ladingtonkilometers wordt afgelegd met
+        elektrische bestelbussen. <br/><br/>
+        Elektrische bestelbussen zijn efficiënter in energiegebruik vergeleken met bestelbussen
+        op verbrandingsmotoren, zoals bestelbussen op diesel. Daarnaast hebben elektrische
+        bestelbussen geen directe uitstoot, wat bijdraagt aan schonere lucht in stedelijk
+        gebied.<br/><br/>
+        De batterijen van elektrische voertuigen kunnen worden ingezet voor elektriciteitsopslag.
+        Ga naar de sectie
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Flexibiliteit</a> om dit in te stellen.
     transport_van_using_hydrogen_share:
       title: Waterstof
       short_description:
-      description: "Welk percentage van alle bestelbussen zal op waterstof rijden in de toekomst?"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bestelbus-ladingtonkilometers wordt afgelegd met
+        bestelbussen op waterstof.<br/><br/>
+        Voertuigen op waterstof en elektriciteit hebben veel potentie om CO<sub>2</sub>-emissies
+        in de transportsector te verlagen.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstof</a> om de methode
+        voor waterstofproductie te kiezen.
     transport_van_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "Welk percentage van alle bestelbussen zal op diesel rijden in de toekomst?
-      In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-       kun je de samenstelling van diesel voor wegverkeer vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bestelbus-ladingtonkilometers wordt afgelegd met
+        bestelbussen op diesel. <br/><br/>
+        De diesel kan bestaan uit een mix van diesel en biodiesel. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van diesel en biodiesel in de dieselmix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_van_using_gasoline_mix_share:
       title: Benzine
       short_description:
-      description: "Welk percentage van alle bestelbussen zal benzine gebruiken in de toekomst?
-      \r\n<br/><br/>\r\n
-      In de <a href=/scenario/demand/transport_fuels/road-transport>Wegverkeer</a>-sectie
-      kun je de samenstelling van benzine voor wergverkeer vaststellen.</br></br>"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bestelbus-ladingtonkilometers wordt afgelegd met
+        bestelbussen op benzine. <br/><br/>
+        De benzine kan bestaan uit een mix van benzine en bio-ethanol. Ga naar
+        <a href="/scenario/demand/transport_fuels/road-transport">Transportbrandstoffen</a>
+        om de samenstelling van benzine en bio-ethanol in de mix in te stellen.
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van deze brandstoffen in te
+        stellen.
     transport_van_using_lpg_share:
       title: LPG
       short_description:
-      description: "Welk percentage van alle bestelbussen zal LPG gebruiken in de toekomst?"
+      description: |
+        Dit schuifje bepaalt welk percentage van de bestelbus-ladingtonkilometers wordt afgelegd met
+        bestelbussen die rijden op <i>Liquefied Petroleum Gas (LPG)</i>.<br/><br/>
+        In vergelijking met diesel of benzine heeft LPG typisch een lagere
+        CO<sub>2</sub>-uitstoot.<br/><br/>
+        Ga naar de sectie <a href="/scenario/supply/fuel_production/overview">
+        Vloeibare brandstoffen en grondstoffen</a> om de productie van LPG via olieraffinaderijen
+        in te stellen.
     transport_van_using_compressed_natural_gas_share:
-      title: Gas onder druk (CNG)
+      title: Gecomprimeerd aardgas (CNG)
       short_description:
       description: |
-        Welk percentage van alle bestelbussen zal aardgas onder druk gebruiken in de toekomst?
-        Aardgas onder druk komt van het gasnetwerk.
-        Als in dit scenario groen gas wordt bijgemengd in het gasnetwerk dan zullen
-        deze voertuigen ook deels op groen gas rijden.
+        Dit schuifje bepaalt welk percentage van de bestelbus-ladingtonkilometers wordt afgelegd met
+        bestelbussen die rijden op gecomprimeerd aardgas
+        (<i>Compressed Natural Gas, CNG</i>).<br/><br/>
+        Bestelbussen die rijden op CNG stoten minder CO<sub>2</sub> uit dan benzine- en
+        dieselbussen. Bovendien is het mogelijk om groen gas bij te mengen, wat de
+        milieu-impact verder vermindert.<br/><br/>
+        Ga naar de sectie
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomassa</a> om het aandeel
+        groen gas in het gasnetwerk te verhogen, zodat het aandeel groen gas in bestelbussen op CNG
+        ook toeneemt.
     transport_vans_share:
       title: Bestelbussen
       short_description:
-      description: "Zal het goederenvervoer via bestelbussen toenemen in de toekomst?"
+      description: |
+        Dit schuifje bepaalt welk percentage van de ladingtonkilometers wordt afgelegd met
+        bestelbussen.

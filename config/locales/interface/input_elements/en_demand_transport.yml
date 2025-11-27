@@ -4,761 +4,805 @@ en:
     bunkers_allocated_percentage_aviation:
       title: International aviation
       short_description:
-      description: "What percentage of the energy demand for international aviation
-        should be included in your scenario? The total energy demand includes deliveries
-        of aviation fuels to aircraft for international aviation. Fuels used by airlines
-        for their road vehicles are excluded. The domestic/international split should
-        be determined on the basis of departure and landing locations and not by the
-        nationality of the airline. \r\n<br/><br/>\r\nInternational aviation is not
-        included in the Paris Agreement. Meanwhile, the direct emissions from aviation
-        represent 3% of EU’s GHG emissions and more than 2% of emissions worldwide.
-        Some people see the international aviation as a country on its own, if that
-        would be the case, then it would rank in the top 10 emitters. (<a href=\"https://ec.europa.eu/clima/policies/transport/aviation_en\">EC
-        Climate Action</a>)\r\n<br/><br/>\r\nNote that this slider takes a percentage
-        of the total national energy demand of international aviation. This makes
-        it possible to for example allocated the total national energy demand for
-        international aviation to the specific region where the international airport
-        is located. "
+      description: |
+        This slider determines what percentage of the energy demand from international aviation
+        is included in this scenario, including all transport fuels refueled for
+        international flights. International transport is not included in the
+        ETM by default: the slider is therefore set to zero by default.<br/><br/>
+        <b>Note</b>: the distinction between national and international aviation is determined
+        based on departure and landing locations, not based on the nationality of the
+        airline.<br/><br/>
+        Go to
+        <a href="/scenario/demand/transport_international_transport/international-aviation-technology">
+        International aviation technology</a> to set the technologies for international aviation.
     bunkers_allocated_percentage_shipping:
       title: International navigation
       short_description:
-      description: "What percentage of the energy demand for international navigation
-        should be included in your scenario? The total energy demand covers those
-        quantities delivered to ships of all flags that are engaged in international
-        navigation. The domestic/international split is determined on the basis of
-        port of departure and port of arrival, and not by the flag or nationality
-        of the ship.\r\n<br/><br/>\r\nInternational shipping is a very important method
-        for transporting goods all around the world. This sector accounts for about
-        2.5% of global GHG emissions. From 2018 large ships that use EU ports have
-        to report their annual verified emissions, which is the first step in the
-        global approach to reduce their emissions. (<a href=\"https://ec.europa.eu/clima/policies/transport/shipping_en\">EC
-        Climate Action</a>)\r\n<br/><br/>\r\nNote that this slider takes a percentage
-        of the total national energy demand of international navigation. This makes
-        it possible to for example allocated the total national energy demand for
-        international navigation to the specific region where the international seaport
-        is located. "
+      description: |
+        This slider determines what percentage of the energy demand of international shipping
+        is included in this scenario, including all transport fuels refueled for
+        international shipping. International transport is not included in the
+        ETM by default: the slider is therefore set to zero by default.<br/><br/>
+        <b>Note</b>: the distinction between national and international shipping is determined
+        based on the port of departure and arrival, not based on the origin of vessels.<br/><br/>
+        Go to
+        <a href="/scenario/demand/transport_international_transport/international-navigation-technology">
+        International aviation technology</a> to set the technologies for international shipping.
     transport_plane_using_kerosene_mix_share:
       title: Kerosene (mix)
       short_description:
       description: |
-        This slider sets the percentage of total passenger kilometers
-        in domestic aviation traveled by airplanes using kerosene mix.</br></br>
-        Kerosene is the most dominant fuel used in aviation due to its high energy content and
-        low freezing temperature. This means planes can fly large distances and
-        the kerosene does not solidify when flying on high altitudes. </br></br>
-        The share of kerosene and biokerosene in the kerosene mix can be adjusted in the
-        <a href="/scenario/demand/transport_fuels/domestic-aviation">transport fuels</a>
-        section.
+        This slider sets the percentage of total passenger kilometers in domestic
+        aviation that are traveled by airplane using kerosene mix.<br/><br/>
+        Kerosene is the most dominant fuel in aviation due to its high energy content and
+        low freezing point. This means that airplanes can cover long distances and the
+        kerosene does not solidify when flying at high altitude. <br/><br/>
+        The share of kerosene and biokerosene in the kerosene mix can be set in the
+        <a href="/scenario/demand/transport_fuels/domestic-aviation">Transport fuels</a> section.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of (bio)kerosene.
     transport_plane_using_bio_ethanol_share:
       title: Bio-ethanol
-      short_description: ''
-      description: "With this slider you can set the percentage of total passenger kilometers
-        in domestic aviation traveled by airplanes using bio-ethanol.  </br></br>
-        Bio-ethanol or other types of bio-based fuels are derived from plants or waste. The energy content
-        of bio-ethanol is lower compared to kerosene and production is limited. This explains
-        the current infrequent use of bio-ethanol in airplanes. Using a (modified) combustion engine airplanes
-        can complete their flight solely using bio-fuels. </br></br>
-        Checkout the technical and financial properties below for more information."
+      short_description:
+      description: |
+        This slider sets the percentage of total passenger kilometers in domestic
+        aviation that are traveled by airplanes using bio-ethanol.<br/><br/>
+        The energy content of bio-ethanol is lower than that of kerosene and the production
+        of bio-ethanol is limited. Therefore, bio-ethanol is rarely used for
+        airplanes. With a (modified) combustion engine, airplanes can complete their flight
+        exclusively on biofuels.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of bio-ethanol.
     transport_plane_using_gasoline_share:
       title: Gasoline
       short_description:
-      description: "With this slider you can set the percentage of total passenger kilometers
-        in domestic aviation traveled by airplanes using gasoline.  </br></br>
-        Gasoline is only sparingly used in smaller aircrafts. Due to its lower energy content compared to
-        kerosene, airplanes using gasoline cannot travel large distances. </br></br>
-        Checkout the technical and financial properties below for more information."
+      description: |
+        This slider sets the percentage of total passenger kilometers in domestic
+        aviation that are traveled by airplanes using gasoline.<br/><br/>
+        Gasoline is mainly used in smaller airplanes. Due to the lower energy content
+        compared to kerosene, airplanes using gasoline can cover limited distances.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production processes for gasoline.
     transport_plane_using_electricity_share:
-      title: Electric
+      title: Electricity
       short_description:
-      description: "With this slider you can set the percentage of total passenger kilometers
-        in domestic aviation traveled by electric airplanes.  </br></br>
-        (Fully) electric airplanes use batteries to propel their flight. Batteries in combination with
-        an electric engine are around twice as efficient compared to combustion engines.
-        Electric planes are still in a development stage as available battery technologies
-        do not (yet) allow large planes to fly far distances efficiently. </br></br>
-        Checkout the technical and financial properties below for more information."
+      description: |
+        This slider sets the percentage of total passenger kilometers in domestic
+        aviation that are traveled by electric airplanes.<br/><br/>
+        Electric airplanes have an electric motor and batteries, making them
+        twice as efficient as combustion engines. Electric airplanes are still in a
+        development phase as current technology is not suitable for large
+        airplanes covering long distances.
     transport_plane_using_hydrogen_share:
       title: Hydrogen
       short_description:
-      description: "With this slider you can set the percentage of total passenger kilometers
-        in domestic aviation traveled by hydrogen airplanes. </br></br>
-        Hydrogen airplanes use fuel cells to propel their flight. Fuel cells in combination
-        with an electric engine are around twice as efficient compared to combustion engines
-        resulting in a decline in energy use. Hydrogen airplanes are still in a development
-        stage as there is currently no hydrogen infrastructure to match the demand. </br></br>
-        Checkout the technical and financial properties below for more information."
+      description: |
+        This slider sets the percentage of total passenger kilometers in domestic
+        aviation that are traveled by airplanes using hydrogen.<br/><br/>
+        Airplanes using hydrogen use fuel cells. A fuel cell in combination with an electric motor
+        is approximately twice as efficient compared to a combustion engine. Hydrogen airplanes
+        are still in a development phase as the hydrogen infrastructure is still insufficient to
+        meet the demand.<br/><br/>
+        Go to the <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to
+        set production processes for hydrogen.
     transport_bicycle_using_human_power_share:
       title: Bike
       short_description:
-      description: "How do you suppose the demand for bicycles will change in the
-        future? Will it increase or decrease?\r\n<br/><br/>\r\nBicycles are one of
-        the most traditional forms of transport and are rapidly coming back into style
-        as people become more aware of the environmental as well as health benefits.\r\n"
+      description: |
+        This slider determines what percentage of bicycle passenger kilometers is traveled
+        by regular bicycle.
     transport_bicycle_using_electricity_share:
       title: E-bike
       short_description:
-      description: "Will the share of electric bikes (e-bikes) expand in the future?\r\n<br/><br/>\r\nElectric
-        bikes play a big role in expanding the existing market for bicycles as they
-        provide speed and reduced effort which stretches the market to include parts
-        of the market, such as the elderly, who benefit greatly from these benefits.
-        Several food delivery companies are also investing in electric bikes not only
-        due to the economic benefits but also as a part of green marketing."
-    transport_car_using_electricity_share:
-      title: Electric
-      short_description: ''
       description: |
-        What percentage of all cars will be electric cars in the future? <br/><br/>
-        Electric cars typically use less energy than the “well to wheels” fuel consumption
-        of cars with internal combustion engines, such as diesel or gasoline cars. </br></br>
-        If you want to include hybrid cars in your scenario, you could assume that one
-        fully electric car is equivalent to three plug-in hybrid cars with range extenders.
-        These are electric cars that can be charged from the grid, but have limited
-        battery capacity. A range extender is a small gasoline engine that re-charges
-        the battery once it's depleted. </br></br>
-        It is important to note that the electricity used by electric cars still needs to
-        be generated somewhere. If this is done with wind power, electric cars contribute
-        strongly to a more sustainable society, but less so when coal power is used.
+        This slider determines what percentage of bicycle passenger kilometers is traveled by
+        electric bicycles.
+    transport_car_using_electricity_share:
+      title: Electricity
+      short_description:
+      description: |
+        This slider determines what percentage of car passenger kilometers is traveled by
+        electric cars. Electric cars typically use less energy than fuel-powered cars
+        such as diesel and gasoline cars.<br/><br/>
+        The charging behavior of electric cars can be adjusted in the
+        <a href="/scenario/flexibility/flexibility_net_load/demand-response-electric-cars">
+        Net load</a> section. Additionally, the batteries of electric vehicles can be used for
+        electricity storage. Go to the
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Electricity storage</a> section to set this.
     transport_car_using_diesel_mix_share:
       title: Diesel
-      short_description: ''
-      description: "What percentage of all cars will use diesel fueled
-        internal combustion engine (ICE) technology? \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the diesel mix for road transport."
+      short_description:
+      description: |
+        This slider determines what percentage of car passenger kilometers is traveled by
+        diesel cars. <br/><br/>
+        The diesel for diesel cars can consist of a mix of diesel and biodiesel. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of diesel and biodiesel in the diesel mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_car_using_gasoline_mix_share:
       title: Gasoline
-      short_description: ''
-      description: "What percentage of all cars will be use gasoline fuelled internal
-        combustion engine (ICE) technology? \r\n<br/><br/> \r\nTheir efficiency may
-        start improving faster once competition from electric cars is felt more keenly.
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the gasoline mix for road transport."
+      short_description:
+      description: |
+        This slider determines what percentage of car passenger kilometers is traveled by
+        gasoline cars. <br/><br/>
+        The gasoline for gasoline cars can consist of a mix of gasoline and bio-ethanol.
+        Go to <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of gasoline and bio-ethanol in the mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_car_using_lpg_share:
-      title: LPG
-      short_description: ''
-      description: "What percentage of all cars will be use LPG fueled internal combustion
-        engine (ICE) technology? These cars also use gasoline as a back up fuel."
+      title: Liquefied petroleum gas (LPG)
+      short_description:
+      description: |
+        This slider determines what percentage of car passenger kilometers is traveled by
+        cars running on Liquefied Petroleum Gas (LPG).<br/><br/>
+        Compared to diesel or gasoline, LPG typically has lower CO<sub>2</sub> emissions.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of LPG via oil refineries.
     transport_car_using_compressed_natural_gas_share:
-      title: Compressed gas
-      short_description: ''
-      description: "What percentage of all cars will use compressed gas fueled internal
-        combustion engine (ICE) technology? \r\n<br/><br/>\r\nGas-fueled cars are
-        relatively clean compared to gasoline or diesel fueled ones. In terms of efficiency,
-        one might say that gas is better used for generating heat and electricity
-        (co-generation) at the location it is needed. ICE technology is likely to
-        progress, but will never rival the efficiency of such a process. In terms
-        of pollution, one might say that it is better to use gas to generate electricity
-        at a central location (where exhaust gases can be cleaned or even captured
-        and stored) and to use the electricity to power electric cars.\r\n<br/><br/>\r\nCompressed
-        natural gas in these cars comes from the gas network. This means it can contain
-        green gas if in the current scenario this is mixed in with natural gas on
-        the gas network."
+      title: Compressed natural gas (CNG)
+      short_description:
+      description:
+        This slider determines what percentage of car passenger kilometers is traveled by cars
+        running on compressed natural gas (CNG).<br/><br/>
+        Cars running on CNG emit less CO<sub>2</sub> than both gasoline and LPG cars.
+        Moreover, it is possible to blend in green gas, which further reduces the environmental
+        impact.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomass</a> section to increase
+        the share of green gas in the gas network, so that the share of green gas in CNG cars
+        also increases.
     transport_car_using_hydrogen_share:
       title: Hydrogen
       short_description:
-      description: "What percentage of all cars will be hydrogen fuelled vehicles
-        in the future? Hydrogen cars have been hyped as well as criticised a lot,
-        and as with many choices, their value depends on other choices you make. Hydrogen
-        is an energy carrier - not an energy source -, so it has to be produced first.
-        In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\" >hydrogen
-        production section</a> you can determine how this is done - through steam
-        reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
-        cars (in the ETM) are fuel cell electric vehicles (FCEVs). Hydrogen in consumer
-        vehicles is stored at a very high pressure of 700 bar in order to ensure a
-        long driving range (of typically 500 km). Hydrogen is fed to a stack of fuel
-        cells, where it undergoes a chemical (redox) reaction with oxygen,  generates
-        a current and releases water. It thus produces electricity that drives the
-        (electric) engine. FCEVs are therefore electric vehicles, but they differ
-        from electric vehicles in the sense that the electricity is not stored on
-        board in a battery, but instead generated in the car itself. \r\n<br/><br/>\r\nCombined
-        with smart grid systems and energy storage technologies, electric vehicles
-        could not only potentially reduce our dependence on fossil fuels but even
-        function as a storage medium or production technology. <a href=\"https://www.thegreenvillage.org/projects/hydrolectric\"a>The
-        Green Village</a>, an initiative of Delft University of Technology, is doing
-        research on how electric cars can be used as more than just an end - for example,
-        as power plants and storage devices."
+      description: |
+        This slider determines what percentage of car passenger kilometers is traveled by
+        hydrogen cars. <br/><br/>
+        Vehicles using hydrogen and electricity have great potential to reduce CO<sub>2</sub>
+        emissions in the transport sector.<br/><br/>
+        Go to the <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to
+        choose the method for hydrogen production.
     transport_truck_using_gasoline_mix_share:
       title: Gasoline
-      short_description: ''
-      description: "What percentage of all trucks will use gasoline fueled internal
-        combustion engine (ICE) technology? Note
-        that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region.
-        \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the gasoline mix for road transport."
+      short_description:
+      description: |
+        This slider determines what percentage of cargo ton-kilometers by trucks is
+        traveled by gasoline trucks. <br/><br/>
+        The gasoline can consist of a mix of gasoline and bio-ethanol. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of gasoline and bio-ethanol in the mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_truck_using_diesel_mix_share:
       title: Diesel
-      short_description: ''
-      description: "What percentage of all trucks will use diesel fueled
-        internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nSome people
-        believe trucks will use ICE technology for quite a while longer, as electric
-        trucks are a technological challenge. Note
-        that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region.
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the diesel mix for road transport."
-    transport_truck_using_electricity_share:
-      title: Electric
-      short_description: ''
-      description: "What percentage of all trucks will be fully electric in the future
-        (not counting hybrids)? \r\n<br/><br/>\r\nSome people believe trucks will
-        use ICE technology for quite a while longer, as electric trucks are a technological
-        challenge. Note that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region."
-    transport_truck_using_compressed_natural_gas_share:
-      title: Compressed gas
-      short_description: ''
-      description: "What percentage of all trucks will use compressed natural gas
-        fueled internal combustion engine (ICE) technology?\r\nNatural gas fueled
-        engines already exist and are currently mostly used for public transport buses.
-        \r\n<br/><br/>\r\nCompressed natural gas in these trucks comes from the gas
-        network. This means it can contain green gas if in the current scenario this
-        is mixed in with natural gas on the gas network. Note that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region."
-    transport_truck_using_lng_mix_share:
-      title: LNG
       short_description:
-      description: "What percentage of all trucks will use liquefied natural gas (LNG)
-        fueled internal combustion engine (ICE) technology? LNG trucks have a longer
-        driving range than compressed network gas (CNG) trucks, because the energy
-        content of LNG is higher. However, LNG trucks also need expensive, highly
-        insulated tanks. Note that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region.
-        \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the LNG mix for road transport."
+      description: |
+        This slider determines what percentage of cargo ton-kilometers by trucks is
+        traveled by diesel trucks. <br/><br/>
+        The diesel can consist of a mix of diesel and biodiesel. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of diesel and biodiesel in the diesel mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
+    transport_truck_using_electricity_share:
+      title: Electricity
+      short_description:
+      description: |
+        This slider determines what percentage of cargo ton-kilometers by trucks is
+        traveled by electric trucks. <br/><br/>
+        Electric trucks are more efficient in energy use compared to trucks
+        with combustion engines, such as diesel trucks. Additionally, electric
+        trucks have no direct emissions.<br/><br/>
+        The batteries of electric vehicles can be used for electricity storage. Go to the
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Flexibility</a> section to set this.
+    transport_truck_using_compressed_natural_gas_share:
+      title: Compressed natural gas (CNG)
+      short_description:
+      description: |
+        This slider determines what percentage of cargo ton-kilometers is traveled by
+        trucks running on compressed natural gas (CNG).<br/><br/>
+        Trucks running on CNG emit less CO<sub>2</sub> than gasoline and diesel trucks.
+        Moreover, it is possible to blend in green gas, which further reduces the environmental
+        impact.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomass</a> section to increase
+        the share of green gas in the gas network, so that the share of green gas in CNG trucks
+        also increases.
+    transport_truck_using_lng_mix_share:
+      title: Liquefied natural gas (LNG)
+      short_description:
+      description: |
+        This slider determines what percentage of cargo ton-kilometers by trucks is
+        traveled by trucks running on liquefied natural gas (LNG). <br/><br/>
+        Trucks using LNG can travel further on a tank than trucks using CNG, due to the higher
+        energy content of LNG. On the other hand, trucks using LNG require expensive, well-insulated
+        tanks.<br/><br/>
+        LNG can consist of a mix of LNG and bio-LNG. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a> to set the
+        composition of LNG and bio-LNG in the mix.
     transport_truck_using_hydrogen_share:
       title: Hydrogen
       short_description:
-      description: "What percentage of all trucks will be hydrogen fuelled vehicles
-        in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
-        source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >hydrogen production section</a> you can determine how this is done - through
-        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
-        trucks (in the ETM) are fuel cell electric vehicles (FCEVs). Hydrogen in consumer
-        vehicles is stored at a very high pressure of 350 bar in order to ensure a
-        long driving range (of typically 500 km). FCEVs are electric vehicles, but
-        they differ from electric vehicles in the sense that the electricity is not
-        stored on board in a battery, but instead generated in the car itself. Note that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region."
+      description: |
+        This slider determines what percentage of cargo ton-kilometers by trucks is
+        traveled by hydrogen trucks. <br/><br/>
+        Vehicles using hydrogen and electricity have great potential to reduce CO<sub>2</sub>
+        emissions in the transport sector.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to choose the
+        method for hydrogen production.
     transport_bus_using_electricity_share:
-      title: Electric
+      title: Electricity
       short_description:
-      description: "What percentage of all buses will be fully electric in the future?
-        \r\n<br/><br/>\r\nGovernments and other regulatory boards in many countries
-        are now trying to push electric buses as one of the primary modes of public
-        transport as part of new energy targets and policies. Electric buses are
-        also becoming more affordable as the prices for lithium-ion batteries continue
-        to drop. \r\n<br/><br/>\r\nFactors such as these will play in a role in determining
-        the growth in demand for electric buses, how do you expect the current share
-        of electric buses to change?"
+      description: |
+        This slider determines what percentage of bus passenger kilometers is traveled by
+        electric buses. <br/><br/>
+        Electric buses are more efficient in energy use compared to buses
+        with combustion engines, such as diesel buses. Additionally, electric
+        buses have no direct emissions, which contributes to cleaner air in urban areas.<br/><br/>
+        The batteries of electric vehicles can be used for electricity storage. Go to the
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Flexibility</a> section to set this.
     transport_bus_using_hydrogen_share:
       title: Hydrogen
       short_description:
-      description: "What percentage of all buses will be hydrogen fuelled vehicles
-        in the future? \r\n<br/><br/>\r\nThe use of hydrogen for transport has been
-        hyped as well as criticised a lot, and as with many choices, their value depends
-        on other choices you make. Hydrogen is an energy carrier - not an energy source
-        -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >hydrogen production section</a> you can determine how this is done - through
-        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
-        buses (in the ETM) are fuel cell electric vehicles (FCEVs). Hydrogen is fed
-        to a stack of fuel cells, where it undergoes a chemical (redox) reaction with
-        oxygen,  generates a current and releases water. It thus produces electricity
-        that drives the (electric) engine. FCEVs are therefore electric vehicles,
-        but they differ from electric vehicles in the sense that the electricity is
-        not stored on board in a battery, but instead generated in the bus itself.
-        \r\n<br/><br/>\r\nCombined with smart grid systems and energy storage technologies,
-        electric vehicles could not only potentially reduce our dependence on fossil
-        fuels but even function as a storage medium or production technology."
+      description: |
+        This slider determines what percentage of bus passenger kilometers is traveled by
+        hydrogen buses.<br/><br/>
+        Vehicles using hydrogen and electricity have great potential to reduce CO<sub>2</sub>
+        emissions in the transport sector.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to choose the
+        method for hydrogen production.
     transport_bus_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "What percentage of all cars will use diesel fueled
-        internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nToday, nearly
-        all of the buses use diesel as the primary source of fuel; however, competition
-        with alternative technologies will most likely induce a change in the demand
-        share for diesel powered buses.
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the diesel mix for road transport."
+      description: |
+        This slider determines what percentage of bus passenger kilometers is traveled by
+        diesel buses. <br/><br/>
+        The diesel can consist of a mix of diesel and biodiesel. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of diesel and biodiesel in the diesel mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_bus_using_gasoline_mix_share:
       title: Gasoline
       short_description:
-      description: "What percentage of all buses will be using gasoline fuelled internal
-        combustion engine (ICE) technology in the future?  \r\n<br/><br/>\r\nCompetition
-        from zero-emissions technologies, like electric and hydrogen vehicles is pushing
-        innovation in the field of efficiency improvement in gasoline powered transport.
-        \r\n<br/><br/>\r\nThis and other such factors will play a role in shaping
-        the demand for gasoline fuelled buses in the future, how do you suppose the
-        demand will change?
-        \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the gasoline mix for road transport."
+      description: |
+        This slider determines what percentage of bus passenger kilometers is traveled by
+        gasoline buses. <br/><br/>
+        The gasoline can consist of a mix of gasoline and bio-ethanol. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of gasoline and bio-ethanol in the mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_bus_using_lng_share:
-      title: LNG
+      title: Liquefied natural gas (LNG)
       short_description:
-      description: "What percentage of all buses will be using liquefied natural
-        gas (LNG) technology in the future?\r\n<br/><br/>\r\nAs environmental concerns
-        become a prime factor in shaping the demand for fuels in the transport sector,
-        LNG can be expected to increase its demand share with respect to other fuels
-        that are currently dominating the fuel-mix in the transport sector. LNG's
-        higher energy density as compared to diesel and relatively stable projected
-        prices will also play a hand in determining its share in the fuel-mix in the
-        near future.
-        \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the LNG mix for road transport."
+      description: |
+        This slider determines what percentage of bus passenger kilometers is traveled by
+        buses running on liquefied natural gas (LNG). <br/><br/>
+        Buses using LNG can travel further on a tank than buses using CNG due to the higher energy
+        content of LNG. On the other hand, buses using LNG require expensive, well-insulated
+        tanks.<br/><br/>
+        LNG can consist of a mix of LNG and bio-LNG. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a> to set the
+        composition of LNG and bio-LNG in the mix.
     transport_bus_using_compressed_natural_gas_share:
-      title: Compressed gas
+      title: Compressed natural gas (CNG)
       short_description:
-      description: "What percentage of all buses will use compressed natural gas
-        fueled internal combustion engine (ICE) technology? \r\n<br/><br/>\r\nGas
-        fueled buses are relatively clean compared to gasoline or diesel fueled ones.
-        In terms of efficiency, one might say that gas is better used for generating
-        heat and electricity (co-generation) at the location it is needed. ICE technology
-        is likely to progress, but will never rival the efficiency of such a process.
-        In terms of pollution, one might say that it is better to use gas to generate
-        electricity at a central location (where exhaust gases can be cleaned or even
-        captured and stored) and to use the electricity to power electric buses.\r\n<br/><br/>\r\nCompressed
-        natural gas in these buses comes from the gas network. This means it can
-        contain green gas if in the current scenario this is mixed in with natural
-        gas on the gas network.\r\n<br/><br/>\r\nIn the Middle East, for example,
-        transport authorities are also promoting CNG by setting up conversion centers
-        which enable cars and buses to switch from gasoline or diesel powered engines
-        to CNG powered ones."
+      description: |
+        This slider determines what percentage of bus passenger kilometers is traveled by
+        buses running on compressed natural gas (CNG).<br/><br/>
+        Buses running on CNG emit less CO<sub>2</sub> than gasoline and diesel buses. Moreover, it
+        is possible to blend in green gas, which further reduces the environmental impact.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomass</a> section to increase
+        the share of green gas in the gas network, so that the share of green gas in CNG buses
+        also increases.
     bunkers_ship_using_heavy_fuel_oil_share:
-      title: HFO
+      title: Heavy fuel oil (HFO)
       short_description:
-      description: 'Large international cargo ships generally operate on HFO, which
-        is the heaviest commercial fuel that can be obtained from crude oil. '
+      description: |
+        This slider determines what percentage of fuel consumption in international
+        shipping is supplied by heavy fuel oil (HFO).<br/><br/>
+        HFO is mainly used in large cargo ships for international freight transport
+        due to its relatively low cost and high energy content. <br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of HFO via oil refineries.
     bunkers_ship_using_lng_share:
-      title: LNG
+      title: Liquefied natural gas (LNG)
       short_description:
-      description: "Ships transporting large cargo over long distances require very
-        powerful engines and energy-rich fuels. Natural gas is an unsuitable shipping
-        fuel as its energetic density is very low, but through liquefaction it increases
-        by a factor 600 - more than enough to compete with HFO. LNG engines are a
-        rather novel ship engine technology. These ships carry spark-ignited engines
-        which operate at low pressures and are optimized for LNG. As a result, these
-        engines can only run on LNG.\r\n</br></br>\r\nCompared to HFO, LNG generates
-        20% less GHG emissions due to its lower carbon content. Additionally, LNG
-        emits significantly less air pollutants than HFO, like NO<sub>x</sub>, SO<sub>x</sub>
-        and particulate matter. Therefore, it is an alternative shipping fuel worth
-        considering. "
+      description: |
+        This slider determines what percentage of fuel consumption in international
+        shipping is supplied by liquefied natural gas (LNG).<br/><br/>
+        LNG is an emerging fuel in shipping and can be a suitable alternative for
+        HFO ships due to its high energy density and lower CO<sub>2</sub> emissions.
+        Additionally, combustion of LNG releases less NO<sub>x</sub>, SO<sub>x</sub> and
+        particulate matter.<br/><br/>
+        It is not yet possible in the model to blend bio-LNG into LNG for international shipping.
     bunkers_ship_using_hydrogen_share:
       title: Hydrogen
       short_description:
       description: |
-        Hydrogen-powered shipping is a novel technology that is still in its developmental phase.
-        Different designs are possible for this technology, for example whether an internal combustion
-        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. </br></br>
-        It is technically possible to produce carbon-free hydrogen. Switching to hydrogen-powered shipping
-        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce
-        by switching to hydrogen depends on the way that it is produced. In the
-        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a>
-        section you can determine how this is done.
+        This slider determines what percentage of fuel consumption in international
+        shipping is supplied by hydrogen. <br/><br/>
+        Hydrogen-powered ships represent a new technology that is in the development phase.
+        Depending on the production process of hydrogen, the use of hydrogen in shipping can
+        contribute to decarbonization.<br/><br/>
+        Go to the <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to
+        choose the method for hydrogen production.
     bunkers_ship_using_electricity_share:
       title: Electricity
       short_description:
       description: |
-        Like hydrogen-powered shipping, electricity-powered shipping is a novel technology that is still in its developmental phase.
-        Full-electric ships will likely use large-scale batteries to ensure enough power is available for the duration of the trip.
-        <br/><br/>
-        With this slider, you can also model the demand for On-shore Power Supply (OPS).
-        OPS allows ships to plug in at the harbor they are visiting, reducing the need for fossil fuels to maintain their power supply.
+        This slider determines what percentage of fuel consumption in international
+        shipping is supplied by electricity. This slider can be used to model the demand
+        for onshore power supply (OPS).<br/><br/>
+        Electric-powered ships represent a new technology that is in the development phase.
+        Due to the size of the ships and the long distances they travel, it is
+        likely that these ships will use large-scale batteries.
     bunkers_ship_using_methanol_mix_share:
       title: Methanol (mix)
       short_description:
       description: |
-        This slider sets the share of international shipping fuel supplied by methanol. The
-        methanol used is composed of fossil, synthetic and biomethanol. Go to
-        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport fuels</a> to set
-        the methanol mix.
-    bunkers_aviation_using_electricity_share:
-      title: Electricity
-      short_description:
-      description: |
-        Like hydrogen-powered aviation, electricity-powered aviation is a novel technology that is still in its developmental phase.
-        Full-electric planes will likely use batteries to ensure enough power is available for the duration of the trip.
-    bunkers_aviation_using_hydrogen_share:
-      title: Hydrogen
-      short_description:
-      description: |
-        Hydrogen-powered aviation is a novel technology that is still in its developmental phase.
-        Different designs are possible for this technology, for example whether an internal combustion
-        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. </br></br>
-        It is technically possible to produce carbon-free hydrogen. Switching to hydrogen-powered aviation
-        therefore offers a way to decarbonize transport by planes. How much emissions you actually reduce
-        by switching to hydrogen depends on the way that it is produced. In the
-        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a>
-        section you can determine how this is done.
-    bunkers_aviation_using_kerosene_mix_share:
-      title: Kerosene (mix)
-      short_description:
-      description: |
-        Kerosene-powered aviation is the standard practice. The kerosene used is composed of fossil,
-        synthetic and biokerosene. Go to the
-        <a href="/scenario/demand/transport_fuels/international-aviation">Transport fuels</a>
-        section to set the kerosene mix.
+        This slider determines what percentage of fuel consumption in international
+        shipping is supplied by methanol.<br/><br/>
+        Methanol has potential as an alternative to HFO due to lower emissions of
+        sulfur oxides and particulate matter. Depending on the production method of methanol,
+        methanol ships can substantially reduce CO<sub>2</sub> emissions
+        from shipping.<br/><br/>
+        The methanol used can consist of fossil, synthetic and biomethanol.
+        Go to <a href="/scenario/demand/transport_fuels/international-navigation"
+        >Transport fuels</a> to set the methanol mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     bunkers_ship_using_ammonia_share:
       title: Ammonia
       short_description:
       description: |
-        Like hydrogen-powered shipping, ammonia-powered shipping is a novel technology. A single dominant
-        design has yet to emerge for this type of ship. </br></br>
-        It is technically possible to produce carbon-free ammonia. Switching to ammonia-powered shipping
-        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce
-        by switching to ammonia depends on the way that it is produced. In the
-        <a href=/scenario/supply/hydrogen/ammonia-production> Ammonia production</a>
-        section you can determine how this is done. </br></br>
-        Compared to hydrogen-powered ships the main benefit of using ammonia is that it's easier to store.
-        Ammonia turns liquid at a temperature much closer to zero than hydrogen, making liquefied storage
-        of ammonia less energy-intensive. Alternatively, compressed ammonia has a substantialy
-        higher volumetric energy density than hydrogen at the same pressure, meaning that it takes
-        up less space to transport the same amount of fuel.
+        This slider determines what percentage of fuel consumption in international
+        shipping is supplied by ammonia. <br/><br/>
+        Like hydrogen-powered ships, ammonia-powered ships are a fairly new
+        technology. The main advantage of ammonia over hydrogen is that
+        ammonia can be stored more easily because it is liquid at a temperature
+        much closer to zero than hydrogen. This makes the storage of liquid ammonia
+        less energy-intensive.<br/><br/>
+        The ETM assumes by default that ammonia is produced on-site in the
+         <a href="/scenario/demand/industry/fertilizers">fertilizer sector</a>. This local
+         production can be replaced by import of ammonia, which can be set in the
+        <a href="/scenario/supply/hydrogen/ammonia-production">Ammonia production</a> section.
+    bunkers_aviation_using_electricity_share:
+      title: Electricity
+      short_description:
+      description: |
+        This slider determines what percentage of fuel use in international aviation is supplied by
+        electricity. <br/><br/>
+        Electric-powered airplanes are a new technology that is still in development.
+        Due to the size of the airplanes and the long distances that need to be covered, it is
+        likely that these airplanes will rely on large-scale battery systems.
+    bunkers_aviation_using_hydrogen_share:
+      title: Hydrogen
+      short_description:
+      description: |
+        This slider determines what percentage of fuel use in international aviation
+        is supplied by hydrogen. <br/><br/>
+        Hydrogen-powered aviation is a new technology that is still in the development phase.
+        Depending on the production method of hydrogen, the use of hydrogen in aviation can
+        contribute to making international aviation more sustainable.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to select
+        the method of hydrogen production.
+    bunkers_aviation_using_kerosene_mix_share:
+      title: Kerosene (mix)
+      short_description:
+      description: |
+        This slider determines what percentage of fuel use in international aviation is supplied by
+        kerosene. <br/><br/>
+        Kerosene is the most dominant fuel in aviation due to its high energy density and low
+        freezing point. This means that airplanes can travel long distances and the
+        kerosene does not solidify when flying at high altitudes.<br/><br/>
+        The kerosene used may consist of fossil, synthetic and biokerosene. Go to
+        <a href="/scenario/demand/transport_fuels/international-aviation">Transport fuels
+        </a> to set the kerosene mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_passenger_train_using_coal_share:
       title: Coal
-      short_description: ''
-      description: "Coal-powered trains are a bit of a relic, but still common in
-        some less developed regions of the world. Almost everywhere, coal-powered
-        trains can be replaced by diesel-powered ones, as these are more fuel-efficient
-        and much cleaner. \r\n\r\n<br/>\r\n<br/>\r\nLess developed countries with
-        abundant coal supplies may choose to use coal-powered trains to reduce their
-        dependence on foreign energy sources."
+      short_description:
+      description: |
+        This slider determines what percentage of train passenger kilometres is
+        carried out by coal trains. Coal trains are somewhat of a legacy technology,
+        but are still in use in some regions of the world.
     transport_passenger_train_using_diesel_mix_share:
       title: Diesel
-      short_description: ''
+      short_description:
       description: |
-        Diesel-powered trains are not uncommon as they do not rely on
-        expensive electricity infrastructure. They are ideal for very remote and sparsely
-        populated regions. Because Europe is a patchwork of differing standards for
-        powerlines, electric trains often cannot cross borders in Europe.
-        You can set the diesel mix for passenger trains in the <a href=/scenario/demand/transport_fuels/rail-transport>Rail transport
-        section</a>.
+        This slider determines what percentage of train passenger kilometres is
+        carried out by diesel trains. <br/><br/>
+        Diesel trains are still fairly common because they do not depend on
+        electrical infrastructure. This makes them suitable for remote
+        and sparsely populated areas.<br/><br/>
+        The diesel may consist of a mix of diesel and biodiesel. Go to
+        <a href="/scenario/demand/transport_fuels/rail-transport">Transport fuels</a>
+        to configure the composition of diesel and biodiesel in the diesel mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstocks</a> section to configure the production
+        of these fuels.
     transport_passenger_train_using_electricity_share:
-      title: Electric
-      short_description: ''
-      description: Electric trains are the standard in all developed regions of the
-        world. They are a very energy efficient and rather clean form of transport.
-        They are not particularly flexible of course, and rely on expensive electric
-        infrastructure, so they will never fully replace diesel trains.
+      title: Electricity
+      short_description:
+      description: |
+        This slider determines what percentage of the train passenger kilometres is
+        carried out by electric trains. <br/><br/>
+        Electric trains are the standard in all developed regions of the world.
+        They are energy-efficient and produce no direct CO<sub>2</sub> emissions.
+        However, electric trains do depend on electrical infrastructure.
     transport_passenger_train_using_hydrogen_share:
       title: Hydrogen
-      short_description: ''
-      description: "What percentage of all passenger trains will be hydrogen fuelled vehicles
-        in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
-        source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >hydrogen production section</a> you can determine how this is done - through
-        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
-        trains (in the ETM) are fuel cell electric vehicles (FCEVs). FCEVs are electric vehicles, but
-        they differ from electric vehicles in the sense that the electricity is not
-        stored on board in a battery, but instead generated in the train itself."
+      short_description:
+      description: |
+        This slider determines what percentage of train passenger kilometres is
+        carried out by hydrogen trains. <br/><br/>
+        Vehicles powered by hydrogen and electricity have strong potential to reduce
+        CO<sub>2</sub> emissions in the transport sector.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section
+        to select the method of hydrogen production.
     transport_cars_share:
       title: Cars
-      short_description: ''
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by cars.
+      short_description:
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by cars.
     transport_passenger_trains_share:
       title: Trains
-      short_description: ''
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by trains.
+      short_description:
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by trains.
     transport_planes_share:
       title: Domestic planes
-      short_description: ''
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by planes. Please note that this slider is about domestic flights
-        only. For international aviation, see <a href="/scenario/demand/transport_international_transport/international-transport">international
-        transport</a>.
+      short_description:
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by domestic
+        planes.
     transport_useful_demand_passenger_kms:
       title: Passenger transport
       short_description:
-      description: Do you believe people will travel more or less in the future? Please
-        indicate here by what percentage you think the number of 'passenger kilometres'
-        will change each year.
+      description: |
+        This slider sets the annual increase or decrease of the total passenger kilometres
+        traveled in the transport sector. The total passenger kilometres directly affects energy
+        demand: an increase in passenger kilometres will lead to an increase in energy demand,
+        whereas a decrease in passenger kilometres will lead to a decrease in energy demand.
     transport_busses_share:
       title: Buses
       short_description:
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by buses.
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by buses.
     transport_trams_share:
       title: Trams/metros
       short_description:
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by trams and metros.
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by trams
+        and metros.
     transport_bicycles_share:
       title: Bicycles
       short_description:
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by bicycles.
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by
+        bicycles.
     transport_motorcycles_share:
       title: Motorcycles
       short_description:
-      description: Please indicate what percentage of the kilometres we travel is
-        covered by motorcycles and mopeds
+      description: |
+        This slider sets the percentage of the passenger kilometres that will be covered by
+        motorcycles.
     transport_motorcycle_using_gasoline_mix_share:
       title: Gasoline
       short_description:
-      description: "What percentage of all motorcycles will be using gasoline fuelled
-        technology in the future?\r\n<br/><br/>\r\nMany areas of the world are experiencing
-        a rapid demand in motorcycle usage as this form of personal transport provides
-        ease and convenience especially in developing countries where the transport
-        infrastructure is not very suitable to cars and other larger vehicles. Currently,
-        almost all of the motorcycles run on gasoline, however as zero-emissions technologies
-        and priorities on environmental effects of such fuels are being placed higher
-        up, one can expect a change in this share in the future.
-        \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the gasoline mix for road transport."
+      description: |
+        This slider determines what percentage of motorcycle passenger-kilometres is travelled
+        using gasoline-powered motorcycles. <br/><br/>
+        The gasoline may consist of a mix of gasoline and bio-ethanol. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to configure the composition of gasoline and bio-ethanol in the mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstocks</a> section to configure the production
+        of these fuels.
     transport_motorcycle_using_electricity_share:
-      title: Electric
+      title: Electricity
       short_description:
-      description: "How do you think the demand for electric motorcycles will change
-        in the future?\r\n<br/><br/>\r\nAs of today, electric motorcycles aren't yet
-        used very often. Competition with cars at charging stations as well as a smaller
-        market audience as compared to cars may be some among the reasons which is
-        holding back the number of electric motorcycles on the road. However, new
-        innovative electric motorcycles are entering the market, which could potentially
-        be a hype. Especially areas with high population densities could benefit from
-        an increase in electric motorcycles, as motorcycles in such areas comprise
-        quite a significant share of the road transport."
+      description: |
+        This slider determines what percentage of motorcycle passenger-kilometres is travelled
+        using electric motorcycles. <br/><br/>
+        Electric motors are more efficient and produce no direct CO<sub>2</sub> emissions,
+        contributing to cleaner air in urban areas.
     bunkers_useful_demand_planes:
       title: International aviation
       short_description:
-      description: Please indicate how the number of international flights will change
-        every year in the future.
+      description: |
+        This slider sets the annual increase or decrease of the international aviation sector.
     bunkers_useful_demand_ships:
       title: International navigation
       short_description:
-      description: Please indicate how the number of international shipping trades
-        will change every year in the future.
+      description: |
+        This slider sets the annual increase or decrease of the international navigation sector.
     transport_ship_using_diesel_mix_share:
       title: Diesel (single / dual / multi-fuel engine)
       short_description:
       description: |
-        With this slider you can set the percentage of shipping freight kilometers traveled by
-        diesel engine ships. </br></br>
-        The vast majority of ships for inland waterway transport are powered by conventional
-        diesel engines. There are however also dual fuel engines available that can switch
-        between two fuels, typically LNG and diesel. Even more advanced multifuel
-        engines are being developed that, in addition to LNG and diesel, can run on fuels such as bio-ethanol. </br></br>
-        For clarity the share of all types of diesel engines is set with this slider. You can then
-        set the aggregate fuel mix in the
-        <a href="/scenario/demand/transport_fuels/domestic-navigation">transport fuels</a> section.
-        Checkout the technical and financial properties below for more information.
+        This slider determines what percentage of domestic shipping freight tonne-kilometres is
+        carried out by vessels with diesel engines. <br/><br/>
+        Inland vessels are typically powered by conventional diesel engines.
+        However, dual-fuel engines are also available which can switch between two fuels, typically
+        liquefied natural gas (LNG) and diesel. In addition, more advanced multi-fuel engines are in
+        development which, besides LNG and diesel, can also use fuels such as bio-ethanol. <br/><br/>
+        This slider sets the combined share of all diesel engine types. The combined fuel mix can be
+        configured in the
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport fuels</a>
+        section. Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstocks</a> section to configure the production of these fuels.
     transport_ship_using_lng_mix_share:
-      title: LNG (mix)
+      title: Liquefied natural gas (LNG) (mix)
       short_description:
       description: |
-        With this slider you can set the percentage of shipping freight kilometers traveled by
-        LNG ships. </br></br>
-        (Liquefied) natural gas engines are a rather novel ship engine
-        technology. They are spark-ignited engines which operate at low pressures
-        and are optimized for liquefied natural gas (LNG). As a result, these engines
-        can only run on LNG but have superior performance to dual fuel engines. On
-        the other hand, dual fuel engines allow for more flexibility, being less dependent
-        on the availability of shipping fuels.</br></br>
-        Checkout the technical and financial properties below for more information.
-        You can set the LNG mix in the
-        <a href="/scenario/demand/transport_fuels/domestic-navigation">transport fuels</a> section.
+        This slider determines what percentage of domestic shipping freight tonne-kilometres is carried out
+        by vessels powered by liquefied natural gas (LNG). <br/><br/>
+        LNG is an emerging fuel in the shipping sector and can be a suitable alternative to diesel
+        due to its high energy density and lower CO<sub>2</sub> emissions. Furthermore, burning LNG
+        results in lower emissions of NO<sub>x</sub>, SO<sub>x</sub> and particulate matter.<br/><br/>
+        LNG for domestic shipping can consist of a mix of LNG and bio-LNG. Go to
+        <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport fuels</a>
+        to configure the composition of LNG and bio-LNG in the mix.
     transport_ship_using_hydrogen_share:
       title: Hydrogen
       short_description:
       description: |
-        With this slider you can set the percentage of shipping freight kilometers traveled by
-        hydrogen ships. </br></br>
-        Hydrogen-powered shipping is a novel technology that is still in its developmental phase.
-        Different designs are possible for this technology, for example whether an internal combustion
-        engine (ICE) or a fuel cell (FC) will be used to convert the hydrogen. Here we have
-        chosen to use the specifications of a hydrogen-powered ship using a fuel cell. See the
-        "Technical and financial properties" for more information. </br></br>
-        It is technically possible to produce carbon-free hydrogen. Switching to hydrogen-powered shipping
-        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce
-        by switching to hydrogen depends on the way that it is produced. In the
-        <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a>
-        section you can determine how this is done.
+        This slider determines what percentage of domestic shipping freight tonne-kilometres is carried out
+        by hydrogen-powered vessels. <br/><br/>
+        Hydrogen-powered vessels are a new technology that is still under development.
+        Depending on the hydrogen production method, the use of hydrogen in shipping can contribute
+        to decarbonisation.<br/><br/>
+        Go to the <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to select
+        the method of hydrogen production.
     transport_ship_using_electricity_share:
-      title: Electric
+      title: Electricity
       short_description:
-      description: "With this slider you can set the percentage of shipping freight kilometers traveled by
-        electric ships. \r\n<br/><br/>\r\n
-        (Fully) electric ships use batteries to bring cargo from a to b. Batteries in combination with
-        an electric engine are around twice as efficient compared to combustion engines resulting in
-        a decline in energy use. Currently battery technology does not allow ships to travel large
-        distances efficiently due to the weight of the battery which means batteries should be
-        charged or replaced often. \r\n<br/><br/>\r\n
-        With this slider, you can also model the demand for On-shore Power Supply (OPS).
-        OPS allows ships to plug in at the harbor they are visiting, reducing the need for fossil fuels to maintain their power supply.
-        \r\n<br/><br/>\r\n
-        Checkout the technical and financial properties below for more information."
+      description: |
+        This slider determines what percentage of domestic shipping freight tonne-kilometres is
+        carried out by electric vessels. This slider can be used to model the demand
+        for onshore power supply (OPS). <br/><br/>
+        Electric vessels are a new technology still in development. Due to the size of the
+        vessels and the long distances they cover, it is likely that these vessels will rely on
+        large battery systems.
     transport_ship_using_ammonia_share:
       title: Ammonia
       short_description:
       description: |
-        Like hydrogen-powered shipping, ammonia-powered shipping is a novel technology. A single dominant
-        design has yet to emerge for this type of ship. Here we have chosen to use the specifications of
-        an ammonia-powered ship using an internal combustion engine. See the "Technical and financial
-        properties" for more information. </br></br>
-        It is technically possible to produce carbon-free ammonia. Switching to ammonia-powered shipping
-        therefore offers a way to decarbonize freight transport by ships. How much emissions you actually reduce
-        by switching to ammonia depends on the way that it is produced. In the
-        <a href=/scenario/supply/hydrogen/ammonia-production> Ammonia production</a>
-        section you can determine how this is done. </br></br>
-        Compared to hydrogen-powered ships the main benefit of using ammonia is that it's easier to store.
-        Ammonia turns liquid at a temperature much closer to zero than hydrogen, making liquefied storage
-        of ammonia less energy-intensive. Alternatively, compressed ammonia has a substantialy
-        higher volumetric energy density than hydrogen at the same pressure, meaning that it takes
-        up less space to transport the same amount of fuel.
+        This slider determines what percentage of domestic shipping freight tonne-kilometres is
+        carried out by vessels running on ammonia. <br/><br/>
+        Like hydrogen-powered ships, ammonia-powered ships are a relatively new technology.
+        The main advantage of ammonia compared to hydrogen is that it is easier to store because it
+        is liquid at a temperatures much closer to zero than hydrogen. This makes storage of liquid
+        ammonia less energy-intensive.<br/><br/>
+        The ETM assumes by default that ammonia is produced on-site in the
+        <a href="/scenario/demand/industry/fertilizers">fertilizer sector</a>. This local production
+        can be replaced by ammonia import, which can be configured in the
+        <a href="/scenario/supply/hydrogen/ammonia-production">Ammonia production</a> section.
     transport_ship_using_methanol_mix_share:
       title: Methanol (mix)
       short_description:
       description: |
-       This slider sets the percentage of inland shipping kilometers traveled by vessels running on
-       methanol mix. Used methanol can consist of fossil, synthetic and biomethanol.
-       Go to <a href="/scenario/demand/transport_fuels/domestic-navigation">Transport
-       fuels</a> to set the methanol mix.
+       This slider determines what percentage of domestic shipping freight tonne-kilometres is carried
+       out by vessels powered by methanol. <br/><br/>
+       Methanol has potential as an alternative to diesel vessels due to its lower emissions of
+       sulphur oxides and particulate matter. Depending on the production method of methanol,
+       methanol-powered vessels can substantially reduce CO<sub>2</sub> emissions from the shipping
+       sector.<br/><br/>
+       The methanol used may consist of fossil, synthetic and biomethanol.
+       Go to <a href="/scenario/demand/transport_fuels/international-navigation">
+       Transport fuels</a> to configure the methanol mix.
+       Go to the <a href="/scenario/supply/fuel_production/overview">
+       Liquid fuels and feedstocks</a> section to configure the production of these fuels.
     transport_trucks_share:
       title: Trucks
-      short_description: ''
-      description: "Will transport by truck increase? Compared to rail or inland navigation,
-        truck transportation is relatively inefficient and polluting. Trucks are practical,
-        however, in that they can reach nearly any destination. They are most suited
-        for transporting goods over relatively short distances.\r\n<br/><br/>\r\n
-        Note that trucks may also include non-road mobile machinery, depending on your
-        selected region. Go to <a href=\"/scenario/data/data_sources/present-year-data\"
-        >Source data</a> to see whether this is the case for your region."
+      short_description:
+      description: |
+        This slider sets the share of freight tonne-kilometres that will be covered by trucks.
     transport_ships_share:
       title: Domestic navigation
-      short_description: ''
-      description: What do you think will happen to transport by ship? Will this decrease
-        or increase? Ships are by far the most energy efficient mode of transport,
-        but they depend on high quality infrastructure for inland navigation and they
-        are relatively slow. They are ill-suited for transportation over short distances.
+      short_description:
+      description: |
+        This slider sets the share of freight tonne-kilometres that will be covered by domestic
+        vessels.
     transport_useful_demand_freight_tonne_kms:
       title: Freight transport
       short_description:
-      description: Do you believe that more or less freight will be transported in
-        the future? Please indicate by what percentage per year you think the number
-        of 'freight tonne kilometres' will change.
+      description: |
+        This slider sets the annual increase or decrease of freight tonne-kilometers. <br/><br/>
+        The total freight tonne-kilometers directly affects energy demand: an increase in
+        freight tonne-kilometers leads to increased energy demand, whereas a decrease in
+        freight tonne-kilometers leads to a decreased energy demand.
     transport_freight_trains_share:
       title: Trains
       short_description:
-      description: What do you think will happen to freight transport by rail? Trains
-        are relatively energy-efficient, but depend on the presence of high-quality
-        infrastructure.
+      description: |
+        This slider sets the share of freight tonne-kilometres that will be covered by trains.
     transport_freight_train_using_electricity_share:
-      title: Electric
+      title: Electricity
       short_description:
-      description: "Electric trains are the standard in all developed regions of the
-        world. They are a very energy efficient and rather clean form of transport.
-        They are not particularly flexible of course, and rely on expensive electric
-        infrastructure, so they will never fully replace diesel trains."
+      description: |
+        This slider determines what percentage of the train freight tonne-kilometres is
+        carried out by electric trains. <br/><br/>
+        Electric trains are the standard in all developed regions of the world.
+        They are energy-efficient and produce no direct CO<sub>2</sub> emissions.
+        However, electric trains do depend on electrical infrastructure.
     transport_freight_train_using_hydrogen_share:
       title: Hydrogen
-      short_description: ''
-      description: "What percentage of all freight trains will be hydrogen fuelled vehicles
-        in the future?<br/><br/>\r\nHydrogen is an energy carrier - not an energy
-        source -, so it has to be produced first. In the <a href=\"/scenario/supply/hydrogen/hydrogen-production\"
-        >hydrogen production section</a> you can determine how this is done - through
-        steam reforming of methane (a powerful greenhouse gas) or through green electrolysis.\r\n<br/><br/>\r\nHydrogen
-        trains (in the ETM) are fuel cell electric vehicles (FCEVs). FCEVs are electric vehicles, but
-        they differ from electric vehicles in the sense that the electricity is not
-        stored on board in a battery, but instead generated in the train itself."
+      short_description:
+      description: |
+        This slider determines what percentage of train freight tonne-kilometres is
+        carried out by hydrogen trains. <br/><br/>
+        Vehicles powered by hydrogen and electricity have strong potential to reduce
+        CO<sub>2</sub> emissions in the transport sector.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section
+        to select the method of hydrogen production.
     transport_freight_train_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description: "Diesel-powered trains are not uncommon as they do not rely on
-        expensive electricity infrastructure. They are ideal for very remote and sparsely
-        populated regions, or for international transport of goods. Because Europe
-        is a patchwork of differing standards for powerlines, electric trains often
-        cannot cross borders in Europe.
-        In the <a href=\"/scenario/demand/transport_fuels/rail-transport\" >Rails transport
-        section</a> you can set the diesel mix for rail transport."
+      description: |
+        This slider determines what percentage of train freight tonne-kilometres is
+        carried out by diesel trains. <br/><br/>
+        Diesel trains are still fairly common because they do not depend on
+        electrical infrastructure. This makes them suitable for remote
+        and sparsely populated areas.<br/><br/>
+        The diesel may consist of a mix of diesel and biodiesel. Go to
+        <a href="/scenario/demand/transport_fuels/rail-transport">Transport fuels</a>
+        to configure the composition of diesel and biodiesel in the diesel mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstocks</a> section to configure the production
+        of these fuels.
     transport_vehicle_using_electricity_efficiency:
       title: Electric vehicles
-      short_description: ''
-      description: "Here you can indicate how much more efficient future electric
-        vehicles will become every year. Electric vehicles include all vehicles that
-        can possibly run on electricity: cars, trains, trucks, trams, metros, buses,
-        motorcycles, bicycles.\r\n<br/><br/>\r\nMost efficiency improvement is expected
-        to come from battery improvements, since electric engines are inherently very
-        efficient already. Most losses occur in charge/discharge cycles."
+      short_description:
+      description: |
+        This slider sets the annual increase in efficiency of electric vehicles.
+        This slider applies to the following vehicles that can be powered
+        electrically: cars, motorcycles, e-bikes, buses, trams, metros, vans and
+        trucks. <br/><br/>
+        The greatest efficiency improvements are expected for batteries, as
+        electric motors are naturally efficient and most losses occur during charging
+        and discharging.<br/><br/>
+        Go to the
+        <a href="/scenario/demand/transport/overview">Transport</a> section to make assumptions about
+        the share of electric vehicles in different transport modes.
     transport_vehicle_combustion_engine_efficiency:
       title: Combustion engine vehicles
-      short_description: ''
-      description: "Here you can indicate how much more efficient future fossil-fuelled
-        vehicles will become every year. For example: new cars become almost 2% more
-        efficient every year. \r\n<br/><br/>\r\nSome people believe these vehicles
-        will become much more efficient once competition from electric vehicles becomes
-        fiercer."
+      short_description:
+      description: |
+        This slider sets the annual increase in efficiency of vehicles with
+        combustion engines. This slider applies to the following vehicles with
+        combustion engines: cars, motorcycles, buses, vans and trucks.<br/><br/>
+        Go to the
+        <a href="/scenario/demand/transport/overview">Transport</a> section to make assumptions about
+        the share of vehicles with combustion engines in different transport modes.
     transport_ships_efficiency:
       title: Ships
-      short_description: ''
-      description: Here you can indicate how much more efficient future ships will
-        become every year. <br/><br/>Ships are already quite energy efficient, but
-        there is some room for improvement.
+      short_description:
+      description: |
+        This slider sets the annual increase in efficiency of ships.<br/><br/>
+        Go to the
+        <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
+        >Domestic navigation technology</a> section to make assumptions about the share of various
+        shipping technologies for domestic navigation.
+        Go to the
+        <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
+        >International navigation technology</a> section to set this for international shipping.
     transport_planes_efficiency:
       title: Airplanes
-      short_description: ''
-      description: "Here you can indicate how much more efficient future airplanes
-        will become every year. <br/> <br/>\r\nThere is some room for improvement,
-        but not much."
+      short_description:
+      description: |
+        This slider sets the annual increase in efficiency of airplanes.<br/><br/>
+        Go to the
+        <a href="/scenario/demand/transport_passenger_transport/domestic-aviation-technology"
+        >Domestic aviation technology</a> section to make assumptions about the share of various
+        technologies for domestic aviation.
+        Go to the
+        <a href="/scenario/demand/transport_international_transport/international-aviation-technology"
+        >International aviation technology</a> section to set this for international aviation.
     transport_trains_efficiency:
       title: Trains
-      short_description: ''
-      description: Here you can indicate how much more efficient future trains will
-        become every year. Trains are already quite energy efficient.
+      short_description:
+      description: |
+        This slider sets the annual increase in efficiency of trains.<br/><br/>
+        Go to
+        <a href="/scenario/demand/transport_passenger_transport/train-technology"
+        >this section</a> to make assumptions about the share of various
+        technologies for passenger trains.
+        Go to
+        <a href="/scenario/demand/transport_freight_transport/train-technology"
+        >this section</a> to set this for freight trains.
     transport_vehicle_using_hydrogen_efficiency:
       title: Hydrogen vehicles
       short_description:
-      description: "Here you can indicate how much more efficient future hydrogen
-        vehicles will become every year. Hydrogen vehicles include all vehicles that
-        can run on hydrogen: cars, buses and trucks.\r\n<br/><br/>\r\nSince hydrogen
-        vehicles are a rather novel technology, there is still quite some room for
-        improvement. The electric engine is very efficient already, but the hydrogen
-        fuel cell stack (the part that generates electricity) can perform better."
+      description: |
+        This slider sets the annual increase in efficiency of hydrogen-powered
+        vehicles. This slider applies to the following vehicles that can
+        operate on hydrogen: cars, buses, vans and trucks.<br/><br/>
+        Go to the
+        <a href="/scenario/demand/transport/overview">Transport</a> section to make assumptions about
+        the share of hydrogen-powered vehicles in different transport modes.
     transport_van_using_electricity_share:
-      title: Electric
+      title: Electricity
       short_description:
-      description: "What percentage of all vans are fully electric in the future?"
+      description: |
+        This slider determines what percentage of van freight tonne-kilometers is traveled by
+        electric vans. <br/><br/>
+        Electric vans are more efficient in energy use compared to vans
+        with combustion engines, such as diesel vans. Additionally, electric
+        vans have no direct emissions, which contributes to cleaner air in urban areas.<br/><br/>
+        The batteries of electric vehicles can be used for electricity storage. Go to the
+        <a href="/scenario/flexibility/flexibility_storage/batteries-in-electric-vehicles">
+        Flexibility</a> section to set this.
     transport_van_using_hydrogen_share:
       title: Hydrogen
       short_description:
-      description: "What percentage of all vans use hydrogen in the future?"
+      description: |
+        This slider determines what percentage of van freight tonne-kilometers is traveled by
+        hydrogen vans.<br/><br/>
+        Vehicles using hydrogen and electricity have great potential to reduce CO<sub>2</sub>
+        emissions in the transport sector.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen</a> section to choose the
+        method for hydrogen production.
     transport_van_using_diesel_mix_share:
       title: Diesel
       short_description:
-      description:
-        "What percentage of all vans use diesel in the future?
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the diesel mix for road transport."
+      description: |
+        This slider determines what percentage of van freight tonne-kilometers is traveled by
+        diesel vans. <br/><br/>
+        The diesel can consist of a mix of diesel and biodiesel. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of diesel and biodiesel in the diesel mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_van_using_gasoline_mix_share:
       title: Gasoline
       short_description:
-      description: "What percentage of all vans use gasoline in the future?
-        \r\n<br/><br/>\r\n
-        In the <a href=\"/scenario/demand/transport_fuels/road-transport\" >Road transport
-        section</a> you can set the gasoline mix for road transport."
+      description: |
+        This slider determines what percentage of van freight tonne-kilometers is traveled by
+        gasoline vans. <br/><br/>
+        The gasoline can consist of a mix of gasoline and bio-ethanol. Go to
+        <a href="/scenario/demand/transport_fuels/road-transport">Transport fuels</a>
+        to set the composition of gasoline and bio-ethanol in the mix.
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of these fuels.
     transport_van_using_lpg_share:
-      title: LPG
-      short_description:
-      description: "What percentage of all vans use LPG in the future?"
-    transport_van_using_compressed_natural_gas_share:
-      title: Compressed gas
+      title: Liquefied petroleum gas (LPG)
       short_description:
       description: |
-        What percentage of all vans use compressed gas in the future? Compressed natural
-        gas in these cars comes from the gas network. This means it can contain
-        green gas if in the current scenario this is mixed in with natural gas on
-        the gas network."
+        This slider determines what percentage of van freight tonne-kilometers is traveled by
+        vans running on Liquefied Petroleum Gas (LPG).<br/><br/>
+        Compared to diesel or gasoline, LPG typically has lower CO<sub>2</sub> emissions.<br/><br/>
+        Go to the <a href="/scenario/supply/fuel_production/overview">
+        Liquid fuels and feedstock</a> section to set the production of LPG via oil refineries.
+    transport_van_using_compressed_natural_gas_share:
+      title: Compressed natural gas (CNG)
+      short_description:
+      description: |
+        This slider determines what percentage of van freight tonne-kilometers is traveled by
+        vans running on compressed natural gas (CNG).<br/><br/>
+        Vans running on CNG emit less CO<sub>2</sub> than gasoline and diesel vans. Moreover, it
+        is possible to blend in green gas, which further reduces the environmental impact.<br/><br/>
+        Go to the
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">Biomass</a> section to increase
+        the share of green gas in the gas network, so that the share of green gas in CNG vans
+        also increases.
     transport_vans_share:
       title: Vans
       short_description:
-      description: "Will transport via vans increase in the future?"
+      description: |
+        This slider sets the share of freight tonne-kilometres that will be covered by vans.

@@ -91,15 +91,17 @@ en:
         on the investments costs per grid level. These can be set in the <a href=\"/scenario/costs/infrastructure/electricity-infrastructure-costs\"
         >Costs</a> section."
     flexibility_flexibility_demand_response_ev:
-      title: Demand response - electric vehicles
+      title: Demand response - electric cars
       short_description:
-      description: "Demand response is a form of flexibility where energy demand is
+      description: |
+        Demand response is a form of flexibility where energy demand is
         adjusted or shifted in time. The goal is to reduce peaks in energy demand.
-        With the sliders in this section, you can adjust the charging behaviour of
-        electric vehicles. The chart shows the impact this has on the shape of the
-        electricity demand curve. \r\n<p>\r\nThe total set of electric vehicles can
-        be set in the <a href=\"/scenario/demand/transport_passenger_transport/car-technology\"
-        >car technology section</a>."
+        With the sliders in this section, the charging behaviour of
+        electric cars can be adjusted. The chart shows the impact this has on the shape of the
+        electricity demand curve. <br/><br/>
+        The total set of electric cars can
+        be set in the <a href="/scenario/demand/transport_passenger_transport/car-technology"
+        >car technology section</a>.
     flexibility_flexibility_demand_response_hhp:
       title: Demand response - behavior of hybrid heat pumps
       short_description:

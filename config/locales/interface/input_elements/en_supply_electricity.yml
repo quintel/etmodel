@@ -200,25 +200,25 @@ en:
       short_description: ''
       description: |
         This slider adjusts the total electric capacity of oil-fired power plants.
-        <br/><br/> Oil plants are uncommon in Europe. Due to high costs and low 
-        efficiency, they are rarely used except as backup during power shortages or 
-        in areas without a stable gas supply. Oil plants produce relatively high 
+        <br/><br/> Oil plants are uncommon in Europe. Due to high costs and low
+        efficiency, they are rarely used except as backup during power shortages or
+        in areas without a stable gas supply. Oil plants produce relatively high
         amounts of CO<sub>2</sub>.<br/><br/> Go to <a href="/scenario/costs/
-        specs_electricity/oil-plants">Costs & Efficiencies</a> to set the costs and 
+        specs_electricity/oil-plants">Costs & Efficiencies</a> to set the costs and
         efficiencies of these plants.
     capacity_of_energy_power_engine_diesel:
       title: Diesel generator
       short_description:
       description: |
         This slider adjusts the total electric capacity of diesel generators.<br/>
-        <br/> 
-        Diesel generators are primarily used as emergency backup units due to 
-        their fast start-up time and flexibility. They have relatively high fuel 
-        costs and low efficiency, so they are mostly deployed for emergency power 
-        supply or temporary demand peaks. Diesel plants produce relatively high 
-        amounts of CO<sub>2</sub>. <br/><br/> 
+        <br/>
+        Diesel generators are primarily used as emergency backup units due to
+        their fast start-up time and flexibility. They have relatively high fuel
+        costs and low efficiency, so they are mostly deployed for emergency power
+        supply or temporary demand peaks. Diesel plants produce relatively high
+        amounts of CO<sub>2</sub>. <br/><br/>
         Go to <a href="/scenario/costs/
-        specs_electricity/oil-plants">Costs & Efficiencies</a> to set the costs and 
+        specs_electricity/oil-plants">Costs & Efficiencies</a> to set the costs and
         efficiencies of these plants.
     capacity_of_energy_power_hydro_river:
       title: River
@@ -292,172 +292,155 @@ en:
       title: Nuclear 3rd Gen
       short_description: ''
       description: |
-        This slider adjusts the total electric capacity of third-generation nuclear 
-        power plants.<br/><br/> 
-        Third-generation nuclear plants offer improved 
-        safety and efficiency compared to second-generation plants. Construction 
-        typically takes 11–12 years and is costly, but once operational, they 
-        generally run at full capacity more than 80% of the time due to low 
-        operational costs. Below, this type of nuclear plant can be modeled as 
-        <em>must-run</em>. <br/><br/> 
+        This slider adjusts the total electric capacity of third-generation nuclear
+        power plants.<br/><br/>
+        Third-generation nuclear plants offer improved
+        safety and efficiency compared to second-generation plants. Construction
+        typically takes 11–12 years and is costly, but once operational, they
+        generally run at full capacity more than 80% of the time due to low
+        operational costs. Below, this type of nuclear plant can be modeled as
+        <em>must-run</em>. <br/><br/>
         Go to <a href="/scenario/costs/
-        specs_electricity/nuclear-plants">Costs & Efficiencies</a> to set the costs 
+        specs_electricity/nuclear-plants">Costs & Efficiencies</a> to set the costs
         and efficiencies of these nuclear plants.
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
       title: Nuclear 2nd Gen
       short_description: ''
       description: |
-        This slider adjusts the total electric capacity of second-generation 
-        nuclear power plants.<br/><br/> 
-        Second-generation nuclear plants use 
-        outdated technology and are no longer being constructed. Due to high 
-        capital costs and low operational costs, large reactors typically operate 
-        at full capacity as much as possible. Below, this type of nuclear plant can 
+        This slider adjusts the total electric capacity of second-generation
+        nuclear power plants.<br/><br/>
+        Second-generation nuclear plants use
+        outdated technology and are no longer being constructed. Due to high
+        capital costs and low operational costs, large reactors typically operate
+        at full capacity as much as possible. Below, this type of nuclear plant can
         be modeled as <em>must-run</em>.<br/><br/>
         Go to <a href="/scenario/costs/
-        specs_electricity/nuclear-plants">Costs & Efficiencies</a> to set the costs 
+        specs_electricity/nuclear-plants">Costs & Efficiencies</a> to set the costs
         and efficiencies of these nuclear plants.
     capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
       title: Nuclear small modular reactor
       short_description:
       description: |
-        This slider adjusts the total electric capacity of small modular nuclear 
+        This slider adjusts the total electric capacity of small modular nuclear
         reactors.<br/><br/>
-         Small modular reactors are smaller than traditional 
-        nuclear power plants and can be factory-built and then assembled on-site. 
-        This modular design enables shorter construction times, lower costs, and 
-        more efficient use of space. Since the technology is still under 
-        development, it remains uncertain whether the expected benefits, such as 
-        lower costs per MW, will actually be realized.<br/><br/> 
-        Go to <a href="/scenario/costs/specs_electricity/nuclear-plants">Costs & Efficiencies</a> 
+         Small modular reactors are smaller than traditional
+        nuclear power plants and can be factory-built and then assembled on-site.
+        This modular design enables shorter construction times, lower costs, and
+        more efficient use of space. Since the technology is still under
+        development, it remains uncertain whether the expected benefits, such as
+        lower costs per MW, will actually be realized.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/nuclear-plants">Costs & Efficiencies</a>
         to set the costs and efficiencies of these nuclear plants.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
       description: ''
     capacity_of_energy_power_ultra_supercritical_coal:
       title: Pulverized coal
-      short_description: ''
+      short_description:
       description: |
-        This slider adjusts the total electric capacity of ultra-supercritical 
-        pulverized coal power plants. <br/><br/> 
-        A pulverized coal plant typically functions as a baseload power plant and therefore has a 
-        high utilization rate 
-        This type of plant is common in countries with strict environmental standards. 
-        Coal plants are among the most polluting energy sources, with CO<sub>2</sub> 
-        emissions per MWh generated approximately twice as high as those of a 
-        gas-fired power plant. 
-        <br/><br/> 
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants.<br/><br/>
+        A pulverized coal power plant is a baseload power plant.
+        This type of plant is common in countries with strict environmental standards. Coal-fired
+        power plants are among the most polluting power plants, with CO<sub>2</sub> emissions per
+        MWh generated that are approximately twice as high as those of a gas-fired power
+        plant.<br/><br/>
+        Go to:
         <ul>
-        <li>Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs & 
-        Efficiencies</a> to set the costs and efficiencies of these plants.</li> <li>
-        Go to <a href="/scenario/emissions/ccus/
-        capture-of-co2-in-energy-sector">Carbon Capture and Storage (CCS)</a> to 
-        configure CO<sub>2</sub> capture.</li>
+        <li><a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to set the costs and efficiencies for these power plants.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        Carbon capture and storage (CCS)</a> to configure CO<sub>2</sub> capture.
         </ul>
     capacity_of_energy_power_combined_cycle_coal:
       title: Coal IGCC
-      short_description: ''
+      short_description:
       description: |
-        This slider adjusts the total electric capacity of coal gasification plants 
-        (IGCC). <br/><br/>
-        In a coal gasification plant, coal is converted into 
-        syngas, which is then combusted. This technology is more efficient and cleaner 
-        than pulverized coal plants but is still at an early commercial stage. While 
-        coal plants typically operate at full capacity more than 75% of the time, coal 
-        gasification offers more flexibility than conventional coal plants. <br/><br/> 
-        <ul> 
-        <li>Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs & 
-        Efficiencies</a> to set the costs and efficiencies of these plants.</li> 
-        <li>Go to <a href="/scenario/emissions/ccus/
-        capture-of-co2-in-energy-sector">Carbon Capture, Utilization, and Storage 
-        (CCUS)</a> to configure CO<sub>2</sub> capture.</li> 
+        This slider determines the total electrical capacity of coal gasification power
+        plants.<br/><br/>
+        In a coal gasification power plant, coal is converted into syngas, which is then combusted.
+        This technology is more efficient and cleaner than pulverized coal power plants, but is
+        still in an early commercial stage. Although coal-fired power plants often operate
+        at full capacity, coal gasification offers more flexibility than conventional
+        coal-fired power plants.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to set the costs and efficiencies for these power plants.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        Carbon capture, utilization and storage (CCUS)</a> to configure CO<sub>2</sub> capture.
         </ul>
     capacity_of_energy_power_supercritical_coal:
       title: Coal conventional
-      short_description: ''
+      short_description:
       description: |
-        This slider adjusts the total electric capacity of conventional coal-fired 
-        power plants. <br/><br/> 
-        A coal-fired power plant typically functions as a baseload power plant and therefore has a 
-        high utilization rate. Due to strict 
-        environmental regulations, this type of plant is becoming less common. 
-        <br/><br/> 
-        Go to <a href="/scenario/costs/specs_electricity/
-        coal-plants">Costs & Efficiencies</a> to adjust the costs and efficiencies of 
-        these plants.
+        This slider determines the total electrical capacity of conventional coal-fired power
+        plants.<br/><br/>
+        A coal-fired power plant is a baseload power plant and therefore often operates at full
+        capacity. This type of plant is becoming less common due to strict environmental
+        legislation.<br/><br/>Go to <a href="/scenario/costs/specs_electricity/coal-plants">
+        Costs & efficiencies</a> to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_power_ultra_supercritical_lignite:
       title: Coal lignite
-      short_description: ''
+      short_description:
       description: |
-        This slider adjusts the total electric capacity of lignite power plants.
-        <br/><br/> 
-        Lignite plants produce coal-based electricity and have the highest 
-        CO<sub>2</sub> emissions of all power plants. Lignite plants typically function as baseload 
-        power plants and therefore have a high utilization rate. Construction is 
-        only possible when there is a local lignite supply in the region. <br/><br/> Go to <a 
-        href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">Carbon 
-        Capture, Utilization, and Storage (CCUS)</a> to configure CO<sub>2</sub> 
-        capture.
+        This slider determines the total electrical capacity of lignite power plants.<br/><br/>
+        Lignite power plants produce coal-based electricity and have the highest CO<sub>2</sub>
+        emissions of all power plants. They function as baseload power plants.
+        Construction is only possible with a local lignite supply.<br/><br/>
+        Go to <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        Carbon capture, utilization and storage (CCUS)</a> to configure CO<sub>2</sub> capture.
     capacity_of_energy_chp_ultra_supercritical_lignite:
       title: Lignite CHP
-      short_description: ''
+      short_description:
       description: |
-        This slider adjusts the total electric capacity of lignite-fired combined heat 
-        and power (CHP) plants.<br/><br/> 
-        In addition to electricity, these 
-        plants supply heat to a district heating network. The production of heat 
-        slightly reduces the electricity efficiency. However, the additional 
-        investment for heat production is relatively limited compared to the total 
-        costs of a lignite plant. Construction is 
-        only possible when there is a local lignite supply in the region.
+        This slider determines the total electrical capacity of lignite power plants with
+        combined heat and power (CHP). <br/><br/>
+        Lignite CHP plants generate both electricity and heat, making them more efficient with
+        energy than conventional lignite power plants. However, they are CO<sub>2</sub>-
+        intensive and dependent on a local lignite supply.
     capacity_of_energy_chp_ultra_supercritical_coal:
       title: Pulverized coal CHP
-      short_description: ''
+      short_description:
       description: |
-        This slider adjusts the total electric capacity of ultra-supercritical 
-        pulverized coal CHP plants.
-        <br/><br/> In addition to electricity, these 
-        plants supply heat to a district heating network. The production of heat 
-        slightly reduces the electricity efficiency. However, the additional 
-        investment for heat production is relatively limited compared to the total 
-        costs of a coal plant.
-        <br/><br/> Go to <a href="/scenario/costs/
-        specs_electricity/coal-plants">Costs & Efficiencies</a> to adjust the costs 
-        and efficiencies of these plants.
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants with combined heat and power (CHP).<br/><br/>
+        The CHP supplies heat to the central heating network in addition to electricity.
+        Heat production slightly reduces electrical efficiency.
+        Compared to the total costs of a coal-fired power plant, the additional
+        investments for heat production are limited.<br/><br/>
+        Go to
+        <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
       title: Pulverized coal CHP with co-firing
       short_description:
       description: |
-        This slider adjusts the total electric capacity of ultra-supercritical 
-        pulverized coal CHP plants with 50% co-firing of wood pellets. 
-        <br/><br/>
-        In addition to electricity, these plants supply heat to a district heating
-        network. The production of heat slightly reduces the electricity efficiency.
-        However, the additional investment for heat production is relatively limited
-        compared to the total costs of a coal plant. By combining the installed
-        capacity of coal-fired CHP plants with and without wood pellet co-firing, the
-        overall biomass co-firing percentage for these plants can be adjusted. 
-        <br/><br/> 
-        Go to <a href="/scenario/costs/specs_electricity/
-        coal-plants">Costs & Efficiencies</a> to adjust the costs and efficiencies of 
-        these plants.
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants with combined heat and power (CHP) and 50% wood pellet
+        co-firing.<br/><br/>
+        The CHP supplies heat to the central heating network in addition to electricity.
+        Heat production slightly reduces electrical efficiency.
+        Compared to the total costs of a coal-fired power plant, the additional
+        investments for heat production are limited. By combining the installed capacity
+        of pulverized coal CHPs with and without wood pellet co-firing, the total
+        co-firing percentage of biomass at these plants can be adjusted.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Pulverized coal with co-firing
       short_description:
       description: |
-        This slider adjusts the total electric capacity of ultra-supercritical 
-        pulverized coal power plants with 50% co-firing of wood pellets. 
-        <br/><br/> 
-        A pulverized coal plant typically functions as a baseload power plant and therefore has a 
-        high utilization rate. This type of plant is common in countries 
-        with strict environmental standards. Coal plants are among the most polluting 
-        energy sources, with CO<sub>2</sub> emissions per MWh generated approximately 
-        twice as high as those of a gas-fired power plant. By combining the installed 
-        capacity of pulverized coal plants with and without co-firing of wood pellets, 
-        the overall biomass co-firing share of these plants can be adjusted. <br/>
-        <br/>
-        Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs & 
-        Efficiencies</a> to adjust the costs and efficiencies of these plants.
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants with 50% wood pellet co-firing.<br/><br/>
+        A pulverized coal power plant is a baseload power plant. This type of plant is
+        common in countries with strict environmental standards. Coal-fired power plants are among
+        the most polluting power plants, with CO<sub>2</sub> emissions per MWh generated that are
+        approximately twice as high as those of a gas-fired power plant. By combining the installed
+        capacity of pulverized coal power plants with and without wood pellet co-firing, the
+        total co-firing percentage of biomass at these plants can be adjusted.<br/>
+        <br/> Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs &
+        efficiencies</a> to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_power_wind_turbine_inland:
       title: Wind onshore
       short_description:
@@ -588,84 +571,84 @@ en:
       title: Gas conventional
       short_description: ''
       description: |
-        This slider adjusts the total electric capacity of conventional gas-fired 
-        power plants. <br/><br/> These conventional plants burn natural gas to 
-        generate steam, which then drives a steam turbine. They are less efficient 
-        than combined cycle gas turbine (CCGT) plants and less flexible than simple 
-        gas turbines but can operate continuously and steadily for long periods. As a 
-        result, they are mainly used for baseload or medium-term periods of increased 
+        This slider adjusts the total electric capacity of conventional gas-fired
+        power plants. <br/><br/> These conventional plants burn natural gas to
+        generate steam, which then drives a steam turbine. They are less efficient
+        than combined cycle gas turbine (CCGT) plants and less flexible than simple
+        gas turbines but can operate continuously and steadily for long periods. As a
+        result, they are mainly used for baseload or medium-term periods of increased
         electricity demand. <br/><br/> Go to <a href="/scenario/costs/
-        specs_electricity/gas-plants">Costs & Efficiencies</a> to adjust the costs and 
+        specs_electricity/gas-plants">Costs & Efficiencies</a> to adjust the costs and
         efficiencies of these plants.
     capacity_of_energy_power_combined_cycle_network_gas:
       title: Gas CCGT
       short_description: ''
       description: |
-        This slider adjusts the total electric capacity of combined cycle gas turbine 
-        (CCGT) plants. <br/><br/> The gas turbine generates electricity while the 
-        waste heat is used to drive a steam turbine. This makes these plants more 
-        efficient than other gas-fired power plants. Although they are flexible in 
-        operation, they respond less quickly than simple gas turbines and are 
-        therefore mainly used for dispatchable power rather than for meeting peak 
-        demand. <br/><br/> 
+        This slider adjusts the total electric capacity of combined cycle gas turbine
+        (CCGT) plants. <br/><br/> The gas turbine generates electricity while the
+        waste heat is used to drive a steam turbine. This makes these plants more
+        efficient than other gas-fired power plants. Although they are flexible in
+        operation, they respond less quickly than simple gas turbines and are
+        therefore mainly used for dispatchable power rather than for meeting peak
+        demand. <br/><br/>
         <ul>
-        <li>Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs & 
-        Efficiencies</a> to set the costs and efficiencies of these plants.</li> 
+        <li>Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        Efficiencies</a> to set the costs and efficiencies of these plants.</li>
         <li>Go to <a href="/scenario/emissions/ccus/
-        capture-of-co2-in-energy-sector">Carbon Capture and Storage (CCS)</a>  
+        capture-of-co2-in-energy-sector">Carbon Capture and Storage (CCS)</a>
         to configure CO<sub>2</sub> capture for this type of gas plant.</li>
         </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas CCGT CHP
       short_description: ''
       description: |
-        This slider adjusts the total electric capacity of combined cycle gas turbine 
-        (CCGT) plants with combined heat and power (CHP). <br/><br/> The gas turbine 
-        generates electricity while the waste heat is used to drive a steam turbine. 
-        This makes these plants more efficient than other gas-fired power plants. 
-        Additionally, the waste heat is utilized for a district heating network or for 
-        industrial applications. This combination makes the plant suitable for 
-        long-term operation, with high efficiency for both electricity and heat 
+        This slider adjusts the total electric capacity of combined cycle gas turbine
+        (CCGT) plants with combined heat and power (CHP). <br/><br/> The gas turbine
+        generates electricity while the waste heat is used to drive a steam turbine.
+        This makes these plants more efficient than other gas-fired power plants.
+        Additionally, the waste heat is utilized for a district heating network or for
+        industrial applications. This combination makes the plant suitable for
+        long-term operation, with high efficiency for both electricity and heat
         production. <br/><br/> Go to <a href="/scenario/costs/specs_electricity/
-        gas-plants">Costs & Efficiencies</a> to adjust the costs and 
+        gas-plants">Costs & Efficiencies</a> to adjust the costs and
         efficiencies of these plants.
     capacity_of_energy_power_turbine_network_gas:
       title: Gas turbine
       short_description:
       description: |
-        This slider adjusts the total electric capacity of gas turbines. <br/><br/> Gas 
-        turbines are simpler plants than combined cycle gas turbine (CCGT) plants but 
-        are less efficient. The advantage of gas turbines is their ability to start up 
-        and shut down quickly. This makes them suitable for meeting peak demand and 
-        balancing the electricity grid. Because these plants are mainly used during 
-        peak demand, their total operating hours and annual production are limited. 
-        <br/><br/> Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs & 
+        This slider adjusts the total electric capacity of gas turbines. <br/><br/> Gas
+        turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
+        are less efficient. The advantage of gas turbines is their ability to start up
+        and shut down quickly. This makes them suitable for meeting peak demand and
+        balancing the electricity grid. Because these plants are mainly used during
+        peak demand, their total operating hours and annual production are limited.
+        <br/><br/> Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
         Efficiencies</a> to adjust the costs and efficiencies of these plants.
     capacity_of_energy_power_engine_network_gas:
       title: Gas combustion engine
       short_description:
       description: |
         This slider adjusts the total electric capacity of gas engine plants. <br/>
-        <br/> Gas engines are large combustion engines that directly drive a 
-        generator. They consist of multiple units that can start up and shut down 
-        quickly without loss of efficiency. Despite higher operational costs, the 
-        total costs of gas engines are relatively low compared to other gas-fired 
-        power plants. This makes gas engines suitable as backup alongside variable 
-        electricity production (for example, from wind and solar energy). <br/><br/> 
-        Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs & 
+        <br/> Gas engines are large combustion engines that directly drive a
+        generator. They consist of multiple units that can start up and shut down
+        quickly without loss of efficiency. Despite higher operational costs, the
+        total costs of gas engines are relatively low compared to other gas-fired
+        power plants. This makes gas engines suitable as backup alongside variable
+        electricity production (for example, from wind and solar energy). <br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
         Efficiencies</a> to adjust the costs and efficiencies of these plants.
     capacity_of_energy_chp_local_engine_network_gas:
       title: Gas motor CHP
       short_description:
       description: |
-        This slider adjusts the total electric capacity of gas engine plants with 
-        combined heat and power (CHP). <br/><br/> Gas engines are large combustion 
-        engines that directly drive a generator. Gas engines with CHP produce both 
-        electricity and heat, which is used for a district heating network or 
-        industrial applications. Gas engines consist of multiple units that can start 
-        up and shut down quickly without loss of efficiency. This makes them suitable 
+        This slider adjusts the total electric capacity of gas engine plants with
+        combined heat and power (CHP). <br/><br/> Gas engines are large combustion
+        engines that directly drive a generator. Gas engines with CHP produce both
+        electricity and heat, which is used for a district heating network or
+        industrial applications. Gas engines consist of multiple units that can start
+        up and shut down quickly without loss of efficiency. This makes them suitable
         for balancing the electricity grid. <br/><br/> Go to <a href="/scenario/
-        costs/specs_electricity/gas-plants">Costs & Efficiencies</a> to adjust 
+        costs/specs_electricity/gas-plants">Costs & Efficiencies</a> to adjust
         the costs and efficiencies of these plants.
     green_gas_total_share:
       title: Green gas
@@ -708,21 +691,21 @@ en:
     share_of_energy_steel_energy_production_coal_gas:
       title: Energy production
       description: |
-        This slider determines which share of the produced coal gases is used in 
-        power plants and combined heat and power plants (CHP).<br/><br/> Coal gas 
+        This slider determines which share of the produced coal gases is used in
+        power plants and combined heat and power plants (CHP).<br/><br/> Coal gas
         has a high CO<sub>2</sub> content and is therefore very CO<sub>2
-        </sub>-intensive. These must-run plants operate as soon as coal gas is 
-        available, regardless of demand. An alternative is to convert the coal 
-        gases into chemical feedstock.<br/><br/> Open the <a href="#" 
-        class="open_chart" data-chart-key="merit_order_table" 
-        data-chart-location="side">Merit order table</a> to view the installed 
+        </sub>-intensive. These must-run plants operate as soon as coal gas is
+        available, regardless of demand. An alternative is to convert the coal
+        gases into chemical feedstock.<br/><br/> Open the <a href="#"
+        class="open_chart" data-chart-key="merit_order_table"
+        data-chart-location="side">Merit order table</a> to view the installed
         capacity of the coal gas plants.
     share_of_energy_steel_chemical_feedstock_coal_gas:
       title: Chemical feedstock
       description: |
-        This slider determines which share of the produced coal gases is converted 
-        into chemical feedstock (<em>steel-to-chemicals</em>).<br/><br/> A higher 
-        share results in less coal gas being used for energy production. The 
-        <em>steel-to-chemicals</em> route is still under development; therefore, 
-        the ETM does not yet model the final consumption of coal gases in the 
+        This slider determines which share of the produced coal gases is converted
+        into chemical feedstock (<em>steel-to-chemicals</em>).<br/><br/> A higher
+        share results in less coal gas being used for energy production. The
+        <em>steel-to-chemicals</em> route is still under development; therefore,
+        the ETM does not yet model the final consumption of coal gases in the
         chemical sector.

@@ -6,16 +6,20 @@
 - key: demand
   position: 10
   sidebar_item_key: introduction
-  output_element_key: final_energy_demand_per_sector_joule
+  output_element_key: final_demand_per_carrier_energetic
 - key: supply
   position: 15
   sidebar_item_key: introduction
   output_element_key: source_of_electricity_production
-- key: emissions
+- key: flexibility
   position: 20
   sidebar_item_key: introduction
-  output_element_key: emissions
-- key: costs
+  output_element_key: flexibility_hourly_carriers_inflexible_imbalance
+- key: emissions
   position: 25
+  sidebar_item_key: introduction
+  output_element_key: emissions_overview
+- key: costs
+  position: 30
   sidebar_item_key: introduction
   output_element_key: costs_overview

@@ -76,137 +76,191 @@ nl:
       title: Zon op dak (gebouwen)
       short_description:
       description: |
-        Met dit schuifje stel je het totale geïnstalleerde vermogen aan
-        zonnestroominstallaties op de daken van gebouwen in. <br/><br/>
-        Zonnepanelen zijn nog volop in ontwikkeling en ze worden
-        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
-        gebruikt wordt (in gebouwen) en dus is het niet altijd nodig om de elektriciteit
-        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
-        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
-        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
-        zo het net te ontlasten, dit kan je <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen.<br/><br/>
-        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
-        />
+        Dit schuifje bepaalt het totale elektrische vermogen van zonnepanelen op daken van
+        bedrijfsgebouwen.<br/><br/>
+        Zon op dak wekt elektriciteit op voor eigen gebruik en voor teruglevering aan het
+        net bij overproductie. De productie is afhankelijk van factoren zoals weersomstandigheden en
+        oriëntatie van de zonnepanelen. De weersafhankelijkheid maakt de elektriciteitsproductie uit
+        zonnepanelen volatiel.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weersomstandigheden</a> om het aantal vollasturen van zon-PV aan te passen.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Netbelasting</a> om de productie van zonnepanelen te beperken en het elektriciteitsnet te
+        ontlasten.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Kosten & efficiënties</a> om de investeringskosten en efficiëntie van de zonnepanelen in te stellen.</li>
+        </ul><br/>
+        Open de volgende grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">tabel</a> toont gegevens over productiebeperking van zon-PV
+        technologieën.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">grafiek</a> weergeeft de uurlijkse productie van zon-PV
+        technologieën.</li>
+        </ul>
     capacity_of_households_solar_pv_solar_radiation:
       title: Zon op dak (huishoudens)
       short_description:
       description: |
-        Met dit schuifje stel je het totale geïnstalleerde vermogen aan
-        zonnestroominstallaties op de daken van huishoudens in. <br/><br/>
-        Zonnepanelen zijn nog volop in ontwikkeling en ze worden
-        steeds efficiënter en goedkoper. Ze produceren stroom op de plek waar het
-        gebruikt wordt (in huis) en dus is het niet altijd nodig om de elektriciteit
-        te transporteren over het elektriciteitsnet. Zo worden netwerkverliezen vermeden
-        en energie bespaard. Stroom die niet wordt gebruikt kan aan het lokale netwerk
-        worden teruggeleverd. Het kan wenselijk zijn om de productie te beperken om
-        zo het net te ontlasten, dit kan je <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen. <br/><br/>
-        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier</a> aangepast worden.<br
-        />
+        Dit schuifje bepaalt het totale elektrische vermogen van zonnepanelen op daken van woningen.
+        <br/><br/>Zon op dak wekt elektriciteit op voor eigen gebruik en voor teruglevering aan het
+        net bij overproductie. De productie is afhankelijk van factoren zoals weersomstandigheden en
+        oriëntatie van de zonnepanelen. De weersafhankelijkheid maakt de elektriciteitsproductie uit
+        zonnepanelen volatiel.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weersomstandigheden</a> om het aantal vollasturen van zon-PV aan te passen.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Netbelasting</a> om de productie van zonnepanelen te beperken en het elektriciteitsnet te
+        ontlasten.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Kosten & efficiënties</a> om de investeringskosten en efficiëntie van de zonnepanelen in te stellen.</li>
+        </ul><br/>
+        Open de volgende grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">tabel</a> toont gegevens over productiebeperking van zon-PV
+        technologieën.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">grafiek</a> weergeeft de uurlijkse productie van zon-PV
+        technologieën.</li>
+        </ul>
     capacity_of_energy_power_solar_pv_solar_radiation:
       title: Zon op land
       short_description:
       description: |
-        Met dit schuifje bouw je een zonnepark op land. <br/><br/>
-        Net als windstroom is zonnestroom fluctuerend. Toch is de variatie van zonnestroom
-        beter te voorspellen. Als zeer veel zonnepanelen geïnstalleerd worden, kan
-        het nodig zijn om oplossingen te vinden voor onbalans op het laagspanningsnet.
-        In sommige gevallen is het slim om zonneparken aan te sluiten op slechts een
-        bepaald percentage van het piekvermogen, dit kan je <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">hier</a>
-        instellen.\r\n<br/><br/>
-        Je kunt het aantal vollasturen van zonnepanelen <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        De efficiëntie van zonnepanelen kan <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >hier </a> aangepast worden.<br
-        />
+        Dit schuifje bepaalt het totale elektrische vermogen van grootschalige zonneparken op
+        land.<br/><br/>
+        Zon op veld produceert elektriciteit voor levering aan het elektriciteitsnet. De productie is
+        afhankelijk van factoren zoals weersomstandigheden en oriëntatie van de zonnepanelen.
+        De weersafhankelijkheid maakt de elektriciteitsproductie uit zonnepanelen volatiel.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weersomstandigheden</a> om het aantal vollasturen van zon-PV aan te passen.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Netbelasting</a> om de productie van zonnepanelen te beperken en het elektriciteitsnet te
+        ontlasten.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Kosten & efficiënties</a> om de investeringskosten en efficiëntie van de zonnepanelen in te stellen.</li>
+        </ul><br/>
+        Open de volgende grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">tabel</a> toont gegevens over productiebeperking van zon-PV
+        technologieën.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">grafiek</a> weergeeft de uurlijkse productie van zon-PV
+        technologieën.</li>
+        </ul>
     capacity_of_energy_battery_solar_pv_solar_radiation:
       title: Zon op land (met batterijsysteem)
       short_description:
       description: |
-        Anders dan gewone installaties voor zon op land zijn deze centrales standaard uitgerust met een
-        batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
-        systeem. <br/><br/>
-        Doordat de elektriciteitsproductie door zonnecentrales volatiel is, kan de installatie
-        van veel zonnecentrales een grote impact hebben op het elektriciteitsnet. Om grote
-        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen
-        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de
-        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de
-        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit
-        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit
-        verloren gaat in dit proces. <br/><br/>
-        In het geval dat de batterij
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
-        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/><br/>
-        Zowel de aangesloten netwerkcapaciteit als het inputvermogen van de batterij wordt
-        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide
-        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in
-        de Flexibiliteit sectie, onder
-         <a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
-        Opslag elektriciteit</a>. <br/><br/>
-        Klik op de 'Technische parameters en kosten' om de specificaties van de zonnecentrale
-        PV zonder het batterijsysteem te zien. In
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="flexibility_hourly_battery_solar"
-          data-chart-location="side">
-          deze grafiek
-        </a>
-        kun je het uurlijkse gedrag van deze zonnecentrales zien.
+        Dit schuifje bepaalt het totale elektrische vermogen van grootschalige zonneparken op
+        land, geïntegreerd met batterijsysteem.<br/><br/>
+        Door zon op veld te combineren met een batterijsysteem, kan een overschot aan productie
+        worden opgeslagen en kan de batterij worden ontladen wanneer de productie lager is dan
+        de vraag. Dit draagt bij aan het ontlasten van het elektriciteitsnet.<br/><br/>
+        In het ETM wordt deze technologie gemodelleerd met een beperkte aangesloten netwerkcapaciteit.
+        Deze aangesloten netwerkcapaciteit en het geïntegreerde batterijvermogen zijn
+        relatief ten opzichte van het geïnstalleerde vermogen van het zonnepark. Deze zullen met
+        dit schuifje meeveranderen.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
+        Flexibiliteit</a> om de verhouding van de netwerkcapaciteit en het batterijvermogen ten
+        opzichte van de zonne-installatie in te stellen.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weersomstandigheden</a> om het aantal vollasturen van zon-PV aan te passen.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Kosten & efficiënties</a> om de investeringskosten en efficiëntie van de zonnepanelen in te stellen.</li>
+        </ul><br/>
+        Open de volgende grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_solar"
+        data-chart-location="side">grafiek</a> toont de uurlijkse productie van zon op veld met
+        batterijsysteem.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">tabel</a> toont gegevens over productiebeperking van zon-PV
+        technologieën.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">grafiek</a> weergeeft de uurlijkse productie van zon-PV
+        technologieën.</li>
+        </ul>
     capacity_of_energy_power_solar_pv_offshore:
       title: Zon op zee
       short_description:
       description: |
-        Met dit schuifje bouw je een grootschalig zonnepark. Dit type zonnepark drijft op zee. </br></br>
-        Deze technologie wordt ontwikkeld om het potentiële installatieoppervlak voor zonneparken
-        in landen te vergroten. Daarnaast kunnen deze parken waarschijnlijk geïnstalleerd worden tussen de windmolens
-        op zee, hierdoor wordt er geen extra ruimte gebruikt. Het achterliggende idee is dat de uurlijkse productieprofielen van zon en wind
-        elkaar kunnen aanvullen, waardoor de elektriciteitskabel naar het land beter wordt benut.
-        Je kunt de gecombineerde output van zonneparken en windparken op zee zien in
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="supply_offshore_solar_wind"
-          data-chart-location="side">
-          deze grafiek</a>. </br></br>
-        Productie door zon kan volatieler zijn dan wind. Om zon en wind op zee beter op elkaar aan
-        te laten sluiten wordt daarom de netwerkcapaciteit van de zonneparken op zee gereduceerd
-        met 33% van het piekvermogen. Je kan deze waarde
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a> veranderen.
+        Dit schuifje bepaalt het totale elektrische vermogen van grootschalige zonneparken op
+        zee. Zon op zee kan worden gebouwd tussen windparken op zee, waardoor de beschikbare ruimte
+        efficiënt wordt benut.<br/><br/>
+        In het ETM wordt standaard aangenomen dat zon op zee een elektriciteitskabel deelt met wind
+        op zee, zodat er geen extra netaansluiting nodig is. Deze gedeelde aansluiting betekent
+        dat de productie van zon op zee met enige mate wordt beperkt.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Netbelasting</a> om de productiebeperking aan te passen.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weersomstandigheden</a> om het aantal vollasturen van zon-PV aan te passen.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Kosten & efficiënties</a> om de investeringskosten en efficiëntie van de zonnepanelen
+        in te stellen.</li>
+        </ul><br/>
+        Open de volgende grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+        data-chart-location="side">grafiek</a> toont de uurlijkse productie van zon en wind op zee.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">tabel</a> toont gegevens over productiebeperking van zon-PV
+        technologieën.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+        </ul>
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Geconcentreerde zonne-energie
       short_description:
       description: |
-        Hiermee bouw je 50 MWe geconcentreerde zonne-energie centrales (Concentrated
-        Solar Power, oftewel CSP). CSP centrales maken elektriciteit door de warmte
-        van de zon te focusseren met holle spiegels. Zonnige, woestijnachtige delen
-        van de wereld zijn dus bij uitstek geschikt, maar Noordwest-Europa minder. <br/><br/>
-        Zonnewarmte kan worden opgeslagen (door zout te smelten bijvoorbeeld) en dus kunnen deze
-        centrales zonodig ook een deel van de nacht nog stroom maken.
+        Dit schuifje bepaalt het totale elektrische vermogen van geconcentreerde zonne-energiecentrales
+        (<i>concentrated solar power, CSP</i>).<br/><br/>
+        CSP-centrales gebruiken spiegels om zonlicht te concentreren en warmte om te zetten in
+        elektriciteit. Dankzij thermische opslag kunnen ze ook na zonsondergang stroom leveren.
+        Ze zijn het meest efficiënt in zonnige, droge gebieden.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Kosten & efficiënties</a> om de investeringskosten van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oliecentrale
-      short_description: ''
-      description: "Hier bouw je (delen van) 800 MWe oliegestookte centrales. Vaak
-        is het ook mogelijk om gas te verbranden in deze centrales.\r\n<br/><br/>\r\nHet
-        levert meer geld op om olie te raffineren, of als transportbrandstof te gebruiken,
-        dan om het voor elektriciteitsproductie te verbranden. Bovendien zijn fossiele
-        brandstoffen als kolen goedkoper. Daarom zijn dit soort centrales nogal zeldzaam
-        in Europa.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet naar
-        (deel)aantallen van de centrale zoals hierboven omschreven."
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van oliegestookte elektriciteitscentrales.<br/><br/>
+        Oliecentrales komen vrij weinig voor in Europa. Door hoge kosten en lage efficiëntie
+        worden ze zelden ingezet, behalve als back-up bij stroomtekorten of in gebieden
+        zonder stabiele gasvoorziening. Oliecentrales produceren relatief veel CO<sub>2</sub>.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/oil-plants">
+        Kosten & efficiënties</a> om de kosten en efficiënties van deze centrales in te stellen.
     capacity_of_energy_power_engine_diesel:
       title: Dieselgenerator
       short_description:
-      description: "Dit is een dieselgenerator van 2 MWe <br/>\r\nEen dieselgenerator
-        is de combinatie van een dieselmotor en een generator om stroom te produceren.
-        Hoewel deze machines vrij duur zijn in het gebruik, zijn vanwege hun relatieve
-        eenvoud, betrouwbaarheid en veiligheid aantrekkelijk om gebruikt te worden
-        op plaatsen waar geen stroomnet is, als noodaggregaten of voor ingewikkelder
-        toepassingen om het stroomnet te stabiliseren.\r\n<br/>\r\nDe technische gegevens
-        voor het model, zijn gebaseerd op de aanname dat deze generator niet voor
-        basislast gebruikt wordt, maar om het stroomnet te stabiliseren of als noodaggregaat
-        en dus weinig draait. \r\n<br/><br/>\r\nDe schuifjesinstelling wordt omgezet
-        naar (deel)aantallen van de centrale zoals hierboven omschreven."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van dieselgeneratoren<br/><br/>
+        Dieselgeneratoren worden voornamelijk
+        gebruikt als noodaggregaten vanwege hun snelle opstarttijd en flexibiliteit. Ze hebben
+        relatief hoge brandstofkosten en lage efficiëntie, waardoor ze meestal alleen ingezet
+        worden voor noodstroomvoorzieningen of tijdelijke pieken in de vraag. Dieselcentrales
+        produceren relatief veel CO<sub>2</sub>.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/oil-plants">
+        Kosten & efficiënties</a> om de kosten en efficiënties van deze centrales in te stellen.
     capacity_of_energy_power_hydro_river:
       title: Rivier
       short_description: ''
@@ -275,56 +329,58 @@ nl:
           wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_power_nuclear_gen3_uranium_oxide:
       title: Kern 3e Gen
-      short_description: ''
-      description: "Hier bouw je kerncentrales van het meest moderne type (EPR, 3e
-        generatie). <br/>\r\nVan alle centrales, duurt het bouwen en verkrijgen van
-        alle vergunningen voor een kerncentrale het langst (gemiddeld 11-12 jaar).
-        het is dan ook de vraag of het mogelijk is om per land meer dan een paar extra
-        kerncentrales te bouwen de komende drie decennia. Vooral als je de publieke
-        opinie, een gebrek aan geschoolde technici en tekort aan productiecapaciteit
-        van centrale-onderdelen meeneemt.\r\n<br/><br/>\r\nDe bouw van kerncentrales
-        zorgt voor CO<sub>2</sub> emissies. Datzelfde geldt voor windmolens en kolencentrales.
-        Daarom neemt het model voorlopig geen CO<sub>2</sub> uitstoot mee voor centrales
-        die geen fossiele brandstoffen verbranden.\r\n<br/><br/>\r\nDe schuifjesinstelling
-        wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n<br/><br/>\r\nKerncentrales
-        zijn duur om te bouwen en goedkoop om te laten draaien. Daarom draaien ze
-        zoveel mogelijk op vol vermogen (meer dan 80% van de tijd). "
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van derde-generatie kerncentrales.<br/><br/>
+        Derde-generatie kerncentrales bieden betere veiligheid en efficiëntie
+        dan tweede-generatie kerncentrales. De bouw ervan duurt lang en is kostbaar,
+        maar eenmaal operationeel draaien ze vaak op vol vermogen vanwege lage
+        operationele kosten. Hieronder kan worden ingesteld om dit type kerncentrale als niet-regelbaar
+        te modelleren.<br/><br/> Ga naar
+        <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om
+        de kosten en efficiënties voor deze kerncentrales in te stellen.
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
       title: Kern 2e Gen
-      short_description: ''
-      description: "Hiermee bouw je kerncentrales van een ouder type. Deze zullen
-        in de praktijk niet meer gebouwd worden en staan hier vooral om het verschil
-        te tonen met de moderne 3e generatie centrales.\r\n"
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van tweede-generatie kerncentrales.
+        <br/><br/>Tweede-generatie kerncentrales maken gebruik van verouderde technologie
+        en worden niet meer gebouwd. Vanwege hoge kapitaalkosten en
+        lage operationele kosten draaien grote reactoren typisch zoveel mogelijk op vol vermogen.
+        Hieronder kan worden ingesteld om dit type kerncentrale als niet-regelbaar te modelleren.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a> om de
+        kosten en efficiënties voor deze kerncentrales in te stellen.
     capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
       title: Kern kleine modulaire reactor
       short_description:
       description: |
-        Met dit schuifje kun je een nieuw type kerncentrale bouwen. Zoals de naam al
-        doet vermoeden is deze centrale kleiner dan traditionele kerncentrales en kan
-        deze vooraf worden gefabriceerd en vervolgens op locatie worden geassembleerd. </br></br>
-        Potentiële voordelen die hieruit voortkomen zijn onder meer dat de bouwtijd en
-        bijbehorende kosten lager liggen door het modulaire ontwerp, en dat het
-        ruimtegebruik lager ligt door het kleinere formaat. </br></br>
-        Omdat de technologie nog in ontwikkeling is, is het onzeker of deze of andere
-        voordelen in de praktijk gerealiseerd zullen worden. Een voorbeeld hiervan is
-        dat op basis van huidige specificaties de kleine modulaire reactor per MW nog
-        duurder is dan de traditionele reactoren. Je kunt deze kosten aanpassen onder
-        <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten & efficiënties</a>.
+        Dit schuifje bepaalt het totale elektrische vermogen van kleine modulaire kernreactoren.
+        <br/><br/>Kleine modulaire reactoren zijn kleiner dan traditionele kerncentrales en
+        kunnen in de fabriek worden geproduceerd en vervolgens op locatie in elkaar worden
+        gezet. Dit modulaire ontwerp zorgt voor kortere bouwtijden, lagere kosten en efficiënter
+        ruimtegebruik. Omdat de technologie nog in ontwikkeling is, blijft het onzeker of de
+        verwachte voordelen, zoals lagere kosten per MW, daadwerkelijk gerealiseerd zullen worden.
+        <br/><br/> Ga naar <a href="/scenario/costs/specs_electricity/nuclear-plants">Kosten &
+        efficiënties</a> om de kosten en efficiënties voor deze kerncentrales in te stellen.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
       description: ''
     capacity_of_energy_power_ultra_supercritical_coal:
       title: Poederkolen
-      short_description: ''
-      description: "Ultra-superkritische poederkolencentrale van 800 megawatt elektrisch
-        (MWe). Dit is de meest voorkomende kolencentrale in landen met relatief strenge
-        milieuwetgeving. Van alle typen elektriciteitsopwek geven kolen- en bruinkoolcentrales
-        wel de grootste luchtvervuiling. De CO<sub>2</sub> uitstoot van een kolencentrale
-        is ongeveer 2x zo groot als die van een gascentrale per opgewekte megawattuur
-        (MWh). Zie verder ook de informatie bij onderdeel 'Kosten'. \r\n\r\n<br/><br/>\r\nEen
-        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
-        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
-        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales.<br/><br/>Een poederkolencentrale is een basislastcentrale.
+        Dit type centrale komt veel voor in landen met strenge milieunormen. Kolencentrales behoren
+        tot de meest vervuilende energiecentrales, met een CO<sub>2</sub>-uitstoot per opgewekte
+        MWh die circa twee keer zo hoog is als die van een gascentrale.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties voor deze centrales in te stellen.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        CCUS</a> om CO<sub>2</sub>-afvang in te stellen.
+        </ul>
     capacity_of_energy_power_ultra_supercritical_ccs_coal:
       title: Poederkolen + CCS
       short_description: ''
@@ -340,16 +396,21 @@ nl:
         omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n\r\n"
     capacity_of_energy_power_combined_cycle_coal:
       title: Kolenvergassing
-      short_description: ''
-      description: "Een 800 MWe kolenvergassingscentrale. In theorie kan deze centrale
-        ook allerlei soorten biogas en sommige vormen van afval vergassen. Deze centrales
-        vervuilen minder dan poederkolencentrales en zijn bijna even efficiënt. De
-        techniek is in een vroeg commercieel stadium. <br> Zie ook informatie onder
-        'Kosten'.  \r\n<br/><br/>\r\nEen kolencentrale is een basislast-centrale,
-        en daarom draait hij meer dan 75% van de tijd op vol vermogen. Kolenvergassing
-        maakt deze centrale flexibeler dan de gewone kolencentrales. \r\n\r\n\r\n<br/><br/>\r\nDe
-        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
-        hierboven omschreven.\r\n"
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van kolenvergassingcentrales.<br/><br/>
+        In een kolenvergassingcentrale worden kolen omgezet in syngas, dat vervolgens wordt verbrand.
+        Deze technologie is efficiënter en schoner dan poederkolencentrales, maar bevindt
+        zich nog in een vroeg commercieel stadium. Hoewel kolencentrales vaak op vol vermogen
+        draaien, biedt kolenvergassing meer flexibiliteit dan de conventionele
+        kolencentrales.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties voor deze centrales in te stellen.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        CCUS</a> om CO<sub>2</sub>-afvang in te stellen.
+        </ul>
     capacity_of_energy_power_combined_cycle_ccs_coal:
       title: Kolenvergassing + CCS
       short_description: ''
@@ -381,229 +442,229 @@ nl:
         href=\"/units\">Meer informatie over eenheden...</a>\r\n\r\n"
     capacity_of_energy_power_supercritical_coal:
       title: Kolen conventioneel
-      short_description: ''
-      description: "Hier kun je ouderwetse kolencentrales bouwen van 800 MWe. Deze
-        centrales worden in rijke landen niet meer gebouwd, vanwege milieuwetgeving.
-        De stroom die wordt opgewekt staat in de grafiek rechts als kolenstroom.\r\n<br/><br/>\r\nEen
-        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
-        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
-        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven.\r\n\r\n "
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van conventionele kolencentrales.
+        <br/><br/>Een kolencentrale is een basislastcentrale en draait daarom vaak op vol vermogen.
+        Dit type centrale komt vanwege strenge milieuwetgeving
+        steeds minder voor.<br/><br/>Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">
+        Kosten & efficiënties</a> om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_lignite:
       title: Bruinkolen
-      short_description: ''
-      description: "Hier kun je bruinkoolcentrales bouwen van 800 MWe. Deze centrales
-        kunnen alleen gebouwd worden als er een lokale bruinkoolvoorraad beschikbaar
-        is. Dit is de meest vervuilende soort van elektriciteitscentrale. De stroom
-        die wordt opgewekt staat in de grafiek als kolenstroom. \r\n<br/><br/>\r\nEen
-        kolencentrale is een basislast-centrale, en daarom draait hij meer dan 75%
-        van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nDe schuifjesinstelling wordt
-        omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van bruinkoolcentrales.
+        <br/><br/>Bruinkoolcentrales produceren kolenstroom en hebben de hoogste CO<sub>2</sub>-
+        uitstoot van alle elektriciteitscentrales. Ze functioneren als basislastcentrales.
+        Bouw is alleen mogelijk bij een lokale bruinkoolvoorraad.<br/><br/>
+        Ga naar <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        CCUS</a> om CO<sub>2</sub>-afvang in te stellen.
     capacity_of_energy_chp_ultra_supercritical_lignite:
       title: Bruinkolen-WKK
-      short_description: ''
-      description: 'Hier stel je in je hoeveel grote bruinkoolcentrales warmte leveren
-        aan stadsverwarming en andere ''laagwaardige warmte'' netwerken. De stroom
-        die wordt opgewekt zie je op de grafiek terug als kolenstroom. '
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van bruinkoolcentrales met
+        warmtekrachtkoppeling (WKK). <br/><br/> Bruinkolen-WKK-installaties wekken
+        zowel elektriciteit als warmte op, waardoor ze efficiënter omgaan met energie
+        dan conventionele bruinkoolcentrales. Ze zijn echter CO<sub>2</sub>-
+        intensief en afhankelijk van een lokale bruinkoolvoorraad.
     capacity_of_energy_chp_ultra_supercritical_coal:
       title: Poederkolen-WKK
-      short_description: ''
-      description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
-        is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
-        wordt afgetapt voor het centrale warmtenet. \r\n<br/><br/> \r\nDe Amercentrale
-        in Geertruidenberg bijvoorbeeld voedt het warmtenet voor Tilburg en Breda.
-        Warmtelevering in een dergelijke centrale gaat iets ten koste van de elektriciteitsproductie.
-        Afgezet tegen de totale kosten van een kolencentrale zijn de extra investeringen
-        in warmteuitkoppeling beperkt."
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales met warmtekrachtkoppeling (WKK).<br/><br/>
+        De WKK levert naast elektriciteit ook warmte aan het centrale warmtenet.
+        Door de warmteproductie neemt de elektriciteitsefficiëntie iets af.
+        Afgezet tegen de totale kosten van een kolencentrale zijn de extra
+        investeringen voor warmteproductie beperkt.<br/><br/> Ga naar
+        <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
       title: Poederkolen-WKK met bijstook
       short_description:
-      description: "Grote ultra-superkritische poederkolen WKK centrale. Deze centrale
-        is hetzelfde als de elektriciteitscentrale, behalve dat bij deze ook warmte
-        wordt afgetapt voor het centrale warmtenet. Daarnaast verstookt deze WKK centrale
-        naast kolen ook wood-pellets met een bijstook percentage van 50%. Door het
-        combineren van het opgesteld vermogen van centrales met en zonder bijstook
-        kan een bijstookpercentage tussen 0% en 50% gerealiseerd worden.\r\n<br/><br/>
-        \r\nDe Amercentrale in Geertruidenberg bijvoorbeeld voedt het warmtenet voor
-        Tilburg en Breda. Warmtelevering in een dergelijke centrale gaat iets ten
-        koste van de elektriciteitsproductie. Afgezet tegen de totale kosten van een
-        kolencentrale zijn de extra investeringen in warmteuitkoppeling beperkt."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales met warmtekrachtkoppeling (WKK) en bijstook van houtpellets van 50%.
+        <br/><br/>De WKK levert naast elektriciteit ook warmte aan het centrale warmtenet.
+        Door de warmteproductie neemt de elektriciteitsefficiëntie iets af.
+        Afgezet tegen de totale kosten van een kolencentrale zijn de extra
+        investeringen voor warmteproductie beperkt. Door het opgesteld vermogen
+        van poederkolen-WKK's met en zonder bijstook van houtpellets te combineren, kan het totale
+        bijstookpercentage van biomassa bij deze centales worden aangepast.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Poederkolen met bijstook
       short_description:
-      description: "Ultra-superkritische poederkolencentrale van 730 megawatt elektrisch
-        (MWe) met bijstook van biomassa van 50%. Dit is de meest voorkomende kolencentrale
-        in landen met relatief strenge milieuwetgeving. Van alle typen elektriciteitsopwek
-        geven kolen- en bruinkoolcentrales wel de grootste luchtvervuiling. Door de
-        bijstook van biomassa wordt deze uitstoot een stuk teruggebracht. De CO<sub>2</sub>
-        uitstoot van een kolencentrale is ongeveer 2x zo groot als die van een gascentrale
-        per opgewekte megawattuur (MWh). Zie verder ook de informatie bij onderdeel
-        'Kosten'. \r\n\r\n<br/><br/>\r\nEen kolencentrale is een basislast-centrale,
-        en daarom draait hij meer dan 75% van de tijd op vol vermogen.\r\n\r\n<br/><br/>\r\nOmdat
-        het model een standaard centralegrootte hanteert, en er in werkelijkheid kleinere
-        en grotere centrales bestaan, is het mogelijk dat het opgestelde aantal centrales
-        geen geheel getal is.\r\n<br/><br/>\r\nDoor het aantal centrales met en zonder
-        bijstook te wijzigen kan een overkoepelend bijstookpercentage tussen 0% en
-        50% gerealiseerd worden. Voorbeeld: 1 centrale zonder bijstook en 1 centrale
-        met bijstook levert een gezamenlijk bijstookpercentage van 25% op.\r\n<br/><br/>\r\nDe
-        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
-        hierboven omschreven."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van ultra-superkritische
+        poederkolencentrales met een bijstook van houtpellets van 50%.<br/><br/>
+        Een poederkolencentrale is een basislastcentrale. Dit type centrale komt
+        veel voor in landen met strenge milieunormen. Kolencentrales behoren tot de meest
+        vervuilende energiecentrales, met een CO<sub>2</sub>-uitstoot per opgewekte MWh die
+        circa twee keer zo hoog is als die van een gascentrale. Door het opgesteld vermogen
+        van poederkolencentrales met en zonder bijstook met houtpellets te combineren, kan
+        het totale bijstookpercentage van biomassa bij deze centales worden aangepast.<br/>
+        <br/> Ga naar <a href="/scenario/costs/specs_electricity/coal-plants">Kosten &
+        efficiënties</a> om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_wind_turbine_inland:
       title: Wind op land
       short_description:
-      description: "Met deze schuif bouw je windmolens op land. Windmolens produceren minder stroom per MWe vermogen
-        dan kolencentrales, omdat het niet altijd even hard waait. Windmolens op land
-        produceren ~25% van de tijd op maximaal vermogen.\r\n<br/><br/>\r\nSpanningsfluctuaties
-        die veroorzaakt worden door veranderende windcondities, kunnen het elektriciteitsnet
-        instabiel maken als windmolens een substantieel deel van het productiepark
-        vormen. Wind heeft daarnaast back-up vermogen nodig voor als het niet waait.
-        Gascentrales kunnen deze rol vervullen, maar opslag van elektriciteit in de
-        accu's van elektrische auto's wordt ook als mogelijkheid genoemd. Een meer
-        flexibele vraag naar stroom is een alternatief voor back-up vermogen. Flexibele
-        vraag en opslag komen ook mooi van pas in periodes met veel wind en weinig
-        vraag naar stroom. \r\n\r\n<br/><br/>\r\nHet geïnstalleerde
-        vermogen in het startscenario kan afwijken van het daadwerkelijk geïnstalleerd
-        vermogen in de regio waarvoor u het model invult. Dit heeft twee redenen.
-        Allereerst groeit de markt voor windturbines vrij snel. Hierdoor is er altijd
-        een deel van de windturbines pas dit jaar geïnstalleerd. Deze windturbines
-        kunnen niet het hele jaar meetellen. Daarnaast rekenen we in dit schuifje
-        met de meest moderne windturbines. Deze zijn veel groter en efficiënter dan
-        sommige van de oude windturbines die bij het geïnstalleerd vermogen zitten.
-        Hierdoor kan het aantal windturbines in het startscenario lager uitvallen.
-        Het scenario rekent wel met de elektriciteitsproductie zoals die in de nationale
-        statistieken wordt gerapporteerd."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van windturbines op land.<br/><br/>
+        Door wisselende windcondities is de productie van windturbines volatiel, wat bijdraagt aan
+        fluctaties op het elektriciteitsnet. Door inzet van regelbare centrales bij tekorten en
+        opslag en flexibele vraagtechnologieën bij productieoverschot, kunnen de fluctuaties op
+        het elektriciteitsnet worden ogevangen. Betere benutting van opgewekte stroom bij overproductie
+        zorgt ervoor dat productiebeperking (<i>curtailment</i>) zoveel mogelijk wordt beperkt.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        weersomstandigheden</a> om het aantal vollasturen aan te passen of upload een eigen
+        <a href="/scenario/flexibility/curve_upload/upload-curves">uurlijks profiel</a>
+        voor wind op land.<br/><br/>
+        Gebruik de grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+        elektriciteitsproductie.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_coastal:
       title: Wind aan kust
       short_description:
-      description: "Met deze schuif bouw je windmolens aan de kust. Deze windmolens worden op dijken
-        of net in het water neergezet. Windmolens produceren minder stroom per MWe
-        vermogen dan kolencentrales, omdat het niet altijd even hard waait. Windmolens
-        op land produceren ~27% van de tijd op maximaal vermogen.\r\n<br/><br/>\r\nSpanningsfluctuaties
-        die veroorzaakt worden door veranderende windcondities, kunnen het elektriciteitsnet
-        instabiel maken als windmolens een substantieel deel van het productiepark
-        vormen. Wind heeft daarnaast back-up vermogen nodig voor als het niet waait.
-        Gascentrales kunnen deze rol vervullen, maar opslag van elektriciteit in de
-        accu's van elektrische auto's wordt ook als mogelijkheid genoemd. Een meer
-        flexibele vraag naar stroom is een alternatief voor back-up vermogen. Flexibele
-        vraag en opslag komen ook mooi van pas in periodes met veel wind en weinig
-        vraag naar stroom. \r\n<br/><br/>\r\nHet geïnstalleerde vermogen in het startscenario
-        kan afwijken van het daadwerkelijk geïnstalleerd vermogen in de regio waarvoor
-        u het model invult. Dit heeft twee redenen. Allereerst groeit de markt voor
-        windturbines vrij snel. Hierdoor is er altijd een deel van de windturbines
-        pas dit jaar geïnstalleerd. Deze windturbines kunnen niet het hele jaar meetellen.
-        Daarnaast rekenen we in dit schuifje met de meest moderne windturbines. Deze
-        zijn veel groter en efficiënter dan sommige van de oude windturbines die bij
-        het geïnstalleerd vermogen zitten. Hierdoor kan het aantal windturbines in
-        het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
-        zoals die in de nationale statistieken wordt gerapporteerd."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van windturbines aan de kust,
+        zoals op dijken of in kustwateren.<br/><br/>
+        Door wisselende windcondities is de productie van windturbines volatiel, wat bijdraagt aan
+        fluctaties op het elektriciteitsnet. Door inzet van regelbare centrales bij tekorten en
+        opslag en flexibele vraagtechnologieën bij productieoverschot, kunnen de fluctuaties op
+        het elektriciteitsnet worden ogevangen. Betere benutting van opgewekte stroom bij overproductie
+        zorgt ervoor dat productiebeperking (<i>curtailment</i>) zoveel mogelijk wordt beperkt.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weersomstandigheden</a> om het aantal vollasturen aan te passen of upload een eigen
+        <a href="/scenario/flexibility/curve_upload/upload-curves">uurlijks profiel</a>
+        voor wind aan kust.<br/><br/>
+        Gebruik de grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">tabel</a> toont gegevens over het ruimtegebruik van zon en wind.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+        elektriciteitsproductie.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_offshore:
       title: Wind op zee
       short_description:
-      description: "Met deze schuif bouw je windmolens op zee. Windmolens produceren minder stroom
-        per MWe vermogen dan kolencentrales, omdat het niet altijd even hard waait.
-        Windmolens op land produceren ~40% van de tijd op maximaal vermogen, als er
-        tenminste niet teveel onderhoud nodig is.\r\n<br/><br/>\r\nSpanningsfluctuaties
-        die veroorzaakt worden door veranderende windcondities, kunnen het elektriciteitsnet
-        instabiel maken als windmolens een substantieel deel van het productiepark
-        vormen. Wind heeft daarnaast back-up vermogen nodig voor als het niet waait.
-        Gascentrales kunnen deze rol vervullen, maar opslag van elektriciteit in de
-        accu's van elektrische auto's wordt ook als mogelijkheid genoemd. Een meer
-        flexibele vraag naar stroom is een alternatief voor back-up vermogen. Flexibele
-        vraag en opslag komen ook mooi van pas in periodes met veel wind en weinig
-        vraag naar stroom. \r\n<br/><br/>\r\nHet geïnstalleerde vermogen in het startscenario
-        kan afwijken van het daadwerkelijk geïnstalleerd vermogen in de regio waarvoor
-        u het model invult. Dit heeft twee redenen. Allereerst groeit de markt voor
-        windturbines vrij snel. Hierdoor is er altijd een deel van de windturbines
-        pas dit jaar geïnstalleerd. Deze windturbines kunnen niet het hele jaar meetellen.
-        Daarnaast rekenen we in dit schuifje met de meest moderne windturbines. Deze
-        zijn veel groter en efficiënter dan sommige van de oude windturbines die bij
-        het geïnstalleerd vermogen zitten. Hierdoor kan het aantal windturbines in
-        het startscenario lager uitvallen. Het scenario rekent wel met de elektriciteitsproductie
-        zoals die in de nationale statistieken wordt gerapporteerd."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van windturbines op zee.<br/><br/>
+        Door wisselende windcondities is de productie van windturbines volatiel, wat bijdraagt aan
+        fluctaties op het elektriciteitsnet. Door inzet van regelbare centrales bij tekorten en
+        opslag en flexibele vraagtechnologieën bij productieoverschot, kunnen de fluctuaties op
+        het elektriciteitsnet worden ogevangen. Betere benutting van opgewekte stroom bij overproductie
+        zorgt ervoor dat productiebeperking (<i>curtailment</i>) zoveel mogelijk wordt beperkt.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weersomstandigheden</a> om het aantal vollasturen aan te passen of upload een eigen
+        <a href="/scenario/flexibility/curve_upload/upload-curves">uurlijks profiel</a>
+        voor wind op zee.<br/><br/>
+        Gebruik de grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+        data-chart-location="side">grafiek</a> toont de uurlijkse productie van wind en zon op zee.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+        elektriciteitsproductie.</li>
+        </ul>
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
       title: Wind op zee (met hybride aansluiting)
       short_description:
-      description:
-        In tegenstelling tot reguliere windturbines op zee kan de elektriciteit geproduceerd door
-        hybride windturbines op zee ofwel geleverd worden aan een elektrolyser op zee voor
-        waterstofproductie ofwel aan het hoogspanningsnetwerk via een elektriciteitskabel op zee.
-        De (relatieve) geïnstalleerde vermogens van de elektrolyser en elektriciteitskabel op zee kunnen
-        worden ingesteld in de <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
-        Flexibiliteitssectie</a>.<br/><br/>
-        Voor meer informatie over de componenten van hybride wind op zee en het onderlinge gedrag van de componenten,
-        zie de <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind" target=\"_blank\">documentatie</a>.<br/><br/>
-        Deze
-        <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">grafiek</a>
-        geeft de geïnstalleerde vermogens van de componenten weer en deze
-        <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a>
-        de jaarlijkse energiestromen.
-        Daarnaast toont deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore" data-chart-location="side">tabel</a>
-        ook de geïnstalleerde vermogens en piekbelastingen van de verschillende componenten.
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van windturbines op zee met een hybride
+        aansluiting.<br/><br/>
+        Opgewekte elektriciteit kan direct worden geleverd aan land via een elektriciteitskabel op zee,
+        of kan bij een overschot aan elektriciteitsproductie worden geleverd een elektrolyser op zee voor
+        waterstofproductie. Bekijk de
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
+        target="_blank">documentatie</a> voor meer informatie over de modellering van hybride wind
+        op zee.<br/><br/>
+        Ga naar <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
+        Flexibiliteit</a> om de geïnstalleerde vermogens van de elektrolyser en elektriciteitskabel
+        op zee in te stellen en de betalingsbereidheid van de elektrolyser aan te passen.<br/><br/>
+        Gebruik de grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities"
+        data-chart-location="side">grafiek</a> toont de opgestelde vermogens van de hybride wind op zee
+        componenten.</li>
+        <li>Deze <a href="#" class="open_chart"
+        data-chart-key="sankey_hybrid_offshore" data-chart-location="side">grafiek</a> toont de jaarlijkse
+        energiestromen tussen de hybride wind op zee componenten.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+        data-chart-location="side">tabel</a> vat de opgestelde vermogens en jaarlijkse energiestromen
+        van hybride wind op zee componten samen.</li>
+        </ul>
     capacity_of_energy_battery_wind_turbine_inland:
       title: Wind op land (met batterijsysteem)
       short_description:
       description: |
-        Anders dan gewone windmolens op land, zijn deze windmolens standaard uitgerust met een
-        batterijsysteem en een gereduceerde aangesloten netwerkcapaciteit, als een geïntegreerd
-        systeem. <br/><br/>
-        Doordat de elektriciteitsproductie door windmolens volatiel is, kan de installatie
-        van veel windmolens een grote impact hebben op het elektriciteitsnet. Om grote
-        vermogenspieken op het net voorkomen, wordt niet het volledige geïnstalleerde vermogen
-        aangesloten op net, maar een gereduceerd deel. Als de productie groter is dan de
-        aangesloten netwerkcapaciteit begint de batterij elektriciteit te consumeren. Als de
-        productie weer onder de netwerkcapaciteit zakt, begint de batterij deze elektriciteit
-        te ontladen. Let op dat er door efficiëntieverliezen en opslagverliezen elektriciteit
-        verloren gaat in dit proces. <br/><br/>
-        In het geval dat de batterij
-        geen elektriciteit meer kan consumeren, doordat het laadvermogen beperkt is, of omdat de
-        batterij vol zit, zal de overtollige elektriciteitsproductie worden afgeschakeld. <br/><br/>
-        Zowel de aangesloten netwerkcapaciteit als het inputvermogen van de batterij wordt
-        relatief bepaald ten opzichte van het geïnstalleerde vermogen. Ze zullen dan ook beide
-        meeveranderen als je dit schuifje aanpast. Je kunt de relatieve verhouding bepalen in
-        de Flexibiliteit sectie, onder
-         <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
-        Opslag elektriciteit</a>. <br/><br/>
-        Klik op de 'Technische parameters en kosten' om de specificaties van de windmolens
-        zonder het batterijsysteem te zien. In
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="flexibility_hourly_battery_wind"
-          data-chart-location="side">
-          deze grafiek
-        </a>
-        kun je het uurlijkse gedrag van deze windmolens zien.
+        Dit schuifje bepaalt het totale elektrische vermogen van windturbines op land met een geïntegreerd
+        batterijsysteem en een beperkte netwerkcapaciteit.<br/><br/>
+        Om grote vermogenspieken op het elektriciteitsnet te voorkomen, wordt niet het volledige
+        geïnstalleerd vermogen van de windturbines aangesloten op het net, maar wordt de netwerkcapaciteit
+        ondergedimensioneerd. Wanneer meer wordt geproduceerd dan de netwerkcapaciteit, begint de batterij
+        op te laden. Wanneer productie weer onder de netcapaciteit zakt, zal de batterij
+        beginnen met ontladen. <br/><br/>
+        <b>Let op</b>: de aangesloten netwerkcapaciteit en het batterijvermogen zijn relatief
+        ten opzichte van het geïnstalleerd vermogen van de windturbines en zullen met deze slider meeveranderen.
+        Ga naar <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        Flexibiliteit</a> om de verhouding tussen netwerkcapaciteit en batterijvermogen in te stellen.<br/><br/>
+        Gebruik de grafieken en tabellen voor meer inzicht:
+        <ul>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind"
+        data-chart-location="side">grafiek</a> toont de uurlijkse productie en het laadgedrag
+        van deze technologie.</li>
+        <li>Deze <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">grafiek</a> weergeeft het aandeel van wind in hernieuwbare
+        elektriciteitsproductie.</li>
+        </ul>
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventioneel
-      short_description: ''
-      description: "Hier bouw je een conventionele stoomturbine gascentrale van 800
-        MWe.\r\n<br/> <br/> \r\nDe meeste nieuwe gascentrales zijn STEG-centrales,
-        aangezien die efficiënter zijn.\r\n\r\n<br/><br/>\r\nGascentrales zijn flexibel
-        en worden daarom vaak ingezet om dagelijkse pieken in de elektriciteitsvraag
-        op te vangen (vooral gasturbines) en daarom produceren ze minder stroom per
-        jaar dan kolencentrales met een vergelijkbaar vermogen.\r\n\r\n<br/><br/>\r\nDe
-        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
-        hierboven omschreven.\r\n"
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van conventionele gascentrales.
+        <br/><br/>Deze conventionele centrales verbranden aardgas om stoom te genereren, die vervolgens een
+        stoomturbine aandrijft. Ze zijn minder efficiënt dan STEG-centrales en minder flexibel dan gasturbines,
+        maar kunnen langdurig, stabiel draaien. Hierdoor worden ze vooral ingezet voor basislast of middellange
+        periodes van verhoogde elektriciteitsvraag.<br/><br/>Ga naar
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_combined_cycle_network_gas:
       title: Gas STEG
-      short_description: ''
-      description: "Hier kun je Stoom en Gas (STEG) gascentrales bouwen van 800 MWe.
-        Voor meer informatie, zie het onderdeel 'Kosten'. <br/><br/>\r\n\r\nGascentrales
-        zijn flexibel en worden daarom vaak ingezet om dagelijkse pieken in de elektriciteitsvraag
-        op te vangen (vooral gasturbines) en daarom produceren ze minder stroom per
-        jaar dan kolencentrales met een vergelijkbaar vermogen. \r\n\r\n<br/><br/>\r\nDe
-        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
-        hierboven omschreven."
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrisch vermogen van stoom- en gasturbinecentrales (STEG).
+        <br/><br/>De gasturbine produceert elektriciteit waarbij restwarmte wordt benut voor het
+        aandrijven van een stoomturbine. Dit maakt deze centrales efficiënter dan andere gascentrales.
+        Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en worden deze daarom
+        voornamelijk ingezet voor regelbaar vermogen en niet voor het opvangen van de piekvraag.<br/><br/>
+        Ga naar:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties voor deze centrales in te stellen.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a> om
+        CO<sub>2</sub>-afvang in te stellen voor dit type gascentrale.
+        </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas STEG WKK
-      short_description: ''
-      description: "Hiermee bouw je een grote warmte-kracht koppeling (WKK's) (~120
-        MWe and ~120 MWth) op gas. De stroom die de grote WKK's produceren staat in
-        de grafiek hiernaast als stroom uit 'Gas'. \r\n<br/><br/>\r\nDeze grote WKK
-        levert typisch aan een groot stadswarmtenet en bestaat uit een gasturbine
-        met afgasketel en stoomturbine. De WKK zal deels ingezet worden voor warmteproductie
-        aan het stadswarmtenet (4500 uren/jaar) en deels gestuurd worden door de elektriciteitsprijs
-        (6000 uren/jaar e-productie). Een installatie van vergelijkbare grootte staat
-        bijvoorbeeld in Rotterdam (RoCa)."
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van stoom- en gasturbinecentrales (STEG)
+        met warmtekrachtkoppeling (WKK).<br/><br/>De gasturbine produceert elektriciteit waarbij
+        restwarmte wordt benut voor het aandrijven van een stoomturbine. Dit maakt deze centrales
+        efficiënter dan andere gascentrales. Daarnaast wordt de restwarmte benut voor een
+        centraal warmtenet of voor industriële toepassingen. Deze combinatie maakt de centrale geschikt
+        voor langdurige inzet, met een hoog rendement voor zowel elektriciteits- als warmteproductie.
+        <br/><br/>Ga naar de <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_combined_cycle_ccs_network_gas:
       title: Gas STEG + CCS
       short_description: ''
@@ -620,44 +681,40 @@ nl:
     capacity_of_energy_power_turbine_network_gas:
       title: Gasturbine
       short_description:
-      description: "Hier kun je opgesteld vermogen van gasturbine centrales instellen.
-        Deze zijn niet zo efficiënt als de twee-staps Stoom en Gas (STEG) centrales,
-        maar hebben als voordeel dat ze er goed tegen kunnen om vaak aan- en uitgezet
-        te worden. Daarom leveren deze centrales alleen stroom bij zogenaamde piekvraag.
-        <br/><br/>\r\nHoewel het aantal draaiuren en de jaarproductie van deze centrales
-        dus beperkt is, zijn ze zeer nuttig om te hebben."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van gasturbines.
+        <br/><br/>Gasturbines zijn eenvoudigere centrales dan STEG-centrales, maar zijn
+        minder efficiënt. Het voordeel van gascentrales is dat deze snel kunnen op- en afschakelen.
+        Dit maakt ze geschikt voor het opvangen van de piekvraag en balancering van het elektriciteitsnet.
+        Door de inzet van deze centrales bij piekvraag zijn het totaal aantal draaiuren en
+        de jaarlijkse productie van deze centrales beperkt.<br/><br/> Ga naar
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_engine_network_gas:
       title: Gasmotor
       short_description:
-      description: "Deze centrale bestaat uit 22 motor-generator eenheden van ieder
-        18 MWe en heeft dus een vermogen van 400 MWe. De motoren zijn flexibel wat
-        de brandstofvraag betreft, maar in het ETM draaien ze op gas.\r\n<br/><br/>\r\nHoewel
-        deze centrales vrij hoge draaikosten hebben, zijn de totaalkosten erg laag
-        in vergelijking met andere grote gascentrales. Vooral dat maakt ze uiteindelijk
-        aantrekkelijk als back up voor veel wind en zon. Dat leggen we hieronder uit.\r\n<br/><br/>\r\nDeze
-        centrales worden soms opgevoerd als een uitstekende oplossing voor het probleem
-        van sterk variërende stroomproductie in scenario's met veel opgesteld wind-
-        en zonvermogen. Gasmotorcentrales bieden voordelen boven traditionele gascentrales.
-        De belangrijkste zijn de flexibiliteit en snelheid waarmee ze hun stroomproductie
-        kunnen variëren. \r\n<br/><br/>\r\nElke eenheid kan tussen <1 en 100% van
-        zijn vermogen leveren, zonder dat de efficiëntie afneemt. Iedere unit kan
-        ook van 0 naar 100% vermogen in ~2 minuten en binnen 30 seconden na de start
-        stroom op het net leveren, ongeacht hoe lang hij uit heeft gestaan. Aangezien
-        iedere <em>centrale</em> uit 22 eenhede bestaat kan hij tussen de ~1 en 400
-        MWe aan het net leveren binnen minuten, volledig uitgeschakeld worden binnen
-        1 minuut en vervolgens weer binnen 2 minuten op vol vermogen leveren <em>zonder
-        efficiëntieverlies</em>. Hierdoor wordt het mogelijk om om grote fluctuaties
-        in windstroomproductie op te vangen en het net stabiel te houden. Centrales
-        met een stoomcyclus of zelfs gasturbines verliezen vaak tientallen procentpunten
-        efficiëntie als hun belastig onder de 60 - 70% komt. Daardoor zijn ze veel
-        minder efficiënt in te zetten voor de balancering van windstroom. \r\n<br/><br/>\r\nDe
-        schuifjesinstelling wordt omgezet naar (deel)aantallen van de centrale zoals
-        hierboven omschreven."
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van gasmotorcentrales.
+        <br/><br/>Gasmotoren zijn grote verbrandingsmotoren die direct een generator
+        aandrijven. Ze bestaan uit meerdere eenheden die snel kunnen op- en afschakelen,
+        zonder efficiëntieverlies. Ondanks hogere operationele kosten zijn de totale kosten
+        van gasmotoren relatief laag in vergelijking met andere gascentrales. Dit maakt gasmotoren
+        geschikt als back-up naast volatiele elektriciteitsproductie (bijvoorbeeld uit
+        wind- en zonne-energie).<br/><br/> Ga naar
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_chp_local_engine_network_gas:
       title: Gasmotor-WKK
       short_description:
-      description: "Een WKK produceert zowel warmte als elektriciteit. Stel hier het
-        vermogen aan gas WKKs in dat warmte levert aan warmtenetten.\r\n</br>"
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van gasmotorcentrales met warmtekrachtkoppeling
+        (WKK).<br/><br/>Gasmotoren zijn grote verbrandingsmotoren die direct een generator
+        aandrijven. Gasmotoren met WKK produceren zowel elektriciteit als warmte, die wordt gebruikt
+        voor centrale warmtenetten. Gasmotoren bestaan uit meerdere eenheden
+        die snel kunnen op- en afschakelen, zonder efficiëntieverlies. Daarmee zijn ze geschikt zijn voor
+        balancering van het elektriciteitsnet.<br/><br/> Ga naar
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
     green_gas_total_share:
       title: Groen gas
       short_description: ''
@@ -701,23 +758,20 @@ nl:
     share_of_energy_steel_energy_production_coal_gas:
       title: Energieproductie
       description: |
-        Kolengas wordt verbrand in specifieke WKK's en elektriciteitscentrales
-        waardoor warmte en elektriciteit wordt opgewekt. Hier kun je bepalen welk deel van
-        de kolengassen dat niet voor het staalproductieproces zelf gebruikt wordt, wordt
-        ingezet om elektriciteit en warmte te produceren. </br></br>
-        Let op dat de kolengas WKK's en elektriciteitscentrales must-run zijn. Dit betekent
-        dat ze produceren wanneer kolengas beschikbaar is, onafhankelijk van de elektriciteit-
-        en warmtevraag. Je kunt het geïnstalleerd vermogen van deze centrales zien in de
-        <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
-        merit order tabel</a>. </br></br>
-        Klik op de "technische parameters en kosten" om de specificaties van de kolengascentrale te zien.
+        Dit schuifje bepaalt welk deel van de geproduceerde kolengassen wordt inzet in
+        elektriciteitscentrales en warmtekrachtkoppelingen (WKK's).<br/><br/> Deze
+        centrales worden gemodelleerd als must-run centrales die draaien zodra kolengas beschikbaar
+        is. Kolengas heeft een hoog CO<sub>2</sub>-gehalte waardoor de CO<sub>2</sub>-uitstoot van
+        deze centrales relatief hoog is. Een alternatieve inzet van de kolengassen is om deze
+        om te zetten naar grondstoffen voor de chemiesector.
+        </br></br> Open de <a href="#" class="open_chart" data-chart-key="merit_order_table"
+        data-chart-location="side">merit order tabel</a> om het geïnstalleerde vermogen van
+        de kolengasentrales te bekijken.
     share_of_energy_steel_chemical_feedstock_coal_gas:
       title: Grondstof voor chemiesector
       description: |
-        Een alternatief voor de energieproductie met hoge CO<sub>2</sub>-emissies
-        is het afvangen van het kolengas. Het afgevangen gas kan dan omgezet worden in grondstoffen
-        voor de chemische industrie. Hier kun je bepalen welk deel van de kolengassen dat niet voor
-        het staalproductieproces zelf gebruikt wordt, wordt omgezet naar grondstoffen. </br></br>
-        De steel-to-chemicals route staat nog in de kinderschoenen. Daarom modelleert het ETM niet
-        expliciet de gevolgen hiervan voor het gebruik van andere (fossiele) grondstoffen in de
-        <a href="/scenario/demand/industry/chemicals">chemische industrie</a>.
+        Dit schuifje bepaalt welk deel van de geproduceerde kolengassen wordt omgezet naar
+        grondstoffen voor de chemiesector (<i>steel-to-chemicals</i>).<br/><br/> Een hoger
+        aandeel zorgt ervoor dat er minder kolengas wordt gebruikt voor energieproductie. De
+        <i>steel-to-chemicals</i> route is nog in ontwikkeling. Het ETM modelleert daarom
+        nog niet het eindverbruik van kolengassen in de chemiesector.

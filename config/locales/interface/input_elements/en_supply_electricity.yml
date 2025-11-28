@@ -81,142 +81,190 @@ en:
       title: Solar rooftop (households)
       short_description:
       description: |
-        With this slider you set the total installed capacity of solar PV panels
-        on rooftop areas of households. <br/><br/>
-        This technology is developing rapidly and solar panels
-        are becoming ever more efficient and cheaper. Solar panels produce electricity
-        on site, so transport of electricity is not always required. This avoids losses
-        on the grid and that saves energy. Feeding locally produced power back into
-        the local power grid requires a higher capacity or smarter local grid, to
-        prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this you can set this
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>. <br/><br/>
-        You can adjust the full load hours of solar
-        panels <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
-        />
+        This slider sets the total capacity of solar panels on rooftops of
+        residential buildings.<br/><br/>
+        Rooftop solar generates electricity for own use and for supply to the electricity
+        grid in case of overproduction. Production depends on factors such as weather conditions and
+        orientation of the solar panels. Weather dependency makes electricity production from
+        solar panels volatile.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to limit the production of solar panels and reduce load on the grid.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_buildings_solar_pv_solar_radiation:
       title: Solar rooftop (buildings)
       short_description:
       description: |
-        With this slider you set the capacity of rooftop solar PV installations on
-        rooftop areas of buildings. </br></br>
-        This technology is developing rapidly and solar panels
-        are becoming ever more efficient and cheaper. Solar panels produce electricity
-        on site, so transport of electricity is not always required. This avoids losses
-        on the grid and that saves energy. Feeding locally produced power back into
-        the local power grid requires a higher capacity or smarter local grid, to
-        prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        <br/><br/>
-        You can adjust the full load hours of solar
-        panels <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
+        This slider sets the total capacity of solar panels on rooftops of
+        commercial buildings.<br/><br/>
+        Rooftop solar generates electricity for own use and for supply to the electricity
+        grid in case of overproduction. Production depends on factors such as weather conditions and
+        orientation of the solar panels. Weather dependency makes electricity production from
+        solar panels volatile.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to limit the production of solar panels and reduce load on the grid.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_energy_power_solar_pv_solar_radiation:
       title: Solar on land
       short_description:
       description: |
-        With this slider you can build centralized plants of photovoltaic
-        solar power panels. These are not mounted on roofs, but are usually placed
-        in a field.  <br/><br/>
-        Like wind power, solar power output fluctuates over
-        time, but in a more predictable way, making it easier to keep the electricity
-        grid in balance. Still, the impact of installing large numbers of solar panels
-        can be large, because electricity is fed back into the local grid. This may
-        require balancing solutions at the local level for the grid. In some cases
-        it is smart to connect solar parks to only a certain percentage of the peak
-        power, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.<br/><br/>
-        You can adjust the full load hours of solar
-        panels <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
+        This slider sets the total capacity of large-scale solar plants on
+        land.<br/><br/>
+        Solar on land generally produces electricity for supply to the electricity grid. Production
+        depends on factors such as weather conditions and orientation of the solar panels.
+        Weather dependency makes electricity production from solar panels volatile.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to limit the production of solar panels and reduce load on the grid.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Concentrated solar power
       short_description:
       description: |
-        This builds a 50 MWe concentrated solar power (CSP) plant with heat storage. Such a plant is
-        very attractive in sunny desert-like areas, but less so in Northern Europe. It needs direct
-        sunlight, which is concentrated by concave mirrors to produce heat and generate electricity.
-        <br/><br/>
-        This type of plant stores the heat, allowing it to keep on producing electricity until
-        several hours after sundown.
+        This slider sets the total capacity of concentrated solar power (CSP) plants .<br/><br/>
+        CSP plants use mirrors to concentrate sunlight and convert heat into
+        electricity. Due to thermal storage, they can also supply power after sunset.
+        They are most efficient in sunny, dry areas.<br/><br/>
+        Go to <a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to adjust the investment costs of these plants.
     capacity_of_energy_battery_solar_pv_solar_radiation:
       title: Solar on land (with battery system)
       short_description:
       description: |
-        Different from regular solar PV plants, these plants are fitted with a battery and
-        a reduced grid connection capacity by default, as an integrated system. These plants are typically
-        large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
-        > 20 kWp for all other European countries. <br/><br/>
-        Due to the volatile nature of solar power output, installing large numbers of solar
-        panels can have a major impact on the electricity grid. To prevent large capacity
-        peaks on the grid, these plants are not connected to the grid for the entire installed
-        capacity, but by a reduced amount. When production exceeds the grid connection capacity
-        the battery consumes electricity. When the production drops below the threshold, the
-        battery starts to release the electricity again. Note that due to efficiency losses and
-        storage decay, some electricity is lost in the process. <br/><br/>
-        If the battery cannot consume any more electricity due to charging
-        capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
-        Both the grid connection capacity and the input capacity of the battery are defined
-        relative to the installed capacity. They will therefore both change accordingly if
-        you adjust this slider. You can also change the relative ratios in the Flexibility
-        section, under
-        <a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
-        Electricity storage</a>. <br/><br/>
-        You can click on the 'Technical and financial properties' to see the specifications of
-        the solar PV plants without the batteries. See
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="flexibility_hourly_battery_solar"
-          data-chart-location="side">
-          this chart
-        </a>
-        for the hourly behaviour of these solar plants.
+        This slider sets the total capacity of large-scale solar plants on
+        land, integrated with a battery system.<br/><br/>
+        By combining solar on land with a battery system, excess production can
+        be stored and the battery can be discharged when production is lower than
+        demand. This contributes to reducing load on the electricity grid.<br/><br/>
+        In the ETM, this technology is modelled with a limited connected grid capacity.
+        The connected grid capacity and the integrated battery capacity are
+        relative to the installed capacity of the solar park. These will change with
+        this slider.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
+        Flexibility</a> to set the ratio of the grid capacity and battery capacity relative
+        to the solar installation.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_solar"
+        data-chart-location="side">chart</a> shows the hourly production of solar on land with
+        battery system.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_energy_power_solar_pv_offshore:
       title: Solar offshore
       short_description:
       description: |
-        With this slider you can build centralized plants of photovoltaic solar power panels.
-        This type osf of solar PV plants is built to float in the sea. These plants are typically
-        large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
-        > 20 kWp for all other European countries. </br></br>
-        This technology is developed to increase the potential installation area for solar
-        PV plants in a country. Additionally, these plants might be placed between offshore wind turbines,
-        taking up no extra offshore surface. The idea is that the hourly production profiles of solar and wind can
-        complement each other, meaning that the power cable to land will be better utilized.
-        You can see the combined output of offshore solar PV plants and wind parks in
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="supply_offshore_solar_wind"
-          data-chart-location="side">
-          this chart</a>. </br></br>
-        Production by solar can be more volatile than wind. To further enhance the compatibility
-        of offshore solar and wind, the grid connection of these solar PV plants is
-        therefore reduced by default with 33% of the peak capacity. You can change this value
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.
+        This slider setes the total capacity of offshore large-scale solar plants.
+        Offshore solar can be built between offshore wind farms, thereby making efficient
+        use of the available space.<br/><br/>
+        In the ETM, it is assumed by default that offshore solar shares an electricity cable with
+        offshore wind, so that no additional grid connection is required. This shared connection
+        means that the production of offshore solar is curtailed to some extent.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to adjust curtailment of offshore solar.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables to view the impact of offshore solar:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+        data-chart-location="side">chart</a> shows the hourly production of offshore solar and
+        wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        </ul>
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oil-fired
-      short_description: ''
-      description: "Here you can build oil plants. It is often possible to burn natural
-        gas in these plants as well. \r\n<br/><br/>\r\nIt is more profitable to refine
-        crude oil into many different products than it is to burn it directly, especially
-        since cheaper fossil fuels exist (e.g. coal). For that reason these plants
-        are relatively rare.\r\n<br/><br/> \r\nThe input of the slider (in MW) is
-        converted to a (partial) number of the plant described above.\r\n"
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of oil-fired power plants.
+        <br/><br/> Oil plants are uncommon in Europe. Due to high costs and low
+        efficiency, they are rarely used except as backup during power shortages or
+        in areas without a stable gas supply. Oil plants produce relatively high
+        amounts of CO<sub>2</sub>.<br/><br/> Go to <a href="/scenario/costs/
+        specs_electricity/oil-plants">Costs & efficiencies</a> to set the costs and
+        efficiencies of these plants.
     capacity_of_energy_power_engine_diesel:
       title: Diesel generator
       short_description:
-      description: "This is a small diesel generator of 2 MWe. <br/>\r\nA diesel generator
-        is the combination of a diesel engine with an electric generator to generate
-        electrical energy. Although they are expensive to run, their relative simplicity,
-        reliability and safety make them attractive for use in places without connection
-        to the power grid, as emergency power supply if the grid fails, as well as
-        for more complex applications to stabilize the power grid. \r\n<br/>\r\nThe
-        technical parameters used are based on the assumption that the diesel generator
-        does not run at base load, but rather to stabilize the grid or as backup power
-        supply, meaning it only runs occasionally.\r\n<br/><br/>\r\nThe input of the
-        slider (in MW) is converted to a (partial) number of the plant described above."
+      description: |
+        This slider adjusts the total electric capacity of diesel generators.<br/><br/>
+        Diesel generators are primarily used as emergency backup units due to
+        their fast start-up time and flexibility. They have relatively high fuel
+        costs and low efficiency, so they are mostly deployed for emergency power
+        supply or temporary demand peaks. Diesel plants produce relatively high
+        amounts of CO<sub>2</sub>. <br/><br/>
+        Go to <a href="/scenario/costs/
+        specs_electricity/oil-plants">Costs & efficiencies</a> to set the costs and
+        efficiencies of these plants.
     capacity_of_energy_power_hydro_river:
       title: River
       short_description: ''
@@ -287,331 +335,363 @@ en:
             above."
     capacity_of_energy_power_nuclear_gen3_uranium_oxide:
       title: Nuclear 3rd Gen
-      short_description: ''
-      description: "This builds nuclear power plants of the latest type (3rd generation,
-        EPR). <br/>\r\nOf all power plants, obtaining the necessary permits and building
-        a nuclear power plant takes the longest (11-12 years on average). It is questionable
-        if it is possible to build more than a few nuclear power plants per country
-        in the coming three decades. This becomes even more evident when you factor
-        in public opinion, an imminent shortage of technicians with the required expertise
-        and a shortage of production capacity for nuclear reactor vessels on a mid-term
-        basis. <br/><br/>\r\n\r\nEnvironmental groups argue that producing nuclear
-        fuel (enriched uranium) results in CO<sub>2</sub> emissions. This is true,
-        of course, but the same can be said of coal mining and the production of steel
-        and concrete for wind turbines. For now, CO<sub>2</sub> emissions from such
-        activities are not consided.\r\n\r\n<br/><br/> \r\nThe input of the slider
-        (in MW) is converted to a (partial) number of the plant described above.\r\n<br/><br/>
-        \r\nNuclear plants are expensive to build and relatively cheap to run, so
-        they tend to run at maximum capacity as much as possible (more than 80% of
-        the time).\r\n"
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of third-generation nuclear
+        power plants.<br/><br/>
+        Third-generation nuclear plants offer improved
+        safety and efficiency compared to second-generation plants. Construction
+        typically takes long and is costly, but once operational, they
+        often run at full capacity due to low operational costs. Below, it is possible to change
+        the modelling of nuclear plants as <i>must-run</i> plants. <br/><br/>
+        Go to <a href="/scenario/costs/
+        specs_electricity/nuclear-plants">Costs & efficiencies</a> to set the costs
+        and efficiencies of these nuclear plants.
     capacity_of_energy_power_nuclear_gen2_uranium_oxide:
       title: Nuclear 2nd Gen
-      short_description: ''
-      description: "This builds nuclear power plants of an older type of nuclear power
-        plant. In reality, these plants will not be built anymore and are included
-        mainly to show the difference between modern nuclear plants and older types.\r\n"
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of second-generation
+        nuclear power plants.<br/><br/>
+        Second-generation nuclear plants use
+        outdated technology and are no longer being constructed. Due to high
+        capital costs and low operational costs, large reactors typically operate
+        at full capacity as much as possible. Below, it is possible to change
+        the modelling of nuclear plants as <i>must-run</i> plants.<br/><br/>
+        Go to <a href="/scenario/costs/
+        specs_electricity/nuclear-plants">Costs & efficiencies</a> to set the costs
+        and efficiencies of these nuclear plants.
     capacity_of_energy_power_nuclear_small_modular_reactor_uranium_oxide:
       title: Nuclear small modular reactor
       short_description:
       description: |
-        With this slider you can build a novel type of nuclear power plant. As its name
-        indicates, the key characteristic of this type of plant is that it is smaller
-        than traditional nuclear power plants and that it can be prefabricated and easily
-        assembled on-site. </br></br>
-        Potential benefits than can arise from these characteritstics are, among others,
-        a decreased construction time and associated costs due to their modular nature,
-        and reduced land-use due to their small nature. </br></br>
-        Because the technology still has to become commercially viable it is as yet unclear
-        whether these or other benefits will be realized in practice. For example, based on current
-        specifications, small modular reactors are still more expensive per MW than their traditional
-        counterparts. You can change these costs in the <a href="/scenario/costs/specs_electricity/nuclear-plants">
-        Cost & efficiencies</a> section.
+        This slider adjusts the total electric capacity of small modular nuclear
+        reactors.<br/><br/>
+        Small modular reactors are smaller than traditional
+        nuclear power plants and can be factory-built and then assembled on-site.
+        This modular design enables shorter construction times, lower costs, and
+        more efficient use of space. Since the technology is still under
+        development, it remains uncertain whether the expected benefits, such as
+        lower costs per MW, will actually be realised.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/nuclear-plants">Costs & efficiencies</a>
+        to set the costs and efficiencies of these nuclear plants.
     merit_order_subtype_of_energy_power_nuclear_uranium_oxide:
       title: ''
       description: ''
     capacity_of_energy_power_ultra_supercritical_coal:
       title: Pulverized coal
-      short_description: ''
-      description: "800 megawatt electric (MWe) ultra-supercritical pulverized coal-fired
-        plant. Of all types of power plants, coal and lignite-fired ones contribute
-        most to pollution of the environment. This is the most common type of modern
-        coal-fired power plant in rich countries with relatively strict regulations
-        for air pollution. Also see information in section \"Costs\". \r\n\r\n<br/><br/>\r\nA
-        coal-fired power plant is a baseload power plant, meaning it is producing
-        at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/>\r\nThe input
-        of the slider (in MW) is converted to a (partial) number of the plant described
-        above."
+      short_description:
+      description: |
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants.<br/><br/>
+        A pulverized coal power plant is a baseload power plant.
+        This type of plant is common in countries with strict environmental standards. Coal-fired
+        power plants are among the most polluting power plants, with CO<sub>2</sub> emissions per
+        MWh generated that are approximately twice as high as those of a gas-fired power
+        plant.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to set the costs and efficiencies for these power plants.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        CCUS</a> to set CO<sub>2</sub> capture.
+        </ul>
     capacity_of_energy_power_combined_cycle_coal:
       title: Coal IGCC
-      short_description: ''
-      description: "Integrated Gasification Combined Cycle (IGCC) plant. This is an
-        800 MWe coal gasification plant. In theory, this type of plant can also burn
-        gasified biomass and even some forms of waste. These plants are less polluting
-        than pulverized coal-fired ones. <br/>Also see information in section 'Costs'.\r\n\r\n<br/><br/>\r\nA
-        coal-fired power plant is a baseload power plant, meaning it is producing
-        at maximum capacity more than 75% of the time. Coal-gasification does make
-        this plant more flexible than its solid coal-fired counterparts.\r\n\r\n<br/><br/>
-        \r\nThe input of the slider (in MW) is converted to a (partial) number of
-        the plant described above.\r\n "
+      short_description:
+      description: |
+        This slider determines the total electrical capacity of coal gasification power
+        plants.<br/><br/>
+        In a coal gasification power plant, coal is converted into syngas, which is then combusted.
+        This technology is more efficient and cleaner than pulverized coal power plants, but is
+        still in an early commercial stage. Although coal-fired power plants often operate
+        at full capacity, coal gasification offers more flexibility than conventional
+        coal-fired power plants.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to set the costs and efficiencies for these power plants.</li>
+        <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        CCUS</a> to set CO<sub>2</sub> capture.
+        </ul>
     capacity_of_energy_power_supercritical_coal:
       title: Coal conventional
-      short_description: ''
-      description: "Here you can build conventional coal-fired plants of 800 MWe.
-        These plants are not built anymore in rich countries, due to environmental
-        restrictions. The power generated is shown in the graph on the right as coal-fired
-        electricity production.\r\n<br/><br/>\r\nA coal-fired power plant is a baseload
-        power plant, meaning it is producing at maximum capacity more than 75% of
-        the time.\r\n\r\n<br/><br/> \r\nThe input of the slider (in MW) is converted
-        to a (partial) number of the plant described above."
+      short_description:
+      description: |
+        This slider determines the total electrical capacity of conventional coal-fired power
+        plants.<br/><br/>
+        A coal-fired power plant is a baseload power plant and therefore often operates at full
+        capacity. This type of plant is becoming less common due to strict environmental
+        legislation.<br/><br/>Go to <a href="/scenario/costs/specs_electricity/coal-plants">
+        Costs & efficiencies</a> to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_power_ultra_supercritical_lignite:
       title: Coal lignite
-      short_description: ''
-      description: "Here you can build coal lignite-fired plants of 800 MWe. These
-        plants can only be built if there is a local supply of lignite (brown coal).
-        This is the most polluting kind of power plant.The power generated is shown
-        in the graph on the right as coal-fired electricity production.\r\n<br/><br/>\r\nA
-        coal-fired power plant is a baseload power plant, meaning it is producing
-        at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/> \r\nThe input
-        of the slider (in MW) is converted to a (partial) number of the plant described
-        above."
+      short_description:
+      description: |
+        This slider determines the total electrical capacity of lignite power plants.<br/><br/>
+        Lignite power plants produce coal-based electricity and have the highest CO<sub>2</sub>
+        emissions of all power plants. They function as baseload power plants.
+        Construction is only possible with a local lignite supply.<br/><br/>
+        Go to <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
+        CCUS</a> to set CO<sub>2</sub> capture.
     capacity_of_energy_chp_ultra_supercritical_lignite:
       title: Lignite CHP
-      short_description: ''
-      description: "This indicates the capacity of large central lignite-fired power
-        plants are used to supply heat to district heating grids. The power generated
-        is shown in the graph on the right as coal-fired electricity production.\r\n<br/><br/> "
+      short_description:
+      description: |
+        This slider determines the total electrical capacity of lignite power plants with
+        combined heat and power (CHP). <br/><br/>
+        Lignite CHP plants generate both electricity and heat, making them more efficient with
+        energy than conventional lignite power plants. However, they are CO<sub>2</sub>-
+        intensive and dependent on a local lignite supply.
     capacity_of_energy_chp_ultra_supercritical_coal:
       title: Pulverized coal CHP
-      short_description: ''
-      description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
-        plants are identical to a common coal plant, except that it also supplies
-        heat to large heating grids. This comes at the expense of some power production.
-        \r\n \r\n\r\n\r\n"
+      short_description:
+      description: |
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants with combined heat and power (CHP).<br/><br/>
+        The CHP supplies heat to the central heating network in addition to electricity.
+        Heat production slightly reduces electrical efficiency.
+        Compared to the total costs of a coal-fired power plant, the additional
+        investments for heat production are limited.<br/><br/>
+        Go to
+        <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_chp_ultra_supercritical_cofiring_coal:
       title: Pulverized coal CHP with co-firing
       short_description:
-      description: "Large ultra-supercritical pulverized coal-fired CHP plant. \r\nSuch
-        plants are identical to a common coal plant, except that it also supplies
-        heat to large heating grids. This comes at the expense of some power production.
-        Additionally, this plant co-fires 50% wood-pellets in addition to coal. By
-        changing the capacity of plants with and without co-firing an overall percentage
-        of co-firing can be established between 0% and 50%."
+      description: |
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants with combined heat and power (CHP) and 50% wood pellet
+        co-firing.<br/><br/>
+        The CHP supplies heat to the central heating network in addition to electricity.
+        Heat production slightly reduces electrical efficiency.
+        Compared to the total costs of a coal-fired power plant, the additional
+        investments for heat production are limited. By combining the installed capacity
+        of pulverized coal CHPs with and without wood pellet co-firing, the total
+        co-firing percentage of biomass at these plants can be adjusted.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_power_ultra_supercritical_cofiring_coal:
       title: Pulverized coal with co-firing
       short_description:
-      description: "730 megawatt electric (MWe) ultra-supercritical pulverized coal-fired
-        plant with 50% co-firing of biomass. Of all types of power plants, coal and
-        lignite-fired ones contribute most to pollution of the environment. By co-firing
-        biomass the emission of pollution is reduced. This is the most common type
-        of modern coal-fired power plant in rich countries with relatively strict
-        regulations for air pollution. Also see information in section \"Costs\".
-        \r\n\r\n<br/><br/>\r\nA coal-fired power plant is a baseload power plant,
-        meaning it is producing at maximum capacity more than 75% of the time.\r\n\r\n<br/><br/>
-        \r\nBecause the model uses standard size plants, and in reality both smaller
-        and larger plants may exist, the number of plants installed may not be a whole
-        number.\r\n<br/><br/> \r\nBy changing the amount of plants with and without
-        co-firing an overall percentage of co-firing can be set between 0% and 50%.
-        For example: 1 plant without co-firing and 1 plant with co-firing leads to
-        25% co-firing in total.\r\n<br/><br/>\r\nThe input of the slider (in MW) is
-        converted to a (partial) number of the plant described above."
+      description: |
+        This slider determines the total electrical capacity of ultra-supercritical
+        pulverized coal power plants with 50% wood pellet co-firing.<br/><br/>
+        A pulverized coal power plant is a baseload power plant. This type of plant is
+        common in countries with strict environmental standards. Coal-fired power plants are among
+        the most polluting power plants, with CO<sub>2</sub> emissions per MWh generated that are
+        approximately twice as high as those of a gas-fired power plant. By combining the installed
+        capacity of pulverized coal power plants with and without wood pellet co-firing, the
+        total co-firing percentage of biomass at these plants can be adjusted.<br/>
+        <br/> Go to <a href="/scenario/costs/specs_electricity/coal-plants">Costs &
+        efficiencies</a> to adjust the costs and efficiencies of these power plants.
     capacity_of_energy_power_wind_turbine_inland:
       title: Wind onshore
       short_description:
-      description: "This slider builds wind turbines on land. Wind turbines produce
-        less electricity per MWe than fossil fired plants do, because of varying wind
-        conditions (so called intermittency). Inland wind turbines produce at maximum
-        capacity around 25% of the time. \r\n<br/><br/>\r\nPower fluctuations caused
-        by varying wind conditions can destabilize the electricity grid, if wind power
-        is a substantial part of your production park. Wind also requires back-up
-        or import capacity, for windless periods. Gas-fired power plants may serve
-        this purpose, although storage in electric car batteries may also be an option.
-        An alternative for back-up capacity is making demand for power more flexible.
-        Flexible demand and storage capacity also come in handy when wind production
-        peaks in periods of low demand.\r\n<br/><br/>\r\nPlease note that the installed
-        capacity in the starting scenario may be lower than the actual installed capacity.
-        This is due to two reasons. First, the wind market is growing quite rapidly,
-        which means that a number of turbines came online somewhere during the start
-        year of the scenario, these turbines can only count for the time that they
-        were actually producing electricity. The second reason is that this slider
-        concerns state-of-the-art wind turbines, which are a lot larger and more efficient
-        than the older wind parks that are included in the actual installed capacity.
-        Even though the installed capacity may not be exactly as expected, the actual
-        electricity production from wind turbines in the start scenario is equal to
-        that reported in the country's energy statistics."
+      description: |
+        This slider sets the total capacity of onshore wind turbines.<br/><br/>
+        Due to varying wind conditions, the production of wind turbines is volatile, which
+        contributes to fluctuations on the electricity grid. By deploying dispatchable power plants
+        during shortages and storage and flexible demand technologies during production surplus, the
+        fluctuations on the electricity grid can be absorbed. Better utilisation of generated
+        electricity during overproduction ensures that production curtailment is limited as much as
+        possible.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weather conditions</a> to adjust the number of full load hours or upload a custom
+        <a href="/scenario/flexibility/curve_upload/upload-curves">hourly profile</a>
+        for onshore wind.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_coastal:
       title: Wind coastal
       short_description:
-      description: "Here you choose how mucht capacity of wind turbines to build on
-        land at the coastline. These wind turbines are built on dikes
-        or just next to them in the water. Wind turbines produce less electricity
-        per MWe than fossil-fired or nuclear plants do, because of varying wind conditions.
-        \r\nCoastal wind turbines produce at maximum capacity ~27% of the time.\r\n<br/><br/>\r\nIf
-        wind power is a substantial part of your production park, power fluctuations
-        caused by varying wind conditions can destabilize the electricity grid. Wind
-        also requires back-up or import capacity, for windless periods. Gas-fired
-        power plants may serve this purpose, although storage in electric car batteries
-        may also be an option. An alternative for back-up capacity is making demand
-        for power more flexible. Flexible demand and storage capacity also come in
-        handy when wind production peaks in periods of low demand.\r\n<br/><br/>\r\nPlease
-        note that the installed capacity in the starting scenario may be lower than
-        the actual installed capacity. This is due to two reasons. First, the wind
-        market is growing quite rapidly, which means that a number of turbines came
-        online somewhere during the start year of the scenario, these turbines can
-        only count for the time that they were actually producing electricity. The
-        second reason is that this slider concerns state-of-the-art wind turbines,
-        which are a lot larger and more efficient than the older wind parks that are
-        included in the actual installed capacity. Even though the installed capacity
-        may not be exactly as expected, the actual electricity production from wind
-        turbines in the start scenario is equal to that reported in the country's
-        energy statistics."
+      description: |
+        This slider sets the total capacity of coastal wind turbines,
+        such as on dykes or in coastal waters.<br/><br/>
+        Due to varying wind conditions, the production of wind turbines is volatile, which
+        contributes to fluctuations on the electricity grid. By deploying dispatchable power plants
+        during shortages and storage and flexible demand technologies during production surplus,
+        the fluctuations on the electricity grid can be absorbed. Better utilisation of generated
+        electricity during overproduction ensures that production curtailment is limited as much as
+        possible.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weather conditions</a> to adjust the number of full load hours or upload a custom
+        <a href="/scenario/flexibility/curve_upload/upload-curves">hourly profile</a>
+        for coastal wind.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_offshore:
       title: Wind offshore
       short_description:
-      description: "Here you choose how much capacity of wind turbines to build at
-        sea. Wind turbines produce less electricity per MWe than fossil-fired or nuclear plants
-        do because of varying wind conditions. Offshore wind turbines produce at maximum
-        capacity ~40% of the time, if there is not too much need for maintenance.
-        \r\n<br/><br/>\r\nIf wind power is a substantial part of your production park,
-        power fluctuations caused by varying wind conditions can destabilize the electricity
-        grid. Wind also requires back-up or import capacity, for windless periods.
-        Gas-fired power plants may serve this purpose, although storage in electric
-        car batteries may also be an option. An alternative for back-up capacity is
-        making demand for power more flexible. Flexible demand and storage capacity
-        also come in handy when wind production peaks in periods of low demand.\r\n<br/><br/>\r\nPlease
-        note that the installed capacity in the starting scenario may be lower than
-        the actual installed capacity. This is due to two reasons. First, the wind
-        market is growing quite rapidly, which means that a number of turbines came
-        online somewhere during the start year of the scenario, these turbines can
-        only count for the time that they were actually producing electricity. The
-        second reason is that this slider concerns state-of-the-art wind turbines,
-        which are a lot larger and more efficient than the older wind parks that are
-        included in the actual installed capacity. Even though the installed capacity
-        may not be exactly as expected, the actual electricity production from wind
-        turbines in the start scenario is equal to that reported in the country's
-        energy statistics."
+      description: |
+        This slider sets the total capacity of offshore wind turbines.<br/><br/>
+        Due to varying wind conditions, the production of wind turbines is volatile, which
+        contributes to fluctuations on the electricity grid. By deploying dispatchable power plants
+        during shortages and storage and flexible demand technologies during production surplus,
+        the fluctuations on the electricity grid can be absorbed. Better utilisation of generated
+        electricity during overproduction ensures that production curtailment is limited as much as
+        possible.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weather conditions</a> to adjust the number of full load hours or upload a custom
+        <a href="/scenario/flexibility/curve_upload/upload-curves">hourly profile</a>
+        for offshore wind turbines.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+        data-chart-location="side">chart</a> shows the hourly production of offshore wind and
+        solar.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
+        </ul>
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
       title: Wind offshore (with hybrid connection)
       short_description:
-      description:
-        Different from regular offshore wind turbines, hybrid offshore windturbines can either
-        supply their electricity to an offshore electrolyser for hydrogen production or to the HV
-        network through an offshore electricity cable. The (relative) installed capacity of the
-        offshore electrolyser and electricity cable can be set in the
-        <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
-        Flexibility</a> section. <br/><br/>
-        For more information on the components and behaviour of the hybrid offshore wind components,
-        see the <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
-        target=\"_blank\">documentation</a>.<br/><br/>
-        The installed capacities of compoments can be found in this
-        <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>,
-        the annual energy flows in this
-        <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a>.
-        In addition, this <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
-        data-chart-location="side">table</a> also shows the installed capacities and peak loads of
-        the different components.
+      description: |
+        This slider sets the total capacity of offshore wind turbines with a hybrid
+        connection.<br/><br/>
+        Generated electricity can be supplied directly to land via an offshore electricity cable,
+        or can be supplied to an offshore electrolyser for hydrogen production in case of excess
+        electricity production. View the
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
+        target="_blank">documentation</a> for more information about the modelling of hybrid
+        offshore wind.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
+        Flexibility</a> to set the installed capacities of the electrolyser and offshore electricity
+        cable and to adjust the willingness to pay of the electrolyser.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart"
+        data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>
+        shows the installed capacities of the hybrid offshore wind components.</li>
+        <li>This <a href="#" class="open_chart"
+        data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a> shows the
+        annual energy flows between the hybrid offshore wind components.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+        data-chart-location="side">table</a> summarises the installed capacities and annual energy
+        flows of hybrid offshore wind components.</li>
+        </ul>
     capacity_of_energy_battery_wind_turbine_inland:
       title: Wind onshore (with battery system)
-      short_description: ''
+      short_description:
       description: |
-        Different from regular wind turbines on land, these turbines are fitted with a battery and
-        a reduced grid connection capacity by default, as an integrated system. <br/><br/>
-        Due to the volatile nature of wind power output, installing large numbers of wind
-        turbines can have a major impact on the electricity grid. To prevent large capacity
-        peaks on the grid, these turbines are not connected to the grid for the entire installed
-        capacity, but by a reduced amount. When production exceeds the grid connection capacity
-        the battery consumes electricity. When the production drops below the threshold, the
-        battery starts to release the electricity again. Note that due to efficiency losses and
-        storage decay, some electricity is lost in the process. <br/><br/>
-        If the battery cannot consume any more electricity due to charging
-        capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
-        Both the grid connection capacity and the input capacity of the battery are defined
-        relative to the installed capacity. They will therefore both change accordingly if
-        you adjust this slider. You can also change the relative ratios in the Flexibility
-        section, under
-        <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
-        Electricity storage</a>. <br/><br/>
-        You can click on the 'Technical and financial properties' to see the specifications of the
-        wind turbines without the batteries. See
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="flexibility_hourly_battery_wind"
-          data-chart-location="side">
-          this chart
-        </a>
-        for the hourly behaviour of these wind turbines.
+        This slider sets the total capacity of onshore wind turbines with an integrated
+        battery system and limited grid capacity.<br/><br/>
+        To prevent large power peaks on the electricity grid, not the entire
+        installed capacity of the wind turbines is connected to the grid, but the grid capacity is
+        undersized. When production exceeds the grid capacity, the battery
+        starts charging. When production drops below the grid capacity again, the battery
+        will start discharging. <br/><br/>
+        <b>Note</b>: the connected grid capacity and battery power are relative
+        to the installed capacity of the wind turbines and will change with this slider.
+        Go to
+        <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        Flexibility</a> to set the ratio between grid capacity and battery power.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind"
+        data-chart-location="side">chart</a> shows the hourly production and charging behaviour
+        of this technology.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
+        </ul>
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventional
-      short_description: ''
-      description: "A conventional steam turbine gas-fired power plant. \r\n<br/>
-        <br/> \r\nNote: Most new gas-fired plants are combined cycle units (see below)
-        as these are more efficient.\r\n<br/> <br/> \r\nFlexible gas-fired plants
-        are often used for meeting daily electricity demand peaks and therefore produce
-        less electricity per year than coal-fired plants of the same production capacity.\r\n\r\n<br/><br/>
-        \r\nThe input of the slider (in MW) is converted to a (partial) number of
-        the plant described above."
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of conventional gas-fired
+        power plants. <br/><br/> These conventional plants burn natural gas to
+        generate steam, which then drives a steam turbine. They are less efficient
+        than combined cycle gas turbine (CCGT) plants and less flexible than simple
+        gas turbines but can operate continuously and steadily for long periods. As a
+        result, they are mainly used for baseload or medium-term periods of increased
+        electricity demand. <br/><br/> Go to <a href="/scenario/costs/
+        specs_electricity/gas-plants">Costs & efficiencies</a> to adjust the costs and
+        efficiencies of these plants.
     capacity_of_energy_power_combined_cycle_network_gas:
       title: Gas CCGT
-      short_description: ''
-      description: "Here you can build Combined Cycle Gas Turbine (CCGT) power plants
-        consisting of 800 MWe. For more information, see the 'Costs' section.<br/>
-        <br/> \r\nFlexible gas-fired plants are often used for meeting daily electricity
-        demand peaks and therefore produce less electricity per year than coal-fired
-        plants of the same production capacity.\r\n\r\n<br/><br/> \r\nThe input of
-        the slider (in MW) is converted to a (partial) number of the plant described
-        above."
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of combined cycle gas turbine
+        (CCGT) plants. <br/><br/> The gas turbine generates electricity while the
+        waste heat is used to drive a steam turbine. This makes these plants more
+        efficient than other gas-fired power plants. Although they are flexible in
+        operation, they respond less quickly than simple gas turbines and are
+        therefore mainly used for dispatchable power rather than for meeting peak
+        demand. <br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to set the costs and efficiencies of these plants.</li>
+        <li><a href="/scenario/emissions/ccus/
+        capture-of-co2-in-energy-sector">CCUS</a>
+        to set CO<sub>2</sub> capture for this type of gas plant.</li>
+        </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas CCGT CHP
-      short_description: ''
-      description: "This builds a Combined Heat and Power (CHP) unit (~120 MWe and
-        ~120 MWth) that runs on gas. The power generated is shown in the graph on
-        the right as 'gas-fired' power production. The heat produced is supplied to
-        the central heating grid.\r\n<br/><br/>\r\nThis large facility typically supplies
-        a large city heating grid and combines a gas turbine with a steam turbine.
-        The CHP is partly used to supply heat to the grid and partly driven by electricity
-        prices. It supplies electricity for ~6000 hours per year and heat for ~4500
-        hours per year."
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of combined cycle gas turbine
+        (CCGT) plants with combined heat and power (CHP). <br/><br/> The gas turbine
+        generates electricity while the waste heat is used to drive a steam turbine.
+        This makes these plants more efficient than other gas-fired power plants.
+        Additionally, the waste heat is utilised for a district heating network or for
+        industrial applications. This combination makes the plant suitable for
+        long-term operation, with high efficiency for both electricity and heat
+        production. <br/><br/> Go to <a href="/scenario/costs/specs_electricity/
+        gas-plants">Costs & efficiencies</a> to adjust the costs and
+        efficiencies of these plants.
     capacity_of_energy_power_turbine_network_gas:
       title: Gas turbine
       short_description:
-      description: "Here you can set capacity of gas turbine power plants. These are
-        less efficient than the combined-cycle gas turbines (CCGT), but have the advantage
-        that they can handle being turned on and off within minutes. \r\nThese turbines
-        are therefore most often used to provide power during demand peaks. \r\n<br/><br/>\r\nAlthough
-        the number of operating hours per year and total electricity production of
-        these plants are quite limited, they are extremely useful to have in your
-        power mix."
+      description: |
+        This slider adjusts the total electric capacity of gas turbines. <br/><br/> Gas
+        turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
+        are less efficient. The advantage of gas turbines is their ability to start up
+        and shut down quickly. This makes them suitable for meeting peak demand and
+        balancing the electricity grid. Because these plants are mainly used during
+        peak demand, their total operating hours and annual production are limited.
+        <br/><br/> Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to adjust the costs and efficiencies of these plants.
     capacity_of_energy_power_engine_network_gas:
       title: Gas combustion engine
       short_description:
-      description: "This is a power plant made up of 22 reciprocating combustion engine
-        units (18 MWe each), which makes for a 400 MWe power plant. The engines are
-        flexible in terms of what fuel they can use, but in the ETM they are gas-fired.\r\n<br/><br/>\r\nAlthough
-        marginal costs are a bit high for these plants, their total costs are quite
-        low compared to other gas-fired plants, making them an attractive back up
-        option in high wind and solar scenarios.\r\n<br/><br/>\r\nThese power plants
-        are sometimes touted as an excellent solution to the problem of highly variable
-        power production in scenarios that have a lot of installed wind and solar
-        power. Reciprocating engines offer several advantages over traditional power
-        plants. Most important are their flexibility and the speed at which they can
-        vary their power output. \r\n<br/><br/>\r\nEach unit can operate at any load
-        between <1% and 100% without loss of output efficiency. Each unit can also
-        increase its output from 0 to 100% in ~2 minutes, and start delivering power
-        to the grid within 30 seconds of being started, regardless of its off time.
-        Since each <em>plant</em> contains 22 units, the plant can provide anywhere
-        between ~1 MWe and 400 MWe of power to the grid within minutes at most, shut
-        down completely within 1 minute and be back at full power 2 minutes later
-        <em>without any loss of efficiency</em>. This makes it possible to balance
-        large fluctuations in wind power production and maintain grid stability. Power
-        plants with a steam cycle or even gas turbines often lose tens of percents
-        in efficiency when their load drops to below 60 - 70%, making them much less
-        efficient in balancing wind power. \r\n<br/><br/>\r\nThe input of the slider
-        (in MW) is converted to a (partial) number of the plant described above."
+      description: |
+        This slider adjusts the total electric capacity of gas engine plants. <br/>
+        <br/> Gas engines are large combustion engines that directly drive a
+        generator. They consist of multiple units that can start up and shut down
+        quickly without loss of efficiency. Despite higher operational costs, the
+        total costs of gas engines are relatively low compared to other gas-fired
+        power plants. This makes gas engines suitable as backup alongside variable
+        electricity production (for example from wind and solar energy). <br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to adjust the costs and efficiencies of these plants.
     capacity_of_energy_chp_local_engine_network_gas:
       title: Gas motor CHP
       short_description:
-      description: "A CHP produces both heat and electricity. Here you can set the
-        capacity of gas CHPs that supply heat for district heating.\r\n</br>"
+      description: |
+        This slider adjusts the total electric capacity of gas engine plants with
+        combined heat and power (CHP). <br/><br/> Gas engines are large combustion
+        engines that directly drive a generator. Gas engines with CHP produce both
+        electricity and heat, which can be used for district heating networks.
+        Gas engines consist of multiple units that can start
+        up and shut down quickly without loss of efficiency. This makes them suitable
+        for balancing the electricity grid. <br/><br/> Go to <a href="/scenario/
+        costs/specs_electricity/gas-plants">Costs & efficiencies</a> to adjust
+        the costs and efficiencies of these plants.
     green_gas_total_share:
       title: Green gas
       short_description: ''
@@ -653,22 +733,21 @@ en:
     share_of_energy_steel_energy_production_coal_gas:
       title: Energy production
       description: |
-        Coal gas is currently used for electricity and heat production in specific CHPs and power
-        plants. Here you can indicate what share of coal gas that is not used for the steel-making
-        process itself, is used for electricity and heat generation. </br></br>
-        Note that the coal gas CHPs and power plants are considered must-run. They therefore produce
-        when coal gas is available, irrespective of electricity and heat demand. You can view the
-        installed capacities of these plants in the
-        <a href="#" class="open_chart" data-chart-key="merit_order_table" data-chart-location="side">
-        merit order table</a>. </br></br>
-        Click on the "technical and financial properties" to see the specifications of the coal gas power plant.
+        This slider determines which share of the produced coal gases is used in
+        power plants and combined heat and power plants (CHP).<br/><br/> Coal gas
+        has a high CO<sub>2</sub> content and is therefore very CO<sub>2</sub> intensive.
+        These must-run plants operate as soon as coal gas is
+        available, regardless of demand. An alternative is to convert the coal
+        gases into chemical feedstock.<br/><br/> Open the <a href="#"
+        class="open_chart" data-chart-key="merit_order_table"
+        data-chart-location="side">Merit order table</a> to view the installed
+        capacity of the coal gas plants.
     share_of_energy_steel_chemical_feedstock_coal_gas:
       title: Chemical feedstock
       description: |
-        An alternative for energy production with high CO<sub>2</sub> emissions
-        is the capture of coal gas. The captured gas can then be transformed into feedstock for
-        the chemical industry. Here you can indicate what share of coal gas that is not used for
-        the steel-making process itself, is used for feedstock production. </br></br>
-        Since a lot is still unknown about the steel-to-chemicals route the ETM does not explicitly
-        model the impact of this on other (fossil) feedstock use in the
-        <a href="/scenario/demand/industry/chemicals">chemical industry</a>.
+        This slider determines which share of the produced coal gases is converted
+        into chemical feedstock (<i>steel-to-chemicals</i>).<br/><br/> A higher
+        share results in less coal gas being used for energy production. The
+        <i>steel-to-chemicals</i> route is still under development; therefore,
+        the ETM does not yet model the final consumption of coal gases in the
+        chemical sector.

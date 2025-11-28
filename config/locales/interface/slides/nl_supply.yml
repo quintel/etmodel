@@ -135,12 +135,13 @@ nl:
     supply_ccus_steel_coal_gas:
       title: Kolengascentrales
       description: |
-        Kolengassen zijn een bijproduct van <a href='scenario/demand/industry/steel'>staalproductie</a> dat wordt
-        geproduceerd uit hoogovens. Een deel van deze gassen wordt in het staalproductieproces zelf gebruikt.
-        Het overige deel wordt typisch gebruik in
-        elektriciteitscentrales en WKK's, of kan worden ingezet als grondstof voor de chemiesector.</br></br>
-        Stel hieronder het aandeel in van de kolengassen dat wordt ingezet voor energieproductie of voor
-        omzetting naar grondstof voor de chemiesector. <br/><br/>
+        Kolengassen zijn een bijproduct van
+        <a href="/scenario/demand/industry/steel">staalproductie</a> en komen vrij in hoogovens.
+        Een deel van deze gassen wordt in het staalproductieproces zelf gebruikt.
+        Het overige deel wordt typisch gebruik in elektriciteitscentrales en WKK's, of kan worden
+        ingezet als grondstof voor de chemiesector.<br/><br/>
+        Stel hieronder het aandeel in van de kolengassen dat wordt ingezet voor energieproductie of
+        voor omzetting naar grondstof voor de chemiesector.
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot van biomassa
       short_description:
@@ -157,37 +158,40 @@ nl:
         enkele manier meegenomen in jouw scenario.</strong>"
     supply_electricity_coal_plants:
       title: Kolencentrales
-      short_description: ''
+      short_description:
       description: |
         Hieronder kan het geïnstalleerd vermogen van verschillende typen kolencentrales worden
         ingesteld.<br/><br/>
-        In de <a href='/scenario/emissions/ccus/capture-of-co2'>CCUS</a>
-        sectie kunnen aannames worden gedaan over CO<sub>2</sub>-afvang bij kolencentrales. In de sectie
-        <a href='/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants'>biomassa</a> kunnen
-        aannames worden gedaan over de bijstook van biokolen (<i>torrefied pellets</i>) in kolencentrales.
+        In de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a>
+        kunnen aannames worden gedaan over CO<sub>2</sub>-afvang bij kolencentrales. In de sectie
+        <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biomassa</a> kunnen
+        aannames worden gedaan over de bijstook van biokolen (<i>torrefied pellets</i>) in
+        kolencentrales.
     supply_electricity_gas_plants:
       title: Gascentrales
-      short_description: ''
+      short_description:
       description: |
         Hieronder kan het geïnstalleerd vermogen van verschillende
-        typen gascentrales worden ingesteld. <br/><br/>In de <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a>
-        sectie kunnen aannames worden gedaan over CO<sub>2</sub>-afvang bij gascentrales. In de sectie
-        <a href='/scenario/supply/biomass/gas-mix-in-gas-network'>biomassa</a>
+        typen gascentrales worden ingesteld. <br/><br/>
+        In de sectie <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a>
+        kunnen aannames worden gedaan over CO<sub>2</sub>-afvang bij gascentrales. In de sectie
+        <a href="/scenario/supply/biomass/gas-mix-in-gas-network">biomassa</a>
         kan het aandeel van groengas in het gasnetwerk worden ingesteld.
     supply_electricity_nuclear_plant:
       title: Kerncentrales
-      short_description: ''
+      short_description:
       description: |
         Stel hier het geïnstalleerd vermogen in van grote 2e en 3e generatie kerncentrales
         en van kleine modulaire reactoren.</br></br>
         Standaard draaien kerncentrales als regelbare centrales in het ETM. Hieronder kan worden
-        ingesteld om in plaats daarvan de grote reactoren als
+        ingesteld om in plaats daarvan de grote reactoren als niet-regelbare centrales te
+        modelleren. Lees hier meer over in de
         <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand"
-        target=\"_blank\"> niet-regelbare</a>
-        centrales te modelleren. Dit is niet van toepassing op kleine modulaire reactoren.
+        target="_blank">documentatie</a>. Deze instelling is niet van toepassing op kleine
+        modulaire reactoren.
     supply_electricity_oil_plants:
       title: Oliecentrales
-      short_description: ''
+      short_description:
       description: |
         Stel hier het geïnstalleerd vermogen in van oliecentrales en dieselcentrales.
     supply_electricity_backup_security_of_supply:
@@ -233,14 +237,14 @@ nl:
       title: Zon-PV
       short_description:
       description: |
-        Stel hier het opgesteld vermogen in van zon op dak, zon op veld en zon op zee.
-        Ga naar sectie <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
-        Flexibiliteit</a> om de vollasturen aan te passen.
+        Stel hier het opgesteld vermogen in van diverse zon-PV technologieën. Ga naar sectie
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Flexibiliteit</a> om de vollasturen van zon-PV technologieën aan te passen.
     supply_electricity_renewable_wind_turbines:
       title: Windturbines
       short_description:
       description: |
-        Stel hier het opgesteld vermogen in van windturbines op land en op zee. Ga naar sectie
+        Stel hier het opgesteld vermogen in van wind op land en wind op zee. Ga naar sectie
         <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
         Flexibiliteit</a> om de vollasturen aan te passen.
     supply_electricity_renewable_hydrogen_plants:

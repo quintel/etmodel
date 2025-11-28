@@ -394,7 +394,7 @@ en:
         <li><a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
         to set the costs and efficiencies for these power plants.</li>
         <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
-        CCS</a> to set CO<sub>2</sub> capture.
+        CCUS</a> to set CO<sub>2</sub> capture.
         </ul>
     capacity_of_energy_power_combined_cycle_coal:
       title: Coal IGCC
@@ -412,7 +412,7 @@ en:
         <li><a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
         to set the costs and efficiencies for these power plants.</li>
         <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
-        CCS</a> to set CO<sub>2</sub> capture.
+        CCUS</a> to set CO<sub>2</sub> capture.
         </ul>
     capacity_of_energy_power_supercritical_coal:
       title: Coal conventional
@@ -433,7 +433,7 @@ en:
         emissions of all power plants. They function as baseload power plants.
         Construction is only possible with a local lignite supply.<br/><br/>
         Go to <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">
-        CCS</a> to set CO<sub>2</sub> capture.
+        CCUS</a> to set CO<sub>2</sub> capture.
     capacity_of_energy_chp_ultra_supercritical_lignite:
       title: Lignite CHP
       short_description:
@@ -502,11 +502,11 @@ en:
         for onshore wind.<br/><br/>
         Use the charts and tables for more insight:
         <ul>
-          <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
-          data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
-          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
-          data-chart-location="side">chart</a> displays the share of wind in renewable
-          electricity production.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
         </ul>
     capacity_of_energy_power_wind_turbine_coastal:
       title: Wind coastal
@@ -526,11 +526,11 @@ en:
         for coastal wind.<br/><br/>
         Use the charts and tables for more insight:
         <ul>
-          <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
-          data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
-          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
-          data-chart-location="side">chart</a> displays the share of wind in renewable
-          electricity production.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
         </ul>
     capacity_of_energy_power_wind_turbine_offshore:
       title: Wind offshore
@@ -549,12 +549,12 @@ en:
         for offshore wind turbines.<br/><br/>
         Use the charts and tables for more insight:
         <ul>
-          <li>This <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
-          data-chart-location="side">chart</a> shows the hourly production of offshore wind and
-          solar.</li>
-          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
-          data-chart-location="side">chart</a> displays the share of wind in renewable
-          electricity production.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+        data-chart-location="side">chart</a> shows the hourly production of offshore wind and
+        solar.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
         </ul>
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
       title: Wind offshore (with hybrid connection)
@@ -573,15 +573,15 @@ en:
         cable and to adjust the willingness to pay of the electrolyser.<br/><br/>
         Use the charts and tables for more insight:
         <ul>
-          <li>This <a href="#" class="open_chart"
-          data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>
-          shows the installed capacities of the hybrid offshore wind components.</li>
-          <li>This <a href="#" class="open_chart"
-          data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a> shows the
-          annual energy flows between the hybrid offshore wind components.</li>
-          <li>This <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
-          data-chart-location="side">table</a> summarises the installed capacities and annual energy
-          flows of hybrid offshore wind components.</li>
+        <li>This <a href="#" class="open_chart"
+        data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>
+        shows the installed capacities of the hybrid offshore wind components.</li>
+        <li>This <a href="#" class="open_chart"
+        data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a> shows the
+        annual energy flows between the hybrid offshore wind components.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+        data-chart-location="side">table</a> summarises the installed capacities and annual energy
+        flows of hybrid offshore wind components.</li>
         </ul>
     capacity_of_energy_battery_wind_turbine_inland:
       title: Wind onshore (with battery system)
@@ -601,12 +601,12 @@ en:
         Flexibility</a> to set the ratio between grid capacity and battery power.<br/><br/>
         Use the charts and tables for more insight:
         <ul>
-          <li>This <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind"
-          data-chart-location="side">chart</a> shows the hourly production and charging behaviour
-          of this technology.</li>
-          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
-          data-chart-location="side">chart</a> displays the share of wind in renewable
-          electricity production.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind"
+        data-chart-location="side">chart</a> shows the hourly production and charging behaviour
+        of this technology.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+        data-chart-location="side">chart</a> displays the share of wind in renewable
+        electricity production.</li>
         </ul>
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventional
@@ -637,7 +637,7 @@ en:
         <li><a href="/scenario/costs/specs_electricity/gas-plants">Costs &
         efficiencies</a> to set the costs and efficiencies of these plants.</li>
         <li><a href="/scenario/emissions/ccus/
-        capture-of-co2-in-energy-sector">CCS</a>
+        capture-of-co2-in-energy-sector">CCUS</a>
         to set CO<sub>2</sub> capture for this type of gas plant.</li>
         </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:

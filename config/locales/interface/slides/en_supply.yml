@@ -125,13 +125,13 @@ en:
     supply_ccus_steel_coal_gas:
       title: Coal gas plants
       description: |
-        Coal gases are a byproduct of <a href='scenario/demand/industry/steel'>steel 
-        production</a> that are generated in blast furnaces. Part of these gases is 
-        used within the steel production process itself. The remaining portion is 
-        typically used in power plants and CHP units, or can be utilized as a 
-        feedstock for the chemical sector.</br></br> Set below the share of coal gases 
-        that is used for energy production or converted into feedstock for the 
-        chemical sector.<br/><br/>
+        Coal gases are a byproduct of
+        <a href="/scenario/demand/industry/steel">steel production</a> and are released in
+        blast furnaces. Part of these gases is used within the steel production process itself.
+        The remainder is typically used in power plants and CHPs, or can be used as a
+        feedstock for the chemical sector.<br/><br/>
+        Below, the share can be set of coal gases used for energy production or for conversion to
+        feedstock for the chemical sector.
     supply_co2_emissions_biomass:
       title: CO<sub>2</sub> emissions of biomass
       short_description:
@@ -148,41 +148,45 @@ en:
         in your scenario!</strong>"
     supply_electricity_coal_plants:
       title: Coal plants
-      short_description: ''
+      short_description:
       description: |
-        Below, the installed capacity of various types of coal-fired power plants can 
-        be set. <br/><br/> In the <a href='/scenario/emissions/ccus/
-        capture-of-co2'>CCUS</a> section, assumptions can be made regarding CO<sub>2
-        </sub> capture at coal-fired power plants. In the <a href='/scenario/supply/
-        biomass/biocoal-and-bio-oil-in-energy-plants'>biomass</a> section, assumptions 
-        can be made about the co-firing of biocoal (<em>torrefied pellets</em>) in 
+        Below, the installed capacity of various types of coal-fired power plants can
+        be set. <br/><br/>
+        In the
+        <a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a> section,
+        assumptions can be made regarding CO<sub>2</sub> capture at coal-fired power plants.
+        In the
+        <a href="/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants">biomass</a> section,
+        assumptions can be made about the co-firing of biocoal (<em>torrefied pellets</em>) in
         coal-fired power plants.
     supply_electricity_gas_plants:
       title: Gas plants
-      short_description: ''
+      short_description:
       description: |
-        Below, the installed capacity of various types of gas-fired power plants can be 
-        set. <br/><br/> In the <a href='/scenario/supply/ccus/capture-of-co2'>CCUS</a> 
-        section, assumptions can be made regarding CO<sub>2</sub> capture at gas-fired 
-        power plants. In the <a href='/scenario/supply/biomass/
-        gas-mix-in-gas-network'>biomass</a> section, the share of green gas in the gas 
+        Below, the installed capacity of various types of gas-fired power plants can be
+        set. <br/><br/>
+        In the <a href="/scenario/supply/ccus/capture-of-co2">CCUS</a>
+        section, assumptions can be made regarding CO<sub>2</sub> capture at gas-fired
+        power plants. In the <a href="/scenario/supply/biomass/
+        gas-mix-in-gas-network">biomass</a> section, the share of green gas in the gas
         network can be set.
     supply_electricity_nuclear_plant:
       title: Nuclear plants
-      short_description: ''
+      short_description:
       description: |
-        Set the installed capacity here for large 2nd and 3rd generation nuclear power 
-        plants and for small modular reactors.</br></br> By default, nuclear power 
-        plants operate as dispatchable plants in the ETM. Below, an option is available 
-        to model large reactors as <a href="https://docs.energytransitionmodel.
-        com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand"
-        target="_blank">must-run</a> plants. This does not apply to small modular 
+        The installed capacity for large 2nd and 3rd generation nuclear power
+        plants and for small modular reactors can be set here.</br></br>
+        By default, nuclear power plants operate as dispatchable plants in the ETM. Below, an
+        option is available to model large reactors as must-run plants. Read more about this in
+        the
+        <a href="https://docs.energytransitionmodel.com/main/flexibility/#definitions-of-flexible-and-inflexible-supply-and-demand"
+        target="_blank">documentation</a>. This setting does not apply to small modular
         reactors.
     supply_electricity_oil_plants:
       title: Oil plants
-      short_description: ''
+      short_description:
       description: |
-        Set the installed capacity for oil-fired power plants and diesel power plants.
+        Below, the installed capacity for oil-fired power plants and diesel power plants can be set.
     supply_electricity_backup_security_of_supply:
       title: Security of supply
       short_description:
@@ -210,16 +214,18 @@ en:
         built at tremendous cost to the environment. How much do you want to produce?
     supply_electricity_renewable_solar_power:
       title: Solar power
-      short_description: ''
-      description: "Is solar power the future? How much do you want to produce? <br/><br/>
-        Here, you can build solar power installations on rooftops of households and buildings, and
-        centralized solar power plants on landfills and terrain unfit for other purposes."
+      short_description:
+      description: |
+        Here, the installed capacity of various solar PV technologies can be set. Go to the
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Flexibility</a> section to adjust the full load hours of solar PV technologies.
     supply_electricity_renewable_wind_turbines:
       title: Wind turbines
-      short_description: ''
-      description: "How much wind power to you want to install? Full load hours for
-        wind and sun can be adjusted in the <a href=\"/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\">weather
-        section</a>.\r\n"
+      short_description:
+      description: |
+        In this section, the installed capacity of onshore and offshore wind can be set. Go to
+        the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Flexibility</a> section to adjust the full load hours.
     supply_electricity_renewable_waste_power:
       title: Waste power
       short_description: ''

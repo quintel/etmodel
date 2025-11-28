@@ -12,20 +12,30 @@ nl:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt het aantal in de toekomst gebouwde gebouwen ingesteld.
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
-        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+        Dit schuifje stelt het aantal in de toekomst gebouwde gebouwen in. Het gaat hier om alle
+        gebouwen waar niet in gewoond wordt, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc.<br/><br/>
+        <b>Let op</b>: dit schuifje representeert het aantal gebouwen in
+        <i>woningequivalenten (WEQ)</i>, dus niet het daadwerkelijke aantal gebouwen.
+        Het aantal woningequivalenten volgt uit het totale oppervlak dat wordt
+        beslagen door gebouwen gedeeld door een vastgestelde oppervlakte per woningequivalent
+        (bijvoorbeeld 130 m<sup>2</sup>).<br/><br/>
+        De warmtevraag van bestaande en nieuwe gebouwen kan
+        <a href="/scenario/demand/buildings/heat-demand-and-insulation">hier</a> worden aangepast.
     buildings_number_of_buildings_present:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt het aantal huidige gebouwen ingesteld.
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
-        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+        Dit schuifje stelt het aantal huidige gebouwde gebouwen in. Het gaat hier om alle
+        gebouwen waar niet in gewoond wordt, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc.<br/><br/>
+        <b>Let op</b>: dit schuifje representeert het aantal gebouwen in
+        <i>woningequivalenten (WEQ)</i>, dus niet het daadwerkelijke aantal gebouwen.
+        Het aantal woningequivalenten volgt uit het totale oppervlak dat wordt
+        beslagen door gebouwen gedeeld door een vastgestelde oppervlakte per woningequivalent
+        (bijvoorbeeld 130 m<sup>2</sup>).<br/><br/>
+        De warmtevraag van bestaande en nieuwe gebouwen kan
+        <a href="/scenario/demand/buildings/heat-demand-and-insulation">hier</a> worden aangepast.
     buildings_insulation_level_buildings_future:
       title: Nieuwe gebouwen
       short_description:

@@ -442,129 +442,126 @@ en:
     capacity_of_energy_power_wind_turbine_inland:
       title: Wind onshore
       short_description:
-      description: "This slider builds wind turbines on land. Wind turbines produce
-        less electricity per MWe than fossil fired plants do, because of varying wind
-        conditions (so called intermittency). Inland wind turbines produce at maximum
-        capacity around 25% of the time. \r\n<br/><br/>\r\nPower fluctuations caused
-        by varying wind conditions can destabilize the electricity grid, if wind power
-        is a substantial part of your production park. Wind also requires back-up
-        or import capacity, for windless periods. Gas-fired power plants may serve
-        this purpose, although storage in electric car batteries may also be an option.
-        An alternative for back-up capacity is making demand for power more flexible.
-        Flexible demand and storage capacity also come in handy when wind production
-        peaks in periods of low demand.\r\n<br/><br/>\r\nPlease note that the installed
-        capacity in the starting scenario may be lower than the actual installed capacity.
-        This is due to two reasons. First, the wind market is growing quite rapidly,
-        which means that a number of turbines came online somewhere during the start
-        year of the scenario, these turbines can only count for the time that they
-        were actually producing electricity. The second reason is that this slider
-        concerns state-of-the-art wind turbines, which are a lot larger and more efficient
-        than the older wind parks that are included in the actual installed capacity.
-        Even though the installed capacity may not be exactly as expected, the actual
-        electricity production from wind turbines in the start scenario is equal to
-        that reported in the country's energy statistics."
+      description: |
+        This slider sets the total capacity of onshore wind turbines.<br/><br/>
+        Due to varying wind conditions, the production of wind turbines is volatile, which
+        contributes to fluctuations on the electricity grid. By deploying dispatchable power plants
+        during shortages and storage and flexible demand technologies during production surplus, the
+        fluctuations on the electricity grid can be absorbed. Better utilisation of generated
+        electricity during overproduction ensures that production curtailment is limited as much as
+        possible.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weather conditions</a> to adjust the number of full load hours or upload a custom
+        <a href="/scenario/flexibility/curve_upload/upload-curves">hourly profile</a>
+        for onshore wind.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+          data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">chart</a> displays the share of wind in renewable
+          electricity production.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_coastal:
       title: Wind coastal
       short_description:
-      description: "Here you choose how mucht capacity of wind turbines to build on
-        land at the coastline. These wind turbines are built on dikes
-        or just next to them in the water. Wind turbines produce less electricity
-        per MWe than fossil-fired or nuclear plants do, because of varying wind conditions.
-        \r\nCoastal wind turbines produce at maximum capacity ~27% of the time.\r\n<br/><br/>\r\nIf
-        wind power is a substantial part of your production park, power fluctuations
-        caused by varying wind conditions can destabilize the electricity grid. Wind
-        also requires back-up or import capacity, for windless periods. Gas-fired
-        power plants may serve this purpose, although storage in electric car batteries
-        may also be an option. An alternative for back-up capacity is making demand
-        for power more flexible. Flexible demand and storage capacity also come in
-        handy when wind production peaks in periods of low demand.\r\n<br/><br/>\r\nPlease
-        note that the installed capacity in the starting scenario may be lower than
-        the actual installed capacity. This is due to two reasons. First, the wind
-        market is growing quite rapidly, which means that a number of turbines came
-        online somewhere during the start year of the scenario, these turbines can
-        only count for the time that they were actually producing electricity. The
-        second reason is that this slider concerns state-of-the-art wind turbines,
-        which are a lot larger and more efficient than the older wind parks that are
-        included in the actual installed capacity. Even though the installed capacity
-        may not be exactly as expected, the actual electricity production from wind
-        turbines in the start scenario is equal to that reported in the country's
-        energy statistics."
+      description: |
+        This slider sets the total capacity of coastal wind turbines,
+        such as on dykes or in coastal waters.<br/><br/>
+        Due to varying wind conditions, the production of wind turbines is volatile, which
+        contributes to fluctuations on the electricity grid. By deploying dispatchable power plants
+        during shortages and storage and flexible demand technologies during production surplus,
+        the fluctuations on the electricity grid can be absorbed. Better utilisation of generated
+        electricity during overproduction ensures that production curtailment is limited as much as
+        possible.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weather conditions</a> to adjust the number of full load hours or upload a custom
+        <a href="/scenario/flexibility/curve_upload/upload-curves">hourly profile</a>
+        for coastal wind.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+          data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">chart</a> displays the share of wind in renewable
+          electricity production.</li>
+        </ul>
     capacity_of_energy_power_wind_turbine_offshore:
       title: Wind offshore
       short_description:
-      description: "Here you choose how much capacity of wind turbines to build at
-        sea. Wind turbines produce less electricity per MWe than fossil-fired or nuclear plants
-        do because of varying wind conditions. Offshore wind turbines produce at maximum
-        capacity ~40% of the time, if there is not too much need for maintenance.
-        \r\n<br/><br/>\r\nIf wind power is a substantial part of your production park,
-        power fluctuations caused by varying wind conditions can destabilize the electricity
-        grid. Wind also requires back-up or import capacity, for windless periods.
-        Gas-fired power plants may serve this purpose, although storage in electric
-        car batteries may also be an option. An alternative for back-up capacity is
-        making demand for power more flexible. Flexible demand and storage capacity
-        also come in handy when wind production peaks in periods of low demand.\r\n<br/><br/>\r\nPlease
-        note that the installed capacity in the starting scenario may be lower than
-        the actual installed capacity. This is due to two reasons. First, the wind
-        market is growing quite rapidly, which means that a number of turbines came
-        online somewhere during the start year of the scenario, these turbines can
-        only count for the time that they were actually producing electricity. The
-        second reason is that this slider concerns state-of-the-art wind turbines,
-        which are a lot larger and more efficient than the older wind parks that are
-        included in the actual installed capacity. Even though the installed capacity
-        may not be exactly as expected, the actual electricity production from wind
-        turbines in the start scenario is equal to that reported in the country's
-        energy statistics."
+      description: |
+        This slider sets the total capacity of offshore wind turbines.<br/><br/>
+        Due to varying wind conditions, the production of wind turbines is volatile, which
+        contributes to fluctuations on the electricity grid. By deploying dispatchable power plants
+        during shortages and storage and flexible demand technologies during production surplus,
+        the fluctuations on the electricity grid can be absorbed. Better utilisation of generated
+        electricity during overproduction ensures that production curtailment is limited as much as
+        possible.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">
+        Weather conditions</a> to adjust the number of full load hours or upload a custom
+        <a href="/scenario/flexibility/curve_upload/upload-curves">hourly profile</a>
+        for offshore wind turbines.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+          data-chart-location="side">chart</a> shows the hourly production of offshore wind and
+          solar.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">chart</a> displays the share of wind in renewable
+          electricity production.</li>
+        </ul>
     capacity_of_energy_power_hybrid_wind_turbine_offshore:
       title: Wind offshore (with hybrid connection)
       short_description:
-      description:
-        Different from regular offshore wind turbines, hybrid offshore windturbines can either
-        supply their electricity to an offshore electrolyser for hydrogen production or to the HV
-        network through an offshore electricity cable. The (relative) installed capacity of the
-        offshore electrolyser and electricity cable can be set in the
-        <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
-        Flexibility</a> section. <br/><br/>
-        For more information on the components and behaviour of the hybrid offshore wind components,
-        see the <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
-        target=\"_blank\">documentation</a>.<br/><br/>
-        The installed capacities of compoments can be found in this
-        <a href="#" class="open_chart" data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>,
-        the annual energy flows in this
-        <a href="#" class="open_chart" data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a>.
-        In addition, this <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
-        data-chart-location="side">table</a> also shows the installed capacities and peak loads of
-        the different components.
+      description: |
+        This slider sets the total capacity of offshore wind turbines with a hybrid
+        connection.<br/><br/>
+        Generated electricity can be supplied directly to land via an offshore electricity cable,
+        or can be supplied to an offshore electrolyser for hydrogen production in case of excess
+        electricity production. View the
+        <a href="https://docs.energytransitionmodel.com/main/hybrid-offshore-wind"
+        target="_blank">documentation</a> for more information about the modelling of hybrid
+        offshore wind.<br/><br/>
+        Go to <a href="/scenario/flexibility/flexibility_net_load/hybrid-offshore-wind-components">
+        Flexibility</a> to set the installed capacities of the electrolyser and offshore electricity
+        cable and to adjust the willingness to pay of the electrolyser.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+          <li>This <a href="#" class="open_chart"
+          data-chart-key="installed_hybrid_offshore_capacities" data-chart-location="side">chart</a>
+          shows the installed capacities of the hybrid offshore wind components.</li>
+          <li>This <a href="#" class="open_chart"
+          data-chart-key="sankey_hybrid_offshore" data-chart-location="side">chart</a> shows the
+          annual energy flows between the hybrid offshore wind components.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="capacity_energy_hybrid_offshore"
+          data-chart-location="side">table</a> summarises the installed capacities and annual energy
+          flows of hybrid offshore wind components.</li>
+        </ul>
     capacity_of_energy_battery_wind_turbine_inland:
       title: Wind onshore (with battery system)
-      short_description: ''
+      short_description:
       description: |
-        Different from regular wind turbines on land, these turbines are fitted with a battery and
-        a reduced grid connection capacity by default, as an integrated system. <br/><br/>
-        Due to the volatile nature of wind power output, installing large numbers of wind
-        turbines can have a major impact on the electricity grid. To prevent large capacity
-        peaks on the grid, these turbines are not connected to the grid for the entire installed
-        capacity, but by a reduced amount. When production exceeds the grid connection capacity
-        the battery consumes electricity. When the production drops below the threshold, the
-        battery starts to release the electricity again. Note that due to efficiency losses and
-        storage decay, some electricity is lost in the process. <br/><br/>
-        If the battery cannot consume any more electricity due to charging
-        capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
-        Both the grid connection capacity and the input capacity of the battery are defined
-        relative to the installed capacity. They will therefore both change accordingly if
-        you adjust this slider. You can also change the relative ratios in the Flexibility
-        section, under
-        <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
-        Electricity storage</a>. <br/><br/>
-        You can click on the 'Technical and financial properties' to see the specifications of the
-        wind turbines without the batteries. See
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="flexibility_hourly_battery_wind"
-          data-chart-location="side">
-          this chart
-        </a>
-        for the hourly behaviour of these wind turbines.
+        This slider sets the total capacity of onshore wind turbines with an integrated
+        battery system and limited grid capacity.<br/><br/>
+        To prevent large power peaks on the electricity grid, not the entire
+        installed capacity of the wind turbines is connected to the grid, but the grid capacity is
+        undersized. When production exceeds the grid capacity, the battery
+        starts charging. When production drops below the grid capacity again, the battery
+        will start discharging. <br/><br/>
+        <b>Note</b>: the connected grid capacity and battery power are relative
+        to the installed capacity of the wind turbines and will change with this slider.
+        Go to
+        <a href="/scenario/flexibility/flexibility_storage/wind-turbines-with-storage-systems">
+        Flexibility</a> to set the ratio between grid capacity and battery power.<br/><br/>
+        Use the charts and tables for more insight:
+        <ul>
+          <li>This <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_wind"
+          data-chart-location="side">chart</a> shows the hourly production and charging behaviour
+          of this technology.</li>
+          <li>This <a href="#" class="open_chart" data-chart-key="renewable_electricity"
+          data-chart-location="side">chart</a> displays the share of wind in renewable
+          electricity production.</li>
+        </ul>
     capacity_of_energy_power_ultra_supercritical_network_gas:
       title: Gas conventional
       short_description:

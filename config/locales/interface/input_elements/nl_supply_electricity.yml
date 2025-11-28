@@ -5,85 +5,73 @@ nl:
       title: Biogas-WKK
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van must-run biogascentrales
-        met warmtekrachtkoppelingen (WKK's).<br/><br/> Biogas-WKK's produceren zowel
-        elektriciteit als warmte door biogas te verbranden. De opgewekte warmte kan
-        worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt.
-        Deze technologie wordt vaak toegepast op locaties met toegang tot biogas, zoals
-        afvalverwerkingsinstallaties en waterzuiveringsinstallaties.<br/><br/>
-        Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om
-          in te stellen hoe de warmte wordt ingezet.
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan biogas-WKK's in dat warmte levert aan warmtenetten.
+        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
     capacity_of_energy_chp_local_wood_pellets_must_run:
       title: Biomassa-WKK
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van must-run biomassacentrales met
-        warmtekrachtkoppelingen (WKK's).<br/><br/>Biomassa-WKK's genereren zowel elektriciteit
-        als warmte door biomassa te verbranden. De opgewekte warmte kan worden geleverd aan
-        warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt. Biomassa-WKK's worden
-        vaak ingezet op locaties met toegang tot organisch materiaal, zoals
-        afvalverwerkingsinstallaties of de agrarische sector.<br/><br/>
-        Ga naar <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen
-        hoe de warmte wordt ingezet.
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan must-run biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
     capacity_of_energy_chp_local_wood_pellets_dispatchable:
       title: Biomassa-WKK
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van regelbare biomassacentrales met
-        warmtekrachtkoppelingen (WKK's). <br/><br/> Biomassa-WKK's genereren zowel
-        elektriciteit als warmte door biomassa te verbranden. De opgewekte warmte kan
-        worden geleverd aan warmtenetten, terwijl de elektriciteit lokaal wordt opgewekt.
-        Biomassa-WKK's worden vaak ingezet op locaties met toegang tot organisch materiaal,
-        zoals afvalverwerkingsinstallaties of de agrarische sector.<br/><br/>Ga naar
-        <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> om in te stellen hoe de
-        warmte wordt ingezet.
+        Een WKK produceert zowel elektriciteit als warmte. Stel hier het
+        elektrische vermogen aan regelbare biomassa-WKK's in dat warmte levert aan warmtenetten.
+        Voor meer informatie kun je de <a href="/scenario/supply/heat/heat-sources">Warmtenetten</a> pagina's bekijken.</br>
     capacity_of_energy_power_wood_pellets_must_run:
       title: Biomassacentrale
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van must-run biomassacentrales.<br/><br/>
-        Een biomassacentrale genereert elektriciteit door biomassa te verbranden,
-        welke wordt geleverd aan het elektriciteitsnet. Een deel van het vermogen werkt
-        op een must-run basis voor continue productie, terwijl de rest flexibel is en
-        kan inspelen op de vraag. Zonder must-run vermogen is er ook geen regelbaar vermogen.
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen.
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag.
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de
+        biomassacentrale. <br/><br/>
+        Met deze schuif kan het geïnstalleerd vermogen van must-run biomassacentrales worden ingesteld die alleen elektriciteit leveren.
     capacity_of_energy_power_wood_pellets_dispatchable:
       title: Biomassacentrale
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van regelbare biomassacentrales. <br/><br/>
-        Een biomassacentrale genereert elektriciteit door biomassa te verbranden, welke
-        wordt geleverd aan het elektriciteitsnet. Een deel van het vermogen werkt op een
-        must-run basis voor continue productie, terwijl de rest flexibel is en kan inspelen
-        op de vraag. Zonder must-run vermogen is er ook geen regelbaar vermogen.
+        Een biomassacentrale produceert elektriciteit uit biomassa. Voor een typische biomassacentrale werkt een deel van het
+        geïnstalleerd vermogen op een must-run basis, wat zorgt voor continue elektriciteitsproductie ongeacht de vraagschommelingen.
+        De overgebleven capaciteit is regelbaar, wat betekent dat het flexibel werkt om te voldoen aan variërende elektriciteitsvraag.
+        Logischerwijs bestaat er daarom geen geïnstalleerd regelbaar vermogen indien er geen geïnstalleerd must-run vermogen is voor de
+        biomassacentrale. <br/><br/>
+        Met deze schuif kan het geïnstalleerd vermogen van regelbaar biomassacentrales worden ingesteld die alleen elektriciteit leveren.
     capacity_of_energy_power_turbine_hydrogen:
       title: Waterstofturbine
       short_description:
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van waterstofturbines.<br/><br/>
-        Waterstofturbines genereren elektriciteit door waterstof te verbranden en zijn nog
-        niet op grote schaal toegepast. De technologie lijkt veel op gasturbines, dus de
-        specificaties worden gelijk verondersteld. Hoewel ze minder efficiënt zijn dan een
-        twee-staps Stoom- en Gascentrale (STEG), kunnen waterstofturbines snel schakelen
-        en zijn daardoor geschikt voor piekvraag. Ze spelen een belangrijke rol in het balanceren
-        van het elektriciteitsnet, ondanks beperkte draaiuren en jaarproductie.
+      description: "Met deze schuif kun je waterstofturbines bouwen die elektriciteit
+        produceren met waterstof. Omdat waterstofturbines op dit moment (nog) niet
+        op grote schaal gebruikt worden, veronderstellen we dat de specificaties gelijk
+        zijn aan die van gasturbines. De technologie van waterstof- en gasturbines
+        lijkt namelijk sterk op elkaar. <br /><br />\r\n\r\nEen waterstofturbine is
+        niet zo efficiënt als een twee-staps Stoom- en Gascentrale (STEG), maar heeft
+        als voordeel dat een turbine zeer snel op- en af kan schakelen. Daarom zijn
+        deze centrales geschikt voor het leveren van stroom bij zogenaamde piekvraag.
+        Hoewel het aantal draaiuren en de jaarproductie van deze centrales dus vaak
+        beperkt is, kunnen ze een belangrijke rol spelen in het balanceren van het
+        elektriciteitsnet. <br />"
     capacity_of_energy_power_combined_cycle_hydrogen:
       title: Waterstof STEG
       short_description:
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van Stoom- en Gascentrale (STEG)
-        -waterstofcentrales.<br/><br/>In een STEG-waterstofcentrale wekt de gasturbine
-        elektriciteit op door waterstof te verbranden, terwijl de restwarmte wordt
-        gebruikt om stoom te genereren voor een stoomturbine. Dit verhoogt de efficiëntie
-        van de centrale, omdat het een tweefasenproces is: eerst de gasturbine, dan de
-        stoomturbine. Hoewel deze centrales nog niet op grote schaal worden gebruikt,
-        worden de specificaties verondersteld gelijk te zijn aan die van STEG-gascentrales.
+      description: 'Met deze schuif kun je capaciteit van STEG-waterstofcentrales
+        opstellen die elektriciteit produceren met waterstof. Omdat STEG-waterstofcentrales
+        op dit moment (nog) niet op grote schaal gebruikt worden, veronderstellen
+        we dat de specificaties gelijk zijn aan die van STEG-gascentrales. De technologie
+        van STEG-waterstof- en -gascentrales lijkt namelijk sterk op elkaar. '
     capacity_of_energy_power_geothermal:
       title: Geothermisch elektrisch
       short_description: ''
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van geothermische centrales.<br/><br/>
-        Met warmte uit diepere aardlagen (meer dan 3 km) wordt elektriciteit opgewekt.
-        De haalbaarheid hangt af van de diepte en temperatuur van het ondergrondse water.
+      description: "Hiermee bouw elektriciteitscentrales op aardwarmte. Met warmte
+        van meer dan 3 km diep wordt stroom opgewekt.\r\n<br/><br/>\r\nHet opwekken
+        van stroom vereist hogere temperaturen dan het verwarmen van gebouwen en broeikassen.
+        Of het nu een aantrekkelijke optie is, wordt deels bepaald door hoe diep ondergronds
+        het water zich bevindt, met temperaturen die hoog genoeg zijn."
     capacity_of_buildings_solar_pv_solar_radiation:
       title: Zon op dak (gebouwen)
       short_description:
@@ -276,30 +264,34 @@ nl:
     capacity_of_energy_power_hydro_river:
       title: Rivier
       short_description: ''
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van waterkrachtcentrales in een grote rivieren.
-        <br/><br/>Waterkrachtcentrales in rivieren zetten de stroming van water om in elektriciteit
-        en leveren een stabiele, maar beperkte productie. Het vermogen per installatie ligt doorgaans
-        tussen enkele en tientallen megawatt.
+      description: "Met deze schuif bouw je een kleine waterkrachtcentrale in een
+        grote rivier. \r\nDe instelling wordt omgezet in centrales met een relatief
+        klein vermogen (~10 MWe). Dit vermogen is laag door het geringe verval in
+        een rivier. Het totale productiepotentieel is dan ook beperkt. Toch zijn deze
+        centrales niet onaantrekkelijk vanwege hun relatief lange levensduur en de
+        betrouwbaarheid. "
     capacity_of_energy_power_hydro_mountain:
       title: Bergen
       short_description: ''
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van waterkrachtcentrales met een
-        stuwmeer in de bergen. </br></br> Deze centrales kunnen snel inspelen op vraagpieken,
-        maar vereisen hoge investeringen en kunnen negatieve milieueffecten veroorzaken door
-        het onder water zetten van dalen. Toch bieden ze een betrouwbare en duurzame oplossing
-        voor energieopslag en het balanceren van vraag en aanbod.
+      description: 'Hiermee bouw je grote waterkrachtcentrales met een stuwmeer in
+        de bergen. De instelling wordt omgezet in (delen van) centrales van 500 MWe.
+        Deze centrales vergen grote investeringen en het onder water zetten van dalen
+        kan een zeer negatieve uitwerking hebben op het milieu. Vaak zijn dit soort
+        centrales groter dan 500 MWe en worden ze zo gebouwd dat overtollige elektriciteit
+        kan worden opgeslagen door water naar het stuwmeer toe te pompen. Omdat deze
+        centrales relatief lang leven en ideaal zijn om pieken en dalen in de stroomvraag
+        te volgen, kunnen deze centrales erg aantrekkelijk zijn. '
     capacity_of_energy_power_supercritical_waste_mix:
       title: Afvalverbranding
       short_description: ''
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van hoogrendement afvalverbrandingscentrales.
-        <br/><br/>Afvalverbrandingscentrales zetten brandbaar afval om in elektriciteit.
-        Door afval gecontroleerd te verbranden, worden methaanemissies voorkomen en kan het
-        relatief op een schone manier verwerkt worden. De opgewekte elektriciteit wordt aan
-        het elektriciteitsnet geleverd.<br/><br/>
-        Het model importeert geen afval, waardoor de beschikbare hoeveelheid afval het potentieel voor deze technologie bepaalt.
+      description: "Hiermee bouw je hoogrendment afvalverbrandingscentrale. De instelling
+        wordt omgezet in (delen van) centrales van 55 MWe. Brandbaar afval (huishoudelijk-
+        en sloop-afval) wordt gebruikt om elektriciteit op te wekken. Door het onder
+        de juiste omstandigheden te verbranden, kan afval op een relatief schone manier
+        verwerkt worden. Rottend afval produceert methaan, een sterker broeikasgas
+        dan CO<sub>2</sub>, daarom is verbranden vaak beter. <br/><br/>\r\nHet model
+        importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt het potentieel
+        voor deze technologie."
     capacity_of_energy_power_supercritical_ccs_waste_mix:
       title: Afvalverbranding + CCS
       short_description:
@@ -314,15 +306,15 @@ nl:
     capacity_of_energy_chp_supercritical_waste_mix:
       title: Afval-WKK
       short_description:
-      description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van afvalverbrandingscentrales met
-        warmtekrachtkoppelingen (WKK's).<br/><br/> Deze centrales zetten brandbaar afval
-        om in zowel elektriciteit als warmte. De elektriciteit wordt aan het net geleverd,
-        terwijl de warmte vaak naar warmtenetten gaat. Door het verbranden van afval worden
-        methaanemissies voorkomen, wat een relatief schone verwerkingsmethode biedt.<br/><br/>
-        Het model importeert geen afval, waardoor de beschikbare hoeveelheid afval het potentieel
-        voor deze technologie bepaalt.<br/><br/> Ga naar <a href="/scenario/supply/heat/heat-sources">
-        Warmtenetten</a> om in te stellen hoe de warmte wordt ingezet.
+      description: "Hiermee bouw je een hoogrendment afvalverbrandingscentrale die
+        warmte levert aan een warmtenet (60 MWe, 33 MWth). Brandbaar afval (huishoudelijk-
+        en sloop-afval) wordt gebruikt om elektriciteit en warmte op te wekken. Door
+        het onder de juiste omstandigheden te verbranden, kan afval op een relatief
+        schone manier verwerkt worden. Rottend afval produceert methaan, een sterker
+        broeikasgas dan CO<sub>2</sub>, daarom is verbranden vaak beter. <br/><br/>\r\nHet
+        model importeert geen afval, dus de beschikbare hoeveelheid afval bepaalt
+        het potentieel voor deze technologie.\r\n<br/><br/>\r\nDe schuifjesinstelling
+        wordt omgezet naar (deel)aantallen van de centrale zoals hierboven omschreven."
     capacity_of_energy_chp_supercritical_ccs_waste_mix:
       title: Afval-WKK + CCS
       short_description:

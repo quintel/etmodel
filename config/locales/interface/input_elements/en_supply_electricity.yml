@@ -81,120 +81,166 @@ en:
       title: Solar rooftop (households)
       short_description:
       description: |
-        With this slider you set the total installed capacity of solar PV panels
-        on rooftop areas of households. <br/><br/>
-        This technology is developing rapidly and solar panels
-        are becoming ever more efficient and cheaper. Solar panels produce electricity
-        on site, so transport of electricity is not always required. This avoids losses
-        on the grid and that saves energy. Feeding locally produced power back into
-        the local power grid requires a higher capacity or smarter local grid, to
-        prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this you can set this
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>. <br/><br/>
-        You can adjust the full load hours of solar
-        panels <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.<br
-        />
+        This slider sets the total capacity of solar panels on rooftops of
+        residential buildings.<br/><br/>
+        Rooftop solar generates electricity for own use and for supply to the electricity
+        grid in case of overproduction. Production depends on factors such as weather conditions and
+        orientation of the solar panels. Weather dependency makes electricity production from
+        solar panels volatile.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to limit the production of solar panels and reduce load on the grid.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_buildings_solar_pv_solar_radiation:
       title: Solar rooftop (buildings)
       short_description:
       description: |
-        With this slider you set the capacity of rooftop solar PV installations on
-        rooftop areas of buildings. </br></br>
-        This technology is developing rapidly and solar panels
-        are becoming ever more efficient and cheaper. Solar panels produce electricity
-        on site, so transport of electricity is not always required. This avoids losses
-        on the grid and that saves energy. Feeding locally produced power back into
-        the local power grid requires a higher capacity or smarter local grid, to
-        prevent it from overloading. It may be desirable to curtail the power peaks
-        in order to decrease the load on the net, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.
-        <br/><br/>
-        You can adjust the full load hours of solar
-        panels <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
+        This slider sets the total capacity of solar panels on rooftops of
+        commercial buildings.<br/><br/>
+        Rooftop solar generates electricity for own use and for supply to the electricity
+        grid in case of overproduction. Production depends on factors such as weather conditions and
+        orientation of the solar panels. Weather dependency makes electricity production from
+        solar panels volatile.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to limit the production of solar panels and reduce load on the grid.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_energy_power_solar_pv_solar_radiation:
       title: Solar on land
       short_description:
       description: |
-        With this slider you can build centralized plants of photovoltaic
-        solar power panels. These are not mounted on roofs, but are usually placed
-        in a field.  <br/><br/>
-        Like wind power, solar power output fluctuates over
-        time, but in a more predictable way, making it easier to keep the electricity
-        grid in balance. Still, the impact of installing large numbers of solar panels
-        can be large, because electricity is fed back into the local grid. This may
-        require balancing solutions at the local level for the grid. In some cases
-        it is smart to connect solar parks to only a certain percentage of the peak
-        power, you can set this <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv\">here</a>.<br/><br/>
-        You can adjust the full load hours of solar
-        panels <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href="/scenario/costs/specs_renewable_electricity/solar-power\" >here</a>.
+        This slider sets the total capacity of large-scale solar plants on
+        land.<br/><br/>
+        Solar on land generally produces electricity for supply to the electricity grid. Production
+        depends on factors such as weather conditions and orientation of the solar panels.
+        Weather dependency makes electricity production from solar panels volatile.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to limit the production of solar panels and reduce load on the grid.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_energy_power_solar_csp_solar_radiation:
       title: Concentrated solar power
       short_description:
       description: |
-        This builds a 50 MWe concentrated solar power (CSP) plant with heat storage. Such a plant is
-        very attractive in sunny desert-like areas, but less so in Northern Europe. It needs direct
-        sunlight, which is concentrated by concave mirrors to produce heat and generate electricity.
-        <br/><br/>
-        This type of plant stores the heat, allowing it to keep on producing electricity until
-        several hours after sundown.
+        This slider sets the total capacity of concentrated solar power (CSP) plants .<br/><br/>
+        CSP plants use mirrors to concentrate sunlight and convert heat into
+        electricity. Due to thermal storage, they can also supply power after sunset.
+        They are most efficient in sunny, dry areas.<br/><br/>
+        Go to <a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to adjust the investment costs of these plants.
     capacity_of_energy_battery_solar_pv_solar_radiation:
       title: Solar on land (with battery system)
       short_description:
       description: |
-        Different from regular solar PV plants, these plants are fitted with a battery and
-        a reduced grid connection capacity by default, as an integrated system. These plants are typically
-        large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
-        > 20 kWp for all other European countries. <br/><br/>
-        Due to the volatile nature of solar power output, installing large numbers of solar
-        panels can have a major impact on the electricity grid. To prevent large capacity
-        peaks on the grid, these plants are not connected to the grid for the entire installed
-        capacity, but by a reduced amount. When production exceeds the grid connection capacity
-        the battery consumes electricity. When the production drops below the threshold, the
-        battery starts to release the electricity again. Note that due to efficiency losses and
-        storage decay, some electricity is lost in the process. <br/><br/>
-        If the battery cannot consume any more electricity due to charging
-        capacity or volume constraints, the excess electricity production will be curtailed. <br/><br/>
-        Both the grid connection capacity and the input capacity of the battery are defined
-        relative to the installed capacity. They will therefore both change accordingly if
-        you adjust this slider. You can also change the relative ratios in the Flexibility
-        section, under
-        <a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
-        Electricity storage</a>. <br/><br/>
-        You can click on the 'Technical and financial properties' to see the specifications of
-        the solar PV plants without the batteries. See
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="flexibility_hourly_battery_solar"
-          data-chart-location="side">
-          this chart
-        </a>
-        for the hourly behaviour of these solar plants.
+        This slider sets the total capacity of large-scale solar plants on
+        land, integrated with a battery system.<br/><br/>
+        By combining solar on land with a battery system, excess production can
+        be stored and the battery can be discharged when production is lower than
+        demand. This contributes to reducing load on the electricity grid.<br/><br/>
+        In the ETM, this technology is modelled with a limited connected grid capacity.
+        The connected grid capacity and the integrated battery capacity are
+        relative to the installed capacity of the solar park. These will change with
+        this slider.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
+        Flexibility</a> to set the ratio of the grid capacity and battery capacity relative
+        to the solar installation.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables for more insight:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="flexibility_hourly_battery_solar"
+        data-chart-location="side">chart</a> shows the hourly production of solar on land with
+        battery system.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="hourly_solar_pv_curtailment"
+        data-chart-location="side">chart</a> displays the hourly production of solar PV
+        technologies.</li>
+        </ul>
     capacity_of_energy_power_solar_pv_offshore:
       title: Solar offshore
       short_description:
       description: |
-        With this slider you can build centralized plants of photovoltaic solar power panels.
-        This type osf of solar PV plants is built to float in the sea. These plants are typically
-        large-scale, defined as having an output capacity of > 15 kWp within the Netherlands and
-        > 20 kWp for all other European countries. </br></br>
-        This technology is developed to increase the potential installation area for solar
-        PV plants in a country. Additionally, these plants might be placed between offshore wind turbines,
-        taking up no extra offshore surface. The idea is that the hourly production profiles of solar and wind can
-        complement each other, meaning that the power cable to land will be better utilized.
-        You can see the combined output of offshore solar PV plants and wind parks in
-        <a
-          href="#"
-          class="open_chart"
-          data-chart-key="supply_offshore_solar_wind"
-          data-chart-location="side">
-          this chart</a>. </br></br>
-        Production by solar can be more volatile than wind. To further enhance the compatibility
-        of offshore solar and wind, the grid connection of these solar PV plants is
-        therefore reduced by default with 33% of the peak capacity. You can change this value
-        <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.
+        This slider setes the total capacity of offshore large-scale solar plants.
+        Offshore solar can be built between offshore wind farms, thereby making efficient
+        use of the available space.<br/><br/>
+        In the ETM, it is assumed by default that offshore solar shares an electricity cable with
+        offshore wind, so that no additional grid connection is required. This shared connection
+        means that the production of offshore solar is curtailed to some extent.<br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-energy">
+        Net load</a> to adjust curtailment of offshore solar.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
+        Weather conditions</a> to adjust the number of full load hours of solar PV.</li>
+        <li><a href="/scenario/costs/specs_renewable_electricity/solar-power">
+        Costs & efficiencies</a> to set the investment costs and efficiency of the solar panels.</li>
+        </ul><br/>
+        Open the following charts and tables to view the impact of offshore solar:
+        <ul>
+        <li>This <a href="#" class="open_chart" data-chart-key="supply_offshore_solar_wind"
+        data-chart-location="side">chart</a> shows the hourly production of offshore solar and
+        wind.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="solar_pv_curtailment"
+        data-chart-location="side">table</a> shows data on curtailment of solar PV
+        technologies.</li>
+        <li>This <a href="#" class="open_chart" data-chart-key="land_use_solar_wind"
+        data-chart-location="side">table</a> shows data on the land use of solar and wind.</li>
+        </ul>
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oil-fired
       short_description:

@@ -222,7 +222,7 @@ nl:
         dat de productie van zon op zee met enige mate wordt beperkt.<br/><br/>
         Ga naar:
         <ul>
-          <li>Ga naar <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">
+          <li><a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">
           Netbelasting</a> om de productiebeperking aan te passen.</li>
           <li><a href="/scenario/flexibility/flexibility_weather/extreme-weather-conditions">
           Weersomstandigheden</a> om het aantal vollasturen van zonnepanelen aan te passen.</li>
@@ -253,7 +253,7 @@ nl:
         Kosten & efficiënties</a> om de investeringskosten van deze centrales aan te passen.
     capacity_of_energy_power_ultra_supercritical_crude_oil:
       title: Oliecentrale
-      short_description: ''
+      short_description:
       description: |
         Dit schuifje bepaalt het totale elektrische vermogen van oliegestookte elektriciteitscentrales.<br/><br/>
         Oliecentrales komen vrij weinig voor in Europa. Door hoge kosten en lage efficiëntie
@@ -713,8 +713,8 @@ nl:
       description: |
         Dit schuifje bepaalt het totale elektrische vermogen van gasmotorcentrales met warmtekrachtkoppeling
         (WKK).<br/><br/>Gasmotoren zijn grote verbrandingsmotoren die direct een generator
-        aandrijven. Gasmotoren met WKK produceren zowel elektriciteit als warmte, die wordt gebruikt voor
-        een centraal warmtenet of voor industriële toepassingen. Gasmotoren bestaan uit meerdere eenheden
+        aandrijven. Gasmotoren met WKK produceren zowel elektriciteit als warmte, die wordt gebruikt
+        voor centrale warmtenetten. Gasmotoren bestaan uit meerdere eenheden
         die snel kunnen op- en afschakelen, zonder efficiëntieverlies. Daarmee zijn ze geschikt zijn voor
         balancering van het elektriciteitsnet.<br/><br/> Ga naar
         <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
@@ -764,9 +764,9 @@ nl:
       description: |
         Dit schuifje bepaalt welk deel van de geproduceerde kolengassen wordt inzet in
         elektriciteitscentrales en warmtekrachtkoppelingen (WKK's).<br/><br/> Deze
-        centrales worden gemodelleerd als must-run centrales die draaien zodra kolengas beschikbaar is. Kolengas heeft
-        een hoog CO<sub>2</sub>-gehalte waardoor de CO<sub>2</sub>-uitstoot van deze
-        centrales relatief hoog is. Een alternatieve inzet van de kolengassen is om deze
+        centrales worden gemodelleerd als must-run centrales die draaien zodra kolengas beschikbaar
+        is. Kolengas heeft een hoog CO<sub>2</sub>-gehalte waardoor de CO<sub>2</sub>-uitstoot van
+        deze centrales relatief hoog is. Een alternatieve inzet van de kolengassen is om deze
         om te zetten naar grondstoffen voor de chemiesector.
         </br></br> Open de <a href="#" class="open_chart" data-chart-key="merit_order_table"
         data-chart-location="side">merit order tabel</a> om het geïnstalleerde vermogen van

@@ -1,13 +1,21 @@
 ---
-- key: introduction_to_etm
-  position: 1
+- key: scenario_overview
+  position: 5
   sidebar_item_key: introduction
-  output_element_key: workflow
-- key: overview_final_demand
-  position: 3
+  output_element_key: sankey_energy_overview
+- key: demand
+  position: 10
   sidebar_item_key: introduction
   output_element_key: final_energy_demand_per_sector_joule
-- key: overview_co2_emissions
-  position: 2
+- key: supply
+  position: 15
   sidebar_item_key: introduction
-  output_element_key: co2_emissions
+  output_element_key: source_of_electricity_production
+- key: emissions
+  position: 20
+  sidebar_item_key: introduction
+  output_element_key: emissions
+- key: costs
+  position: 25
+  sidebar_item_key: introduction
+  output_element_key: costs_overview

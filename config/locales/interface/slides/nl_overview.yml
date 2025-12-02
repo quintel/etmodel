@@ -84,59 +84,75 @@ nl:
     scenario_overview:
       title: Scenario overzicht
       short_description:
-      description: "Dit overzicht toont in één oogopslag de belangrijkste resultaten van je scenario.
-        \r\n</br></br>\r\nHet Sankey-diagram aan de rechterkant geeft
+      description: |
+        Het Sankey-diagram aan de rechterkant geeft
         een volledig beeld van de energiestromen in je regio, van energiebronnen
         tot eindgebruik. De dikte van de pijlen geeft de hoeveelheid energie aan.
-        Je kunt op verschillende delen van het diagram klikken om in te zoomen op
-        specifieke energiestromen."
+        Als je een nieuw scenario hebt geopend in het ETM, toont dit overzicht het huidige
+        energiesysteem van jouw geselecteerde regio.
+        </br></br>
+        Terwijl je aanpassingen maakt in de verschillende secties
+        van het ETM, zal dit overzicht bijwerken om de impact van jouw veranderingen te laten zien.
+        </br></br>
+        Als je een bestaand scenario hebt geopend, toont dit overzicht het energiesysteem
+        gebaseerd op de keuzes die in dat scenario zijn gemaakt.
     demand:
       title: Vraag
       short_description:
       description: |
-        The <a href="/scenario/demand/households/overview">Vraag</a> sectie van de ETM stelt je in staat om te verkennen
-        hoe energie wordt gebruikt in verschillende sectoren, zoals huishoudens, industrie,
-        en transport. Door verschillende parameters aan te passen, kun je zien hoe veranderingen in
-        het energieverbruik het gehele energiesysteem beïnvloeden.
+        De <a href="/scenario/demand/households/overview">Vraag</a> sectie van de ETM
+        stelt je in staat om te verkennen hoe energie wordt gebruikt in verschillende sectoren,
+        zoals huishoudens, industrie, en transport. Door verschillende parameters aan te passen,
+        kun je zien hoe veranderingen in het energieverbruik het gehele energiesysteem beïnvloeden.
         </br></br>
-        Het diagram aan de rechterkant illustreert de uiteindelijke energievraag per sector in jouw regio.
+        Het diagram aan de rechterkant illustreert het finale energieverbruik
+        per energiedrager in jouw regio.
     supply:
       title: Aanbod
       short_description:
       description: |
-        The <a href="/scenario/supply/electricity/coal-plants">Aanbod</a> sectie van de ETM stelt je in staat om te verkennen
-        hoe energie wordt geproduceerd en geleverd in jouw regio. Je kunt verschillende parameters
-        aanpassen die betrekking hebben op energieproductietechnologieën, capaciteiten en bronnen om te zien hoe ze
-        impact hebben op het gehele energiesysteem.
+        De <a href="/scenario/supply/electricity/coal-plants">Aanbod</a> sectie van de ETM stelt
+        je in staat om te verkennen hoe energie wordt geproduceerd en geleverd in jouw regio.
+        Je kunt verschillende parameters aanpassen die betrekking hebben op
+        energieproductietechnologieën, capaciteiten en bronnen om te zien hoe ze impact hebben
+        op het gehele energiesysteem.
         </br></br>
-        Het diagram aan de rechterkant illustreert de elektriciteitsaanbodmix in jouw regio,
+        De staafgrafiek aan de rechterkant illustreert de elektriciteitsaanbodmix in jouw regio,
         met de bijdragen van verschillende energiebronnen.
     flexibility:
       title: Flexibiliteit
       short_description:
       description: |
-        The <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibiliteit</a> sectie van de ETM stelt je in staat om te verkennen
-        hoe flexibiliteitsopties kunnen helpen om vraag en aanbod in het energiesysteem van jouw regio in balans te brengen.
-        Door verschillende parameters aan te passen die betrekking hebben op energieopslag, vraagrespons en andere flexibiliteitsmaatregelen,
+        De <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibiliteit</a>
+        sectie van de ETM stelt je in staat om te verkennen hoe flexibiliteitsopties kunnen helpen
+        om vraag en aanbod in het energiesysteem van jouw regio in balans te brengen.
+        Door verschillende parameters aan te passen die betrekking hebben op energieopslag,
+        vraagrespons en andere flexibiliteitsmaatregelen,
         kun je zien hoe ze impact hebben op het gehele energiesysteem.
         </br></br>
-        Het diagram aan de rechterkant illustreert de rol van flexibiliteit bij het beheren van energieaanbod en -vraag in jouw regio.
+        De grafiek aan de rechterkant illustreert het uurlijkse verschil tussen inflexibel aanbod
+        en vraag voor de energiedragers elektriciteit, warmte, waterstof en aardgas in jouw regio.
     emissions:
       title: Emissies
       short_description:
       description: |
-        The <a href="/scenario/emissions/other_emissions/overview">Emissies</a> sectie van de ETM stelt je in staat om te verkennen
-        hoe verschillende sectoren bijdragen aan de uitstoot van broeikasgassen in jouw regio. Door verschillende parameters aan te passen, kun je zien hoe veranderingen in emissies het gehele energiesysteem beïnvloeden.
+        De <a href="/scenario/emissions/other_emissions/overview">Emissies</a> sectie van de ETM
+        stelt je in staat om te verkennen hoe verschillende sectoren bijdragen aan de uitstoot van
+        broeikasgassen in jouw regio. In deze sectie kun je ook de aannames instellen voor
+        Koolstofafvang, -gebruik en -opslag (CCUS).
         </br></br>
-        Het diagram aan de rechterkant illustreert de CO<sub>2</sub> uitstoot per sector in jouw regio.
+        De staafgrafiek aan de rechterkant illustreert de CO<sub>2</sub> uitstoot per sector in
+        jouw regio.
     costs:
       title: Kosten & efficiënties
       short_description:
       description: |
-        The <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a> sectie van de ETM stelt je in staat om te verkennen
-        de economische aspecten van het energiesysteem in jouw regio. Je kunt verschillende
-        parameters aanpassen die betrekking hebben op de kosten van energieproductie, infrastructuur en technologieën
-        om te zien hoe ze impact hebben op het gehele energiesysteem.
+        De <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
+        sectie van de ETM stelt je in staat om te verkennen
+        de kostenaspecten van het energiesysteem in jouw regio. Je kunt verschillende
+        parameters aanpassen die betrekking hebben op de kosten van energieproductie,
+        infrastructuur en technologieën om te zien hoe ze impact hebben op de kosten van
+        jouw energiesysteem.
         </br></br>
-        Het diagram aan de rechterkant illustreert de totale kosten die verbonden zijn aan het energiesysteem
-        in jouw regio.
+        De staafgrafiek aan de rechterkant illustreert de kosten die verbonden zijn aan
+        verschillende aspecten van het energiesysteem in jouw regio.

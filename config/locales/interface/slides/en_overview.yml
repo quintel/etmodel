@@ -77,61 +77,71 @@ en:
     scenario_overview:
       title: Scenario overview
       short_description:
-      description: "This overview shows the main results of your scenario at a glance.
-        \r\n</br></br>\r\nThe Sankey diagram on the right gives
+      description: |
+        The Sankey diagram on the right gives
         a complete picture of the energy flows in your region, from energy sources
         to final energy demand. The thickness of the arrows indicates the amount
-        of energy. You can click on different parts of the diagram to zoom in on
-        specific energy flows."
+        of energy. When you have opened a new scenario in the ETM, this overview displays the current
+        energy system of your selected region.
+        </br></br>
+        As you make changes in the different sections
+        of the ETM, this overview will update to reflect the impact of your changes.
+        </br></br>
+        If you have opened an existing scenario, this overview will display the energy system
+        based on the choices made in that scenario.
     demand:
       title: Demand
       short_description:
       description: |
-        The <a href="/scenario/demand/households/overview">Demand</a> section of the ETM allows you to
-        explore how energy is used in different sectors, such as households, industry,
+        The <a href="/scenario/demand/households/overview">Demand</a> section of the ETM allows you
+        to explore how energy is used in different sectors, such as households, industry,
         and transport. By adjusting various parameters, you can see how changes in
         energy consumption affect the overall energy system.
         </br></br>
-        The diagram on the right illustrates the final energy demand per sector in your region.
+        The diagram on the right illustrates the final energy demand per carrier in your region.
     supply:
       title: Supply
       short_description:
       description: |
-        The <a href="/scenario/supply/electricity/coal-plants">Supply</a> section of the ETM allows you to explore
-        how energy is produced and supplied in your region. You can adjust various parameters
-        related to energy production technologies, capacities, and sources to see how they
-        impact the overall energy system.
+        The <a href="/scenario/supply/electricity/coal-plants">Supply</a> section
+        of the ETM allows you to explore how energy is produced and supplied in your region.
+        You can adjust various parameters related to energy production technologies,
+        capacities, and sources to see how they impact the overall energy system.
         </br></br>
-        The diagram on the right illustrates the electricity supply mix in your region,
+        The barchart on the right illustrates the electricity supply mix in your region,
         showing the contributions from different energy sources.
     flexibility:
       title: Flexibility
       short_description:
       description: |
-        The <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibility</a> section of the ETM allows you to explore
+        The <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibility</a>
+        section of the ETM allows you to explore
         how flexibility options can help balance supply and demand in your region's energy system.
-        By adjusting various parameters related to energy storage, demand response, and other flexibility measures,
-        you can see how they impact the overall energy system.
+        By adjusting various parameters related to energy storage, demand response,
+        and other flexibility measures, you can see how they impact the overall energy system.
         </br></br>
-        The diagram on the right illustrates the role of flexibility in managing energy supply and demand in your region.
+        The chart on the right illustrates the hourly mismatch of inflexible supply and demand
+        for the carriers electricity, heat, hydrogen and network gas in your region.
     emissions:
       title: Emissions
       short_description:
       description: |
-        The <a href="/scenario/emissions/other_emissions/overview">Emissions</a> section of the ETM allows you to explore
-        how different sectors contribute to greenhouse gas emissions in your region. By adjusting
-        various parameters, you can see how changes in emissions affect the overall energy system
-        and progress towards climate goals.
+        The <a href="/scenario/emissions/other_emissions/overview">Emissions</a>
+        section of the ETM allows you to explore
+        how different sectors contribute to greenhouse gas emissions in your region.
+        In this section you can also set the assumptions for Carbon Capture, Utilization and Storage
+        (CCUS).
         </br></br>
-        The diagram on the right illustrates the CO<sub>2</sub> emissions per sector in your region.
+        The barchart on the right illustrates the CO<sub>2</sub> emissions per sector in your region.
     costs:
       title: Costs & efficiencies
       short_description:
       description: |
-        The <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a> section of the ETM allows you to explore
-        the economic aspects of the energy system in your region. You can adjust various
+        The <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        section of the ETM allows you to explore the cost aspects of
+        the energy system in your region. You can adjust various
         parameters related to costs of energy production, infrastructure, and technologies
-        to see how they impact the overall energy system.
+        to see how they impact the costs of your energy system.
         </br></br>
-        The diagram on the right illustrates the total costs associated with the energy system
-        in your region.
+        The barchart on the right illustrates the costs associated with different aspects of
+        the energy system in your region.

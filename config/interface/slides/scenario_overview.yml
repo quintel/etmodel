@@ -1,25 +1,25 @@
 ---
 - key: scenario_overview
   position: 5
-  sidebar_item_key: introduction
+  sidebar_item_key: scenario_overview
   output_element_key: sankey_energy_overview
 - key: demand
   position: 10
-  sidebar_item_key: introduction
+  sidebar_item_key: scenario_overview
   output_element_key: final_demand_per_carrier_energetic
 - key: supply
   position: 15
-  sidebar_item_key: introduction
+  sidebar_item_key: scenario_overview
   output_element_key: source_of_electricity_production
 - key: flexibility
   position: 20
-  sidebar_item_key: introduction
+  sidebar_item_key: scenario_overview
   output_element_key: flexibility_hourly_carriers_inflexible_imbalance
 - key: emissions
   position: 25
-  sidebar_item_key: introduction
+  sidebar_item_key: scenario_overview
   output_element_key: co2_emissions
 - key: costs
   position: 30
-  sidebar_item_key: introduction
+  sidebar_item_key: scenario_overview
   output_element_key: costs_overview

@@ -78,70 +78,67 @@ en:
       title: Scenario overview
       short_description:
       description: |
-        The Sankey diagram on the right gives
-        a complete picture of the energy flows in your region, from energy sources
-        to final energy demand. The thickness of the arrows indicates the amount
-        of energy. When you have opened a new scenario in the ETM, this overview displays the current
-        energy system of your selected region.
-        </br></br>
-        As you make changes in the different sections
-        of the ETM, this overview will update to reflect the impact of your changes.
-        </br></br>
-        If you have opened an existing scenario, this overview will display the energy system
+        The diagram on the right gives
+        a complete picture of the energy flows in the region, from energy sources
+        to final energy demand.
+
+        When a new scenario is opened in the ETM, this overview displays the current
+        energy system of the selected region.
+
+        As changes are made in the different sections
+        of the ETM, this overview will update to reflect the impact.
+        If an existing scenario has been opened, this overview will display the energy system
         based on the choices made in that scenario.
     demand:
       title: Demand
       short_description:
       description: |
-        The <a href="/scenario/demand/households/overview">Demand</a> section of the ETM allows you
-        to explore how energy is used in different sectors, such as households, industry,
-        and transport. By adjusting various parameters, you can see how changes in
-        energy consumption affect the overall energy system.
+        The <a href="/scenario/demand/households/overview">Demand</a> section of the ETM allows for
+        exploration of how energy is used in different sectors, such as households, industry,
+        and transport. By adjusting various parameters, the effects of changes in
+        energy demand on the overall energy system can be observed.
         </br></br>
-        The diagram on the right illustrates the final energy demand per carrier in your region.
+        The diagram on the right illustrates the final energy demand per energy carrier in the start year and end year.
     supply:
       title: Supply
       short_description:
       description: |
         The <a href="/scenario/supply/electricity/coal-plants">Supply</a> section
-        of the ETM allows you to explore how energy is produced and supplied in your region.
-        You can adjust various parameters related to energy production technologies,
-        capacities, and sources to see how they impact the overall energy system.
+        of the ETM allows for exploration of how energy is produced and supplied in the region.
         </br></br>
-        The barchart on the right illustrates the electricity supply mix in your region,
-        showing the contributions from different energy sources.
+        The chart illustrates how much electricity is produced with respect to demand and shows the sources of electricity production. The results are shown for the start year and end year of the scenario.
     flexibility:
       title: Flexibility
       short_description:
       description: |
         The <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibility</a>
-        section of the ETM allows you to explore
-        how flexibility options can help balance supply and demand in your region's energy system.
+        section of the ETM allows for exploration of
+        how flexibility options can help balance supply and demand in the region's energy system.
         By adjusting various parameters related to energy storage, demand response,
-        and other flexibility measures, you can see how they impact the overall energy system.
+        and other flexibility measures, their impact on the overall energy system can be observed.
         </br></br>
         The chart on the right illustrates the hourly mismatch of inflexible supply and demand
-        for the carriers electricity, heat, hydrogen and network gas in your region.
+        for the carriers electricity, heat, hydrogen and network gas in the region.
     emissions:
       title: Emissions
       short_description:
       description: |
         The <a href="/scenario/emissions/other_emissions/overview">Emissions</a>
-        section of the ETM allows you to explore
-        how different sectors contribute to greenhouse gas emissions in your region.
-        In this section you can also set the assumptions for Carbon Capture, Utilization and Storage
-        (CCUS).
+        section of the ETM allows for exploration of
+        how different sectors contribute to greenhouse gas emissions in the region.
+        In this section the assumptions for Carbon Capture, Utilization and Storage
+        (CCUS) can also be set.
         </br></br>
-        The barchart on the right illustrates the CO<sub>2</sub> emissions per sector in your region.
+        The chart illustrates the CO<sub>2</sub> emissions per sector in the start year and end year of the scenario.
     costs:
       title: Costs & efficiencies
       short_description:
       description: |
         The <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
-        section of the ETM allows you to explore the cost aspects of
-        the energy system in your region. You can adjust various
+        section of the ETM allows for exploration of the cost aspects of
+        the energy system in the region. Various
         parameters related to costs of energy production, infrastructure, and technologies
-        to see how they impact the costs of your energy system.
+        can be adjusted to observe their impact on the costs of the energy system.
         </br></br>
-        The barchart on the right illustrates the costs associated with different aspects of
-        the energy system in your region.
+        The chart illustrates the costs associated with different aspects of
+        the energy system in the start year and end year of the scenario.

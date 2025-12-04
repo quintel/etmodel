@@ -88,12 +88,12 @@ nl:
         Het diagram aan de rechterkant geeft
         een volledig beeld van de energiestromen in de regio, van energiebronnen
         tot eindgebruik.
-
+        </br></br>
         Wanneer een nieuw scenario wordt geopend in het ETM, toont dit overzicht het huidige
         energiesysteem van de geselecteerde regio.
-
         Terwijl aanpassingen worden gemaakt in de verschillende secties
         van het ETM, zal dit overzicht bijwerken om de impact te laten zien.
+        </br></br>
         Als een bestaand scenario is geopend, toont dit overzicht het energiesysteem
         gebaseerd op de keuzes die in dat scenario zijn gemaakt.
     demand:
@@ -102,11 +102,12 @@ nl:
       description: |
         De <a href="/scenario/demand/households/overview">Vraag</a> sectie van de ETM
         biedt de mogelijkheid om te verkennen hoe energie wordt gebruikt in verschillende sectoren,
-        zoals huishoudens, industrie, en transport. Door verschillende parameters aan te passen,
-        kan worden waargenomen hoe veranderingen in de energievraag het gehele energiesysteem beïnvloeden.
+        zoals huishoudens, industrie, en transport. Door verschillende variabelen aan te passen,
+        is te zien hoe veranderingen in de energievraag het gehele
+        energiesysteem beïnvloeden.
         </br></br>
-        Het diagram aan de rechterkant illustreert de finale energievraag
-        per energiedrager in het startjaar en het eindjaar.
+        De grafiek aan de rechterkant laat de finale energievraag per
+        energiedrager zien in het startjaar en het eindjaar.
     supply:
       title: Aanbod
       short_description:
@@ -114,41 +115,46 @@ nl:
         De <a href="/scenario/supply/electricity/coal-plants">Aanbod</a> sectie van de ETM biedt
         de mogelijkheid om te verkennen hoe energie wordt geproduceerd en geleverd in de regio.
         </br></br>
-        De grafiek illustreert hoeveel elektriciteit wordt geproduceerd ten opzichte van de vraag en toont de bronnen van elektriciteitsproductie. De resultaten worden getoond voor het startjaar en het eindjaar van het scenario.
+        De grafiek aan de rechterkant laat zien hoeveel elektriciteit wordt geproduceerd
+        ten opzichte van de vraag en toont de bronnen van elektriciteitsproductie.
+        De resultaten worden getoond voor het startjaar en het eindjaar van het scenario.
     flexibility:
       title: Flexibiliteit
       short_description:
       description: |
         De <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibiliteit</a>
-        sectie van de ETM biedt de mogelijkheid om te verkennen hoe flexibiliteitsopties kunnen helpen
+        sectie van de ETM biedt de mogelijkheid om te verkennen hoe flexibiliteitsopties
+        kunnen helpen
         om vraag en aanbod in het energiesysteem van de regio in balans te brengen.
-        Door verschillende parameters aan te passen die betrekking hebben op energieopslag,
+        Door verschillende variabelen aan te passen die betrekking hebben op energieopslag,
         vraagrespons en andere flexibiliteitsmaatregelen,
-        kan de impact op het gehele energiesysteem worden waargenomen.
+        is de impact op het gehele energiesysteem te zien.
         </br></br>
-        De grafiek aan de rechterkant illustreert het uurlijkse verschil tussen inflexibel aanbod
+        De grafiek aan de rechterkant laat het uurlijkse verschil zien tussen inflexibel aanbod
         en vraag voor de energiedragers elektriciteit, warmte, waterstof en aardgas in de regio.
     emissions:
       title: Emissies
       short_description:
       description: |
         De <a href="/scenario/emissions/other_emissions/overview">Emissies</a> sectie van de ETM
-        biedt de mogelijkheid om te verkennen hoe verschillende sectoren bijdragen aan de uitstoot van
-        broeikasgassen in de regio. In deze sectie kunnen ook de aannames worden ingesteld voor
+        biedt de mogelijkheid om te verkennen hoe verschillende sectoren bijdragen aan de uitstoot
+        van broeikasgassen in de regio. In deze sectie kunnen ook de aannames worden ingesteld voor
         Koolstofafvang, -gebruik en -opslag (CCUS).
         </br></br>
-        De grafiek illustreert de CO<sub>2</sub> uitstoot per sector in
-        het startjaar en het eindjaar van het scenario.
+        De grafiek aan de rechterkant laat de CO<sub>2</sub> uitstoot zien voor 1990 voor deze
+        regio en de CO<sub>2</sub> uitstoot per sector in het startjaar en het eindjaar van het
+        scenario.
     costs:
       title: Kosten & efficiënties
       short_description:
       description: |
         De <a href="/scenario/costs/specs_electricity/coal-plants">Kosten & efficiënties</a>
         sectie van de ETM biedt de mogelijkheid om
-        de kostenaspecten van het energiesysteem in de regio te verkennen. Verschillende
-        parameters die betrekking hebben op de kosten van energieproductie,
-        infrastructuur en technologieën kunnen worden aangepast om de impact op de kosten van
-        het energiesysteem waar te nemen.
+        de kosten- en efficiëntieaspecten van het energiesysteem in de regio te verkennen.
+        Verschillende variabelen die betrekking hebben op de kosten en efficiënties
+        van energieproductie, infrastructuur en technologieën kunnen worden aangepast om de impact
+        op het energiesysteem te zien.
         </br></br>
-        De grafiek illustreert de kosten die verbonden zijn aan
-        verschillende aspecten van het energiesysteem in het startjaar en het eindjaar van het scenario.
+        De grafiek aan de rechterkant laat de jaarlijkse kosten zien die verbonden zijn aan
+        verschillende aspecten van het energiesysteem in het startjaar en het eindjaar van het
+        scenario.

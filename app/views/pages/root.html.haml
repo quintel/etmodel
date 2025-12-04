@@ -69,6 +69,13 @@
         = link_to('https://quintel.com', target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.about_us.learn_more')
           →
+    .feature.pyetm
+      %h4= t('intro.pyetm.title')
+      %p= t('intro.pyetm.description')
+      %p
+        = link_to('https://pypi.org/project/pyetm/') do
+          = t('intro.pyetm.link')
+          →
 
   #area-select-options
   .flags{ style: 'display: none'}

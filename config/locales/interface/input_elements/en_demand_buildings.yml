@@ -1,31 +1,30 @@
 ---
 en:
   input_elements:
-    number_of_buildings:
-      title: Number of buildings
-      short_description: ''
-      description: How do you expect the number of non-residential buildings to grow?
-        This concerns all buildings that fall into categories like offices, hospitals,
-        swimming pools, restaurants, etc. Apart from increasing prosperity, this is
-        one of the most important drivers for the energy demand growth.
     buildings_number_of_buildings_future:
       title: New buildings
       short_description:
       description: |
-        With this slider the amount of buildings that will be built in the future can be set.
-        This concerns all buildings that fall into categories like offices, hosptials,
-        swimming pools, restaurents, etc. Apart from increasing prosperity, this is
-        one of the most important drivers for the energy demand growth.
-        <br/><br/>The heat demand of these buildings can be set <a href="/scenario/demand/buildings/typical-heat-demand-per-building">here</a>.
+        This slider sets the number of buildings that will be built in the future. This concerns all
+        non-residential buildings that fall under commercial and public services: offices, hospitals,
+        swimming pools, restaurants, etc. <br/><br/>
+        <b>Note</b>: this slider represents the number of buildings in <i>residence equivalents</i>.
+        The number of residence equivalents is defined as the total surface area for non-residential
+        buildings divided by the typical surface area per residence. The typical surface area per
+        residence can differ per region. The source data can be found via the
+        <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
     buildings_number_of_buildings_present:
       title: Existing buildings
       short_description:
       description: |
-        With this slider the amount of existing buildings can be set.
-        This concerns all buildings that fall into categories like offices, hosptials,
-        swimming pools, restaurents, etc. Apart from increasing prosperity, this is
-        one of the most important drivers for the energy demand growth.
-        <br/><br/>The heat demand of these buildings can be set <a href="/scenario/demand/buildings/typical-heat-demand-per-building">here</a>.
+        This slider sets the number of existing buildings. This concerns all non-residential
+        buildings that fall under commercial and public services: offices, hospitals, swimming pools,
+        restaurants, etc. <br/><br/>
+        <b>Note</b>: this slider represents the number of buildings in <i>residence equivalents</i>.
+        The number of residence equivalents is defined as the total surface area for non-residential
+        buildings divided by the typical surface area per residence. The typical surface area per
+        residence can differ per region. The source data can be found via the
+        <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
     buildings_insulation_level_buildings_future:
       title: New buildings
       short_description: ''

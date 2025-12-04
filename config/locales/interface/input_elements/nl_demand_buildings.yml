@@ -1,31 +1,32 @@
 ---
 nl:
   input_elements:
-    number_of_buildings:
-      title: Aantal gebouwen
-      short_description: ''
-      description: 'Hoe verwacht je dat het aantal gebouwen zich gaat ontwikkelen?
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
     buildings_number_of_buildings_future:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt het aantal in de toekomst gebouwde gebouwen ingesteld.
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
-        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+        Dit schuifje stelt het aantal in de toekomst gebouwde gebouwen in. Het gaat hier om alle
+        niet-residentiële gebouwen die onder de dienstensector vallen, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc. <br/><br/>
+        <b>Let op</b>: dit schuifje representeert het aantal gebouwen in <i>woningequivalenten</i>
+        (WEQ). Het aantal woningequivalenten wordt berekend door het totale vloeroppervlak voor
+        niet-residentiële gebouwen te delen door het typische vloeroppervlak per woning. Het
+        typische vloeroppervlak per woning kan verschillen per regio. De brondata kan worden
+        gevonden via de sectie
+        <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
     buildings_number_of_buildings_present:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt het aantal huidige gebouwen ingesteld.
-        Het gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren,
-        ziekenhuizen, zwembaden, restaurants, etc. Naast welvaartsgroei is dit een
-        van de belangrijkste factoren die de energievraag beïnvloeden. '
-        <br/><br/>De warmtevraag van deze gebouwen kan hier <a href="/scenario/demand/buildings/typical-heat-demand-per-building">hier</a> aangepast worden.
+        Dit schuifje stelt het huidige aantal gebouwde gebouwen in. Het gaat hier om alle
+        niet-residentiële gebouwen die onder de dienstensector vallen, zoals kantoren,
+        ziekenhuizen, zwembaden, restaurants, etc. <br/><br/>
+        <b>Let op</b>: dit schuifje representeert het aantal gebouwen in <i>woningequivalenten</i>
+        (WEQ). Het aantal woningequivalenten wordt berekend door het totale vloeroppervlak voor
+        niet-residentiële gebouwen te delen door het typische vloeroppervlak per woning. Het
+        typische vloeroppervlak per woning kan verschillen per regio. De brondata kan worden
+        gevonden via de sectie
+        <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
     buildings_insulation_level_buildings_future:
       title: Nieuwe gebouwen
       short_description:

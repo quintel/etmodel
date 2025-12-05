@@ -1,76 +1,80 @@
 en:
   slides:
-    hidden_infrastructure_gas_network:
-      title: Gas network
-      short_description:
-      description:
-    introduction_to_etm:
-      title: How does the Energy Transition Model work?
+    scenario_overview:
+      title: Overview
       short_description:
       description: |
-        The ETM helps you explore future energy scenarios for a region
-        of your choice. The model is easy to use by following these steps:
-        <ol><li>Before you start, think about the goal of your scenario, then you know what to focus on.</li>
-        <li>The menu on the left displays all sectors that either use (<a href="/scenario/demand/households/population-housing-stock"
-        >Demand</a>) or produce energy (<a href="/scenario/supply/electricity/coal-plants"
-        >Supply</a>). For each sector you can use sliders to indicate what you think
-        the future will be like. You can easily undo your changes by resetting your
-        slider, so just play around! For example, you can start with <a href="/scenario/demand/households/space-heating-and-hot-water"
-        >space heating in households</a> or explore <a href="/scenario/demand/transport/overview"
-        >transport and mobility</a>. </br>
-        <i>Optional: advanced users can use the <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility"
-        >Flexibility</a> section to match demand and supply on specific timescales, the 
-        <a href="/scenario/emissions/other_emissions/overview">Emissions</a> section for assumptions on other greenhouse gas emissions 
-        or CCUS and the <a href="/scenario/costs/fuel_costs/fossil-fuels">Costs & efficiencies</a> section for cost assumptions or efficiency adjustments. </i></li>
-        <li> The ETM will immediately show you the result of your actions: at the bottom of your screen, 
-        indicators show the impact on the entire system (e.g. CO<sub>2</sub> reduction, energy savings, costs).
-        On the right, charts display specific information for each section of the model. If you lock the chart 
-        it will remain visible as you navigate through the model. You can add charts by clicking "see more charts"
-        (top right). </br>
-        For a more complete overview of results you can take a look at the scenario report under the header <a href="/scenario/data/data_visuals/scenario-report"
-        >Results & data</a>. You can always return to a certain part of the model to make more changes. </li>
-        <li>You can share your scenario with others by saving your scenario: click on 
-        'Save scenario' (top right) and share the scenario link. <br/>
-        <i>Please note: the ETM is updated periodically. Save your scenario to ensure that outcomes
-        stay stable over time! </i></li></ol></br>
-        You are in the driver's seat. The ETM contains no hidden assumptions, like price or technology 
-        developments over time etc. If you do nothing, the future will not change. </br></br>
-        The ETM is fully open source: under the header <a href="/scenario/data/data_sources/region_data">Results & data</a>
-        you can see the data sources that are used in the model. </br></br>
-        Do you have questions or need help? Please, feel free to contact <a href="https://quintel.com/contact"
-        target=\"_blank\">Quintel</a>, the developers of the Energy Transition Model.
-    overview_co2_emissions:
-      title: Total CO<sub>2</sub> emissions
+        This section gives a general overview of the current scenario.<br/><br/>
+        When starting a new scenario, this overview shows the current energy system of the selected
+        region. As changes are made in the different sections of the model, this overview will
+        update to reflect the impact. When opening an existing scenario, this overview will already
+        show the impact of the choices made in that scenario.<br/><br/>
+        The chart on the right shows a complete picture of the annual energy flows in the scenario,
+        from energy source to final energy demand.
+        <br/><br/>
+        For more information on how to build a scenario, or general information about the ETM,
+        please consult the
+        <a href="https://docs.energytransitionmodel.com">documentation</a>.
+    demand:
+      title: Demand
       short_description:
-      description: "How much CO<sub>2</sub> is currently emitted by the various sectors
-        in your region?\r\n</br></br>\r\n
-        The chart on the right compares CO<sub>2</sub> emissions between
-        1990, the present and the future. The year 1990 is often used as a reference
-        year for CO<sub>2</sub> emissions targets.\r\n</br></br>\r\nThe ETM takes into account energetic CO<sub>2</sub> emissions, 
-        which are emitted in domestic energy use and production, as well as non-energetic CO<sub>2</sub> emissions in the Fertilizers sector. 
-        Non-energetic CO<sub>2</sub> emissions in other sectors and other green house gases (e.g. methane) can be changed within the  
-        <a href=\"/scenario/emissions/other_emissions/overview\">Emissions</a> section. 
-        You can find more information in the 
-        <a href=\"https://docs.energytransitionmodel.com/main/co2-overview-per-sector\"
-        target=\"_blank\">documentation</a>.
-        \r\n</br></br>\r\nThe percentage of CO<sub>2</sub>-reduction with
-        respect to 1990 remains visible in the bar at the bottom as you navigate through
-        the ETM. You can re-visit the chart on the right at any time by clicking on
-        this number at the bottom. Do you prefer to see the
-        values of the chart in a table? Click on the table icon at the top right of
-        the chart."
-    overview_final_demand:
-      title: Total energy demand
+      description: |
+        In the <a href="/scenario/demand/households/overview">Demand</a> section energy use
+        can be explored per sector, such as households, industry and transport. By adjusting the
+        sliders, the effects of changes in energy demand on the overall energy system can be
+        observed. <br/><br/>
+        The chart on the right illustrates the change of final energetic energy demand per
+        sector between the start and future year.
+        <br/><br/>
+        For more information on the demand section, please consult the
+        <a href="https://docs.energytransitionmodel.com/main/demand">documentation on Demand</a>.
+    supply:
+      title: Supply
       short_description:
-      description: "How much energy is used by the different sectors in your region
-        and what is the impact of adjustments to the energy system?\r\n</br> </br>\r\nThe
-        chart on the right gives you an overview of the total <em>energetic</em> energy
-        demand per sector (excl. feedstocks). Which sector is the biggest consumer
-        of energy? That sector might be a good place to start your scenario; go to
-        \"Demand\" and select that sector.\r\n</br> </br>\r\nWithout any adjustments,
-        the energy demand remains virtually the same, because no assumptions have
-        yet been made about the future. The fact that there is a slight difference
-        in energy use between the future and the present at the start, can be attributed
-        to the use of the electricity market module: it is not used in the current
-        year and is used in the future year (the <a href =\"/scenario/supply/merit_order/merit-order\">Merit
-        order</a> section has more information about the electricity market module)."
+      description: |
+        In the <a href="/scenario/supply/electricity/coal-plants">Supply</a> section, assumptions
+        can be made about how energy will be produced and supplied in the region.<br/><br/>
+        The chart on the right illustrates how much electricity is produced with respect to demand
+        and shows the sources of electricity production.
+        The results are shown for the start and future year.
+        <br/><br/>
+        For more information on the supply section, please consult the
+        <a href="https://docs.energytransitionmodel.com/main/supply">documentation on Supply</a>.
+    flexibility:
+      title: Flexibility
+      short_description:
+      description: |
+        The <a href="/scenario/flexibility/flexibility_overview/what-is-flexibility">Flexibility</a>
+        section of the ETM allows for exploration of how flexibility options can help balance supply
+        and demand in the energy system. By adjusting various parameters related to energy storage,
+        demand response and other flexibility measures, their impact on the overall energy system
+        can be observed.<br/><br/>
+        The chart on the right shows the hourly mismatch of inflexible supply and demand
+        for the energy carriers electricity, heat, hydrogen and network gas.
+        <br/><br/>
+        For more information on the flexibility section, please consult the
+        <a href="https://docs.energytransitionmodel.com/main/flexibility">documentation on Flexibility</a>.
+    emissions:
+      title: Emissions
+      short_description:
+      description: |
+        In the <a href="/scenario/emissions/other_emissions/overview">Emissions</a>
+        section, assumptions related to emission factors, greenhouse gas emissions and carbon
+        capture, utilization and storage (CCUS) can be made.<br/><br/>
+        The chart on the right depicts the CO<sub>2</sub> emissions in 1990 for this region and
+        the CO<sub>2</sub> emissions per sector in the start and future year.
+        <br/><br/>
+        For more information on the emissions section, please consult the
+        <a href="https://docs.energytransitionmodel.com/main/co2-main-principles">documentation on Emissions</a>.
+    costs:
+      title: Costs & efficiencies
+      short_description:
+      description: |
+        In the <a href="/scenario/costs/specs_electricity/coal-plants">Costs & efficiencies</a>
+        section, assumptions can be made about the costs and efficiency of, among others, energy
+        production technologies, energy infrastructure and fuels.<br/><br/>
+        The chart on the right illustrates the annual costs associated with different aspects of
+        the energy system in the start and future year.
+        <br/><br/>
+        For more information on the costs section, please consult the
+        <a href="https://docs.energytransitionmodel.com/main/cost-main-principles">documentation on Costs</a>.

@@ -40,7 +40,7 @@ class @Router extends Backbone.Router
     $("#sidebar li##{sidebar}").addClass 'active'
 
   ui_fragments: ->
-    (Backbone.history.getFragment() || 'overview/introduction').split('/')
+    (Backbone.history.getFragment() || 'overview/scenario_overview').split('/')
 
   load_default_slides: =>
     [tab, sidebar, slide] = @ui_fragments()

@@ -284,6 +284,28 @@ en:
         shipping.</br></br>Biomethanol is produced from sustainable feedstocks and can significantly
         reduce the climate impact of shipping. Like methanol, it requires modified engines, and
         availability is currently limited.
+    bunkers_ship_using_lng_share:
+      title: LNG
+      short_description:
+      description: |
+        This slider sets the energetic share of LNG in the LNG mix for international
+        shipping.<br/><br/>
+        LNG is a cleaner-burning fossil fuel that produces lower emissions than diesel
+        or heavy fuel oil. While LNG offers environmental benefits, it requires
+        modified engines and specialized infrastructure.
+    bunkers_ship_using_bio_lng_share:
+      title: Bio-LNG
+      short_description:
+      description: |
+        This slider sets the energetic share of bio-LNG in the LNG mix for international
+        shipping.<br/><br/>
+        Bio LNG is in fact liquefied bio methane. Through anaerobic digestion
+        or fermentation biodegradable materials can be converted into biogas. This
+        gas consists of mostly bio methane, carbondioxide and several other gases.
+        It is upgraded to bio methane by removing all the unwanted gases - engines
+        are very sensitive to the exact composition and energy content of the fuels
+        burnt. To then increase the energetic density, bio methane is liquefied and
+        bio LNG is obtained.
     transport_aviation_mixer_kerosene_kerosene_share:
       title: Kerosene
       short_description:

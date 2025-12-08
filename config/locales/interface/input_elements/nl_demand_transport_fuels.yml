@@ -304,6 +304,28 @@ nl:
         scheepvaart.</br></br>Biomethanol wordt geproduceerd uit duurzame grondstoffen en kan de
         klimaatimpact van scheepvaart aanzienlijk verminderen. Net als methanol vereist het aangepaste
         motoren, en de beschikbaarheid is momenteel nog beperkt.
+    bunkers_ship_using_lng_share:
+      title: LNG
+      short_description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van LNG in de LNG-mix voor
+        internationale scheepvaart.<br/><br/>
+        LNG is een schoner brandende fossiele brandstof die lagere emissies heeft dan
+        diesel of zware stookolie. Hoewel LNG milieuvoordelen biedt, zijn aangepaste
+        motoren en gespecialiseerde infrastructuur vereist.
+    bunkers_ship_using_bio_lng_share:
+      title: Bio-LNG
+      short_description:
+      description: |
+        Deze slider bepaalt het energetische aandeel van bio-LNG in de LNG-mix voor
+        internationale scheepvaart.<br/><br/>
+        Door anaërobe vergisting van organische materialen wordt biogas
+        geproduceerd. Dit bestaat grotendeels uit biomethaan, maar ook uit koolstofdioxide
+        en andere gassen. Biogas wordt vervolgens opgewaardeerd tot bio methaan door
+        alle ongewenste gassen te verwijderen - motoren zijn zeer gevoelig voor de
+        precieze samenstelling en energie inhoud van de brandstoffen die erin gaan.
+        Om tot slot de energetische dichtheid te vergroten, wordt bio methaan vloeibaar
+        gemaakt.
     transport_aviation_mixer_kerosene_kerosene_share:
       title: Kerosine
       short_description:

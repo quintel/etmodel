@@ -3,13 +3,27 @@
   share_group: methanol_mix_navigation
   step_value: 0.1
   unit: "%"
-  position: 1
+  position: 5
   interface_group: methanol_mix
   slide_key: demand_transport_international_shipping
 - key: bunkers_ship_using_biomethanol_share
   share_group: methanol_mix_navigation
   step_value: 0.1
   unit: "%"
-  position: 2
+  position: 10
   interface_group: methanol_mix
+  slide_key: demand_transport_international_shipping
+- key: bunkers_ship_using_lng_share
+  share_group: lng_mix_navigation
+  step_value: 0.1
+  unit: "%"
+  position: 100
+  interface_group: lng_navigation_mix
+  slide_key: demand_transport_international_shipping
+- key: bunkers_ship_using_bio_lng_share
+  share_group: lng_mix_navigation
+  step_value: 0.1
+  unit: "%"
+  position: 105
+  interface_group: lng_navigation_mix
   slide_key: demand_transport_international_shipping

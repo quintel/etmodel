@@ -313,8 +313,8 @@ en:
         due to its relatively low cost and high energy content. <br/><br/>
         Go to the <a href="/scenario/supply/fuel_production/overview">
         Liquid fuels and feedstock</a> section to set the production of HFO via oil refineries.
-    bunkers_ship_using_lng_share:
-      title: Liquefied natural gas (LNG)
+    bunkers_ship_using_lng_mix_share:
+      title: Liquefied natural gas (LNG) (mix)
       short_description:
       description: |
         This slider determines what percentage of fuel consumption in international
@@ -322,8 +322,11 @@ en:
         LNG is an emerging fuel in shipping and can be a suitable alternative for
         HFO ships due to its high energy density and lower CO<sub>2</sub> emissions.
         Additionally, combustion of LNG releases less NO<sub>x</sub>, SO<sub>x</sub> and
-        particulate matter.<br/><br/>
-        It is not yet possible in the model to blend bio-LNG into LNG for international shipping.
+        particulate matter.
+        <br/><br/>
+        The LNG used can consist of fossil and bio-LNG.
+        Go to <a href="/scenario/demand/transport_fuels/international-navigation"
+        >Transport fuels</a> to set the LNG mix.
     bunkers_ship_using_hydrogen_share:
       title: Hydrogen
       short_description:

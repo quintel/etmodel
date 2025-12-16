@@ -2,39 +2,39 @@
 - label: coal_national_transport
   color: "#333333"
   order_by: 100
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: coal_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: coal_use_of_transport_fuels
 - label: lpg_national_transport
   color: "#CCCCCC"
   order_by: 105
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: lpg_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: lpg_use_of_transport_fuels
 - label: gasoline_national_transport
   color: "#8B0000"
   order_by: 110
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
   target_line_position: ''
   gquery: gasoline_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
-  key: gasoline_use_of_transport_fuels  
+  key: gasoline_use_of_transport_fuels
 - label: kerosene_national_transport
   color: "#BFEFFF"
   order_by: 115
@@ -44,7 +44,7 @@
   target_line_position: ''
   gquery: kerosene_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: kerosene_domestic_aviation_use_of_transport_fuels
 - label: bio_kerosene_national_transport
@@ -56,19 +56,19 @@
   target_line_position: ''
   gquery: bio_kerosene_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: bio_kerosene_domestic_aviation_use_of_transport_fuels
 - label: diesel_national_transport
   color: "#854321"
   order_by: 120
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: diesel_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: diesel_use_of_transport_fuels
 - label: heavy_fuel_oil_national_transport
@@ -80,9 +80,9 @@
   target_line_position: ''
   gquery: heavy_fuel_oil_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
-  key: heavy_fuel_oil_domestic_navigation_use_of_transport_fuels  
+  key: heavy_fuel_oil_domestic_navigation_use_of_transport_fuels
 - label: lng_national_transport
   color: "#696969"
   order_by: 130
@@ -92,21 +92,21 @@
   target_line_position: ''
   gquery: lng_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
-  key: lng_domestic_navigation_use_of_transport_fuels  
+  key: lng_domestic_navigation_use_of_transport_fuels
 - label: greengas_national_transport
   color: "#ADDE4C"
   order_by: 135
-  group: 
-  show_at_first: 
-  is_target_line: 
-  target_line_position: 
+  group:
+  show_at_first:
+  is_target_line:
+  target_line_position:
   gquery: greengas_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
-  key: greengas_use_of_transport_fuels  
+  key: greengas_use_of_transport_fuels
 - label: natural_gas_national_transport
   color: "#92B940"
   order_by: 140
@@ -115,20 +115,20 @@
   is_target_line: false
   target_line_position: ''
   gquery: natural_gas_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
-  key: natural_gas_use_of_transport_fuels  
+  key: natural_gas_use_of_transport_fuels
 - label: biodiesel_national_transport
   color: "#5D7929"
   order_by: 145
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
   target_line_position: ''
   gquery: biodiesel_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: biodiesel_use_of_transport_fuels
 - label: bio_ethanol_national_transport
@@ -139,8 +139,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: bio_ethanol_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: bio_ethanol_use_of_transport_fuels
 - label: electricity_national_transport
@@ -151,8 +151,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: electricity_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: electricity_use_of_transport_fuels
 - label: bio_lng_national_transport
@@ -163,8 +163,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: bio_lng_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: bio_lng_use_of_transport_fuels
 - label: hydrogen_national_transport
@@ -175,8 +175,8 @@
   is_target_line: false
   target_line_position: ''
   gquery: hydrogen_in_use_of_transport_fuels
-  is_1990: 
-  dependent_on: 
+  is_1990:
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: hydrogen_use_of_transport_fuels
 - label: ammonia_national_transport
@@ -188,7 +188,7 @@
   target_line_position: ''
   gquery: ammonia_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: ammonia_national_transport_use_of_transport_fuels
 - label: methanol_national_transport
@@ -200,7 +200,7 @@
   target_line_position: ''
   gquery: methanol_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: methanol_national_transport_use_of_transport_fuels
 - label: bio_methanol_national_transport
@@ -212,7 +212,7 @@
   target_line_position: ''
   gquery: bio_methanol_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: bio_methanol_national_transport_use_of_transport_fuels
 
@@ -220,13 +220,13 @@
 - label: bio_kerosene_international_transport
   color: "#84A348"
   order_by: 200
-  group: 
-  show_at_first: 
+  group:
+  show_at_first:
   is_target_line: false
-  target_line_position: 
+  target_line_position:
   gquery: bio_kerosene_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: bio_kerosene_international_aviation_use_of_transport_fuels
 - label: kerosene_international_transport
@@ -238,7 +238,7 @@
   target_line_position: ''
   gquery: kerosene_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: kerosene_international_aviation_use_of_transport_fuels
 - label: heavy_fuel_oil_international_transport
@@ -250,7 +250,7 @@
   target_line_position: ''
   gquery: heavy_fuel_oil_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: heavy_fuel_oil_international_transport_use_of_transport_fuels
 - label: lng_international_transport
@@ -262,67 +262,79 @@
   target_line_position: ''
   gquery: lng_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: lng_international_transport_use_of_transport_fuels
+- label: bio_lng_international_transport
+  color: "#006400"
+  order_by: 220
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_lng_international_transport_in_use_of_transport_fuels
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_transport_fuels
+  key: bio_lng_international_transport_use_of_transport_fuels
 - label: ammonia_international_transport
   color: "#bdfff6"
-  order_by: 220
+  order_by: 225
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: ammonia_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: ammonia_international_transport_use_of_transport_fuels
 - label: electricity_international_transport
   color: "#afc0f2"
-  order_by: 225
+  order_by: 230
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: electricity_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: electricity_international_transport_use_of_transport_fuels
 
 - label: hydrogen_international_transport
   color: "#8B74BD"
-  order_by: 230
+  order_by: 235
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: hydrogen_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: hydrogen_international_transport_use_of_transport_fuels
 - label: methanol_international_transport
   color: "#FF8C8C"
-  order_by: 235
+  order_by: 240
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: methanol_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: methanol_international_transport_use_of_transport_fuels
 - label: bio_methanol_international_transport
   color: "#6AB04C"
-  order_by: 240
+  order_by: 245
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
   gquery: bio_methanol_international_transport_in_use_of_transport_fuels
   is_1990: false
-  dependent_on: 
+  dependent_on:
   output_element_key: use_of_transport_fuels
   key: bio_methanol_international_transport_use_of_transport_fuels

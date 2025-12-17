@@ -67,7 +67,7 @@ function renderSelectScenario(t, userScenarios) {
       value: scenario.scenario_id,
       text: scenario.title + ', ' + t('areas.' + scenario.area_code) + ' ' + scenario.end_year,
       data: {
-        source_saved_scenario_id: scenario.saved_scenario_id,
+        source_saved_scenario_id: scenario.id,
         source_dataset_key: scenario.area_code,
         source_scenario_title: scenario.title,
         source_end_year: scenario.end_year,
@@ -527,7 +527,7 @@ class CustomCurveChooserView extends Backbone.View {
 
     // Fetch curve as string from other scenario (currently wrapped in json)
     var scenarioApiURL = App.api.path(
-      '/scenarios/' + scenarioID + '/curves/electricity_price.json'
+      'scenarios/' + scenarioID + '/curves/electricity_price.json'
     );
 
     var req = $.ajax({

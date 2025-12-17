@@ -91,6 +91,18 @@
   dependent_on:
   output_element_key: use_of_final_demand_in_international_transport
   key: lng_ships_use_of_final_demand_in_international_transport
+- label: bio_lng_ships
+  color: "#006400"
+  order_by: 301
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: bio_lng_demand_international_shipping
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_international_transport
+  key: bio_lng_ships_use_of_final_demand_in_international_transport
 - label: hydrogen_ships
   color: "#87CEEB"
   order_by: 305

@@ -534,13 +534,20 @@ D3.sankey =
           {id: 'export',                          column: 3, label: 'export',                    color: '#43464B'},
           {id: 'electricity_production',          column: 3, label: 'electricity_production',    color: '#1f77b4'},
           {id: 'heat_production',                 column: 3, label: 'heat_production',           color: '#cc0000'},
-          {id: 'hydrogen_production',             column: 3, label: 'hydrogen_production',       color: '#DCDCDC'},
+          {id: 'hydrogen_production',             column: 3, label: 'hydrogen_production',       color: '#87cfeb'},
           {id: 'losses',                          column: 3, label: 'losses',                    color: '#DCDCDC'},
         ]
         links: [
           {left: 'greengas_primary',              right: 'greengas_secondary',                   gquery: 'greengas_to_greengas_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biogas',                        right: 'greengas_secondary',                   gquery: 'biogas_to_greengas_in_biomass_sankey', color: '#A3CB38'},
 
+          {left: 'greengas_secondary',            right: 'households',                           gquery: 'greengas_to_final_demand_households_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'buildings',                            gquery: 'greengas_to_final_demand_buildings_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'transport',                            gquery: 'greengas_to_final_demand_transport_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'bunkers',                              gquery: 'greengas_to_final_demand_bunkers_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'industry',                             gquery: 'greengas_to_final_demand_industry_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'agriculture',                          gquery: 'greengas_to_final_demand_agriculture_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'other',                                gquery: 'greengas_to_final_demand_other_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'export',                               gquery: 'greengas_to_export_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'electricity_production',               gquery: 'greengas_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'heat_production',                      gquery: 'greengas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},

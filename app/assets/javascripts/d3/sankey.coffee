@@ -534,7 +534,7 @@ D3.sankey =
           {id: 'export',                          column: 3, label: 'export',                    color: '#43464B'},
           {id: 'electricity_production',          column: 3, label: 'electricity_production',    color: '#1f77b4'},
           {id: 'heat_production',                 column: 3, label: 'heat_production',           color: '#cc0000'},
-          {id: 'hydrogen_production',             column: 3, label: 'heat_production',           color: '#DCDCDC'},
+          {id: 'hydrogen_production',             column: 3, label: 'hydrogen_production',       color: '#DCDCDC'},
           {id: 'losses',                          column: 3, label: 'losses',                    color: '#DCDCDC'},
         ]
         links: [
@@ -542,6 +542,9 @@ D3.sankey =
           {left: 'biogas',                        right: 'greengas_secondary',                   gquery: 'biogas_to_greengas_in_biomass_sankey', color: '#A3CB38'},
 
           {left: 'greengas_secondary',            right: 'export',                               gquery: 'greengas_to_export_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'electricity_production',               gquery: 'greengas_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'heat_production',                      gquery: 'greengas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'greengas_secondary',            right: 'hydrogen_production',                  gquery: 'greengas_to_hydrogen_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'losses',                               gquery: 'greengas_to_loss_in_biomass_sankey', color: '#DCDCDC'},
 
           {left: 'biogas',                        right: 'electricity_production',               gquery: 'biogas_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},

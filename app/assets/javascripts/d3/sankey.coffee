@@ -523,6 +523,7 @@ D3.sankey =
         nodes: [
           {id: 'greengas_primary',                column: 0, label: 'greengas',                  color: '#A3CB38'},
           {id: 'biogas',                          column: 0, label: 'biogas',                    color: '#A3CB38'},
+          {id: 'wood_pellets',                    column: 0, label: 'wood_pellets',              color: '#A3CB38'},
           {id: 'greengas_secondary',              column: 2, label: 'greengas',                  color: '#A3CB38'},
           {id: 'households',                      column: 3, label: 'households',                color: '#4169E1'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#ADD8E6'},
@@ -558,6 +559,16 @@ D3.sankey =
           {left: 'biogas',                        right: 'heat_production',                      gquery: 'biogas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biogas',                        right: 'losses',                               gquery: 'biogas_to_loss_in_biomass_sankey', color: '#DCDCDC'},
 
+          {left: 'wood_pellets',                  right: 'households',                           gquery: 'wood_pellets_to_final_demand_households_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'buildings',                            gquery: 'wood_pellets_to_final_demand_buildings_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'transport',                            gquery: 'wood_pellets_to_final_demand_transport_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'bunkers',                              gquery: 'wood_pellets_to_final_demand_bunkers_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'industry',                             gquery: 'wood_pellets_to_final_demand_industry_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'agriculture',                          gquery: 'wood_pellets_to_final_demand_agriculture_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'other',                                gquery: 'wood_pellets_to_final_demand_other_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'electricity_production',               gquery: 'wood_pellets_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'heat_production',                      gquery: 'wood_pellets_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'wood_pellets',                  right: 'losses',                               gquery: 'wood_pellets_to_loss_in_biomass_sankey', color: '#DCDCDC'},
         ]
     co2_sankey:
       data:

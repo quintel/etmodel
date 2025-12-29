@@ -526,7 +526,14 @@ D3.sankey =
           {id: 'wood_pellets',                    column: 0, label: 'wood_pellets',              color: '#A3CB38'},
           {id: 'torrefied_biomass_pellets',       column: 0, label: 'torrefied_biomass_pellets', color: '#A3CB38'},
           {id: 'biogenic_waste',                  column: 0, label: 'biogenic_waste',            color: '#A3CB38'},
+          {id: 'bio_kerosene_primary',            column: 0, label: 'bio_kerosene',              color: '#A3CB38'},
+          {id: 'bio_ethanol',                     column: 0, label: 'bio_ethanol',               color: '#A3CB38'},
+          {id: 'biomethanol',                     column: 0, label: 'biomethanol',               color: '#A3CB38'},
+          {id: 'hydrogen',                        column: 0, label: 'hydrogen',                  color: '#87cfeb'},
+
           {id: 'greengas_secondary',              column: 2, label: 'greengas',                  color: '#A3CB38'},
+          {id: 'bio_kerosene_secondary',          column: 2, label: 'bio_kerosene',              color: '#A3CB38'},
+
           {id: 'households',                      column: 3, label: 'households',                color: '#4169E1'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#ADD8E6'},
           {id: 'transport',                       column: 3, label: 'transport',                 color: '#8B0000'},
@@ -544,6 +551,11 @@ D3.sankey =
           {left: 'greengas_primary',              right: 'greengas_secondary',                   gquery: 'greengas_to_greengas_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biogas',                        right: 'greengas_secondary',                   gquery: 'biogas_to_greengas_in_biomass_sankey', color: '#A3CB38'},
 
+          {left: 'bio_kerosene_primary',          right: 'bio_kerosene_secondary',               gquery: 'bio_kerosene_to_bio_kerosene_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'bio_ethanol',                   right: 'bio_kerosene_secondary',               gquery: 'bio_ethanol_to_bio_kerosene_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'biomethanol',                   right: 'bio_kerosene_secondary',               gquery: 'biomethanol_to_bio_kerosene_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'hydrogen',                      right: 'bio_kerosene_secondary',               gquery: 'hydrogen_to_bio_kerosene_in_biomass_sankey', color: '#87cfeb'},
+
           {left: 'greengas_secondary',            right: 'households',                           gquery: 'greengas_to_final_demand_households_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'buildings',                            gquery: 'greengas_to_final_demand_buildings_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'transport',                            gquery: 'greengas_to_final_demand_transport_in_biomass_sankey', color: '#A3CB38'},
@@ -556,6 +568,8 @@ D3.sankey =
           {left: 'greengas_secondary',            right: 'heat_production',                      gquery: 'greengas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'hydrogen_production',                  gquery: 'greengas_to_hydrogen_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'losses',                               gquery: 'greengas_to_loss_in_biomass_sankey', color: '#DCDCDC'},
+
+          {left: 'bio_kerosene_secondary',        right: 'losses',                               gquery: 'bio_kerosene_to_loss_in_biomass_sankey', color: '#DCDCDC'},
 
           {left: 'biogas',                        right: 'electricity_production',               gquery: 'biogas_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biogas',                        right: 'heat_production',                      gquery: 'biogas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},

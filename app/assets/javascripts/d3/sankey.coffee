@@ -558,7 +558,6 @@ D3.sankey =
 
           {left: 'biogas',                        right: 'electricity_production',               gquery: 'biogas_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biogas',                        right: 'heat_production',                      gquery: 'biogas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
-          {left: 'biogas',                        right: 'losses',                               gquery: 'biogas_to_loss_in_biomass_sankey', color: '#DCDCDC'},
 
           {left: 'wood_pellets',                  right: 'households',                           gquery: 'wood_pellets_to_final_demand_households_in_biomass_sankey', color: '#A3CB38'},
           {left: 'wood_pellets',                  right: 'buildings',                            gquery: 'wood_pellets_to_final_demand_buildings_in_biomass_sankey', color: '#A3CB38'},

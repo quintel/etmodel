@@ -524,6 +524,7 @@ D3.sankey =
           {id: 'greengas_primary',                column: 0, label: 'greengas',                  color: '#A3CB38'},
           {id: 'biogas',                          column: 0, label: 'biogas',                    color: '#A3CB38'},
           {id: 'wood_pellets',                    column: 0, label: 'wood_pellets',              color: '#A3CB38'},
+          {id: 'torrefied_biomass_pellets',       column: 0, label: 'torrefied_biomass_pellets', color: '#A3CB38'},
           {id: 'greengas_secondary',              column: 2, label: 'greengas',                  color: '#A3CB38'},
           {id: 'households',                      column: 3, label: 'households',                color: '#4169E1'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#ADD8E6'},
@@ -568,7 +569,10 @@ D3.sankey =
           {left: 'wood_pellets',                  right: 'other',                                gquery: 'wood_pellets_to_final_demand_other_in_biomass_sankey', color: '#A3CB38'},
           {left: 'wood_pellets',                  right: 'electricity_production',               gquery: 'wood_pellets_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'wood_pellets',                  right: 'heat_production',                      gquery: 'wood_pellets_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
-          {left: 'wood_pellets',                  right: 'losses',                               gquery: 'wood_pellets_to_loss_in_biomass_sankey', color: '#DCDCDC'},
+
+          {left: 'torrefied_biomass_pellets',     right: 'electricity_production',               gquery: 'torrefied_biomass_pellets_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'torrefied_biomass_pellets',     right: 'heat_production',                      gquery: 'torrefied_biomass_pellets_to_heat_production_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'torrefied_biomass_pellets',     right: 'hydrogen_production',                  gquery: 'torrefied_biomass_pellets_to_hydrogen_production_in_biomass_sankey', color: '#A3CB38'},
         ]
     co2_sankey:
       data:

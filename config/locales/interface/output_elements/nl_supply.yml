@@ -53,9 +53,10 @@ nl:
       short_description: ''
       description: ''
     gas_network_mix:
-      title: Groen gas in gasnet
-      short_description: ''
-      description: Deze grafiek toont de mix van aardgas and groen gas in het gasnet.
+      title: Gasmix in gasnetwerk
+      short_description:
+      description: |
+        Deze grafiek toont de mix van aardgas, groen gas en propaan in het gasnet.
     mekko_of_bio_footprint:
       title: Biovoetafdruk van primair gebruik
       short_description: ''
@@ -73,15 +74,14 @@ nl:
         Zie de <a href="https://docs.energytransitionmodel.com/main/balancing-demand#electricity/" target =\"_blank\">documentatie</a>
         voor meer informatie over hoet het ETM vraag en aanbod in het elektriciteitsnetwerk balanceert.
     mekko_of_network_gas_network:
-      title: Netwerkgas vraag en aanbod
+      title: Gas vraag en aanbod
       short_description: ''
       description: |
-        Deze grafiek toont vraag en aanbod van netwerkgas in het centrale netwerk. <br/><br/>
-        De aanbodkant bestaat uit de relevante aanbodcategorieën van alle dragers waar netwerkgas uit kan bestaan,
+        Deze grafiek toont vraag en aanbod van de gasdragers in het ETM. <br/><br/>
+        De aanbodkant bestaat uit de relevante aanbodcategorieën van gas,
         namelijk aardgas, groen gas, propaan en LNG. De vraagkant bestaat uit categorieën voor eindgebruik en conversie.
         Transportverliezen zijn hierin ook meegenomen. <br/><br/>
-        Het ETM balanceert vraag en aanbod van netwerk gas middels additionele import of export bij respectievelijk een
-        tekort of overschot. Lees meer over hoe het ETM vraag en aanbod van netwerkgas balanceert in onze
+        Het ETM balanceert vraag en aanbod van gas middels additionele import of export bij respectievelijk een        tekort of overschot. Lees meer over hoe het ETM vraag en aanbod van de gas dragers balanceert in onze
         <a href="https://docs.energytransitionmodel.com/main/flexibility#gas" target =\"_blank\">documentatie</a>.
     co2_emissions_biomass:
       title: CO<sub>2</sub>-uitstoot biomassa

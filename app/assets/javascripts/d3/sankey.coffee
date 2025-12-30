@@ -528,6 +528,7 @@ D3.sankey =
           {id: 'biogenic_waste',                  column: 0, label: 'biogenic_waste',            color: '#A3CB38'},
           {id: 'bio_kerosene_primary',            column: 0, label: 'bio_kerosene',              color: '#A3CB38'},
           {id: 'biodiesel_primary',               column: 0, label: 'biodiesel',                 color: '#A3CB38'},
+          {id: 'bionaphtha_primary',              column: 0, label: 'bionaphtha',                color: '#A3CB38'},
           {id: 'bio_ethanol',                     column: 0, label: 'bio_ethanol',               color: '#A3CB38'},
           {id: 'biomethanol',                     column: 0, label: 'biomethanol',               color: '#A3CB38'},
           {id: 'bio_pyrolysis_oil',               column: 0, label: 'bio_pyrolysis_oil',         color: '#A3CB38'},
@@ -537,6 +538,7 @@ D3.sankey =
           {id: 'greengas_secondary',              column: 2, label: 'greengas',                  color: '#A3CB38'},
           {id: 'bio_kerosene_secondary',          column: 2, label: 'bio_kerosene',              color: '#A3CB38'},
           {id: 'biodiesel_secondary',             column: 2, label: 'biodiesel',                 color: '#A3CB38'},
+          {id: 'bionaphtha_secondary',            column: 2, label: 'bionaphtha',                color: '#A3CB38'},
 
           {id: 'households',                      column: 3, label: 'households',                color: '#4169E1'},
           {id: 'buildings',                       column: 3, label: 'buildings',                 color: '#ADD8E6'},
@@ -565,6 +567,12 @@ D3.sankey =
           {left: 'biodiesel_primary',             right: 'biodiesel_secondary',                  gquery: 'biodiesel_to_biodiesel_in_biomass_sankey', color: '#A3CB38'},
           {left: 'bio_ethanol',                   right: 'biodiesel_secondary',                  gquery: 'bio_ethanol_to_biodiesel_in_biomass_sankey', color: '#A3CB38'},
           {left: 'hydrogen',                      right: 'biodiesel_secondary',                  gquery: 'hydrogen_to_biodiesel_in_biomass_sankey', color: '#87cfeb'},
+
+          {left: 'bionaphtha_primary',            right: 'bionaphtha_secondary',                 gquery: 'bionaphtha_to_bionaphtha_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'biomethanol',                   right: 'bionaphtha_secondary',                 gquery: 'biomethanol_to_bionaphtha_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'bio_pyrolysis_oil',             right: 'bionaphtha_secondary',                 gquery: 'bio_pyrolysis_oil_to_bionaphtha_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'hydrogen',                      right: 'bionaphtha_secondary',                 gquery: 'hydrogen_to_bionaphtha_in_biomass_sankey', color: '#87cfeb'},
+          {left: 'heat',                          right: 'bionaphtha_secondary',                 gquery: 'steam_hot_water_to_bionaphtha_in_biomass_sankey', color: '#cc0000'},
 
           {left: 'greengas_secondary',            right: 'households',                           gquery: 'greengas_to_final_demand_households_in_biomass_sankey', color: '#A3CB38'},
           {left: 'greengas_secondary',            right: 'buildings',                            gquery: 'greengas_to_final_demand_buildings_in_biomass_sankey', color: '#A3CB38'},
@@ -598,6 +606,10 @@ D3.sankey =
           {left: 'biodiesel_secondary',           right: 'other',                                gquery: 'biodiesel_to_final_demand_other_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biodiesel_secondary',           right: 'export',                               gquery: 'biodiesel_to_export_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biodiesel_secondary',           right: 'losses',                               gquery: 'biodiesel_to_loss_in_biomass_sankey', color: '#DCDCDC'},
+
+          {left: 'bionaphtha_secondary',          right: 'industry',                             gquery: 'bionaphtha_to_final_demand_industry_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'bionaphtha_secondary',          right: 'export',                               gquery: 'bionaphtha_to_export_in_biomass_sankey', color: '#A3CB38'},
+          {left: 'bionaphtha_secondary',          right: 'losses',                               gquery: 'bionaphtha_to_loss_in_biomass_sankey', color: '#DCDCDC'},
 
           {left: 'biogas',                        right: 'electricity_production',               gquery: 'biogas_to_electricity_production_in_biomass_sankey', color: '#A3CB38'},
           {left: 'biogas',                        right: 'heat_production',                      gquery: 'biogas_to_heat_production_in_biomass_sankey', color: '#A3CB38'},

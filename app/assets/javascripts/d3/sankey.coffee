@@ -567,7 +567,7 @@ D3.sankey =
           {left: 'biogenic_waste',                right: 'industry_transformation',              gquery: 'biogenic_waste_to_industry_transformation_in_biomass_sankey', color: '#A8C19C'},
           {left: 'bio_oil',                       right: 'industry_transformation',              gquery: 'bio_oil_to_industry_transformation_in_biomass_sankey', color: '#9E9911'},
 
-          Column 1 to column 2
+          # Column 1 to column 2
           {left: 'industry_transformation',       right: 'greengas_secondary',                   gquery: 'industry_transformation_to_greengas_in_biomass_sankey', color: '#CFEA85'},
           {left: 'industry_transformation',       right: 'bio_kerosene_secondary',               gquery: 'industry_transformation_to_bio_kerosene_in_biomass_sankey', color: '#2E8B57'},
           {left: 'industry_transformation',       right: 'biodiesel_secondary',                  gquery: 'industry_transformation_to_biodiesel_in_biomass_sankey', color: '#9ACD32'},

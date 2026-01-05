@@ -523,9 +523,9 @@ D3.sankey =
         nodes: [
           {id: 'greengas_primary',                column: 0, label: 'greengas',                  color: '#CFEA85'},
           {id: 'biogas',                          column: 0, label: 'biogas',                    color: '#7FA025'},
+          {id: 'biogenic_waste',                  column: 0, label: 'biogenic_waste',            color: '#A8C19C'},
           {id: 'wood_pellets',                    column: 0, label: 'wood_pellets',              color: '#228B22'},
           {id: 'torrefied_biomass_pellets',       column: 0, label: 'torrefied_biomass_pellets', color: '#145814'},
-          {id: 'biogenic_waste',                  column: 0, label: 'biogenic_waste',            color: '#A8C19C'},
           {id: 'bio_kerosene_primary',            column: 0, label: 'bio_kerosene',              color: '#2E8B57'},
           {id: 'biodiesel_primary',               column: 0, label: 'biodiesel',                 color: '#9ACD32'},
           {id: 'bionaphtha_primary',              column: 0, label: 'bionaphtha',                color: '#3CB371'},
@@ -569,8 +569,8 @@ D3.sankey =
           {left: 'bio_pyrolysis_oil_primary',     right: 'bio_pyrolysis_oil_secondary',          gquery: 'bio_pyrolysis_oil_to_bio_pyrolysis_oil_in_biomass_sankey', color: '#6B8E23'},
 
           {left: 'greengas_primary',              right: 'industry_transformation',              gquery: 'greengas_to_industry_transformation_in_biomass_sankey', color: '#CFEA85'},
-          {left: 'wood_pellets',                  right: 'industry_transformation',              gquery: 'wood_pellets_to_industry_transformation_in_biomass_sankey', color: '#228B22'},
           {left: 'biogenic_waste',                right: 'industry_transformation',              gquery: 'biogenic_waste_to_industry_transformation_in_biomass_sankey', color: '#A8C19C'},
+          {left: 'wood_pellets',                  right: 'industry_transformation',              gquery: 'wood_pellets_to_industry_transformation_in_biomass_sankey', color: '#228B22'},
           {left: 'bio_oil',                       right: 'industry_transformation',              gquery: 'bio_oil_to_industry_transformation_in_biomass_sankey', color: '#9E9911'},
 
           # # Column 1 to column 2
@@ -659,6 +659,10 @@ D3.sankey =
           {left: 'biogas',                        right: 'electricity_production',               gquery: 'biogas_to_electricity_production_in_biomass_sankey', color: '#7FA025'},
           {left: 'biogas',                        right: 'heat_production',                      gquery: 'biogas_to_heat_production_in_biomass_sankey', color: '#7FA025'},
 
+          {left: 'biogenic_waste',                right: 'industry',                             gquery: 'biogenic_waste_to_final_demand_industry_in_biomass_sankey', color: '#A8C19C'},
+          {left: 'biogenic_waste',                right: 'electricity_production',               gquery: 'biogenic_waste_to_electricity_production_in_biomass_sankey', color: '#A8C19C'},
+          {left: 'biogenic_waste',                right: 'heat_production',                      gquery: 'biogenic_waste_to_heat_production_in_biomass_sankey', color: '#A8C19C'},
+
           {left: 'wood_pellets',                  right: 'households',                           gquery: 'wood_pellets_to_final_demand_households_in_biomass_sankey', color: '#228B22'},
           {left: 'wood_pellets',                  right: 'buildings',                            gquery: 'wood_pellets_to_final_demand_buildings_in_biomass_sankey', color: '#228B22'},
           {left: 'wood_pellets',                  right: 'transport',                            gquery: 'wood_pellets_to_final_demand_transport_in_biomass_sankey', color: '#228B22'},
@@ -673,10 +677,6 @@ D3.sankey =
           {left: 'torrefied_biomass_pellets',     right: 'electricity_production',               gquery: 'torrefied_biomass_pellets_to_electricity_production_in_biomass_sankey', color: '#145814'},
           {left: 'torrefied_biomass_pellets',     right: 'heat_production',                      gquery: 'torrefied_biomass_pellets_to_heat_production_in_biomass_sankey', color: '#145814'},
           {left: 'torrefied_biomass_pellets',     right: 'hydrogen_production',                  gquery: 'torrefied_biomass_pellets_to_hydrogen_production_in_biomass_sankey', color: '#145814'},
-
-          {left: 'biogenic_waste',                right: 'industry',                             gquery: 'biogenic_waste_to_final_demand_industry_in_biomass_sankey', color: '#A8C19C'},
-          {left: 'biogenic_waste',                right: 'electricity_production',               gquery: 'biogenic_waste_to_electricity_production_in_biomass_sankey', color: '#A8C19C'},
-          {left: 'biogenic_waste',                right: 'heat_production',                      gquery: 'biogenic_waste_to_heat_production_in_biomass_sankey', color: '#A8C19C'},
 
           {left: 'bio_ethanol',                   right: 'transport',                            gquery: 'bio_ethanol_to_final_demand_transport_in_biomass_sankey', color: '#76B776'},
           {left: 'bio_ethanol',                   right: 'export',                               gquery: 'bio_ethanol_to_export_in_biomass_sankey', color: '#76B776'},

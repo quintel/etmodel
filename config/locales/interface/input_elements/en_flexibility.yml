@@ -327,26 +327,15 @@ en:
     flh_of_energy_power_wind_turbine_offshore:
       title: Wind offshore
       short_description:
-      description: By increasing
-        the full load hours for this type of wind turbine, more electricity will be
-        produced. Both the full load hours of 'regular'
-        offshore wind turbines and hybrid offshore wind turbines will be updated.
-        The slider not only increases the number
-        of full load hours but also changes the shape of the hourly production profile
-        for this type of wind turbine. Typically, the peaks will become broader
-        with increasing full load hours as the turbine spends more time running
+      description: |
+        By increasing the full load hours for this type of wind turbine, more electricity will be
+        produced. This slider updates full load hours of 'regular' offshore wind turbines, offshore
+        wind turbines combined with electrolyser and hybrid offshore wind turbines.
+        The slider not only increases the number of full load hours but also changes the shape of
+        the hourly production profile for this type of wind turbine. Typically, the peaks will
+        become broader with increasing full load hours as the turbine spends more time running
         at higher capacity. Take a look at the ‘Electricity production per hour’-chart
         to see the effect of your changes on the offshore wind profile.
-    flh_of_energy_hydrogen_wind_turbine_offshore:
-      title: Wind offshore (with electrolyser)
-      short_description:
-      description: By increasing
-        the full load hours for this type of wind turbine, more electricity will be
-        produced with the same number of turbines. The slider not only increases the number
-        of full load hours but also changes the shape of the hourly production profile
-        for this type of wind turbine. Typically, the peaks will become broader
-        with increasing full load hours as the turbine spends more time running
-        at higher capacity.
     flh_of_households_solar_pv_solar_radiation:
       title: Solar rooftop (households)
       short_description:

@@ -132,7 +132,6 @@
    */
   var WEATHER_CURVE_DEPENDENTS = [
     'flexibility_outdoor_temperature',
-    'flh_of_energy_hydrogen_wind_turbine_offshore',
     'flh_of_energy_power_wind_turbine_coastal',
     'flh_of_energy_power_wind_turbine_inland',
     'flh_of_energy_power_wind_turbine_offshore',

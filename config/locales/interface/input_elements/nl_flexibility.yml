@@ -332,26 +332,14 @@ nl:
     flh_of_energy_power_wind_turbine_offshore:
       title: Wind op zee
       short_description:
-      description: Door de vollasturen te
-        verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens. De vollasturen van zowel de 'normale' windmolens
-        op zee als de hybride windmolens op zee worden hiermee aangepast.
-        Wanneer het aantal vollasturen wordt verhoogd met deze schuif,
-        verandert tegelijkertijd ook het productieprofiel per uur
-        voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
-        breder worden doordat de windmolen vaker draait op hogere capaciteit.
-        Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
-        in het effect van het aantal vollasturen op het windprofiel.
-    flh_of_energy_hydrogen_wind_turbine_offshore:
-      title: Wind op zee (met electrolyser)
-      short_description:
-      description: Door de vollasturen te
-        verhogen voor dit type windmolen zal er meer elektriciteit geproduceerd worden
-        met hetzelfde aantal windmolens.
-        Om dit mogelijk te maken neemt niet alleen het aantal vollasturen toe met
-        dit schuifje, maar verandert tegelijkertijd ook het productieprofiel per uur
-        voor dit type windmolen. Bij een toenemend aantal vollasturen zullen de pieken
-        breder worden doordat de windmolen vaker draait op hogere capaciteit.
+      description: |
+        Door de vollasturen te verhogen voor dit type windturbine zal er meer elektriciteit
+        geproduceerd worden met hetzelfde aantal windturbines. De vollasturen van zowel de 'normale'
+        windturbines op zee als windturbines op zee gecombineerd met elektrolyser en de hybride
+        windturbines op zee worden hiermee aangepast. Wanneer het aantal vollasturen wordt verhoogd
+        met dit schuifje, verandert tegelijkertijd ook het productieprofiel per uur
+        voor dit type windturbine. Bij een toenemend aantal vollasturen zullen de pieken
+        breder worden doordat de windturbine vaker draait op hogere capaciteit.
         Bekijk de 'Elektriciteitsproductie op uurbasis'-grafiek voor meer inzicht
         in het effect van het aantal vollasturen op het windprofiel.
     flh_of_households_solar_pv_solar_radiation:

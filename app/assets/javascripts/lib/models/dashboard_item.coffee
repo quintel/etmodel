@@ -20,7 +20,7 @@ class DashboardItem extends Backbone.Model
     fut = @gquery.get('future')
     now = @gquery.get('present')
     switch @get('key')
-      when 'total_primary_energy', 'employment'
+      when 'total_primary_energy'
         return Metric.calculate_performance(now, fut)
       when 'profitability'
         MeritOrder.dashboardValue(fut)

@@ -80,7 +80,7 @@ class @DashboardItemView extends Backbone.View
         Metric.euros_to_string(result)
       when 'household_energy_cost'
         I18n.toCurrency(result, { precision: 0, unit: '&euro;' })
-      when 'total_primary_energy', 'employment', 'co2_reduction', 'local_co2_reduction', 'co2_reduction_relative_to_start_year', 'all_ghg_reduction_relative_to_start_year'
+      when 'total_primary_energy', 'co2_reduction', 'local_co2_reduction', 'co2_reduction_relative_to_start_year', 'all_ghg_reduction_relative_to_start_year'
         # show + prefix if needed
         Metric.ratio_as_percentage(result, true)
       when 'net_energy_import', 'profitability'

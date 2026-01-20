@@ -55,8 +55,10 @@ feedback_email: info@energytransitionmodel.com
 # ------
 
 # Optionally send error messages and profiling data to the Sentry service by providing your
-# Sentry DSN:
+# Sentry details:
 sentry_dsn: <%= ENV['SENTRY_DSN'] %>
+sentry_traces: <%= ENV.fetch('SENTRY_TRACES', 0.1) %>
+sentry_profiles: <%= ENV.fetch('SENTRY_PROFILES', 0.1) %>
 
 # Mailchimp
 # ---------

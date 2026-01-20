@@ -63,34 +63,18 @@ en:
         Check out the <a href="https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
         for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a>
         for a description of the data sources.
-    buildings_useful_demand_electricity:
-      title: Electricity per building
-      short_description: ''
-      description: "Note: these changes in energy use <strong>exclude</strong> the
-        use of the efficient technologies that you can choose below (Appliances, Lighting,
-        Heating & Cooling). \r\n<br/>\r\n<br/>\r\nHere you indicate how you expect
-        demand for electricity per building to change. This is mainly determined by
-        growth in prosperity. As people become richer, they become accustomed to ever
-        more convenience from ICT and other other office or school appliances."
-    buildings_useful_demand_for_space_heating:
-      title: Heat per building
-      short_description: ''
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Heating & Cooling). \r\n<br/>\r\n<br/>\r\nHere
-        you indicate how you expect heat demand per building to change. This is likely
-        to change as buildings become ever more filled with electric appliances producing
-        heat. In fact, especially offices need cooling for more hours per year than
-        before everyone started using computers, copiers, faxes and printers. "
+    buildings_useful_demand_appliances:
+      title: Appliances
+      short_description:
+      description:
+    buildings_useful_demand_lighting:
+      title: Lighting
+      short_description:
+      description:
     buildings_useful_demand_cooling:
-      title: Cooling per building
-      short_description: ''
-      description: "Note: these changes in energy use <strong>exclude</strong> the
-        use of the efficient technologies that you can choose below (Heating & Cooling).
-        \r\n<br/>\r\n<br/>\r\nHere you indicate how you expect cooling demand per
-        building to change. This is likely to change as buildings become ever more
-        filled with electric appliances producing heat. In fact, especially offices
-        need cooling for more hours per year than before everyone started using computers,
-        copiers, faxes and printers. "
+      title: Cooling
+      short_description:
+      description:
     buildings_space_heater_network_gas_share:
       title: Condensing combi boiler (gas)
       short_description: ''
@@ -300,9 +284,9 @@ en:
         Note that solar thermal panels can only provide 13% of annual hot water demand.
         Setting this slider to 100% therefore means that the remaining 87% of annual hot water demand is
         provided by other technologies.
-    buildings_useful_demand_for_appliances:
+    buildings_appliances_efficiency:
       title: Appliances efficiency
-      short_description: ''
+      short_description:
       description: "How much more efficient do you think appliances in non-residential
         buildings will be in the future? Use the slider to give an estimation of yearly
         increase in the overall efficiency of appliances.\r\n<br/><br/>\r\nAppliances

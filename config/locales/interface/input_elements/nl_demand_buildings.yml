@@ -53,37 +53,18 @@ nl:
         per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
         <br><br>
         Het aantal bestaande gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
-    buildings_useful_demand_electricity:
-      title: Elektriciteit per gebouw
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
-        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Apparaten,
-        Verlichting, Verwarming & Koeling).\r\n<br/><br/>\r\nHier kun je aangeven
-        hoe jij denkt dat de elektriciteitsvraag per gebouw zich gaat ontwikkelen.
-        Dit hangt vooral af van de welvaartsgroei. Als mensen rijker worden, raken
-        ze gewend aan steeds meer gemak van ICT apparatuur en overige apparaten op
-        hun werk of opleiding.\r\n"
-    buildings_useful_demand_for_space_heating:
-      title: Warmte per gebouw
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je in hieronder kunt kiezen (Verwarming & Koeling).\r\n<br/>\r\n<br/>\r\nHier
-        kun je aangeven hoe jij denkt dat de warmtevraag per gebouw zich gaat ontwikkelen.
-        Dit verandert onder meer doordat gebouwen steeds voller komen te staan met
-        elektrische apparaten die warmte produceren. Het is zelfs zo dat gebouwen
-        steeds meer uren per jaar gekoeld moeten worden dan voordat iedereen ging
-        werken met computers, faxen, kopieerapparaten en printers."
+    buildings_useful_demand_appliances:
+      title: Apparaten
+      short_description:
+      description:
+    buildings_useful_demand_lighting:
+      title: Verlichting
+      short_description:
+      description:
     buildings_useful_demand_cooling:
-      title: Koeling per gebouw
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
-        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Verwarming
-        & Koeling).\r\n<br/>\r\n<br/>\r\nHier kun je aangeven hoe jij denkt dat de
-        vraag naar koeling per gebouw zich gaat ontwikkelen. Dit verandert onder meer
-        doordat gebouwen steeds voller komen te staan met elektrische apparaten die
-        warmte produceren. Het is zelfs zo dat gebouwen steeds meer uren per jaar
-        gekoeld moeten worden dan voordat iedereen ging werken met computers, faxen,
-        kopieerapparaten en printers."
+      title: Koeling
+      short_description:
+      description:
     buildings_space_heater_network_gas_share:
       title: HR combiketel (gas)
       short_description: ''
@@ -293,7 +274,7 @@ nl:
         Let op:  zonneboilers met zonthermische panelen kunnen slechts 13% van de jaarlijkse vraag aan warm tapwater invullen.
         Het instellen van dit schuifje op 100% betekent dus dat de overgebleven 87% van de jaarlijkse vraag
         door andere technologieën wordt ingevuld.
-    buildings_useful_demand_for_appliances:
+    buildings_appliances_efficiency:
       title: Apparaten efficiëntie
       short_description: ''
       description: "Hoeveel efficiënter zullen apparaten in de utiliteitsbouw in de

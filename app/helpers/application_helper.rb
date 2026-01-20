@@ -167,6 +167,8 @@ module ApplicationHelper
 
       if Settings.sentry_dsn
         json.sentry_dsn Settings.sentry_dsn
+        json.sentry_traces Settings.sentry_traces
+        json.sentry_profiles Settings.sentry_profiles
       end
     end.html_safe
   end

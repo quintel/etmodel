@@ -2,6 +2,8 @@ import * as Sentry from '@sentry/browser';
 
 declare const globals: {
   sentry_dsn?: string;
+  sentry_traces?: number;
+  sentry_profiles?: number;
   version?: string;
   env?: string;
 };
@@ -18,8 +20,8 @@ if (globals && globals.sentry_dsn && enabledEnvs.includes(globals.env)) {
       Sentry.browserProfilingIntegration(),
     ],
 
-    // Capture 10% of transactions for tracing
-    tracesSampleRate: 0.1,
+    // Percentage of transactions to capture for tracing
+    tracesSampleRate: globals.sentry_traces,
 
     // Propagate traces to ETEngine and MyETM for end-to-end profiling
     tracePropagationTargets: [
@@ -27,8 +29,8 @@ if (globals && globals.sentry_dsn && enabledEnvs.includes(globals.env)) {
       'localhost',
     ],
 
-    // Profile 100% of sampled transactions
-    profileSessionSampleRate: 1.0,
+    // Percentage of sampled transactions to profile
+    profileSessionSampleRate: globals.sentry_profiles,
 
     // Automatically start/stop profiler based on tracing spans
     profileLifecycle: 'trace',

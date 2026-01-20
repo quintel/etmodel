@@ -86,3 +86,8 @@ window.MultiCurveChooserView = MultiCurveChooserView;
 import { onClick as saveAsPNGClick } from '../charts/utils/saveAsPNG';
 
 window.BaseChartView.saveAsPNG = saveAsPNGClick;
+
+// Sentry Browser Profiling
+// ------------------------
+
+import '../sentry';

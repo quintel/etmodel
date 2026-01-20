@@ -138,6 +138,7 @@ module ApplicationHelper
       json.api_proxy_url    Settings.api_proxy_url
       json.disable_cors     Settings.disable_cors
       json.standalone       Settings.standalone
+      json.version          Settings.version
       json.settings         settings_as_json(Current.setting)
       json.debug_js         admin?
       json.env              Rails.env
@@ -162,6 +163,10 @@ module ApplicationHelper
         json.api_session_id Current.setting.api_session_id
       else
         json.api_session_id nil
+      end
+
+      if Settings.sentry_dsn
+        json.sentry_dsn Settings.sentry_dsn
       end
     end.html_safe
   end

@@ -1,11 +1,19 @@
 ---
-- key: buildings_useful_demand_electricity
+- key: buildings_useful_demand_appliances
   step_value: 0.1
   unit: "%"
+  interface_group: per_building
+  position: 100
+  slide_key: demand_buildings_demand_growth
+- key: buildings_useful_demand_lighting
+  step_value: 0.1
+  unit: "%"
+  interface_group: per_building
   position: 100
   slide_key: demand_buildings_demand_growth
 - key: buildings_useful_demand_cooling
   step_value: 0.1
   unit: "%"
-  position: 105
+  interface_group: per_building
+  position: 110
   slide_key: demand_buildings_demand_growth

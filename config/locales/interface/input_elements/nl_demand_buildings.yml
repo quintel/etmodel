@@ -53,40 +53,35 @@ nl:
         per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
         <br><br>
         Het aantal bestaande gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
-    buildings_useful_demand_electricity:
-      title: Elektriciteit per gebouw
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
-        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Apparaten,
-        Verlichting, Verwarming & Koeling).\r\n<br/><br/>\r\nHier kun je aangeven
-        hoe jij denkt dat de elektriciteitsvraag per gebouw zich gaat ontwikkelen.
-        Dit hangt vooral af van de welvaartsgroei. Als mensen rijker worden, raken
-        ze gewend aan steeds meer gemak van ICT apparatuur en overige apparaten op
-        hun werk of opleiding.\r\n"
-    buildings_useful_demand_for_space_heating:
-      title: Warmte per gebouw
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je in hieronder kunt kiezen (Verwarming & Koeling).\r\n<br/>\r\n<br/>\r\nHier
-        kun je aangeven hoe jij denkt dat de warmtevraag per gebouw zich gaat ontwikkelen.
-        Dit verandert onder meer doordat gebouwen steeds voller komen te staan met
-        elektrische apparaten die warmte produceren. Het is zelfs zo dat gebouwen
-        steeds meer uren per jaar gekoeld moeten worden dan voordat iedereen ging
-        werken met computers, faxen, kopieerapparaten en printers."
+    buildings_useful_demand_appliances:
+      title: Apparaten
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse verandering van vraag naar (elektrische en niet-elektrische)
+        apparaten in niet-residentiële gebouwen in. <br/><br/>
+        De vraag naar apparaten kan veranderen door veranderend gebruik, zoals meer computers per
+        werkplek, extra servercapaciteit in kantoren of meer gebruik van gespecialiseerde apparaten
+        voor werkprocessen.
+    buildings_useful_demand_lighting:
+      title: Verlichting
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse verandering in vraag naar verlichting in
+        niet-residentiële gebouwen in. <br/><br/>
+        De verlichtingsvraag kan bijvoorbeeld veranderen door intensiever gebruik van verlichting,
+        strengere verlichtingsnormen of intelligente monitoring en beheer.
     buildings_useful_demand_cooling:
-      title: Koeling per gebouw
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>exclusief</strong>
-        de efficiëntere technologieën die je in dit gedeelte kunt kiezen (Verwarming
-        & Koeling).\r\n<br/>\r\n<br/>\r\nHier kun je aangeven hoe jij denkt dat de
-        vraag naar koeling per gebouw zich gaat ontwikkelen. Dit verandert onder meer
-        doordat gebouwen steeds voller komen te staan met elektrische apparaten die
-        warmte produceren. Het is zelfs zo dat gebouwen steeds meer uren per jaar
-        gekoeld moeten worden dan voordat iedereen ging werken met computers, faxen,
-        kopieerapparaten en printers."
+      title: Koeling
+      short_description:
+      description: |
+        Dit schuifje stelt de jaarlijkse verandering in vraag naar ruimtekoeling in
+        niet-residentiële gebouwen in.<br/><br/>
+        De vraag naar koeling zal waarschijnlijk toenemen als hittegolven in de toekomst
+        vaker voorkomen. Ook kan deze worden beïnvloed door de aanwezigheid van warmteproducerende
+        elektrische apparatuur, zoals computers, servers en kopieerapparaten.
     buildings_space_heater_network_gas_share:
       title: HR combiketel (gas)
-      short_description: ''
+      short_description:
       description: Deze ketels zijn gasgestookte HR-ketels. Als je klikt op
         "Technische parameters en kosten", zul je zien dat de efficiëntie hoger dan
         100% is voor ruimteverwarming. Dit komt omdat het ETM rekent met
@@ -95,7 +90,7 @@ nl:
         alleen in bovenwaarde / higher heating values (HHV).
     buildings_space_heater_combined_hydrogen_share:
       title: HR combiketel (waterstof)
-      short_description: ''
+      short_description:
       description: |
         Dit zijn waterstofgestookte HR-ketels. Als je klikt op
         "Technische parameters en kosten", zul je zien dat de efficiëntie hoger dan
@@ -105,7 +100,7 @@ nl:
         alleen in bovenwaarde / higher heating values (HHV).
     buildings_space_heater_electricity_share:
       title: Elektrische boiler
-      short_description: ''
+      short_description:
       description: "Elektrische boilers zetten elektriciteit direct om in warmte.
         Op zich is dat een zeer efficiënt proces.\r\n<br/>\r\nToch denken veel mensen
         dat dit energieverspilling is. Elektriciteit kun je op veel verschillende
@@ -119,7 +114,7 @@ nl:
         (bodem) schuif."
     buildings_space_heater_heatpump_air_water_network_gas_share:
       title: Luchtwarmtepomp (gas)
-      short_description: ''
+      short_description:
       description: "Een gaswarmtepomp lijkt op een elektrische warmtepomp, behalve
         dat de energie voor het proces komt van gas en niet van elektriciteit. Deze
         warmtepomp gebruikt als bron warmte uit de buitenlucht en niet uit de bodem
@@ -133,7 +128,7 @@ nl:
         nodig maken."
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
       title: Bodemwarmtepomp met WKO
-      short_description: ''
+      short_description:
       description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
         opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
         bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
@@ -146,7 +141,7 @@ nl:
         schaal, zoals voor grote kantoorpanden bijvoorbeeld."
     buildings_space_heater_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
-      short_description: ''
+      short_description:
       description: |
         Deze slider beïnvloed het percentage van de warmtevraag voor gebouwen dat
         wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater. <br/><br/>
@@ -160,17 +155,17 @@ nl:
         om aquathermie toe te voegen als warmtebron voor het MT of LT warmtenet.
     buildings_space_heater_wood_pellets_share:
       title: Biomassaketel
-      short_description: ''
+      short_description:
       description: "Welk percentage van de warmtevraag in kantoren en andere gebouwen
         wordt ingevuld door biomassa? Biomassaketels zijn goed geschikt voor relatief
         grotere bedrijfscomplexen met grote warmtevraag, omdat op die manier het transport
         geconcentreerd kan worden en dat spaart weer transportbrandstoffen. <br/><br/>\r\nDe
         brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
         je verwachtingen voor brandstofprijzen. Zie ook het onder deel 'Kosten'. Andere
-        relevante invloeden zijn milieuwetten. "
+        relevante invloeden zijn milieuwetten."
     buildings_space_heater_crude_oil_share:
       title: Olieketel
-      short_description: ''
+      short_description:
       description: Hier zie je welk deel van de verwarming door oliegestookte ketels
         wordt ingevuld. Deze hebben als voordeel dat onder normale omstandigheden
         de stookolie langzaam en volledig verbrandt, waardoor geen luchtvervuiling
@@ -223,7 +218,7 @@ nl:
         wordt ingevuld.
     buildings_insulation_level:
       title: Isolatie
-      short_description: ''
+      short_description:
       description: "Met deze slider kun je het percentage warmtereductie bepalen op basis van de isolatiegraad van gebouwen.
         \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerd gebouw te vergelijken
         met een zeer goed geïsoleerd gebouw. Dit resulteert in een potentiële reductie van 60%
@@ -233,7 +228,7 @@ nl:
         >documentatie</a> voor meer informatie over isolatie."
     buildings_lighting_standard_fluorescent_electricity_share:
       title: Conventionele TL-buis
-      short_description: ''
+      short_description:
       description: "Welk deel van verlichting in gebouwen komt van TL-buizen? Het
         gaat hier om alle gebouwen waar niet in gewoond wordt, zoals kantoren, ziekenhuizen,
         zwembaden, restaurants, etc. \r\n<br/><br/>\r\nTL-buizen produceren licht
@@ -249,7 +244,7 @@ nl:
         heel vaak aan en uitgezet worden."
     buildings_lighting_efficient_fluorescent_electricity_share:
       title: Hoge opbrengst TL-buis
-      short_description: ''
+      short_description:
       description: "Welk deel van verlichting in gebouwen komt van hoge opbrengst
         TL-buizen?\r\n<br/><br/>\r\nEr zijn veel verschillende soorten hoge opbrengst
         TL-buizen op de markt. Sommigen hiervan zijn kleiner en dunner dan een conventionele
@@ -268,7 +263,7 @@ nl:
         aan en uitgezet worden."
     buildings_lighting_led_electricity_share:
       title: LED-buis
-      short_description: ''
+      short_description:
       description: "Welk deel van de verlichting in gebouwen komt van LED buizen?\r\n<br/><br/>\r\nLED
         buizen bestaan uit een aantal licht-emitterende diodes (LEDs, Engels: Light
         Emitting Diode) die zo gemaakt zijn dat ze gebruikt kunnen worden in standaardarmaturen
@@ -282,7 +277,7 @@ nl:
         produceren voor een kantooromgeving."
     buildings_space_heater_solar_thermal_share:
       title: Zonthermische collectoren
-      short_description: ''
+      short_description:
       description: |
         Een zonneboiler maakt warm water via zonthermische panelen op je
         dak. Deze warmte kan gebruikt worden om een gebouw te verwarmen. Zonneboilers
@@ -293,24 +288,25 @@ nl:
         Let op:  zonneboilers met zonthermische panelen kunnen slechts 13% van de jaarlijkse vraag aan warm tapwater invullen.
         Het instellen van dit schuifje op 100% betekent dus dat de overgebleven 87% van de jaarlijkse vraag
         door andere technologieën wordt ingevuld.
-    buildings_useful_demand_for_appliances:
+    buildings_appliances_efficiency:
       title: Apparaten efficiëntie
-      short_description: ''
-      description: "Hoeveel efficiënter zullen apparaten in de utiliteitsbouw in de
+      short_description:
+      description: |
+        Hoeveel efficiënter zullen apparaten in de utiliteitsbouw in de
         toekomst zijn? Geef met de schuif een inschatting van de jaarlijkse toename
-        van de energie-efficiëntie. \r\n<br/><br/>\r\nApparaten in kantoren, hotels,
-        restaurants, ziekenhuizen en zwembaden zorgen voor een flink deel van het
-        energiegebruik. Typische apparaten voor kantoren zijn natuurlijk computers
+        van de energie-efficiëntie. <br/><br/>
+        Apparaten in kantoren, hotels, restaurants, ziekenhuizen en zwembaden zorgen voor een flink
+        deel van het energiegebruik. Typische apparaten voor kantoren zijn natuurlijk computers
         en schermen, printers, faxen, kopieermachines, etc. In hotels, restaurants,
         zwembaden en met name ziekenhuizen staat meer gespecialiseerde apparatuur,
-        waarvan de betrouwbaarheid mogelijk belangrijker is dan het energiegebruik.
-        \r\n<br/><br/>\r\nNieuwe technologieën reduceren vaak de energieconsumptie.
+        waarvan de betrouwbaarheid mogelijk belangrijker is dan het energiegebruik. <br/><br/>
+        Nieuwe technologieën reduceren vaak de energieconsumptie.
         Als apparaten steeds groter worden helpt dat niet altijd. Computerschermen
         zijn een stuk efficiënter geworden, maar ook een stuk groter en daardoor gebruiken
-        ze niet altijd minder energie dan de kleinere schermen van vroeger."
+        ze niet altijd minder energie dan de kleinere schermen van vroeger.
     buildings_cooling_heatpump_air_water_network_gas_share:
       title: Luchtwarmtepomp (gas)
-      short_description: ''
+      short_description:
       description: Een gaswarmtepomp lijkt op een elektrische warmtepomp, behalve
         dat de energie voor het proces komt van gas en niet van elektriciteit. Deze
         warmtepomp gebruikt als bron warmte uit de buitenlucht en niet uit de bodem
@@ -319,7 +315,7 @@ nl:
         is hij minder efficiënt.
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
       title: Bodemwarmtepomp met WKO
-      short_description: ''
+      short_description:
       description: "Bij Warmte Koude Opslag (WKO) wordt de warmte van een gebouw ondergronds
         opgeslagen door het te koelen met water en die warmte op te slaan in een ondergronds
         bassin of waterlaag. Die opgeslagen warmte gebruikt men dan in de winter om
@@ -332,7 +328,7 @@ nl:
         schaal, zoals voor grote kantoorpanden bijvoorbeeld."
     buildings_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
-      short_description: ''
+      short_description:
       description: |
         Deze slider beïnvloed het percentage van de koudevraag voor gebouwen dat
         wordt ingevuld met warmtepompen die warmte halen uit oppervlaktewater. <br/><br/>
@@ -340,7 +336,7 @@ nl:
         door de combinatie met WKO.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
-      short_description: ''
+      short_description:
       description: Hier staat aangegeven hoeveel van de koeling van kantoren, ziekenhuizen,
         hotels, restaurants, enz. door airconditioners gebeurt. Op dit moment gebeurt
         de meeste koeling in de meeste landen nog met airconditioners.
@@ -349,7 +345,7 @@ nl:
         verwarmen en zijn vaak minder efficiënt dan nieuwere luchtwarmtepompen.
     buildings_cooling_collective_cooling_network_electricity_share:
       title: Koudenetwerk
-      short_description: ''
+      short_description:
       description: 'Een koudenetwerk kan gebruik maken van verschillende bronnen zoals
         Warmte-koude opslag en diepe meren. In het ETM wordt met het koudenetwerk
         het gebruik van koude uit diepe meren voor ruimtekoeling in gebouwen bedoeld.
@@ -360,7 +356,7 @@ nl:
         hebben meren slechts een beperkte capaciteit over het jaar genomen. '
     buildings_space_heater_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
-      short_description: ''
+      short_description:
       description: |
         Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
         in gebouwen voor ruimteverwarming veranderen. <br/><br/>
@@ -382,7 +378,7 @@ nl:
         of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
     buildings_cooling_heatpump_air_water_electricity_share:
       title: Luchtwarmtepomp
-      short_description: ''
+      short_description:
       description: Met deze slider kun je het percentage luchtwarmtepompen dat gebruikt wordt
         in gebouwen voor koeling veranderen.<br/><br/>
         Een luchtwarmtepomp gebruikt elektriciteit en omgevingskoude om warmte of koude te genereren.
@@ -397,7 +393,7 @@ nl:
         of het <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weerjaar</a> aanpassen.
     buildings_space_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybride luchtwarmtepomp (gas)
-      short_description: ''
+      short_description:
       description: "Deze verwarmingsoptie is een combinatie van een elektrische warmtepomp
         met een gasgestookte HR-ketel. Een hybride warmtepomp maakt het mogelijk om
         snel veel gas voor verwarming te besparen en geeft netbeheerders bovendien

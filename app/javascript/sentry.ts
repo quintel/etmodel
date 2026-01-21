@@ -23,12 +23,6 @@ if (globals && globals.sentry_dsn && enabledEnvs.includes(globals.env)) {
     // Percentage of transactions to capture for tracing
     tracesSampleRate: globals.sentry_traces,
 
-    // Propagate traces to ETEngine and MyETM for end-to-end profiling
-    tracePropagationTargets: [
-      /^https:\/\/.*\.energytransitionmodel\.com/,
-      'localhost',
-    ],
-
     // Percentage of sampled transactions to profile
     profileSessionSampleRate: globals.sentry_profiles,
 

@@ -9,10 +9,21 @@ class APIPassthruController < ApplicationController
     url.path = "/api/v3/scenarios/#{params[:id]}/#{params[:rest]}"
     url.query = { access_token: identity_access_token.token }.to_query if signed_in?
 
+    track_csv_download
+
     redirect_to url.to_s, allow_other_host: true
   end
 
   private
+
+  def track_csv_download
+    return unless params[:rest]&.end_with?('.csv')
+
+    Sentry.metrics.count(
+      'csv_download',
+      attributes: { type: params[:rest] }
+    )
+  end
 
   # Allows the browser to make requests to this endpoint only from within ETModel.
   def set_cors_headers

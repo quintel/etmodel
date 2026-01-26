@@ -156,6 +156,8 @@ class ScenariosController < ApplicationController
   end
 
   def inputs
+    track_csv_download('inputs.csv')
+
     default_values = @scenario.inputs(engine_client)
 
     csv = CSV.generate do |row|
@@ -205,6 +207,13 @@ class ScenariosController < ApplicationController
   end
 
   private
+
+  def track_csv_download(type)
+    Sentry.metrics.count(
+      'csv_download',
+      attributes: { type: type }
+    )
+  end
 
   # Finds the scenario from id
   def find_scenario

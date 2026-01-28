@@ -14,22 +14,16 @@ RUN apt-get update -yqq && \
     libyaml-dev \
     nodejs \
     libyaml-dev \
-    && apt-get clean \
-    && rm -rf /var/cache/apt/archives/* \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && truncate -s 0 /var/log/*log
-
-RUN apt-get update && apt-get install -y curl gnupg \
-  && curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor -o /usr/share/keyrings/yarn.gpg \
-  && echo "deb [signed-by=/usr/share/keyrings/yarn.gpg] https://dl.yarnpkg.com/debian stable main" \
-     | tee /etc/apt/sources.list.d/yarn.list \
-  && apt-get update \
-  && apt-get install -y yarn \
+    ca-certificates \
   && apt-get clean \
-  && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && rm -rf /var/cache/apt/archives/* \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && truncate -s 0 /var/log/*log
 
- # Throw errors if Gemfile has been modified since Gemfile.lock
+RUN corepack enable \
+ && corepack prepare yarn@1.22.22 --activate
+
+# Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
 RUN gem update --system
@@ -40,6 +34,7 @@ WORKDIR /app
 RUN bundle config set deployment 'true'
 RUN bundle config set --local without 'development test'
 RUN bundle config set disable_shared_gems 'true'
+
 RUN bundle install --jobs=4 --retry=3
 RUN yarn install
 

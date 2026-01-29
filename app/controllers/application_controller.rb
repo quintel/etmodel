@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   before_action :ensure_modern_browser
 
   after_action  :teardown_current
+  after_action  :set_document_policy_header
 
   rescue_from YModel::RecordNotFound do
     render_not_found
@@ -126,6 +127,12 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  # Sets the Document-Policy header required for Sentry browser profiling.
+  # See: https://docs.sentry.io/platforms/javascript/profiling/
+  def set_document_policy_header
+    response.headers['Document-Policy'] = 'js-profiling'
+  end
 
   # Internal: Renders a 404 page.
   #

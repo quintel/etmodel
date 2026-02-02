@@ -12,6 +12,7 @@ collections_url: http://localhost:3005
 
 # The (stable) version's name
 version: <%= ENV.fetch('VERSION_TAG', 'latest') %>
+release: '2026-01'
 
 # This sets the url we use as API proxy. The proxying is handled by nginx or a local rack-based
 # proxy. This is a legacy feature used by ETPlugin and will not be supported long-term.
@@ -54,9 +55,11 @@ feedback_email: info@energytransitionmodel.com
 # Sentry
 # ------
 
-# Optionally send error messages to the Sentry service by providing your
-# Sentry DSN:
+# Optionally send error messages and profiling data to the Sentry service by providing your
+# Sentry details:
 sentry_dsn: <%= ENV['SENTRY_DSN'] %>
+sentry_traces: <%= ENV.fetch('SENTRY_TRACES', 0.1) %>
+sentry_profiles: <%= ENV.fetch('SENTRY_PROFILES', 0.1) %>
 
 # Mailchimp
 # ---------

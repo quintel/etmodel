@@ -138,7 +138,7 @@ module ApplicationHelper
       json.api_proxy_url    Settings.api_proxy_url
       json.disable_cors     Settings.disable_cors
       json.standalone       Settings.standalone
-      json.version          Settings.version
+      json.release          Settings.release
       json.settings         settings_as_json(Current.setting)
       json.debug_js         admin?
       json.env              Rails.env

@@ -4,7 +4,7 @@ declare const globals: {
   sentry_dsn?: string;
   sentry_traces?: number;
   sentry_profiles?: number;
-  version?: string;
+  release?: string;
   env?: string;
 };
 
@@ -13,7 +13,7 @@ const enabledEnvs = ['production', 'staging'];
 if (globals && globals.sentry_dsn && enabledEnvs.includes(globals.env)) {
   Sentry.init({
     dsn: globals.sentry_dsn,
-    release: globals.version,
+    release: globals.release,
     environment: globals.env,
     integrations: [
       Sentry.browserTracingIntegration(),

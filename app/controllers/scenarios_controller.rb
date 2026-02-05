@@ -1,3 +1,5 @@
+require 'csv'
+
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
 

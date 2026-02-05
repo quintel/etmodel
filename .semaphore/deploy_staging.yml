@@ -2,8 +2,8 @@ version: v1.0
 name: Deploy to staging
 agent:
   machine:
-    type: e2-standard-2
-    os_image: ubuntu2204
+    type: e1-standard-2
+    os_image: ubuntu2404
 blocks:
   - name: Docker
     task:

@@ -20,7 +20,7 @@ blocks:
         - name: Test
           commands:
             - checkout
-            - sem-service start mysql 8
+            - sem-service start mysql
             - sem-version node 18
             - cache restore
             - bundle config set --local deployment 'true'

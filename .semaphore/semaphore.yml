@@ -20,9 +20,14 @@ blocks:
         - name: Test
           commands:
             - checkout
-            - sem-service start mysql
-            - sem-version node 18
-            - cache restore
+            - sem-service start mysql 8
+            - cache clear
+            - rm -rf vendor/bundle
+            - bundle config unset path || true
+            - bundle config unset deployment || true
+            - sudo apt-get update
+            - sudo apt-get install -y libmysqlclient-dev
+            - bundle install
             - bundle config set --local deployment 'true'
             - gem update --system
             - bundle install || (rm -rf vendor/bundle && cache clear && bundle install)

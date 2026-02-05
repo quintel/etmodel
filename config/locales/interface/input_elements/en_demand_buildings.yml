@@ -66,15 +66,29 @@ en:
     buildings_useful_demand_appliances:
       title: Appliances
       short_description:
-      description:
+      description: |
+        This slider sets the annual change in appliances demand in non-residential buildings.
+        <br/><br/>
+        Appliance demand may change due to increased use of (electronic) equipment, such as more
+        computers per workplace, additional server capacity in offices or expanded use of
+        specialised appliances for work processes.
     buildings_useful_demand_lighting:
       title: Lighting
       short_description:
-      description:
+      description: |
+        This slider sets the annual change in lighting demand in non-residential buildings.
+        <br/><br/>
+        Lighting demand may change due to factors such as longer opening hours, more intensive
+        use of lighting or stricter lighting standards.
     buildings_useful_demand_cooling:
       title: Cooling
       short_description:
-      description:
+      description: |
+        This slider sets the change per year in cooling demand in non-residential buildings.
+        <br/><br/>
+        Cooling demand will likely increase if excessive heat events become more frequent in the
+        future. It may also be affected by the prevalence of heat-generating electrical equipment,
+        such as computers, servers and copiers.
     buildings_space_heater_network_gas_share:
       title: Condensing combi boiler (gas)
       short_description: ''

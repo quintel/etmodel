@@ -4,6 +4,7 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2404
+
 blocks:
   - name: RSpec
     task:
@@ -16,27 +17,25 @@ blocks:
           value: '4'
         - name: CI
           value: 'true'
+
       jobs:
         - name: Test
           commands:
             - checkout
             - sem-service start mysql 8
-            - cache clear
-            - rm -rf vendor/bundle
-            - bundle config unset path || true
-            - bundle config unset deployment || true
             - sudo apt-get update
             - sudo apt-get install -y libmysqlclient-dev
-            - bundle install
+            - cache restore
             - bundle config set --local deployment 'true'
             - gem update --system
-            - bundle install || (rm -rf vendor/bundle && cache clear && bundle install)
+            - bundle install
             - yarn install
             - cache store
             - cat /dev/null > config/database.yml
             - bundle exec rails webpacker:compile
             - bundle exec rails db:setup
             - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format progress
+
       epilogue:
         always:
           commands:

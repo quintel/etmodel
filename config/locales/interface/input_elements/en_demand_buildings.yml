@@ -67,19 +67,20 @@ en:
       title: Appliances
       short_description:
       description: |
-        This slider sets the annual change in appliances demand in non-residential buildings.
+        This slider sets the annual change in (electrical and non-electrical) appliances demand in
+        non-residential buildings.
         <br/><br/>
-        Appliance demand may change due to increased use of (electronic) equipment, such as more
-        computers per workplace, additional server capacity in offices or expanded use of
-        specialised appliances for work processes.
+        Appliance demand may change due to changing use of equipment, such as more computers per
+        workplace, additional server capacity in offices or expanded use of specialised appliances
+        for work processes.
     buildings_useful_demand_lighting:
       title: Lighting
       short_description:
       description: |
         This slider sets the annual change in lighting demand in non-residential buildings.
         <br/><br/>
-        Lighting demand may change due to factors such as longer opening hours, more intensive
-        use of lighting or stricter lighting standards.
+        Lighting demand may change due to factors such as more intensive
+        use of lighting, stricter lighting standards or intelligent monitoring and control.
     buildings_useful_demand_cooling:
       title: Cooling
       short_description:
@@ -91,7 +92,7 @@ en:
         such as computers, servers and copiers.
     buildings_space_heater_network_gas_share:
       title: Condensing combi boiler (gas)
-      short_description: ''
+      short_description:
       description: These heaters are part of a gas-fired high efficiency central heating
         system running on natural gas. When you click on "Technical and financial properties", then you will see that the
         efficiency is above 100% for space heating. This is the case because all energy in the
@@ -100,7 +101,7 @@ en:
         heating values (HHV).
     buildings_space_heater_electricity_share:
       title: Electric boiler
-      short_description: ''
+      short_description:
       description: "Electric boilers directly convert electricity back to heat.\r\n<br/>\r\nSome
         people believe this is a waste of energy. Electricity is a very versatile
         form of energy and low-grade heat can only be used to heat buildings or make
@@ -113,7 +114,7 @@ en:
         slider to the same percentage as electric heat pumps (ground)."
     buildings_space_heater_combined_hydrogen_share:
       title: Condensing combi boiler (hydrogen)
-      short_description: ''
+      short_description:
       description: "This is a condensing hydrogen-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
         efficiency is above 100% for space heating. This is the case because all energy in the
@@ -124,7 +125,7 @@ en:
         is slightly less efficient than producing heat for the central heating system."
     buildings_space_heater_heatpump_air_water_network_gas_share:
       title: Air heat pump (gas)
-      short_description: ''
+      short_description:
       description: "A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
         heat pump takes its heat from the outside air, which makes it easier and cheaper
@@ -138,7 +139,7 @@ en:
         will require large investments to reinforce electricity grids."
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
       title: Ground heat pump with TS
-      short_description: ''
+      short_description:
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
         can be used again in winter for heating the building. Alternatively the natural
@@ -150,7 +151,7 @@ en:
         to larger office buildings, for example. "
     buildings_space_heater_heatpump_surface_water_water_ts_electricity_share:
       title: Aquathermal heat pump with TS (surface water)
-      short_description: ''
+      short_description:
       description: |
         This slider influences the percentage of heat demand from buildings that is filled in with heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
@@ -164,16 +165,16 @@ en:
         add aquathermal heat as a heat source for LT or MT district heating.
     buildings_space_heater_wood_pellets_share:
       title: Biomass-fired heater
-      short_description: ''
+      short_description:
       description: "What percentage of heat demand in offices and other buildings
         is met by biomass-firing? Biomass heaters are especially suited for larger
         office parks with large heat demands, as this allows transport of biomass
         to be concentrated. That way (fossil) transport fuel use can be minimalized.\r\n<br/><br/>\r\nThe
         mix you fill in here is probably mostly determined by fuel prices and environmental
-        legislation. "
+        legislation."
     buildings_space_heater_crude_oil_share:
       title: Oil-fired heater
-      short_description: ''
+      short_description:
       description: This shows what part of heating is produced by oil-fired heaters.
         These are still quite common in many countries. Their advantage is that under
         normal circumstances fuel oil burns slowly and completely, producing no air

@@ -302,21 +302,22 @@ en:
     buildings_appliances_efficiency:
       title: Appliances efficiency
       short_description:
-      description: "How much more efficient do you think appliances in non-residential
+      description: |
+        How much more efficient do you think appliances in non-residential
         buildings will be in the future? Use the slider to give an estimation of yearly
-        increase in the overall efficiency of appliances.\r\n<br/><br/>\r\nAppliances
-        in offices, hotels, restaurants, hospitals and swimming pools account for
+        increase in the overall efficiency of appliances. <br/><br/>
+        Appliances in offices, hotels, restaurants, hospitals and swimming pools account for
         a considerable share of energy use. Typical office appliances are computers
         and screens, printers, faxes, photocopiers etc. Hotels, restaurants, swimming
         pools and especially hospitals use more specialized equipment, of course,
-        for which reliability may be more important than energy consumption. \r\n<br/><br/>\r\nNew
-        technologies often reduce energy consumption per individual device, but not
+        for which reliability may be more important than energy consumption. <br/><br/>
+        New technologies often reduce energy consumption per individual device, but not
         if devices simply become bigger. Computer screens have become much more efficient,
         for example, but also larger. This means they do not always use less energy
-        than the smaller screens used before.  \r\n"
+        than the smaller screens used before.
     buildings_cooling_heatpump_air_water_network_gas_share:
       title: Air heat pump (gas)
-      short_description: ''
+      short_description:
       description: A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
         heat pump takes its heat from the outside air, which makes it easier and cheaper
@@ -326,7 +327,7 @@ en:
         and less efficient for cooling.
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
       title: Ground heat pump with TS
-      short_description: ''
+      short_description:
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
         can be used again in winter for heating the building. Alternatively the natural
@@ -338,7 +339,7 @@ en:
         to larger office buildings, for example. "
     buildings_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Aquathermal heat pump with TS (surface water)
-      short_description: ''
+      short_description:
       description: |
         This slider influences the percentage of cooling demand from buildings that is filled in with heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
@@ -346,7 +347,7 @@ en:
         due to the addition of thermal storage.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
-      short_description: ''
+      short_description:
       description: This indicates the extent to which air conditioning is used to
         cool buildings like offices, schools, hostpitals, hotels, restaurants etc.
         Currently, most cooling is provided by air conditioning in most countries.
@@ -355,7 +356,7 @@ en:
         equipped with the ability to provide space cooling and heating and operate under lower efficiencies.
     buildings_cooling_collective_cooling_network_electricity_share:
       title: Cooling network
-      short_description: ''
+      short_description:
       description: A cooling network can use different sources of cold, like thermal
         storage and deep lakes. In the ETM cold from deep lakes is used in the cooling
         network to cool buildings. Lakes of 25 meters depth or deeper can be used
@@ -365,7 +366,7 @@ en:
         year round capacity of deep lakes is small.
     buildings_space_heater_heatpump_air_water_electricity_share:
       title: Air heat pump
-      short_description: ''
+      short_description:
       description: |
         With this slider you can adjust the percentage of air heatpumps used in buildings
         for space heating.<br/><br/>
@@ -386,7 +387,7 @@ en:
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     buildings_cooling_heatpump_air_water_electricity_share:
       title: Air heat pump
-      short_description: ''
+      short_description:
       description: With this slider you can adjust the percentage of air heatpumps used in buildings
         for cooling. <br/><br/>
         An air heatpump uses electricity
@@ -400,7 +401,7 @@ en:
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     buildings_space_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (gas)
-      short_description: ''
+      short_description:
       description: "This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional gas-fired boiler.
         Essentially, the hybrid heat pump offers a way to strongly reduce natural

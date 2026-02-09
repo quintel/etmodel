@@ -63,37 +63,36 @@ en:
         Check out the <a href="https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
         for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a>
         for a description of the data sources.
-    buildings_useful_demand_electricity:
-      title: Electricity per building
-      short_description: ''
-      description: "Note: these changes in energy use <strong>exclude</strong> the
-        use of the efficient technologies that you can choose below (Appliances, Lighting,
-        Heating & Cooling). \r\n<br/>\r\n<br/>\r\nHere you indicate how you expect
-        demand for electricity per building to change. This is mainly determined by
-        growth in prosperity. As people become richer, they become accustomed to ever
-        more convenience from ICT and other other office or school appliances."
-    buildings_useful_demand_for_space_heating:
-      title: Heat per building
-      short_description: ''
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Heating & Cooling). \r\n<br/>\r\n<br/>\r\nHere
-        you indicate how you expect heat demand per building to change. This is likely
-        to change as buildings become ever more filled with electric appliances producing
-        heat. In fact, especially offices need cooling for more hours per year than
-        before everyone started using computers, copiers, faxes and printers. "
+    buildings_useful_demand_appliances:
+      title: Appliances
+      short_description:
+      description: |
+        This slider sets the annual change in (electrical and non-electrical) appliances demand in
+        non-residential buildings.
+        <br/><br/>
+        Appliance demand may change due to changing use of equipment, such as more computers per
+        workplace, additional server capacity in offices or expanded use of specialised appliances
+        for work processes.
+    buildings_useful_demand_lighting:
+      title: Lighting
+      short_description:
+      description: |
+        This slider sets the annual change in lighting demand in non-residential buildings.
+        <br/><br/>
+        Lighting demand may change due to factors such as more intensive
+        use of lighting, stricter lighting standards or intelligent monitoring and control.
     buildings_useful_demand_cooling:
-      title: Cooling per building
-      short_description: ''
-      description: "Note: these changes in energy use <strong>exclude</strong> the
-        use of the efficient technologies that you can choose below (Heating & Cooling).
-        \r\n<br/>\r\n<br/>\r\nHere you indicate how you expect cooling demand per
-        building to change. This is likely to change as buildings become ever more
-        filled with electric appliances producing heat. In fact, especially offices
-        need cooling for more hours per year than before everyone started using computers,
-        copiers, faxes and printers. "
+      title: Cooling
+      short_description:
+      description: |
+        This slider sets the change per year in cooling demand in non-residential buildings.
+        <br/><br/>
+        Cooling demand will likely increase if excessive heat events become more frequent in the
+        future. It may also be affected by the prevalence of heat-generating electrical equipment,
+        such as computers, servers and copiers.
     buildings_space_heater_network_gas_share:
       title: Condensing combi boiler (gas)
-      short_description: ''
+      short_description:
       description: These heaters are part of a gas-fired high efficiency central heating
         system running on natural gas. When you click on "Technical and financial properties", then you will see that the
         efficiency is above 100% for space heating. This is the case because all energy in the
@@ -102,7 +101,7 @@ en:
         heating values (HHV).
     buildings_space_heater_electricity_share:
       title: Electric boiler
-      short_description: ''
+      short_description:
       description: "Electric boilers directly convert electricity back to heat.\r\n<br/>\r\nSome
         people believe this is a waste of energy. Electricity is a very versatile
         form of energy and low-grade heat can only be used to heat buildings or make
@@ -115,7 +114,7 @@ en:
         slider to the same percentage as electric heat pumps (ground)."
     buildings_space_heater_combined_hydrogen_share:
       title: Condensing combi boiler (hydrogen)
-      short_description: ''
+      short_description:
       description: "This is a condensing hydrogen-fired heater.
         When you click on \"Technical and financial properties\", then you will see that the
         efficiency is above 100% for space heating. This is the case because all energy in the
@@ -126,7 +125,7 @@ en:
         is slightly less efficient than producing heat for the central heating system."
     buildings_space_heater_heatpump_air_water_network_gas_share:
       title: Air heat pump (gas)
-      short_description: ''
+      short_description:
       description: "A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
         heat pump takes its heat from the outside air, which makes it easier and cheaper
@@ -140,7 +139,7 @@ en:
         will require large investments to reinforce electricity grids."
     buildings_space_heater_collective_heatpump_water_water_ts_electricity_share:
       title: Ground heat pump with TS
-      short_description: ''
+      short_description:
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
         can be used again in winter for heating the building. Alternatively the natural
@@ -152,7 +151,7 @@ en:
         to larger office buildings, for example. "
     buildings_space_heater_heatpump_surface_water_water_ts_electricity_share:
       title: Aquathermal heat pump with TS (surface water)
-      short_description: ''
+      short_description:
       description: |
         This slider influences the percentage of heat demand from buildings that is filled in with heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
@@ -166,16 +165,16 @@ en:
         add aquathermal heat as a heat source for LT or MT district heating.
     buildings_space_heater_wood_pellets_share:
       title: Biomass-fired heater
-      short_description: ''
+      short_description:
       description: "What percentage of heat demand in offices and other buildings
         is met by biomass-firing? Biomass heaters are especially suited for larger
         office parks with large heat demands, as this allows transport of biomass
         to be concentrated. That way (fossil) transport fuel use can be minimalized.\r\n<br/><br/>\r\nThe
         mix you fill in here is probably mostly determined by fuel prices and environmental
-        legislation. "
+        legislation."
     buildings_space_heater_crude_oil_share:
       title: Oil-fired heater
-      short_description: ''
+      short_description:
       description: This shows what part of heating is produced by oil-fired heaters.
         These are still quite common in many countries. Their advantage is that under
         normal circumstances fuel oil burns slowly and completely, producing no air
@@ -286,29 +285,6 @@ en:
         make the LED tube cheaper. Their chief disadvantage at this moment is that
         they are not (yet) optimally suited for evenly lighting up a room and producing
         enough light for an office enviroment.\r\n"
-    buildings_lighting_savings_from_motion_detection_light:
-      title: Motion detection
-      short_description: ''
-      description: "How many buildings will employ motion detection?\r\n<br/><br/>\r\nMotion
-        detection is a mechanism that 'sees' whether someone is in the room. As soon
-        as someone enters the room the light switches on automatically and once nobody
-        is left in the room the light will turn off automatically.\r\n<br/><br/>\r\nThis
-        type of energy saving measure limits the amount of time a light is on to the
-        minimum required. It prevents lights from being switched on uselessly at night
-        or during lunch breaks for example."
-    buildings_lighting_savings_from_daylight_control_light:
-      title: Daylight-dependent control
-      short_description: ''
-      description: "How many buildings use daylight-dependent control?\r\n<br/><br/>\r\nDaylight-dependent
-        control is a mechanism that varies the amount of light from lamps in a room
-        by the light that comes from outside. If the sun is shining and it is already
-        light in the room it will switch off or dim the lights automatically. But
-        if it is dark or cloudy the system will make sure that the lamps in the room
-        give of enough light to work.\r\n<br/><br/>\r\nThis technology ensures that
-        lights are not on needlessly if there is already enough light coming from
-        outside. In combination with a motion detection system the lights will only
-        be on when someone is in the office and there is not enough light coming in
-        from outside."
     buildings_space_heater_solar_thermal_share:
       title: Solar thermal collectors
       short_description: ''
@@ -323,24 +299,25 @@ en:
         Note that solar thermal panels can only provide 13% of annual hot water demand.
         Setting this slider to 100% therefore means that the remaining 87% of annual hot water demand is
         provided by other technologies.
-    buildings_useful_demand_for_appliances:
+    buildings_appliances_efficiency:
       title: Appliances efficiency
-      short_description: ''
-      description: "How much more efficient do you think appliances in non-residential
+      short_description:
+      description: |
+        How much more efficient do you think appliances in non-residential
         buildings will be in the future? Use the slider to give an estimation of yearly
-        increase in the overall efficiency of appliances.\r\n<br/><br/>\r\nAppliances
-        in offices, hotels, restaurants, hospitals and swimming pools account for
+        increase in the overall efficiency of appliances. <br/><br/>
+        Appliances in offices, hotels, restaurants, hospitals and swimming pools account for
         a considerable share of energy use. Typical office appliances are computers
         and screens, printers, faxes, photocopiers etc. Hotels, restaurants, swimming
         pools and especially hospitals use more specialized equipment, of course,
-        for which reliability may be more important than energy consumption. \r\n<br/><br/>\r\nNew
-        technologies often reduce energy consumption per individual device, but not
+        for which reliability may be more important than energy consumption. <br/><br/>
+        New technologies often reduce energy consumption per individual device, but not
         if devices simply become bigger. Computer screens have become much more efficient,
         for example, but also larger. This means they do not always use less energy
-        than the smaller screens used before.  \r\n"
+        than the smaller screens used before.
     buildings_cooling_heatpump_air_water_network_gas_share:
       title: Air heat pump (gas)
-      short_description: ''
+      short_description:
       description: A gas-fired heat pump is similar to an electric heat pump except
         that the energy driving the process comes from gas, not electricity. This
         heat pump takes its heat from the outside air, which makes it easier and cheaper
@@ -350,7 +327,7 @@ en:
         and less efficient for cooling.
     buildings_cooling_collective_heatpump_water_water_ts_electricity_share:
       title: Ground heat pump with TS
-      short_description: ''
+      short_description:
       description: "Thermal storage works by storing a building's heat underground
         by cooling it with water from a water basin or aquifer in summer. This heat
         can be used again in winter for heating the building. Alternatively the natural
@@ -362,7 +339,7 @@ en:
         to larger office buildings, for example. "
     buildings_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Aquathermal heat pump with TS (surface water)
-      short_description: ''
+      short_description:
       description: |
         This slider influences the percentage of cooling demand from buildings that is filled in with heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS).<br/><br/>
@@ -370,7 +347,7 @@ en:
         due to the addition of thermal storage.
     buildings_cooling_airconditioning_share:
       title: Airconditioning
-      short_description: ''
+      short_description:
       description: This indicates the extent to which air conditioning is used to
         cool buildings like offices, schools, hostpitals, hotels, restaurants etc.
         Currently, most cooling is provided by air conditioning in most countries.
@@ -379,7 +356,7 @@ en:
         equipped with the ability to provide space cooling and heating and operate under lower efficiencies.
     buildings_cooling_collective_cooling_network_electricity_share:
       title: Cooling network
-      short_description: ''
+      short_description:
       description: A cooling network can use different sources of cold, like thermal
         storage and deep lakes. In the ETM cold from deep lakes is used in the cooling
         network to cool buildings. Lakes of 25 meters depth or deeper can be used
@@ -389,7 +366,7 @@ en:
         year round capacity of deep lakes is small.
     buildings_space_heater_heatpump_air_water_electricity_share:
       title: Air heat pump
-      short_description: ''
+      short_description:
       description: |
         With this slider you can adjust the percentage of air heatpumps used in buildings
         for space heating.<br/><br/>
@@ -410,7 +387,7 @@ en:
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     buildings_cooling_heatpump_air_water_electricity_share:
       title: Air heat pump
-      short_description: ''
+      short_description:
       description: With this slider you can adjust the percentage of air heatpumps used in buildings
         for cooling. <br/><br/>
         An air heatpump uses electricity
@@ -424,7 +401,7 @@ en:
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     buildings_space_heater_hybrid_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (gas)
-      short_description: ''
+      short_description:
       description: "This heater is a combination of an electric heat pump that draws
         its heat from the outside air and an efficient conventional gas-fired boiler.
         Essentially, the hybrid heat pump offers a way to strongly reduce natural

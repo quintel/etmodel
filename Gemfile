@@ -43,7 +43,7 @@ gem 'babel-transpiler'
 gem 'i18n-js', '~> 3'
 gem 'jbuilder'
 gem 'rails-i18n'
-gem 'shakapacker', '6.0.0'
+gem 'shakapacker', '7.2.3'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
 # supporting gems

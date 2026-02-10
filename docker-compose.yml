@@ -14,7 +14,7 @@ services:
       - rails_cache:/app/tmp/cache
       - storage:/app/storage
     environment:
-      - WEBPACKER_DEV_SERVER_HOST=webpacker
+      - SHAKAPACKER_DEV_SERVER_HOST=webpacker
     env_file:
       - .env/development/database
       - .env/development/web
@@ -38,9 +38,9 @@ services:
 
   webpacker:
     <<: *web
-    command: ./bin/webpacker-dev-server
+    command: ./bin/shakapacker-dev-server
     environment:
-      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+      - SHAKAPACKER_DEV_SERVER_HOST=0.0.0.0
     env_file:
       - .env/development/database
       - .env/development/web

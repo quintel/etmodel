@@ -124,8 +124,21 @@ en:
         The first CSV provides an overview of these flows in a format based on the energy flows chart.
         The second CSV provides a complete list of all the energy flows in the model (inputs and outputs).
         <ul class="data-download">
-          <li><a href="/passthru/%{scenario_id}/sankey.csv" target="_blank"> <span class="name">Energy flows (overview)</span> <span class="filetype">10KB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/energy_flow.csv" target="_blank"> <span class="name">Energy flows (complete)</span> <span class="filetype">500KB CSV</span></a></li>
+          <li>
+            <a href="/passthru/%{scenario_id}/sankey.csv" target="_blank">
+            <span class="name">Energy flows (overview)</span>
+            <span class="filetype">10KB CSV</span></a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/energy_flow_future.csv" target="_blank">
+            <span class="name">Energy flows (complete - future)</span>
+            <span class="filetype">500KB CSV</span></a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/energy_flow_present.csv" target="_blank">
+              <span class="name">Energy flows (complete - present)</span>
+              <span class="filetype">500KB CSV</span></a>
+          </li>
         </ul>
     data_export_heat_network:
       title: Hourly curves for heat networks

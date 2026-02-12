@@ -130,14 +130,14 @@ en:
             <span class="filetype">10KB CSV</span></a>
           </li>
           <li>
-            <a href="/passthru/%{scenario_id}/energy_flow.csv" target="_blank">
-            <span class="name">Energy flows (complete - future)</span>
-            <span class="filetype">500KB CSV</span></a>
-          </li>
-          <li>
             <a href="/passthru/%{scenario_id}/energy_flow_present.csv" target="_blank">
               <span class="name">Energy flows (complete - present)</span>
               <span class="filetype">500KB CSV</span></a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/energy_flow.csv" target="_blank">
+            <span class="name">Energy flows (complete - future)</span>
+            <span class="filetype">500KB CSV</span></a>
           </li>
         </ul>
     data_export_heat_network:

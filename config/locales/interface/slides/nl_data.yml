@@ -120,27 +120,26 @@ nl:
       title: Jaarlijkse energiestromen
       short_description:
       description:  |
-        Het Energietransitiemodel beschrijft het energiesysteem als een verzameling van honderden
-        energie-omzetters (nodes) die verbonden zijn met energiestromen (edges).
-        De eerste CSV geeft een overzicht van deze stromen in een format dat gebaseerd is op de energiestromengrafiek.
-        De tweede CSV geeft een complete lijst van alle energiestromen in het model.
-
+        Het model beschrijft het energiesysteem als een verzameling van honderden energiestromen.
+        De eerste CSV geeft een overzicht van deze stromen in een format dat gebaseerd is op de
+        grafiek "Overzicht energiestromen". De tweede en derde CSVs geven een complete lijst van
+        alle energiestromen in het model, één voor het start- en één voor het eindjaar.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/sankey.csv" target="_blank">
             <span class="name">Energiestromen (overzicht)</span>
-            <span class="filetype">10KB CSV</span></a>
+            <span class="filetype">50KB CSV</span></a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/energy_flow_present.csv" target="_blank">
               <span class="name">Energiestromen (compleet - heden)</span>
-              <span class="filetype">500KB CSV</span>
+              <span class="filetype">1MB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/energy_flow.csv" target="_blank">
               <span class="name">Energiestromen (compleet - toekomst)</span>
-              <span class="filetype">500KB CSV</span>
+              <span class="filetype">1MB CSV</span>
             </a>
           </li>
         </ul>

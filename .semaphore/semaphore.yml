@@ -32,7 +32,7 @@ blocks:
             - yarn install
             - cache store
             - cat /dev/null > config/database.yml
-            - bundle exec rails webpacker:compile
+            - bundle exec rails shakapacker:compile
             - bundle exec rails db:setup
             - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format progress
 

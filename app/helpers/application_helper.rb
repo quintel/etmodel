@@ -1,4 +1,15 @@
 module ApplicationHelper
+  # Override shakapacker's javascript_pack_tag to fix HAML compatibility issue.
+  # Shakapacker 7+ uses capture/concat which doesn't work well with HAML.
+  # This simplified version works correctly with HAML templates.
+  def javascript_pack_tag(*names, defer: true, **options)
+    sources = names.map do |name|
+      current_shakapacker_instance.manifest.lookup_pack_with_chunks!(name.to_s, type: :javascript)
+    end.flatten.uniq
+
+    javascript_include_tag(*sources, defer: defer, **options)
+  end
+
   def releases_url
     "#{Settings.documentation_base_url || 'https://docs.energytransitionmodel.com/'}main/releases/"
   end

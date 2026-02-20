@@ -19,7 +19,7 @@ blocks:
           commands:
             - checkout
             - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
-            - 'docker build -f Dockerfile.production -t quintel/etmodel:beta .'
+            - 'docker build -f Dockerfile.production --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN -t quintel/etmodel:beta .'
             - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:beta --build-arg "SOURCE_IMAGE=quintel/etmodel:beta" .'
             - 'docker push quintel/etmodel:beta'
             - 'docker push quintel/etmodel-nginx:beta'
@@ -28,5 +28,6 @@ blocks:
       secrets:
         - name: Docker Hub credentials
         - name: Staging SSH settings
+        - name: Sentry credentials
     run:
       when: branch = 'master'

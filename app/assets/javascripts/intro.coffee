@@ -52,7 +52,7 @@ $ ->
     )
 
   # Adds options for individual years in the year select.
-  populateIndividualYears = ->
+  populateIndividualYears = (reopenDropdown = true) ->
     earliest = areaSelect.find(':selected').data('earliest')
     standard = sYearSelect.find('option').map (i, o) -> parseInt(o.value, 10)
     latest   = _.max(standard)
@@ -62,18 +62,23 @@ $ ->
     for year in [earliest..latest]
       sYearSelect.append($("<option value='#{ year }'>#{year}</option>"))
 
-    sYearSelect.val(selectedYear)
+    sYearSelect.val(Math.max(selectedYear, earliest))
     sYearSelect.trigger('change')
 
     # Re-open the select after the event has finished.
-    window.setTimeout((-> sYearSelect.select2('open')), 1)
+    if reopenDropdown
+      window.setTimeout((-> sYearSelect.select2('open')), 1)
 
   updateYearSelect = ->
     if sYearSelect.val() == 'other'
       populateIndividualYears()
 
+  applyEarliestYearFilter = ->
+    unless sYearSelect.find('option[value=other]').length
+      populateIndividualYears(false)
+
   areaSelect.change(setParamForEstablishmentShot)
-  areaSelect.change(updateYearSelect)
+  areaSelect.change(applyEarliestYearFilter)
 
   sYearSelect.change(setParamForEstablishmentShot)
   sYearSelect.change(updateYearSelect)
@@ -82,3 +87,4 @@ $ ->
     selectedYear = sYearSelect.val()
 
   setParamForEstablishmentShot()
+  applyEarliestYearFilter()

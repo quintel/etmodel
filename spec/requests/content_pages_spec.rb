@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Content pages', type: :request do
+  after do
+    I18n.locale = I18n.default_locale
+  end
+
   describe 'GET /development' do
     context 'English version' do
       it 'renders successfully' do

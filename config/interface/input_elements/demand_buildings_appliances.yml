@@ -2,5 +2,43 @@
 - key: buildings_appliances_efficiency
   step_value: 0.1
   unit: "%"
+  interface_group: efficiency_per_year
   position: 100
   slide_key: demand_buildings_appliances
+
+- key: buildings_appliances_wood_pellets_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: share_per_carrier
+  share_group: appliances_buildings
+  position: 200
+  slide_key: demand_buildings_appliances
+- key: buildings_appliances_electricity_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: share_per_carrier
+  share_group: appliances_buildings
+  position: 205
+  slide_key: demand_buildings_appliances
+- key: buildings_appliances_crude_oil_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: share_per_carrier
+  share_group: appliances_buildings
+  position: 210
+  slide_key: demand_buildings_appliances
+- key: buildings_appliances_network_gas_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: share_per_carrier
+  share_group: appliances_buildings
+  position: 215
+  slide_key: demand_buildings_appliances
+- key: buildings_appliances_coal_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: share_per_carrier
+  share_group: appliances_buildings
+  position: 220
+  slide_key: demand_buildings_appliances
+

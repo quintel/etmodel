@@ -39,7 +39,7 @@ het open-source karakter wijzigingen kunnen voorstellen aan elk onderdeel van he
 Bovendien komen deze behoeften voort uit ons uitgebreide netwerk van partners, met wie we graag
 samenwerken in ontwikkelingsprojecten. Heeft u suggesties om het model te verbeteren?
 
-[Laat het ons weten →](/contact)
+[Laat het ons weten →](https://my.energytransitionmodel.com/contact)
 
 <h2 id="partners">Partners</h2>
 
@@ -49,4 +49,4 @@ universiteiten en kennisinstellingen actief kennis en middelen ingebracht om erv
 het ETM een toonaangevend en open source tool blijft. Wilt u samenwerken om het model uit te breiden
 of te verbeteren?
 
-[Neem contact met ons op →](https://quintel.com/contact)
+[Neem contact met ons op →](https://my.energytransitionmodel.com/contact)

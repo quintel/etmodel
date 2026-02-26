@@ -40,6 +40,8 @@ RUN yarn install
 
 COPY . /app/
 
-RUN RAILS_ENV=production DOCKER_BUILD=true bundle exec rails assets:precompile
+ARG SENTRY_AUTH_TOKEN
+
+RUN RAILS_ENV=production DOCKER_BUILD=true SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN bundle exec rails assets:precompile
 
 CMD ["bundle", "exec", "--keep-file-descriptors", "puma", "-C", "config/puma.rb"]

@@ -49,12 +49,6 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 # supporting gems
 gem 'sentry-rails'
 gem 'sentry-ruby'
-gem 'sentry-opentelemetry'
-
-# OpenTelemetry gems for distributed tracing
-gem 'opentelemetry-sdk'
-gem 'opentelemetry-exporter-otlp'
-gem 'opentelemetry-instrumentation-all'
 
 # system gems
 gem 'dalli'

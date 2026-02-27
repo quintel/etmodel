@@ -675,10 +675,9 @@ en:
         This slider sets the annual increase in efficiency of electric vehicles.
         This slider applies to the following vehicles that can be powered
         electrically: cars, motorcycles, e-bikes, buses, trams, metros, vans and
-        trucks. <br/><br/>
-        The greatest efficiency improvements are expected for batteries, as
-        electric motors are naturally efficient and most losses occur during charging
-        and discharging.<br/><br/>
+        trucks.<br/><br/>
+        Note that this slider does not change the efficiency of electric trains, ships or
+        planes, which are set with the dedicated sliders below.<br/><br/>
         Go to the
         <a href="/scenario/demand/transport/overview">Transport</a> section to make assumptions about
         the share of electric vehicles in different transport modes.
@@ -689,6 +688,8 @@ en:
         This slider sets the annual increase in efficiency of vehicles with
         combustion engines. This slider applies to the following vehicles with
         combustion engines: cars, motorcycles, buses, vans and trucks.<br/><br/>
+        Note that this slider does not change the efficiency of trains, ships or
+        planes with a combustion engine, which are set with the dedicated sliders below.<br/><br/>
         Go to the
         <a href="/scenario/demand/transport/overview">Transport</a> section to make assumptions about
         the share of vehicles with combustion engines in different transport modes.
@@ -699,11 +700,11 @@ en:
         This slider sets the annual increase in efficiency of ships.<br/><br/>
         Go to the
         <a href="/scenario/demand/transport_freight_transport/domestic-navigation-technology"
-        >Domestic navigation technology</a> section to make assumptions about the share of various
+        >Domestic navigation</a> section to make assumptions about the share of various
         shipping technologies for domestic navigation.
         Go to the
         <a href="/scenario/demand/transport_international_transport/international-navigation-technology"
-        >International navigation technology</a> section to set this for international shipping.
+        >International navigation</a> section to set this for international shipping.
     transport_planes_efficiency:
       title: Airplanes
       short_description:
@@ -711,23 +712,23 @@ en:
         This slider sets the annual increase in efficiency of airplanes.<br/><br/>
         Go to the
         <a href="/scenario/demand/transport_passenger_transport/domestic-aviation-technology"
-        >Domestic aviation technology</a> section to make assumptions about the share of various
+        >Domestic aviation</a> section to make assumptions about the share of various
         technologies for domestic aviation.
         Go to the
         <a href="/scenario/demand/transport_international_transport/international-aviation-technology"
-        >International aviation technology</a> section to set this for international aviation.
+        >International aviation</a> section to set this for international aviation.
     transport_trains_efficiency:
       title: Trains
       short_description:
       description: |
         This slider sets the annual increase in efficiency of trains.<br/><br/>
-        Go to
+        Go to the
         <a href="/scenario/demand/transport_passenger_transport/train-technology"
-        >this section</a> to make assumptions about the share of various
+        >Passenger transport</a> section to make assumptions about the share of various
         technologies for passenger trains.
-        Go to
+        Go to the
         <a href="/scenario/demand/transport_freight_transport/train-technology"
-        >this section</a> to set this for freight trains.
+        >Freight transport</a> section to set this for freight trains.
     transport_vehicle_using_hydrogen_efficiency:
       title: Hydrogen vehicles
       short_description:
@@ -735,6 +736,8 @@ en:
         This slider sets the annual increase in efficiency of hydrogen-powered
         vehicles. This slider applies to the following vehicles that can
         operate on hydrogen: cars, buses, vans and trucks.<br/><br/>
+        Note that this slider does not change the efficiency of hydrogen-fired trains, ships or
+        planes, which are set with the dedicated sliders below.<br/><br/>
         Go to the
         <a href="/scenario/demand/transport/overview">Transport</a> section to make assumptions about
         the share of hydrogen-powered vehicles in different transport modes.

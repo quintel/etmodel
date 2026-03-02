@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ruby '~> 3.3.5'
+ruby '~> 3.4.7'
 
 source 'http://rubygems.org'
 
@@ -36,7 +36,7 @@ gem 'valid_email2'
 
 # Authentication
 gem 'cancancan'
-gem 'identity', ref: 'e18aa91', github: 'quintel/identity_rails'
+gem 'identity', ref: 'e16e49d', github: 'quintel/identity_rails' #TODO: update once merged to master
 
 # javascript
 gem 'babel-transpiler'
@@ -103,7 +103,7 @@ end
 group :test do
   gem 'capybara', '~> 3.40.0'
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 4.8'
+  gem 'factory_bot_rails', '~> 6.0'
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'

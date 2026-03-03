@@ -37,7 +37,7 @@ RSpec.describe 'API::User', type: :request, api: true do
 
       it 'returns an error message' do
         expect(JSON.parse(response.body)['errors'])
-          .to eq(['param is missing or the value is empty: name'])
+          .to eq(['param is missing or the value is empty or invalid: name'])
       end
     end
 

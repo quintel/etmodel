@@ -12,7 +12,7 @@
 //= require select2.min
 //= require i18n
 //= require i18n/translations
-//= require local-time
+//= require local-time.es2017-umd
 //
 //= require_tree ./lib/util
 //= require flowplayer-3.2.6.min

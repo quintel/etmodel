@@ -51,7 +51,7 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 
 # system gems
-gem 'dalli'
+gem 'solid_cache'
 gem 'mysql2'
 
 gem 'dynamic_form'

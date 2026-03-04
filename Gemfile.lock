@@ -197,8 +197,6 @@ GEM
       rexml
     crass (1.0.6)
     csv (3.3.5)
-    dalli (5.0.2)
-      logger
     database_cleaner (2.1.0)
       database_cleaner-active_record (>= 2, < 3)
     database_cleaner-active_record (2.2.2)
@@ -636,6 +634,10 @@ GEM
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
     slop (3.6.0)
+    solid_cache (1.0.10)
+      activejob (>= 7.2)
+      activerecord (>= 7.2)
+      railties (>= 7.2)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
@@ -733,7 +735,6 @@ DEPENDENCIES
   capybara (~> 3.40)
   coffee-rails
   config
-  dalli
   database_cleaner
   discard
   dry-initializer
@@ -790,6 +791,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   simplecov
+  solid_cache
   sprockets-rails
   tabs_on_rails (~> 3.0)
   terser

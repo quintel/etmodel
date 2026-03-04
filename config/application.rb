@@ -9,12 +9,15 @@ Bundler.require(*Rails.groups)
 module Etm
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 8.0
 
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
+
+    # Use a dedicated database for Solid Cache (see config/database.yml for connection details).
+    config.solid_cache.connects_to = { database: { writing: :cache } }
 
     config.time_zone = 'Etc/UTC'
     config.encoding = 'utf-8'

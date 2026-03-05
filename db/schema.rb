@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_03_155831) do
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
-  create_table "users", id: :bigint, default: nil, charset: "utf8mb3", force: :cascade do |t|
+  create_table "users", id: :bigint, default: nil, charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

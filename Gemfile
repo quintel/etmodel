@@ -50,11 +50,6 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 
-# OpenTelemetry gems for distributed tracing (sends to Grafana Cloud)
-gem 'opentelemetry-sdk'
-gem 'opentelemetry-exporter-otlp'
-gem 'opentelemetry-instrumentation-all'
-
 # system gems
 gem 'dalli'
 gem 'mysql2'

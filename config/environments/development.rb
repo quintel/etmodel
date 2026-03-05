@@ -9,6 +9,9 @@ Rails.application.configure do
   # config.cache_classes = false
   config.enable_reloading = true
 
+  # Disable host authorization in development to allow OAuth redirects with any hostname/port
+  config.host_authorization = { exclude: ->(request) { true } }
+
   # Do not eager load code on boot.
   config.eager_load = false
 

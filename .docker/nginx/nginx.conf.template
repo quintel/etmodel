@@ -18,6 +18,7 @@ server {
   # certificate renewal
   location ~ ^/\.well-known/acme-challenge/ {
     proxy_pass http://nginx-proxy;
+    proxy_set_header Host $host;
   }
 
   # deny requests for files that should never be accessed

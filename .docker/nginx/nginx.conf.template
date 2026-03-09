@@ -23,6 +23,11 @@ server {
     deny all;
   }
 
+  # certificate renewal
+  location ^~ /.well-known/acme-challenge/ {
+    proxy_pass http://nginx-proxy;
+  }
+
   # this rewrites all the requests to the maintenance.html
   # page if it exists in the doc root. This is for capistrano's
   # disable web task

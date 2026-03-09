@@ -150,67 +150,20 @@ li
 #report
   color: $font-color
 
-  // Sidebar
+  // Sidebar (hidden — no navigation needed)
   // -------
 
   nav
-    background: #fff
-    border-right: 1px solid #d6e0e6
-    bottom: 0px
-    box-shadow: 0 0 5px #d6e0e6
-    color: $grey
-    font-size: 13px
-    left: 0
-    line-height: 1.7
-    overflow-x: hidden
-    overflow-y: auto
-    padding: 20px
-    position: fixed
-    transition: all 0.3s ease-in-out
-    top: 50px
-    width: 230px
-
-    &:hover
-      color: $font-color
-      ol.toc a
-        color: $font-color
-
-    ol.toc
-      margin-top: 0
-
-      a
-        color: $grey
-        transition: color 0.2s
-        &:hover
-          color: $font-color
-      li
-        font-size: 0.875rem
-        font-weight: bold
-        margin-top: 0.5rem
-        overflow: hidden
-        text-overflow: ellipsis
-        white-space: nowrap
-        &:first-child
-          margin-top: 0
-
-      ol.toc
-        padding-left: 0
-        li
-          margin: 0
-          a
-            font-size: 0.8125rem
-            font-weight: normal
-            text-decoration: none
-        ol.toc
-          padding-left: 1rem
+    display: none
 
   .report-view main, .report-view section, header .inner
     margin: 1em auto
-    padding: 0 1rem
-    width: 46em
+    padding: 0 2rem
+    max-width: 1080px
+    width: auto
 
   article, #credits
-    margin-left: 271px
+    margin-left: 0
 
   #credits
     color: lighten($grey, 20%)
@@ -243,13 +196,9 @@ li
     text-align: center
 
     h1
-      background: image-url("reports/title.svg") top center no-repeat
-      background-size: 96px
       font-size: 2.25rem
-      padding: 122px 5rem 0
       line-height: 125%
       max-width: initial
-      -webkit-print-color-adjust: exact
 
     h1 + p
       color: darken($grey, 5%)
@@ -435,6 +384,48 @@ li
     font-size: 15px
     margin-left: 5px
     white-space: nowrap
+
+// Retirement Banner
+// -----------------
+
+.retirement-banner
+  background: #fff3cd
+  border: 2px solid #e6ac00
+  border-radius: 4px
+  color: #5a4200
+  font-size: 1rem
+  line-height: 1.6
+  margin: 2rem 0
+  padding: 1rem 1.5rem
+
+  p
+    margin: 0
+
+  strong
+    font-weight: bold
+
+// Horizontal chart row
+// --------------------
+
+.report-charts-row
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: 2rem
+  margin: 2rem 0
+
+  .report-chart-col
+    h2
+      font-size: 1rem
+      margin: 0 0 0.5rem 0 !important
+      padding-top: 0 !important
+
+    div.chart
+      box-sizing: border-box
+      margin: 0
+      width: 100%
+
+    .chart_holder
+      width: 100% !important
 
 // Custom ETM Styles
 // -----------------

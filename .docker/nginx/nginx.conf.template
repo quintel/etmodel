@@ -16,7 +16,7 @@ server {
   error_log /var/log/nginx/error.log info;
 
   # certificate renewal
-  location ^~ /.well-known/acme-challenge/ {
+  location ~ ^/\.well-known/acme-challenge/ {
     proxy_pass http://nginx-proxy;
   }
 

@@ -1,12 +1,12 @@
 <header>
   <div class="inner">
-    <h1>Your Scenario Results</h1>
+    <h1>Scenario results</h1>
     <p class="scenario-details">
       {% current_date %}
       <span class="bullet">&bull;</span>
       {% link_to_scenario %}
       <span class="bullet">&bull;</span>
-      by Quintel<br />
+      from the Energy Transition Model<br/>
       <span class="region {{ settings.area_code }}">
         {{ settings.area_name }}
       </span>
@@ -20,17 +20,16 @@
 <main>
   <div class="retirement-banner">
     <p>
-      <strong>Notice:</strong>
-      The <u>Scenario report</u> and the <u>Energy mix</u> visuals are no longer supported by the Energy Transition Model (ETM).
-      The ETM offers many new visualizations that may meet your needs.
-      For more information, please contact
+      <strong>Notice:</strong> the <u>Scenario report</u> and the <u>Energy mix infographic</u> are
+      no longer supported by the Energy Transition Model (ETM). The ETM offers many new
+      visualizations that may meet your needs. For questions or suggestions, please contact
       <a href="mailto:info@energytransitionmodel.com">info@energytransitionmodel.com</a>.
     </p>
   </div>
 
   <div class="report-charts-row">
     <div class="report-chart-col">
-      <h2>Energy overview</h2>
+      <h2>Energy flow overview</h2>
       {% chart sankey_energy_overview %}
         Overview of all energy flows in the scenario.
       {% endchart %}
@@ -51,7 +50,7 @@
     </div>
 
     <div class="report-chart-col">
-      <h2>Hourly electricity production</h2>
+      <h2>Electricity production per hour</h2>
       {% chart merit_order_hourly_supply %}
         Hourly electricity supply by source.
       {% endchart %}

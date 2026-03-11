@@ -245,13 +245,13 @@ en:
           </li>
         </ul>
     data_visuals_energy_mix:
-      title: Energy Mix infographic
+      title: Energy mix infographic
       short_description:
       description: |
-        A printable A3 or A4 infographic describing how energy is produced and
-        consumed in your scenario. Unfortunately, the Energy Mix is currently
-        available in Dutch only.
-        <br /><br />
+        <b>Note:</b> the original Energy mix infographic is no longer maintained. A revised version
+        may be introduced in the future. As a placeholder, a concise scenario overview is presented.
+        <br/><br/>
+        <br/><br/>
         <a href="/scenarios/%{scenario_id}/energy_mix" class="simple-button">
           <span class="fa fa-book"></span> View the Energy Mix →
         </a>
@@ -261,7 +261,7 @@ en:
       description: |
         A detailed breakdown of energy flows throughout the Energy Transition
         Model for your scenario. Recommended only for advanced users.
-        <br /><br />
+        <br/><br/>
         <a href="%{etengine_url}/data/%{scenario_id}/layouts/energy" class="simple-button" target="_blank" rel="noopener nofollow">
           <span class="fa fa-book"></span> View the graph →
         </a>
@@ -271,7 +271,7 @@ en:
       description: |
         A detailed breakdown of the CO<sub>2</sub> flows related to carbon capture, utilisation and storage (CCUS)
         is available for advanced users.
-        <br /><br />
+        <br/><br/>
         <a href="%{etengine_url}/data/%{scenario_id}/layouts/molecules" class="simple-button" target="_blank" rel="noopener nofollow">
           <span class="fa fa-book"></span> View the graph →
         </a>
@@ -279,12 +279,9 @@ en:
       title: Scenario report
       short_description:
       description: |
-        The scenario report is a printable description of the decisions you
-        made in your current scenario, progress made towards important goals, and
-        includes charts showing breakdowns of energy use, electricity production,
-        and much more. Additionally, it gives you an overview of all slider
-        settings in your scenario (see Appendix A).
-        <br /><br />
+        <b>Note:</b> the original scenario report is no longer maintained. A revised version may be
+        introduced in the future. As a placeholder, a concise scenario overview is presented.
+        <br/><br/>
         <a href="/scenario/reports/auto" class="simple-button">
           <span class="fa fa-book"></span> View the report →
         </a>
@@ -292,11 +289,10 @@ en:
       title: Greenhouse gas footprint
       short_description:
       description: |
-        A printable sheet depicting the greenhouse gas footprint for your
-        scenario.<br /><br />
-        More information about
-        this sheet can be found in the <a href="https://docs.energytransitionmodel.com/main/emissions-footprint" target="_blank">ETM documentation</a>.
-        <br /><br />
+        A printable sheet depicting the greenhouse gas footprint for your scenario. More information
+        about this sheet can be found in the
+        <a href="https://docs.energytransitionmodel.com/main/emissions-footprint" target="_blank">ETM documentation</a>.
+        <br/><br/>
         <a
           href="%{ete_url}/regions/%{area_code}?time=future&scenario=%{scenario_id}"
           class="simple-button"

@@ -40,9 +40,9 @@ Rails.application.routes.draw do
       get  :inputs, defaults: { format: :csv }
       get  :coupling_settings
       post :update_couplings
-      get  'energy_mix' => 'energy_mix#show'
+      get  'energy_mix', to: redirect('/scenario/reports/main'), as: :energy_mix
       # Legacy name for the energy mix
-      get  'factsheet', to: redirect('scenarios/%{id}/energy_mix')
+      get  'factsheet', to: redirect('/scenario/reports/main')
     end
   end
 

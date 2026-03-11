@@ -649,20 +649,16 @@ nl:
       description:
     supply_fuel_extraction:
       title: Productie van primaire brandstoffen
-      short_description: ''
+      short_description:
       description: |
-        Kolen, olie, gas en uranium oxide worden gedefinieerd als ‘primaire dragers’ van energie en worden omgezet
-        in andere energiedragers zoals elektriciteit, warmte of benzine. Deze primaire dragers worden gewonnen
-        uit putten of mijnen en de hoeveelheid kan in de toekomst toenemen of afnemen. Met behulp van de schuifjes op deze pagina kan je
-        aannames doen over de toekomstige productie van primaire dragers binnen de grenzen van jouw gebied.
+        Kolen, olie, gas en uranium oxide worden gedefinieerd als ‘primaire dragers’ van energie en
+        worden omgezet in andere energiedragers zoals elektriciteit, warmte of benzine. Deze
+        primaire dragers worden gewonnen uit putten of mijnen en de hoeveelheid kan in de toekomst
+        toenemen of afnemen. Met behulp van de schuifjes op deze pagina kunnen aannames gedaan
+        worden over de toekomstige productie van primaire dragers binnen de grenzen van jouw gebied.
         De startwaardes van de schuifjes geven de huidige productie van de dragers aan.
-        </br> </br>
-        De schuifjesinstellingen zijn van invloed op de import en export van deze dragers in jouw scenario.
-        De grafiek rechts toont de hoeveelheid geïmporteerde energie in de toekomst. Positieve waarden staan voor import en negatieve waarden voor export.
-        De meest rechterbalk laat het totaal aan geïmporteerde brandstoffen zien. Je kan deze vergelijken met de import in het
-        startjaar door te kiezen voor de grafiek 'Huidige energie-import' onder de knop 'meer grafieken bekijken'.
-        </br> </br>
-        N.B. het ETM houdt niet bij wat de potentiële productiecapaciteit is of de energiereserves zijn in jouw gebied.
+        </br></br>
+        Let op: het model houdt niet bij wat de energiereserves zijn in jouw gebied.
     supply_fuel_production_overview:
       title: Overzicht
       short_description:

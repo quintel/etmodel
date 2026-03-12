@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ruby '~> 3.3.5'
+ruby '~> 3.4.7'
 
 source 'http://rubygems.org'
 
@@ -11,7 +11,7 @@ end
 
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 6.0'
-gem 'rails', '~> 7.1.3'
+gem 'rails', '~> 8.1.0'
 
 gem 'browser'
 gem 'config'
@@ -36,7 +36,7 @@ gem 'valid_email2'
 
 # Authentication
 gem 'cancancan'
-gem 'identity', ref: 'e18aa91', github: 'quintel/identity_rails'
+gem 'identity', ref: 'e16e49d', github: 'quintel/identity_rails' #TODO: update once merged to master
 
 # javascript
 gem 'babel-transpiler'
@@ -51,7 +51,7 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 
 # system gems
-gem 'dalli'
+gem 'solid_cache'
 gem 'mysql2'
 
 gem 'dynamic_form'
@@ -75,7 +75,7 @@ group :development do
 
   # Deploy with Capistrano.
   gem 'capistrano',             '~> 3.9',   require: false
-  gem 'capistrano3-puma',       '~> 5.0.4', require: false
+  gem 'capistrano3-puma',       '~> 6.0',   require: false
   gem 'capistrano-bundler',     '~> 1.1',   require: false
   gem 'capistrano-maintenance', '~> 1.0',   require: false
   gem 'capistrano-rails',       '~> 1.1',   require: false
@@ -101,9 +101,9 @@ group :test, :development do
 end
 
 group :test do
-  gem 'capybara', '~> 3.40.0'
+  gem 'capybara', '~> 3.40'
   gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 4.8'
+  gem 'factory_bot_rails', '~> 6.0'
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
@@ -115,12 +115,13 @@ group :test do
   gem 'webmock', '>= 3.5'
 end
 
+gem 'puma'
+
 group :production, :staging do
   # Puma 5 doesn't support daemon mode (used by capistrano3-puma). We need to investigate if this
   # is an issue. Using Puma 5 with capistrano3-puma's Systemd mode would be a better solution, but
   # this may require privileges unavailable to the SSH user.
   gem 'newrelic_rpm'
-  gem 'puma'
 end
 
 gem 'coffee-rails'

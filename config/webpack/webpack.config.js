@@ -19,6 +19,7 @@ if (process.env.SENTRY_AUTH_TOKEN) {
             project: 'etmodel',
             authToken: process.env.SENTRY_AUTH_TOKEN,
             sourcemaps: {
+                urlPrefix: '~/packs/js',
                 filesToDeleteAfterUpload: ['./**/*.map'],
             },
         }),

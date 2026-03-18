@@ -444,12 +444,10 @@
           self.$el.empty().append(nav).append(article);
 
           self.$el.append(
-            '<div id="credits"> ' +
-            '  &copy; Quintel Intelligence &bull;' +
-            ' ' + I18n.t('report.icons_by') +
-            '  <a href="http://www.flaticon.com/authors/freepik">Freepik</a>' +
-            '  &amp;' +
-            '  <a href="http://www.flaticon.com/authors/yannick">Yannick</a>' +
+            '<div id="credits">' +
+            '  <a href="/my_etm/terms">' + I18n.t('report.footer.terms') + '</a>' +
+            '  <a href="/my_etm/privacy">' + I18n.t('report.footer.privacy') + '</a>' +
+            '  <a href="/my_etm/contact">' + I18n.t('report.footer.contact_us') + '</a>' +
             '</div>'
           );
 

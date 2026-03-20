@@ -4,20 +4,18 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2404
-
 blocks:
   - name: RSpec
     task:
       env_vars:
         - name: DATABASE_URL
-          value: mysql2://root@localhost/etmodel_test?pool=5&encoding=utf8mb4
+          value: 'mysql2://root@localhost/etmodel_test?pool=5&encoding=utf8mb4'
         - name: RAILS_ENV
           value: test
         - name: BUNDLE_JOBS
           value: '4'
         - name: CI
           value: 'true'
-
       jobs:
         - name: Test
           commands:
@@ -32,10 +30,9 @@ blocks:
             - yarn install
             - cache store
             - cat /dev/null > config/database.yml
-            - bundle exec rails shakapacker:compile
-            - bundle exec rails db:setup
+            - 'bundle exec rails shakapacker:compile'
+            - 'bundle exec rails db:setup'
             - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format progress
-
       epilogue:
         always:
           commands:
@@ -44,12 +41,14 @@ promotions:
   - name: Deploy to staging
     pipeline_file: deploy_staging.yml
     auto_promote:
-      when: "result = 'passed' and branch = 'master'"
+      when: result = 'passed' and branch = 'master'
+    deployment_target: staging
   - name: Deploy to production
     pipeline_file: deploy_production.yml
     auto_promote:
-      when: "result = 'passed' and branch = 'production'"
+      when: result = 'passed' and branch = 'production'
+    deployment_target: production
   - name: Deploy to stable
     pipeline_file: deploy_stable.yml
     auto_promote:
-      when: "result = 'passed' and branch = 'auth-again'"
+      when: result = 'passed' and branch = 'auth-again'

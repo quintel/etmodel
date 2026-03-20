@@ -15,7 +15,7 @@ blocks:
         - name: BUNDLE_JOBS
           value: '4'
       jobs:
-        - name: Build, publish, deploy
+        - name: 'Build, publish, deploy'
           commands:
             - checkout
             - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
@@ -25,7 +25,7 @@ blocks:
             - 'docker push quintel/etmodel:latest'
             - 'docker push quintel/etmodel-nginx:latest'
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
-            - ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"
+            - 'ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"'
       secrets:
         - name: Docker Hub credentials
         - name: Production SSH settings

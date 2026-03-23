@@ -28,6 +28,7 @@ blocks:
             - 'ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel && ./deploy.sh"'
       secrets:
         - name: Docker Hub credentials
+        - name: ETModel credentials master.key
         - name: Production SSH settings
         - name: Sentry credentials
     run:

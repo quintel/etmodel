@@ -36,8 +36,6 @@ blocks:
         always:
           commands:
             - test-results publish junit.xml
-      secrets:
-        - name: ETModel credentials master.key
 promotions:
   - name: Deploy to staging
     pipeline_file: deploy_staging.yml

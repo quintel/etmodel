@@ -16,9 +16,6 @@ module Etm
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
 
-    # Use a dedicated database for Solid Cache (see config/database.yml for connection details).
-    config.solid_cache.connects_to = { database: { writing: :cache } }
-
     config.time_zone = 'Etc/UTC'
     config.encoding = 'utf-8'
 

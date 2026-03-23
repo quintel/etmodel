@@ -72,17 +72,6 @@ group :development do
 
   gem 'better_errors'
   gem 'seed_dump'
-
-  # Deploy with Capistrano.
-  gem 'capistrano',             '~> 3.9',   require: false
-  gem 'capistrano3-puma',       '~> 6.0',   require: false
-  gem 'capistrano-bundler',     '~> 1.1',   require: false
-  gem 'capistrano-maintenance', '~> 1.0',   require: false
-  gem 'capistrano-rails',       '~> 1.1',   require: false
-  gem 'capistrano-rbenv',       '~> 2.0',   require: false
-
-  gem 'bcrypt_pbkdf',                       require: false
-  gem 'ed25519',                            require: false
 end
 
 group :test, :development do
@@ -118,9 +107,6 @@ end
 gem 'puma'
 
 group :production, :staging do
-  # Puma 5 doesn't support daemon mode (used by capistrano3-puma). We need to investigate if this
-  # is an issue. Using Puma 5 with capistrano3-puma's Systemd mode would be a better solution, but
-  # this may require privileges unavailable to the SSH user.
   gem 'newrelic_rpm'
 end
 

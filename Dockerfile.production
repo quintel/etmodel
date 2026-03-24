@@ -1,4 +1,4 @@
-FROM ruby:3.4-slim
+FROM ruby:4.0-slim
 
 LABEL maintainer="dev@quintel.com"
 
@@ -23,19 +23,19 @@ RUN apt-get update -yqq && \
 RUN corepack enable \
  && corepack prepare yarn@1.22.22 --activate
 
-# Throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
-RUN gem update --system
+RUN gem update --system && gem install bundler
 
 COPY Gemfile* package.json yarn.lock /app/
 WORKDIR /app
 
-RUN bundle config set deployment 'true'
-RUN bundle config set --local without 'development test'
-RUN bundle config set disable_shared_gems 'true'
-
-RUN bundle install --jobs=4 --retry=3
+# Throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config frozen true \
+ && bundle config jobs 4 \
+ && bundle config retry 3 \
+ && bundle config deployment true \
+ && bundle config without 'development test' \
+ && bundle config disable_shared_gems true \
+ && bundle install
 RUN yarn install
 
 COPY . /app/

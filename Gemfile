@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ruby '~> 3.4.7'
+ruby '~> 4.0.2'
 
 source 'http://rubygems.org'
 
@@ -75,6 +75,8 @@ group :development do
 end
 
 group :test, :development do
+  gem 'binding_of_caller', '~> 2.0.0'
+  gem 'readline'
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
@@ -86,7 +88,7 @@ group :test, :development do
   gem 'rubocop-rails',        require: false
   gem 'rubocop-rspec',        require: false
 
-  gem 'pry-byebug', platform: :mri
+  gem 'pry-byebug', '~> 3.12.0', platform: :mri
 end
 
 group :test do
@@ -99,7 +101,7 @@ group :test do
   gem 'selenium-webdriver', '~> 4.10'
   gem 'shoulda-matchers', require: false
   gem 'simplecov'
-  gem 'vcr', '~> 6.0'
+  gem 'vcr', '~> 6.4'
   gem 'webdrivers', '~> 5.3.0'
   gem 'webmock', '>= 3.5'
 end

@@ -1,3 +1,5 @@
+@import font-awesome
+
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 $body-font-family: $font-family
 
@@ -387,24 +389,28 @@ li
     margin-left: 5px
     white-space: nowrap
 
-// Retirement Banner
+// Retirement Notice
 // -----------------
 
-.retirement-banner
-  background: #fff3cd
-  border: 2px solid #e6ac00
-  border-radius: 4px
-  color: #5a4200
+.retirement-notice
+  align-items: flex-start
+  display: flex
   font-size: 1rem
+  gap: 1.5rem
   line-height: 1.6
   margin: 2rem 0
-  padding: 1rem 1.5rem
 
-  p
-    margin: 0
+  div p
+    font-size: 1.1rem
+    margin: 0 0 0.75rem
 
-  strong
-    font-weight: bold
+    &:last-child
+      margin-bottom: 0
+
+  .icon
+    color: $link-color
+    flex-shrink: 0
+    font-size: 3.2rem
 
 // Horizontal chart row
 // --------------------
@@ -413,7 +419,8 @@ li
   display: grid
   grid-template-columns: 1fr 1fr
   gap: 2rem
-  margin: 2rem 0
+  margin: 0 0 2rem
+  padding-top: 1rem
 
   .report-chart-col
     h2

@@ -18,10 +18,6 @@ if (process.env.SENTRY_AUTH_TOKEN) {
             org: 'quintel',
             project: 'etmodel',
             authToken: process.env.SENTRY_AUTH_TOKEN,
-            sourcemaps: {
-                urlPrefix: '~/packs/js',
-                filesToDeleteAfterUpload: ['./**/*.map'],
-            },
         }),
     ];
 }

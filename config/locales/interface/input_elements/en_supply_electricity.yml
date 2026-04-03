@@ -640,6 +640,25 @@ en:
         capture-of-co2-in-energy-sector">CCUS</a>
         to set CO<sub>2</sub> capture for this type of gas plant.</li>
         </ul>
+    capacity_of_energy_power_combined_cycle_network_gas_must_run:
+      title: Gas CCGT
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of combined cycle gas turbine must-run
+        (CCGT) plants. <br/><br/> The gas turbine generates electricity while the
+        waste heat is used to drive a steam turbine. This makes these plants more
+        efficient than other gas-fired power plants. Although they are flexible in
+        operation, they respond less quickly than simple gas turbines and are
+        therefore mainly used for dispatchable power rather than for meeting peak
+        demand. <br/><br/>
+        Go to:
+        <ul>
+        <li><a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to set the costs and efficiencies of these plants.</li>
+        <li><a href="/scenario/emissions/ccus/
+        capture-of-co2-in-energy-sector">CCUS</a>
+        to set CO<sub>2</sub> capture for this type of gas plant.</li>
+        </ul>
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas CCGT CHP
       short_description:
@@ -659,6 +678,18 @@ en:
       short_description:
       description: |
         This slider adjusts the total electric capacity of gas turbines. <br/><br/> Gas
+        turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
+        are less efficient. The advantage of gas turbines is their ability to start up
+        and shut down quickly. This makes them suitable for meeting peak demand and
+        balancing the electricity grid. Because these plants are mainly used during
+        peak demand, their total operating hours and annual production are limited.
+        <br/><br/> Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to adjust the costs and efficiencies of these plants.
+    capacity_of_energy_power_turbine_network_gas_must_run:
+      title: Gas turbine
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of gas turbine must-run plants. <br/><br/> Gas
         turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
         are less efficient. The advantage of gas turbines is their ability to start up
         and shut down quickly. This makes them suitable for meeting peak demand and

@@ -574,9 +574,10 @@ en:
         energy_flexibility_pumped_storage_electricity_storage: 'Reservoirs'
         energy_import: "Energy import"
         energy_power_combined_cycle_ccs_coal: 'Coal IGCC CCS'
-        energy_power_combined_cycle_ccs_network_gas: 'Gas CCGT CCS'
+        energy_power_combined_cycle_ccs_network_gas_dispatchable: 'Gas CCGT CCS (dispatchable)'
         energy_power_combined_cycle_coal: 'Coal IGCC'
-        energy_power_combined_cycle_network_gas: 'Gas CCGT'
+        energy_power_combined_cycle_network_gas_dispatchable: 'Gas CCGT (dispatchable)'
+        energy_power_combined_cycle_network_gas_must_run: 'Gas CCGT (must-run)'
         energy_power_engine_diesel: 'Diesel generator'
         energy_power_engine_network_gas: 'Gas combustion engine'
         energy_power_geothermal: 'Geothermal electric'
@@ -595,7 +596,8 @@ en:
         energy_power_supercritical_coal: 'Coal conventional'
         energy_power_supercritical_waste_mix: 'Waste incinerator'
         energy_power_supercritical_ccs_waste_mix: 'Waste incinerator CCS'
-        energy_power_turbine_network_gas: 'Gas turbine'
+        energy_power_turbine_network_gas_dispatchable: 'Gas turbine (dispatchable)'
+        energy_power_turbine_network_gas_must_run: 'Gas turbine (must-run)'
         energy_power_turbine_hydrogen: 'Hydrogen turbine'
         energy_power_combined_cycle_hydrogen: 'Hydrogen plant CCGT'
         energy_power_ultra_supercritical_ccs_coal: 'Pulverized coal CCS'
@@ -691,7 +693,7 @@ en:
         gas_ccgt: "Gas CCGT"
         gas_ccgt_dispatchable: "Gas CCGT (dispatchable)"
         gas_ccgt_must_run: "Gas CCGT (must-run)"
-        gas_ccgt_ccs: "Gas CCGT CCS"
+        gas_ccgt_ccs: "Gas CCGT CCS (dispatchable)"
         gas_chp_ccgt_ht: "Gas CCGT CHP (HT)"
         gas_chp_ccgt_mt: "Gas CCGT CHP (MT)"
         gas_chp_engine_ht: "Gas motor CHP (HT)"
@@ -707,7 +709,6 @@ en:
         gas_power_plants_plants: "Gas power plants (plants)"
         gas_engine: "Gas engine"
         gas_smoothed: "Gas (moving average)"
-        gas_turbine: "Gas turbine"
         gas_turbine_dispatchable: "Gas turbine (dispatchable)"
         gas_turbine_must_run: "Gas turbine (must-run)"
         gas_to_power: "Gas power plants"

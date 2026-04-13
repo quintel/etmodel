@@ -454,14 +454,14 @@
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: nuclear_small_modular_reactor_overview_costs_of_electricity_production
-- label: gas_ccgt_ccs
+- label: gas_ccgt_ccs_dispatchable
   color: "#CCCCCC"
   order_by: 4
   group: gas
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: gas_ccgt_ccs
+  gquery: gas_ccgt_ccs_dispatchable
   is_1990:
   dependent_on:
   output_element_key: overview_costs_of_electricity_production

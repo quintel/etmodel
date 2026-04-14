@@ -10,41 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_03_155831) do
-  create_table "general_user_notifications", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.boolean "active"
-    t.datetime "created_at", precision: nil
-    t.string "key"
-    t.string "notification_en"
-    t.string "notification_nl"
-    t.datetime "updated_at", precision: nil
-  end
-
+ActiveRecord::Schema[7.1].define(version: 2025_11_03_155831) do
   create_table "sessions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.datetime "created_at", precision: nil, null: false
-    t.text "data", size: :medium
     t.string "session_id", limit: 191, null: false
+    t.text "data", size: :medium
+    t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["session_id"], name: "index_sessions_on_session_id"
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
   create_table "surveys", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
-    t.string "background", limit: 256
-    t.datetime "created_at", null: false
-    t.text "feedback"
-    t.integer "how_easy"
-    t.integer "how_often"
-    t.integer "how_useful"
-    t.text "typical_tasks"
-    t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "background", limit: 256
+    t.integer "how_often"
+    t.text "typical_tasks"
+    t.integer "how_easy"
+    t.integer "how_useful"
+    t.text "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
   create_table "users", id: :bigint, default: nil, charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
     t.string "name", null: false
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 

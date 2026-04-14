@@ -139,21 +139,22 @@ nl:
     share_of_energy_power_combined_cycle_ccs_network_gas_dispatchable:
       title: Gas STEG + CCS (regelbaar)
       description: |
-        Met deze schuif kun je instellen hoeveel procent van het opgestelde
-        vermogen aan STEG gascentrales is uitgerust met een
-        CO<sub>2</sub>-afvanginstallatie. De hoeveelheid afgevangen emissies hangt af
-        van de draaiuren van deze centrales. Dit varieert per scenario in het ETM en is
-        onder andere afhankelijk van de elektriciteitsvraag, het opgestelde productiepark en
-        prijsontwikkelingen.<br/><br/>
-        Het opgestelde vermogen aan STEG gascentrales is in te stellen op de
-        <a href="/scenario/supply/electricity/gas-plants">elektriciteitspagina</a>.<br/><br/>
+        Met dit schuifje kan worden ingesteld hoeveel procent van het opgestelde vermogen aan
+        regelbare STEG gascentrales is uitgerust met een CO<sub>2</sub>-afvanginstallatie.
+        <br/><br/>
+        De hoeveelheid afgevangen emissies hangt af van de draaiuren van deze centrales. Dit
+        varieert per scenario in het ETM en is onder andere afhankelijk van de elektriciteitsvraag,
+        het opgestelde productiepark en prijsontwikkelingen.<br/><br/>
+        Het opgestelde vermogen aan regelbare STEG gascentrales is in te stellen in de sectie
+        <a href="/scenario/supply/electricity/gas-plants">Elektriciteit</a>.<br/><br/>
         Als er <a href="/scenario/supply/biomass/gas-mix-in-gas-network">groen gas</a> wordt
         gebruikt in deze centrales voor het produceren van elektriciteit, ontstaan er
-        (boekhoudkundig) "biogene" of "negatieve" emissies in jouw scenario als deze CO<sub>2</sub>
-        wordt afgevangen. Meer hierover lees je in de
-        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentatie</a>
-        van het ETM.<br/>
-        De prijs die wordt ontvangen voor biogeen CO<sub>2</sub> kan in de <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> sectie ingesteld worden.
+        (boekhoudkundig) "biogene" of "negatieve" emissies in het scenario als deze CO<sub>2</sub>
+        wordt afgevangen. Lees hier meer over in de
+        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions"
+        target=\"_blank\">documentatie</a>.<br/><br/>
+        De prijs die wordt ontvangen voor biogene CO<sub>2</sub> kan in de sectie
+        <a href="/scenario/costs/co2/prices">Kosten & efficiënties</a> ingesteld worden.
     share_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomassavergassing + CCS
       description: |
@@ -360,7 +361,7 @@ nl:
       title: Biomassacentrale + CCS (must-run)
       short_description:
       description: |
-        Een biomassacentrale prduceert elektrciteit. Stel hier in hoeveel procent van het
+        Een biomassacentrale produceert elektrciteit. Stel hier in hoeveel procent van het
         het elektrische vermogen aan must-run biomassacentrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie.
         Het totaal opgestelde vermogen is in te stellen in de sectie
@@ -376,7 +377,7 @@ nl:
       title: Biomassacentrale + CCS (regelbaar)
       short_description:
       description: |
-        Een biomassacentrale prduceert elektrciteit. Stel hier in hoeveel procent van het
+        Een biomassacentrale produceert elektrciteit. Stel hier in hoeveel procent van het
         het elektrische vermogen aan regelbare biomassacentrales is uitgerust met een
         CO<sub>2</sub>-afvanginstallatie.
         Het totaal opgestelde vermogen is in te stellen in de sectie
@@ -400,11 +401,11 @@ nl:
       title: Biomassa-WKK MT + CCS (must-run)
       short_description:
       description: |
-        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale medium teperatuur (MT) met CCS, wordt
+        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale medium temperatuur (MT) met CCS, wordt
         jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen.
     flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run:
       title: Biomassa-WKK HT + CCS (must-run)
       short_description:
       description: |
-        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale hoge teperatuur (HT) met CCS, wordt
+        Door het aantal vollasturen te verhogen voor de must-run biomassacentrale hoge temperatuur (HT) met CCS, wordt
         jaarlijks meer elektriciteit en warmte geproduceerd met hetzelfde opgesteld vermogen.

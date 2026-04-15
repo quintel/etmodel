@@ -155,18 +155,30 @@
   dependent_on:
   output_element_key: merit_order
   key: diesel_engine_merit_order
-- label: gas_ccgt
+- label: gas_ccgt_dispatchable
   color: "#f0f0f0"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: gas_ccgt_merit_order
+  gquery: gas_ccgt_dispatchable_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: gas_ccgt_merit_order
+  key: gas_ccgt_dispatchable_merit_order
+- label: gas_ccgt_must_run
+  color: "#e3e3e3"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: gas_ccgt_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: gas_ccgt_must_run_merit_order
 - label: gas_ccgt_ccs
   color: "#bfd3e6"
   order_by: 1
@@ -203,18 +215,30 @@
   dependent_on:
   output_element_key: merit_order
   key: gas_engine_merit_order
-- label: gas_turbine
+- label: gas_turbine_dispatchable
   color: "#bdbdbd"
   order_by: 1
   group:
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: gas_turbine_merit_order
+  gquery: gas_turbine_dispatchable_merit_order
   is_1990:
   dependent_on:
   output_element_key: merit_order
-  key: gas_turbine_merit_order
+  key: gas_turbine_dispatchable_merit_order
+- label: gas_turbine_must_run
+  color: "#a2a2a2"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: gas_turbine_must_run_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: gas_turbine_must_run_merit_order
 - label: lignite
   color: "#593B0A"
   order_by: 1

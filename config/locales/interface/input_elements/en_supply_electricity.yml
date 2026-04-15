@@ -621,11 +621,11 @@ en:
         electricity demand. <br/><br/> Go to <a href="/scenario/costs/
         specs_electricity/gas-plants">Costs & efficiencies</a> to adjust the costs and
         efficiencies of these plants.
-    capacity_of_energy_power_combined_cycle_network_gas:
+    capacity_of_energy_power_combined_cycle_network_gas_dispatchable:
       title: Gas CCGT
       short_description:
       description: |
-        This slider adjusts the total electric capacity of combined cycle gas turbine
+        This slider adjusts the total electric capacity of dispatchable combined cycle gas turbine
         (CCGT) plants. <br/><br/> The gas turbine generates electricity while the
         waste heat is used to drive a steam turbine. This makes these plants more
         efficient than other gas-fired power plants. Although they are flexible in
@@ -640,6 +640,18 @@ en:
         capture-of-co2-in-energy-sector">CCUS</a>
         to set CO<sub>2</sub> capture for this type of gas plant.</li>
         </ul>
+    capacity_of_energy_power_combined_cycle_network_gas_must_run:
+      title: Gas CCGT
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of must-run combined cycle gas turbine
+        (CCGT) plants.<br/><br/>
+        The gas turbine generates electricity while the waste heat is used to drive a steam turbine.
+        This makes these plants more efficient than other gas-fired power plants. Unlike the
+        dispatchable CCGT variant, this technology represents the must-run variant that provides
+        constant production output.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to set the costs and efficiencies of these plants.
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas CCGT CHP
       short_description:
@@ -654,17 +666,28 @@ en:
         production. <br/><br/> Go to <a href="/scenario/costs/specs_electricity/
         gas-plants">Costs & efficiencies</a> to adjust the costs and
         efficiencies of these plants.
-    capacity_of_energy_power_turbine_network_gas:
+    capacity_of_energy_power_turbine_network_gas_dispatchable:
       title: Gas turbine
       short_description:
       description: |
-        This slider adjusts the total electric capacity of gas turbines. <br/><br/> Gas
-        turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
+        This slider adjusts the total electric capacity of dispatchable gas turbines.<br/><br/>
+        Gas turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
         are less efficient. The advantage of gas turbines is their ability to start up
         and shut down quickly. This makes them suitable for meeting peak demand and
         balancing the electricity grid. Because these plants are mainly used during
-        peak demand, their total operating hours and annual production are limited.
-        <br/><br/> Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        peak demand, their total operating hours and annual production are limited.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
+        efficiencies</a> to adjust the costs and efficiencies of these plants.
+    capacity_of_energy_power_turbine_network_gas_must_run:
+      title: Gas turbine
+      short_description:
+      description: |
+        This slider adjusts the total electric capacity of must-run gas turbine plants.<br/><br/>
+        Gas turbines are simpler plants than combined cycle gas turbine (CCGT) plants but
+        are less efficient. The advantage of gas turbines is their ability to ramp up
+        and down quickly. Despite this flexible characteristic, this technology represents the
+        must-run variant that provides constant production.<br/><br/>
+        Go to <a href="/scenario/costs/specs_electricity/gas-plants">Costs &
         efficiencies</a> to adjust the costs and efficiencies of these plants.
     capacity_of_energy_power_engine_network_gas:
       title: Gas combustion engine

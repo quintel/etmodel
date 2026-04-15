@@ -311,14 +311,14 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_combined_cycle_ccs_coal_dispatchable_merit_order_hourly_supply
-- label: energy_power_combined_cycle_ccs_network_gas
+- label: energy_power_combined_cycle_ccs_network_gas_dispatchable
   color: "#407A8E"
   order_by: 5
   group: dispatchable
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_power_combined_cycle_ccs_network_gas
+  gquery: energy_power_combined_cycle_ccs_network_gas_dispatchable
   is_1990:
   dependent_on:
   output_element_key: merit_order_hourly_supply
@@ -335,18 +335,30 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_combined_cycle_coal_dispatchable_merit_order_hourly_supply
-- label: energy_power_combined_cycle_network_gas
+- label: energy_power_combined_cycle_network_gas_dispatchable
   color: "#9DD5FA"
   order_by: 5
   group: dispatchable
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_power_combined_cycle_network_gas
+  gquery: energy_power_combined_cycle_network_gas_dispatchable
   is_1990:
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_combined_cycle_network_gas_dispatchable_merit_order_hourly_supply
+- label: energy_power_combined_cycle_network_gas_must_run
+  color: "#7cb7dd"
+  order_by: 5
+  group: must_run
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_combined_cycle_network_gas_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_combined_cycle_network_gas_must_run_merit_order_hourly_supply
 - label: energy_power_engine_diesel
   color: "#295888"
   order_by: 5
@@ -431,18 +443,30 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_supercritical_coal_dispatchable_merit_order_hourly_supply
-- label: energy_power_turbine_network_gas
+- label: energy_power_turbine_network_gas_dispatchable
   color: "#B895F6"
   order_by: 5
   group: dispatchable
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_power_turbine_network_gas
+  gquery: energy_power_turbine_network_gas_dispatchable
   is_1990:
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_power_turbine_network_gas_dispatchable_merit_order_hourly_supply
+- label: energy_power_turbine_network_gas_must_run
+  color: "#9e7add"
+  order_by: 5
+  group: must_run
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_power_turbine_network_gas_must_run
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_power_turbine_network_gas_must_run_merit_order_hourly_supply
 - label: energy_power_ultra_supercritical_ccs_coal
   color: "#9977EE"
   order_by: 5

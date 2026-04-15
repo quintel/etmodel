@@ -1,16 +1,28 @@
 ---
-- label: gas_ccgt
+- label: gas_ccgt_dispatchable
   color: "#CCCCCC"
   order_by: 4
   group: gas
   show_at_first: true
   is_target_line: false
   target_line_position: ''
-  gquery: gas_ccgt
+  gquery: gas_ccgt_dispatchable
   is_1990: false
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
-  key: gas_ccgt_overview_costs_of_electricity_production
+  key: gas_ccgt_dispatchable_overview_costs_of_electricity_production
+- label: gas_ccgt_must_run
+  color: "#CCCCCC"
+  order_by: 4
+  group: gas
+  show_at_first: true
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_ccgt_must_run
+  is_1990: false
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: gas_ccgt_must_run_overview_costs_of_electricity_production
 - label: gas_conventional
   color: "#CCCCCC"
   order_by: 4
@@ -442,30 +454,42 @@
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: nuclear_small_modular_reactor_overview_costs_of_electricity_production
-- label: gas_ccgt_ccs
+- label: gas_ccgt_ccs_dispatchable
   color: "#CCCCCC"
   order_by: 4
   group: gas
   show_at_first:
   is_target_line:
   target_line_position:
-  gquery: gas_ccgt_ccs
+  gquery: gas_ccgt_ccs_dispatchable
   is_1990:
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
   key: gas_ccgt_ccs_overview_costs_of_electricity_production
-- label: gas_turbine
+- label: gas_turbine_dispatchable
   color: "#CCCCCC"
   order_by: 4
   group: gas
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: gas_turbine
+  gquery: gas_turbine_dispatchable
   is_1990: false
   dependent_on:
   output_element_key: overview_costs_of_electricity_production
-  key: gas_turbine_overview_costs_of_electricity_production
+  key: gas_turbine_dispatchable_overview_costs_of_electricity_production
+- label: gas_turbine_must_run
+  color: "#CCCCCC"
+  order_by: 4
+  group: gas
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: gas_turbine_must_run
+  is_1990: false
+  dependent_on:
+  output_element_key: overview_costs_of_electricity_production
+  key: gas_turbine_must_run_overview_costs_of_electricity_production
 - label: local_solar_pv_buildings
   color: "#ADDE4C"
   order_by: 8

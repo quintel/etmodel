@@ -555,9 +555,10 @@ nl:
         energy_hydrogen_flexibility_p2g_electricity: 'Omgezet naar waterstof'
         energy_import: "Energie-import"
         energy_power_combined_cycle_ccs_coal: 'Kolenvergassing CCS'
-        energy_power_combined_cycle_ccs_network_gas: 'Gas STEG CCS'
+        energy_power_combined_cycle_ccs_network_gas_dispatchable: 'Gas STEG + CCS'
         energy_power_combined_cycle_coal: 'Kolenvergassing'
-        energy_power_combined_cycle_network_gas: 'Gas STEG'
+        energy_power_combined_cycle_network_gas_dispatchable: 'Gas STEG (regelbaar)'
+        energy_power_combined_cycle_network_gas_must_run: 'Gas STEG (must-run)'
         energy_power_combined_cycle_hydrogen: 'Waterstofcentrale STEG'
         energy_power_engine_diesel: 'Dieselgenerator'
         energy_power_engine_network_gas: 'Gasmotor'
@@ -587,7 +588,8 @@ nl:
         energy_power_supercritical_coal: 'Kolen conventioneel'
         energy_power_supercritical_waste_mix: 'Afvalverbranding'
         energy_power_supercritical_ccs_waste_mix: 'Afvalverbranding CCS'
-        energy_power_turbine_network_gas: 'Gasturbine'
+        energy_power_turbine_network_gas_dispatchable: 'Gasturbine (regelbaar)'
+        energy_power_turbine_network_gas_must_run: 'Gasturbine (must-run)'
         energy_power_turbine_hydrogen: 'Waterstofturbine'
         energy_power_ultra_supercritical_ccs_coal: 'Poederkolen CCS'
         energy_power_ultra_supercritical_coal: 'Poederkolen'
@@ -702,7 +704,9 @@ nl:
         gas_chp_engine_ht: "Gasmotor-WKK (HT)"
         gas_chp_engine_mt: "Gasmotor-WkK (MT)"
         gas_ccgt: "Gas STEG"
-        gas_ccgt_ccs: "Gas STEG CCS"
+        gas_ccgt_dispatchable: "Gas STEG (regelbaar)"
+        gas_ccgt_must_run: "Gas STEG (must-run)"
+        gas_ccgt_ccs: "Gas STEG + CCS"
         gas_chp_large: "Large-scale gas WKK"
         gas_chp_small: "Gas WKK"
         gas_conv: "Gas Conventioneel"
@@ -714,7 +718,8 @@ nl:
         gas_power_plants_plants: "Gascentrales (centrales)"
         gas_engine: "Gasmotor"
         gas_smoothed: "Gas (voortschrijdend gemiddelde)"
-        gas_turbine: "Gasturbine"
+        gas_turbine_dispatchable: "Gasturbine (regelbaar)"
+        gas_turbine_must_run: "Gasturbine (must-run)"
         gas_to_power: "Gascentrales"
         gas_to_heat: "Gasketel"
         gasoline: "Benzine"

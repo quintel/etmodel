@@ -637,15 +637,17 @@ nl:
         periodes van verhoogde elektriciteitsvraag.<br/><br/>Ga naar
         <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
-    capacity_of_energy_power_combined_cycle_network_gas:
+    capacity_of_energy_power_combined_cycle_network_gas_dispatchable:
       title: Gas STEG
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrisch vermogen van stoom- en gasturbinecentrales (STEG).
-        <br/><br/>De gasturbine produceert elektriciteit waarbij restwarmte wordt benut voor het
-        aandrijven van een stoomturbine. Dit maakt deze centrales efficiënter dan andere gascentrales.
-        Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en worden deze daarom
-        voornamelijk ingezet voor regelbaar vermogen en niet voor het opvangen van de piekvraag.<br/><br/>
+        Dit schuifje bepaalt het totale elektrisch vermogen van regelbare stoom- en
+        gasturbinecentrales (STEG).<br/><br/>
+        De gasturbine produceert elektriciteit waarbij restwarmte wordt benut voor het
+        aandrijven van een stoomturbine. Dit maakt deze centrales efficiënter dan andere
+        gascentrales. Hoewel ze flexibel inzetbaar zijn, reageren ze minder snel dan gasturbines en
+        worden deze daarom voornamelijk ingezet voor regelbaar vermogen en niet voor het opvangen
+        van de piekvraag.<br/><br/>
         Ga naar:
         <ul>
         <li><a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
@@ -653,6 +655,18 @@ nl:
         <li><a href="/scenario/emissions/ccus/capture-of-co2-in-energy-sector">CCUS</a> om
         CO<sub>2</sub>-afvang in te stellen voor dit type gascentrale.
         </ul>
+    capacity_of_energy_power_combined_cycle_network_gas_must_run:
+      title: Gas STEG
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrisch vermogen van must-run stoom- en
+        gasturbinecentrales (STEG).<br/><br/>
+        De gasturbine produceert elektriciteit waarbij restwarmte wordt benut voor het
+        aandrijven van een stoomturbine. Dit maakt deze centrales efficiënter dan andere
+        gascentrales. In tegenstelling tot de regelbare STEG variant, representeert deze
+        technologie de must-run variant die constante productie levert.<br/><br/>
+        Ga naar <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties voor deze centrales in te stellen.
     capacity_of_energy_chp_combined_cycle_network_gas:
       title: Gas STEG WKK
       short_description:
@@ -678,16 +692,30 @@ nl:
         gasturbines) en daarom produceren ze minder stroom per jaar dan kolencentrales
         met een vergelijkbaar vermogen. CCS centrales zijn minder flexibel dan hun
         niet-CCS 'soortgenoten'."
-    capacity_of_energy_power_turbine_network_gas:
+    capacity_of_energy_power_turbine_network_gas_dispatchable:
       title: Gasturbine
       short_description:
       description: |
-        Dit schuifje bepaalt het totale elektrische vermogen van gasturbines.
-        <br/><br/>Gasturbines zijn eenvoudigere centrales dan STEG-centrales, maar zijn
+        Dit schuifje bepaalt het totale elektrische vermogen van regelbare gasturbines.<br/><br/>
+        Gasturbines zijn eenvoudigere centrales dan STEG-centrales, maar zijn
         minder efficiënt. Het voordeel van gascentrales is dat deze snel kunnen op- en afschakelen.
-        Dit maakt ze geschikt voor het opvangen van de piekvraag en balancering van het elektriciteitsnet.
-        Door de inzet van deze centrales bij piekvraag zijn het totaal aantal draaiuren en
-        de jaarlijkse productie van deze centrales beperkt.<br/><br/> Ga naar
+        Dit maakt ze geschikt voor het opvangen van de piekvraag en balancering van het
+        elektriciteitsnet. Door de inzet van deze centrales bij piekvraag zijn het totaal aantal
+        draaiuren en de jaarlijkse productie van deze centrales beperkt.<br/><br/>
+        Ga naar
+        <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
+        om de kosten en efficiënties van deze centrales aan te passen.
+    capacity_of_energy_power_turbine_network_gas_must_run:
+      title: Gasturbine
+      short_description:
+      description: |
+        Dit schuifje bepaalt het totale elektrische vermogen van must-run gasturbinecentrales.
+        <br/><br/>
+        Gasturbines zijn eenvoudigere centrales dan STEG-centrales, maar zijn
+        minder efficiënt. Een voordeel van gascentrales is dat deze snel kunnen op- en afschakelen.
+        Ondanks deze flexibele eigenschap, vertegenwoordigt deze technologie de must-run variant die
+        constante productie levert.<br/><br/>
+        Ga naar
         <a href="/scenario/costs/specs_electricity/gas-plants">Kosten & efficiënties</a>
         om de kosten en efficiënties van deze centrales aan te passen.
     capacity_of_energy_power_engine_network_gas:

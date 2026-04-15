@@ -115,7 +115,7 @@ en:
         used, capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
         You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
         <br/><br/>
-        Youcan find more information on this in the
+        You can find more information on this in the
         <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
         of the ETM.
     share_of_energy_power_ultra_supercritical_oxyfuel_ccs_lignite:
@@ -128,23 +128,23 @@ en:
         <br/><br/>
         The amount of installed lignite oxyfuel capacity can be set in
         <a href="/scenario/supply/electricity/coal-plants">the Supply → Electricity → Coal plants section</a>.
-    share_of_energy_power_combined_cycle_ccs_network_gas:
-      title: Gas CCGT + CCS
+    share_of_energy_power_combined_cycle_ccs_network_gas_dispatchable:
+      title: Gas CCGT + CCS (dispatchable)
       description: |
-        What share of installed gas CCGT capacity will be equipped with a CO<sub>2</sub> capture
-        unit? How much CO<sub>2</sub> is captured depends on the number of full load hours of these
-        power plants in your scenario. This is influenced by electricity demand, other installed
-        power generation technologies and commodity prices.<br/><br/> The amount of installed gas
-        CCGT capacity can be set in
-        <a href="/scenario/supply/electricity/gas-plants">the Supply → Electricity → Gas plants section</a>.
-        <br/><br/>
-        If <a href="/scenario/supply/biomass/gas-mix-in-gas-network">green gas</a> is used,
-        capture of CO<sub>2</sub> emissions could lead to so-called 'biogenic' or 'negative' emissions.
-        You can set the price you receive for biogenic CO<sub>2</sub> in the <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
-        <br/><br/>
-        You can find more information on this in the
-        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions" target=\"_blank\">documentation</a>
-        of the ETM.
+        With this slider the percentage of the installed capacity of dispatchable gas CCGT plants
+        can be set that will be equipped with a CO<sub>2</sub> capture unit.<br/><br/>
+        The amount of captured emissions depends on the operating hours of these plants. This
+        varies per scenario in the ETM and depends, among other things, on electricity demand,
+        the installed power generation mix and price developments.<br/><br/>
+        The installed capacity of dispatchable gas CCGT plants can be set in the
+        <a href="/scenario/supply/electricity/gas-plants">Electricity</a> section.<br/><br/>
+        If <a href="/scenario/supply/biomass/gas-mix-in-gas-network">green gas</a> is used
+        in these plants to produce electricity, 'biogenic' or 'negative' emissions occur in the
+        scenario when this CO<sub>2</sub> is captured. Read more about this in the
+        <a href="https://docs.energytransitionmodel.com/main/co2-negative-emissions"
+        target=\"_blank\">documentation</a>.<br/><br/>
+        The price received for biogenic CO<sub>2</sub> can be set in the
+        <a href="/scenario/costs/co2/prices">Costs & efficiencies</a> section.
     share_of_energy_hydrogen_biomass_gasification_ccs:
       title: Biomass gasification + CCS
       description: |
@@ -392,5 +392,5 @@ en:
       title: Biomass HT CHP + CCS (must-run)
       short_description:
       description: |
-        By increasing the full load hours for the must-run biomass high temperature (MT) CHP with CCS, more
+        By increasing the full load hours for the must-run biomass high temperature (HT) CHP with CCS, more
         electricity and heat will be produced with the same installed capacity.

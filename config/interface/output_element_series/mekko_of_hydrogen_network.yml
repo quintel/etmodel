@@ -191,43 +191,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_production_liquid_fuels_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: hydrogen_demand_transformation_chemical_fertilizers_industry
+- label: hydrogen_demand_industry_transformation_external_coupling
   color: "#ddd3d3"
   group: demand
   order_by: 370
   show_at_first: false
   is_target_line: false
   target_line_position:
-  gquery: hydrogen_demand_transformation_chemical_fertilizers_industry
+  gquery: hydrogen_demand_industry_transformation_external_coupling
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: hydrogen_demand_transformation_chemical_fertilizers_industry_mekko_of_hydrogen_network
-- label: hydrogen_demand_transformation_chemical_other_industry
-  color: "#f8f1f1"
-  order_by: 380
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: hydrogen_demand_transformation_chemical_other_industry
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_hydrogen_network
-  key: hydrogen_demand_transformation_chemical_other_industry_mekko_of_hydrogen_network
-- label: hydrogen_demand_transformation_chemical_refineries_industry
-  color: "#747373"
-  order_by: 390
-  group: demand
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: hydrogen_demand_transformation_chemical_refineries_industry
-  is_1990: false
-  dependent_on:
-  output_element_key: mekko_of_hydrogen_network
-  key: hydrogen_demand_transformation_chemical_refineries_industry_mekko_of_hydrogen_network
-
+  key: hydrogen_demand_industry_transformation_external_coupling_mekko_of_hydrogen_network
 
 - label: energy_hydrogen_flexibility_p2g_electricity_for_mekko
   color: "#786FA6"

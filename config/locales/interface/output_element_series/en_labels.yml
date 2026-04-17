@@ -306,7 +306,7 @@ en:
         biomass_to_heat: "Biomass heater"
         bio_naphtha: "Bionaphtha"
         blue_energy: "Blue Energy"
-        bunkers_final_demand_hydrogen_for_mekko: "Fuel - international transport"
+        bunkers_final_demand_hydrogen_for_mekko: "International transport"
         bunkers_ships_electricity: "Bunkers electric navigation"
         buildings_cooling_demand: "Cooling buildings"
         buildings_heating_demand: "Heating buildings"
@@ -616,10 +616,10 @@ en:
         energy_power_wood_pellets_dispatchable: 'Biomass power plant (dispatchable)'
         energy_power_wood_pellets_ccs_must_run: 'Biomass power plant + CCS (must-run)'
         energy_power_wood_pellets_ccs_dispatchable: 'Biomass power plant + CCS (dispatchable)'
-        transport_final_demand_hydrogen_for_mekko: 'Fuel - national transport'
+        transport_final_demand_hydrogen_for_mekko: 'National transport'
         energy_export_hydrogen_baseload_for_mekko: 'Export (baseload)'
         energy_export_hydrogen_backup_for_mekko: 'Export (backup)'
-        energy_hydrogen_storage_unused_for_mekko: 'Unused hydrogen from storage'
+        energy_hydrogen_storage_unused_for_mekko: 'Storage losses'
         energy_import_liquid_hydrogen_for_mekko: 'LH2 regasification'
         energy_import_lohc_for_mekko: 'LOHC reforming'
         conversion_losses_liquid_hydrogen: 'Conversion losses LH2'
@@ -631,16 +631,13 @@ en:
         energy_heat_flexibility_p2h_heatpump_ht_electricity: "Converted to heat for HT district heating (heat pump)"
         energy_heat_flexibility_p2h_heatpump_mt_electricity: "Converted to heat for MT district heating (heat pump)"
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomass gasification'
-        energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomass gasification + CCS"
-        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Wind offshore (electrolyser)"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Wind offshore (hybrid)"
-        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Solar on land (electrolyser)"
-        energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
+        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Electrolysis offshore (dedicated wind)"
+        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Electrolysis offshore (hybrid wind)"
+        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Electrolysis on land (dedicated solar)"
+        energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Electrolysis on land (grid)"
         energy_hydrogen_solar_pv_solar_radiation: "Solar on land (electrolyser)"
-        energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko: "SMR + CCS (must-run)"
         energy_hydrogen_steam_methane_reformer_must_run_for_mekko: "SMR (must-run)"
         energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko: "SMR (dispatchable)"
-        energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko: "ATR + CCS (must-run)"
         energy_hydrogen_autothermal_reformer_must_run_for_mekko: "ATR (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable_for_mekko: "ATR (dispatchable)"
         energy_hydrogen_wind_turbine_offshore: "Wind offshore (electrolyser)"
@@ -648,19 +645,16 @@ en:
         energy_hydrogen_ammonia_reformer_must_run_for_mekko: "Ammonia reformer (must-run)"
         energy_hydrogen_ammonia_reformer_dispatchable_for_mekko: "Ammonia reformer (dispatchable)"
         energy_imported_hydrogen: "Imported hydrogen"
-        energy_power_plants_hydrogen_for_mekko: "Electricity production"
-        industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_for_mekko: "Fertilizer production (feedstock)"
-        industry_final_demand_for_chemical_other_hydrogen_non_energetic_for_mekko: "Chemical industry (feedstock)"
-        industry_final_demand_hydrogen_for_mekko: "Heat for industry"
-        agriculture_final_demand_hydrogen_for_mekko: "Heat for agriculture"
-        energy_heat_from_hydrogen_for_mekko: "Heat for district heating"
-        households_individual_heater_hydrogen_for_mekko: "Individual heat households"
-        buildings_individual_heater_hydrogen_for_mekko: "Individual heat buildings"
+        energy_power_plants_hydrogen_for_mekko: "Electricity plants"
+        industry_non_energetic_final_demand_hydrogen_for_mekko: "Industry (non-energetic)"
+        industry_final_demand_hydrogen_for_mekko: "Industry (energetic)"
+        agriculture_final_demand_hydrogen_for_mekko: "Agriculture"
+        heat_plants_hydrogen_for_mekko: "Heat plants"
+        households_individual_heater_hydrogen_for_mekko: "Households"
+        buildings_individual_heater_hydrogen_for_mekko: "Buildings"
         industry_residual_hydrogen_for_mekko: "Residual hydrogen industry"
-        hydrogen_demand_industry_transformation_external_coupling: "Industry transformation"
-        hydrogen_supply_transformation_chemical_fertilizers_industry: "Transformation supply (fertilizer sector)"
-        hydrogen_supply_transformation_chemical_other_industry: "Transformation supply (chemical sector)"
-        hydrogen_supply_transformation_chemical_refineries_industry: "Transformation supply (refinery sector)"
+        hydrogen_demand_industry_transformation_external_coupling: "Industry transformation (demand)"
+        hydrogen_supply_industry_transformation_external_coupling: "Industry transformation (supply)"
         industry_transformation_chemical_fertilizers: "Transformation (fertilizer sector)"
         industry_transformation_chemical_other: "Transformation (chemical sector)"
         industry_transformation_chemical_refineries: "Transformation (refinery sector)"
@@ -1013,7 +1007,6 @@ en:
         imported_heat: "Imported (residual) heat"
         imported_heat_waterfall: "(Residual) heat"
         imported_hydrogen: "Imported hydrogen"
-        industry_heat_from_hydrogen_for_mekko: "Heat for industrial heat network"
         industry_heat_network_hydrogen: "Heat for industrial heat network"
         industry_chp_combined_cycle_gas_power_fuelmix: 'Industry gas CCGT CHP'
         industry_chp_engine_gas_power_fuelmix: 'Industry gas motor CHP'
@@ -1439,7 +1432,7 @@ en:
         transport_e_vans: "Electric vans"
         transport_e_planes: "Electric planes"
         transport_e_ships: "Electric ships"
-        transport_losses: "Distribution losses"
+        transport_losses: "Transport losses"
         trucks: "Trucks"
         trucks_demand_for_diesel: "Diesel for trucks"
         trucks_demand_for_biodiesel: "Biodiesel for trucks"
@@ -1527,7 +1520,7 @@ en:
         bunkers_final_demand_hydrogen: "Fuel - international transport"
         energy_heat_from_hydrogen: "Heat for district heating"
         energy_production_liquid_fuels_hydrogen_demand: "Feedstock for liquid fuels"
-        energy_production_liquid_fuels_from_hydrogen_for_mekko: "Feedstock for liquid fuels"
+        energy_production_liquid_fuels_from_hydrogen_for_mekko: "Liquid fuel production"
         other_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Other final demand"
         energy_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Energy final demand"
         energy_heat_flexibility_p2h_boiler_electricity_in_mekko_of_collective_heat: "Power-to-heat boiler"

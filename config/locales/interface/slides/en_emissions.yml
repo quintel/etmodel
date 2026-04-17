@@ -114,4 +114,19 @@ en:
         <br/><br/>
         The costs related to this imported hydrogen can be set in the
         <a href=/scenario/costs/costs_hydrogen/ammonia-import> section.
+        emissions_emission_factors_biomasss:
+    emissions_emission_factors_biomass:
+      title: CO<sub>2</sub> emissions of biomass
+      short_description:
+      description: "Usually no CO<sub>2</sub> emissions are attributed to biomass
+        as biomass absorbs as much CO<sub>2</sub> as is emitted during combustion
+        (over the complete life cycle). However, the CO<sub>2</sub> emitted by combustion
+        of biomass is not always absorbed within a time-scale that is relevant for
+        climate change (the life cycle of biomass varies from a couple of months to
+        over a century). Therefore, it is possible to experience what the on-the-spot
+        CO<sub>2</sub> emissions of biomass are by including them in the chart on
+        the right. <a href=\"https://docs.energytransitionmodel.com/main/co2-biomass\"
+        target =\"_blank\">learn more</a>\r\n</br></br>\r\n<strong>NOTE: the CO<sub>2</sub>
+        emissions that you include here are only shown in the chart and not included
+        in your scenario!</strong>"
         

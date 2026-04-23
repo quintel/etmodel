@@ -1,6 +1,6 @@
 FROM ruby:4.0-slim
 
-LABEL maintainer="dev@quintel.com"
+LABEL maintainer="info@energytransitionmodel.com"
 
 RUN apt-get update -yqq && \
   DEBIAN_FRONTEND=noninteractive apt-get install -yqq --no-install-recommends \

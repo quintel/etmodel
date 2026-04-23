@@ -13,7 +13,7 @@ nl:
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Exclusief correctie"
         battery_wind_inland: "Wind op land (batterij)"
         battery_solar_pv: "Zon op land (batterij)"
-        buildings_individual_heater_hydrogen_for_mekko: "Gebouwen"
+        buildings_final_demand_hydrogen_for_mekko: "Gebouwen"
         costs_building_and_installations: "Gebouwen/Installaties"
         costs_storage_and_conversion: "Flexibiliteit en opslag"
         costs_production: "Productiemiddelen"
@@ -615,7 +615,7 @@ nl:
         conversion_losses_lohc: "Conversie verliezen LOHC"
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomassavergassing'
         energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Elektrolyse op zee (dedicated wind)"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Elektrolyse op zee (hyrbide wind)"
+        energy_hydrogen_electrolysis_wind_hybrid_for_mekko: "Elektrolyse op zee (hyrbide wind)"
         energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Elektrolyse op land (dedicated zon)"
         energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Elektrolyse op land (stroomnet)"
         energy_hydrogen_solar_pv_solar_radiation: "Zon op land (elektrolyser)"
@@ -663,8 +663,8 @@ nl:
         greengas_price: "Groen gas prijs"
         energy_power_plants_hydrogen_for_mekko: "Elektriciteitscentrales"
         export: "Export"
-        industry_non_energetic_final_demand_hydrogen_for_mekko: "Industrie (niet-energetisch)"
-        industry_final_demand_hydrogen_for_mekko: "Industrie (energetisch)"
+        industry_final_demand_non_energetic_hydrogen_for_mekko: "Industrie (niet-energetisch)"
+        industry_final_demand_energetic_hydrogen_for_mekko: "Industrie (energetisch)"
         agriculture_final_demand_hydrogen_for_mekko: "Landbouw"
         heat_plants_hydrogen_for_mekko: "Warmtecentrales"
         households_inidividual_heater_hydrogen_for_mekko: "Individuele warmte huishoudens"
@@ -835,7 +835,7 @@ nl:
         households_flexibility_p2p: 'Thuisbatterijen'
         households_flexibility_p2p_electricity_storage: "Batterijen in huishoudens"
         households_heating_demand: "Verwarming huishoudens"
-        households_individual_heater_hydrogen_for_mekko: "Huishoudens"
+        households_final_demand_hydrogen_for_mekko: "Huishoudens"
         households_solar_pv: 'Huishoudens'
         households_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging huishoudens'
         households_solar_pv_electricity_output_curve: 'Zon op dak (huishoudens)'
@@ -1524,7 +1524,7 @@ nl:
         bunkers_final_demand_hydrogen: "Brandstof - internationaal transport"
         energy_heat_from_hydrogen: "Warmte voor warmtenetten"
         energy_production_liquid_fuels_hydrogen_demand: "Grondstof voor vloeibare brandstoffen"
-        energy_production_liquid_fuels_from_hydrogen_for_mekko: "Vloeibare brandstofproductie"
+        energy_liquid_fuels_production_hydrogen_for_mekko: "Vloeibare brandstofproductie"
         other_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Overig eindgebruik"
         energy_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Energie eindgebruik"
         energy_heat_flexibility_p2h_boiler_electricity_in_mekko_of_collective_heat: "Power-to-heat boiler"

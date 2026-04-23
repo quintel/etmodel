@@ -11,30 +11,30 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: agriculture_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: industry_final_demand_hydrogen_for_mekko
+- label: industry_final_demand_energetic_hydrogen_for_mekko
   color: "#416B86"
   order_by: 110
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: industry_final_demand_hydrogen_for_mekko
+  gquery: industry_final_demand_energetic_hydrogen_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: industry_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: industry_non_energetic_final_demand_hydrogen_for_mekko
+  key: industry_final_demand_energetic_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: industry_final_demand_non_energetic_hydrogen_for_mekko
   color: "#74B9FF"
   order_by: 120
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: industry_non_energetic_final_demand_hydrogen_for_mekko
+  gquery: industry_final_demand_non_energetic_hydrogen_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: industry_non_energetic_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+  key: industry_final_demand_non_energetic_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: energy_power_plants_hydrogen_for_mekko
   color: "#FF8C8C"
   order_by: 130
@@ -119,30 +119,30 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: bunkers_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: households_individual_heater_hydrogen_for_mekko
+- label: households_final_demand_hydrogen_for_mekko
   color: "#E07033"
   order_by: 200
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: households_individual_heater_hydrogen_for_mekko
+  gquery: households_final_demand_hydrogen_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: households_individual_heater_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: buildings_individual_heater_hydrogen_for_mekko
+  key: households_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+- label: buildings_final_demand_hydrogen_for_mekko
   color: "#fabd16"
   order_by: 210
   group: demand
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: buildings_individual_heater_hydrogen_for_mekko
+  gquery: buildings_final_demand_hydrogen_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: buildings_individual_heater_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+  key: buildings_final_demand_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: heat_plants_hydrogen_for_mekko
   color: "#E69567"
   order_by: 230
@@ -155,18 +155,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: heat_plants_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
-- label: energy_production_liquid_fuels_from_hydrogen_for_mekko
+- label: energy_liquid_fuels_production_hydrogen_for_mekko
   color: "#538C65"
   order_by: 250
   group: demand
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: energy_production_liquid_fuels_from_hydrogen_for_mekko
+  gquery: energy_liquid_fuels_production_hydrogen_for_mekko
   is_1990:
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_production_liquid_fuels_from_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
+  key: energy_liquid_fuels_production_hydrogen_for_mekko_demand_mekko_of_hydrogen_network
 - label: industry_transformation_hydrogen_demand_for_mekko
   color: "#ddd3d3"
   group: demand
@@ -204,18 +204,18 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_hydrogen_electrolysis_wind_electricity_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko
+- label: energy_hydrogen_electrolysis_wind_hybrid_for_mekko
   color: "#7487FF"
   order_by: 420
   group: supply
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko
+  gquery: energy_hydrogen_electrolysis_wind_hybrid_for_mekko
   is_1990: false
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
-  key: energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko_supply_mekko_of_hydrogen_network
+  key: energy_hydrogen_electrolysis_wind_hybrid_for_mekko_supply_mekko_of_hydrogen_network
 - label: energy_hydrogen_biomass_gasification_for_mekko
   color: "#A2D679"
   order_by: 440

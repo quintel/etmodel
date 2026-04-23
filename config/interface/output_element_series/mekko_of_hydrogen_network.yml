@@ -336,7 +336,7 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_import_lohc_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_imported_hydrogen_baseload
+- label: energy_imported_hydrogen_baseload_for_mekko
   color: "#C6C2DA"
   order_by: 560
   group: supply
@@ -348,7 +348,7 @@
   dependent_on:
   output_element_key: mekko_of_hydrogen_network
   key: energy_import_hydrogen_baseload_for_mekko_supply_mekko_of_hydrogen_network
-- label: energy_imported_hydrogen_backup
+- label: energy_imported_hydrogen_backup_for_mekko
   color: "#A7A1C5"
   order_by: 570
   group: supply

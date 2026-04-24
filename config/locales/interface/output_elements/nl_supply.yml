@@ -295,8 +295,7 @@ nl:
       short_description:
       description: |
         Deze grafiek laat de CO<sub>2</sub>-intensiteit van verschillende waterstofproductietechnologieën
-        zien in kg CO<sub>2</sub> per geproduceerde MWh waterstof. Je kunt power-to-gas (P2G, op land en op zee zijn in deze
-        grafiek onder één label toegevoegd) vinden in de
+        zien in kg CO<sub>2</sub> per geproduceerde MWh waterstof. Je kunt elektrolyse van het stroomnet op land vinden in de
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof</a>
         sectie. Alle andere technologieën zijn in de
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a> sectie te vinden. </br></br>
@@ -307,10 +306,10 @@ nl:
         voor meer informatie over de berekening van primaire emissies. </br></br>
         Primaire emissies worden in het ETM op jaarbasis berekend. In de meeste gevallen is dit toereikend, omdat
         de <a href="https://docs.energytransitionmodel.com/main/co2-emission-factors" target="_blank">emissiefactor</a>
-        constant is gedurende het jaar, zoals bij stoomreforming van aardgas. Bij power-to-gas kan de
-        CO<sub>2</sub>-intensiteit van de elektriciteitsinput per uur veranderen. Daarom is voor power-to-gas
+        constant is gedurende het jaar, zoals bij stoomreforming van aardgas. Bij elektrolyse kan de
+        CO<sub>2</sub>-intensiteit van de elektriciteitsinput per uur veranderen. Daarom is voor elektrolyse
         eerst de CO<sub>2</sub>-intensiteit van elektriciteitsproductie berekend. Dit wordt vervolgens gecombineerd
-        met de uurlijkse elektriciteitsinput van power-to-gas om de gemiddelde uurlijkse CO<sub>2</sub>-intensiteit
+        met de uurlijkse elektriciteitsinput van elektrolysers om de gemiddelde uurlijkse CO<sub>2</sub>-intensiteit
         te bepalen. </br></br>
         Tenslotte is er een grenswaarde voor de CO<sub>2</sub>-intensiteit toegevoegd die aangeeft of, volgens de
         <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/PDF/?uri=CELEX:32021R2139&from=EN" target="_blank">
@@ -373,10 +372,10 @@ nl:
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">hier</a>
         aanpassen.
     source_of_electricity_in_p2g:
-      title: Elektriciteitsmix voor power-to-gas
+      title: Elektriciteitsmix voor elektrolyse van het stroomnet op land
       short_description:
       description: |
-        Deze grafiek toont de elektriciteitsmix die de power-to-gas elektrolyser gebruikt.
+        Deze grafiek toont de elektriciteitsmix die de elektrolyser gebruikt.
         Deze mix is bepaald door te kijken naar de uurlijkse elektriciteitmix en het uurlijkse verbruik door elektrolysers, je ziet
         dus de daadwerkelijke herkomst van de elektriciteit. </br></br>
         Deze grafiek laat alleen de elektriciteitsmix van de flexibele elektrolyzer zien. Deze vind je in de
@@ -397,7 +396,7 @@ nl:
         <li><a href="/scenario/demand/industry/fertilizers">Kunstmest</a> </li>
         <li><a href="/scenario/demand/industry/chemicals">Chemie</a> </li>
         <li><a href="/scenario/demand/industry/central-ict">Centrale ICT</a> </li>
-        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof via power-to-gas</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversie naar waterstof via elektrolyse</a></li>
         </ul>
         De wijze waarop de restwarmtepotentiëlen berekend worden staat beschreven in
         de <a href="https://docs.energytransitionmodel.com/main/residual-heat-industry/" target=\"_blank\">documentatie</a>.

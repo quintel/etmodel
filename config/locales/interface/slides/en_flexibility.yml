@@ -357,8 +357,8 @@ en:
       short_description:
       description: |
         Electricity can be used to produce hydrogen through the electrolysis of water, which is also
-        known as power-to-gas. In the ETM, power-to-gas is a flexible demand technology, which means that
-        hydrogen is only produced when the willingness to pay of power-to-gas exceeds the hourly electricity
+        known as power-to-gas. In the ETM, electrolysis is a flexible demand technology, which means that
+        hydrogen is only produced when the willingness to pay of electrolysis exceeds the hourly electricity
         price. See our <a href="https://docs.energytransitionmodel.com/main/electricity-conversion" target=\"_blank\">
         documentation</a> for more information. </br></br>
         The produced hydrogen will be fed into the central hydrogen network. In the
@@ -414,7 +414,7 @@ en:
         Some examples are: </br>
         <ul> <i>Suitable for large (fluctuations in) volume </i>
         <ul><li> Import/export of gas/hydrogen </li>
-        <li> Power-to-gas: hydrogen production from electricity </li>
+        <li> Electrolysis: hydrogen production from electricity </li>
         <li> Storage of gas/hydrogen </li>
         <li> Seasonal storage of heat </li>
         </li>
@@ -460,7 +460,7 @@ en:
         In the chart to the right, we only show the inflexible supply and demand of electricity. For other
         energy carriers you can find a similar chart in the chart list (upper right corner). </br></br>
         It should be noted that changes in flexible technologies can, indirectly, lead to changes in the
-        inflexible supply and demand. For example, the installation of power-to-gas, which is a flexible
+        inflexible supply and demand. For example, the electrolysers, which is a flexible
         technology, can reduce the need for hydrogen import, which is inflexible, causing the inflexible
         supply of hydrogen to change. These second-order effects can lead to interesting behaviour of the
         inflexible supply and demand curves. More information about the definitions of inflexible supply and
@@ -539,7 +539,7 @@ en:
         maximum excess and shortage for each energy carrier. This indicates whether you have installed enough flexible
         technologies to fully utilize the excesses and to fully meet the shortage. </br></br>
         Note that, for electricity, flexible supply technologies may also produce for flexible demand
-        technologies. You can for example use electricity from batteries to produce hydrogen through power-to-gas.
+        technologies. You can for example use electricity from batteries to produce hydrogen through electrolysis.
         This means that it is not necessarily inefficient to have more capacity installed than the maximum excess or
         shortage. Also note that for the gaseous carriers the system is automatically balanced by storage. This means
         that the storage capacity will align with the maximum excess and shortage by default.

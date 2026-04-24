@@ -13,6 +13,7 @@ nl:
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Exclusief correctie"
         battery_wind_inland: "Wind op land (batterij)"
         battery_solar_pv: "Zon op land (batterij)"
+        buildings_final_demand_hydrogen_for_mekko: "Gebouwen"
         costs_building_and_installations: "Gebouwen/Installaties"
         costs_storage_and_conversion: "Flexibiliteit en opslag"
         costs_production: "Productiemiddelen"
@@ -292,7 +293,7 @@ nl:
         bio_methanol_international_transport: "Biomethanol - internationaal transport"
         bio_naphtha: "Bionafta"
         blue_energy: Blue Energy
-        bunkers_final_demand_hydrogen_for_mekko: "Brandstof - internationaal transport"
+        bunkers_final_demand_hydrogen_for_mekko: "Internationaal transport"
         bunkers_ships_electricity: "Bunkers elektrische scheepvaart"
         buildings_cooling_demand: "Koeling gebouwen"
         buildings_heating_demand: "Verwarming gebouwen"
@@ -604,37 +605,32 @@ nl:
         energy_power_hybrid_wind_turbine_offshore: 'Wind op zee (hybride)'
         energy_power_hybrid_wind_turbine_offshore_curtailed_electricity: 'Productieverlaging wind op zee (hybride)'
         energy_export_hydrogen_baseload_for_mekko: 'Export (basislast)'
-        energy_export_hydrogen_backup_for_mekko: 'Export (overschot)'
-        energy_hydrogen_storage_unused_for_mekko: 'Ongebruikte waterstof vanuit opslag'
+        energy_export_hydrogen_backup_for_mekko: 'Export (backup)'
+        energy_hydrogen_storage_unused_for_mekko: 'Opslagverliezen'
+        energy_imported_hydrogen_backup: "Waterstofimport (back-up)"
+        energy_imported_hydrogen_baseload: "Waterstofimport (basislast)"
         energy_import_liquid_hydrogen_for_mekko: 'LH2 vergassing'
         energy_import_lohc_for_mekko: 'LOHC reforming'
         conversion_losses_liquid_hydrogen: 'Conversie verliezen LH2'
         conversion_losses_lohc: "Conversie verliezen LOHC"
         energy_hydrogen_biomass_gasification_for_mekko: 'Biomassavergassing'
-        energy_hydrogen_biomass_gasification_ccs_for_mekko: "Biomassavergassing + CCS"
-        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Wind op zee (elektrolyser)"
-        energy_hydrogen_hybrid_electrolysis_wind_electricity_for_mekko: "Wind op zee (hyrbide)"
-        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Zon op land (elektrolyser)"
-        energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Power-to-gas"
+        energy_hydrogen_electrolysis_wind_electricity_for_mekko: "Elektrolyse van wind op zee (dedicated)"
+        energy_hydrogen_electrolysis_wind_hybrid_for_mekko: "Wind op zee (met hybride aansluiting)"
+        energy_hydrogen_electrolysis_solar_electricity_for_mekko: "Elektrolyse van zon op land (dedicated)"
+        energy_hydrogen_flexibility_p2g_electricity_for_mekko: "Elektrolyse van stroomnet op land"
         energy_hydrogen_solar_pv_solar_radiation: "Zon op land (elektrolyser)"
         energy_power_solar_pv_offshore: "Zon op zee"
         energy_power_offshore_solar_pv: "Zon op zee"
-        energy_hydrogen_steam_methane_reformer_ccs_must_run_for_mekko: "SMR + CCS (must-run)"
         energy_hydrogen_steam_methane_reformer_must_run_for_mekko: "SMR (must-run)"
         energy_hydrogen_steam_methane_reformer_dispatchable_for_mekko: "SMR (regelbaar)"
-        energy_hydrogen_autothermal_reformer_ccs_must_run_for_mekko: "ATR + CCS (must-run)"
         energy_hydrogen_autothermal_reformer_must_run_for_mekko: "ATR (must-run)"
         energy_hydrogen_autothermal_reformer_dispatchable_for_mekko: "ATR (regelbaar)"
         energy_hydrogen_wind_turbine_offshore: "Wind op zee (elektrolyser)"
         energy_hydrogen_hybrid_wind_turbine_offshore: "Wind op zee (hybride)"
         energy_hydrogen_ammonia_reformer_must_run_for_mekko: "Ammoniak reformer (must-run)"
         energy_hydrogen_ammonia_reformer_dispatchable_for_mekko: "Ammoniak reformer (regelbaar)"
-        hydrogen_demand_transformation_chemical_fertilizers_industry: "Transformatie vraag (kunstmestsector)"
-        hydrogen_demand_transformation_chemical_other_industry: "Transformatie vraag (chemiesector)"
-        hydrogen_demand_transformation_chemical_refineries_industry: "Transformatie vraag (raffinagesector)"
-        hydrogen_supply_transformation_chemical_fertilizers_industry: "Transformatie aanbod (kunstmestsector)"
-        hydrogen_supply_transformation_chemical_other_industry: "Transformatie aanbod (chemiesector)"
-        hydrogen_supply_transformation_chemical_refineries_industry: "Transformatie (raffinagesector)"
+        industry_transformation_hydrogen_demand_for_mekko: "Industriële transformatie (vraag)"
+        industry_transformation_hydrogen_supply_for_mekko: "Industriële transformatie (aanbod)"
         industry_transformation_chemical_fertilizers: "Transformatie (kunstmestsector)"
         industry_transformation_chemical_other: "Transformatie (chemiesector)"
         industry_transformation_chemical_refineries: "Transformatie (raffinagesector)"
@@ -665,16 +661,15 @@ nl:
         energy_heat_boiler_mt_electricity: "Elektrische boiler"
         energy_heat_boiler_lt_electricity: "Elektrische boiler"
         greengas_price: "Groen gas prijs"
-        energy_power_plants_hydrogen_for_mekko: "Elektriciteitsproductie"
+        energy_power_plants_hydrogen_for_mekko: "Elektriciteitscentrales"
         export: "Export"
-        industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic_for_mekko: "Kunstmestproductie (grondstof)"
-        industry_final_demand_for_chemical_other_hydrogen_non_energetic_for_mekko: "Chemische industrie (grondstof)"
-        industry_final_demand_hydrogen_for_mekko: "Warmte voor industrie"
-        agriculture_final_demand_hydrogen_for_mekko: "Warmte voor landbouw"
-        energy_heat_from_hydrogen_for_mekko: "Warmte voor warmtenetten"
+        industry_final_demand_non_energetic_hydrogen_for_mekko: "Industrie (niet-energetisch)"
+        industry_final_demand_energetic_hydrogen_for_mekko: "Industrie (energetisch)"
+        agriculture_final_demand_hydrogen_for_mekko: "Landbouw"
+        heat_plants_hydrogen_for_mekko: "Warmtecentrales"
         households_inidividual_heater_hydrogen_for_mekko: "Individuele warmte huishoudens"
         buildings_inidividual_heater_hydrogen_for_mekko: "Individuele warmte gebouwen"
-        transport_final_demand_hydrogen_for_mekko: 'Brandstof - nationaal transport'
+        transport_final_demand_hydrogen_for_mekko: 'Nationaal transport'
         industry_residual_hydrogen_for_mekko: "Waterstof als restgas uit industrie"
         industry_residual_hydrogen: "Waterstof als restgas uit industrie"
         industry_residual_greengas: "Groen gas als restgas uit industrie"
@@ -840,6 +835,7 @@ nl:
         households_flexibility_p2p: 'Thuisbatterijen'
         households_flexibility_p2p_electricity_storage: "Batterijen in huishoudens"
         households_heating_demand: "Verwarming huishoudens"
+        households_final_demand_hydrogen_for_mekko: "Huishoudens"
         households_solar_pv: 'Huishoudens'
         households_solar_pv_curtailed_electricity_output_curve: 'Productieverlaging huishoudens'
         households_solar_pv_electricity_output_curve: 'Zon op dak (huishoudens)'
@@ -939,9 +935,9 @@ nl:
         energy_hydrogen_storage_depleted_gas_field_output: "Waterstofopslag leeg gasveld output"
         energy_hydrogen_storage_salt_cavern_input: "Waterstofopslag zoutcaverne input"
         energy_hydrogen_storage_depleted_gas_field_input: "Waterstofopslag leeg gasveld input"
-        energy_export_hydrogen_backup : "Waterstof export (backup)"
-        energy_imported_hydrogen_backup: "Waterstof import (backup)"
-        energy_imported_hydrogen_baseload: "Waterstof import (basislast)"
+        energy_export_hydrogen_backup: "Waterstof export (backup)"
+        energy_imported_hydrogen_backup_for_mekko: "Import (backup)"
+        energy_imported_hydrogen_baseload_for_mekko: "Import (basislast)"
         hydrogen_demand: "Waterstofvraag"
         hydrogen_production_inflexible: "Niet-regelbare en volatiele waterstofproductie"
         hydrogen_demand_inflexible : 'Inflexibele waterstofvraag'
@@ -1014,7 +1010,6 @@ nl:
         imported_heat: "Geïmporteerde (rest)warmte"
         imported_heat_waterfall: "Restwarmte"
         imported_hydrogen: "Geïmporteerde waterstof"
-        industry_heat_from_hydrogen_for_mekko: "Warmte voor industrieel warmtenet"
         industry_heat_network_hydrogen: "Warmte voor industrieel warmtenet"
         industry_chp_combined_cycle_gas_power_fuelmix: 'Industriële gas STEG WKK'
         industry_chp_engine_gas_power_fuelmix: 'Industriële gasmotor-WKK'
@@ -1529,7 +1524,7 @@ nl:
         bunkers_final_demand_hydrogen: "Brandstof - internationaal transport"
         energy_heat_from_hydrogen: "Warmte voor warmtenetten"
         energy_production_liquid_fuels_hydrogen_demand: "Grondstof voor vloeibare brandstoffen"
-        energy_production_liquid_fuels_from_hydrogen_for_mekko: "Grondstof voor vloeibare brandstoffen"
+        energy_liquid_fuels_production_hydrogen_for_mekko: "Vloeibare brandstofproductie"
         other_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Overig eindgebruik"
         energy_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Energie eindgebruik"
         energy_heat_flexibility_p2h_boiler_electricity_in_mekko_of_collective_heat: "Power-to-heat boiler"

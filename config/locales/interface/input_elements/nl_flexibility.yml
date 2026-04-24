@@ -1270,15 +1270,15 @@ nl:
     electricity_interconnector_11_co2_emissions_future: *interconnector_co2_future
     electricity_interconnector_12_co2_emissions_future: *interconnector_co2_future
     capacity_of_energy_hydrogen_flexibility_p2g_electricity:
-      title: Power-to-gas
+      title: Elektrolyse van stroomnet op land
       short_description:
       description: |
-        Dit schuifje bepaalt het geïnstalleerde vermogen aan power-to-gas installaties.
+        Dit schuifje bepaalt het geïnstalleerde vermogen aan elektrolyse van het stroomnet.
         De investeringskosten en efficiëntie van elektrolysers kunnen
         <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden
         aangepast. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
-        van power-to-gas vermogen is: </br></br>
+        is van het elektrolysevermogen: </br></br>
         <ul><li><a href="#" class="open_chart" data-chart-key="use_of_excess_electricity" data-chart-location="side">
         De jaarlijkse inzet van elektriciteit geconsumeerd door flexible vraagtechnologieën.</a></li>
         <li><a href="#" class="open_chart" data-chart-key="hourly_flexibility_electricity" data-chart-location="side">
@@ -1288,11 +1288,11 @@ nl:
         <li><a href="#" class="open_chart" data-chart-key="storage_options" data-chart-location="side">
         Een overzicht van de inzet van flexibele vraagtechnologieën in tabelvorm.</a></li></ul>
     wtp_of_energy_hydrogen_flexibility_p2g_electricity:
-      title: Power-to-gas
+      title: Elektrolyse van stroomnet op land
       short_description:
       description: |
-        Dit schuifje bepaalt wat de maximale prijs is die offshore hybride installaties willen betalen
-        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze installaties
+        Dit schuifje bepaalt wat de maximale prijs is die elektrolysers willen betalen
+        voor elektriciteit. Let op dat deze slider alleen effect heeft als er ook vermogen voor deze elektrolysers
         geïnstalleerd is. </br></br>
         Er zijn een aantal grafieken beschikbaar om je te helpen bepalen wat het effect
         van de willingness-to-pay is: </br></br>

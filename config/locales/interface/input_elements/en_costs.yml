@@ -162,12 +162,12 @@ en:
         <a href="/scenario/demand/agriculture/heat"> agriculture</a>.
         This slider determines the future change in investment costs of electric boilers.
     investment_costs_hydrogen_electrolysis:
-      title: Investment costs power-to-gas
+      title: Investment costs electrolysis from grid
       short_description:
       description: |
-        Power-to-gas plants use electricity to produce hydrogen, which is called electrolysis.
-        This slider determines the change in investment costs of power-to-gas plants. This affects the costs
-        of hydrogen production by power-to-gas plants connected to the electricity network as
+        Electrolysers use electricity to produce hydrogen.
+        This slider determines the change in investment costs of electrolysers. This affects the costs
+        of hydrogen production by electrolysers connected to the electricity network as
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
         flexible electricity demand technologies</a>, and direct hydrogen production with
         <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>.
@@ -1044,9 +1044,9 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of biomass-fired heaters in buildings for space heating.."
     efficiency_hydrogen_electrolysis:
-      title: Power-to-gas electrolysers
+      title: Electrolysers from grid
       short_description: ''
-      description: "This slider sets the future efficiency of power-to-gas electrolysers."
+      description: "This slider sets the future efficiency of electrolysers connected to the electricity network."
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Air heat pump
       short_description: ''

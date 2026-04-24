@@ -37,14 +37,14 @@ en:
       description: |
         This slider influences the total capacity of heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS) in LT heat grids.<br/><br/>
-        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature
         due to the addition of thermal storage. <br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
-        It is also possible to use aquathermal energy from surface water for individual households or buildings. 
+        It is also possible to use aquathermal energy from surface water for individual households or buildings.
         Go to <a href="/scenario/demand/households/space-heating-and-hot-water" >households</a> or
-        <a href="/scenario/demand/buildings/space-heating" >buildings</a> to 
+        <a href="/scenario/demand/buildings/space-heating" >buildings</a> to
         add aquathermal heat as a heat source households or buildings.
     capacity_of_energy_heat_heatpump_surface_water_water_ts_mt_electricity:
       title: Aquathermal heat pump with TS (surface water)
@@ -52,14 +52,14 @@ en:
       description: |
         This slider influences the total capacity of heat-pumps
         abstracting heat from surface water and equipped with thermal seasonal storage (TS) in MT heat grids.<br/><br/>
-        The efficiency (COP) of this heat pump is not influenced by the outside temperature 
+        The efficiency (COP) of this heat pump is not influenced by the outside temperature
         due to the addition of thermal storage. <br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
-        It is also possible to use aquathermal energy from surface water for individual households or buildings. 
+        It is also possible to use aquathermal energy from surface water for individual households or buildings.
         Go to <a href="/scenario/demand/households/space-heating-and-hot-water" >households</a> or
-        <a href="/scenario/demand/buildings/space-heating" >buildings</a> to 
+        <a href="/scenario/demand/buildings/space-heating" >buildings</a> to
         add aquathermal heat as a heat source households or buildings.
     capacity_of_energy_heat_heatpump_waste_water_water_ts_lt_electricity:
       title: Aquathermal heat pump with TS (waste water)
@@ -67,7 +67,7 @@ en:
       description: |
         This slider influences the total capacity of heat-pumps
         abstracting heat from wastewater and equipped with thermal seasonal storage (TS) in LT heat grids.<br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
     capacity_of_energy_heat_heatpump_waste_water_water_ts_mt_electricity:
@@ -76,7 +76,7 @@ en:
       description: |
         This slider influences the total capacity of heat-pumps
         abstracting heat from wastewater and equipped with thermal seasonal storage (TS) in MT heat grids.<br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
     capacity_of_energy_heat_heatpump_drink_water_water_ts_lt_electricity:
@@ -85,7 +85,7 @@ en:
       description: |
         This slider influences the total capacity of heat-pumps
         abstracting heat from drinking water and equipped with thermal seasonal storage (TS) in LT heat grids.<br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
     capacity_of_energy_heat_heatpump_drink_water_water_ts_mt_electricity:
@@ -94,13 +94,13 @@ en:
       description: |
         This slider influences the total capacity of heat-pumps
         abstracting heat from drinking water and equipped with thermal seasonal storage (TS) in MT heat grids.<br/><br/>
-        For more information on the total use of aqauthermal sources, checkout <a href="#" 
+        For more information on the total use of aqauthermal sources, checkout <a href="#"
         class="open_chart" data-chart-key="heat_aquathermal_demand"
         data-chart-location="side"> this chart</a>.
     capacity_of_energy_heat_boiler_electricity:
       title: Electric boiler
       short_description:
-      description: This slider influences the capacity of electric boilers that supply heat 
+      description: This slider influences the capacity of electric boilers that supply heat
         to district heating systems. An electric boilers generates heat through electricity.
     capacity_of_energy_heat_burner_network_gas:
       title: Gas heater (network gas)
@@ -183,8 +183,8 @@ en:
         with a steam turbine and is located on a typical large-sized industrial park.
         It typically supplies several customers and is runs 8000 hours a year, of
         which 6000 hours to supply heat as steam. <br/><br/>
-        Note that the industrial gas CHPs run on a fuel mix of gas, oil, and bio-oil. 
-        Click <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>here</a> 
+        Note that the industrial gas CHPs run on a fuel mix of gas, oil, and bio-oil.
+        Click <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>here</a>
         to see and change the fuel mix for your scenario.
     capacity_of_industry_chp_turbine_gas_power_fuelmix:
       title: Gas turbine CHP
@@ -197,8 +197,8 @@ en:
         for electricity are up to 8000 hours a year. Steam delivery may vary, for
         example as a result of seasonal differences, meaning full load hours for heat
         are lower at 6000 hours per year. <br/><br/>
-        Note that the industrial gas CHPs run on a fuel mix of gas, oil, and bio-oil. 
-        Click <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>here</a> 
+        Note that the industrial gas CHPs run on a fuel mix of gas, oil, and bio-oil.
+        Click <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>here</a>
         to see and change the fuel mix for your scenario.
     capacity_of_industry_chp_engine_gas_power_fuelmix:
       title: Gas motor CHP
@@ -209,17 +209,17 @@ en:
         food industry, the number of full load hours would be ~6000 hours per year. <br/><br/>
         Generating heat and power for local use can be considerably more efficient than buying
         power from the grid and generating heat with a burner. <br/><br/>
-        Note that the industrial gas CHPs run on a fuel mix of gas, oil, and bio-oil. 
-        Click <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>here</a> 
+        Note that the industrial gas CHPs run on a fuel mix of gas, oil, and bio-oil.
+        Click <a href=/scenario/supply/biomass/biocoal-and-bio-oil-in-energy-plants>here</a>
         to see and change the fuel mix for your scenario.
     capacity_of_industry_chp_turbine_hydrogen:
       title: Hydrogen turbine CHP
       short_description:
       description: |
         A CHP produces electricity and heat. In the industry sector this
-        heat is very often delivered as steam. Here you can choose the capacity of 
+        heat is very often delivered as steam. Here you can choose the capacity of
         hydrogen turbine CHPs delivering to the industrial steam network.<br/><br/>
-        Click <a href=/scenario/costs/specs_renewable_electricity/hydrogen-plants>here</a> 
+        Click <a href=/scenario/costs/specs_renewable_electricity/hydrogen-plants>here</a>
         to adjust the efficiencies of this CHP.
     capacity_of_industry_chp_ultra_supercritical_coal:
       title: Pulverized coal CHP
@@ -338,167 +338,167 @@ en:
     capacity_of_energy_heat_boiler_ht_electricity:
       title: Electric boiler
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of electric boilers in the high-temperature heat grid. 
-        \r\n<br/><br/>\r\n 
-        Electric boilers use electricity to produce heat. When this slider is set, 
-        the yearly production of heat using e-boilers will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of electric boilers in the high-temperature heat grid.
+        \r\n<br/><br/>\r\n
+        Electric boilers use electricity to produce heat. When this slider is set,
+        the yearly production of heat using e-boilers will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_boiler_lt_electricity:
       title: Electric boiler
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of electric boilers in the low-temperature heat grid. 
-        \r\n<br/><br/>\r\n 
-        Electric boilers use electricity to produce heat. When this slider is set, 
-        the yearly production of heat using e-boilers will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of electric boilers in the low-temperature heat grid.
+        \r\n<br/><br/>\r\n
+        Electric boilers use electricity to produce heat. When this slider is set,
+        the yearly production of heat using e-boilers will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_boiler_mt_electricity:
       title: Electric boiler
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of electric boilers in the medium-temperature heat grid. 
-        \r\n<br/><br/>\r\n 
-        Electric boilers use electricity to produce heat. When this slider is set, 
-        the yearly production of heat using e-boilers will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of electric boilers in the medium-temperature heat grid.
+        \r\n<br/><br/>\r\n
+        Electric boilers use electricity to produce heat. When this slider is set,
+        the yearly production of heat using e-boilers will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_ht_coal:
       title: Coal heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of coal heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Coal heaters use coal to produce heat. When this slider is set, 
-        the yearly production of heat using coal heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of coal heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Coal heaters use coal to produce heat. When this slider is set,
+        the yearly production of heat using coal heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_ht_crude_oil:
       title: Oil heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of oil heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Oil heaters use oil to produce heat. When this slider is set, 
-        the yearly production of heat using oil heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of oil heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Oil heaters use oil to produce heat. When this slider is set,
+        the yearly production of heat using oil heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_ht_hydrogen:
       title: Hydrogen heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of hydrogen heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Hydrogen heaters use hydrogen to produce heat. When this slider is set, 
-        the yearly production of heat using hydrogen heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of hydrogen heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Hydrogen heaters use hydrogen to produce heat. When this slider is set,
+        the yearly production of heat using hydrogen heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_ht_network_gas:
       title: Gas heater (network gas)
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of gas heaters in the medium-temperature heat grid. 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of gas heaters in the medium-temperature heat grid.
         \r\n<br/><br/>\r\n
-        Gas burners use network gas to produce heat. When this slider is set, 
-        the yearly production of heat using gas burners will be visible in the 
+        Gas burners use network gas to produce heat. When this slider is set,
+        the yearly production of heat using gas burners will be visible in the
         supply side of the graph on the right.
-        \r\n<br/><br/>\r\n 
-        Note: network gas can be a mixture of natural gas and green gas. 
-        Checkout Supply > Biomass > <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\" 
+        \r\n<br/><br/>\r\n
+        Note: network gas can be a mixture of natural gas and green gas.
+        Checkout Supply > Biomass > <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\"
         > Gas mix in gas network</a> for more information."
     capacity_of_energy_heat_burner_ht_waste_mix:
       title: Waste heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of waste burners in the medium-temperature heat grid. 
-        \r\n<br/><br/>\r\n Waste burners use waste, such as manure, domestic 
-        waste or sewage sludge, to produce heat. 
-        When this slider is set, the yearly production of heat using waste 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of waste burners in the medium-temperature heat grid.
+        \r\n<br/><br/>\r\n Waste burners use waste, such as manure, domestic
+        waste or sewage sludge, to produce heat.
+        When this slider is set, the yearly production of heat using waste
         burners will be visible in the supply side of the graph on the right."
     capacity_of_energy_heat_burner_ht_wood_pellets:
       title: Biomass heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity (MW) 
-        of biomass burners in medium-temperature heat-grids. 
+      description: "Use this slider to adjust the total installed capacity (MW)
+        of biomass burners in medium-temperature heat-grids.
         \r\n<br/><br/>\r\n
-        Biomass burners use biomass to produce heat. When this slider is set, the yearly 
-        production of heat using biomass burners will be visible in the supply side of 
-        the graph on the right. Checkout the total demand and potential of biomass in 
-        this area using the ‘Biomass demand and potential’ graph or go to Supply > Biomass > 
-        <a href=\"/scenario/supply/biomass/potential-of-biomass\" 
-        >Potential of biomass</a>. 
+        Biomass burners use biomass to produce heat. When this slider is set, the yearly
+        production of heat using biomass burners will be visible in the supply side of
+        the graph on the right. Checkout the total demand and potential of biomass in
+        this area using the ‘Biomass demand and potential’ graph or go to Supply > Biomass >
+        <a href=\"/scenario/supply/biomass/potential-of-biomass\"
+        >Potential of biomass</a>.
         \r\n<br/><br/>\r\n
-        When this slider is set, the yearly production of heat using biomass 
+        When this slider is set, the yearly production of heat using biomass
         heaters will be visible in the supply side of the graph on the right."
     capacity_of_energy_heat_burner_lt_hydrogen:
       title: Hydrogen heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of hydrogen heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Hydrogen heaters use hydrogen to produce heat. When this slider is set, 
-        the yearly production of heat using hydrogen heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of hydrogen heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Hydrogen heaters use hydrogen to produce heat. When this slider is set,
+        the yearly production of heat using hydrogen heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_mt_coal:
       title: Coal heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of coal heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Coal heaters use coal to produce heat. When this slider is set, 
-        the yearly production of heat using coal heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of coal heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Coal heaters use coal to produce heat. When this slider is set,
+        the yearly production of heat using coal heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_mt_crude_oil:
       title: Oil heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of oil heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Oil heaters use oil to produce heat. When this slider is set, 
-        the yearly production of heat using oil heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of oil heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Oil heaters use oil to produce heat. When this slider is set,
+        the yearly production of heat using oil heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_mt_hydrogen:
       title: Hydrogen heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of hydrogen heaters in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Hydrogen heaters use hydrogen to produce heat. When this slider is set, 
-        the yearly production of heat using hydrogen heaters will be visible in the supply 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of hydrogen heaters in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Hydrogen heaters use hydrogen to produce heat. When this slider is set,
+        the yearly production of heat using hydrogen heaters will be visible in the supply
         side of the graph on the right."
     capacity_of_energy_heat_burner_mt_network_gas:
       title: Gas heater (network gas)
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of gas heaters in the medium-temperature heat grid. 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of gas heaters in the medium-temperature heat grid.
         \r\n<br/><br/>\r\n
-        Gas burners use network gas to produce heat. When this slider is set, 
-        the yearly production of heat using gas burners will be visible in the 
+        Gas burners use network gas to produce heat. When this slider is set,
+        the yearly production of heat using gas burners will be visible in the
         supply side of the graph on the right.
-        \r\n<br/><br/>\r\n 
-        Note: network gas can be a mixture of natural gas and green gas. 
-        Checkout Supply > Biomass > <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\" 
+        \r\n<br/><br/>\r\n
+        Note: network gas can be a mixture of natural gas and green gas.
+        Checkout Supply > Biomass > <a href=\"/scenario/supply/biomass/gas-mix-in-gas-network\"
         >(Green) gas in gas network</a> for more information."
     capacity_of_energy_heat_burner_mt_waste_mix:
       title: Waste heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity 
-        (MW) of waste burners in the medium-temperature heat grid. 
-        \r\n<br/><br/>\r\n 
-        Waste burners use waste, such as manure, domestic 
-        waste or sewage sludge, to produce heat. 
-        When this slider is set, the yearly production of heat using waste 
+      description: "Use this slider to adjust the total installed capacity
+        (MW) of waste burners in the medium-temperature heat grid.
+        \r\n<br/><br/>\r\n
+        Waste burners use waste, such as manure, domestic
+        waste or sewage sludge, to produce heat.
+        When this slider is set, the yearly production of heat using waste
         burners will be visible in the supply side of the graph on the right."
     capacity_of_energy_heat_burner_mt_wood_pellets:
       title: Biomass heater
       short_description:
-      description: "Use this slider to adjust the total installed capacity (MW) 
-        of biomass burners in medium-temperature heat-grids. 
+      description: "Use this slider to adjust the total installed capacity (MW)
+        of biomass burners in medium-temperature heat-grids.
         \r\n<br/><br/>\r\n
-        Biomass burners use biomass to produce heat. When this slider is set, the yearly 
-        production of heat using biomass burners will be visible in the supply side of 
-        the graph on the right. Checkout the total demand and potential of biomass in 
-        this area using the ‘Biomass demand and potential’ graph or go to Supply > Biomass > 
-        <a href=\"/scenario/supply/biomass/potential-of-biomass\" 
-        >Potential of biomass</a>. 
+        Biomass burners use biomass to produce heat. When this slider is set, the yearly
+        production of heat using biomass burners will be visible in the supply side of
+        the graph on the right. Checkout the total demand and potential of biomass in
+        this area using the ‘Biomass demand and potential’ graph or go to Supply > Biomass >
+        <a href=\"/scenario/supply/biomass/potential-of-biomass\"
+        >Potential of biomass</a>.
         \r\n<br/><br/>\r\n
-        When this slider is set, the yearly production of heat using biomass 
+        When this slider is set, the yearly production of heat using biomass
         heaters will be visible in the supply side of the graph on the right."
     capacity_of_energy_heat_heatpump_water_water_ht_electricity:
       title: Collective heat pump
@@ -543,64 +543,64 @@ en:
     capacity_of_energy_heat_well_deep_ht_geothermal:
       title: Geothermal (deep)
       short_description:
-      description: "Use this slider to adjust the total installed capacity (MW) 
-        of a deep geothermal heat installation in high-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Deep geothermal energy is collected from 1500-4000 meters deep. Typically 
-        geothermal heating systems produce a relatively constant amount of heat 
-        as they are not prone to temperature changes during the seasons. The 
-        temperature can be between 70 to 90 degrees Celsius depending on the 
-        depth and location. 
-        \r\n<br/><br/>\r\n 
-        When this slider is set, the yearly production of heat 
-        using deep geothermal energy will be visible in the supply side of the 
+      description: "Use this slider to adjust the total installed capacity (MW)
+        of a deep geothermal heat installation in high-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Deep geothermal energy is collected from 1500-4000 meters deep. Typically
+        geothermal heating systems produce a relatively constant amount of heat
+        as they are not prone to temperature changes during the seasons. The
+        temperature can be between 70 to 90 degrees Celsius depending on the
+        depth and location.
+        \r\n<br/><br/>\r\n
+        When this slider is set, the yearly production of heat
+        using deep geothermal energy will be visible in the supply side of the
         graph on the right."
     capacity_of_energy_heat_well_deep_mt_geothermal:
       title: Geothermal (deep)
       short_description:
-      description: "Use this slider to adjust the total installed capacity (MW) 
-        of a deep geothermal heat installation in medium-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Deep geothermal energy is collected from 1500-4000 meters deep. Typically 
-        geothermal heating systems produce a relatively constant amount of heat 
-        as they are not prone to temperature changes during the seasons. The 
-        temperature can be between 70 to 90 degrees Celsius depending on the 
-        depth and location. 
-        \r\n<br/><br/>\r\n 
-        When this slider is set, the yearly production of heat 
-        using deep geothermal energy will be visible in the supply side of the 
+      description: "Use this slider to adjust the total installed capacity (MW)
+        of a deep geothermal heat installation in medium-temperature heat grids.
+        \r\n<br/><br/>\r\n
+        Deep geothermal energy is collected from 1500-4000 meters deep. Typically
+        geothermal heating systems produce a relatively constant amount of heat
+        as they are not prone to temperature changes during the seasons. The
+        temperature can be between 70 to 90 degrees Celsius depending on the
+        depth and location.
+        \r\n<br/><br/>\r\n
+        When this slider is set, the yearly production of heat
+        using deep geothermal energy will be visible in the supply side of the
         graph on the right."
     capacity_of_energy_heat_well_shallow_heatpump_mt_geothermal:
       title: Geothermal (shallow) + heatpump
       short_description:
-      description: "Use this slider to adjust the total installed capacity (MW) 
-        of a shallow geothermal heat installation with heat-pump in 
-        medium-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Shallow geothermal energy is collected from 
-        500-1500 meters deep. Typically geothermal heating systems produce a 
-        relatively constant amount of heat as they are not prone to temperature 
-        changes during the seasons. The temperature can be between 20 to 70 degrees 
-        Celsius depending on the depth and location. A heat pump is used to boost 
-        the temperature of the thermal heat to ensure the correct temperature for 
-        medium heat grids. 
+      description: "Use this slider to adjust the total installed capacity (MW)
+        of a shallow geothermal heat installation with heat-pump in
+        medium-temperature heat grids.
         \r\n<br/><br/>\r\n
-        When this slider is set, the yearly production of heat using shallow 
+        Shallow geothermal energy is collected from
+        500-1500 meters deep. Typically geothermal heating systems produce a
+        relatively constant amount of heat as they are not prone to temperature
+        changes during the seasons. The temperature can be between 20 to 70 degrees
+        Celsius depending on the depth and location. A heat pump is used to boost
+        the temperature of the thermal heat to ensure the correct temperature for
+        medium heat grids.
+        \r\n<br/><br/>\r\n
+        When this slider is set, the yearly production of heat using shallow
         geothermal energy will be visible in the supply side of the graph on the right."
     capacity_of_energy_heat_well_shallow_lt_geothermal:
       title: Geothermal (shallow)
       short_description:
-      description: "Use this slider to adjust the total installed capacity (MW) 
-        of a shallow geothermal heat installation in 
-        low-temperature heat grids. 
-        \r\n<br/><br/>\r\n 
-        Shallow geothermal energy is collected from 
-        500-1500 meters deep. Typically geothermal heating systems produce a 
-        relatively constant amount of heat as they are not prone to temperature 
-        changes during the seasons. The temperature can be between 20 to 70 degrees 
-        Celsius depending on the depth and location. 
+      description: "Use this slider to adjust the total installed capacity (MW)
+        of a shallow geothermal heat installation in
+        low-temperature heat grids.
         \r\n<br/><br/>\r\n
-        When this slider is set, the yearly production of heat using shallow 
+        Shallow geothermal energy is collected from
+        500-1500 meters deep. Typically geothermal heating systems produce a
+        relatively constant amount of heat as they are not prone to temperature
+        changes during the seasons. The temperature can be between 20 to 70 degrees
+        Celsius depending on the depth and location.
+        \r\n<br/><br/>\r\n
+        When this slider is set, the yearly production of heat using shallow
         geothermal energy will be visible in the supply side of the graph on the right."
     energy_heat_distribution_ht_loss_share:
       title: Transport and distribution losses
@@ -675,30 +675,30 @@ en:
       title: Imported heat
       short_description:
       description: |
-        Use this slider to adjust the amount of heat (PJ) imported from outside 
+        Use this slider to adjust the amount of heat (PJ) imported from outside
         the area for high-temperature heat networks.
         <br/><br/>
-        To change the amount of emissions attributed to imported heat, go to 
+        To change the amount of emissions attributed to imported heat, go to
         <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-heat">
         CO<sub>2</sub> emissions of imported heat</a>.
     volume_of_lt_imported_heat:
       title: Imported heat
       short_description:
       description: |
-        Use this slider to adjust the amount of heat (PJ) imported from outside 
+        Use this slider to adjust the amount of heat (PJ) imported from outside
         the area for low-temperature heat networks.
         <br/><br/>
-        To change the amount of emissions attributed to imported heat, go to 
+        To change the amount of emissions attributed to imported heat, go to
         <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-heat">
         CO<sub>2</sub> emissions of imported heat</a>.
     volume_of_mt_imported_heat:
       title: Imported heat
       short_description:
       description: |
-        Use this slider to adjust the amount of heat (PJ) imported from outside 
+        Use this slider to adjust the amount of heat (PJ) imported from outside
         the area for medium-temperature heat networks.
         <br/><br/>
-        To change the amount of emissions attributed to imported heat, go to 
+        To change the amount of emissions attributed to imported heat, go to
         <a href="/scenario/emissions/emission_factors/co2-emissions-of-imported-heat">
         CO<sub>2</sub> emissions of imported heat</a>.
     volume_of_ht_residual_heat:
@@ -710,10 +710,10 @@ en:
         Residual heat can be sourced from
         the <a href="/scenario/demand/industry/fertilizers">fertilizers industry</a>,
         the <a href="/scenario/demand/industry/chemicals">chemical industry</a>,
-        <a href="/scenario/demand/industry/refineries">refineries</a>, 
-        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>. 
-        You can compare your use of residual heat with the estimated potential of each of these sources in 
+        <a href="/scenario/demand/industry/refineries">refineries</a>,
+        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>.
+        You can compare your use of residual heat with the estimated potential of each of these sources in
         <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">this</a>
         chart.
     volume_of_mt_residual_heat:
@@ -725,10 +725,10 @@ en:
         Residual heat can be sourced from
         the <a href="/scenario/demand/industry/fertilizers">fertilizers industry</a>,
         the <a href="/scenario/demand/industry/chemicals">chemical industry</a>,
-        <a href="/scenario/demand/industry/refineries">refineries</a>, 
-        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>. 
-        You can compare your use of residual heat with the estimated potential of each of these sources in 
+        <a href="/scenario/demand/industry/refineries">refineries</a>,
+        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>.
+        You can compare your use of residual heat with the estimated potential of each of these sources in
         <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">this</a>
         chart.
     volume_of_lt_residual_heat:
@@ -740,173 +740,173 @@ en:
         Residual heat can be sourced from
         the <a href="/scenario/demand/industry/fertilizers">fertilizers industry</a>,
         the <a href="/scenario/demand/industry/chemicals">chemical industry</a>,
-        <a href="/scenario/demand/industry/refineries">refineries</a>, 
-        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from 
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>. 
-        You can compare your use of residual heat with the estimated potential of each of these sources in 
+        <a href="/scenario/demand/industry/refineries">refineries</a>,
+        <a href="/scenario/demand/industry/central-ict">central ICT</a>, and from
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">electrolyzers</a>.
+        You can compare your use of residual heat with the estimated potential of each of these sources in
         <a href="#" class="open_chart" data-chart-key="residual_heat_supply_potential" data-chart-location="side">this</a>
         chart.
     share_of_energy_chp_combined_cycle_ht_network_gas:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from gas CCGT CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from gas CCGT CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by gas CCGT CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by gas CCGT CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/gas-plants\" >here</a>."
     share_of_energy_chp_combined_cycle_mt_network_gas:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from gas CCGT CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from gas CCGT CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by gas CCGT CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by gas CCGT CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/gas-plants\" >here</a>."
     share_of_energy_chp_local_engine_ht_biogas:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from biogas CHPs (must-run) allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from biogas CHPs (must-run) allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by biogas CHPs (must-run) is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by biogas CHPs (must-run) is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity_renewable/biomass-plants\" >here</a>."
     share_of_energy_chp_local_engine_ht_network_gas:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from gas motor CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from gas motor CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by gas motor CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by gas motor CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/gas-plants\" >here</a>."
     share_of_energy_chp_local_engine_mt_biogas:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from biogas CHPs (must-run) allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from biogas CHPs (must-run) allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by biogas CHPs (must-run) is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by biogas CHPs (must-run) is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity_renewable/biomass-plants\" >here</a>."
     share_of_energy_chp_local_engine_mt_network_gas:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from gas motor CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from gas motor CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by gas motor CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by gas motor CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/gas-plants\" >here</a>."
     share_of_energy_chp_local_ht_wood_pellets_must_run:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from biomass CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from biomass CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by biomass CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by biomass CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_local_mt_wood_pellets_must_run:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from biomass CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from biomass CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by biomass CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by biomass CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_local_ht_wood_pellets_dispatchable:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from biomass CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from biomass CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by biomass CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by biomass CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_local_mt_wood_pellets_dispatchable:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from biomass CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from biomass CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by biomass CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by biomass CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_cofiring_ht_coal:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
+      description: "Use this slider to determine the percentage of heat
         from pulverized coal CHPs with cofiring allocated to the high temperature heat grid.
-        \r\n<br/><br/>\r\n 
-        The amount of heat that is produced by pulverized coal CHPs with cofiring is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        \r\n<br/><br/>\r\n
+        The amount of heat that is produced by pulverized coal CHPs with cofiring is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_cofiring_mt_coal:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from pulverized coal CHPs with cofiring allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from pulverized coal CHPs with cofiring allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by pulverized coal CHPs with cofiring is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>." 
+        The amount of heat that is produced by pulverized coal CHPs with cofiring is determined by the
+        installed capacity. Checkout the amount of installed capacity
+        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_ht_lignite:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from lignite CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from lignite CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by lignite CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by lignite CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_mt_lignite:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from lignite CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from lignite CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by lignite CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by lignite CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_ht_coal:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from pulverized coal CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from pulverized coal CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by pulverized coal CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by pulverized coal CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_ultra_supercritical_mt_coal:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from pulverized coal CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from pulverized coal CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by pulverized coal CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>." 
+        The amount of heat that is produced by pulverized coal CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
+        <a href=\"/scenario/supply/electricity/coal-plants\" >here</a>."
     share_of_energy_chp_supercritical_ht_waste_mix:
       title: High temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from waste CHPs allocated to the high temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from waste CHPs allocated to the high temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by waste CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
-        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>." 
+        The amount of heat that is produced by waste CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
+        <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>."
     share_of_energy_chp_supercritical_mt_waste_mix:
       title: Medium temperature
       short_description:
-      description: "Use this slider to determine the percentage of heat 
-        from waste CHPs allocated to the medium temperature heat grid. 
+      description: "Use this slider to determine the percentage of heat
+        from waste CHPs allocated to the medium temperature heat grid.
         \r\n<br/><br/>\r\n
-        The amount of heat that is produced by waste CHPs is determined by the 
-        installed capacity. Checkout the amount of installed capacity 
+        The amount of heat that is produced by waste CHPs is determined by the
+        installed capacity. Checkout the amount of installed capacity
         <a href=\"/scenario/supply/electricity_renewable/waste-power\" >here</a>."
     share_of_energy_heat_flexibility_p2h_boiler_ht_electricity:
       title: High temperature
@@ -914,8 +914,8 @@ en:
       description: |
         Use this slider to determine the percentage of heat from the power-to-heat
         boiler that is allocated to high-temperature (HT) district heating. <br/><br/>
-        The amount of heat that is produced depends on the installed capacity and 
-        the willingness to pay. You can set these attributes in the 
+        The amount of heat that is produced depends on the installed capacity and
+        the willingness to pay. You can set these attributes in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
         Conversion to district heating</a> section.
     share_of_energy_heat_flexibility_p2h_boiler_mt_electricity:
@@ -924,8 +924,8 @@ en:
       description: |
         Use this slider to determine the percentage of heat from the power-to-heat
         boiler that is allocated to medium-temperature (MT) district heating. <br/><br/>
-        The amount of heat that is produced depends on the installed capacity and 
-        the willingness to pay. You can set these attributes in the 
+        The amount of heat that is produced depends on the installed capacity and
+        the willingness to pay. You can set these attributes in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
         Conversion to district heating</a> section.
     share_of_energy_heat_flexibility_p2h_heatpump_ht_electricity:
@@ -934,8 +934,8 @@ en:
       description: |
         Use this slider to determine the percentage of heat from the power-to-heat
         heatpump that is allocated to high-temperature (HT) district heating. <br/><br/>
-        The amount of heat that is produced depends on the installed capacity and 
-        the willingness to pay. You can set these attributes in the 
+        The amount of heat that is produced depends on the installed capacity and
+        the willingness to pay. You can set these attributes in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
         Conversion to district heating</a> section.
     share_of_energy_heat_flexibility_p2h_heatpump_mt_electricity:
@@ -944,8 +944,8 @@ en:
       description: |
         Use this slider to determine the percentage of heat from the power-to-heat
         heatpump that is allocated to medium-temperature (MT) district heating. <br/><br/>
-        The amount of heat that is produced depends on the installed capacity and 
-        the willingness to pay. You can set these attributes in the 
+        The amount of heat that is produced depends on the installed capacity and
+        the willingness to pay. You can set these attributes in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-heat-for-district-heating">
         Conversion to district heating</a> section.
     residual_heat_supply_potential:
@@ -955,14 +955,14 @@ en:
         This chart compares the supply and potential of residual heat.
         You can set the supply of residual heat for each temperature level
         in the <a href="scenario/supply/heat/overview-district-heating"> District heating</a> section.
-        The residual heat potential is calculated based on the size of the following sectors: 
+        The residual heat potential is calculated based on the size of the following sectors:
         <ul>
         <li><a href="scenario/demand/industry/refineries">Refineries</a> </li>
         <li><a href="/scenario/demand/industry/fertilizers">Fertilizer production</a> </li>
         <li><a href="/scenario/demand/industry/chemicals">Chemicals</a> </li>
         <li><a href="/scenario/demand/industry/central-ict">Central ICT</a> </li>
-        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen via power-to-gas</a></li>
+        <li><a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen via electrolysis</a></li>
         </ul>
-        Note that although you can set the supply of residual heat manually above the potentials shown, 
-        in reality the heat needs to be provided by some industry or another. 
+        Note that although you can set the supply of residual heat manually above the potentials shown,
+        in reality the heat needs to be provided by some industry or another.
 

@@ -85,44 +85,46 @@ en:
         Note: the parameters in the table belong to the plants without CCS, so when you have set 100% CCS,
         you will see no installed capacity here.
     capacity_of_energy_hydrogen_wind_turbine_offshore:
-      title: Wind offshore (with electrolyser)
+      title: Electrolysis from offshore wind (dedicated)
       short_description:
       description: |
-        How many wind turbines will produce electricity that will directly
-        be converted into hydrogen with electrolysers?</br></br>There are
-        ambitions for building wind farms far out on sea. For these farms
-        it will probably be economically more viable to convert the electricity directly
-        into hydrogen instead of transporting the electricity to land first. This
-        has to do with the high electricity cabling costs relative to the low gas
-        piping costs. </br></br>This slider sets the installed capacity of
+        This slider sets the installed capacity of
         offshore wind turbines dedicated to hydrogen production and a corresponding
-        amount of electrolysis capacity to convert the produced electricity into hydrogen.
-        The efficiency of electrolysers can
-        be adjusted <a href="/scenario/costs/costs_hydrogen/hydrogen-production\" >here</a>.
-        You can adjust the full load hours of wind turbines
-        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>
+        amount of electrolyser capacity to convert the produced electricity into hydrogen.</br></br>
+        It could be economically more viable for offshore wind farm to convert the electricity
+        directly into hydrogen instead of transporting the electricity to land first. This
+        has to do with the high electricity cabling costs relative to the low gas
+        piping costs.<br/><br/>
+        The efficiency of electrolysers can be adjusted
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production" >here</a>.
+        The full load hours of wind turbines can be adjusted
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >here</a>.
         <br/><br/>Note: The technical and financial specifications below are
         only the specifications of the electrolyser, not the wind turbines. The specifications
-        of the wind turbines can be found in the <a href="/scenario/supply/electricity_renewable/wind-turbines\">Renewable
-        electricity section</a>.<br/>
+        of the wind turbines can be found in the
+        <a href="/scenario/supply/electricity_renewable/wind-turbines"
+        >Renewable electricity</a> section.
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
-      title: Solar on land (with electrolyser)
+      title: Electrolysis from solar on land (dedicated)
       short_description:
-      description: "How many solar pv plants will be build in the future for hydrogen
-        production using electrolysers?\r\n<br/><br/>\r\nThis slider sets installed
-        solar PV capacity and the installed capacity of electrolysis plants to produce
-        hydrogen. The capacity of the electrolysers relative to the capacity of the
-        solar PV plants depends on the hours of sunshine in a country. More information
-        about this can be found in our <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
-        >documentation on Github</a>.\r\n</br></br>\r\nThe efficiency of elektrolysers can
-        be adjusted <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >here</a>.
-        You can adjust the full load hours of solar
-        panels <a href=\"/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >here</a>.
-        The efficiency of solar panels can be adjusted <a href=\"/scenario/costs/solar/solar-pv-technology\" >here</a>.<br
-        /><br/><br />\r\nNote: The technical and financial specifications below are
+      description: |
+        This slider sets the installed solar PV capacity and the corresponding amount of
+        electrolyser capacity to produce hydrogen.<br/><br/>
+        The capacity of the electrolysers relative to the capacity of the solar PV plants depends on
+        the hours of sunshine in a country. More information about this can be found in the
+        <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx"
+        target=\"_blank\">documentation</a> on Github.<br/><br/>
+        The efficiency of electrolysers can
+        be adjusted <a href="/scenario/costs/costs_hydrogen/hydrogen-production">here</a>.
+        The full load hours of solar PV technologies can be adjusted
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">here</a>
+        and the efficiency of solar panels
+        <a href="/sscenario/costs/specs_renewable_electricity/solar-power">here</a>.<br/><br/>
+        Note: The technical and financial specifications below are
         only the specifications of the electrolyser, not the solar panels. The specifications
-        of the solar panels can be found in the <a href=\"/scenario/supply/electricity_renewable/solar-power\">Renewable
-        electricity section</a>.<br />"
+        of the solar panels can be found in the
+        <a href="/scenario/supply/electricity_renewable/solar-power">Renewable electricity</a>
+        section.
     capacity_of_energy_hydrogen_ammonia_reformer_dispatchable:
       title: Ammonia reforming
       short_description:

@@ -170,12 +170,12 @@ nl:
         Dit schuifje bepaalt hoeveel de investeringskosten voor elektrische boilers
         in de toekomst gaan veranderen.
     investment_costs_hydrogen_electrolysis:
-      title: Investeringskosten power-to-gas
+      title: Investeringskosten electrolyse van stroomnet
       short_description:
       description: |
-        Power-to-gas installaties gebruiken elektriciteit om waterstof te produceren, wat elektrolyse
-        genoemd wordt. Dit schuifje bepaalt de verandering in investeringskosten van power-to-gas installaties.
-        Dit heeft effect op de kosten voor waterstofproductie door power-to-gas installaties die aan het
+        Elektrolysers gebruiken elektriciteit om waterstof te produceren.
+         Dit schuifje bepaalt de verandering in investeringskosten van elektrolysers.
+        Dit heeft effect op de kosten voor waterstofproductie door elektrolysers die aan het
         elektriciteitsnetwerk gekoppeld zijn als
          <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
         flexibele elektriciteitsvraag</a> en op de kosten voor directe waterstofproductie met
@@ -1074,9 +1074,9 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van houtpelletkachels voor ruimteverwarming in gebouwen veranderen."
     efficiency_hydrogen_electrolysis:
-      title: Power-to-gas elektrolysers
+      title: Elektrolysers van stroomnet
       short_description: ''
-      description: "Met deze schuif kun je de toekomstige efficiëntie van power-to-gas elektrolysers aanpassen."
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektrolysers, die aan het elektriciteitsnetwerk gekoppeld zijn, aanpassen."
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Luchtwarmtepomp
       short_description: ''

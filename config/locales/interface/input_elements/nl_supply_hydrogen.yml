@@ -85,43 +85,45 @@ nl:
         Let op: de parameters in de tabel horen bij de centrales zonder CCS, dus wanneer je 100% CCS hebt ingesteld,
         zul je hier geen vermogen zien.
     capacity_of_energy_hydrogen_wind_turbine_offshore:
-      title: Wind op zee (met elektrolyser)
+      title: Elektrolyse van wind op zee (dedicated)
       short_description:
       description: |
-        Hoeveel windmolens zullen elektriciteit produceren dat direct
-        zal worden omgezet in waterstof met elektrolysers?</br></br>
-        Er zijn grote ambities voor windparken ver op zee. Voor deze windparken zal
-        het waarschijnlijk economisch haalbaarder zijn om de elektriciteit ter plekke
-        om te zetten in waterstof in plaats van de elektriciteit eerst naar land te
-        transporteren. Dit heeft te maken met de relatief hoge kosten voor elektriciteitskabels
-        vergeleken met de gaspijpkosten. </br></br> Deze schuif zet het vermogen
-        van windmolens op zee dat ingezet wordt voor waterstofproductie en het benodigde
-        vermogen van elektrolyse-installaties om de geproduceerde elektriciteit om
-        te zetten in waterstof. De efficiëntie van elektrolysers
-        kan <a href="/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast.
-        Je kunt het aantal vollasturen van windmolens <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        <br /><br>
-        Opmerking: De technische en financiële
-        specificaties hieronder zijn alleen voor de elektrolyser, niet voor de windmolens.
-        De specificaties van de windmolens kun je vinden in het tabblad <a href="/scenario/supply/electricity_renewable/wind-turbines\">Hernieuwbare elektriciteit</a>.
+        Dit schuifje stelt het opgesteld vermogen in van windturbines op zee met de bijbehorende
+        hoeveelheid elektrolysercapaciteit om de geproduceerde elektriciteit om te zetten in
+        waterstof.</br></br>
+        Voor windparken op zee kan het economisch rendabel zijn om de elektriciteit ter plekke om te
+        zetten in waterstof in plaats van de elektriciteit eerst naar land te transporteren.
+        Dit heeft te maken met de hoge kosten voor elektriciteitskabels ten opzichte van
+        de lagere kosten voor gaspijpleidingen.</br></br>
+        De efficiëntie van elektrolysers kan
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden aangepast.
+        Het aantal vollasturen van windturbines kan
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">hier</a>
+        worden aangepast.<br/><br/>
+        Opmerking: De technische en financiële specificaties hieronder zijn
+        alleen de specificaties van de elektrolyser, niet de windturbines. De specificaties
+        van de windturbines kunnen worden ingezien in de sectie
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">Hernieuwbare elektriciteit</a>.
     capacity_of_energy_hydrogen_solar_pv_solar_radiation:
-      title: Zon op land (met elektrolyser)
+      title: Elektrolyse van zon op land (dedicated)
       short_description:
-      description: "Hoeveel zonneparken zullen er in de toekomst gebouwd worden voor de
-        productie van waterstof met behulp van elektrolysers?\r\n<br/><br/>\r\nDeze
-        schuif zet het vermogen van zonneparken dat ingezet wordt voor waterstofproductie
-        en het benodigde vermogen van elektrolyse-installaties om de geproduceerde
-        elektriciteit om te zetten in waterstof. Het vermogen van de elektrolyse-installaties
-        ten opzichte van het vermogen van de zonneparken is afhankelijk van het aantal
-        zonuren en het zonprofiel van een land. Meer informatie hierover staat in
-        de <a href=\"https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx\"
-        >documentatie op Github</a>.\r\n</br></br>\r\nDe efficiëntie van elektrolysers
-        kan <a href=\"/scenario/costs/costs_hydrogen/hydrogen-production\" >hier</a> worden aangepast. Je kunt het aantal vollasturen van zonnepanelen <a href=\"/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours\" >hier</a> aanpassen.
-        De efficiëntie van zonnepanelen kan <a href=\"/scenario/costs/solar/solar-pv-technology\" >hier </a> aangepast worden.<br/>
-        \r\n<br />\r\n\r\nOpmerking: De technische en financiële
-        specificaties hieronder zijn alleen voor de elektrolyser, niet voor de zonneparken.
-        De specificaties van de zonneparken kun je vinden in het tabblad <a href=\"/scenario/supply/electricity_renewable/solar-power\">Hernieuwbare
-        elektriciteit</a>.<br />"
+      description: |
+        Dit schuifje stelt het opgesteld vermogen in van zonneparken en de bijbehorende hoeveelheid
+        elektrolysercapaciteit voor de productie van waterstof.<br/><br/>
+        Het vermogen van de elektrolysers ten opzichte van het vermogen van het zonnepark is
+        afhankelijk van het aantal zonuren in een land. Meer informatie hierover is te vinden in de
+        <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx"
+        target="_blank">documentatie</a> op Github.<br/><br/>
+        De efficiëntie van elektrolysers kan
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">hier</a> worden aangepast.
+        Het aantal vollasturen van zon-PV technologieën kan
+        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">hier</a>
+        worden aangepast en de efficiëntie van zonnepanelen
+        <a href="/scenario/costs/specs_renewable_electricity/solar-power">hier</a>.<br/><br/>
+        Let op: de technische en financiële specificaties hieronder zijn
+        alleen de specificaties van de elektrolyser, niet de zonnepanelen. De specificaties
+        van de zonnepanelen zijn te raadplegen in de sectie
+        <a href="/scenario/supply/electricity_renewable/solar-power">Hernieuwbare elektriciteit</a>.
     capacity_of_energy_hydrogen_ammonia_reformer_dispatchable:
       title: Ammoniak reforming
       short_description:

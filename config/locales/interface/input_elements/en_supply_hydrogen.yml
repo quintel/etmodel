@@ -95,11 +95,14 @@ en:
         directly into hydrogen instead of transporting the electricity to land first. This
         has to do with the high electricity cabling costs relative to the low gas
         piping costs.<br/><br/>
-        The efficiency of electrolysers can be adjusted
-        <a href="/scenario/costs/costs_hydrogen/hydrogen-production" >here</a>.
-        The full load hours of wind turbines can be adjusted
-        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >here</a>.
-        <br/><br/>Note: The technical and financial specifications below are
+        Go to
+        <ul>
+        <li><a href="/scenario/costs/costs_hydrogen/hydrogen-production">Costs & efficiencies</a>
+        to change the efficiency of electrolysers.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours"
+        >Flexibility</a> to change the full load hours of offshore wind turbines.</li>
+        </ul><br/>
+        Note: the technical and financial specifications below are
         only the specifications of the electrolyser, not the wind turbines. The specifications
         of the wind turbines can be found in the
         <a href="/scenario/supply/electricity_renewable/wind-turbines"
@@ -114,13 +117,18 @@ en:
         the hours of sunshine in a country. More information about this can be found in the
         <a href="https://github.com/quintel/etdataset-public/blob/master/source_analyses/nl/2015/2_power_and_heat_plant/hydrogen_solar_pv_analysis.xlsx"
         target=\"_blank\">documentation</a> on Github.<br/><br/>
-        The efficiency of electrolysers can
-        be adjusted <a href="/scenario/costs/costs_hydrogen/hydrogen-production">here</a>.
-        The full load hours of solar PV technologies can be adjusted
-        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">here</a>
-        and the efficiency of solar panels
-        <a href="/sscenario/costs/specs_renewable_electricity/solar-power">here</a>.<br/><br/>
-        Note: The technical and financial specifications below are
+        Go to
+        <ul>
+        <li>the Hydrogen section under the
+        <a href="/scenario/costs/costs_hydrogen/hydrogen-production">Costs & efficiencies</a>
+        section to change the efficiency of electrolysers.</li>
+        <li>the Renewable electricity section under the
+        <a href="/scenario/costs/specs_renewable_electricity/solar-power">Costs & efficiencies</a>
+        section to change the efficiency of solar panels.</li>
+        <li><a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours"
+        >Flexibility</a> to change the full load hours of solar on land.</li>
+        </ul><br/>
+        Note: the technical and financial specifications below are
         only the specifications of the electrolyser, not the solar panels. The specifications
         of the solar panels can be found in the
         <a href="/scenario/supply/electricity_renewable/solar-power">Renewable electricity</a>

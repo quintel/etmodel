@@ -284,10 +284,13 @@ en:
       short_description:
       description: |
         This chart shows the CO<sub>2</sub> intensity of different hydrogen production technologies
-        in kg CO<sub>2</sub> per MWh hydrogen produced. You can find electrolysis from the grid on land in the
-        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Conversion to hydrogen</a>
-        section. All other technologies can be found in the
-        <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section. </br></br>
+        in kg CO<sub>2</sub> per MWh hydrogen produced. These technologies consist of
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen"
+        >electrolysis from the grid on land</a>, electrolysis from
+        <a href="/scenario/supply/hydrogen/hydrogen-production"
+        >dedicated offshore wind and solar on land</a> and
+        <a href="/scenario/supply/electricity_renewable/wind-turbines"
+        >offshore wind with a hybrid connection</a>.<br/><br/>
         The emitted CO<sub>2</sub> intensity is calculated by dividing the primary emissions
         of each technology by its hydrogen production. For the captured CO<sub>2</sub> intensity
         the captured emissions are used. See our
@@ -374,12 +377,13 @@ en:
         lower than the peak capacity. You can set this capacity
         <a href="/scenario/flexibility/flexibility_net_load/curtailment-solar-pv">here</a>.
     source_of_electricity_in_p2g:
-      title: Electricity mix for electrolysis from the grid on land
+      title: Electricity mix for electrolysis
       short_description:
       description: |
-        This graph shows the electricity mix that the electrolyser uses.
-        This mix is determined by looking at the hourly electricity mix and the hourly consumption by electrolysers,
-        in this way you see the actual source of the electricity. </br></br>
+        This graph shows the electricity mix that the electrolyser on land connected to the
+        electricity grid uses.
+        This mix is determined by looking at the hourly electricity mix and the hourly consumption
+        by electrolysers, in this way you see the actual source of the electricity. </br></br>
         Note that this chart only shows the electricity mix for the flexible electrolyser,
         which you can find in the
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">Flexibility</a>

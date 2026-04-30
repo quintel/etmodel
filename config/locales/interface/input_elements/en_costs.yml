@@ -162,15 +162,17 @@ en:
         <a href="/scenario/demand/agriculture/heat"> agriculture</a>.
         This slider determines the future change in investment costs of electric boilers.
     investment_costs_hydrogen_electrolysis:
-      title: Investment costs electrolysis from grid
+      title: Investment costs electrolysers
       short_description:
       description: |
         Electrolysers use electricity to produce hydrogen.
-        This slider determines the change in investment costs of electrolysers. This affects the costs
-        of hydrogen production by electrolysers connected to the electricity network as
+        This slider determines the change in investment costs of electrolysers.
+        This affects the costs electrolysers connected to the electricity grid as
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
-        flexible electricity demand technologies</a>, and direct hydrogen production with
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>.
+        flexible electricity demand technology</a>, dedicated hydrogen production with
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>
+        and hydrogen production from <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        offshore wind with a hybrid connection</a>.
     om_costs_co2_ccs:
       title: Operational & Maintenance
       short_description: ''
@@ -1044,9 +1046,15 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of biomass-fired heaters in buildings for space heating.."
     efficiency_hydrogen_electrolysis:
-      title: Electrolysers from grid
+      title: Efficiency electrolysers
       short_description: ''
-      description: "This slider sets the future efficiency of electrolysers connected to the electricity network."
+      description: "This slider sets the future efficiency of electrolysers.
+        The slider affects the efficiency of electrolysers connected to the electricity grid as
+        <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>
+        flexible electricity demand technology</a>, dedicated hydrogen production with
+        <a href=/scenario/supply/hydrogen/hydrogen-production> wind and solar power</a> and
+        hydrogen production from <a href=/scenario/supply/electricity_renewable/wind-turbines>
+        offshore wind with a hybrid connection</a>. "
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Air heat pump
       short_description: ''
@@ -1166,7 +1174,7 @@ en:
         You can set installed capacity for these reformers in the
         <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a> section.
     efficiency_ammonia_reforming:
-      title: Ammonia reformer
+      title: Efficiency ammonia reformer
       short_description:
       description: |
         This slider sets the future efficiency of ammonia reformers.

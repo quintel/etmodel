@@ -170,7 +170,7 @@ nl:
         Dit schuifje bepaalt hoeveel de investeringskosten voor elektrische boilers
         in de toekomst gaan veranderen.
     investment_costs_hydrogen_electrolysis:
-      title: Investeringskosten electrolyse van stroomnet
+      title: Investeringskosten elektrolysers
       short_description:
       description: |
         Elektrolysers gebruiken elektriciteit om waterstof te produceren.
@@ -178,8 +178,10 @@ nl:
         Dit heeft effect op de kosten voor waterstofproductie door elektrolysers die aan het
         elektriciteitsnetwerk gekoppeld zijn als
          <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
-        flexibele elektriciteitsvraag</a> en op de kosten voor directe waterstofproductie met
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind- en zonnestroom</a>.
+        flexibele elektriciteitsvraag</a>, op de kosten voor directe waterstofproductie met
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind- en zonnestroom</a>
+        en op de kosten voor waterstofproductie met <a href="scenario/supply/electricity_renewable/wind-turbines">
+        wind op zee met hybride aansluiting</a>.
     om_costs_co2_ccs:
       title: Onderhoudskosten
       short_description: ''
@@ -1074,9 +1076,15 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van houtpelletkachels voor ruimteverwarming in gebouwen veranderen."
     efficiency_hydrogen_electrolysis:
-      title: Elektrolysers van stroomnet
+      title: Efficiëntie elektrolysers
       short_description: ''
-      description: "Met deze schuif kun je de toekomstige efficiëntie van elektrolysers, die aan het elektriciteitsnetwerk gekoppeld zijn, aanpassen."
+      description: "Met deze schuif kun je de toekomstige efficiëntie van elektrolysers aanpassen.
+        Deze schuif bepaalt de efficiëntie van elektrolysers verbonden aan het stroomnet met
+        <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>
+        flexibele elektriciteitsvraag</a>, directe waterstofproductie met
+        <a href=/scenario/supply/hydrogen/hydrogen-production> wind- en zonnestroom</a> en
+        waterstofproductie met <a href=/scenario/supply/electricity_renewable/wind-turbines>
+        wind op zee met hybride aansluiting</a>. "
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Luchtwarmtepomp
       short_description: ''
@@ -1201,7 +1209,7 @@ nl:
         reformers. Je kunt het geïnstalleerd vermogen van deze reformers instellen in de
         <a href=/scenario/supply/hydrogen/hydrogen-production> Waterstofproductie</a> sectie.
     efficiency_ammonia_reforming:
-      title: Ammoniak reformer
+      title: Efficiëntie ammoniak reformer
       short_description:
       description: |
         Dit schuifje stelt de toekomstige efficiëntie van ammoniak reformers in.

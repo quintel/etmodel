@@ -29,7 +29,7 @@ class @CommonInterface
 
   setup_browser_tweaks: ->
     # TODO: check if this is still needed, was added for an old bug - PZ
-    if _.include(['iPad', 'iPhone', 'iPod'], navigator.platform)
+    if ['iPad', 'iPhone', 'iPod'].includes(navigator.platform)
       $("#footer").css("position", "static")
 
     if $.browser.msie

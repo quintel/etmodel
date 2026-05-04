@@ -385,7 +385,7 @@
 
     this.__runOnSubordinates(method);
 
-    if (method === 'resolve' && _.include(SEND_ENTIRE_GROUP, groupName)) {
+    if (method === 'resolve' && SEND_ENTIRE_GROUP.includes(groupName)) {
       // ETengine wants the whole group to be marked dirty.
       for (var i = 0, length = this.views.length; i < length; i++) {
         this.views[i].model.markDirty();

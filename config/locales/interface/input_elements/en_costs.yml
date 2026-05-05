@@ -167,7 +167,7 @@ en:
       description: |
         Electrolysers use electricity to produce hydrogen.
         This slider determines the change in investment costs of electrolysers.
-        This affects the costs electrolysers connected to the electricity grid as
+        This affects the costs of electrolysers connected to the electricity grid as
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
         flexible electricity demand technology</a>, dedicated hydrogen production with
         <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>
@@ -1046,15 +1046,16 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of biomass-fired heaters in buildings for space heating.."
     efficiency_hydrogen_electrolysis:
-      title: Efficiency electrolysers
+      title: Electrolysers
       short_description: ''
-      description: "This slider sets the future efficiency of electrolysers.
+      description: |
+        This slider sets the future efficiency of electrolysers.
         The slider affects the efficiency of electrolysers connected to the electricity grid as
         <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>
         flexible electricity demand technology</a>, dedicated hydrogen production with
         <a href=/scenario/supply/hydrogen/hydrogen-production> wind and solar power</a> and
         hydrogen production from <a href=/scenario/supply/electricity_renewable/wind-turbines>
-        offshore wind with a hybrid connection</a>. "
+        offshore wind with a hybrid connection</a>.
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Air heat pump
       short_description: ''
@@ -1174,7 +1175,7 @@ en:
         You can set installed capacity for these reformers in the
         <a href=/scenario/supply/hydrogen/hydrogen-production> Hydrogen production</a> section.
     efficiency_ammonia_reforming:
-      title: Efficiency ammonia reformer
+      title: Ammonia reformer
       short_description:
       description: |
         This slider sets the future efficiency of ammonia reformers.

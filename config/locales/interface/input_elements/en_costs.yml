@@ -129,7 +129,7 @@ en:
       title: New / immature technologies
       short_description:
       description: 'This category comprises all immature / unproven / risky technologies.
-        Currently these technologies are included: hydrogen technologies (electrolyzers,
+        Currently these technologies are included: hydrogen technologies (electrolysers,
         power plants, infrastructure, storage), synthetic kerosene technologies, nuclear
         plants, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) and underground pumped hydro storage.'
@@ -162,15 +162,17 @@ en:
         <a href="/scenario/demand/agriculture/heat"> agriculture</a>.
         This slider determines the future change in investment costs of electric boilers.
     investment_costs_hydrogen_electrolysis:
-      title: Investment costs power-to-gas
+      title: Investment costs electrolysers
       short_description:
       description: |
-        Power-to-gas plants use electricity to produce hydrogen, which is called electrolysis.
-        This slider determines the change in investment costs of power-to-gas plants. This affects the costs
-        of hydrogen production by power-to-gas plants connected to the electricity network as
+        Electrolysers use electricity to produce hydrogen.
+        This slider determines the change in investment costs of electrolysers.
+        This affects the costs of electrolysers connected to the electricity grid as
         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
-        flexible electricity demand technologies</a>, and direct hydrogen production with
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>.
+        flexible electricity demand technology</a>, dedicated hydrogen production with
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind and solar power</a>
+        and hydrogen production from <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        offshore wind with a hybrid connection</a>.
     om_costs_co2_ccs:
       title: Operational & Maintenance
       short_description: ''
@@ -1044,9 +1046,16 @@ en:
       short_description: ''
       description: "This slider sets the future efficiency of biomass-fired heaters in buildings for space heating.."
     efficiency_hydrogen_electrolysis:
-      title: Power-to-gas electrolysers
+      title: Electrolysers
       short_description: ''
-      description: "This slider sets the future efficiency of power-to-gas electrolysers."
+      description: |
+        This slider sets the future efficiency of electrolysers.
+        The slider affects the efficiency of electrolysers connected to the electricity grid as
+        <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>
+        flexible electricity demand technology</a>, dedicated hydrogen production with
+        <a href=/scenario/supply/hydrogen/hydrogen-production> wind and solar power</a> and
+        hydrogen production from <a href=/scenario/supply/electricity_renewable/wind-turbines>
+        offshore wind with a hybrid connection</a>.
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Air heat pump
       short_description: ''

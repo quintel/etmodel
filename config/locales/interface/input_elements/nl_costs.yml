@@ -135,7 +135,7 @@ nl:
       short_description:
       description: 'Deze categorie omvat alle onvolwassen / onbewezen / risicovolle
         technologieën. Op dit moment worden deze technologieën meegenomen: waterstoftechnologieën
-        (electrolyzers, power plants, infrastructuur, opslag), synthetische kerosine,
+        (elektrolysers, power plants, infrastructuur, opslag), synthetische kerosine,
         kernenergie, carbon capture and storage (CCS), supercritical water gasification
         (SCWG) en Ondergrondse Pomp Accumulatie Centrale (OPAC).'
     costs_electricity_fallback_price:
@@ -170,16 +170,19 @@ nl:
         Dit schuifje bepaalt hoeveel de investeringskosten voor elektrische boilers
         in de toekomst gaan veranderen.
     investment_costs_hydrogen_electrolysis:
-      title: Investeringskosten power-to-gas
+      title: Investeringskosten elektrolysers
       short_description:
       description: |
-        Power-to-gas installaties gebruiken elektriciteit om waterstof te produceren, wat elektrolyse
-        genoemd wordt. Dit schuifje bepaalt de verandering in investeringskosten van power-to-gas installaties.
-        Dit heeft effect op de kosten voor waterstofproductie door power-to-gas installaties die aan het
+        Elektrolysers gebruiken elektriciteit om waterstof te produceren.
+        Dit schuifje bepaalt de verandering in investeringskosten van elektrolysers.
+        Dit heeft effect op de kosten voor waterstofproductie door elektrolysers die aan het
         elektriciteitsnetwerk gekoppeld zijn als
-         <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
-        flexibele elektriciteitsvraag</a> en op de kosten voor directe waterstofproductie met
-        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind- en zonnestroom</a>.
+        <a href="/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen">
+        flexibele elektriciteitsvraag</a>, op de kosten voor directe waterstofproductie met
+        <a href="/scenario/supply/hydrogen/hydrogen-production"> wind- en zonnestroom</a>
+        en op de kosten voor waterstofproductie met
+        <a href="/scenario/supply/electricity_renewable/wind-turbines">
+        wind op zee met hybride aansluiting</a>.
     om_costs_co2_ccs:
       title: Onderhoudskosten
       short_description: ''
@@ -1074,9 +1077,16 @@ nl:
       short_description: ''
       description: "Met deze schuif kun je de toekomstige efficiëntie van houtpelletkachels voor ruimteverwarming in gebouwen veranderen."
     efficiency_hydrogen_electrolysis:
-      title: Power-to-gas elektrolysers
+      title: Elektrolysers
       short_description: ''
-      description: "Met deze schuif kun je de toekomstige efficiëntie van power-to-gas elektrolysers aanpassen."
+      description: |
+        Met deze schuif kun je de toekomstige efficiëntie van elektrolysers aanpassen.
+        Deze schuif bepaalt de efficiëntie van elektrolysers verbonden aan het stroomnet met
+        <a href=/scenario/flexibility/flexibility_conversion/conversion-to-hydrogen>
+        flexibele elektriciteitsvraag</a>, directe waterstofproductie met
+        <a href=/scenario/supply/hydrogen/hydrogen-production> wind- en zonnestroom</a> en
+        waterstofproductie met <a href=/scenario/supply/electricity_renewable/wind-turbines>
+        wind op zee met hybride aansluiting</a>.
     efficiency_households_space_heater_heatpump_air_water_electricity:
       title: Luchtwarmtepomp
       short_description: ''

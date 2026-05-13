@@ -7,11 +7,11 @@ GIT
 
 GIT
   remote: https://github.com/quintel/etplugin.git
-  revision: 4f87ea2bd05b237a2e6f4cd733fbb54d2a2c635c
-  ref: 4f87ea2
+  revision: 54baa63f891198cfdf82a7a5988eeae79e49be52
+  ref: 54baa63
   specs:
     jquery-etmodel-rails (0.3)
-      railties (>= 3.1)
+      railties (>= 7.0)
 
 GIT
   remote: https://github.com/quintel/identity_rails.git
@@ -134,7 +134,7 @@ GEM
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
       rouge (>= 1.0.0)
-    bigdecimal (4.1.1)
+    bigdecimal (4.1.2)
     bindata (2.5.1)
     binding_of_caller (2.0.0)
       debug_inspector (>= 1.2.0)
@@ -283,7 +283,7 @@ GEM
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.8.2)
-    irb (1.17.0)
+    irb (1.18.0)
       pp (>= 0.6.0)
       prism (>= 1.3.0)
       rdoc (>= 4.0.0)
@@ -295,7 +295,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (2.19.3)
+    json (2.19.5)
     json-jwt (1.17.0)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -350,7 +350,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.20.0)
       libv8-node (~> 24.12.0.1)
-    minitest (6.0.3)
+    minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
     multi_xml (0.8.1)
@@ -496,7 +496,7 @@ GEM
       tsort (>= 0.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.3.1)
+    rake (13.4.2)
     rdiscount (2.2.7.4)
     rdoc (7.2.0)
       erb

@@ -56,7 +56,8 @@ gem 'mysql2'
 
 gem 'dynamic_form'
 
-gem 'jquery-etmodel-rails', ref: '4f87ea2', github: 'quintel/etplugin'
+# own gems
+gem 'jquery-etmodel-rails', ref: '54baa63', github: 'quintel/etplugin'
 
 # Engine
 gem 'dry-initializer'

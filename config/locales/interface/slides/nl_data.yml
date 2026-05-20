@@ -143,6 +143,23 @@ nl:
             </a>
           </li>
         </ul>
+    data_export_emissions:
+      title: Jaarlijkse emissies
+      short_description:
+      description: |
+        Download emissiedata voor alle nodes, één CSV voor het huidige jaar en één voor het toekomstjaar.
+        <ul class="data-download">
+          <li>
+            <a href="/passthru/%{scenario_id}/direct_emissions_present.csv" target="_blank">
+              <span class="name">Emissies (huidig)</span>
+              <span class="filetype">CSV</span></a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/direct_emissions_future.csv" target="_blank">
+              <span class="name">Emissies (toekomst)</span>
+              <span class="filetype">CSV</span></a>
+          </li>
+        </ul>
     data_export_heat_network:
       title: Uurlijkse profielen voor warmtenetten
       short_description:

@@ -144,19 +144,24 @@ nl:
           </li>
         </ul>
     data_export_emissions:
-      title: Jaarlijkse emissies
+      title: Jaarlijkse directe broeikasgasemissies
       short_description:
       description: |
-        Download emissiedata voor alle nodes, één CSV voor het huidige jaar en één voor het toekomstjaar.
+        Download gedetailleerde data over de directe broeikasgasemissies van een scenario voor het
+        heden en het toekomstjaar. Lees meer over hoe directe emissies worden berekend in de
+        documentatie.<br/><br/>
+        <b>Let op:</b> voor regionale (Nederlandse) datasets bevat deze data-export nog niet de
+        resultaten voor <a href="/scenario/emissions/other_emissions/overview">overige
+        broeikasgasemissies</a>. Lees meer hierover in de documentatie.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/direct_emissions_present.csv" target="_blank">
-              <span class="name">Emissies (huidig)</span>
+              <span class="name">Directe emissies (heden)</span>
               <span class="filetype">CSV</span></a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/direct_emissions_future.csv" target="_blank">
-              <span class="name">Emissies (toekomst)</span>
+              <span class="name">Directe emissies (toekomst)</span>
               <span class="filetype">CSV</span></a>
           </li>
         </ul>

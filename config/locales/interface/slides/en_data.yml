@@ -142,19 +142,24 @@ en:
           </li>
         </ul>
     data_export_emissions:
-      title: Yearly emissions
+      title: Yearly direct greenhouse gas emissions
       short_description:
       description: |
-        Download emissions data for all nodes, one CSV for the present year and one for the future year.
+        Download detailed data about the direct greenhouse gas emissions of a scenario for the
+        present and future year. Read more about how direct emissions are calculated in the
+        documentation.<br/><br/>
+        <b>Note:</b> for regional (Dutch) datasets, this data export does not yet include the
+        results for <a href="/scenario/emissions/other_emissions/overview">other greenhouse gas
+        emissions</a>. Read more about this in the documentation.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/direct_emissions_present.csv" target="_blank">
-              <span class="name">Emissions (present)</span>
+              <span class="name">Direct emissions (present)</span>
               <span class="filetype">CSV</span></a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/direct_emissions_future.csv" target="_blank">
-              <span class="name">Emissions (future)</span>
+              <span class="name">Direct emissions (future)</span>
               <span class="filetype">CSV</span></a>
           </li>
         </ul>

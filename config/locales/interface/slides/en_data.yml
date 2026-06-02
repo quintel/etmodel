@@ -147,10 +147,13 @@ en:
       description: |
         Download detailed data about the direct greenhouse gas emissions of a scenario for the
         present and future year. Read more about how direct emissions are calculated in the
-        documentation.<br/><br/>
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions#principles"
+        target=\"_blank\">documentation</a>.<br/><br/>
         <b>Note:</b> for regional (Dutch) datasets, this data export does not yet include the
         results for <a href="/scenario/emissions/other_emissions/overview">other greenhouse gas
-        emissions</a>. Read more about this in the documentation.
+        emissions</a>. Read more about this in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions#method-implementation"
+        target=\"_blank\">documentation</a>.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/direct_emissions_present.csv" target="_blank">

@@ -149,10 +149,13 @@ nl:
       description: |
         Download gedetailleerde data over de directe broeikasgasemissies van een scenario voor het
         heden en het toekomstjaar. Lees meer over hoe directe emissies worden berekend in de
-        documentatie.<br/><br/>
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions#principles"
+        target=\"_blank\">documentatie</a>.<br/><br/>
         <b>Let op:</b> voor regionale (Nederlandse) datasets bevat deze data-export nog niet de
         resultaten voor <a href="/scenario/emissions/other_emissions/overview">overige
-        broeikasgasemissies</a>. Lees meer hierover in de documentatie.
+        broeikasgasemissies</a>. Lees meer hierover in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions#method-implementation"
+        target=\"_blank\">documentatie</a>.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/direct_emissions_present.csv" target="_blank">

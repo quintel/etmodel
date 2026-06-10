@@ -155,6 +155,12 @@ en:
               <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/heat_network_capacities.csv" target="_blank">
+              <span class="name">Heat network installed and peak capacities</span>
+              <span class="filetype">10KB CSV</span>
+            </a>
+          </li>
         </ul>
     data_export_household_heat:
       title: Hourly curves for heat in the built environment
@@ -220,6 +226,12 @@ en:
               <span class="filetype">2MB CSV</span>
             </a>
           </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
+              <span class="name">Hydrogen installed and peak capacities</span>
+              <span class="filetype">10KB CSV</span>
+            </a>
+          </li>
         </ul>
     data_export_molecule_flows:
       title: Yearly CCUS flows
@@ -241,6 +253,12 @@ en:
             <a href="/passthru/%{scenario_id}/curves/network_gas.csv" target="_blank">
               <span class="name">Network gas demand, production and storage per hour</span>
               <span class="filetype">3MB CSV</span>
+            </a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/network_gas_capacities.csv" target="_blank">
+              <span class="name">Network gas installed and peak capacities</span>
+              <span class="filetype">10KB CSV</span>
             </a>
           </li>
         </ul>
@@ -344,6 +362,7 @@ en:
         <ul class="data-download merit-data-downloads">
           <li><a href="/passthru/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/merit_order_capacities.csv" target="_blank"><span class="name">Electricity installed and peak capacities</span> <span class="filetype">20KB CSV</span></a></li>
         </ul>
     data_export_residual_load_curves:
       title: Hourly residual load curves

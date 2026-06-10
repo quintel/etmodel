@@ -47,8 +47,17 @@ set :linked_dirs,
 namespace :deploy do
   after :publishing, :restart
 
+  # The cache lives in Solid Cache (database-backed), so it survives restarts
+  # and deploys unless cleared explicitly. Stale entries otherwise keep serving
+  # outdated responses (see quintel/multi-year-charts#123).
   after :restart, :clear_cache do
-    invoke 'memcached:flush'
+    on roles(:app) do
+      within current_path do
+        with rails_env: fetch(:rails_env, fetch(:stage)) do
+          execute :bundle, :exec, :rails, :runner, "'Rails.cache.clear'"
+        end
+      end
+    end
   end
 end
 

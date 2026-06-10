@@ -12,7 +12,7 @@ class InputElementsController < ApplicationController
   # GET /input_elements/by_slide
   def by_slide
     # Include only sliders which are visible in the UI.
-    json = Rails.cache.fetch("input_elements/by_slide?locale=#{I18n.locale}") do
+    json = Rails.cache.fetch("input_elements/by_slide?locale=#{I18n.locale}", expires_in: 1.day) do
       slides = Slide.ordered.select(&:visible_with_inputs?)
       SlidePresenter.collection(slides).to_json
     end

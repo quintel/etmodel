@@ -122,18 +122,18 @@
   key: direct_emissions_per_sector_bunkers
 
 # 1990 total GHG emissions
-- label: direct_emissions_per_sector_1990
-  color: "#696969"
+- label: energy
+  color: "#416B86"
   order_by: 200
   group: ''
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: 1990_in_co2_emissions
+  gquery: direct_emissions_energy_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
-  key: direct_emissions_per_sector_1990
+  key: direct_emissions_per_sector_energy_1990
 
 # net total GHG emissions
 - label: direct_emissions_total_ghg

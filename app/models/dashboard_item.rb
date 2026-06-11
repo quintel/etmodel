@@ -13,6 +13,7 @@ class DashboardItem < YModel::Base
   GROUPS = %w[
     energy_use
     co2
+    direct_emissions
     import
     costs
     footprint

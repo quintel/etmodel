@@ -134,6 +134,114 @@
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_energy_1990
+- label: industry
+  color: "#A9A9A9"
+  order_by: 210
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_industry_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_industry_1990
+- label: transport
+  color: "#8B0000"
+  order_by: 220
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_transport_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_transport_1990
+- label: buildings
+  color: "#ADD8E6"
+  order_by: 230
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_buildings_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_buildings_1990
+- label: households
+  color: "#4169E1"
+  order_by: 240
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_households_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_households_1990
+- label: agriculture
+  color: "#FFD700"
+  order_by: 250
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_agriculture_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_agriculture_1990
+- label: other
+  color: "#E07033"
+  order_by: 260
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_other_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_other_1990
+- label: lulucf
+  color: "#C377C3"
+  order_by: 270
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_lulucf_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_lulucf_1990
+- label: waste
+  color: "#6D6D6D"
+  order_by: 280
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_waste_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_waste_1990
+- label: bunkers
+  color: "#82589F"
+  order_by: 290
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: direct_emissions_bunkers_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_bunkers_1990
 
 # net total GHG emissions
 - label: direct_emissions_total_ghg

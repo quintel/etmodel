@@ -115,7 +115,7 @@ en:
       label: Profitable plants
       title: Profitability of dispatchable power plants
       description: |
-        The percentage on the dashboard shows which percentage of the installed 
+        The percentage on the dashboard shows which percentage of the installed
         dispatchable power production capacity is economically viable. This table shows (of all plants, not only the dispatchable plants) what
         plants are profitable or unprofitable in your scenario. For more information about the table, please visit
         the <a href="https://docs.energytransitionmodel.com/main/cost-main-principles" target="_blank">documentation</a>.
@@ -155,3 +155,17 @@ en:
         as well as other important greenhouse gases, such as methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O),
         that should be considered. This graph shows these other emissions on top of the energetic CO<sub>2</sub> emissions
         resulting in an overview of all greenhouse gas emissions.'
+    direct_emissions_total_ghg_relative_to_1990:
+      label: Direct GHG relative to 1990
+      title: Direct total GHG emissions relative to 1990
+      description: 'The year 1990 is used as reference year for the change in greenhouse gas emissions
+        shown in the dashboard. The chart below shows the total GHG emissions
+        obtained by the direct emission method.
+        You can find more information about this method in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentation</a>.'
+    direct_emissions_total_ghg:
+      label: Direct GHG emissions
+      title: Direct total GHG emissions
+      description: 'The ETM calculates the total amount of future greenhouse gases that will be emitted.
+        The chart below shows the total GHG emissions
+        obtained by the direct emission method.
+        You can find more information about this method in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentation</a>.'

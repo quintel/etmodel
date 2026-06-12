@@ -6,7 +6,7 @@ D3.merit_order_price_curve =
     margins:
       top: 20
       bottom: 20
-      left: 70
+      left: 85
       right: 20
       label_left: 25
 

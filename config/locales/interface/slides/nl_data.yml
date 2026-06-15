@@ -144,7 +144,7 @@ nl:
           </li>
         </ul>
     data_export_heat_network:
-      title: Uurlijkse profielen voor warmtenetten
+      title: Uurlijkse profielen en vermogens voor warmtenetten
       short_description:
       description: |
         Download informatie over de uurlijkse vraag en productie van collectieve
@@ -152,14 +152,14 @@ nl:
 
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/heat_network.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/heat_network_profiles.csv" target="_blank">
               <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
               <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/curves/heat_network_capacities.csv" target="_blank">
-              <span class="name">Geïnstalleerd en piekvermogen warmtenet</span>
+              <span class="name">Vermogen warmtenet</span>
               <span class="filetype">10KB CSV</span>
             </a>
           </li>
@@ -199,7 +199,7 @@ nl:
           </li>
         </ul>
     data_export_hydrogen:
-      title: Uurlijkse profielen voor waterstof
+      title: Uurlijkse profielen en vermogens voor waterstof
       short_description:
       description: |
         Hier kunnen twee exports over waterstof gedownload worden.
@@ -210,21 +210,21 @@ nl:
         de productie van waterstof, de productiekosten per MWh voor elke productiemethode en de productiecurve van waterstof voor elke productiemethode op uurbasis.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/hydrogen.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_profiles.csv" target="_blank">
               <span class="name">Waterstofvraag, -productie en -opslag per uur</span>
               <span class="filetype">750KB CSV</span>
+            </a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
+              <span class="name">Vermogen waterstof</span>
+              <span class="filetype">10KB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank">
               <span class="name">Integrale kosten waterstof</span>
               <span class="filetype">2MB CSV</span>
-            </a>
-          </li>
-          <li>
-            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
-              <span class="name">Geïnstalleerd en piekvermogen waterstof</span>
-              <span class="filetype">10KB CSV</span>
             </a>
           </li>
         </ul>
@@ -239,21 +239,21 @@ nl:
           <span class="fa fa-book"></span> Bekijk de graaf →
         </a>
     data_export_network_gas:
-      title: Uurlijkse profielen voor gas
+      title: Uurlijkse profielen en vermogens voor gas
       short_description:
       description: |
         Het Energietransitiemodel rekent op uurbasis de vraag, productie en opslag van netwerkgas uit. Hieronder kun je deze gegevens downloaden als CSV-bestand, uitgesplitst naar technologie/sector.
 
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/network_gas.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/network_gas_profiles.csv" target="_blank">
               <span class="name">Netwerkgasvraag, -productie en -opslag per uur</span>
               <span class="filetype">3MB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/curves/network_gas_capacities.csv" target="_blank">
-              <span class="name">Geïnstalleerd en piekvermogen netwerkgas</span>
+              <span class="name">Vermogen netwerkgas</span>
               <span class="filetype">10KB CSV</span>
             </a>
           </li>
@@ -337,7 +337,7 @@ nl:
         <a href="/scenario/demand/households/space-heating-and-hot-water">
         desbetreffende sectie</a>.
     flexibility_merit_order_merit_order_price:
-      title: Uurlijkse profielen voor elektriciteit
+      title: Uurlijkse profielen en vermogens voor elektriciteit
       short_description:
       description: |
         De merit order rangschikt de elektriciteitscentrales naar marginale
@@ -360,9 +360,9 @@ nl:
         hieronder.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="/passthru/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/curves/merit_order_capacities.csv" target="_blank"><span class="name">Geïnstalleerd en piekvermogen elektriciteit</span> <span class="filetype">20KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_profiles.csv" target="_blank"><span class="name">Elektriciteitsvraag, -productie en -opslag per uur</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_capacities.csv" target="_blank"><span class="name">Vermogen elektriciteit</span> <span class="filetype">20KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Elektriciteitsprijs per uur</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     data_export_residual_load_curves:
       title: Uurlijkse residual load curves

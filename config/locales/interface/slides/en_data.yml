@@ -142,7 +142,7 @@ en:
           </li>
         </ul>
     data_export_heat_network:
-      title: Hourly curves for heat networks
+      title: Hourly profiles and capacities for heat networks
       short_description:
       description: |
         Download information about the hourly demands and supplies of heat
@@ -150,14 +150,14 @@ en:
 
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/heat_network.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/heat_network_profiles.csv" target="_blank">
               <span class="name">Heat network demand, production and storage per hour</span>
               <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/curves/heat_network_capacities.csv" target="_blank">
-              <span class="name">Heat network installed and peak capacities</span>
+              <span class="name">Heat network capacities</span>
               <span class="filetype">10KB CSV</span>
             </a>
           </li>
@@ -196,7 +196,7 @@ en:
           </li>
         </ul>
     data_export_hydrogen:
-      title: Hourly curves for hydrogen
+      title: Hourly profiles and capacities for hydrogen
       short_description:
       description: |
         Below you can download two exports concering hydrogen.
@@ -207,21 +207,21 @@ en:
         the production cost per MWh for each generation method and the production curve of hydrogen for each generation method on an hourly basis.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/hydrogen.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_profiles.csv" target="_blank">
               <span class="name">Hydrogen demand, production and storage per hour</span>
               <span class="filetype">750KB CSV</span>
+            </a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
+              <span class="name">Hydrogen capacities</span>
+              <span class="filetype">10KB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank">
               <span class="name">Levelised costs of hydrogen</span>
               <span class="filetype">2MB CSV</span>
-            </a>
-          </li>
-          <li>
-            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
-              <span class="name">Hydrogen installed and peak capacities</span>
-              <span class="filetype">10KB CSV</span>
             </a>
           </li>
         </ul>
@@ -235,21 +235,21 @@ en:
           <li><a href="/passthru/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
         </ul>
     data_export_network_gas:
-      title: Hourly curves for gas
+      title: Hourly profiles and capacities for gas
       short_description:
       description: |-
         Below you can download information about network gas demand, supply and storage per hour in your scenario.
 
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/network_gas.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/network_gas_profiles.csv" target="_blank">
               <span class="name">Network gas demand, production and storage per hour</span>
               <span class="filetype">3MB CSV</span>
             </a>
           </li>
           <li>
             <a href="/passthru/%{scenario_id}/curves/network_gas_capacities.csv" target="_blank">
-              <span class="name">Network gas installed and peak capacities</span>
+              <span class="name">Network gas capacities</span>
               <span class="filetype">10KB CSV</span>
             </a>
           </li>
@@ -330,7 +330,7 @@ en:
         <a href="/scenario/demand/households/space-heating-and-hot-water">
         Households space heating and hot water</a> section.
     flexibility_merit_order_merit_order_price:
-      title: Hourly curves for electricity
+      title: Hourly profiles and capacities for electricity
       short_description:
       description: |
         The merit order ranks power plants according to their marginal costs.
@@ -352,9 +352,9 @@ en:
         The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="/passthru/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/curves/merit_order_capacities.csv" target="_blank"><span class="name">Electricity installed and peak capacities</span> <span class="filetype">20KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_profiles.csv" target="_blank"><span class="name">Electricity demand, supply and storage per hour</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_capacities.csv" target="_blank"><span class="name">Electricity capacities</span> <span class="filetype">20KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Electricity price per hour</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     data_export_residual_load_curves:
       title: Hourly residual load curves

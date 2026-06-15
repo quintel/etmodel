@@ -4,51 +4,54 @@
   sidebar_item_key: data_export
   output_element_key: final_energy_demand_per_sector_joule
 - key: data_export_inputs
-  position: 101
+  position: 105
   sidebar_item_key: data_export
   output_element_key: final_energy_demand_per_sector_joule
+
 - key: data_export_energy_flows
-  position: 105
+  position: 200
   sidebar_item_key: data_export
   output_element_key: sankey_energy_overview
 - key: data_export_molecule_flows
-  position: 110
+  position: 205
   sidebar_item_key: data_export
   output_element_key: co2_emissions
+
 - key: data_export_costs
-  position: 210
+  position: 300
   sidebar_item_key: data_export
   output_element_key: costs_overview_detailed
 - key: data_export_storage
-  position: 220
+  position: 305
   sidebar_item_key: data_export
   output_element_key: storage_specifications
-- key: data_export_household_heat
-  position: 300
-  sidebar_item_key: data_export
-  output_element_key: household_heat_demand_and_production
-- key: data_export_hydrogen
-  position: 310
-  sidebar_item_key: data_export
-  output_element_key: hydrogen_production_cost_curve
-- key: data_export_network_gas
-  position: 320
-  sidebar_item_key: data_export
-  output_element_key: network_gas_demand
-- key: data_export_heat_network
-  position: 330
-  sidebar_item_key: data_export
-  output_element_key: heat_network_demand_ht
-- key: data_export_agriculture_heat
-  position: 340
-  sidebar_item_key: data_export
-  output_element_key: agriculture_local_heat_mekko
+
 - key: flexibility_merit_order_merit_order_price
-  position: 350
+  position: 400
   sidebar_item_key: data_export
   alt_output_element_key: merit_order_price_curve
   output_element_key: merit_order_price_curve
+- key: data_export_heat_network
+  position: 405
+  sidebar_item_key: data_export
+  output_element_key: heat_network_demand_ht
+- key: data_export_hydrogen
+  position: 410
+  sidebar_item_key: data_export
+  output_element_key: hydrogen_production_cost_curve
+- key: data_export_network_gas
+  position: 415
+  sidebar_item_key: data_export
+  output_element_key: network_gas_demand
+- key: data_export_household_heat
+  position: 420
+  sidebar_item_key: data_export
+  output_element_key: household_heat_demand_and_production
+- key: data_export_agriculture_heat
+  position: 425
+  sidebar_item_key: data_export
+  output_element_key: agriculture_local_heat_mekko
 - key: data_export_residual_load_curves
-  position: 360
+  position: 430
   sidebar_item_key: data_export
   output_element_key: flexibility_hourly_carriers_inflexible_imbalance

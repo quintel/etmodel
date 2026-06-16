@@ -27,14 +27,17 @@ en:
         target="_blank">1990 emissions</a> and the <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector"
         target="_blank">emissions per sector</a> in the ETM.
     direct_emissions_per_sector:
-      title: Direct total GHG emissions
-      short_description: ''
+      title: Direct total GHG emissions (beta release)
+      short_description:
       description: |
-        This chart compares GHG emissions in 1990, the present, and the future.
+        This chart compares total GHG emissions in 1990, the present and the future.
         The year 1990 is often used as a reference year in emission targets.
         <br/><br/>
-        These GHG emissions are obtained through the direct emission method.
-        You can find more information about this method in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentation</a>.'
+        <b>Note: the emissions are calculated based on direct emissions.</b> This emissions method
+        is currently in beta release and is not yet completely availabe for regional (Dutch)
+        datasets. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
     renewability:
       title: Renewability of final demand
       short_description: ''

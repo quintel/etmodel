@@ -131,6 +131,7 @@
   target_line_position: ''
   gquery: direct_emissions_energy_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_energy_1990
@@ -143,6 +144,7 @@
   target_line_position: ''
   gquery: direct_emissions_industry_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_industry_1990
@@ -155,6 +157,7 @@
   target_line_position: ''
   gquery: direct_emissions_transport_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_transport_1990
@@ -167,6 +170,7 @@
   target_line_position: ''
   gquery: direct_emissions_buildings_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_buildings_1990
@@ -179,6 +183,7 @@
   target_line_position: ''
   gquery: direct_emissions_households_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_households_1990
@@ -191,6 +196,7 @@
   target_line_position: ''
   gquery: direct_emissions_agriculture_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_agriculture_1990
@@ -203,6 +209,7 @@
   target_line_position: ''
   gquery: direct_emissions_other_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_other_1990
@@ -215,6 +222,7 @@
   target_line_position: ''
   gquery: direct_emissions_lulucf_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_lulucf_1990
@@ -227,6 +235,7 @@
   target_line_position: ''
   gquery: direct_emissions_waste_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_waste_1990
@@ -239,14 +248,27 @@
   target_line_position: ''
   gquery: direct_emissions_bunkers_total_ghg_1990_for_direct_emissions_chart
   is_1990: true
+  hide_label: true
   dependent_on:
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_bunkers_1990
 
-# net total GHG emissions
+# 1990, present and future net total GHG emissions target line
 - label: direct_emissions_total_ghg
   color: "#FF0000"
   order_by: 300
+  group: ''
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '0'
+  gquery: direct_emissions_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  dependent_on:
+  output_element_key: direct_emissions_per_sector
+  key: direct_emissions_per_sector_total_ghg_1990
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 310
   group: ''
   show_at_first: false
   is_target_line: true
@@ -258,7 +280,7 @@
   key: direct_emissions_per_sector_total_ghg_present
 - label: direct_emissions_total_ghg
   color: "#FF0000"
-  order_by: 310
+  order_by: 320
   group: ''
   show_at_first: false
   is_target_line: true

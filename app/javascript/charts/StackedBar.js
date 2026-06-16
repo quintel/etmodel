@@ -11,8 +11,11 @@ const stack = d3.stack().offset(d3.stackOffsetDiverging);
  * Determines the opacity with which a target line should be drawn.
  */
 const targetLineOpacity = (serie) => {
+  const position = serie.get('target_line_position');
   const value =
-    serie.get('target_line_position') === '1' ? serie.present_value() : serie.future_value();
+    position === '0' ? serie.present_value() :
+    position === '1' ? serie.present_value() :
+    serie.future_value();
 
   return value === null ? 0 : 1;
 };
@@ -129,7 +132,8 @@ class StackedBar extends D3Chart {
       .attr('height', 2)
       .attr('width', () => this.x.bandwidth() * 1.2)
       .attr('x', (s) => {
-        const year = s.get('target_line_position') === '1' ? this.startYear : this.endYear;
+        const position = s.get('target_line_position');
+        const year = position === '0' ? 1990 : position === '1' ? this.startYear : this.endYear;
         return this.x(year) - this.x.bandwidth() * 0.1;
       })
       .attr('y', 0);
@@ -174,8 +178,11 @@ class StackedBar extends D3Chart {
       .style('opacity', targetLineOpacity)
       .transition(transition)
       .attr('y', (d) => {
+        const position = d.get('target_line_position');
         const value =
-          d.get('target_line_position') === '1' ? d.safe_present_value() : d.safe_future_value();
+          position === '0' ? d.safe_present_value() :
+          position === '1' ? d.safe_present_value() :
+          d.safe_future_value();
 
         return this.y(value);
       });

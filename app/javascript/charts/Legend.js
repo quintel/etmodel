@@ -81,6 +81,10 @@ class Legend extends Backbone.View {
     const clickable = this.options.clickable;
 
     for (const series of this.options.items) {
+      if (series.get('hide_label')) {
+        continue;
+      }
+
       this.el.append(
         new LegendItem({
           clickable,

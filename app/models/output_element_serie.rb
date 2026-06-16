@@ -82,7 +82,8 @@ class OutputElementSerie < YModel::Base
       group_translated: group_translated, # used to display groups in mekkos's & horizontal_stacked_bar
       is_target_line: is_target_line,
       target_line_position: target_line_position,
-      is_1990: is_1990
+      is_1990: is_1990,
+      hide_label: hide_label
     }
   end
   # rubocop:enable Metrics/LineLength

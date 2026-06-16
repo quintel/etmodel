@@ -23,11 +23,18 @@ describe OutputElementSerie do
     it { is_expected.to respond_to(:is_target_line) }
     it { is_expected.to respond_to(:target_line_position) }
     it { is_expected.to respond_to(:is_1990) }
+    it { is_expected.to respond_to(:hide_label) }
 
     # methods
     it { is_expected.to respond_to(:title_translated) }
     it { is_expected.to respond_to(:group_translated) }
     it { is_expected.to respond_to(:json_attributes) }
     it { is_expected.to respond_to(:url_in_etengine) }
+  end
+
+  describe '#json_attributes' do
+    subject { described_class.new(hide_label: true).json_attributes }
+
+    it { is_expected.to include(hide_label: true) }
   end
 end

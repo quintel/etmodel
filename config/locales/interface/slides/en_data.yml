@@ -33,7 +33,7 @@ en:
         You can view the source data for your region in a clear
         and structured way in the ETM Dataset Manager, which can be visited by clicking on the button below.
     data_export_inputs:
-      title: Overview of slider settings
+      title: Slider settings
       short_description:
       description: |
         Download an overview of this scenario's slider settings. This includes the slider keys, the
@@ -142,22 +142,28 @@ en:
           </li>
         </ul>
     data_export_heat_network:
-      title: Hourly curves for heat networks
+      title: Hourly profiles and capacities for heat networks
       short_description:
       description: |
-        Download information about the hourly demands and supplies of heat
-        through the central heat network for households, buildings and agriculture.
-
+        The hourly district heating demand, supply and storage per technology and temperature level
+        as well as the installed and peak district heating capacity per technology and temperature
+        level can be downloaded here.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/heat_network.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/heat_network_profiles.csv" target="_blank">
               <span class="name">Heat network demand, production and storage per hour</span>
               <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/heat_network_capacities.csv" target="_blank">
+              <span class="name">Heat network capacities</span>
+              <span class="filetype">10KB CSV</span>
+            </a>
+          </li>
         </ul>
     data_export_household_heat:
-      title: Hourly curves for heat in the built environment
+      title: Hourly profiles for heat in the built environment
       short_description:
       description: |
         Download the heat demand and production per hour for space heating and hot water in
@@ -189,34 +195,32 @@ en:
             </a>
           </li>
         </ul>
-    data_export_production:
-      title: Specifications heat and electricity production
-      short_description:
-      description: |
-        Download details of heat and electricity producers. Includes information about the electrical and heat capacities, number of units, and costs.
-        <ul class="data-download">
-          <li><a href="/passthru/%{scenario_id}/production_parameters.csv" target="_blank"><span class="name">Production capacity and costs</span> <span class="filetype">15KB CSV</span></a></li>
-        </ul>
     data_export_hydrogen:
-      title: Hourly curves for hydrogen
+      title: Hourly profiles and capacities for hydrogen
       short_description:
       description: |
-        Below you can download two exports concering hydrogen.
-        <br/><br/>
-        The "Hydrogen demand, production and storage per hour" export contains information about hydrogen demand, supply and storage per hour in your scenario.
-        <br/><br/>
-        The "Levelised costs of hydrogen" export contains the levelised costs of hydrogen production, the production of hydrogen,
-        the production cost per MWh for each generation method and the production curve of hydrogen for each generation method on an hourly basis.
+        The hourly hydrogen demand, supply and storage per technology as well as the installed
+        and peak hydrogen capacity per technology can be downloaded here. </br></br>
+        Additionally, the levelised costs of hydrogen can be downloaded: this data export contains
+        the levelised costs of hydrogen production, the production of hydrogen, the production cost
+        per MWh for each generation method and the production curve of hydrogen for each generation
+        method on an hourly basis.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/hydrogen.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_profiles.csv" target="_blank">
               <span class="name">Hydrogen demand, production and storage per hour</span>
               <span class="filetype">750KB CSV</span>
             </a>
           </li>
           <li>
+            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
+              <span class="name">Hydrogen capacities</span>
+              <span class="filetype">10KB CSV</span>
+            </a>
+          </li>
+          <li>
             <a href="/passthru/%{scenario_id}/curves/hydrogen_integral_cost.csv" target="_blank">
-              <span class="name">Levelised costs of hydrogen</span>
+              <span class="name">Hydrogen levelised costs</span>
               <span class="filetype">2MB CSV</span>
             </a>
           </li>
@@ -231,16 +235,22 @@ en:
           <li><a href="/passthru/%{scenario_id}/molecule_flow.csv" target="_blank"> <span class="name">Molecule flows</span> <span class="filetype">4KB CSV</span></a></li>
         </ul>
     data_export_network_gas:
-      title: Hourly curves for gas
+      title: Hourly profiles and capacities for network gas
       short_description:
-      description: |-
-        Below you can download information about network gas demand, supply and storage per hour in your scenario.
-
+      description: |
+        The hourly network gas demand, supply and storage per technology as well as the installed
+        and peak network gas capacity per technology can be downloaded here.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/network_gas.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/network_gas_profiles.csv" target="_blank">
               <span class="name">Network gas demand, production and storage per hour</span>
               <span class="filetype">3MB CSV</span>
+            </a>
+          </li>
+          <li>
+            <a href="/passthru/%{scenario_id}/curves/network_gas_capacities.csv" target="_blank">
+              <span class="name">Network gas capacities</span>
+              <span class="filetype">10KB CSV</span>
             </a>
           </li>
         </ul>
@@ -320,38 +330,24 @@ en:
         <a href="/scenario/demand/households/space-heating-and-hot-water">
         Households space heating and hot water</a> section.
     flexibility_merit_order_merit_order_price:
-      title: Hourly curves for electricity
+      title: Hourly profiles and capacities for electricity
       short_description:
       description: |
-        The merit order ranks power plants according to their marginal costs.
-        Based on the hourly demand, the ETM calculates which power plants are
-        dispatched each hour. Combined with the marginal costs of these
-        plants, the ETM calculates the hourly electricity price. The ETM
-        assumes that this price is equal to the marginal costs of the most
-        expensive plant running.
-
-        <br/><br/>
-
-        Note that any mismatches between hourly supply and demand are due to
-        insufficient production capacity in the scenario. These mismatches
-        (resulting in blackhout hours) are represented in the 'deficit' column
-        in the electricity load curves data export.
-
-        <br/><br/>
-
-        The hourly load curves for all electricity production and consumption for your scenario, as well as the price curve, can be downloaded following the links below.
-
+        The hourly electricity demand, supply and storage per technology as well as the installed
+        and peak electricity capacity per technology can be downloaded here. </br></br>
+        Additionally, the hourly electricity price can be downloaded.
         <ul class="data-download merit-data-downloads">
-          <li><a href="/passthru/%{scenario_id}/curves/merit_order.csv" target="_blank"><span class="name">Electricity load curves</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Price curve</span> <span class="filetype">300KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_profiles.csv" target="_blank"><span class="name">Electricity demand, supply and storage per hour</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_capacities.csv" target="_blank"><span class="name">Electricity capacities</span> <span class="filetype">20KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Electricity price per hour</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     data_export_residual_load_curves:
       title: Hourly residual load curves
       short_description:
       description: |
-        Download the curves shown in the chart on the right. For electricity, heat on the district heating
-        network, network gas and hydrogen, you can download the imbalance in inflexible supply and demand.
-        This imbalance is also known as the residual load curve (see the
+        For electricity, heat on the district heating network, network gas and hydrogen, you can
+        download the imbalance in inflexible supply and demand. This imbalance is also known as the
+        residual load curve (see the
         <a href=/scenario/flexibility/flexibility_overview/residual-load-curves>Residual load curves</a>
         section for more information). </br></br>
         For network gas and hydrogen, two additional curves are included the download, which are calculated using
@@ -363,7 +359,7 @@ en:
           <li><a href="/passthru/%{scenario_id}/curves/residual_load.csv" target="_blank"> <span class="name">Residual load curves</span> <span class="filetype">1MB CSV</span></a></li>
         </ul>
     data_export_agriculture_heat:
-      title: Hourly curves for agriculture heat from local CHPs
+      title: Hourly profiles for agriculture heat from local CHPs
       short_description:
       description: |
         Download information about the hourly demands and supplies for heat from local combined heat and power

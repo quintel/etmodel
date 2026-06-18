@@ -52,7 +52,7 @@ nl:
         in CO<sub>2</sub> uitstoot getoond in het dashboard
     co2_reduction_relative_to_start_year:
       label: CO<sub>2</sub> t.o.v. startjaar
-      title: CO<sub>2</sub>-uitstoot ten opzichte van het startjaar
+      title: CO<sub>2</sub>-uitstoot t.o.v. startjaar
       description: ''
     costs_fte:
       label: FTE delta analyse
@@ -147,24 +147,35 @@ nl:
         In de grafiek hieronder kun je de productiebeperking zien, vergeleken met andere inzet van flexibele elektriciteitsvraag.
     all_ghg_reduction_relative_to_start_year:
       label: Broeikasgassen
-      title: Totale broeikasgasemissies ten opzichte van het startjaar
+      title: Totale broeikasgasemissies t.o.v. startjaar
       description: "Het ETM berekent de CO<sub>2</sub> emissies die door energiegebruik worden uitgestoten.
         Echter bestaan er ook non-energetische bronnen van CO<sub>2</sub> en andere broeikasgassen zoals methaan (CH<sub>4</sub>)
         lachgas (N<sub>2</sub>O). Het is belangrijk om ook deze emissies in kaart te brengen om een goed overzicht te hebben
         van de totale emissies van een gebied. Deze grafiek laat deze overige emissies zien bovenop de energetische CO<sub>2</sub>
         emissies. Dit geeft een beeld van de totale broeikasemissies in het gebied."
     direct_emissions_total_ghg_relative_to_1990:
-      label: Broeikasemissies t.o.v. 1990
-      title: Directe totale broeikasgasemissies t.o.v. 1990
-      description: 'Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
-        in broeikasgasemissies, getoond in het dashboard.
-        De onderstaande grafiek toond de uitstoot van broeikasgassen berekend door gebruik van de directe emissiemethode.
-        Meer informatie over deze methode kunt u vinden in de <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentatie</a>.'
+      label: Broeikasgasemissies t.o.v. 1990
+      title: Directe totale broeikasgasemissies t.o.v. 1990 (beta release)
+      description: |
+        Dit dashboarditem representeert de reductie in directe totale broeikasgasemissies
+        ten opzichte van de totale broeikasgasemissies in 1990. Het jaar 1990 wordt vaak als
+        referentiejaar gebruikt in doelstellingen omtrent broeikasgasemissies. Onderstaande grafiek
+        toont de directe broeikasgasemissies per sector voor 1990, het startjaar en toekomstjaar.
+        <br/><br/>
+        <b>Let op: de emissies in dit dashboarditem en onderstaande grafiek zijn berekend op basis
+        van directe emissies.</b> Deze emissiemethode is momenteel in beta release en is nog niet
+        volledig beschikbaar voor de regionale (Nederlandse) datasets. Lees hierover meer in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.
     direct_emissions_total_ghg:
-      label: Directe boeikasemissie
-      title: Directe totale broeikasgasemissie
-      description: 'Het ETM berekent de broeikasgasemissies die door energiegebruik worden uitgestoten met behulp van de directe emissiemethode.
-        De totale hoeveelheid broeikasemissies voor het toekomstige senario is getoond in het dashboard.
-        De onderstaande grafiek vergelijkt de uitstoot van broeikasgassen
-        in 1990, het heden en de toekomst.
-        Meer informatie over de directe emissie methode kunt u vinden in de <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentatie</a>.'
+      label: Broeikasgasemissies
+      title: Directe totale broeikasgasemissies (beta release)
+      description: |
+        Dit dashboarditem representeert de directe totale broeikasgasemissies in het toekomstjaar.
+        Onderstaande grafiek toont de directe broeikasgasemissies per sector voor 1990, het
+        startjaar en toekomstjaar.<br/><br/>
+        <b>Let op: de emissies in dit dashboarditem en onderstaande grafiek zijn berekend op basis
+        van directe emissies.</b> Deze emissiemethode is momenteel in beta release en is nog niet
+        volledig beschikbaar voor de regionale (Nederlandse) datasets. Lees hierover meer in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.

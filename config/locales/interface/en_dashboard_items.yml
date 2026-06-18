@@ -149,23 +149,35 @@ en:
         In the chart below you can see the curtailed volume, compared to other uses of flexible electricity demand.
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
-      title: Total greenhouse gas emissions relative to start year
+      title: Total GHG emissions relative to start year (beta release)
       description: 'The ETM calculates the amount of CO<sub>2</sub> that is emitted
         as a result of energy use. However, there are also non-energetic sources of CO<sub>2</sub>
         as well as other important greenhouse gases, such as methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O),
         that should be considered. This graph shows these other emissions on top of the energetic CO<sub>2</sub> emissions
         resulting in an overview of all greenhouse gas emissions.'
     direct_emissions_total_ghg_relative_to_1990:
-      label: Direct GHG relative to 1990
+      label: GHG relative to 1990
       title: Direct total GHG emissions relative to 1990
-      description: 'The year 1990 is used as reference year for the change in greenhouse gas emissions
-        shown in the dashboard. The chart below shows the total GHG emissions
-        obtained by the direct emission method.
-        You can find more information about this method in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentation</a>.'
+      description: |
+        This dashboard item represents the reduction in direct total greenhouse gas emissions
+        relative to total greenhouse gas emissions in 1990. The year 1990 is often used as a
+        reference year in greenhouse gas emission targets. The chart below shows the direct
+        greenhouse gas emissions per sector for 1990, the start year and the future year.
+        <br/><br/>
+        <b>Note: the emissions in this dashboard item and the chart below are calculated based
+        on direct emissions.</b> This emission method is currently in beta release and is not yet
+        fully available for regional (Dutch) datasets. Read more about this in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
     direct_emissions_total_ghg:
-      label: Direct GHG emissions
-      title: Direct total GHG emissions
-      description: 'The ETM calculates the total amount of future greenhouse gases that will be emitted.
-        The chart below shows the total GHG emissions
-        obtained by the direct emission method.
-        You can find more information about this method in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions/" target="_blank">documentation</a>.'
+      label: GHG emissions
+      title: Direct total GHG emissions (beta release)
+      description: |
+        This dashboard item represents the direct total greenhouse gas emissions in the future year.
+        The chart below shows the direct greenhouse gas emissions per sector for 1990, the
+        start year and the future year.<br/><br/>
+        <b>Note: the emissions in this dashboard item and the chart below are calculated based
+        on direct emissions.</b> This emission method is currently in beta release and is not yet
+        fully available for regional (Dutch) datasets. Read more about this in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.

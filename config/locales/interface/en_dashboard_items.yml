@@ -160,10 +160,13 @@ en:
       title: Direct total GHG emissions relative to 1990
       description: |
         This dashboard item represents the reduction in direct total greenhouse gas emissions
-        relative to total greenhouse gas emissions in 1990. The year 1990 is often used as a
-        reference year in greenhouse gas emission targets. The chart below shows the direct
+        relative to total greenhouse gas emissions in 1990. The chart below shows the direct
         greenhouse gas emissions per sector for 1990, the start year and the future year.
         <br/><br/>
+        The total emissions include indirect emissions and LULUCF. Emissions from international
+        transport are included if the scenario is set to include demand from
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        international transport</a>.<br/><br/>
         <b>Note: the emissions in this dashboard item and the chart below are calculated based
         on direct emissions.</b> This emission method is currently in beta release and is not yet
         fully available for regional (Dutch) datasets. Read more about this in the
@@ -176,6 +179,10 @@ en:
         This dashboard item represents the direct total greenhouse gas emissions in the future year.
         The chart below shows the direct greenhouse gas emissions per sector for 1990, the
         start year and the future year.<br/><br/>
+        The total emissions include indirect emissions and LULUCF. Emissions from international
+        transport are included if the scenario is set to include demand from
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        international transport</a>.<br/><br/>
         <b>Note: the emissions in this dashboard item and the chart below are calculated based
         on direct emissions.</b> This emission method is currently in beta release and is not yet
         fully available for regional (Dutch) datasets. Read more about this in the

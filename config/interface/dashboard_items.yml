@@ -28,13 +28,13 @@
   disabled: false
   output_element_key: emissions_overview
 - key: direct_emissions_total_ghg_relative_to_1990
-  gquery_key: dashboard_reduction_of_direct_ghg_emissions_versus_1990
+  gquery_key: dashboard_direct_emissions_reduction_of_total_ghg_emissions_versus_1990
   group: emissions
   position: 140
   disabled: false
   output_element_key: direct_emissions_per_sector
 - key: direct_emissions_total_ghg
-  gquery_key: direct_emissions_total_ghg_incl_indirect_emissions_lulucf_bunkers
+  gquery_key: dashboard_direct_emissions_total_ghg_emissions
   group: emissions
   position: 150
   disabled: false

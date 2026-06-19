@@ -1165,3 +1165,311 @@ en:
       title: WACC
       description: |
         Weighted average cost of capital (WACC) of steel production
+    external_coupling_energy_production_bio_ethanol_bio_ethanol_output_share:
+      title: Output - bio ethanol
+      description: |
+        Output share of bio ethanol in the production of bio ethanol.
+    external_coupling_energy_production_bio_ethanol_loss_output_share:
+      title: Output - loss
+      description: |
+        Loss share in the production of bio ethanol.
+    external_coupling_energy_production_bio_ethanol_network_gas_input_share:
+      title: Input - network gas
+      description: |
+        Input share of network gas in the production of bio ethanol.
+    external_coupling_energy_production_bio_ethanol_to_jet_bio_ethanol_input_share:
+      title: Input - bio ethanol
+      description: |
+        Input share of bio ethanol in the production of bio ethanol to jet.
+    external_coupling_energy_production_bio_ethanol_to_jet_bio_kerosene_output_share:
+      title: Output - bio kerosene
+      description: |
+        Output share of bio kerosene in the production of bio ethanol to jet.
+    external_coupling_energy_production_bio_ethanol_to_jet_biodiesel_output_share:
+      title: Output - biodiesel
+      description: |
+        Output share of biodiesel in the production of bio ethanol to jet.
+    external_coupling_energy_production_bio_ethanol_to_jet_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the production of bio ethanol to jet.
+    external_coupling_energy_production_bio_ethanol_wet_biomass_input_share:
+      title: Input - wet biomass
+      description: |
+        Input share of wet biomass in the production of bio ethanol.
+    external_coupling_energy_production_biomethanol_to_jet_bio_kerosene_output_share:
+      title: Output - bio kerosene
+      description: |
+        Output share of bio kerosene in the production of biomethanol to jet.
+    external_coupling_energy_production_biomethanol_to_jet_biomethanol_input_share:
+      title: Input - biomethanol
+      description: |
+        Input share of biomethanol in the production of biomethanol to jet.
+    external_coupling_energy_production_biomethanol_to_jet_bionaphtha_output_share:
+      title: Output - bionaphtha
+      description: |
+        Output share of bionaphtha in the production of biomethanol to jet.
+    external_coupling_energy_production_biomethanol_to_jet_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the production of biomethanol to jet.
+    external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_bio_kerosene_output_share:
+      title: Output - bio kerosene
+      description: |
+        Output share of bio kerosene in the Fischer Tropsch process (biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_biodiesel_output_share:
+      title: Output - biodiesel
+      description: |
+        Output share of biodiesel in the Fischer Tropsch process (biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_biogenic_waste_input_share:
+      title: Input - biogenic waste
+      description: |
+        Input share of biogenic waste in the Fischer Tropsch process (biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_bionaphtha_output_share:
+      title: Output - bionaphtha
+      description: |
+        Output share of bionaphtha in the Fischer Tropsch process (biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_bio_kerosene_output_share:
+      title: Output - bio kerosene
+      description: |
+        Output share of bio kerosene in the Fischer Tropsch process (dry biomass, CCS).
+    external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_biodiesel_output_share:
+      title: Output - biodiesel
+      description: |
+        Output share of biodiesel in the Fischer Tropsch process (dry biomass, CCS).
+    external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_bionaphtha_output_share:
+      title: Output - bionaphtha
+      description: |
+        Output share of bionaphtha in the Fischer Tropsch process (dry biomass, CCS).
+    external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_dry_biomass_input_share:
+      title: Input - dry biomass
+      description: |
+        Input share of dry biomass in the Fischer Tropsch process (dry biomass, CCS).
+    external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_diesel_output_share:
+      title: Output - diesel
+      description: |
+        Output share of diesel in the Fischer Tropsch process (non-biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_kerosene_output_share:
+      title: Output - kerosene
+      description: |
+        Output share of kerosene in the Fischer Tropsch process (non-biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_naphtha_output_share:
+      title: Output - naphtha
+      description: |
+        Output share of naphtha in the Fischer Tropsch process (non-biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_non_biogenic_waste_input_share:
+      title: Input - non-biogenic waste
+      description: |
+        Input share of non-biogenic waste in the Fischer Tropsch process (non-biogenic waste, CCS).
+    external_coupling_energy_production_fischer_tropsch_synthetic_dispatchable_electricity_input_share:
+      title: Input - electricity
+      description: |
+        Input share of electricity in the Fischer Tropsch process (synthetic, dispatchable).
+    external_coupling_energy_production_fischer_tropsch_synthetic_dispatchable_gasoline_output_share:
+      title: Output - gasoline
+      description: |
+        Output share of gasoline in the Fischer Tropsch process (synthetic, dispatchable).
+    external_coupling_energy_production_fischer_tropsch_synthetic_dispatchable_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the Fischer Tropsch process (synthetic, dispatchable).
+    external_coupling_energy_production_fischer_tropsch_synthetic_dispatchable_kerosene_output_share:
+      title: Output - kerosene
+      description: |
+        Output share of kerosene in the Fischer Tropsch process (synthetic, dispatchable).
+    external_coupling_energy_production_fischer_tropsch_synthetic_must_run_electricity_input_share:
+      title: Input - electricity
+      description: |
+        Input share of electricity in the Fischer Tropsch process (synthetic, must-run).
+    external_coupling_energy_production_fischer_tropsch_synthetic_must_run_gasoline_output_share:
+      title: Output - gasoline
+      description: |
+        Output share of gasoline in the Fischer Tropsch process (synthetic, must-run).
+    external_coupling_energy_production_fischer_tropsch_synthetic_must_run_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the Fischer Tropsch process (synthetic, must-run).
+    external_coupling_energy_production_fischer_tropsch_synthetic_must_run_kerosene_output_share:
+      title: Output - kerosene
+      description: |
+        Output share of kerosene in the Fischer Tropsch process (synthetic, must-run).
+    external_coupling_energy_production_fractionation_bio_pyrolysis_oil_bio_kerosene_output_share:
+      title: Output - bio kerosene
+      description: |
+        Output share of bio kerosene in the fractionation of bio pyrolysis oil.
+    external_coupling_energy_production_fractionation_bio_pyrolysis_oil_bio_pyrolysis_oil_input_share:
+      title: Input - bio pyrolysis oil
+      description: |
+        Input share of bio pyrolysis oil in the fractionation of bio pyrolysis oil.
+    external_coupling_energy_production_fractionation_bio_pyrolysis_oil_bionaphtha_output_share:
+      title: Output - bionaphtha
+      description: |
+        Output share of bionaphtha in the fractionation of bio pyrolysis oil.
+    external_coupling_energy_production_fractionation_bio_pyrolysis_oil_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the fractionation of bio pyrolysis oil.
+    external_coupling_energy_production_fractionation_bio_pyrolysis_oil_steam_hot_water_input_share:
+      title: Input - steam hot water
+      description: |
+        Input share of steam hot water in the fractionation of bio pyrolysis oil.
+    external_coupling_energy_production_fractionation_pyrolysis_oil_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the fractionation of pyrolysis oil.
+    external_coupling_energy_production_fractionation_pyrolysis_oil_kerosene_output_share:
+      title: Output - kerosene
+      description: |
+        Output share of kerosene in the fractionation of pyrolysis oil.
+    external_coupling_energy_production_fractionation_pyrolysis_oil_naphtha_output_share:
+      title: Output - naphtha
+      description: |
+        Output share of naphtha in the fractionation of pyrolysis oil.
+    external_coupling_energy_production_fractionation_pyrolysis_oil_pyrolysis_oil_input_share:
+      title: Input - pyrolysis oil
+      description: |
+        Input share of pyrolysis oil in the fractionation of pyrolysis oil.
+    external_coupling_energy_production_fractionation_pyrolysis_oil_steam_hot_water_input_share:
+      title: Input - steam hot water
+      description: |
+        Input share of steam hot water in the fractionation of pyrolysis oil.
+    external_coupling_energy_production_hvo_bio_kerosene_bio_kerosene_output_share:
+      title: Output - bio kerosene
+      description: |
+        Output share of bio kerosene in the production of HVO bio kerosene.
+    external_coupling_energy_production_hvo_bio_kerosene_bionaphtha_output_share:
+      title: Output - bionaphtha
+      description: |
+        Output share of bionaphtha in the production of HVO bio kerosene.
+    external_coupling_energy_production_hvo_bio_kerosene_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the production of HVO bio kerosene.
+    external_coupling_energy_production_hvo_bio_kerosene_network_gas_input_share:
+      title: Input - network gas
+      description: |
+        Input share of network gas in the production of HVO bio kerosene.
+    external_coupling_energy_production_hvo_bio_kerosene_oily_biomass_input_share:
+      title: Input - oily biomass
+      description: |
+        Input share of oily biomass in the production of HVO bio kerosene.
+    external_coupling_energy_production_hvo_biodiesel_biodiesel_output_share:
+      title: Output - biodiesel
+      description: |
+        Output share of biodiesel in the production of HVO biodiesel.
+    external_coupling_energy_production_hvo_biodiesel_bionaphtha_output_share:
+      title: Output - bionaphtha
+      description: |
+        Output share of bionaphtha in the production of HVO biodiesel.
+    external_coupling_energy_production_hvo_biodiesel_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the production of HVO biodiesel.
+    external_coupling_energy_production_hvo_biodiesel_oily_biomass_input_share:
+      title: Input - oily biomass
+      description: |
+        Input share of oily biomass in the production of HVO biodiesel.
+    external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_biogenic_waste_input_share:
+      title: Input - biogenic waste
+      description: |
+        Input share of biogenic waste in methanol synthesis (biogenic waste, CCS).
+    external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_biomethanol_output_share:
+      title: Output - biomethanol
+      description: |
+        Output share of biomethanol in methanol synthesis (biogenic waste, CCS).
+    external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_loss_output_share:
+      title: Output - loss
+      description: |
+        Loss share in methanol synthesis (biogenic waste, CCS).
+    external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_biomethanol_output_share:
+      title: Output - biomethanol
+      description: |
+        Output share of biomethanol in methanol synthesis (dry biomass, CCS).
+    external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_dry_biomass_input_share:
+      title: Input - dry biomass
+      description: |
+        Input share of dry biomass in methanol synthesis (dry biomass, CCS).
+    external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_loss_output_share:
+      title: Output - loss
+      description: |
+        Loss share in methanol synthesis (dry biomass, CCS).
+    external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_methanol_output_share:
+      title: Output - methanol
+      description: |
+        Output share of methanol in methanol synthesis (non-biogenic waste, CCS).
+    external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_non_biogenic_waste_input_share:
+      title: Input - non-biogenic waste
+      description: |
+        Input share of non-biogenic waste in methanol synthesis (non-biogenic waste, CCS).
+    external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_loss_output_share:
+      title: Output - loss
+      description: |
+        Loss share in methanol synthesis (non-biogenic waste, CCS).
+    external_coupling_energy_production_methanol_synthesis_synthetic_electricity_input_share:
+      title: Input - electricity
+      description: |
+        Input share of electricity in methanol synthesis (synthetic).
+    external_coupling_energy_production_methanol_synthesis_synthetic_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in methanol synthesis (synthetic).
+    external_coupling_energy_production_methanol_synthesis_synthetic_loss_output_share:
+      title: Output - loss
+      description: |
+        Loss share in methanol synthesis (synthetic).
+    external_coupling_energy_production_methanol_synthesis_synthetic_methanol_output_share:
+      title: Output - methanol
+      description: |
+        Output share of methanol in methanol synthesis (synthetic).
+    external_coupling_energy_production_methanol_to_jet_hydrogen_input_share:
+      title: Input - hydrogen
+      description: |
+        Input share of hydrogen in the production of methanol to jet.
+    external_coupling_energy_production_methanol_to_jet_kerosene_output_share:
+      title: Output - kerosene
+      description: |
+        Output share of kerosene in the production of methanol to jet.
+    external_coupling_energy_production_methanol_to_jet_methanol_input_share:
+      title: Input - methanol
+      description: |
+        Input share of methanol in the production of methanol to jet.
+    external_coupling_energy_production_methanol_to_jet_naphtha_output_share:
+      title: Output - naphtha
+      description: |
+        Output share of naphtha in the production of methanol to jet.
+    external_coupling_energy_production_pyrolysis_biogenic_waste_bio_pyrolysis_oil_output_share:
+      title: Output - bio pyrolysis oil
+      description: |
+        Output share of bio pyrolysis oil in the pyrolysis of biogenic waste.
+    external_coupling_energy_production_pyrolysis_biogenic_waste_biogenic_waste_input_share:
+      title: Input - biogenic waste
+      description: |
+        Input share of biogenic waste in the pyrolysis of biogenic waste.
+    external_coupling_energy_production_pyrolysis_biogenic_waste_steam_hot_water_output_share:
+      title: Output - steam hot water
+      description: |
+        Output share of steam hot water in the pyrolysis of biogenic waste.
+    external_coupling_energy_production_pyrolysis_dry_biomass_bio_pyrolysis_oil_output_share:
+      title: Output - bio pyrolysis oil
+      description: |
+        Output share of bio pyrolysis oil in the pyrolysis of dry biomass.
+    external_coupling_energy_production_pyrolysis_dry_biomass_dry_biomass_input_share:
+      title: Input - dry biomass
+      description: |
+        Input share of dry biomass in the pyrolysis of dry biomass.
+    external_coupling_energy_production_pyrolysis_dry_biomass_steam_hot_water_output_share:
+      title: Output - steam hot water
+      description: |
+        Output share of steam hot water in the pyrolysis of dry biomass.
+    external_coupling_energy_production_pyrolysis_non_biogenic_waste_non_biogenic_waste_input_share:
+      title: Input - non-biogenic waste
+      description: |
+        Input share of non-biogenic waste in the pyrolysis of non-biogenic waste.
+    external_coupling_energy_production_pyrolysis_non_biogenic_waste_pyrolysis_oil_output_share:
+      title: Output - pyrolysis oil
+      description: |
+        Output share of pyrolysis oil in the pyrolysis of non-biogenic waste.
+    external_coupling_energy_production_pyrolysis_non_biogenic_waste_steam_hot_water_output_share:
+      title: Output - steam hot water
+      description: |
+        Output share of steam hot water in the pyrolysis of non-biogenic waste.

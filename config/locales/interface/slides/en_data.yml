@@ -169,7 +169,7 @@ en:
       short_description:
       description: |
         The hourly district heating demand, supply and storage per technology and temperature level
-        as well as the installed and peak district heating capacity per technology and temperature
+        as well as the peak district heating capacity per technology and temperature
         level can be downloaded here.
         <ul class="data-download">
           <li>
@@ -222,8 +222,8 @@ en:
       title: Hourly profiles and capacities for hydrogen
       short_description:
       description: |
-        The hourly hydrogen demand, supply and storage per technology as well as the installed
-        and peak hydrogen capacity per technology can be downloaded here. </br></br>
+        The hourly hydrogen demand, supply and storage per technology as well as the peak hydrogen
+        capacity per technology can be downloaded here. </br></br>
         Additionally, the levelised costs of hydrogen can be downloaded: this data export contains
         the levelised costs of hydrogen production, the production of hydrogen, the production cost
         per MWh for each generation method and the production curve of hydrogen for each generation
@@ -261,8 +261,8 @@ en:
       title: Hourly profiles and capacities for network gas
       short_description:
       description: |
-        The hourly network gas demand, supply and storage per technology as well as the installed
-        and peak network gas capacity per technology can be downloaded here.
+        The hourly network gas demand, supply and storage per technology as well as the peak network
+        gas capacity per technology can be downloaded here.
         <ul class="data-download">
           <li>
             <a href="/passthru/%{scenario_id}/curves/network_gas_profiles.csv" target="_blank">
@@ -356,8 +356,8 @@ en:
       title: Hourly profiles and capacities for electricity
       short_description:
       description: |
-        The hourly electricity demand, supply and storage per technology as well as the installed
-        and peak electricity capacity per technology can be downloaded here. </br></br>
+        The hourly electricity demand, supply and storage per technology as well as the peak
+        electricity capacity per technology can be downloaded here. </br></br>
         Additionally, the hourly electricity price can be downloaded.
         <ul class="data-download merit-data-downloads">
           <li><a href="/passthru/%{scenario_id}/curves/electricity_profiles.csv" target="_blank"><span class="name">Electricity demand, supply and storage per hour</span> <span class="filetype">7MB CSV</span></a></li>

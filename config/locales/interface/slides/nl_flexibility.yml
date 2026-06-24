@@ -456,7 +456,7 @@ nl:
         stroomprijscurve voor jouw scenario downloaden via onderstaande knoppen.
 
         <ul class="data-download merit-data-downloads">
-          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/merit_order.csv"><span class="name">Elektriciteitsprofielen</span> <span class="filetype">7MB CSV</span></a></li>
+          <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_profiles.csv"><span class="name">Elektriciteitsvraag, -productie en -opslag per uur</span> <span class="filetype">7MB CSV</span></a></li>
           <li><a href="%{etengine_url}/api/v3/scenarios/%{scenario_id}/curves/electricity_price.csv"><span class="name">Prijscurve</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     flexibility_overview_introduction:

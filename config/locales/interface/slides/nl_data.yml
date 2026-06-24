@@ -175,13 +175,13 @@ nl:
         warmtenetten per technologie per temperatuursniveau.
         <ul class="data-download">
           <li>
-            <a href="/passthru/%{scenario_id}/curves/heat_network_profiles.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/curves/district_heating_profiles.csv" target="_blank">
               <span class="name">Warmtenetvraag, -productie en -opslag per uur</span>
               <span class="filetype">1.5MB CSV</span>
             </a>
           </li>
           <li>
-            <a href="/passthru/%{scenario_id}/curves/heat_network_capacities.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/district_heating_capacities.csv" target="_blank">
               <span class="name">Vermogen warmtenet</span>
               <span class="filetype">10KB CSV</span>
             </a>
@@ -239,7 +239,7 @@ nl:
             </a>
           </li>
           <li>
-            <a href="/passthru/%{scenario_id}/curves/hydrogen_capacities.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/hydrogen_capacities.csv" target="_blank">
               <span class="name">Waterstofvermogens</span>
               <span class="filetype">10KB CSV</span>
             </a>
@@ -275,7 +275,7 @@ nl:
             </a>
           </li>
           <li>
-            <a href="/passthru/%{scenario_id}/curves/network_gas_capacities.csv" target="_blank">
+            <a href="/passthru/%{scenario_id}/network_gas_capacities.csv" target="_blank">
               <span class="name">Netwerkgasvermogens</span>
               <span class="filetype">10KB CSV</span>
             </a>
@@ -369,7 +369,7 @@ nl:
 
         <ul class="data-download merit-data-downloads">
           <li><a href="/passthru/%{scenario_id}/curves/electricity_profiles.csv" target="_blank"><span class="name">Elektriciteitsvraag, -productie en -opslag per uur</span> <span class="filetype">7MB CSV</span></a></li>
-          <li><a href="/passthru/%{scenario_id}/curves/electricity_capacities.csv" target="_blank"><span class="name">Elektriciteitsvermogens</span> <span class="filetype">20KB CSV</span></a></li>
+          <li><a href="/passthru/%{scenario_id}/electricity_capacities.csv" target="_blank"><span class="name">Elektriciteitsvermogens</span> <span class="filetype">20KB CSV</span></a></li>
           <li><a href="/passthru/%{scenario_id}/curves/electricity_price.csv" target="_blank"><span class="name">Elektriciteitsprijs per uur</span> <span class="filetype">300KB CSV</span></a></li>
         </ul>
     data_export_residual_load_curves:

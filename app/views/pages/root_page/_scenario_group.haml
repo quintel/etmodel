@@ -1,16 +1,25 @@
-- scenarios.each do |scenario|
-  - title = scenario.localized_title(I18n.locale)
-  - if title.to_s.include?(' - ')
-    %li.with_org
-      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}")) do
-        - main_title, org = title.split(' - ', 2)
-        %span.who= format_subscripts(main_title)
-        %span.org= org.html_safe
-        %span.version= " ##{scenario.version}"
-        %span.author= scenario.author
-  - else
-    %li
-      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}")) do
-        = format_subscripts(title)
+- scenarios.reverse.group_by(&:study_en).each do |study, grouped_scenarios|
+  - if study.present?
+    %h4.study-title= study
+  - grouped_scenarios.each do |scenario|
+    - title = scenario.localized_title(I18n.locale)
+
+    - if title.to_s.include?(' - ')
+      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
+        - org, main_title = title.split(' - ', 2)
+        .labels
+          .group= t("areas.#{scenario.area_code}")
+          -# .org
+          -#   = org.html_safe
+
+
+        %h4.title= format_subscripts(main_title)
+        %span.author= t('intro.featured_by', author: scenario.author)
         %span.version= "##{scenario.version}"
-        %span.author= scenario.author
+    - else
+      = link_to(my_etm_path("saved_scenarios/#{scenario.saved_scenario_id}"), class: 'scenario') do
+        .labels
+          .group= t("areas.#{scenario.area_code}")
+        %h4.title= format_subscripts(title)
+        %span.author= t('intro.featured_by', author: scenario.author)
+        %span.version= "##{scenario.version}"

@@ -48,7 +48,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
-        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"area_code":"nl2019","author":"LOUIS"}]}'
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"area_code":"nl2019","author":"LOUIS", "study_nl":"","study_en":""}]}'
   recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
@@ -97,7 +97,7 @@ http_interactions:
       - '277'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005","study_en":"", "study_nl": ""},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
   recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
@@ -147,7 +147,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
-        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"area_code":"nl2019","author":"LOUIS"}]}'
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"area_code":"nl2019","author":"LOUIS", "study_nl":"","study_en":""}]}'
   recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
@@ -246,7 +246,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":1,"owner_id":1,"group":"national","title_en":"Scenario
-        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"area_code":"nl2019","author":"LOUIS"}]}'
+        for testing","title_nl":"Scenario for testing","version":"latest","end_year":2050,"area_code":"nl2019","author":"LOUIS", "study_nl":"","study_en":""}]}'
   recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
@@ -295,7 +295,7 @@ http_interactions:
       - '277'
     body:
       encoding: UTF-8
-      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
+      string: '{"versions":[{"tag":"latest","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005","study_en":"", "study_nl": ""},{"tag":"local","model_url":"http://localhost:3001","engine_url":"http://localhost:3000","collections_url":"http://localhost:3005"}]}'
   recorded_at: Fri, 28 Feb 2025 09:36:01 GMT
 - request:
     method: get
@@ -346,69 +346,69 @@ http_interactions:
       encoding: UTF-8
       string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":9436,"owner_id":5,"group":"national","title_en":"KEA
         - Draft Climate and Energy Agreement","title_nl":"KEA - Ontwerp Klimaat- en
-        energieakkoord","version":"latest","end_year":2030,"area_code":"nl","author":"Kalavasta"},{"id":3,"saved_scenario_id":10617,"owner_id":3,"group":"national","title_en":"Northern
+        energieakkoord","version":"latest","end_year":2030,"area_code":"nl","author":"Kalavasta", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":3,"saved_scenario_id":10617,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - High Electrification 2050","title_nl":"Noord-Ierland - High Electrification
         2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":4,"saved_scenario_id":10644,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":4,"saved_scenario_id":10644,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - High Gasification 2050","title_nl":"Noord-Ierland - High Gasification
         2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":5,"saved_scenario_id":10645,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":5,"saved_scenario_id":10645,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - Diverse 2050","title_nl":"Noord-Ierland - Diverse 2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":6,"saved_scenario_id":10648,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":6,"saved_scenario_id":10648,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - Business as Usual 2050","title_nl":"Noord-Ierland - Business as
         Usual 2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":7,"saved_scenario_id":9184,"owner_id":1,"group":"national","title_en":"II3050
+        for the Economy", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":7,"saved_scenario_id":9184,"owner_id":1,"group":"national","title_en":"II3050
         - Regional governance","title_nl":"II3050 - Regionale sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":8,"saved_scenario_id":9186,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":8,"saved_scenario_id":9186,"owner_id":1,"group":"national","title_en":"II3050
         - Europese CO2 governance","title_nl":"II3050 - Europese sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":9,"saved_scenario_id":9187,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":9,"saved_scenario_id":9187,"owner_id":1,"group":"national","title_en":"II3050
         - International governance","title_nl":"II3050 - Internationale sturing","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":10,"saved_scenario_id":9185,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":10,"saved_scenario_id":9185,"owner_id":1,"group":"national","title_en":"II3050
         - National governance","title_nl":"II3050 - Nationale sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":11,"saved_scenario_id":12532,"owner_id":2,"group":"national","title_en":"KEV
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":11,"saved_scenario_id":12532,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2021","title_nl":"KEV - Klimaat- en Energieverkenning
-        2021","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":12,"saved_scenario_id":12690,"owner_id":4,"group":"national","title_en":"100%
-        Sustainable Energy in 2030","title_nl":"100% Duurzame Energie in 2030","version":"latest","end_year":2030,"area_code":"nl2019","author":"Urgenda"},{"id":13,"saved_scenario_id":14388,"owner_id":1,"group":"national","title_en":"IP2024
+        2021","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":12,"saved_scenario_id":12690,"owner_id":4,"group":"national","title_en":"100%
+        Sustainable Energy in 2030","title_nl":"100% Duurzame Energie in 2030","version":"latest","end_year":2030,"area_code":"nl2019","author":"Urgenda", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":13,"saved_scenario_id":14388,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":14,"saved_scenario_id":14382,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":14,"saved_scenario_id":14382,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":15,"saved_scenario_id":14391,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":15,"saved_scenario_id":14391,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":16,"saved_scenario_id":14386,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":16,"saved_scenario_id":14386,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":17,"saved_scenario_id":14389,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":17,"saved_scenario_id":14389,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":18,"saved_scenario_id":14392,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":18,"saved_scenario_id":14392,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":19,"saved_scenario_id":14387,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":19,"saved_scenario_id":14387,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":20,"saved_scenario_id":14390,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":20,"saved_scenario_id":14390,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":21,"saved_scenario_id":14393,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":21,"saved_scenario_id":14393,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":22,"saved_scenario_id":14548,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":22,"saved_scenario_id":14548,"owner_id":1,"group":"national","title_en":"II3050
         v2 - Decentral Initiatives","title_nl":"II3050 v2 - Decentrale Initiatieven","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":23,"saved_scenario_id":14549,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":23,"saved_scenario_id":14549,"owner_id":1,"group":"national","title_en":"II3050
         v2 - National Leadership","title_nl":"II3050 v2 - Nationaal Leiderschap","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":24,"saved_scenario_id":14550,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":24,"saved_scenario_id":14550,"owner_id":1,"group":"national","title_en":"II3050
         v2 - European Integration","title_nl":"II3050 v2 - Europese Integratie","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":25,"saved_scenario_id":14551,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":25,"saved_scenario_id":14551,"owner_id":1,"group":"national","title_en":"II3050
         v2 - International Trade","title_nl":"II3050 v2 - Internationale Handel","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":26,"saved_scenario_id":14552,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":26,"saved_scenario_id":14552,"owner_id":1,"group":"national","title_en":"II3050
         v2 - Decentral Initiatives","title_nl":"II3050 v2 - Decentrale Initiatieven","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":27,"saved_scenario_id":14553,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":27,"saved_scenario_id":14553,"owner_id":1,"group":"national","title_en":"II3050
         v2 - National Leadership","title_nl":"II3050 v2 - Nationaal Leiderschap","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":28,"saved_scenario_id":14554,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":28,"saved_scenario_id":14554,"owner_id":1,"group":"national","title_en":"II3050
         v2 - European Integration","title_nl":"II3050 v2 - Europese Integratie","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":29,"saved_scenario_id":14555,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":29,"saved_scenario_id":14555,"owner_id":1,"group":"national","title_en":"II3050
         v2 - International Trade","title_nl":"II3050 v2 - Internationale Handel","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":30,"saved_scenario_id":15969,"owner_id":2,"group":"national","title_en":"KEV
+        Nederland", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":30,"saved_scenario_id":15969,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2022","title_nl":"KEV - Klimaat- en Energieverkenning
-        2022","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":33,"saved_scenario_id":18836,"owner_id":2,"group":"national","title_en":"KEV
+        2022","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":33,"saved_scenario_id":18836,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2024","title_nl":"KEV - Klimaat- en Energieverkenning
-        2024","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":34,"saved_scenario_id":19310,"owner_id":2,"group":"national","title_en":"KEV
+        2024","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel", "study_en":"", "study_nl": "","study_en":"", "study_nl": ""},{"id":34,"saved_scenario_id":19310,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2024","title_nl":"KEV - Klimaat- en Energieverkenning
-        2024","version":"latest","end_year":2035,"area_code":"nl2019","author":"Quintel"}]}'
+        2024","version":"latest","end_year":2035,"area_code":"nl2019","author":"Quintel", "study_en":"", "study_nl": ""}]}'
   recorded_at: Fri, 04 Apr 2025 09:59:50 GMT
 - request:
     method: get
@@ -459,69 +459,69 @@ http_interactions:
       encoding: UTF-8
       string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":9436,"owner_id":5,"group":"national","title_en":"KEA
         - Draft Climate and Energy Agreement","title_nl":"KEA - Ontwerp Klimaat- en
-        energieakkoord","version":"latest","end_year":2030,"area_code":"nl","author":"Kalavasta"},{"id":3,"saved_scenario_id":10617,"owner_id":3,"group":"national","title_en":"Northern
+        energieakkoord","version":"latest","end_year":2030,"area_code":"nl","author":"Kalavasta","study_en":"", "study_nl": ""},{"id":3,"saved_scenario_id":10617,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - High Electrification 2050","title_nl":"Noord-Ierland - High Electrification
         2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":4,"saved_scenario_id":10644,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy","study_en":"", "study_nl": ""},{"id":4,"saved_scenario_id":10644,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - High Gasification 2050","title_nl":"Noord-Ierland - High Gasification
         2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":5,"saved_scenario_id":10645,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy","study_en":"", "study_nl": ""},{"id":5,"saved_scenario_id":10645,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - Diverse 2050","title_nl":"Noord-Ierland - Diverse 2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":6,"saved_scenario_id":10648,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy","study_en":"", "study_nl": ""},{"id":6,"saved_scenario_id":10648,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - Business as Usual 2050","title_nl":"Noord-Ierland - Business as
         Usual 2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":7,"saved_scenario_id":9184,"owner_id":1,"group":"national","title_en":"II3050
+        for the Economy","study_en":"", "study_nl": ""},{"id":7,"saved_scenario_id":9184,"owner_id":1,"group":"national","title_en":"II3050
         - Regional governance","title_nl":"II3050 - Regionale sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":8,"saved_scenario_id":9186,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":8,"saved_scenario_id":9186,"owner_id":1,"group":"national","title_en":"II3050
         - Europese CO2 governance","title_nl":"II3050 - Europese sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":9,"saved_scenario_id":9187,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":9,"saved_scenario_id":9187,"owner_id":1,"group":"national","title_en":"II3050
         - International governance","title_nl":"II3050 - Internationale sturing","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":10,"saved_scenario_id":9185,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":10,"saved_scenario_id":9185,"owner_id":1,"group":"national","title_en":"II3050
         - National governance","title_nl":"II3050 - Nationale sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":11,"saved_scenario_id":12532,"owner_id":2,"group":"national","title_en":"KEV
+        Nederland","study_en":"", "study_nl": ""},{"id":11,"saved_scenario_id":12532,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2021","title_nl":"KEV - Klimaat- en Energieverkenning
-        2021","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":12,"saved_scenario_id":12690,"owner_id":4,"group":"national","title_en":"100%
-        Sustainable Energy in 2030","title_nl":"100% Duurzame Energie in 2030","version":"latest","end_year":2030,"area_code":"nl2019","author":"Urgenda"},{"id":13,"saved_scenario_id":14388,"owner_id":1,"group":"national","title_en":"IP2024
+        2021","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel","study_en":"", "study_nl": ""},{"id":12,"saved_scenario_id":12690,"owner_id":4,"group":"national","title_en":"100%
+        Sustainable Energy in 2030","title_nl":"100% Duurzame Energie in 2030","version":"latest","end_year":2030,"area_code":"nl2019","author":"Urgenda","study_en":"", "study_nl": ""},{"id":13,"saved_scenario_id":14388,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":14,"saved_scenario_id":14382,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":14,"saved_scenario_id":14382,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":15,"saved_scenario_id":14391,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":15,"saved_scenario_id":14391,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":16,"saved_scenario_id":14386,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":16,"saved_scenario_id":14386,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":17,"saved_scenario_id":14389,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":17,"saved_scenario_id":14389,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":18,"saved_scenario_id":14392,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":18,"saved_scenario_id":14392,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":19,"saved_scenario_id":14387,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":19,"saved_scenario_id":14387,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":20,"saved_scenario_id":14390,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":20,"saved_scenario_id":14390,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":21,"saved_scenario_id":14393,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":21,"saved_scenario_id":14393,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":22,"saved_scenario_id":14548,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":22,"saved_scenario_id":14548,"owner_id":1,"group":"national","title_en":"II3050
         v2 - Decentral Initiatives","title_nl":"II3050 v2 - Decentrale Initiatieven","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":23,"saved_scenario_id":14549,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":23,"saved_scenario_id":14549,"owner_id":1,"group":"national","title_en":"II3050
         v2 - National Leadership","title_nl":"II3050 v2 - Nationaal Leiderschap","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":24,"saved_scenario_id":14550,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":24,"saved_scenario_id":14550,"owner_id":1,"group":"national","title_en":"II3050
         v2 - European Integration","title_nl":"II3050 v2 - Europese Integratie","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":25,"saved_scenario_id":14551,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":25,"saved_scenario_id":14551,"owner_id":1,"group":"national","title_en":"II3050
         v2 - International Trade","title_nl":"II3050 v2 - Internationale Handel","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":26,"saved_scenario_id":14552,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":26,"saved_scenario_id":14552,"owner_id":1,"group":"national","title_en":"II3050
         v2 - Decentral Initiatives","title_nl":"II3050 v2 - Decentrale Initiatieven","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":27,"saved_scenario_id":14553,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":27,"saved_scenario_id":14553,"owner_id":1,"group":"national","title_en":"II3050
         v2 - National Leadership","title_nl":"II3050 v2 - Nationaal Leiderschap","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":28,"saved_scenario_id":14554,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":28,"saved_scenario_id":14554,"owner_id":1,"group":"national","title_en":"II3050
         v2 - European Integration","title_nl":"II3050 v2 - Europese Integratie","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":29,"saved_scenario_id":14555,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":29,"saved_scenario_id":14555,"owner_id":1,"group":"national","title_en":"II3050
         v2 - International Trade","title_nl":"II3050 v2 - Internationale Handel","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":30,"saved_scenario_id":15969,"owner_id":2,"group":"national","title_en":"KEV
+        Nederland","study_en":"", "study_nl": ""},{"id":30,"saved_scenario_id":15969,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2022","title_nl":"KEV - Klimaat- en Energieverkenning
-        2022","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":33,"saved_scenario_id":18836,"owner_id":2,"group":"national","title_en":"KEV
+        2022","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel","study_en":"", "study_nl": ""},{"id":33,"saved_scenario_id":18836,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2024","title_nl":"KEV - Klimaat- en Energieverkenning
-        2024","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":34,"saved_scenario_id":19310,"owner_id":2,"group":"national","title_en":"KEV
+        2024","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel","study_en":"", "study_nl": ""},{"id":34,"saved_scenario_id":19310,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2024","title_nl":"KEV - Klimaat- en Energieverkenning
-        2024","version":"latest","end_year":2035,"area_code":"nl2019","author":"Quintel"}]}'
+        2024","version":"latest","end_year":2035,"area_code":"nl2019","author":"Quintel", "study_en":"", "study_nl": ""}]}'
   recorded_at: Fri, 04 Apr 2025 09:59:51 GMT
 - request:
     method: get
@@ -572,68 +572,68 @@ http_interactions:
       encoding: UTF-8
       string: '{"featured_scenarios":[{"id":2,"saved_scenario_id":9436,"owner_id":5,"group":"national","title_en":"KEA
         - Draft Climate and Energy Agreement","title_nl":"KEA - Ontwerp Klimaat- en
-        energieakkoord","version":"latest","end_year":2030,"area_code":"nl","author":"Kalavasta"},{"id":3,"saved_scenario_id":10617,"owner_id":3,"group":"national","title_en":"Northern
+        energieakkoord","version":"latest","end_year":2030,"area_code":"nl","author":"Kalavasta","study_en":"", "study_nl": ""},{"id":3,"saved_scenario_id":10617,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - High Electrification 2050","title_nl":"Noord-Ierland - High Electrification
         2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":4,"saved_scenario_id":10644,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy","study_en":"", "study_nl": ""},{"id":4,"saved_scenario_id":10644,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - High Gasification 2050","title_nl":"Noord-Ierland - High Gasification
         2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":5,"saved_scenario_id":10645,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy","study_en":"", "study_nl": ""},{"id":5,"saved_scenario_id":10645,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - Diverse 2050","title_nl":"Noord-Ierland - Diverse 2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":6,"saved_scenario_id":10648,"owner_id":3,"group":"national","title_en":"Northern
+        for the Economy","study_en":"", "study_nl": ""},{"id":6,"saved_scenario_id":10648,"owner_id":3,"group":"national","title_en":"Northern
         Ireland - Business as Usual 2050","title_nl":"Noord-Ierland - Business as
         Usual 2050","version":"latest","end_year":2050,"area_code":"UKNI01_northern_ireland","author":"Department
-        for the Economy"},{"id":7,"saved_scenario_id":9184,"owner_id":1,"group":"national","title_en":"II3050
+        for the Economy","study_en":"", "study_nl": ""},{"id":7,"saved_scenario_id":9184,"owner_id":1,"group":"national","title_en":"II3050
         - Regional governance","title_nl":"II3050 - Regionale sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":8,"saved_scenario_id":9186,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":8,"saved_scenario_id":9186,"owner_id":1,"group":"national","title_en":"II3050
         - Europese CO2 governance","title_nl":"II3050 - Europese sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":9,"saved_scenario_id":9187,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":9,"saved_scenario_id":9187,"owner_id":1,"group":"national","title_en":"II3050
         - International governance","title_nl":"II3050 - Internationale sturing","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":10,"saved_scenario_id":9185,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":10,"saved_scenario_id":9185,"owner_id":1,"group":"national","title_en":"II3050
         - National governance","title_nl":"II3050 - Nationale sturing ","version":"latest","end_year":2050,"area_code":"nl","author":"Netbeheer
-        Nederland"},{"id":11,"saved_scenario_id":12532,"owner_id":2,"group":"national","title_en":"KEV
+        Nederland","study_en":"", "study_nl": ""},{"id":11,"saved_scenario_id":12532,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2021","title_nl":"KEV - Klimaat- en Energieverkenning
-        2021","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":12,"saved_scenario_id":12690,"owner_id":4,"group":"national","title_en":"100%
-        Sustainable Energy in 2030","title_nl":"100% Duurzame Energie in 2030","version":"latest","end_year":2030,"area_code":"nl2019","author":"Urgenda"},{"id":13,"saved_scenario_id":14388,"owner_id":1,"group":"national","title_en":"IP2024
+        2021","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel","study_en":"", "study_nl": ""},{"id":12,"saved_scenario_id":12690,"owner_id":4,"group":"national","title_en":"100%
+        Sustainable Energy in 2030","title_nl":"100% Duurzame Energie in 2030","version":"latest","end_year":2030,"area_code":"nl2019","author":"Urgenda","study_en":"", "study_nl": ""},{"id":13,"saved_scenario_id":14388,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":14,"saved_scenario_id":14382,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":14,"saved_scenario_id":14382,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":15,"saved_scenario_id":14391,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":15,"saved_scenario_id":14391,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2025,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":16,"saved_scenario_id":14386,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":16,"saved_scenario_id":14386,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":17,"saved_scenario_id":14389,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":17,"saved_scenario_id":14389,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":18,"saved_scenario_id":14392,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":18,"saved_scenario_id":14392,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2030,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":19,"saved_scenario_id":14387,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":19,"saved_scenario_id":14387,"owner_id":1,"group":"national","title_en":"IP2024
         - Climate Ambition","title_nl":"IP2024 - Klimaatambitie","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":20,"saved_scenario_id":14390,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":20,"saved_scenario_id":14390,"owner_id":1,"group":"national","title_en":"IP2024
         - National Drivers","title_nl":"IP2024 - Nationale Drijfveren","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":21,"saved_scenario_id":14393,"owner_id":1,"group":"national","title_en":"IP2024
+        Nederland","study_en":"", "study_nl": ""},{"id":21,"saved_scenario_id":14393,"owner_id":1,"group":"national","title_en":"IP2024
         - International Ambition","title_nl":"IP2024 - Internationale Ambitie","version":"latest","end_year":2035,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":22,"saved_scenario_id":14548,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":22,"saved_scenario_id":14548,"owner_id":1,"group":"national","title_en":"II3050
         v2 - Decentral Initiatives","title_nl":"II3050 v2 - Decentrale Initiatieven","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":23,"saved_scenario_id":14549,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":23,"saved_scenario_id":14549,"owner_id":1,"group":"national","title_en":"II3050
         v2 - National Leadership","title_nl":"II3050 v2 - Nationaal Leiderschap","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":24,"saved_scenario_id":14550,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":24,"saved_scenario_id":14550,"owner_id":1,"group":"national","title_en":"II3050
         v2 - European Integration","title_nl":"II3050 v2 - Europese Integratie","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":25,"saved_scenario_id":14551,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":25,"saved_scenario_id":14551,"owner_id":1,"group":"national","title_en":"II3050
         v2 - International Trade","title_nl":"II3050 v2 - Internationale Handel","version":"latest","end_year":2040,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":26,"saved_scenario_id":14552,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":26,"saved_scenario_id":14552,"owner_id":1,"group":"national","title_en":"II3050
         v2 - Decentral Initiatives","title_nl":"II3050 v2 - Decentrale Initiatieven","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":27,"saved_scenario_id":14553,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":27,"saved_scenario_id":14553,"owner_id":1,"group":"national","title_en":"II3050
         v2 - National Leadership","title_nl":"II3050 v2 - Nationaal Leiderschap","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":28,"saved_scenario_id":14554,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":28,"saved_scenario_id":14554,"owner_id":1,"group":"national","title_en":"II3050
         v2 - European Integration","title_nl":"II3050 v2 - Europese Integratie","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":29,"saved_scenario_id":14555,"owner_id":1,"group":"national","title_en":"II3050
+        Nederland","study_en":"", "study_nl": ""},{"id":29,"saved_scenario_id":14555,"owner_id":1,"group":"national","title_en":"II3050
         v2 - International Trade","title_nl":"II3050 v2 - Internationale Handel","version":"latest","end_year":2050,"area_code":"nl2019","author":"Netbeheer
-        Nederland"},{"id":30,"saved_scenario_id":15969,"owner_id":2,"group":"national","title_en":"KEV
+        Nederland","study_en":"", "study_nl": ""},{"id":30,"saved_scenario_id":15969,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2022","title_nl":"KEV - Klimaat- en Energieverkenning
-        2022","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":33,"saved_scenario_id":18836,"owner_id":2,"group":"national","title_en":"KEV
+        2022","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel","study_en":"", "study_nl": ""},{"id":33,"saved_scenario_id":18836,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2024","title_nl":"KEV - Klimaat- en Energieverkenning
-        2024","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel"},{"id":34,"saved_scenario_id":19310,"owner_id":2,"group":"national","title_en":"KEV
+        2024","version":"latest","end_year":2030,"area_code":"nl2019","author":"Quintel","study_en":"", "study_nl": ""},{"id":34,"saved_scenario_id":19310,"owner_id":2,"group":"national","title_en":"KEV
         - Climate and Energy Outlook 2024","title_nl":"KEV - Klimaat- en Energieverkenning
-        2024","version":"latest","end_year":2035,"area_code":"nl2019","author":"Quintel"}]}'
+        2024","version":"latest","end_year":2035,"area_code":"nl2019","author":"Quintel", "study_en":"", "study_nl": ""}]}'
   recorded_at: Fri, 04 Apr 2025 09:59:52 GMT
 recorded_with: VCR 6.0.0

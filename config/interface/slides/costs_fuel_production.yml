@@ -1,10 +1,43 @@
 ---
-- key: costs_fuel_production_processes
+- key: external_coupling_bio_ethanol_production
   position: 10
   sidebar_item_key: costs_fuel_production
   output_element_key: costs_overview_detailed
 - group_sub_header: share
-  key: external_coupling_efficiency_fuel_production_processes
+  key: external_coupling_bio_ethanol_to_jet
   position: 20
   sidebar_item_key: costs_fuel_production
   output_element_key: costs_overview_detailed
+- group_sub_header: share
+  key: external_coupling_fischer_tropsch
+  position: 30
+  sidebar_item_key: costs_fuel_production
+  output_element_key: costs_overview_detailed
+- group_sub_header: share
+  key: external_coupling_hydrotreatment
+  position: 40
+  sidebar_item_key: costs_fuel_production
+  output_element_key: costs_overview_detailed
+- group_sub_header: share
+  key: external_coupling_methanol_synthesis
+  position: 50
+  sidebar_item_key: costs_fuel_production
+  output_element_key: costs_overview_detailed
+- group_sub_header: share
+  key: external_coupling_methanol_to_jet
+  position: 60
+  sidebar_item_key: costs_fuel_production
+  output_element_key: costs_overview_detailed
+- group_sub_header: share
+  key: external_coupling_pyrolysis_fractionation
+  position: 70
+  sidebar_item_key: costs_fuel_production
+  output_element_key: costs_overview_detailed
+- group_sub_header: share
+  key: external_coupling_pyrolysis_production
+  position: 80
+  sidebar_item_key: costs_fuel_production
+  output_element_key: costs_overview_detailed
+
+
+

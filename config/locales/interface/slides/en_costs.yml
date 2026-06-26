@@ -121,6 +121,61 @@ en:
         In this section, assumptions can ben made about the investment and operational costs of various processes for
         the production of liquid fuels and feedstock. Go to the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
         section to set the output of these processes.
+    external_coupling_efficiency_fuel_production_processes:
+      title: Conversion ratios of liquid fuels production processes
+      short_description:
+      description: |
+        In this section, assumptions can ben made about the input shares and output shares of various processes for
+        the production of liquid fuels and feedstock. Go to the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section to set the final supply of these processes.
+    external_coupling_bio_ethanol_production:
+      title: Bio-ethanol production
+      short_description:
+      description: |
+        To enable this technology, set the final supply of bio-ethanol in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_bio_ethanol_to_jet:
+      title: Bio-ethanol to jet
+      short_description:
+      description: |
+        To enable this technology, set the final supply of bio-ethanol to jet in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_fischer_tropsch:
+      title: Fischer-Tropsch
+      short_description:
+      description: |
+        To enable this technology, set the final supply of Fischer-Tropsch fuels in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_hydrotreatment:
+      title: HVO biodiesel and biokerosene production
+      short_description:
+      description: |
+        To enable this technology, set the final supply of HVO biodiesel and biokerosene production in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_methanol_synthesis:
+      title: Methanol synthesis
+      short_description:
+      description: |
+        To enable this technology, set the final supply of methanol in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_methanol_to_jet:
+      title: Biomethanol to jet
+      short_description:
+      description: |
+        To enable this technology, set the final supply of biomethanol to jet in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_pyrolysis_fractionation:
+      title: Pyrolysis oil fractionation
+      short_description:
+      description: |
+        To enable this technology, set the final supply of pyrolysis oil fractionation in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
+    external_coupling_pyrolysis_production:
+      title: Pyrolysis (production of pyrolysis oil)
+      short_description:
+      description: |
+        To enable this technology, set the final supply of pyrolysis oil production in the <a href="/scenario/supply/fuel_production/overview">Liquid fuels</a>
+        section.
     costs_nuclear_fuel:
       title: Nuclear fuels
       short_description: ''

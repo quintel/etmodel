@@ -27,6 +27,19 @@ nl:
         Raadpleeg de documentatie voor meer informatie over de <a href="https://docs.energytransitionmodel.com/main/co2-1990-emissions"
         target="_blank">1990 emissies</a> en de <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector"
         target="_blank">emissies per sector</a> in het ETM.
+        direct_emissions_per_sector:
+    direct_emissions_per_sector:
+      title: Directe totale broeikasgasemissies (beta)
+      short_description:
+      description: |
+        Deze grafiek vergelijkt de uitstoot van broeikasgassen
+        in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
+        gebruikt in doelstellingen omtrent broeikasgasemissies.<br/><br/>
+        <b>Let op: de emissies zijn berekend op basis van directe emissies.</b> Deze
+        emissiemethode is momenteel in beta release en is nog niet volledig beschikbaar voor de
+        regionale (Nederlandse) datasets. Lees hierover meer in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.
     renewability:
       title: Hernieuwbaarheid van eindgebruik
       short_description: ''

@@ -56,7 +56,7 @@ module PagesHelper
       scenario_id: params[:scenario],
       time: @time,
       non_energy: params[:non_energy],
-      access_token: signed_in? ? identity_access_token.token : nil
+      access_token: session_access_token
     }
   end
 

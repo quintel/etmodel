@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   helper_method :engine_client, :current_user, :admin?
+  helper_method :session_access_token, :session_access_token_expires_at
 
   before_action :current_user
   before_action :initialize_current
@@ -100,8 +101,8 @@ class ApplicationController < ActionController::Base
   # Returns the Faraday client which should be used to communicate with MyETM. This contains the
   # user authentication token if the user is logged in.
   def my_etm_client
-    if current_user
-      identity_session.access_token.http_client
+    if (token = session_access_token)
+      Identity.http_client(access_token: token)
     else
       Identity.http_client
     end
@@ -110,15 +111,34 @@ class ApplicationController < ActionController::Base
   # Returns the Faraday client which should be used to communicate with ETEngine (resource server).
   # This contains the user authentication token if the user is logged in.
   def engine_client
-    if current_user
-      identity_session.access_token.http_resource_client
+    if (token = session_access_token)
+      Identity.http_client(access_token: token, resource: true)
     else
       Identity.http_client(resource: true)
     end
   end
 
+  # The bearer token for the current browser session: the shared domain JWT cookie, when present AND
+  # still valid (identity_token only decodes an unexpired, correctly-signed cookie). Guarding on
+  # identity_token means we never hand the page an expired cookie — which would make the front-end's
+  # refresh logic loop on a dead token. Used for server-side calls to MyETM/ETEngine and handed to
+  # the page so its JS can call the API.
+  def session_access_token
+    request.cookies[Identity.config.session_cookie_name].presence if identity_token
+  end
+
+  # Expiry (unix seconds) of the session access token, so the front-end can schedule a refresh.
+  def session_access_token_expires_at
+    identity_token&.dig('exp')
+  end
+
   def current_user
-    @current_user ||= User.from_session_user!(identity_user) if signed_in?
+    @current_user ||=
+      if identity_token
+        # Shared JWT session cookie: find-or-create the local user from the verified claims, as the
+        # API path does, so a cookie-authenticated visitor without a local row is not bounced.
+        User.from_jwt!(identity_token)
+      end
   rescue ActiveRecord::RecordNotFound
     # The user has been deleted from the database. This means the user has deleted their account.
     reset_session

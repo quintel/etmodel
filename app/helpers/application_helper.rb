@@ -175,8 +175,8 @@ module ApplicationHelper
         end
 
         json.access_token do
-          json.token identity_access_token.token
-          json.expires_at identity_access_token.expires_at
+          json.token session_access_token
+          json.expires_at session_access_token_expires_at
         end
       else
         json.current_user nil

@@ -15,8 +15,8 @@ GIT
 
 GIT
   remote: https://github.com/quintel/identity_rails.git
-  revision: 26f582ec28eb865be40c3a459192759049823a43
-  ref: 26f582e
+  revision: ec2dfc6f2e6c6584fdfc2c3673bfb3bfb487d0aa
+  ref: ec2dfc6
   specs:
     identity (0.1.0)
       dry-configurable (>= 1.0)
@@ -24,6 +24,7 @@ GIT
       dry-types (~> 1.7)
       dry-validation (>= 1.10)
       faraday (>= 2)
+      jwt (>= 2.5)
       omniauth (>= 2.1)
       omniauth-rails_csrf_protection (~> 1.0)
       omniauth_openid_connect (~> 0.4)
@@ -319,6 +320,8 @@ GEM
     json-schema (6.2.0)
       addressable (~> 2.8)
       bigdecimal (>= 3.1, < 5)
+    jwt (3.2.0)
+      base64
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -805,4 +808,4 @@ RUBY VERSION
   ruby 4.0.2
 
 BUNDLED WITH
-  4.0.6
+  4.0.10

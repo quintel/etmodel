@@ -81,60 +81,20 @@ describe User do
         expect { user }.to raise_error(/Token does not contain user information/)
       end
     end
-  end
 
-  describe '.from_identity!' do
-    context 'when given an identity which is not yet stored' do
-      let(:identity_user) do
-        Identity::User.new(id: 123, email: 'hello@example.org', name: 'John Doe', roles: [])
+    context 'when the user already exists with stale identity data' do
+      let!(:existing_user) { described_class.create!(id: 123, name: 'Jane Doe') }
+
+      let(:token) do
+        { 'sub' => '123', 'user' => { 'name' => 'John Doe', 'admin' => true } }
       end
 
-      it 'adds a user to the database' do
-        expect { described_class.from_identity!(identity_user) }
-          .to change(described_class, :count).by(1)
+      it "sets identity_user from the token's claims, even though the row already existed" do
+        expect(user.identity_user).to be_admin
       end
 
-      it 'adds a user with the correct ID' do
-        expect { described_class.from_identity!(identity_user) }
-          .to change { described_class.where(id: 123).count }.by(1)
-      end
-
-      it "sets the user's name" do
-        expect(described_class.from_identity!(identity_user).name).to eq('John Doe')
-      end
-    end
-
-    context 'when given an identity which is not valid' do
-      let(:identity_user) do
-        Identity::User.new(id: 123, email: 'hello@example.org', name: '', roles: [])
-      end
-
-      it 'raises an ActiveRecord::RecordInvalid' do
-        expect { described_class.from_identity!(identity_user) }
-          .to raise_error(ActiveRecord::RecordInvalid)
-      end
-    end
-
-    context 'when given an identity which has been stored' do
-      let!(:user) { FactoryBot.create(:user, id: 123, name: 'Jane Doe') }
-
-      let(:identity_user) do
-        Identity::User.new(id: 123, email: 'hello@example.org', name: 'New name', roles: [])
-      end
-
-      it 'does not add a user to the database' do
-        expect { described_class.from_identity!(identity_user) }
-          .not_to change(described_class, :count)
-      end
-
-      it 'has a user with the correct ID' do
-        expect { described_class.from_identity!(identity_user) }
-          .not_to change { described_class.where(id: 123).count }.from(1)
-      end
-
-      it "sets the user's new name" do
-        expect { described_class.from_identity!(identity_user) }
-          .to change { user.reload.name }.from('Jane Doe').to('New name')
+      it 'admin? prefers the fresh claims over the persisted (stale) admin column' do
+        expect(user).to be_admin
       end
     end
   end

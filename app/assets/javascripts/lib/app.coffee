@@ -16,6 +16,7 @@ class @AppView extends Backbone.View
     @accessToken = null
 
     if globals.access_token
+      sessionStorage.removeItem('etm-session-recovery')
       @accessToken = new AccessToken(
         globals.access_token.token,
         new Date(globals.access_token.expires_at * 1000)
@@ -23,6 +24,7 @@ class @AppView extends Backbone.View
       @configureTokenRefresh(@accessToken)
     else
       @accessToken = new GuestToken()
+      @tryRecoverSession()
 
     @api = new ApiGateway
       api_path:           globals.ete_url
@@ -134,10 +136,6 @@ class @AppView extends Backbone.View
   configureTokenRefresh: (accessToken) ->
     return unless accessToken
 
-    refresh = () ->
-      console.log('Refreshing access token')
-      window.location.reload()
-
     expiresInMS = accessToken.expiresAt.getTime() - new Date().getTime();
 
     # A random number of seconds between 0 and 10 is added to the refresh time. This avoids multiple
@@ -150,7 +148,31 @@ class @AppView extends Backbone.View
         "in #{Math.round(refreshInMS/100/60)/10} minutes (#{Math.floor(refreshInMS/1000)}s)"
       )
 
-    window.setTimeout(refresh, refreshInMS)
+    window.setTimeout(@refreshSession, refreshInMS)
+
+  # Renews the shared session cookie via MyETM, then reloads so the server injects the fresh token.
+  # The cookie can only be refreshed by MyETM (not by a plain reload), so if it can no longer be
+  # refreshed (refresh token expired/revoked) we send the user to sign in instead of reloading on a
+  # dead token — which is what used to loop.
+  refreshSession: =>
+    fetch("#{idp_url}/session/refresh", { method: 'POST', credentials: 'include' })
+      .then (resp) => if resp.ok then window.location.reload() else @redirectToSignIn()
+      .catch => @redirectToSignIn()
+
+  # On arriving without a valid session cookie, attempt a single silent refresh: recovers a session
+  # whose short access cookie expired while its refresh cookie is still valid (the cookie-era
+  # replacement for the old silent-SSO probe). Guarded via sessionStorage so a genuinely signed-out
+  # user does not reload-loop; the guard is cleared whenever a valid session is present.
+  tryRecoverSession: =>
+    return if sessionStorage.getItem('etm-session-recovery')
+    sessionStorage.setItem('etm-session-recovery', '1')
+
+    fetch("#{idp_url}/session/refresh", { method: 'POST', credentials: 'include' })
+      .then (resp) -> window.location.reload() if resp.ok
+
+  redirectToSignIn: ->
+    returnTo = encodeURIComponent(window.location.href)
+    window.location.href = "#{idp_url}/identity/sign_in?return_to=#{returnTo}"
 
   # Returns a deferred object on which the .done() method can be called
   #

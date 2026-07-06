@@ -23,13 +23,23 @@ RSpec.describe 'APIPassthru', type: :request do
       end
     end
 
-    context 'when signed in' do
-      it 'redirects to the Engine /api/v3/scenarios/123/abc endpoint with an access token' do
-        user = create(:user)
-        token = sign_in(user)
+    context 'when authenticated via the shared session cookie' do
+      let(:user) { create(:user) }
+      let(:claims) do
+        {
+          'sub' => user.id,
+          'exp' => 1.hour.from_now.to_i,
+          'user' => { 'id' => user.id, 'name' => user.name, 'email' => user.email, 'admin' => false }
+        }
+      end
 
-        expect(get('/passthru/123/abc')).to redirect_to(
-          "#{Settings.ete_url}/api/v3/scenarios/123/abc?access_token=#{token.token}"
+      before { allow(Identity::TokenDecoder).to receive(:decode).and_return(claims) }
+
+      it 'redirects carrying the cookie JWT as the access token' do
+        get('/passthru/123/abc', headers: { 'Cookie' => 'etm_session=raw.jwt' })
+
+        expect(response).to redirect_to(
+          "#{Settings.ete_url}/api/v3/scenarios/123/abc?access_token=raw.jwt"
         )
       end
     end

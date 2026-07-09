@@ -34,6 +34,11 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  # Allow the etm-stack cross-app parent domain so the shared etm_sso SSO cookie can be scoped to
+  # a dotted parent the browser accepts
+  config.hosts << ENV.fetch('ETM_HOST_PARENT', '.local.energytransitionmodel.com')
+
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 

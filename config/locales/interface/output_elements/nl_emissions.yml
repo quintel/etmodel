@@ -25,9 +25,21 @@ nl:
       title: Broeikasgasemissies Transport (CO<sub>2</sub>-eq)
       short_description:
       description: "Emissies uit transport is een gevolg van vrachtvervoer, privévervoer,
-      de luchtvaart of openbaar vervoer. Dit is inclusief de emissies van internationaal 
+      de luchtvaart of openbaar vervoer. Dit is inclusief de emissies van internationaal
       transport, als je die aan je scenario gealloceerd hebt."
     emissions_indirect:
       title: Indirecte en uitgestelde CO<sub>2</sub>-emissies
       short_description:
       description:
+    direct_emissions_per_sector:
+      title: Directe totale broeikasgasemissies (beta)
+      short_description:
+      description: |
+        Deze grafiek vergelijkt de uitstoot van broeikasgassen
+        in 1990, het heden en de toekomst. Het jaar 1990 wordt vaak als referentiejaar
+        gebruikt in doelstellingen omtrent broeikasgasemissies.<br/><br/>
+        <b>Let op: de emissies zijn berekend op basis van directe emissies.</b> Deze
+        emissiemethode is momenteel in beta release en is nog niet volledig beschikbaar voor de
+        regionale (Nederlandse) datasets. Lees hierover meer in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.

@@ -1,158 +1,158 @@
 ---
+# primary energy
+- key: total_primary_energy
+  gquery_key: dashboard_energy_demand_primary_of_final_plus_export_losses
+  group: energy_use
+  position: 1
+  disabled: false
+  output_element_key: use_of_primary_energy
+  dependent_on: ''
+
 # emissions
 - key: co2_reduction
   gquery_key: dashboard_reduction_of_co2_emissions_versus_1990
   group: emissions
-  position: 100
+  position: 2
   disabled: false
   output_element_key: co2_emissions
   dependent_on: ''
 - key: co2_reduction_relative_to_start_year
   gquery_key: dashboard_co2_emissions_versus_start_year
   group: emissions
-  position: 110
+  position:
   disabled: false
   output_element_key: co2_emissions
   dependent_on: ''
 - key: local_co2_reduction
   gquery_key: dashboard_reduction_of_local_co2_emissions_versus_1990
   group: emissions
-  position: 120
+  position:
   disabled: false
   output_element_key: co2_emissions
   dependent_on: ''
 - key: all_ghg_reduction_relative_to_start_year
   gquery_key: dashboard_emissions
   group: emissions
-  position: 130
+  position:
   disabled: false
   output_element_key: emissions_overview
 - key: direct_emissions_total_ghg_relative_to_1990
   gquery_key: dashboard_direct_emissions_reduction_of_total_ghg_emissions_versus_1990
   group: emissions
-  position: 140
+  position:
   disabled: false
   output_element_key: direct_emissions_per_sector
 - key: direct_emissions_total_ghg
   gquery_key: dashboard_direct_emissions_total_ghg_emissions
   group: emissions
-  position: 150
+  position:
   disabled: false
   output_element_key: direct_emissions_per_sector
+
+# import
+- key: net_energy_import
+  gquery_key: dashboard_energy_import_netto
+  group: import
+  position: 3
+  disabled: false
+  output_element_key:
+  dependent_on: ''
 
 # costs
 - key: total_energy_cost
   gquery_key: dashboard_total_costs
   group: costs
-  position: 200
+  position: 3
   disabled: false
   output_element_key: costs_overview
   dependent_on:
 - key: profitability
   gquery_key: dashboard_profitability
   group: costs
-  position: 210
+  position:
   disabled: false
   output_element_key: power_plant_economic_performance
   dependent_on: has_merit_order
-
-# primary energy
-- key: total_primary_energy
-  gquery_key: dashboard_energy_demand_primary_of_final_plus_export_losses
-  group: energy_use
-  position: 300
-  disabled: false
-  output_element_key: use_of_primary_energy
-  dependent_on: ''
-
-# biomass
-- key: biomass_primary_demand
-  gquery_key: dashboard_biomass_primary_demand
-  group: footprint
-  position: 400
-  disabled: false
-  output_element_key: biomass_demand_by_category
-  dependent_on: ''
-- key: biomass_final_demand
-  gquery_key: dashboard_biomass_final_demand
-  group: footprint
-  position: 410
-  disabled: false
-  output_element_key: biomass_demand_by_category
-  dependent_on: ''
-- key: biomass_import_share
-  gquery_key: dashboard_biomass_import_share
-  group: footprint
-  position: 420
-  disabled: false
-  output_element_key: biomass_sankey
-  dependent_on: ''
-
-# import
-- key: net_energy_import
-  gquery_key: dashboard_energy_import_netto
-  group: import
-  position: 500
-  disabled: false
-  output_element_key:
-  dependent_on: ''
 
 # renewable
 - key: renewable_percentage
   gquery_key: dashboard_renewability
   group: renewable
-  position: 600
+  position: 4
   disabled: false
   output_element_key: renewability
   dependent_on: ''
 - key: renewable_electricity_percentage
   gquery_key: dashboard_share_of_renewable_electricity
   group: renewable
-  position: 610
+  position:
   disabled: false
   output_element_key: renewable_electricity
   dependent_on: ''
 - key: renewable_percentage_households
   gquery_key: dashboard_renewability_households
   group: renewable
-  position: 620
+  position:
   disabled: false
   output_element_key: renewability
   dependent_on:
 
 # summary
-- key: loss_of_load
-  gquery_key: dashboard_security_of_supply
-  group: summary
-  position: 700
-  disabled: false
-  output_element_key: security_of_supply
-  dependent_on: ''
 - key: power_shortage_hours
   gquery_key: dashboard_power_shortage_hours
   group: summary
-  position: 710
+  position: 6
   disabled: false
   output_element_key: power_shortage
   dependent_on: has_merit_order
+- key: loss_of_load
+  gquery_key: dashboard_security_of_supply
+  group: summary
+  position:
+  disabled: false
+  output_element_key: security_of_supply
+  dependent_on: ''
 - key: total_number_of_excess_events
   gquery_key: dashboard_total_number_of_excess_events
   group: summary
-  position: 720
+  position:
   disabled: false
   output_element_key: merit_order_excess_events
   dependent_on: ''
 - key: total_curtailment
   gquery_key: dashboard_total_curtailment
   group: summary
-  position: 730
+  position:
   disabled: false
   output_element_key: use_of_excess_electricity
   dependent_on:
 - key: share_of_curtailment
   gquery_key: dashboard_share_of_curtailment_in_inflexible_production
   group: summary
-  position: 740
+  position:
   disabled: false
   output_element_key: use_of_excess_electricity
   dependent_on:
+
+# biomass
+- key: biomass_import_share
+  gquery_key: dashboard_biomass_import_share
+  group: footprint
+  position: 7
+  disabled: false
+  output_element_key: biomass_sankey
+  dependent_on: ''
+- key: biomass_primary_demand
+  gquery_key: dashboard_biomass_primary_demand
+  group: footprint
+  position:
+  disabled: false
+  output_element_key: biomass_demand_by_category
+  dependent_on: ''
+- key: biomass_final_demand
+  gquery_key: dashboard_biomass_final_demand
+  group: footprint
+  position:
+  disabled: false
+  output_element_key: biomass_demand_by_category
+  dependent_on: ''

@@ -42,6 +42,10 @@ en:
       label: CO<sub>2</sub> relative to 1990
       title: CO<sub>2</sub> emissions relative to 1990
       description: |
+        This dashboard item represents the reduction in total CO<sub>2</sub> emissions
+        relative to 1990. The dashboard item relies on calculations based on
+        <b>primary emissions</b>.
+        <br/><br/>
         The year 1990 is used as reference year for the change in CO<sub>2</sub>
         emissions shown in the dashboard. The chart below shows the CO<sub>2</sub>
         emissions that result from the inland final consumption of energy.
@@ -49,12 +53,20 @@ en:
     local_co2_reduction:
       label: Domestic CO<sub>2</sub> emissions
       title: Domestic CO<sub>2</sub> emissions
-      description: 'The year 1990 is used as reference year for the change in CO<sub>2</sub>
-        emissions shown in the dashboard. '
+      description: |
+        This dashboard item represents the reduction in total domestically produced CO<sub>2</sub>
+        emissions relative to 1990. The dashboard item relies on calculations based on
+        <b>primary emissions</b>.
+        <br/><br/>
+        The year 1990 is used as reference year for the change in CO<sub>2</sub>
+        emissions shown in the dashboard.
     co2_reduction_relative_to_start_year:
       label: CO<sub>2</sub> relative to start year
       title: CO<sub>2</sub> emissions relative to start year
-      description: ''
+      description: |
+        This dashboard item represents the reduction in total CO<sub>2</sub> emissions
+        relative to the start year. This dashboard item relies on calculations based on
+        <b>primary emissions</b>.
     costs_fte:
       label: FTE delta analysis
       title: FTE delta analysis
@@ -150,41 +162,34 @@ en:
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
       title: GHG emissions relative to start year
-      description: 'The ETM calculates the amount of CO<sub>2</sub> that is emitted
+      description: |
+        This dashboard item represents the reduction in total greenhouse gas emissions
+        relative to the start year. This dashboard item relies on calculations based on
+        <b>primary emissions</b>.
+        <br/><br/>
+        The ETM calculates the amount of CO<sub>2</sub> that is emitted
         as a result of energy use. However, there are also non-energetic sources of CO<sub>2</sub>
         as well as other important greenhouse gases, such as methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O),
         that should be considered. This graph shows these other emissions on top of the energetic CO<sub>2</sub> emissions
-        resulting in an overview of all greenhouse gas emissions.'
+        resulting in an overview of all greenhouse gas emissions.
     direct_emissions_total_ghg_relative_to_1990:
       label: GHG relative to 1990
       title: Direct GHG emissions relative to 1990 (beta)
       description: |
-        This dashboard item represents the reduction in direct total greenhouse gas emissions
-        relative to total greenhouse gas emissions in 1990. The chart below shows the direct
-        greenhouse gas emissions per sector for 1990, the start year and the future year.
+        This dashboard item represents the reduction in total greenhouse gas emissions
+        relative to total greenhouse gas emissions in 1990. The dashboard item relies on
+        calculations based on <b>direct emissions</b>.
         <br/><br/>
-        The total emissions include indirect emissions and LULUCF. Emissions from international
-        transport are included if the scenario is set to include demand from
-        <a href="/scenario/demand/transport_international_transport/international-transport">
-        international transport</a>.<br/><br/>
-        <b>Note: the emissions in this dashboard item and the chart below are calculated based
-        on direct emissions.</b> This emission method is currently in beta release and is not yet
-        fully available for regional (Dutch) datasets. Read more about this in the
-        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        Note: the direct emissions method is currently in beta release. Read more about this method
+        in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
         target="_blank">documentation</a>.
     direct_emissions_total_ghg:
       label: GHG emissions
       title: Direct GHG emissions (beta)
       description: |
-        This dashboard item represents the direct total greenhouse gas emissions in the future year.
-        The chart below shows the direct greenhouse gas emissions per sector for 1990, the
-        start year and the future year.<br/><br/>
-        The total emissions include indirect emissions and LULUCF. Emissions from international
-        transport are included if the scenario is set to include demand from
-        <a href="/scenario/demand/transport_international_transport/international-transport">
-        international transport</a>.<br/><br/>
-        <b>Note: the emissions in this dashboard item and the chart below are calculated based
-        on direct emissions.</b> This emission method is currently in beta release and is not yet
-        fully available for regional (Dutch) datasets. Read more about this in the
-        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        This dashboard item represents the total greenhouse gas emissions in the future year.
+        The dashboard item relies on calculations based on <b>direct emissions</b>.
+        <br/><br/>
+        Note: the direct emissions method is currently in beta release. Read more about this method
+        in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
         target="_blank">documentation</a>.

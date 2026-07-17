@@ -42,18 +42,29 @@ nl:
       label: CO<sub>2</sub> t.o.v. 1990
       title: CO<sub>2</sub>-uitstoot t.o.v. 1990
       description: |
+        Dit dashboarditem representeert de reductie in totale CO<sub>2</sub> emissies
+        ten opzichte van 1990. Het dashboarditem berust op de berekening van <b>primaire emissies</b>.
+        <br/><br/>
         Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
         in CO<sub>2</sub> uitstoot getoond in het dashboard.
         Je kunt meer informatie vinden over deze grafiek in de <a href="https://docs.energytransitionmodel.com/main/co2-overview-per-sector" target="_blank">documentatie</a>.
     local_co2_reduction:
       label: Binnenlandse CO<sub>2</sub>-uitstoot
       title: Binnenlandse CO<sub>2</sub>-uitstoot
-      description: Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
+      description: |
+        Dit dashboarditem representeert de reductie in totale binnenlands geproduceerde
+        CO<sub>2</sub> emissies ten opzichte van 1990. Het dashboarditem berust op de berekening van
+        <b>primaire emissies</b>.
+        <br/><br/>
+        Het jaar 1990 wordt als referentiejaar gebruikt voor de verandering
         in CO<sub>2</sub> uitstoot getoond in het dashboard
     co2_reduction_relative_to_start_year:
       label: CO<sub>2</sub> t.o.v. startjaar
-      title: CO<sub>2</sub>-uitstoot ten opzichte van het startjaar
-      description: ''
+      title: CO<sub>2</sub>-uitstoot t.o.v. startjaar
+      description: |
+        Dit dashboarditem representeert de reductie in totale CO<sub>2</sub> emissies
+        ten opzichte van het startjaar. Het dashboarditem berust op de berekening van
+        <b>primaire emissies</b>.
     costs_fte:
       label: FTE delta analyse
       title: FTE delta analyse
@@ -147,9 +158,35 @@ nl:
         In de grafiek hieronder kun je de productiebeperking zien, vergeleken met andere inzet van flexibele elektriciteitsvraag.
     all_ghg_reduction_relative_to_start_year:
       label: Broeikasgassen
-      title: Totale broeikasgasemissies ten opzichte van het startjaar
-      description: "Het ETM berekent de CO<sub>2</sub> emissies die door energiegebruik worden uitgestoten.
+      title: Broeikasgasemissies t.o.v. startjaar
+      description: |
+        Dit dashboarditem representeert de reductie in totale broeikasgasemissies
+        ten opzichte van het startjaar. Het dashboarditem berust op de berekening van
+        <b>primaire emissies</b>.
+        <br/><br/>
+        Het ETM berekent de CO<sub>2</sub> emissies die door energiegebruik worden uitgestoten.
         Echter bestaan er ook non-energetische bronnen van CO<sub>2</sub> en andere broeikasgassen zoals methaan (CH<sub>4</sub>)
         lachgas (N<sub>2</sub>O). Het is belangrijk om ook deze emissies in kaart te brengen om een goed overzicht te hebben
         van de totale emissies van een gebied. Deze grafiek laat deze overige emissies zien bovenop de energetische CO<sub>2</sub>
-        emissies. Dit geeft een beeld van de totale broeikasemissies in het gebied."
+        emissies. Dit geeft een beeld van de totale broeikasemissies in het gebied.
+    direct_emissions_total_ghg_relative_to_1990:
+      label: Broeikasgasemissies t.o.v. 1990
+      title: Directe broeikasgasemissies t.o.v. 1990 (beta)
+      description: |
+        Dit dashboarditem representeert de reductie in totale broeikasgasemissies
+        ten opzichte van de totale broeikasgasemissies in 1990. Het dashboarditem berust op
+        berekeningen van <b>directe emissies</b>.
+        <br/><br/>
+        Let op: de directe emissiemethode is momenteel in beta release. Lees meer over deze
+        methode in de <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.
+    direct_emissions_total_ghg:
+      label: Broeikasgasemissies
+      title: Directe broeikasgasemissies (beta)
+      description: |
+        Dit dashboarditem representeert de totale broeikasgasemissies in het toekomstjaar.
+        Het dashboarditem berust op de berekening van <b>directe emissies</b>.
+        <br/><br/>
+        Let op: de directe emissiemethode is momenteel in beta release. Lees meer over deze
+        methode in de <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.

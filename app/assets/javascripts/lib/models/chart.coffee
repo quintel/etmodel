@@ -226,7 +226,7 @@ class @Chart extends Backbone.Model
 
   target_series: -> @series.select (s) -> s.get('is_target_line')
 
-  year_1990_series: -> @series.select (s) -> s.get('is_1990')
+  year_1990_series: -> @series.select (s) -> s.get('is_1990') && !s.get('is_target_line')
 
   format_value: (value) =>
     Metric.autoscale_value(value, @get('unit'), 2)

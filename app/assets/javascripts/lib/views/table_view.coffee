@@ -10,6 +10,8 @@ class @TableView
     _.template($("#chart-table-template").html(), {
       data:        @seriesData(),
       totals:      @totalsData(),
+      total1990:   @total1990Data(),
+      has1990:     @has1990(),
       formatLabel: @options.labelFormatter(),
       formatValue: @options.valueFormatter(),
       formatTitle: @options.titleFormatter(),
@@ -17,13 +19,56 @@ class @TableView
       endYear:     App.settings.get('end_year'),
     })
 
+  # True when the chart has 1990 series; the table then gains a 1990 column.
+  has1990: -> @model.year_1990_series().length > 0
+
   # Creates an array of hashes, each one containing the ChartSerie, and the
-  # present and future values.
+  # 1990 (when the chart has 1990 series), present, and future values.
   seriesData: ->
-    _.map @options.sorter()(@getSeries()), (serie) ->
-      serie:   serie
-      present: serie.safe_present_value()
-      future:  serie.safe_future_value()
+    rows = _.map @options.sorter()(@getSeries()), (serie) =>
+      serie:     serie
+      year_1990: @year1990Value(serie)
+      present:   serie.safe_present_value()
+      future:    serie.safe_future_value()
+
+    extraRows = @unmatched1990Rows(rows)
+    return rows unless extraRows.length
+
+    # Insert the extra 1990 rows above the target lines.
+    targetRows = _.filter(rows, (row) -> row.serie.get('is_target_line'))
+    normalRows = _.reject(rows, (row) -> row.serie.get('is_target_line'))
+
+    normalRows.concat(extraRows, targetRows)
+
+  # The 1990 value for a serie: target lines take the value of the target line
+  # at position 1990 with the same label, other series that of the 1990 serie
+  # with the same label. Null when the chart has neither.
+  year1990Value: (serie) ->
+    label = serie.get('label_key')
+
+    match = if serie.get('is_target_line')
+      _.find @model.target_series(), (s) ->
+        s.get('label_key') == label && s.get('target_line_position') == '0'
+    else
+      _.find @model.year_1990_series(), (s) ->
+        s.get('label_key') == label
+
+    if match then match.safe_present_value() else null
+
+  # Rows for 1990 series which don't share a label with any other row, such as
+  # the consolidated 1990 series in the CO2 emissions chart. These only have a
+  # 1990 value.
+  unmatched1990Rows: (rows) ->
+    labels = _.map rows, (row) -> row.serie.get('label_key')
+
+    unmatched = _.reject @model.year_1990_series(), (serie) ->
+      _.contains(labels, serie.get('label_key'))
+
+    _.map unmatched, (serie) ->
+      serie:     serie
+      year_1990: serie.safe_present_value()
+      present:   null
+      future:    null
 
   # Creates an array where the first element is the sum of the present values,
   # and the second is the sum of the future values.
@@ -36,6 +81,14 @@ class @TableView
       , [0.0, 0.0])
     else
       []
+
+  # The sum of the 1990 values, or null when the chart has no 1990 series or
+  # shows no totals.
+  total1990Data: ->
+    if @options.showTotal() && @has1990()
+      _.sum(@model.values_1990())
+    else
+      null
 
   # Options which determine how to render each series in the table.
   renderingOptions: ->

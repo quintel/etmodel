@@ -5,15 +5,14 @@ require 'identity/test/system_helpers'
 module RequestHelpers
   include Identity::Test::SystemHelpers
 
-  # Sign in a user using the Identity provider.
+  # Signs a user in the way MyETM does: by placing a valid shared session cookie in the jar. There
+  # is no in-app sign-in flow to drive — ETModel never runs an OAuth exchange.
   #
   # @param user [User] The user to sign in.
-  # @return [Identity::AccessToken] The access token for the user session.
+  # @return [String] The raw session JWT, for specs that need to assert on it.
   def sign_in(user)
-    token = mock_omniauth_user_sign_in(id: user.id, email: user.email, name: user.name)
-
-    post('/auth/identity')
-    follow_redirect!
+    token = mock_identity_user_sign_in(id: user.id, email: user.email, name: user.name)
+    cookies[Identity.config.session_cookie_name] = token
 
     token
   end

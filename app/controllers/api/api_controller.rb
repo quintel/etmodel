@@ -28,17 +28,5 @@ module API
     def verify_token!
       decoded_token || render(json: { errors: ['Missing or invalid token'] }, status: :unauthorized)
     end
-
-    # Verifies that the token has the desired scopes.
-    def verify_scopes!(required_scopes)
-      missing = Array(required_scopes).reject { |scope| decoded_token['scopes'].include?(scope) }
-
-      return if missing.empty?
-
-      render(
-        json: { errors: ["Missing required scope: #{missing.join(', ')}"] },
-        status: :forbidden
-      )
-    end
   end
 end

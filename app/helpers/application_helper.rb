@@ -161,13 +161,10 @@ module ApplicationHelper
           json.name current_user.name
         end
 
-        json.access_token do
-          json.token session_access_token
-          json.expires_at session_access_token_expires_at
-        end
+        json.signed_in true
       else
         json.current_user nil
-        json.access_token nil
+        json.signed_in false
       end
 
       if Current.setting.active_scenario?

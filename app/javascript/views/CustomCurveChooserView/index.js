@@ -429,7 +429,6 @@ class CustomCurveChooserView extends Backbone.View {
         {
           url: this.apiURL,
           method: method,
-          headers: App.accessToken.headers(),
           success: function (data) {
             if (data == undefined) {
               // Curve was unattached.
@@ -533,7 +532,6 @@ class CustomCurveChooserView extends Backbone.View {
     var req = $.ajax({
       url: scenarioApiURL,
       method: 'GET',
-      headers: App.accessToken.headers(),
     });
 
     // Upload for current scenario
@@ -564,7 +562,6 @@ class CustomCurveChooserView extends Backbone.View {
 
     this.sendRequest('PUT', {
       data: data,
-      headers: App.accessToken.headers(),
       cache: false,
       contentType: false,
       processData: false,

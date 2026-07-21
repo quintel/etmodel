@@ -19,10 +19,6 @@ class User < ApplicationRecord
   scope :ordered, -> { order('name') }
 
   # Finds or creates a user from a JWT token.
-  #
-  # The token's claims are also set as identity_user: email/roles/admin? all prefer this fresh,
-  # per-request identity data over the persisted columns, which are only ever set at creation, so a
-  # role granted/revoked at the identity provider after that first login is still reflected here.
   def self.from_jwt!(token)
     id = token['sub']
     name = token.dig('user', 'name')

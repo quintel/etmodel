@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   helper_method :engine_client, :current_user, :admin?
-  helper_method :session_access_token, :session_access_token_expires_at
+  helper_method :session_access_token
 
   before_action :current_user
   before_action :initialize_current
@@ -119,24 +119,19 @@ class ApplicationController < ActionController::Base
   end
 
   # The bearer token for the current browser session: the shared domain JWT cookie, when present AND
-  # still valid (identity_token only decodes an unexpired, correctly-signed cookie). Guarding on
-  # identity_token means we never hand the page an expired cookie — which would make the front-end's
-  # refresh logic loop on a dead token. Used for server-side calls to MyETM/ETEngine and handed to
-  # the page so its JS can call the API.
+  # still valid (identity_token only decodes an unexpired, correctly-signed cookie).
+  #
+  # Used for calls that originate on the server (my_etm_client, engine_client), where no browser is
+  # involved and so no cookie is sent. It is deliberately NOT handed to the page anymore: the
+  # front-end authenticates with the cookie itself, which the browser keeps current, so there is no
+  # in-page copy to go stale and nothing to reload the page for when the session refreshes.
   def session_access_token
     request.cookies[Identity.config.session_cookie_name].presence if identity_token
-  end
-
-  # Expiry (unix seconds) of the session access token, so the front-end can schedule a refresh.
-  def session_access_token_expires_at
-    identity_token&.dig('exp')
   end
 
   def current_user
     @current_user ||=
       if identity_token
-        # Shared JWT session cookie: find-or-create the local user from the verified claims, as the
-        # API path does, so a cookie-authenticated visitor without a local row is not bounced.
         User.from_jwt!(identity_token)
       end
   rescue ActiveRecord::RecordNotFound

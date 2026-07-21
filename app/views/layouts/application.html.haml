@@ -40,5 +40,6 @@
         %footer.fixed
           = yield :footer
     = yield :scripts
+    = render "layouts/etm/session_keeper"
     - if (Rails.env.production? || Rails.env.staging?) && !Settings.standalone
       = render "layouts/etm/ga"

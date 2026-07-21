@@ -107,7 +107,6 @@
     var xhr = $.ajax({
       type: 'PUT',
       dataType: 'json',
-      headers: App.accessToken.headers(),
       data: { gqueries: queries },
       url: App.scenario.url_path(),
     });
@@ -167,7 +166,6 @@
     var xhr = $.ajax({
       url: this.url,
       data: this.resourceOptions,
-      headers: App.accessToken.headers(),
       type: 'GET',
     });
 
@@ -230,7 +228,6 @@
       var xhr = $.ajax({
         url: this.url,
         type: 'PUT',
-        headers: App.accessToken.headers(),
         data: data,
       });
 

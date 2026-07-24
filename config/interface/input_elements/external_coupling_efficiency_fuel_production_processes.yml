@@ -95,14 +95,6 @@
   position: 330
   slide_key: external_coupling_methanol_to_jet
   coupling_icon: true
-- key: external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_biogenic_waste_input_share
-  interface_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs
-  share_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs_input
-  step_value: 1.0
-  unit: "%"
-  position: 340
-  slide_key: external_coupling_fischer_tropsch
-  coupling_icon: true
 - key: external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_bio_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs
   share_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs_output
@@ -127,14 +119,6 @@
   position: 370
   slide_key: external_coupling_fischer_tropsch
   coupling_icon: true
-- key: external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_dry_biomass_input_share
-  interface_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs
-  share_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs_input
-  step_value: 1.0
-  unit: "%"
-  position: 380
-  slide_key: external_coupling_fischer_tropsch
-  coupling_icon: true
 - key: external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_bio_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs
   share_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs_output
@@ -157,14 +141,6 @@
   step_value: 1.0
   unit: "%"
   position: 410
-  slide_key: external_coupling_fischer_tropsch
-  coupling_icon: true
-- key: external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_non_biogenic_waste_input_share
-  interface_group: external_coupling_production_fischer_tropsch_non_biogenic_waste_ccs
-  share_group: external_coupling_production_fischer_tropsch_non_biogenic_waste_ccs_input
-  step_value: 1.0
-  unit: "%"
-  position: 420
   slide_key: external_coupling_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_diesel_output_share
@@ -407,14 +383,6 @@
   position: 720
   slide_key: external_coupling_hydrotreatment
   coupling_icon: true
-- key: external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_biogenic_waste_input_share
-  interface_group: external_coupling_production_methanol_synthesis_biogenic_waste_ccs
-  share_group: external_coupling_production_methanol_synthesis_biogenic_waste_ccs_input
-  step_value: 1.0
-  unit: "%"
-  position: 730
-  slide_key: external_coupling_methanol_synthesis
-  coupling_icon: true
 - key: external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_biomethanol_output_share
   interface_group: external_coupling_production_methanol_synthesis_biogenic_waste_ccs
   share_group: external_coupling_production_methanol_synthesis_biogenic_waste_ccs_output
@@ -431,14 +399,6 @@
   position: 750
   slide_key: external_coupling_methanol_synthesis
   coupling_icon: true
-- key: external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_dry_biomass_input_share
-  interface_group: external_coupling_production_methanol_synthesis_dry_biomass_ccs
-  share_group: external_coupling_production_methanol_synthesis_dry_biomass_ccs_input
-  step_value: 1.0
-  unit: "%"
-  position: 760
-  slide_key: external_coupling_methanol_synthesis
-  coupling_icon: true
 - key: external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_biomethanol_output_share
   interface_group: external_coupling_production_methanol_synthesis_dry_biomass_ccs
   share_group: external_coupling_production_methanol_synthesis_dry_biomass_ccs_output
@@ -453,14 +413,6 @@
   step_value: 1.0
   unit: "%"
   position: 780
-  slide_key: external_coupling_methanol_synthesis
-  coupling_icon: true
-- key: external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_non_biogenic_waste_input_share
-  interface_group: external_coupling_production_methanol_synthesis_non_biogenic_waste_ccs
-  share_group: external_coupling_production_methanol_synthesis_non_biogenic_waste_ccs_input
-  step_value: 1.0
-  unit: "%"
-  position: 790
   slide_key: external_coupling_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_methanol_output_share
@@ -543,14 +495,6 @@
   position: 890
   slide_key: external_coupling_methanol_to_jet
   coupling_icon: true
-- key: external_coupling_energy_production_pyrolysis_biogenic_waste_biogenic_waste_input_share
-  interface_group: external_coupling_production_pyrolysis_biogenic_waste
-  share_group: external_coupling_production_pyrolysis_biogenic_waste_input
-  step_value: 1.0
-  unit: "%"
-  position: 900
-  slide_key: external_coupling_pyrolysis_production
-  coupling_icon: true
 - key: external_coupling_energy_production_pyrolysis_biogenic_waste_bio_pyrolysis_oil_output_share
   interface_group: external_coupling_production_pyrolysis_biogenic_waste
   share_group: external_coupling_production_pyrolysis_biogenic_waste_output
@@ -567,14 +511,6 @@
   position: 920
   slide_key: external_coupling_pyrolysis_production
   coupling_icon: true
-- key: external_coupling_energy_production_pyrolysis_dry_biomass_dry_biomass_input_share
-  interface_group: external_coupling_production_pyrolysis_dry_biomass
-  share_group: external_coupling_production_pyrolysis_dry_biomass_input
-  step_value: 1.0
-  unit: "%"
-  position: 930
-  slide_key: external_coupling_pyrolysis_production
-  coupling_icon: true
 - key: external_coupling_energy_production_pyrolysis_dry_biomass_bio_pyrolysis_oil_output_share
   interface_group: external_coupling_production_pyrolysis_dry_biomass
   share_group: external_coupling_production_pyrolysis_dry_biomass_output
@@ -589,14 +525,6 @@
   step_value: 1.0
   unit: "%"
   position: 950
-  slide_key: external_coupling_pyrolysis_production
-  coupling_icon: true
-- key: external_coupling_energy_production_pyrolysis_non_biogenic_waste_non_biogenic_waste_input_share
-  interface_group: external_coupling_production_pyrolysis_non_biogenic_waste
-  share_group: external_coupling_production_pyrolysis_non_biogenic_waste_input
-  step_value: 1.0
-  unit: "%"
-  position: 960
   slide_key: external_coupling_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_energy_production_pyrolysis_non_biogenic_waste_pyrolysis_oil_output_share

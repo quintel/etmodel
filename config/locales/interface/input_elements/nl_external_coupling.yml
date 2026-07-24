@@ -1233,10 +1233,6 @@ nl:
       title: Output - biodiesel
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde biodiesel in het Fischer Tropsch-proces (biogeen afval, CCS).
-    external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_biogenic_waste_input_share:
-      title: Input - biogeen afval
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikt biogeen afval in het Fischer Tropsch-proces (biogeen afval, CCS).
     external_coupling_energy_production_fischer_tropsch_biogenic_waste_ccs_bionaphtha_output_share:
       title: Output - bionafta
       description: |
@@ -1253,10 +1249,6 @@ nl:
       title: Output - bionafta
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde bionafta in het Fischer Tropsch-proces (droge biomassa, CCS).
-    external_coupling_energy_production_fischer_tropsch_dry_biomass_ccs_dry_biomass_input_share:
-      title: Input - droge biomassa
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikte droge biomassa in het Fischer Tropsch-proces (droge biomassa, CCS).
     external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_diesel_output_share:
       title: Output - diesel
       description: |
@@ -1269,10 +1261,6 @@ nl:
       title: Output - nafta
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde nafta in het Fischer Tropsch-proces (niet-biogeen afval, CCS).
-    external_coupling_energy_production_fischer_tropsch_non_biogenic_waste_ccs_non_biogenic_waste_input_share:
-      title: Input - niet-biogeen afval
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikt niet-biogeen afval in het Fischer Tropsch-proces (niet-biogeen afval, CCS).
     external_coupling_energy_production_fischer_tropsch_synthetic_dispatchable_electricity_input_share:
       title: Input - elektriciteit
       description: |
@@ -1381,10 +1369,6 @@ nl:
       title: Input - olieachtige biomassa
       description: |
         Deze schuif bepaalt het aandeel van verbruikte olieachtige biomassa in de productie van HVO biodiesel.
-    external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_biogenic_waste_input_share:
-      title: Input - biogeen afval
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikt biogeen afval in methanolsynthese (biogeen afval, CCS).
     external_coupling_energy_production_methanol_synthesis_biogenic_waste_ccs_biomethanol_output_share:
       title: Output - biomethanol
       description: |
@@ -1397,10 +1381,6 @@ nl:
       title: Output - biomethanol
       description: |
         Deze schuif bepaalt het aandeel van geproduceerd biomethanol in methanolsynthese (droge biomassa, CCS).
-    external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_dry_biomass_input_share:
-      title: Input - droge biomassa
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikte droge biomassa in methanolsynthese (droge biomassa, CCS).
     external_coupling_energy_production_methanol_synthesis_dry_biomass_ccs_loss_output_share:
       title: Output - verlies
       description: |
@@ -1409,10 +1389,6 @@ nl:
       title: Output - methanol
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde methanol in methanolsynthese (niet-biogeen afval, CCS).
-    external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_non_biogenic_waste_input_share:
-      title: Input - niet-biogeen afval
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikt niet-biogeen afval in methanolsynthese (niet-biogeen afval, CCS).
     external_coupling_energy_production_methanol_synthesis_non_biogenic_waste_ccs_loss_output_share:
       title: Output - verlies
       description: |
@@ -1453,10 +1429,6 @@ nl:
       title: Output - bio-pyrolyse-olie
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde bio-pyrolyse-olie in de pyrolyse van biogeen afval.
-    external_coupling_energy_production_pyrolysis_biogenic_waste_biogenic_waste_input_share:
-      title: Input - biogeen afval
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikt biogeen afval in de pyrolyse van biogeen afval.
     external_coupling_energy_production_pyrolysis_biogenic_waste_steam_hot_water_output_share:
       title: Output - stoom/warmwater
       description: |
@@ -1465,18 +1437,10 @@ nl:
       title: Output - bio-pyrolyse-olie
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde bio-pyrolyse-olie in de pyrolyse van droge biomassa.
-    external_coupling_energy_production_pyrolysis_dry_biomass_dry_biomass_input_share:
-      title: Input - droge biomassa
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikte droge biomassa in de pyrolyse van droge biomassa.
     external_coupling_energy_production_pyrolysis_dry_biomass_steam_hot_water_output_share:
       title: Output - stoom/warmwater
       description: |
         Deze schuif bepaalt het aandeel van geproduceerd stoom/warmwater in de pyrolyse van droge biomassa.
-    external_coupling_energy_production_pyrolysis_non_biogenic_waste_non_biogenic_waste_input_share:
-      title: Input - niet-biogeen afval
-      description: |
-        Deze schuif bepaalt het aandeel van verbruikt niet-biogeen afval in de pyrolyse van niet-biogeen afval.
     external_coupling_energy_production_pyrolysis_non_biogenic_waste_pyrolysis_oil_output_share:
       title: Output - pyrolyse-olie
       description: |

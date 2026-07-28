@@ -14,8 +14,10 @@ RSpec.describe 'Shared session keeper', type: :request do
 
       expect(response.body)
         .to match(%r{import \{ startSessionKeeper \} from "/assets/identity/session_keeper[^"]*\.js"})
+      expect(response.body).to include("startSessionKeeper({")
+      expect(response.body).to include("idpUrl: \"#{Settings.identity.issuer}\"")
       expect(response.body)
-        .to include("startSessionKeeper({ idpUrl: \"#{Settings.identity.issuer}\" })")
+        .to include("expCookieName: \"#{Identity.config.session_exp_cookie_name}\"")
     end
   end
 end

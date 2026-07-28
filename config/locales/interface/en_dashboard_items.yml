@@ -42,6 +42,10 @@ en:
       label: CO<sub>2</sub> relative to 1990
       title: CO<sub>2</sub> emissions relative to 1990
       description: |
+        This dashboard item represents the reduction in total CO<sub>2</sub> emissions
+        relative to 1990. The dashboard item relies on calculations based on
+        <b>primary emissions</b>.
+        <br/><br/>
         The year 1990 is used as reference year for the change in CO<sub>2</sub>
         emissions shown in the dashboard. The chart below shows the CO<sub>2</sub>
         emissions that result from the inland final consumption of energy.
@@ -49,12 +53,20 @@ en:
     local_co2_reduction:
       label: Domestic CO<sub>2</sub> emissions
       title: Domestic CO<sub>2</sub> emissions
-      description: 'The year 1990 is used as reference year for the change in CO<sub>2</sub>
-        emissions shown in the dashboard. '
+      description: |
+        This dashboard item represents the reduction in total domestically produced CO<sub>2</sub>
+        emissions relative to 1990. The dashboard item relies on calculations based on
+        <b>primary emissions</b>.
+        <br/><br/>
+        The year 1990 is used as reference year for the change in CO<sub>2</sub>
+        emissions shown in the dashboard.
     co2_reduction_relative_to_start_year:
       label: CO<sub>2</sub> relative to start year
       title: CO<sub>2</sub> emissions relative to start year
-      description: ''
+      description: |
+        This dashboard item represents the reduction in total CO<sub>2</sub> emissions
+        relative to the start year. This dashboard item relies on calculations based on
+        <b>primary emissions</b>.
     costs_fte:
       label: FTE delta analysis
       title: FTE delta analysis
@@ -115,7 +127,7 @@ en:
       label: Profitable plants
       title: Profitability of dispatchable power plants
       description: |
-        The percentage on the dashboard shows which percentage of the installed 
+        The percentage on the dashboard shows which percentage of the installed
         dispatchable power production capacity is economically viable. This table shows (of all plants, not only the dispatchable plants) what
         plants are profitable or unprofitable in your scenario. For more information about the table, please visit
         the <a href="https://docs.energytransitionmodel.com/main/cost-main-principles" target="_blank">documentation</a>.
@@ -149,9 +161,35 @@ en:
         In the chart below you can see the curtailed volume, compared to other uses of flexible electricity demand.
     all_ghg_reduction_relative_to_start_year:
       label: Greenhouse gases
-      title: Total greenhouse gas emissions relative to start year
-      description: 'The ETM calculates the amount of CO<sub>2</sub> that is emitted
+      title: GHG emissions relative to start year
+      description: |
+        This dashboard item represents the reduction in total greenhouse gas emissions
+        relative to the start year. This dashboard item relies on calculations based on
+        <b>primary emissions</b>.
+        <br/><br/>
+        The ETM calculates the amount of CO<sub>2</sub> that is emitted
         as a result of energy use. However, there are also non-energetic sources of CO<sub>2</sub>
         as well as other important greenhouse gases, such as methane (CH<sub>4</sub>) or nitrous oxide (N<sub>2</sub>O),
         that should be considered. This graph shows these other emissions on top of the energetic CO<sub>2</sub> emissions
-        resulting in an overview of all greenhouse gas emissions.'
+        resulting in an overview of all greenhouse gas emissions.
+    direct_emissions_total_ghg_relative_to_1990:
+      label: GHG relative to 1990
+      title: Direct GHG emissions relative to 1990 (beta)
+      description: |
+        This dashboard item represents the reduction in total greenhouse gas emissions
+        relative to total greenhouse gas emissions in 1990. The dashboard item relies on
+        calculations based on <b>direct emissions</b>.
+        <br/><br/>
+        Note: the direct emissions method is currently in beta release. Read more about this method
+        in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
+    direct_emissions_total_ghg:
+      label: GHG emissions
+      title: Direct GHG emissions (beta)
+      description: |
+        This dashboard item represents the total greenhouse gas emissions in the future year.
+        The dashboard item relies on calculations based on <b>direct emissions</b>.
+        <br/><br/>
+        Note: the direct emissions method is currently in beta release. Read more about this method
+        in the <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.

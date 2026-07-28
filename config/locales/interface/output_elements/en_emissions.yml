@@ -26,9 +26,21 @@ en:
       short_description:
       description: "Emissions from transport are the result of freight transport, passenger transport,
       aviation or public transport. Apart from energetic CO<sub>2</sub> emissions there are also non-energetic
-      CO<sub>2</sub> emissions as a result of transport. This includes the emissions of international transport 
+      CO<sub>2</sub> emissions as a result of transport. This includes the emissions of international transport
       if you have allocted them to your scenario."
     emissions_indirect:
       title: Indirect and delayed CO<sub>2</sub> emissions
       short_description:
       description:
+    direct_emissions_per_sector:
+      title: Direct total GHG emissions (beta)
+      short_description:
+      description: |
+        This chart compares total GHG emissions in 1990, the present and the future.
+        The year 1990 is often used as a reference year in emission targets.
+        <br/><br/>
+        <b>Note: the emissions are calculated based on direct emissions.</b> This emissions method
+        is currently in beta release and is not yet completely availabe for regional (Dutch)
+        datasets. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.

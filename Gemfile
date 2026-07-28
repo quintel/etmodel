@@ -50,6 +50,11 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 
+# opentelemetry gems
+gem 'opentelemetry-sdk', '~> 1.13'
+gem 'opentelemetry-exporter-otlp', '~> 0.34.1'
+gem 'opentelemetry-instrumentation-faraday', '~> 0.33.0'
+
 # system gems
 gem 'solid_cache'
 gem 'mysql2'

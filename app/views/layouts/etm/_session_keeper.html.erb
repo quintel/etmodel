@@ -10,5 +10,8 @@
 %>
 <script type="module">
   import { startSessionKeeper } from "<%= asset_path('identity/session_keeper.js') %>";
-  startSessionKeeper({ idpUrl: "<%= Settings.identity.issuer %>" });
+  startSessionKeeper({
+    idpUrl: "<%= j Settings.identity.issuer %>",
+    expCookieName: "<%= j Identity.config.session_exp_cookie_name %>",
+  });
 </script>

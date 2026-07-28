@@ -51,8 +51,6 @@ Rails.application.routes.draw do
     member do
       get  :load
     end
-
-    get '/report/:report_name'     => 'saved_scenario_reports#show'
   end
 
   # Misc scenario routes

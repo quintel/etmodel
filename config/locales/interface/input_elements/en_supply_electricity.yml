@@ -68,6 +68,14 @@ en:
       description: 'Here you can build capacity of combined cycle hydrogen plants.
         At the moment, these turbines are not used (yet) on a large scale. Because
         combined cycle hydrogen plant technology is very similar to combined cycle
+        gas plants, we assume that both plants have the same specifications.'
+    capacity_of_energy_chp_combined_cycle_hydrogen:
+      title: Hydrogen CCGT CHP
+      short_description:
+      description: 'This slider adjusts the total electric capacity of combined cycle gas turbine
+        (CCGT) plants with combined heat and power (CHP).
+        At the moment, these turbines are not used (yet) on a large scale. Because
+        CHP combined cycle hydrogen plant technology is very similar to the CHP combined cycle
         gas plants, we assume that both plants have the same specifications. '
     capacity_of_energy_power_geothermal:
       title: Geothermal electric

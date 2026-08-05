@@ -31,6 +31,7 @@
     #wrapper
       = render "layouts/etm/header"
       #content
+        = render "layouts/etm/announcements"
         - if content_for?(:flash)
           = yield :flash
         - else

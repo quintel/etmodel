@@ -1,3 +1,39 @@
+$announcement-height: 34px
+
+#announcement
+  background-color: #fffced
+  border-bottom: 1px solid #e2d278
+  box-sizing: border-box
+  height: $announcement-height
+  text-align: center
+
+  p
+    line-height: $announcement-height - 2px
+    margin: 0
+    overflow: hidden
+    padding: 0 10px
+    text-overflow: ellipsis
+    white-space: nowrap
+
+// The model page fixes its header and scenario nav to the viewport. A fixed child of a flex
+// container sits at the top of that container whatever precedes it, so the nav is drawn over the
+// banner. Pin the banner too, and move everything below it down by its height.
+body#model:not(.liteui)
+  #announcement
+    position: fixed
+    top: 57px
+    width: 100%
+    z-index: 99
+
+  #announcement ~ #scenario-nav
+    top: 57px + $announcement-height
+
+  #announcement ~ .flex-wrapper
+    padding-top: 41px + $announcement-height
+
+    #sidebar
+      height: calc(100% - 68px - 42px - 57px - #{$announcement-height})
+
 #flash
   background-color: #FFF1A8
   background-image: linear-gradient(#fffad7, #fff1a8)

@@ -1,0 +1,6 @@
+- messages = MyEtm::Announcement.all_active.filter_map { |announcement| announcement.body(I18n.locale).presence }
+
+- if messages.any?
+  #announcement
+    - messages.each do |message|
+      %p{ title: message }= message

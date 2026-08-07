@@ -11,9 +11,33 @@
   dependent_on:
   output_element_key: direct_emissions_per_ipcc_category
   key: direct_emissions_per_ipcc_category_1a1
+- label: ipcc_1b
+  color: "#6DB4B7"
+  order_by: 110
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1b_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1b
+- label: ipcc_1c
+  color: "#9DD8C6"
+  order_by: 120
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1c_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1c
 - label: ipcc_1a2
   color: "#A9A9A9"
-  order_by: 110
+  order_by: 130
   group:
   show_at_first: false
   is_target_line: false
@@ -25,7 +49,7 @@
   key: direct_emissions_per_ipcc_category_1a2
 - label: ipcc_2
   color: "#E2E2E2"
-  order_by: 120
+  order_by: 140
   group:
   show_at_first: false
   is_target_line: false
@@ -37,7 +61,7 @@
   key: direct_emissions_per_ipcc_category_2
 - label: ipcc_1a3
   color: "#8B0000"
-  order_by: 130
+  order_by: 150
   group:
   show_at_first: false
   is_target_line: false
@@ -49,7 +73,7 @@
   key: direct_emissions_per_ipcc_category_1a3
 - label: ipcc_1a4a
   color: "#ADD8E6"
-  order_by: 140
+  order_by: 160
   group:
   show_at_first: false
   is_target_line: false
@@ -61,7 +85,7 @@
   key: direct_emissions_per_ipcc_category_1a4a
 - label: ipcc_1a4b
   color: "#4169E1"
-  order_by: 150
+  order_by: 170
   group:
   show_at_first: false
   is_target_line: false
@@ -73,7 +97,7 @@
   key: direct_emissions_per_ipcc_category_1a4b
 - label: ipcc_1a4c
   color: "#FFD700"
-  order_by: 160
+  order_by: 180
   group:
   show_at_first: false
   is_target_line: false
@@ -85,7 +109,7 @@
   key: direct_emissions_per_ipcc_category_1a4c
 - label: ipcc_3
   color: "#FFED8F"
-  order_by: 170
+  order_by: 190
   group:
   show_at_first: false
   is_target_line: false
@@ -97,7 +121,7 @@
   key: direct_emissions_per_ipcc_category_3
 - label: ipcc_1a5
   color: "#E07033"
-  order_by: 180
+  order_by: 200
   group:
   show_at_first: false
   is_target_line: false
@@ -107,30 +131,6 @@
   dependent_on:
   output_element_key: direct_emissions_per_ipcc_category
   key: direct_emissions_per_ipcc_category_1a5
-- label: ipcc_1b
-  color: "#88D4C5"
-  order_by: 190
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: direct_emissions_ipcc_1b_total_ghg_for_direct_emissions_chart
-  is_1990:
-  dependent_on:
-  output_element_key: direct_emissions_per_ipcc_category
-  key: direct_emissions_per_ipcc_category_1b
-- label: ipcc_1c
-  color: "#A0522D"
-  order_by: 200
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: direct_emissions_ipcc_1c_total_ghg_for_direct_emissions_chart
-  is_1990:
-  dependent_on:
-  output_element_key: direct_emissions_per_ipcc_category
-  key: direct_emissions_per_ipcc_category_1c
 - label: ipcc_4
   color: "#A1DC8E"
   order_by: 210
@@ -194,9 +194,35 @@
   dependent_on:
   output_element_key: direct_emissions_per_ipcc_category
   key: direct_emissions_per_ipcc_category_1a1_1990
+- label: ipcc_1b
+  color: "#6DB4B7"
+  order_by: 260
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1b_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1b_1990
+- label: ipcc_1c
+  color: "#9DD8C6"
+  order_by: 270
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1c_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1c_1990
 - label: ipcc_1a2
   color: "#A9A9A9"
-  order_by: 260
+  order_by: 280
   group:
   show_at_first: false
   is_target_line: false
@@ -209,7 +235,7 @@
   key: direct_emissions_per_ipcc_category_1a2_1990
 - label: ipcc_2
   color: "#E2E2E2"
-  order_by: 270
+  order_by: 290
   group:
   show_at_first: false
   is_target_line: false
@@ -222,7 +248,7 @@
   key: direct_emissions_per_ipcc_category_2_1990
 - label: ipcc_1a3
   color: "#8B0000"
-  order_by: 280
+  order_by: 300
   group:
   show_at_first: false
   is_target_line: false
@@ -235,7 +261,7 @@
   key: direct_emissions_per_ipcc_category_1a3_1990
 - label: ipcc_1a4a
   color: "#ADD8E6"
-  order_by: 290
+  order_by: 310
   group:
   show_at_first: false
   is_target_line: false
@@ -248,7 +274,7 @@
   key: direct_emissions_per_ipcc_category_1a4a_1990
 - label: ipcc_1a4b
   color: "#4169E1"
-  order_by: 300
+  order_by: 320
   group:
   show_at_first: false
   is_target_line: false
@@ -261,7 +287,7 @@
   key: direct_emissions_per_ipcc_category_1a4b_1990
 - label: ipcc_1a4c
   color: "#FFD700"
-  order_by: 310
+  order_by: 330
   group:
   show_at_first: false
   is_target_line: false
@@ -274,7 +300,7 @@
   key: direct_emissions_per_ipcc_category_1a4c_1990
 - label: ipcc_3
   color: "#FFED8F"
-  order_by: 320
+  order_by: 340
   group:
   show_at_first: false
   is_target_line: false
@@ -287,7 +313,7 @@
   key: direct_emissions_per_ipcc_category_3_1990
 - label: ipcc_1a5
   color: "#E07033"
-  order_by: 330
+  order_by: 350
   group:
   show_at_first: false
   is_target_line: false
@@ -298,32 +324,6 @@
   dependent_on:
   output_element_key: direct_emissions_per_ipcc_category
   key: direct_emissions_per_ipcc_category_1a5_1990
-- label: ipcc_1b
-  color: "#88D4C5"
-  order_by: 340
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: direct_emissions_ipcc_1b_total_ghg_1990_for_direct_emissions_chart
-  is_1990: true
-  hide_label: true
-  dependent_on:
-  output_element_key: direct_emissions_per_ipcc_category
-  key: direct_emissions_per_ipcc_category_1b_1990
-- label: ipcc_1c
-  color: "#A0522D"
-  order_by: 350
-  group:
-  show_at_first: false
-  is_target_line: false
-  target_line_position:
-  gquery: direct_emissions_ipcc_1c_total_ghg_1990_for_direct_emissions_chart
-  is_1990: true
-  hide_label: true
-  dependent_on:
-  output_element_key: direct_emissions_per_ipcc_category
-  key: direct_emissions_per_ipcc_category_1c_1990
 - label: ipcc_4
   color: "#A1DC8E"
   order_by: 360

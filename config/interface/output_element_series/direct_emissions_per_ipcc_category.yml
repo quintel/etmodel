@@ -1,0 +1,422 @@
+# present and future total GHG emissions per IPCC category
+- label: ipcc_1a1
+  color: "#416B86"
+  order_by: 100
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a1_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a1
+- label: ipcc_1b
+  color: "#6DB4B7"
+  order_by: 110
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1b_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1b
+- label: ipcc_1c
+  color: "#9DD8C6"
+  order_by: 120
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1c_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1c
+- label: ipcc_1a2
+  color: "#A9A9A9"
+  order_by: 130
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a2_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a2
+- label: ipcc_2
+  color: "#E2E2E2"
+  order_by: 140
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_2_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_2
+- label: ipcc_1a3
+  color: "#8B0000"
+  order_by: 150
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a3_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a3
+- label: ipcc_1a4a
+  color: "#ADD8E6"
+  order_by: 160
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a4a_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a4a
+- label: ipcc_1a4b
+  color: "#4169E1"
+  order_by: 170
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a4b_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a4b
+- label: ipcc_1a4c
+  color: "#FFD700"
+  order_by: 180
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a4c_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a4c
+- label: ipcc_3
+  color: "#FFED8F"
+  order_by: 190
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_3_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_3
+- label: ipcc_1a5
+  color: "#E07033"
+  order_by: 200
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a5_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a5
+- label: ipcc_4
+  color: "#A1DC8E"
+  order_by: 210
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_4_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_4
+- label: ipcc_5
+  color: "#245D11"
+  order_by: 220
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_5_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_5
+- label: ipcc_ind
+  color: "#C2185B"
+  order_by: 230
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_ind_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_ind
+- label: ipcc_1d1
+  color: "#82589F"
+  order_by: 240
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1d1_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1d1
+
+#1990 total GHG emissions per IPCC category
+- label: ipcc_1a1
+  color: "#416B86"
+  order_by: 250
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a1_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a1_1990
+- label: ipcc_1b
+  color: "#6DB4B7"
+  order_by: 260
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1b_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1b_1990
+- label: ipcc_1c
+  color: "#9DD8C6"
+  order_by: 270
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1c_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1c_1990
+- label: ipcc_1a2
+  color: "#A9A9A9"
+  order_by: 280
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a2_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a2_1990
+- label: ipcc_2
+  color: "#E2E2E2"
+  order_by: 290
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_2_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_2_1990
+- label: ipcc_1a3
+  color: "#8B0000"
+  order_by: 300
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a3_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a3_1990
+- label: ipcc_1a4a
+  color: "#ADD8E6"
+  order_by: 310
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a4a_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a4a_1990
+- label: ipcc_1a4b
+  color: "#4169E1"
+  order_by: 320
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a4b_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a4b_1990
+- label: ipcc_1a4c
+  color: "#FFD700"
+  order_by: 330
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a4c_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a4c_1990
+- label: ipcc_3
+  color: "#FFED8F"
+  order_by: 340
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_3_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_3_1990
+- label: ipcc_1a5
+  color: "#E07033"
+  order_by: 350
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1a5_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1a5_1990
+- label: ipcc_4
+  color: "#A1DC8E"
+  order_by: 360
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_4_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_4_1990
+- label: ipcc_5
+  color: "#245D11"
+  order_by: 370
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_5_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_5_1990
+- label: ipcc_ind
+  color: "#C2185B"
+  order_by: 380
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_ind_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_ind_1990
+- label: ipcc_1d1
+  color: "#82589F"
+  order_by: 390
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_ipcc_1d1_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_1d1_1990
+
+# target line present and future net total GHG emissions
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 400
+  group:
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '1'
+  gquery: direct_emissions_ipcc_total_ghg_present_for_direct_emissions_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_total_ghg_present
+
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 410
+  group:
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '2'
+  gquery: direct_emissions_ipcc_total_ghg_future_for_direct_emissions_chart
+  is_1990: false
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_total_ghg_future
+
+# target line 1990 total GHG emissions
+# order_by should be higher than present and future target line to show correct totals in table view
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 420
+  group:
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '0'
+  gquery: direct_emissions_ipcc_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_ipcc_category
+  key: direct_emissions_per_ipcc_category_total_ghg_1990

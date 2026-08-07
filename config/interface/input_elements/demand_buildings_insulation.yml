@@ -1,11 +1,19 @@
 ---
-- key: buildings_insulation_level_buildings_future
-  step_value: 1.0
-  unit: "kWh/m2"
+- key: buildings_insulation_new_buildings
+  step_value: 0.1
+  unit: "%"
+  interface_group: buildings_insulation
   position: 100
   slide_key: demand_buildings_insulation
-- key: buildings_insulation_level_buildings_present
-  step_value: 1.0
-  unit: "kWh/m2"
+- key: buildings_insulation_existing_buildings
+  step_value: 0.1
+  unit: "%"
+  interface_group: buildings_insulation
   position: 105
+  slide_key: demand_buildings_insulation
+- key: buildings_space_heating_behaviour
+  step_value: 0.1
+  unit: "%"
+  interface_group: buildings_heat_behaviour
+  position: 110
   slide_key: demand_buildings_insulation

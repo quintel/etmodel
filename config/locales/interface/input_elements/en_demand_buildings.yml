@@ -1,7 +1,7 @@
 ---
 en:
   input_elements:
-    buildings_number_of_buildings_future:
+    buildings_number_of_buildings_new:
       title: New buildings
       short_description:
       description: |
@@ -13,11 +13,11 @@ en:
         buildings divided by the typical surface area per residence. The typical surface area per
         residence can differ per region. The source data can be found via the
         <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
-    buildings_number_of_buildings_present:
-      title: Existing buildings
+    buildings_number_of_buildings_demolished:
+      title: Demolished buildings
       short_description:
       description: |
-        This slider sets the number of existing buildings. This concerns all non-residential
+        This slider sets the number of demolished buildings. This concerns all non-residential
         buildings that fall under commercial and public services: offices, hospitals, swimming pools,
         restaurants, etc. <br/><br/>
         <b>Note</b>: this slider represents the number of buildings in <i>residence equivalents</i>.
@@ -25,44 +25,39 @@ en:
         buildings divided by the typical surface area per residence. The typical surface area per
         residence can differ per region. The source data can be found via the
         <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
-    buildings_insulation_level_buildings_future:
+    buildings_insulation_new_buildings:
       title: New buildings
       short_description: ''
       description: |
-        This slider adjusts the average heat demand per square meter for new buildings.
+        This slider adjusts the heat demand for new buildings due to insulation.
         Note that the slider value only affects the energy demand of space heating.
         <br><br>
-        The average heat demand per square meter is an energy prestation indicator for buildings.
-        The indicator concerns the heat demand of the building itself and is therefore not dependent
-        on the ventilation system, heating and cooling technologies or PV panels. The better a building
-        is insulated, the lower the average heat demand per square meter. This results in a total
-        decrease of space heating demand in these buildings.
+        This input concerns the heat demand of the building itself and is therefore not dependent
+        on the ventilation system, heating and cooling technologies or PV panels.
+        The slider represents a decrease of space heating demand in these buildings due to insulation.
         <br><br>
         The number of new buildings in the scenario can be set
         <a href="/scenario/demand/buildings/building-stock">here</a>.
-        <br><br>
-        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
-        for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a>
-        for a description of the data sources.
-    buildings_insulation_level_buildings_present:
-      title: Present buildings
+    buildings_insulation_existing_buildings:
+      title: Existing buildings
       short_description:
       description: |
-        This slider adjusts the average heat demand per square meter for present buildings.
+        This slider adjusts the heat demand for existing buildings due to insulation.
         Note that the slider value only affects the energy demand of space heating.
         <br><br>
-        The average heat demand per square meter is an energy prestation indicator for buildings.
-        The indicator concerns the heat demand of the building itself and is therefore not dependent
-        on the ventilation system, heating and cooling technologies or PV panels. The better a building
-        is insulated, the lower the average heat demand per square meter. This results in a total
-        decrease of space heating demand in these buildings.
+        This input concerns the heat demand of the building itself and is therefore not dependent
+        on the ventilation system, heating and cooling technologies or PV panels.
+        The slider represents a decrease of space heating demand in these buildings due to insulation.
         <br><br>
-        The number of present buildings in the scenario can be set
+        The number of existing buildings in the scenario can be set
         <a href="/scenario/demand/buildings/building-stock">here</a>.
-        <br><br>
-        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\">documentation</a>
-        for more information or check out the <a href="https://data.energytransitionmodel.com\" target=\"_blank\">dataset</a>
-        for a description of the data sources.
+    buildings_space_heating_behaviour:
+      title: Space heating behaviour
+      short_description:
+      description: |
+        This slider adjusts the heat demand for space heating in buildings due to changes in behaviour.
+        Note that the slider value only affects the energy demand of space heating.
+        Unlike insulation sliders, it does not affect investment costs for insulating buildings.
     buildings_useful_demand_appliances:
       title: Appliances
       short_description:
@@ -227,16 +222,6 @@ en:
       title: Coal-fired heater
       short_description:
       description: This shows what part of heating is produced by coal-fired heaters.
-    buildings_insulation_level:
-      title: Insulation
-      short_description: ''
-      description: "With this slider you can set the percentage of heat demand reduction based on the amount of insulation in buildings.
-        \r\n<br><br>\r\nThe percentage of heat demand reduction is established by comparing a badly insulated
-        building to a highly insulated building. This amounts to a potential heat demand reduction
-        of 60%. By increasing the percentage of heat demand reduction due to insulation you directly decrease
-        the heat demand of buildings. \r\n<br><br>\r\nCheck out the
-        <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentation</a> for more information on insulation."
     buildings_lighting_standard_fluorescent_electricity_share:
       title: Fluorescent tube
       short_description: ''

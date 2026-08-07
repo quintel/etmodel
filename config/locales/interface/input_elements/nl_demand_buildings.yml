@@ -1,7 +1,7 @@
 ---
 nl:
   input_elements:
-    buildings_number_of_buildings_future:
+    buildings_number_of_buildings_new:
       title: Nieuwe gebouwen
       short_description:
       description: |
@@ -14,11 +14,11 @@ nl:
         typische vloeroppervlak per woning kan verschillen per regio. De brondata kan worden
         gevonden via de sectie
         <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
-    buildings_number_of_buildings_present:
-      title: Bestaande gebouwen
+    buildings_number_of_buildings_demolished:
+      title: Gesloopte gebouwen
       short_description:
       description: |
-        Dit schuifje stelt het huidige aantal gebouwde gebouwen in. Het gaat hier om alle
+        Dit schuifje stelt het gesloopte gebouwen in. Het gaat hier om alle
         niet-residentiële gebouwen die onder de dienstensector vallen, zoals kantoren,
         ziekenhuizen, zwembaden, restaurants, etc. <br/><br/>
         <b>Let op</b>: dit schuifje representeert het aantal gebouwen in <i>woningequivalenten</i>
@@ -27,32 +27,37 @@ nl:
         typische vloeroppervlak per woning kan verschillen per regio. De brondata kan worden
         gevonden via de sectie
         <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
-    buildings_insulation_level_buildings_future:
+    buildings_insulation_new_buildings:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt de gemiddelde warmtevraag per vierkante meter voor nieuwe utiliteitsgebouwen ingesteld.
+        Met deze slider wordt de warmtevraag voor nieuwe utiliteitsgebouwen gewijzigd door isolatie.
         Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
         <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor gebouwen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een gebouw geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
+        Deze indicator invoer gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk
+        van het ventilatiesysteem, warmte- en koudetechnologieën en PV-panelen.
+        Dit schuifje representeert een vermindering van de warmtevraag in deze gebouwend door isolatie.
         <br><br>
         Het aantal nieuwe gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
-    buildings_insulation_level_buildings_present:
+    buildings_insulation_existing_buildings:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt de gemiddelde warmtevraag per vierkante meter voor bestaande utiliteitsgebouwen ingesteld.
+        Met deze slider wordt de warmtevraag voor bestaande utiliteitsgebouwen gewijzigd door isolatie.
         Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
         <br><br>
-        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor gebouwen. De indicator
-        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
-        en koudetechnologieën en PV-panelen. Hoe beter een gebouw geïsoleerd is, hoe lager de gemiddelde warmtevraag
-        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze gebouwen.
+        Deze indicator invoer gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk
+        van het ventilatiesysteem, warmte- en koudetechnologieën en PV-panelen.
+        Dit schuifje representeert een vermindering van de warmtevraag in deze gebouwend door isolatie.
         <br><br>
         Het aantal bestaande gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+    buildings_space_heating_behaviour:
+      title: Gedrag bij ruimteverwarming
+      short_description:
+      description: |
+        Met deze slider wordt de warmtevraag voor utiliteitsgebouwen gewijzigd door gedrag.
+        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
+        In tegenstelling tot de isolatieschuifjes heeft dit geen invloed op investeringskosten voor isolatie.
     buildings_useful_demand_appliances:
       title: Apparaten
       short_description:
@@ -216,16 +221,6 @@ nl:
       short_description:
       description: Hier zie je welk deel van de verwarming door kolengestookte ketels
         wordt ingevuld.
-    buildings_insulation_level:
-      title: Isolatie
-      short_description:
-      description: "Met deze slider kun je het percentage warmtereductie bepalen op basis van de isolatiegraad van gebouwen.
-        \r\n<br><br>\r\nHet percentage warmtereductie komt tot stand door een slecht geïsoleerd gebouw te vergelijken
-        met een zeer goed geïsoleerd gebouw. Dit resulteert in een potentiële reductie van 60%
-        op de totale warmtevraag voor verwarming. Het verhogen van het percentage warmtereductie door extra isolatie van gebouwen zorgt voor
-        een directe verlaging van de warmtevraag van gebouwen.
-        \r\n<br><br>\r\nRaadpleeg de <a href=\"https://docs.energytransitionmodel.com/main/insulation\" target=\"_blank\"
-        >documentatie</a> voor meer informatie over isolatie."
     buildings_lighting_standard_fluorescent_electricity_share:
       title: Conventionele TL-buis
       short_description:

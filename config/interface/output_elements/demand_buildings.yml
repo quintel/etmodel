@@ -7,8 +7,8 @@
   show_point_label: false
   growth_chart: true
   key: use_of_final_demand_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   output_element_type_name: bezier
@@ -20,8 +20,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_heat_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   output_element_type_name: bezier
@@ -33,8 +33,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_cooling_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   output_element_type_name: bezier
@@ -46,8 +46,8 @@
   show_point_label: false
   growth_chart: true
   key: use_of_electricity_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   output_element_type_name: bezier
@@ -59,8 +59,8 @@
   show_point_label: false
   growth_chart: false
   key: source_of_electricity_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
   output_element_type_name: vertical_stacked_bar
@@ -72,8 +72,8 @@
   show_point_label: false
   growth_chart: false
   key: buildings_heat_demand_and_production
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: true
   dependent_on: ''
@@ -91,7 +91,7 @@
   hidden: false
   requires_merit_order: false
   dependent_on: ''
-  output_element_type_name: vertical_stacked_bar    
+  output_element_type_name: vertical_stacked_bar
 - under_construction: false
   unit: PJ
   percentage: false
@@ -100,8 +100,21 @@
   show_point_label: false
   growth_chart: true
   key: source_of_appliances_in_buildings
-  max_axis_value: 
-  min_axis_value: 
+  max_axis_value:
+  min_axis_value:
   hidden: false
   requires_merit_order: false
-  output_element_type_name: bezier  
+  output_element_type_name: bezier
+- under_construction: false
+  unit: '#'
+  percentage: false
+  group: Demand
+  sub_group: buildings
+  show_point_label: false
+  growth_chart: true
+  key: number_of_residences_and_buildings_overview
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  output_element_type_name: category_bar

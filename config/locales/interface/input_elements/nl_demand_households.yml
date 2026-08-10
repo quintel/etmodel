@@ -822,102 +822,50 @@ nl:
       description: "Hoe verwacht je dat de bevolking zich gaat ontwikkelen? Naast
         welvaartsgroei is dit een van de belangrijkste factoren die de energievraag
         beïnvloeden."
-    households_number_of_apartments_future:
-      title: Nieuwbouw
-      short_description:
-      description: "Deze slider zet het aantal apartementen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
-    households_number_of_apartments_2005_present:
+    households_number_of_residences_new:
+      title: Aantal nieuwe woningen
+      short_description: ''
+      description: "Hoeveel nieuwe woningen worden er verwacht?"
+    households_number_of_residences_demolished_v2a:
+      title: Aantal gesloopte woningen
+      short_description: ''
+      description: "Hoeveel woningen worden er naar verwachting gesloopt?"
+    households_share_of_apartments:
+      title: Appartementen
+      short_description: ''
+      description: "Welk percentage van de nieuwe woningen zijn appartementen?"
+    households_share_of_detached:
+      title: Vrijstaande woningen
+      short_description: ''
+      description: "Welk percentage van de nieuwe woningen zijn vrijstaande woningen?"
+    households_share_of_semi_detached:
+      title: Hoekwoningen
+      short_description: ''
+      description: "Welk percentage van de nieuwe woningen zijn hoekwoningen?"
+    households_share_of_terraced:
+      title: Rijtjeshuizen
+      short_description: ''
+      description: "Welk percentage van de nieuwe woningen zijn rijtjeshuizen?"
+    households_demolished_2005_present:
       title: 2005 - heden
-      short_description:
-      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 2005 tot het heden."
-    households_number_of_apartments_1985_2004:
+      short_description: ''
+      description: "Welk deel van de gesloopte woningen is gebouwd tussen 2005 en het startjaar?"
+    households_demolished_1985_2004:
       title: 1985 - 2004
-      short_description:
-      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1985 tot 2004."
-    households_number_of_apartments_1965_1984:
+      short_description: ''
+      description: "Welk deel van de gesloopte woningen is gebouwd tussen 1985 en 2004?"
+    households_demolished_1965_1984:
       title: 1965 - 1984
-      short_description:
-      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1965 tot 1984."
-    households_number_of_apartments_1945_1964:
+      short_description: ''
+      description: "Welk deel van de gesloopte woningen is gebouwd tussen 1965 en 1984?"
+    households_demolished_1945_1964:
       title: 1945 - 1964
-      short_description:
-      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1945 tot 1964."
-    households_number_of_apartments_before_1945:
+      short_description: ''
+      description: "Welk deel van de gesloopte woningen is gebouwd tussen 1945 en 1964?"
+    households_demolished_before_1945:
       title: < 1945
-      short_description:
-      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van tot 1945."
-    households_number_of_terraced_houses_future:
-      title: Nieuwbouw
-      short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
-    households_number_of_terraced_houses_2005_present:
-      title: 2005 - heden
-      short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 2005 tot het heden."
-    households_number_of_terraced_houses_1985_2004:
-      title: 1985 - 2004
-      short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1985 tot 2004."
-    households_number_of_terraced_houses_1965_1984:
-      title: 1965 - 1984
-      short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1965 tot 1984."
-    households_number_of_terraced_houses_1945_1964:
-      title: 1945 - 1964
-      short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1945 tot 1964."
-    households_number_of_terraced_houses_before_1945:
-      title: < 1945
-      short_description:
-      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse tot 1945."
-    households_number_of_semi_detached_houses_future:
-      title: Nieuwbouw
-      short_description:
-      description: "Deze slider zet het aantal hoekhuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
-    households_number_of_semi_detached_houses_2005_present:
-      title: 2005 - heden
-      short_description:
-      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 2005 tot het heden."
-    households_number_of_semi_detached_houses_1985_2004:
-      title: 1985 - 2004
-      short_description:
-      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1985 tot 2004."
-    households_number_of_semi_detached_houses_1965_1984:
-      title: 1965 - 1984
-      short_description:
-      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1965 tot 1984."
-    households_number_of_semi_detached_houses_1945_1964:
-      title: 1945 - 1964
-      short_description:
-      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1945 tot 1964."
-    households_number_of_semi_detached_houses_before_1945:
-      title: < 1945
-      short_description:
-      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse tot 1945."
-    households_number_of_detached_houses_future:
-      title: Nieuwbouw
-      short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
-    households_number_of_detached_houses_2005_present:
-      title: 2005 - heden
-      short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 2005 tot het heden."
-    households_number_of_detached_houses_1985_2004:
-      title: 1985 - 2004
-      short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1985 tot 2004"
-    households_number_of_detached_houses_1965_1984:
-      title: 1965 - 1984
-      short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1965 tot 1984"
-    households_number_of_detached_houses_1945_1964:
-      title: 1945 - 1964
-      short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1945 tot 1964"
-    households_number_of_detached_houses_before_1945:
-      title: < 1945
-      short_description:
-      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse tot 1945."
+      short_description: ''
+      description: "Welk deel van de gesloopte woningen is gebouwd voor 1945?"
     households_lighting_efficient_fluorescent_electricity_share:
       title: Spaarlamp
       short_description: ''

@@ -31,26 +31,38 @@ nl:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Met deze slider wordt de warmtevraag voor nieuwe utiliteitsgebouwen gewijzigd door isolatie.
-        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
+        Dit schuifje vermindert de ruimteverwarmingsvraag van nieuwe gebouwen door isolatie,
+        als een percentage ten opzichte van geen extra isolatie.
         <br><br>
-        Deze indicator invoer gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk
-        van het ventilatiesysteem, warmte- en koudetechnologieën en PV-panelen.
-        Dit schuifje representeert een vermindering van de warmtevraag in deze gebouwend door isolatie.
-        <br><br>
-        Het aantal nieuwe gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
+        <br>
+        • Gedrag bij ruimteverwarming (op deze pagina)
+        <br>
+        • <a href="scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - stelt het aantal gebouwen in
+        <br>
+        • <a href="scenario/demand/buildings/space-heating-technologies">Ruimteverwarmingstechnologieën</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in gebouwen in
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/weather_years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
     buildings_insulation_existing_buildings:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Met deze slider wordt de warmtevraag voor bestaande utiliteitsgebouwen gewijzigd door isolatie.
-        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
+        Dit schuifje vermindert de ruimteverwarmingsvraag van bestaande gebouwen door isolatie,
+        als een percentage ten opzichte van geen extra isolatie.
         <br><br>
-        Deze indicator invoer gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk
-        van het ventilatiesysteem, warmte- en koudetechnologieën en PV-panelen.
-        Dit schuifje representeert een vermindering van de warmtevraag in deze gebouwend door isolatie.
-        <br><br>
-        Het aantal bestaande gebouwen kan <a href="/scenario/demand/buildings/building-stock">hier</a> ingesteld worden.
+        Andere schuifjes die ook invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
+        <br>
+        • Gedrag bij ruimteverwarming (op deze pagina)
+        <br>
+        • <a href="scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - stelt het aantal gebouwen in
+        <br>
+        • <a href="scenario/demand/buildings/space-heating-technologies">Ruimteverwarmingstechnologieën</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in gebouwen in
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/weather_years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
     buildings_space_heating_behaviour:
       title: Gedrag bij ruimteverwarming
       short_description:

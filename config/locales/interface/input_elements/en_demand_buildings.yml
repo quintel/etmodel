@@ -29,28 +29,38 @@ en:
       title: New buildings
       short_description: ''
       description: |
-        This slider adjusts the heat demand for new buildings due to insulation.
-        Note that the slider value only affects the energy demand of space heating.
+        This slider reduces space heating demand of new buildings through insulation,
+        as a percentage compared to no additional insulation.
         <br><br>
-        This input concerns the heat demand of the building itself and is therefore not dependent
-        on the ventilation system, heating and cooling technologies or PV panels.
-        The slider represents a decrease of space heating demand in these buildings due to insulation.
-        <br><br>
-        The number of new buildings in the scenario can be set
-        <a href="/scenario/demand/buildings/building-stock">here</a>.
+        Related sliders that influence the energy use for heating buildings:
+        <br>
+        • Heating behaviour (on this page)
+        <br>
+        • <a href="scenario/demand/buildings/building-stock">Building stock</a> - sets the number of buildings
+        <br>
+        • <a href="scenario/demand/buildings/space-heating-technologies">Space heating technologies</a> - sets the share of different space heating technologies in buildings
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/weather_years">Weather years</a> - changes the weather year used for the scenario
     buildings_insulation_existing_buildings:
       title: Existing buildings
       short_description:
       description: |
-        This slider adjusts the heat demand for existing buildings due to insulation.
-        Note that the slider value only affects the energy demand of space heating.
+        This slider reduces space heating demand of existing buildings through insulation,
+        as a percentage compared to no additional insulation.
         <br><br>
-        This input concerns the heat demand of the building itself and is therefore not dependent
-        on the ventilation system, heating and cooling technologies or PV panels.
-        The slider represents a decrease of space heating demand in these buildings due to insulation.
-        <br><br>
-        The number of existing buildings in the scenario can be set
-        <a href="/scenario/demand/buildings/building-stock">here</a>.
+        Related sliders that also influence the energy use for heating buildings:
+        <br>
+        • Heating behaviour (on this page)
+        <br>
+        • <a href="scenario/demand/buildings/building-stock">Building stock</a> - sets the number of buildings
+        <br>
+        • <a href="scenario/demand/buildings/space-heating-technologies">Space heating technologies</a> - sets the share of different space heating technologies in buildings
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
+        <br>
+        • <a href="scenario/flexibility/flexibility_weather/weather_years">Weather years</a> - changes the weather year used for the scenario
     buildings_space_heating_behaviour:
       title: Space heating behaviour
       short_description:

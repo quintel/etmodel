@@ -38,6 +38,12 @@ gem 'inline_svg'
 gem 'cancancan'
 gem 'identity', ref: 'd88af33', github: 'quintel/identity_rails'
 
+# ESDL Suite talks OpenID Connect directly (EsdlSuiteService, EsdlSuiteId, EsdlSuiteController).
+# It used to reach these constants through the identity gem, which depended on omniauth_openid_connect;
+# identity now verifies JWTs with the jwt gem alone, so ESDL needs its own declaration.
+# Pinned to the version this branch already resolved transitively, so the bundle is unchanged.
+gem 'openid_connect', '2.3.1'
+
 # javascript
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'shakapacker', '6.0.0'

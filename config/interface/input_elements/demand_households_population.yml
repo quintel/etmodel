@@ -11,12 +11,6 @@
   interface_group: housing_stock_number_of_residences
   position: 200
   slide_key: demand_households_population
-- key: households_number_of_residences_demolished_v2a
-  step_value: 1.0
-  unit: "#"
-  interface_group: housing_stock_number_of_residences
-  position: 205
-  slide_key: demand_households_population
 
 - key: households_share_of_apartments
   step_value: 0.1
@@ -48,37 +42,32 @@
   slide_key: demand_households_population
 
 - key: households_demolished_2005_present
-  step_value: 0.1
-  unit: "%"
-  interface_group: housing_stock_shares_demolished_residences
-  share_group: households_demolished
+  step_value: 1
+  unit: "#"
+  interface_group: housing_stock_demolished_residences
   position: 400
   slide_key: demand_households_population
 - key: households_demolished_1985_2004
-  step_value: 0.1
-  unit: "%"
-  interface_group: housing_stock_shares_demolished_residences
-  share_group: households_demolished
+  step_value: 1
+  unit: "#"
+  interface_group: housing_stock_demolished_residences
   position: 405
   slide_key: demand_households_population
 - key: households_demolished_1965_1984
-  step_value: 0.1
-  unit: "%"
-  interface_group: housing_stock_shares_demolished_residences
-  share_group: households_demolished
+  step_value: 1
+  unit: "#"
+  interface_group: housing_stock_demolished_residences
   position: 410
   slide_key: demand_households_population
 - key: households_demolished_1945_1964
-  step_value: 0.1
-  unit: "%"
-  interface_group: housing_stock_shares_demolished_residences
-  share_group: households_demolished
+  step_value: 1
+  unit: "#"
+  interface_group: housing_stock_demolished_residences
   position: 415
   slide_key: demand_households_population
 - key: households_demolished_before_1945
-  step_value: 0.1
-  unit: "%"
-  interface_group: housing_stock_shares_demolished_residences
-  share_group: households_demolished
+  step_value: 1
+  unit: "#"
+  interface_group: housing_stock_demolished_residences
   position: 420
   slide_key: demand_households_population

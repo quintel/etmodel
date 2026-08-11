@@ -39,6 +39,20 @@ WORKDIR /app
 RUN bundle config set deployment 'true'
 RUN bundle config set --local without 'development test'
 RUN bundle config set disable_shared_gems 'true'
+
+# Install the V8 gem pair into the bundle path before the bundle. mini_racer ships no prebuilt
+# gem, so bundler compiles it, and its extconf requires libv8-node, which parses YAML with
+# Psych — but mid-install psych's compiled extension is not on bundler's restricted load path,
+# so Psych::Parser#parse is undefined and extconf dies. Installing both up front means bundler
+# finds them satisfied and never compiles mini_racer. GEM_HOME targets the bundle path because
+# disable_shared_gems above hides system gems. Versions come from the lockfile so they cannot
+# drift from it.
+RUN LIBV8_VERSION="$(awk '/^    libv8-node \(/ { gsub(/[()]/, ""); print $2; exit }' Gemfile.lock)" \
+ && MINI_RACER_VERSION="$(awk '/^    mini_racer \(/ { gsub(/[()]/, ""); print $2; exit }' Gemfile.lock)" \
+ && export GEM_HOME=/app/vendor/bundle/ruby/3.1.0 GEM_PATH=/app/vendor/bundle/ruby/3.1.0 \
+ && gem install libv8-node -v "$LIBV8_VERSION" --no-document \
+ && gem install mini_racer -v "$MINI_RACER_VERSION" --no-document
+
 RUN bundle install --jobs=4 --retry=3
 RUN yarn install
 

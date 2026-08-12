@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   helper_method :engine_client, :current_user, :admin?
+  helper_method :session_access_token
 
   before_action :current_user
   before_action :initialize_current
@@ -100,8 +101,8 @@ class ApplicationController < ActionController::Base
   # Returns the Faraday client which should be used to communicate with MyETM. This contains the
   # user authentication token if the user is logged in.
   def my_etm_client
-    if current_user
-      identity_session.access_token.http_client
+    if (token = session_access_token)
+      Identity.http_client(access_token: token)
     else
       Identity.http_client
     end
@@ -110,15 +111,29 @@ class ApplicationController < ActionController::Base
   # Returns the Faraday client which should be used to communicate with ETEngine (resource server).
   # This contains the user authentication token if the user is logged in.
   def engine_client
-    if current_user
-      identity_session.access_token.http_resource_client
+    if (token = session_access_token)
+      Identity.http_client(access_token: token, resource: true)
     else
       Identity.http_client(resource: true)
     end
   end
 
+  # The bearer token for the current browser session: the shared domain JWT cookie, when present AND
+  # still valid (identity_token only decodes an unexpired, correctly-signed cookie).
+  #
+  # Used for calls that originate on the server (my_etm_client, engine_client), where no browser is
+  # involved and so no cookie is sent. It is deliberately NOT handed to the page anymore: the
+  # front-end authenticates with the cookie itself, which the browser keeps current, so there is no
+  # in-page copy to go stale and nothing to reload the page for when the session refreshes.
+  def session_access_token
+    request.cookies[Identity.config.session_cookie_name].presence if identity_token
+  end
+
   def current_user
-    @current_user ||= User.from_session_user!(identity_user) if signed_in?
+    @current_user ||=
+      if identity_token
+        User.from_jwt!(identity_token)
+      end
   rescue ActiveRecord::RecordNotFound
     # The user has been deleted from the database. This means the user has deleted their account.
     reset_session

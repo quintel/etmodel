@@ -5,6 +5,11 @@ disabledSetting = (event) -> false
 
 idp_url = globals.idp_url
 
+# Send the shared session cookie with every jQuery request, including the cross-origin ones to
+# ETEngine. ETEngine's CORS config allows credentials from ETM origins and reads the cookie via
+# Identity::ResourceServer, so this is what replaces the bearer token the page used to carry.
+$.ajaxSetup(xhrFields: { withCredentials: true })
+
 class @AppView extends Backbone.View
   initialize: ->
     @settings    = new Setting({api_session_id: globals.api_session_id})
@@ -13,16 +18,8 @@ class @AppView extends Backbone.View
     @scenarioNav = new ScenarioNavView(model: @scenario, el: $('#scenario-nav'))
     @router      = new Router()
     @analytics   = new Analytics(window.ga)
-    @accessToken = null
 
-    if globals.access_token
-      @accessToken = new AccessToken(
-        globals.access_token.token,
-        new Date(globals.access_token.expires_at * 1000)
-      )
-      @configureTokenRefresh(@accessToken)
-    else
-      @accessToken = new GuestToken()
+    @watchForLapsedSession() if globals.signed_in
 
     @api = new ApiGateway
       api_path:           globals.ete_url
@@ -35,7 +32,6 @@ class @AppView extends Backbone.View
       area_code:          globals.settings.area_code
       end_year:           globals.settings.end_year
       scale:              globals.settings.scaling
-      access_token:       if globals.access_token then globals.access_token.token else undefined
 
     # Store the scenario id
     @api.ensure_id().done (id) =>
@@ -131,26 +127,27 @@ class @AppView extends Backbone.View
 
     deferred
 
-  configureTokenRefresh: (accessToken) ->
-    return unless accessToken
+  # A 401 means the session lapsed in spite of the layout's keeper — typically the machine slept
+  # through the tick. Slide the session once and reload so the page re-renders against a live
+  # session. This is the fallback path.
+  watchForLapsedSession: =>
+    $(document).ajaxError (event, xhr) =>
+      return unless xhr.status == 401
+      return if @recoveringSession
+      @recoveringSession = true
 
-    refresh = () ->
-      console.log('Refreshing access token')
-      window.location.reload()
+      @refreshSession().then (ok) =>
+        if ok then window.location.reload() else @redirectToSignIn()
 
-    expiresInMS = accessToken.expiresAt.getTime() - new Date().getTime();
+  # Asks MyETM to slide the shared session. Resolves true when the session is still renewable.
+  refreshSession: ->
+    fetch("#{idp_url}/session/refresh", { method: 'POST', credentials: 'include' })
+      .then((resp) -> resp.ok)
+      .catch(-> false)
 
-    # A random number of seconds between 0 and 10 is added to the refresh time. This avoids multiple
-    # browser tabs refreshing simultaneously and causing unnecessary token refreshes.
-    refreshInMS = Math.max(expiresInMS - 60000 + Math.round(Math.random() * 10000), 0)
-
-    if globals.debug_js
-      console.log(
-        "Access token expires at #{accessToken.expiresAt.toISOString()} and will refresh " +
-        "in #{Math.round(refreshInMS/100/60)/10} minutes (#{Math.floor(refreshInMS/1000)}s)"
-      )
-
-    window.setTimeout(refresh, refreshInMS)
+  redirectToSignIn: ->
+    returnTo = encodeURIComponent(window.location.href)
+    window.location.href = "#{idp_url}/identity/sign_in?return_to=#{returnTo}"
 
   # Returns a deferred object on which the .done() method can be called
   #
@@ -334,7 +331,6 @@ class @AppView extends Backbone.View
         req = $.ajax(
           url: App.scenario.url_path() +
             '/custom_curves?include_internal=true&include_unattached=true'
-          headers: @accessToken.headers()
           method: 'GET'
           dataType: 'json'
         )
@@ -354,7 +350,6 @@ class @AppView extends Backbone.View
       req = $.ajax({
         url: "#{idp_url}/api/v1/saved_scenarios"
         method: 'GET'
-        headers: @accessToken.headers()
         dataType: 'json'
       })
 

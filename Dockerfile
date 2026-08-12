@@ -39,6 +39,17 @@ RUN bundle config --global frozen 1
 COPY Gemfile* package.json yarn.lock /app/
 WORKDIR /app
 
+# Install the V8 pair before the bundle. mini_racer's extconf resolves libv8-node through
+# Bundler's restricted load path, and Bundler installs mini_racer before psych, so the gemspec
+# reader is broken at exactly that moment: extconf aborts at `require 'libv8-node'`, never learns
+# where V8 is, and fails with "Could not create Makefile". Installing both up front means Bundler
+# finds them already satisfied instead of compiling mini_racer mid-install. Versions come from the
+# lockfile so they cannot drift from it.
+RUN LIBV8_VERSION="$(awk '/^    libv8-node \(/ { gsub(/[()]/, ""); print $2; exit }' Gemfile.lock)" \
+ && MINI_RACER_VERSION="$(awk '/^    mini_racer \(/ { gsub(/[()]/, ""); print $2; exit }' Gemfile.lock)" \
+ && gem install libv8-node -v "$LIBV8_VERSION" --no-document \
+ && gem install mini_racer -v "$MINI_RACER_VERSION" --no-document
+
 RUN bundle install --jobs=4 --retry=3
 RUN yarn install
 

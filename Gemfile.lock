@@ -8,8 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/quintel/identity_rails.git
-  revision: e18aa910c7df04b60b839dc5f81df6487381284f
-  ref: e18aa91
+  revision: d88af3330404aac6fee7e3b027ec3096ec2bba8f
+  ref: d88af33
   specs:
     identity (0.1.0)
       dry-configurable (>= 1.0)
@@ -17,9 +17,7 @@ GIT
       dry-types (~> 1.7)
       dry-validation (>= 1.10)
       faraday (>= 2)
-      omniauth (>= 2.1)
-      omniauth-rails_csrf_protection (~> 1.0)
-      omniauth_openid_connect (~> 0.4)
+      jwt (>= 2.5)
       rails (>= 7.0.0)
 
 GEM
@@ -272,7 +270,6 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (1.0.1)
-    hashie (5.0.0)
     http_accept_language (2.1.1)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
@@ -306,6 +303,8 @@ GEM
       bindata
       faraday (~> 2.0)
       faraday-follow_redirects
+    jwt (3.2.0)
+      base64
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -380,16 +379,6 @@ GEM
       sprockets (>= 2.0)
     oily_png (1.2.1)
       chunky_png (~> 1.3.7)
-    omniauth (2.1.2)
-      hashie (>= 3.4.6)
-      rack (>= 2.2.3)
-      rack-protection
-    omniauth-rails_csrf_protection (1.0.2)
-      actionpack (>= 4.2)
-      omniauth (~> 2.0)
-    omniauth_openid_connect (0.8.0)
-      omniauth (>= 1.9, < 3)
-      openid_connect (~> 2.2)
     openid_connect (2.3.1)
       activemodel
       attr_required (>= 1.0.0)
@@ -434,9 +423,6 @@ GEM
       faraday-follow_redirects
       json-jwt (>= 1.11.0)
       rack (>= 2.1.0)
-    rack-protection (3.2.0)
-      base64 (>= 0.1.0)
-      rack (~> 2.2, >= 2.2.4)
     rack-proxy (0.7.6)
       rack
     rack-session (1.0.2)
@@ -697,6 +683,7 @@ DEPENDENCIES
   nokogiri (~> 1.18)
   non-stupid-digest-assets
   oily_png
+  openid_connect (= 2.3.1)
   pry-byebug
   pry-rails
   pry-remote

@@ -914,7 +914,6 @@
       $.ajax({
         url: url,
         dataType: 'json',
-        headers: App.accessToken.headers(),
         success: function (data) {
           link.classList.remove('loading');
 

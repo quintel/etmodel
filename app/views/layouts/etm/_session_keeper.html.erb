@@ -1,0 +1,17 @@
+<%#
+  Keeps the shared ETM session alive, and silently recovers one that lapsed while the tab sat idle.
+
+  Mounted from the layouts rather than from AppView: AppView only exists on the scenario and report
+  pages, so everywhere else — the landing page, the scenario list, static pages — the session simply
+  expired with nothing to renew it, and the user was signed out on their next click.
+
+  The module is shipped by the identity gem, so every ETM app keeps the session the same way; see
+  identity/session_keeper.js.
+%>
+<script type="module">
+  import { startSessionKeeper } from "<%= asset_path('identity/session_keeper.js') %>";
+  startSessionKeeper({
+    idpUrl: "<%= j Settings.identity.issuer %>",
+    expCookieName: "<%= j Identity.config.session_exp_cookie_name %>",
+  });
+</script>

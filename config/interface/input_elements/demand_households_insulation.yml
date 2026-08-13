@@ -1,5 +1,5 @@
 ---
-- key: households_insulation_new_houses
+- key: households_insulation_new_residences
   step_value: 0.1
   unit: "%"
   interface_group: households_insulation_levels
@@ -36,9 +36,9 @@
   position: 150
   slide_key: demand_households_insulation
 
-- key: households_heating_behaviour
+- key: households_space_heating_behaviour
   step_value: 0.1
   unit: "%"
-  interface_group: households_heating_behaviour
+  interface_group: households_space_heating_behaviour
   position: 200
   slide_key: demand_households_insulation

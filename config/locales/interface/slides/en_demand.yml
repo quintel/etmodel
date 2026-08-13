@@ -160,11 +160,9 @@ en:
       title: Development of demand
       short_description:
       description: |
-        Changes in demand influence the household energy demand.
-        Some of these changes scale with population, whereas others scale with the
-        number of residences. These changes do <strong>not</strong> include efficiency
-        improvements and technological changes. These you can indicate in the slides
-        below.
+        Below the change in demand for various applications can be set as a
+        result of behavioural change. A distinction is made between changes that
+        scale with population and changes that scale with the number of residences.
     demand_households_heating:
       title: Space heating & hot water
       short_description:
@@ -182,9 +180,9 @@ en:
       title: Heat demand & insulation
       short_description:
       description: |
-        The energy demand of a residence depends on building characteristics,
-        especially the level of insulation, but other factors such as behaviour and desired comfort also play a role.
-        Here, you can set how insulation and behaviour affect residences' heat demand, per construction period.
+        The sliders below set the reduction in space heating demand due to improved insulation. Go
+        to the section <a href="/scenario/demand/households/development-of-demand">development of demand</a>
+        to set changes in space heating demand due to behavioural changes.
     demand_households_lighting:
       title: Lighting
       short_description:

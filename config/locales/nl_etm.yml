@@ -287,6 +287,7 @@ nl:
     external_coupling_industry_other_food_general: "waarde"
     temperature_dependent: "temperatuur"
     price_dependent: "betalingsbereidheid"
+    per_residence_space_heating: "%"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -554,7 +555,8 @@ nl:
     production_technology: "Productietechnologie"
     production_route: "Productieroute"
     per_person: "Per persoon"
-    per_household: "Per huishouden"
+    per_residence_cooling: "Per woning - ruimtekoeling"
+    per_residence_space_heating: "Per woning - ruimteverwarming"
     per_building: "Per gebouw"
     fuel_production: "Brandstofproductie per proces - basislast"
     syngas_share: "Productie per feedstockroute"
@@ -564,7 +566,6 @@ nl:
     housing_stock_shares_new_residences: "Aandeel nieuwe woningen per woningtype"
     housing_stock_demolished_residences: "Gesloopte woningen per bouwperiode"
     households_insulation_levels: "Isolatie"
-    households_space_heating_behaviour: "Gedrag"
     electric_vehicles_charging_strategy: "Laadstrategie elektrische auto's"
     flexibility_buffers_space: "Buffergrootte ruimteverwarming voor huishoudens"
     flexibility_buffers_water: "Buffergrootte warm water voor huishoudens"

@@ -160,12 +160,11 @@ nl:
         Let op dat de percentages het aandeel in de vraag naar koeling weergeven.
     demand_households_demand_growth:
       title: Vraagontwikkeling
-      short_description: ''
-      description: Veranderingen in vraag beïnvloeden het energiegebruik
-        van een huishouden. Sommige van deze veranderingen schalen met de bevolking,
-        terwijl anderen met het aantal huishoudens schalen. Dit is <strong>exclusief</strong>
-        efficiëntieverbeteringen en andere technologieën die je in de gedeeltes hieronder
-        kunt aangeven.
+      short_description:
+      description: |
+        Hieronder kan verandering in de vraag voor diverse applicaties worden ingesteld als
+        gevolg van gedragsverandering. Onderscheid wordt gemaakt in veranderingen die schalen met
+        de bevolking en veranderingen die schalen met het aantal woningen.
     demand_households_heating:
       title: Ruimteverwarming & warm water
       short_description:
@@ -184,9 +183,10 @@ nl:
       title: Warmtevraag & isolatie
       short_description:
       description: |
-        De energiebehoefte van een woning is afhankelijk van gebouwkenmerken, met name
-        de mate van isolatie, maar ook andere factoren zoals gedrag en gewenst comfort
-        spelen een rol. Hier kun je instellen hoe isolatie en gedrag de warmtevraag van woningen beïnvloeden.
+        Hieronder kan de afname van de vraag naar ruimteverwarming worden ingesteld als gevolg van
+        verbeterde isolatie. Ga naar de sectie <a href="/scenario/demand/households/development-of-demand"
+        >vraagontwikkeling</a> om verandering in de vraag naar ruimteverwarming door
+        gedragsverandering in te stellen.
     demand_households_lighting:
       title: Verlichting
       short_description:

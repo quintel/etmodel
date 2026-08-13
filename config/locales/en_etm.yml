@@ -287,6 +287,8 @@ en:
     price_dependent: "willingness-to-pay"
     temperature_dependent: "temperature"
     per_residence_space_heating: "%"
+    households_insulation: "%"
+    housing_stock_shares_new_residences: "share"
 
   #------------ Output Serie Labels ------------- #
   scenario:
@@ -550,9 +552,9 @@ en:
     per_residence_space_heating: "Per residence - space heating"
     per_building: "Per building"
     housing_stock_number_of_residences: "Number of new residences"
-    housing_stock_shares_new_residences: "Shares of new residences per building type"
+    housing_stock_shares_new_residences: "Shares of new residences per residence type"
     housing_stock_demolished_residences: "Demolished residences per construction period"
-    households_insulation_levels: "Insulation"
+    households_insulation: "Insulation"
     electric_vehicles_charging_strategy: "Charging strategy for electric cars"
     flexibility_buffers_space: "Buffer size for households space heating"
     flexibility_buffers_water: "Buffer size for households hot water"

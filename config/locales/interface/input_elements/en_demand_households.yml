@@ -123,7 +123,7 @@ en:
         <br>
         • <a href="/scenario/flexibility/flexibility_weather/weather_years">Weather years</a> - changes the weather year used for the scenario
     households_space_heating_behaviour:
-      title: Space heating behaviour
+      title: Space heating
       short_description: ''
       description: |
         This slider changes the space heating demand of residences through the heating behaviour of residents,
@@ -143,7 +143,7 @@ en:
         <br>
         • <a href="/scenario/flexibility/flexibility_weather/weather_years">Weather years</a> - changes the weather year used for the scenario
     households_useful_demand_for_cooling:
-      title: Cooling demand
+      title: Cooling
       short_description: ''
       description: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Cooling).\r\n<br/><br/>\r\n\r\nPlease indicate
@@ -263,9 +263,11 @@ en:
         prosperity, this is one of the most important drivers for the energy demand
         growth.
     households_number_of_residences_new:
-      title: Number of new homes
+      title: Number of new residences
       short_description: ''
-      description: "How many new homes are expected to be built?"
+      description: |
+        This slider sets the number of new residences that are expected to be built. The sliders
+        below set the distribution per residence type of newly built residences.
     households_number_of_residences_demolished_v2a:
       title: Number of demolished homes
       short_description: ''

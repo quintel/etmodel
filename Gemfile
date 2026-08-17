@@ -17,19 +17,19 @@ gem 'browser'
 gem 'config'
 gem 'discard'
 gem 'font-awesome-rails'
-gem 'haml', '~> 5.0'
+gem 'haml', '~> 7.3'
 gem 'http_accept_language'
 gem 'httparty'
 gem 'inline_svg'
 gem 'invisible_captcha'
-gem 'jquery-rails', '~> 4.4.0'
+gem 'jquery-rails', '~> 4.6.1'
 gem 'kaminari', '~> 1.2.1'
 gem 'local_time'
 gem 'loofah'
 gem 'nokogiri', '~> 1.19'
 gem 'non-stupid-digest-assets', github: 'alexspeller/non-stupid-digest-assets'
-gem 'rails-html-sanitizer', '~> 1.6'
-gem 'rdiscount', '~> 2.2.7.4'
+gem 'rails-html-sanitizer', '~> 1.7'
+gem 'rdiscount', '~> 2.2.7.5'
 gem 'simple_form'
 gem 'tabs_on_rails', '~> 3.0'
 gem 'valid_email2'
@@ -40,10 +40,10 @@ gem 'identity',      ref: 'd88af33', github: 'quintel/identity_rails'
 
 # javascript
 gem 'babel-transpiler'
-gem 'i18n-js', '~> 3'
+gem 'i18n-js', '~> 4'
 gem 'jbuilder'
 gem 'rails-i18n'
-gem 'shakapacker', '9.5.0'
+gem 'shakapacker', '10.3.1'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
 # supporting gems
@@ -74,7 +74,7 @@ group :development do
   gem 'letter_opener'
 
   gem 'tomdoc'
-  gem 'yard-tomdoc', '~> 0.4.0'
+  gem 'yard-tomdoc', '~> 0.7.1'
 
   gem 'better_errors'
   gem 'seed_dump'
@@ -86,10 +86,10 @@ group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', '~> 6.1.2'
+  gem 'rspec-rails', '~> 8.0.4'
   gem 'watchr'
 
-  gem 'rubocop', '~> 1.0',    require: false
+  gem 'rubocop', '~> 1.89',    require: false
   gem 'rubocop-performance',  require: false
   gem 'rubocop-rails',        require: false
   gem 'rubocop-rspec',        require: false

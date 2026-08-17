@@ -1,0 +1,41 @@
+# Auto-merge Dependabot security updates — etmodel
+#
+# Only SECURITY bumps auto-merge. Everything else is left as a PR for a human.
+#
+# etmodel requires a review before merge, so this workflow supplies that approval
+# with the GitHub Actions bot — but only for the security group. It never touches
+# a normal version-update PR, which still waits for a real human review + merge.
+#
+# The security signal is the Dependabot group name: .github/dependabot.yml groups
+# all security updates under a group literally named "security", and
+# fetch-metadata surfaces that as the `dependency-group` output.
+
+name: Dependabot auto-merge
+
+on: pull_request
+
+permissions:
+  contents: write        # enable auto-merge
+  pull-requests: write   # approve the PR
+
+jobs:
+  security-auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v2
+
+      - name: Approve and auto-merge security updates
+        # Only the security group, and never a major bump — a security fix that
+        # requires a major version jump is rare and risky enough to want a human.
+        if: >
+          steps.meta.outputs.dependency-group == 'security' &&
+          steps.meta.outputs.update-type != 'version-update:semver-major'
+        run: |
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

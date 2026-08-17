@@ -1,0 +1,66 @@
+# Dependabot configuration — etmodel
+#
+# Policy:
+#   - Security bumps   -> grouped into one PR, auto-merged on green CI
+#                         (the auto-merge workflow keys off the "security" group).
+#   - Everything else  -> a grouped weekly "reminder" PR; a human reviews and merges.
+#   - Rails            -> its own PR, never auto-merged (a framework upgrade is a
+#                         deliberate, human decision).
+#
+# Only security updates are ever auto-merged. Nothing here auto-merges by itself;
+# that lives in .github/workflows/dependabot-auto-merge.yml.
+
+version: 2
+
+updates:
+  # ---- Ruby gems ----
+  - package-ecosystem: bundler
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      # Security fixes across all gems -> one PR, auto-merged on green.
+      security:
+        applies-to: security-updates
+        patterns: ["*"]
+      # All non-security gem updates -> one grouped reminder PR per week.
+      dependencies:
+        applies-to: version-updates
+        patterns: ["*"]
+        # Keep Rails out of the grouped PR so a framework bump (8.1 -> 8.2, or a
+        # major) arrives as its own visible, human-reviewed PR. Rails *security*
+        # fixes are unaffected — they still ride in the "security" group above.
+        exclude-patterns: ["rails"]
+
+  # ---- JavaScript (Yarn) ----
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      security:
+        applies-to: security-updates
+        patterns: ["*"]
+      dependencies:
+        applies-to: version-updates
+        patterns: ["*"]
+
+  # ---- GitHub Actions ----
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # ---- Docker (Ruby base image) ----
+  # Disabled: the Dockerfile uses the floating `ruby:4.0-slim` tag, which
+  # Dependabot cannot act on. Enable once it's pinned to an exact tag and a
+  # Ruby-version consistency check is in place, so a Dockerfile-only bump fails
+  # CI until the other version files are aligned.
+  #
+  # - package-ecosystem: docker
+  #   directory: "/"
+  #   schedule:
+  #     interval: monthly

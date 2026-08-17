@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Fetch Dependabot metadata
         id: meta
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@v3
 
       - name: Approve and auto-merge security updates
         # Only the security group, and never a major bump — a security fix that

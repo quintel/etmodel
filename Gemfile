@@ -73,9 +73,6 @@ gem 'dry-validation'
 group :development do
   gem 'letter_opener'
 
-  gem 'tomdoc'
-  gem 'yard-tomdoc', '~> 0.7.1'
-
   gem 'better_errors'
   gem 'seed_dump'
 end

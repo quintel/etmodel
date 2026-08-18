@@ -22,13 +22,13 @@ gem 'http_accept_language'
 gem 'httparty'
 gem 'inline_svg'
 gem 'invisible_captcha'
-gem 'jquery-rails', '~> 4.4.0'
+gem 'jquery-rails', '~> 4.6.1'
 gem 'kaminari', '~> 1.2.1'
 gem 'local_time'
 gem 'loofah'
 gem 'nokogiri', '~> 1.19'
 gem 'non-stupid-digest-assets', github: 'alexspeller/non-stupid-digest-assets'
-gem 'rails-html-sanitizer', '~> 1.6'
+gem 'rails-html-sanitizer', '~> 1.7'
 gem 'rdiscount', '~> 2.2.7.4'
 gem 'simple_form'
 gem 'tabs_on_rails', '~> 3.0'
@@ -74,7 +74,7 @@ group :development do
   gem 'letter_opener'
 
   gem 'tomdoc'
-  gem 'yard-tomdoc', '~> 0.4.0'
+  gem 'yard-tomdoc', '~> 0.7.1'
 
   gem 'better_errors'
   gem 'seed_dump'
@@ -89,7 +89,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 6.1.2'
   gem 'watchr'
 
-  gem 'rubocop', '~> 1.0',    require: false
+  gem 'rubocop', '~> 1.89',    require: false
   gem 'rubocop-performance',  require: false
   gem 'rubocop-rails',        require: false
   gem 'rubocop-rspec',        require: false

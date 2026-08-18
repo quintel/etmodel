@@ -3,7 +3,11 @@
 # Policy:
 #   - Security bumps   -> grouped into one PR, auto-merged on green CI
 #                         (the auto-merge workflow keys off the "security" group).
-#   - Everything else  -> a grouped weekly "reminder" PR; a human reviews and merges.
+#   - Minor / patch    -> a grouped weekly "reminder" PR; a human reviews and merges.
+#   - Majors           -> one grouped "major-updates" PR per ecosystem: a standing
+#                         list of what we're behind on. It won't go green (breaking
+#                         changes bundled) and isn't merged as a unit — it's a
+#                         dashboard; tackle a given major on its own when ready.
 #   - Rails            -> its own PR, never auto-merged (a framework upgrade is a
 #                         deliberate, human decision).
 #
@@ -23,13 +27,21 @@ updates:
       security:
         applies-to: security-updates
         patterns: ["*"]
-      # All non-security gem updates -> one grouped reminder PR per week.
+      # Minor + patch gem updates -> one grouped reminder PR per week.
       dependencies:
         applies-to: version-updates
         patterns: ["*"]
-        # Keep Rails out of the grouped PR so a framework bump (8.1 -> 8.2, or a
+        update-types: ["minor", "patch"]
+        # Keep Rails out of the grouped PRs so a framework bump (8.1 -> 8.2, or a
         # major) arrives as its own visible, human-reviewed PR. Rails *security*
         # fixes are unaffected — they still ride in the "security" group above.
+        exclude-patterns: ["rails"]
+      # Every major -> one grouped standing PR (a "what we're behind on" list). It
+      # won't go green and isn't merged as a unit; tackle each major on its own.
+      major-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["major"]
         exclude-patterns: ["rails"]
 
   # ---- JavaScript (Yarn) ----
@@ -44,6 +56,11 @@ updates:
       dependencies:
         applies-to: version-updates
         patterns: ["*"]
+        update-types: ["minor", "patch"]
+      major-updates:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["major"]
 
   # ---- GitHub Actions ----
   - package-ecosystem: github-actions

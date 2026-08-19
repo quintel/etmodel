@@ -29,8 +29,10 @@ en:
       title: New buildings
       short_description: ''
       description: |
-        This slider reduces space heating demand of new buildings through insulation,
-        as a percentage compared to no additional insulation.
+        This slider reduces space heating demand of new buildings through
+        insulation, as a percentage reduction relative to the heating
+        demand at current insulation levels. At 0%, insulation levels remain unchanged.
+        At 100%, space heating demand is fully eliminated.
         <br><br>
         Related sliders that influence the energy use for heating buildings:
         <br>
@@ -47,8 +49,10 @@ en:
       title: Existing buildings
       short_description:
       description: |
-        This slider reduces space heating demand of existing buildings through insulation,
-        as a percentage compared to no additional insulation.
+        This slider reduces space heating demand of existing buildings through
+        insulation, as a percentage reduction relative to the heating
+        demand at current insulation levels. At 0%, insulation levels remain unchanged.
+        At 100%, space heating demand is fully eliminated.
         <br><br>
         Related sliders that also influence the energy use for heating buildings:
         <br>
@@ -65,9 +69,10 @@ en:
       title: Space heating
       short_description:
       description: |
-        This slider adjusts the heat demand for space heating in buildings due to changes in behaviour.
-        Note that the slider value only affects the energy demand of space heating.
-        Unlike insulation sliders, it does not affect investment costs for insulating buildings.
+        This slider sets the change in space heating demand relative to the start year as a result
+        of behavioural changes. This slider affects all non-residential buildings.<br/><br/>
+        Examples of behavioural changes are geopolitical events causing people to heat less or
+        people becoming more affluent and therefore heating more.
     buildings_useful_demand_appliances:
       title: Appliances
       short_description:

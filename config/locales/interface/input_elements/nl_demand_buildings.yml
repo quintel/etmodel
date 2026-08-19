@@ -32,7 +32,8 @@ nl:
       short_description:
       description: |
         Dit schuifje vermindert de ruimteverwarmingsvraag van nieuwe gebouwen door isolatie,
-        als een percentage ten opzichte van geen extra isolatie.
+        als een percentage ten opzichte van de warmtevraag bij de huidige isolatiegraad.
+        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
         <br><br>
         Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
         <br>
@@ -50,7 +51,8 @@ nl:
       short_description:
       description: |
         Dit schuifje vermindert de ruimteverwarmingsvraag van bestaande gebouwen door isolatie,
-        als een percentage ten opzichte van geen extra isolatie.
+        als een percentage ten opzichte van de warmtevraag bij de huidige isolatiegraad.
+        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
         <br><br>
         Andere schuifjes die ook invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
         <br>
@@ -67,9 +69,11 @@ nl:
       title: Ruimteverwarming
       short_description:
       description: |
-        Met deze slider wordt de warmtevraag voor utiliteitsgebouwen gewijzigd door gedrag.
-        Let op dat deze slider alleen betrekking heeft op de energievraag van ruimteverwarming.
-        In tegenstelling tot de isolatieschuifjes heeft dit geen invloed op investeringskosten voor isolatie.
+        Dit schuifje stelt de verandering in de vraag naar ruimteverwarming in ten opzichte van het
+        startjaar als gevolg van gedragsveranderingen. Dit schuifje geldt voor alle utiliteitsgebouwen.
+        <br/><br/>
+        Voorbeelden van gedragsveranderingen zijn geopolitieke gebeurtenissen waardoor mensen
+        minder gaan stoken of mensen die welvarender worden en daardoor meer gaan stoken.
     buildings_useful_demand_appliances:
       title: Apparaten
       short_description:

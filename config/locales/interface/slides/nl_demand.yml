@@ -56,24 +56,26 @@ nl:
       description: |
         Hoe worden kantoren en andere gebouwen in de toekomst gekoeld?
     demand_buildings_demand_growth:
-      title: Gedrag
+      title: Vraagontwikkeling
       short_description:
       description: |
         De veranderingen in energiegebruik per gebouw die je hier aangeeft
-        zijn het gevolg van gedragsveranderingen. Dit is exclusief
-        efficiëntieverbeteringen.
+        zijn het gevolg van ontwikkeling op het gebied van welvaart. Dit is exclusief
+        efficiëntieverbeteringen en andere technologieën.
     demand_buildings_heating:
       title: Ruimteverwarming
       short_description:
       description: |
         Hoe zullen kantoren en overige gebouwen verwarmd worden?
     demand_buildings_insulation:
-      title: Isolatie
+      title: Warmtevraag & isolatie
       short_description:
       description: |
         De energievraag van een gebouw is sterk afhankelijk van de functie, maar ook van
-        gebouwkenmerken zoals de mate van isolatie.
-        De reductie in warmtevraag door isolatie kan hier worden ingesteld.
+        gebouwkenmerken zoals de mate van isolatie. De typische warmtevraag voor gebouwen
+        kan hier worden ingesteld per bouwjaarklasse. Ga naar de
+        <a href="https://docs.energytransitionmodel.com/main/demand#buildings" target=\"_blank\">documentatie</a>
+        voor meer informatie.
     demand_buildings_lighting:
       title: Verlichting
       short_description:
@@ -157,12 +159,13 @@ nl:
         apparaten worden gebruikt als voor 'Ruimteverwarming & warm water'.
         Let op dat de percentages het aandeel in de vraag naar koeling weergeven.
     demand_households_demand_growth:
-      title: Gedrag
-      short_description:
-      description: |
-        Hieronder kan verandering in de vraag voor diverse applicaties worden ingesteld als
-        gevolg van gedragsverandering. Onderscheid wordt gemaakt in veranderingen die schalen met
-        de bevolking en veranderingen die schalen met het aantal woningen.
+      title: Vraagontwikkeling
+      short_description: ''
+      description: Veranderingen in vraag beïnvloeden het energiegebruik
+        van een huishouden. Sommige van deze veranderingen schalen met de bevolking,
+        terwijl anderen met het aantal huishoudens schalen. Dit is <strong>exclusief</strong>
+        efficiëntieverbeteringen en andere technologieën die je in de gedeeltes hieronder
+        kunt aangeven.
     demand_households_heating:
       title: Ruimteverwarming & warm water
       short_description:
@@ -178,13 +181,15 @@ nl:
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
         voor meer informatie.
     demand_households_insulation:
-      title: Isolatie
+      title: Warmtevraag & isolatie
       short_description:
       description: |
-        Hieronder kan de afname van de vraag naar ruimteverwarming worden ingesteld als gevolg van
-        verbeterde isolatie. Ga naar de sectie <a href="/scenario/demand/households/behaviour"
-        >gedrag</a> om verandering in de vraag naar ruimteverwarming door
-        gedragsverandering in te stellen.
+        De energiebehoefte van een woning is afhankelijk van gebouwkenmerken, met name
+        de mate van isolatie, maar ook andere factoren zoals gedrag en gewenst comfort
+        spelen een rol. De typische warmtevraag voor woningen kan hier worden ingesteld
+        per woningtype en bouwjaarklasse. Ga naar de
+        <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentatie</a>
+        voor meer informatie.
     demand_households_lighting:
       title: Verlichting
       short_description:

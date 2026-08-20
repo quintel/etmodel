@@ -479,20 +479,14 @@ en:
         This chart shows the demand for heat from aquathermal sources (surface water, waste water, drinking water).
         The chart shows the distribution of heat demand between collective sources (heat networks)
         and individual sources and includes the potential for each aquathermal source for the region, whenever available.
-    number_of_residences_and_buildings_overview:
-      title: Housing and building stock
+    number_of_residences_overview:
+      title: Number of residences per type and construction period
       description: |
-        This chart shows the amount of residences and (non-residential) buildings per residence type
-        and construction period. </br></br>
-        (Non-residential) buildings are shown in <i>residence equivalents</i>. The number of
-        residence equivalents is defined as the total surface area for non-residential buildings
-        divided by the typical surface area per residence. The typical surface area per residence
-        can differ per region. The source data can be found via the
-        <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
+        This chart shows the amount of residences divided per residence type and building period.
     residential_heating_demand:
-      title: Residential space heating demand
+      title: Residential heating demand
       description: |
-        This bar chart shows the useful demand for space heating per residence type and building period.
+        This bar chart shows the residential heating demand per residence type and building period.
     buildings_heating_demand:
       title: Buildings heating demand
       description: |

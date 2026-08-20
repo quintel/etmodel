@@ -1,150 +1,464 @@
 ---
 en:
   input_elements:
-    households_insulation_before_1945:
-      title: < 1945
-      short_description:
-      description: |
-        This slider sets the percentage by which space heating demand decreases
-        relative to the present year value, due to improved insulation.
-        This affects all residences types of this construction period.
-        At 0%, insulation levels remain unchanged. At 100%, space heating demand is fully eliminated.
-        This slider also affects the insulation costs for residences.
-        <br><br>
-        Related sliders that influence the energy use for heating residences:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Behaviour</a> - Influences the heating behaviour of residences
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Population & housing stock</a> - sets the number of residences
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a> - sets the share of different space heating technologies for residences
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
-    households_insulation_1945_1964:
-      title: 1945 - 1964
-      short_description:
-      description: |
-        This slider sets the percentage by which space heating demand decreases
-        relative to the present year value, due to improved insulation.
-        This affects all residence types of this construction period.
-        At 0%, insulation levels remain unchanged. At 100%, space heating demand is fully eliminated.
-        This slider also affects the insulation costs for residences.
-        <br><br>
-        Related sliders that influence the energy use for heating residences:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Behaviour</a> - Influences the heating behaviour of residences
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Population & housing stock</a> - sets the number of residences
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a> - sets the share of different space heating technologies for residences
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
-    households_insulation_1965_1984:
-      title: 1965 - 1984
-      short_description:
-      description: |
-        This slider sets the percentage by which space heating demand decreases
-        relative to the present year value, due to improved insulation.
-        This affects all residence types of this construction period.
-        At 0%, insulation levels remain unchanged. At 100%, space heating demand is fully eliminated.
-        This slider also affects the insulation costs for residences.
-        <br><br>
-        Related sliders that influence the energy use for heating residences:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Behaviour</a> - Influences the heating behaviour of residences
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Population & housing stock</a> - sets the number of residences
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a> - sets the share of different space heating technologies for residences
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
-    households_insulation_1985_2004:
-      title: 1985 - 2004
-      short_description:
-      description: |
-        This slider sets the percentage by which space heating demand decreases
-        relative to the present year value, due to improved insulation.
-        This affects all residence types of this construction period.
-        At 0%, insulation levels remain unchanged. At 100%, space heating demand is fully eliminated.
-        This slider also affects the insulation costs for residences.
-        <br><br>
-        Related sliders that influence the energy use for heating residences:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Behaviour</a> - Influences the heating behaviour of residences
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Population & housing stock</a> - sets the number of residences
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a> - sets the share of different space heating technologies for residences
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
-    households_insulation_2005_present:
-      title: 2005 - present
-      short_description:
-      description: |
-        This slider sets the percentage by which space heating demand decreases
-        relative to the present year value, due to improved insulation.
-        This affects all residence types of this construction period.
-        At 0%, insulation levels remain unchanged. At 100%, space heating demand is fully eliminated.
-        This slider also affects the insulation costs for residences.
-        <br><br>
-        Related sliders that influence the energy use for heating residences:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Behaviour</a> - Influences the heating behaviour of residences
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Population & housing stock</a> - sets the number of residences
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a> - sets the share of different space heating technologies for residences
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
-    households_insulation_new_residences:
+    households_insulation_level_apartments_future:
       title: New residences
       short_description:
       description: |
-        This slider sets the percentage by which space heating demand decreases
-        relative to the present year value, due to improved insulation.
-        This affects all newly built residence types.
-        At 0%, insulation levels remain unchanged. At 100%, space heating demand is fully eliminated.
-        This slider also affects the insulation costs for residences.
+        This slider adjusts the average heat demand per square meter for apartments built between the present year
+        and the future year. Note that the slider value only affects the energy demand of space heating.
         <br><br>
-        Related sliders that influence the energy use for heating residences:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Behaviour</a> - Influences the heating behaviour of residences
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Population & housing stock</a> - sets the number of residences
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a> - sets the share of different space heating technologies for residences
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
-    households_space_heating_behaviour:
-      title: Space heating
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_apartments_2005_present:
+      title: 2005 - present
       short_description:
       description: |
-        This slider sets the change in space heating demand relative to the start year as a result
-        of behavioural changes. This slider affects all residence types of all construction
-        periods.<br/><br/>
-        Examples of behavioural changes are geopolitical events causing people to heat less or
-        people becoming more affluent and therefore heating more.
-        <br/><br/>
-        Go to the
-        <a href="/scenario/demand/households/insulation">insulation</a> section to
-        set reduction in space heating demand due to improved insulation. Changes in space heating
-        demand can also be caused by weather conditions, for which assumptions can be made in the
-        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours"
-        >flexibility</a> section.
+        This slider adjusts the average heat demand per square meter for apartments built between 2005 and the
+        present year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_apartments_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for apartments built between 1985 and 2004.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_apartments_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for apartments built between 1965 and 1984.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_apartments_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for apartments built between 1945 and 1964.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_apartments_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for apartments built before 1945.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_terraced_houses_future:
+      title: New residences
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for terraced houses built between the present year
+        and the future year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_terraced_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for terraced houses built between 2005 and
+        the present year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for terraced houses built between 1985 and 2004.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for terraced houses built between 1965 and 1984.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for terraced houses built between 1945 and 1964.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for terraced houses built before 1945.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_semi_detached_houses_future:
+      title: New residences
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for semi-detached houses built between the present year
+        and the future year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_semi_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for semi-detached houses built between 2005 and
+        the present year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for semi-detached houses built between 1985 and 2004.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description:  |
+        This slider adjusts the average heat demand per square meter for semi-detached houses built between 1965 and 1984.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for semi-detached houses built between 1945 and 1964.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for semi-detached houses built before 1945.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_detached_houses_future:
+      title: New residences
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for detached houses built between the present year
+        and the future year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for detached houses built between 2005 and the
+        present year. Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for detached houses built between 1985 and 2004.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for detached houses built between 1965 and 1984.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for detached houses built between 1945 and 1964.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
+    households_insulation_level_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        This slider adjusts the average heat demand per square meter for detached houses built before 1945.
+        Note that the slider value only affects the energy demand of space heating.
+        <br><br>
+        The average heat demand per square meter is an energy prestation indicator for residences. The indicator
+        concerns the heat demand of the building itself and is therefore not dependent on the ventilation system,
+        heating and cooling technologies or PV panels. The better residences are insulated, the lower the average
+        heat demand per square meter. This results in a total decrease of space heating demand in these residences.
+        <br><br>
+        Go to <a href="/scenario/demand/households/population-and-housing-stock">population & housing stock</a>
+        to change the number of residences for this category or change how the heating technologies are distributed
+        over the different housing types in the <a href="/scenario/demand/households_heating_order/merit-order">merit order</a>.
+        <br><br>
+        Check out the <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentation</a>
+        for more information or check out the <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        for a description of the data sources.
     households_useful_demand_for_cooling:
-      title: Cooling
+      title: Cooling demand
       short_description: ''
       description: "Note: these changes in energy demand do <strong>not</strong> depend
         on the technologies chosen below (Cooling).\r\n<br/><br/>\r\n\r\nPlease indicate
@@ -263,57 +577,122 @@ en:
       description: How do you expect the population to grow? Apart from increasing
         prosperity, this is one of the most important drivers for the energy demand
         growth.
-    households_number_of_residences_new:
+    households_apartments_share:
+      title: Apartment
+      short_description:
+      description: How many apartments will there be in the future?
+    households_corner_houses_share:
+      title: Corner house
+      short_description:
+      description: How many corner houses will there be in the future?
+    households_detached_houses_share:
+      title: Detached house
+      short_description:
+      description: How many detached houses will there be in the future?
+    households_semi_detached_houses_share:
+      title: Semi-detached house
+      short_description:
+      description: How many semi-detached houses will there be in the future?
+    households_terraced_houses_share:
+      title: Terraced house
+      short_description:
+      description: How many terraced houses will there be in the future?
+    households_number_of_apartments_future:
       title: New residences
       short_description:
-      description: |
-        This slider sets the number of new residences. The sliders
-        below determine the distribution of newly built residences across residence types.
-    households_share_of_apartments:
-      title: Apartments
-      short_description:
-      description: |
-        This slider sets the share of new residences that are apartments.
-    households_share_of_detached:
-      title: Detached houses
-      short_description:
-      description: |
-        This slider sets the share of new residences that are detached houses.
-    households_share_of_semi_detached:
-      title: Semi-detached houses
-      short_description:
-      description: |
-        This slider sets the share of new residences that are semi-detached houses.
-    households_share_of_terraced:
-      title: Terraced houses
-      short_description:
-      description: |
-        This slider sets the share of new residences that are terraced houses.
-    households_demolished_2005_present:
+      description: "This slider sets the total number of new apartments that will be built from the present until the chosen future year in the scenario."
+    households_number_of_apartments_2005_present:
       title: 2005 - present
       short_description:
-      description: |
-        This slider sets the number of demolished residences from the construction period 2005 - present.
-    households_demolished_1985_2004:
+      description: "This slider sets the total number of apartments built between 2005 and the present."
+    households_number_of_apartments_1985_2004:
       title: 1985 - 2004
       short_description:
-      description: |
-        This slider sets the number of demolished residences from the construction period 1985 - 2004.
-    households_demolished_1965_1984:
+      description: "This slider sets the total number of apartments built between 1985 and 2004."
+    households_number_of_apartments_1965_1984:
       title: 1965 - 1984
       short_description:
-      description: |
-        This slider sets the number of demolished residences from the construction period 1965 - 1984.
-    households_demolished_1945_1964:
+      description: "This slider sets the total number of apartments built between 1965 and 1984."
+    households_number_of_apartments_1945_1964:
       title: 1945 - 1964
       short_description:
-      description: |
-        This slider sets the number of demolished residences from the construction period 1945 - 1964.
-    households_demolished_before_1945:
+      description: "This slider sets the total number of apartments built between 1945 and 1964."
+    households_number_of_apartments_before_1945:
       title: < 1945
       short_description:
-      description: |
-        This slider sets the number of demolished residences from the construction period before 1945.
+      description: "This slider sets the total number of apartments built before 1945."
+    households_number_of_terraced_houses_future:
+      title: New residences
+      short_description:
+      description: "This slider sets the total number of new terraced houses that will be built from the present until the chosen future year in the scenario."
+    households_number_of_terraced_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 2005 and the present."
+    households_number_of_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 1985 and 2004."
+    households_number_of_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 1965 and 1984."
+    households_number_of_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of terraced houses built between 1945 and 1964."
+    households_number_of_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of terraced houses built before 1945."
+    households_number_of_semi_detached_houses_future:
+      title: New residences
+      short_description:
+      description: "This slider sets the total number of new semi-detached houses that will be built from the present until the chosen future year in the scenario."
+    households_number_of_semi_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 2005 and the present."
+    households_number_of_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 1985 and 2004."
+    households_number_of_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 1965 and 1984."
+    households_number_of_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built between 1945 and 1964."
+    households_number_of_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of semi-detached houses built before 1945."
+    households_number_of_detached_houses_future:
+      title: New residences
+      short_description:
+      description: "This slider sets the total number of new detached houses that will be built from the present until the chosen future year in the scenario."
+    households_number_of_detached_houses_2005_present:
+      title: 2005 - present
+      short_description:
+      description: "This slider sets the total number of detached houses built between 2005 and the present."
+    households_number_of_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "This slider sets the total number of detached houses built between 1984 and 2004."
+    households_number_of_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "This slider sets the total number of detached houses built between 1965 and 1984."
+    households_number_of_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "This slider sets the total number of detached houses built between 1945 and 1964"
+    households_number_of_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "This slider sets the total number of detached houses built before 1945"
     households_lighting_efficient_fluorescent_electricity_share:
       title: Low-energy light bulb
       short_description: ''

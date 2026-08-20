@@ -1,14 +1,11 @@
 ---
-- key: buildings_number_of_buildings_new
+- key: buildings_number_of_buildings_future
   step_value: 1.0
   unit: "#"
-  interface_group: buildings_new
   position: 100
   slide_key: demand_buildings_stock
-
-- key: buildings_number_of_buildings_demolished
+- key: buildings_number_of_buildings_present
   step_value: 1.0
   unit: "#"
-  interface_group: buildings_demolished
   position: 105
   slide_key: demand_buildings_stock

@@ -1,151 +1,689 @@
 ---
 nl:
   input_elements:
-    households_insulation_before_1945:
-      title: < 1945
-      short_description:
-      description: |
-        Dit schuifje stelt het percentage in waarmee de vraag naar ruimteverwarming afneemt
-        ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Dit geldt voor alle woningtypen van deze bouwperiode.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van woningen.
-        <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van woningen:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van woningen
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Bevolking & woningvoorraad</a> - stelt het aantal woningen in
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
-    households_insulation_1945_1964:
-      title: 1945 - 1964
-      short_description:
-      description: |
-        Dit schuifje stelt het percentage in waarmee de vraag naar ruimteverwarming afneemt
-        ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Dit geldt voor alle woningtypen van deze bouwperiode.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van woningen.
-        <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van woningen:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van woningen
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Bevolking & woningvoorraad</a> - stelt het aantal woningen in
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
-    households_insulation_1965_1984:
-      title: 1965 - 1984
-      short_description:
-      description: |
-        Dit schuifje stelt het percentage in waarmee de vraag naar ruimteverwarming afneemt
-        ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Dit geldt voor alle woningtypen van deze bouwperiode.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van woningen.
-        <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van woningen:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van woningen
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Bevolking & woningvoorraad</a> - stelt het aantal woningen in
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
-    households_insulation_1985_2004:
-      title: 1985 - 2004
-      short_description:
-      description: |
-        Dit schuifje stelt het percentage in waarmee de vraag naar ruimteverwarming afneemt
-        ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Dit geldt voor alle woningtypen van deze bouwperiode.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van woningen.
-        <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van woningen:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van woningen
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Bevolking & woningvoorraad</a> - stelt het aantal woningen in
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
-    households_insulation_2005_present:
-      title: 2005 - heden
-      short_description:
-      description: |
-        Dit schuifje stelt het percentage in waarmee de vraag naar ruimteverwarming afneemt
-        ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Dit geldt voor alle woningtypen van deze bouwperiode.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van woningen.
-        <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van woningen:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van woningen
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Bevolking & woningvoorraad</a> - stelt het aantal woningen in
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
-    households_insulation_new_residences:
+    households_insulation_level_apartments_future:
       title: Nieuwbouw
       short_description:
       description: |
-        Dit schuifje stelt het percentage in waarmee de vraag naar ruimteverwarming afneemt
-        ten opzichte van de waarde in het startjaar, als gevolg van verbeterde isolatie.
-        Dit geldt voor alle nieuw gebouwde woningtypen.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van woningen.
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen die tussen het startjaar en
+        het toekomstjaar in het scenario gebouwd zullen worden.
         <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van woningen:
-        <br>
-        • <a href="/scenario/demand/households/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van woningen
-        <br>
-        • <a href="/scenario/demand/households/population-and-housing-stock">Bevolking & woningvoorraad</a> - stelt het aantal woningen in
-        <br>
-        • <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
-        <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
-    households_space_heating_behaviour:
-      title: Ruimteverwarming
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_2005_present:
+      title: 2005 - heden
       short_description:
       description: |
-        Dit schuifje stelt de verandering in de vraag naar ruimteverwarming in ten opzichte van het
-        startjaar als gevolg van gedragsveranderingen. Dit schuifje geldt voor alle woningtypen
-        van alle bouwperiodes.<br/><br/>
-        Voorbeelden van gedragsveranderingen zijn geopolitieke gebeurtenissen waardoor mensen
-        minder gaan stoken of mensen die welvarender worden en daardoor meer gaan stoken.
-        <br/><br/>
-        Ga naar de sectie
-        <a href="/scenario/demand/households/insulation">isolatie</a> om de
-        afname van de vraag naar ruimteverwarming door verbeterde isolatie in te stellen.
-        Veranderingen in de vraag naar ruimteverwarming kunnen ook worden veroorzaakt door
-        weersomstandigheden, waarvoor aannames gedaan kunnen worden in de sectie
-        <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours"
-        >flexibiliteit</a>.
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 2005 en
+        het startjaar.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 1985 en 2004.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 1965 en 1984.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd tussen 1945 en 1964.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_apartments_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor appartementen gebouwd voor 1945.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen die tussen het startjaar en
+        het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 2005 en
+        het startjaar.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 1985 en 2004.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 1965 en 1984.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd tussen 1945 en 1964.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+        >dataset</a> voor een beschrijving van de bronnen.
+    households_insulation_level_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor rijtjeshuizen gebouwd voor 1945.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen die tussen het startjaar en
+        het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 2005 en
+        het startjaar.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 1985 en 2004.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 1965 en 1984.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd tussen 1945 en 1964.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor hoekhuizen gebouwd voor 1945.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen die tussen het startjaar en
+        het toekomstjaar in het scenario gebouwd zullen worden.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kunnen de BENG-eisen (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/beng/indicatoren" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 2005 en
+        het startjaar.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 1985 en 2004.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 1965 en 1984.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd tussen 1945 en 1964.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
+    households_insulation_level_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: |
+        Deze slider stelt de gemiddelde warmtevraag per vierkante meter in voor vrijstaande huizen gebouwd voor 1945.
+        <br><br>
+        De gemiddelde warmtevraag per vierkante meter is een energieprestatie indicator voor woningen. De indicator
+        gaat over de warmtevraag van het gebouw zelf en is dus niet afhankelijk van het ventilatiesysteem, warmte-
+        en koudetechnologieën en PV-panelen. Hoe beter een woning geïsoleerd is, hoe lager de gemiddelde warmtevraag
+        per vierkante meter. Dit resulteert in een lagere energievraag voor verwarming in deze woningen.
+        <br><br>
+        Voor een passende waarde van deze slider voor het toekomstjaar kan de Standaard voor Woningisolatie (bron:
+        <a href="https://www.rvo.nl/onderwerpen/wetten-en-regels-gebouwen/standaard-streefwaarden-woningisolate\" target=\"_blank\">RVO</a>)
+        geraadpleegd worden.
+        <br><br>
+        Let wel op dat de EP1 indicator (energiebehoefte in kWh per vierkante meter per gebruiksoppervlak per jaar)
+        van de NTA 8800 (bepalingsmethode voor de energieprestatie van alle gebouwen, zie ook
+        <a href="https://www.nen.nl/media/wysiwyg/NEN_Whitepaper_Highlights_NTA_8800.pdf" target=\"_blank\">de uitleg van NEN</a>)
+        de optelsom is van de energiebehoefte voor verwarming en koeling, waar de waarde van deze slider alleen
+        betrekking heeft op de energiebehoefte voor ruimteverwarming.
+        <br><br>
+        Ga naar <a href="/scenario/demand/households/population-and-housing-stock">bevolking & huizenvoorraad</a>
+        om de woningvoorraad voor deze categorie aan te passen of verander de verdeling van warmtetechnologieën over
+        de verschillende woningtypes onder <a href="/scenario/demand/households_heating_order/merit-order/">Inzetvolgorde warmte technologieën</a>.
+        <br><br>
+        Bekijk de <a href="https://docs.energytransitionmodel.com/main/insulation" target=\"_blank\">documentatie</a>
+        voor meer informatie of bekijk de <a href="https://data.energytransitionmodel.com" target=\"_blank\">dataset</a>
+        voor een beschrijving van de bronnen.
     households_useful_demand_for_cooling:
-      title: Ruimtekoeling
+      title: Koudevraag
       short_description: ''
       description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
         van de technologieën die je hieronder kunt kiezen (Koeling). \r\n<br/><br/>\r\nHoe
@@ -162,7 +700,7 @@ nl:
         ontwikkelen. Als mensen rijker worden, gaan ze in grotere huizen wonen waardoor
         de energievraag voor ruimteverwarming toeneemt."
     households_useful_demand_hot_water_share:
-      title: Warm water
+      title: Warmwatervraag
       short_description: ''
       description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
         van de technologieën die je hieronder kunt kiezen (Warmwaterslide).\r\n<br/>\r\n<br/>\r\nHier
@@ -284,58 +822,102 @@ nl:
       description: "Hoe verwacht je dat de bevolking zich gaat ontwikkelen? Naast
         welvaartsgroei is dit een van de belangrijkste factoren die de energievraag
         beïnvloeden."
-    households_number_of_residences_new:
-      title: Nieuwe woningen
+    households_number_of_apartments_future:
+      title: Nieuwbouw
       short_description:
-      description: |
-        Dit schuifje stelt het aantal nieuwe woningen in. De
-        schuifjes hieronder bepalen de verdeling van nieuw gebouwde woningen over de
-        woningtypen.
-    households_share_of_apartments:
-      title: Appartementen
-      short_description:
-      description: |
-        Dit schuifje stelt het aandeel van nieuwe woningen in dat bestaat uit appartementen.
-    households_share_of_detached:
-      title: Vrijstaande woningen
-      short_description:
-      description: |
-        Dit schuifje stelt het aandeel van nieuwe woningen in dat bestaat uit vrijstaande woningen.
-    households_share_of_semi_detached:
-      title: Hoekwoningen
-      short_description:
-      description: |
-        Dit schuifje stelt het aandeel van nieuwe woningen in dat bestaat uit hoekwoningen.
-    households_share_of_terraced:
-      title: Rijtjeshuizen
-      short_description:
-      description: |
-        Dit schuifje stelt het aandeel van nieuwe woningen in dat bestaat uit rijtjeshuizen.
-    households_demolished_2005_present:
+      description: "Deze slider zet het aantal apartementen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_apartments_2005_present:
       title: 2005 - heden
       short_description:
-      description: |
-        Dit schuifje stelt het aantal gesloopte woningen uit de bouwperiode 2005 - heden in.
-    households_demolished_1985_2004:
+      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_apartments_1985_2004:
       title: 1985 - 2004
       short_description:
-      description: |
-        Dit schuifje stelt het aantal gesloopte woningen uit de bouwperiode 1985 - 2004 in.
-    households_demolished_1965_1984:
+      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1985 tot 2004."
+    households_number_of_apartments_1965_1984:
       title: 1965 - 1984
       short_description:
-      description: |
-        Dit schuifje stelt het aantal gesloopte woningen uit de bouwperiode 1965 - 1984 in.
-    households_demolished_1945_1964:
+      description: "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1965 tot 1984."
+    households_number_of_apartments_1945_1964:
       title: 1945 - 1964
       short_description:
-      description: |
-        Dit schuifje stelt het aantal gesloopte woningen uit de bouwperiode 1945 - 1964 in.
-    households_demolished_before_1945:
+      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van 1945 tot 1964."
+    households_number_of_apartments_before_1945:
       title: < 1945
       short_description:
-      description: |
-        Dit schuifje stelt het aantal gesloopte woningen uit de bouwperiode voor 1945 in.
+      description:  "Deze slider zet het aantal apartementen in de bouwjaarklasse van tot 1945."
+    households_number_of_terraced_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_terraced_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_terraced_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1985 tot 2004."
+    households_number_of_terraced_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1965 tot 1984."
+    households_number_of_terraced_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse van 1945 tot 1964."
+    households_number_of_terraced_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "Deze slider zet het aantal rijtjeshuizen in de bouwjaarklasse tot 1945."
+    households_number_of_semi_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_semi_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_semi_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description:  "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1985 tot 2004."
+    households_number_of_semi_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1965 tot 1984."
+    households_number_of_semi_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse van 1945 tot 1964."
+    households_number_of_semi_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "Deze slider zet het aantal hoekhuizen in de bouwjaarklasse tot 1945."
+    households_number_of_detached_houses_future:
+      title: Nieuwbouw
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen wat tussen het huidige jaar en het toekomstjaar in het scenario gebouwd zal worden."
+    households_number_of_detached_houses_2005_present:
+      title: 2005 - heden
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 2005 tot het heden."
+    households_number_of_detached_houses_1985_2004:
+      title: 1985 - 2004
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1985 tot 2004"
+    households_number_of_detached_houses_1965_1984:
+      title: 1965 - 1984
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1965 tot 1984"
+    households_number_of_detached_houses_1945_1964:
+      title: 1945 - 1964
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse van 1945 tot 1964"
+    households_number_of_detached_houses_before_1945:
+      title: < 1945
+      short_description:
+      description: "Deze slider zet het aantal vrijstaande huizen in de bouwjaarklasse tot 1945."
     households_lighting_efficient_fluorescent_electricity_share:
       title: Spaarlamp
       short_description: ''

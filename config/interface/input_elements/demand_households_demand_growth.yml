@@ -27,13 +27,6 @@
 - key: households_useful_demand_for_cooling
   step_value: 0.1
   unit: "%"
-  interface_group: per_residence_cooling
+  interface_group: per_household
   position: 200
-  slide_key: demand_households_demand_growth
-
-- key: households_space_heating_behaviour
-  step_value: 0.1
-  unit: "%"
-  interface_group: per_residence_space_heating
-  position: 300
   slide_key: demand_households_demand_growth

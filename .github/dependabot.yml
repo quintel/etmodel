@@ -1,9 +1,9 @@
 # Dependabot configuration — etmodel
 #
 # Policy:
-#   - Security bumps   -> grouped into one PR, auto-merged on green CI
-#                         (the auto-merge workflow keys off the "security" group).
-#   - Minor / patch    -> a grouped weekly "reminder" PR; a human reviews and merges.
+#   - Security bumps   -> grouped into one PR, auto-merged on green CI.
+#   - Minor / patch    -> one grouped weekly PR, also auto-merged on green CI
+#                         (CI is the "nothing breaks" gate for semver-compatible bumps).
 #   - Majors           -> one grouped "major-updates" PR per ecosystem: a standing
 #                         list of what we're behind on. It won't go green (breaking
 #                         changes bundled) and isn't merged as a unit — it's a
@@ -11,8 +11,9 @@
 #   - Rails            -> its own PR, never auto-merged (a framework upgrade is a
 #                         deliberate, human decision).
 #
-# Only security updates are ever auto-merged. Nothing here auto-merges by itself;
-# that lives in .github/workflows/dependabot-auto-merge.yml.
+# The security and minor/patch groups auto-merge on green CI; majors and Rails
+# wait for a human. The auto-merge logic lives in
+# .github/workflows/dependabot-auto-merge.yml.
 
 version: 2
 
@@ -27,7 +28,7 @@ updates:
       security:
         applies-to: security-updates
         patterns: ["*"]
-      # Minor + patch gem updates -> one grouped reminder PR per week.
+      # Minor + patch gem updates -> one grouped PR per week, auto-merged on green CI.
       dependencies:
         applies-to: version-updates
         patterns: ["*"]

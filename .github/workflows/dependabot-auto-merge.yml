@@ -1,14 +1,21 @@
-# Auto-merge Dependabot security updates — etmodel
+# Auto-merge low-risk Dependabot updates
 #
-# Only SECURITY bumps auto-merge. Everything else is left as a PR for a human.
+# Two independent jobs, one per auto-mergeable group, so each group's conditions
+# can be tuned on its own:
+#   - security-auto-merge     -> the "security" group
+#   - dependencies-auto-merge -> the minor/patch "dependencies" group
+# Both approve with the GitHub Actions bot (repo requires a review) and enable
+# auto-merge, so the update lands once the required CI check is green. Majors,
+# Rails, and everything else are left as a PR for a human.
 #
-# etmodel requires a review before merge, so this workflow supplies that approval
-# with the GitHub Actions bot — but only for the security group. It never touches
-# a normal version-update PR, which still waits for a real human review + merge.
+# The signal is the Dependabot group name from .github/dependabot.yml, surfaced by
+# fetch-metadata as the `dependency-group` output.
 #
-# The security signal is the Dependabot group name: .github/dependabot.yml groups
-# all security updates under a group literally named "security", and
-# fetch-metadata surfaces that as the `dependency-group` output.
+# Note on `update-type`: it is the highest semver change across the *direct*
+# dependencies Dependabot reports, so it does NOT see transitive/indirect bumps
+# (Dependabot omits those from its metadata). A transitive major can therefore
+# ride inside a minor/patch PR; that risk is covered by CI, which tests against
+# the fully-resolved tree, not by this guard.
 
 name: Dependabot auto-merge
 
@@ -28,10 +35,32 @@ jobs:
         uses: dependabot/fetch-metadata@v3
 
       - name: Approve and auto-merge security updates
-        # Only the security group, and never a major bump — a security fix that
-        # requires a major version jump is rare and risky enough to want a human.
+        # The security group, but never a major bump — a security fix that needs
+        # a major version jump is rare and risky enough to want a human.
         if: >
           steps.meta.outputs.dependency-group == 'security' &&
+          steps.meta.outputs.update-type != 'version-update:semver-major'
+        run: |
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  dependencies-auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v3
+
+      - name: Approve and auto-merge minor/patch updates
+        # The minor/patch "dependencies" group. The major guard is extra safety:
+        # the dependabot.yml group is already minor/patch-only, and the guard only
+        # catches direct majors (breaking transitive majors are caught by CI).
+        if: >
+          steps.meta.outputs.dependency-group == 'dependencies' &&
           steps.meta.outputs.update-type != 'version-update:semver-major'
         run: |
           gh pr review --approve "$PR_URL"

@@ -31,13 +31,14 @@ nl:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Dit schuifje vermindert de ruimteverwarmingsvraag van nieuwe gebouwen door isolatie,
-        als een percentage ten opzichte van de warmtevraag bij de huidige isolatiegraad.
+        Dit schuifje stelt het percentage in waarmee de ruimteverwarmingsvraag van nieuwe gebouwen
+        afneemt ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
         Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
+        Dit schuifje beïnvloedt ook de isolatiekosten van gebouwen.
         <br><br>
         Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
         <br>
-        • <a href="/scenario/demand/buildings/development-of-demand">Ontwikkeling van de vraag</a> - beïnvloedt het gedrag bij ruimteverwarming van nieuwe gebouwen
+        • <a href="/scenario/demand/buildings/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van nieuwe gebouwen
         <br>
         • <a href="/scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - stelt het aantal gebouwen in
         <br>
@@ -45,18 +46,19 @@ nl:
         <br>
         • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather_years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
     buildings_insulation_existing_buildings:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Dit schuifje vermindert de ruimteverwarmingsvraag van bestaande gebouwen door isolatie,
-        als een percentage ten opzichte van de warmtevraag bij de huidige isolatiegraad.
+        Dit schuifje stelt het percentage in waarmee de ruimteverwarmingsvraag van bestaande gebouwen
+        afneemt ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
         Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
+        Dit schuifje beïnvloedt ook de isolatiekosten van gebouwen.
         <br><br>
         Andere schuifjes die ook invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
         <br>
-        • <a href="/scenario/demand/buildings/development-of-demand">Ontwikkeling van de vraag</a> - beïnvloedt het gedrag bij ruimteverwarming van bestaande gebouwen
+        • <a href="/scenario/demand/buildings/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van bestaande gebouwen
         <br>
         • <a href="/scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - stelt het aantal gebouwen in
         <br>
@@ -64,7 +66,7 @@ nl:
         <br>
         • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather_years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
     buildings_space_heating_behaviour:
       title: Ruimteverwarming
       short_description:

@@ -56,12 +56,11 @@ en:
       description: |
         How will offices and other buildings be cooled in the future?
     demand_buildings_demand_growth:
-      title: Development of demand
+      title: Behaviour
       short_description:
       description: |
         The changes in energy use per building you indicate here are due
-        to changes in prosperity. This is excluding efficiencies
-        and technological changes.
+        to changes in behaviour. This is excluding changes in efficiency.
     demand_buildings_heating:
       title: Space heating
       short_description:
@@ -155,7 +154,7 @@ en:
         listed under "Space heating & hot water" can be used here. Note that the
         percentages represent the share in cooling demand.
     demand_households_demand_growth:
-      title: Development of demand
+      title: Behaviour
       short_description:
       description: |
         Below the change in demand for various applications can be set as a
@@ -175,11 +174,11 @@ en:
         <a href="https://docs.energytransitionmodel.com/main/demand#households" target=\"_blank\">documentation</a>
         for more information.
     demand_households_insulation:
-      title: Heat demand & insulation
+      title: Insulation
       short_description:
       description: |
         The sliders below set the reduction in space heating demand due to improved insulation. Go
-        to the section <a href="/scenario/demand/households/development-of-demand">development of demand</a>
+        to the section <a href="/scenario/demand/households/behaviour">behaviour</a>
         to set changes in space heating demand due to behavioural changes.
     demand_households_lighting:
       title: Lighting

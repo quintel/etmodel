@@ -29,14 +29,14 @@ en:
       title: New buildings
       short_description: ''
       description: |
-        This slider reduces space heating demand of new buildings through
-        insulation, as a percentage reduction relative to the heating
-        demand at current insulation levels. At 0%, insulation levels remain unchanged.
-        At 100%, space heating demand is fully eliminated.
+        This slider sets the percentage by which space heating demand of new buildings decreases
+        relative to the present year value, due to improved insulation. At 0%, insulation levels
+        remain unchanged. At 100%, space heating demand is fully eliminated. This slider also affects
+        the insulation costs for buildings.
         <br><br>
         Related sliders that influence the energy use for heating buildings:
         <br>
-        • <a href="/scenario/demand/buildings/development-of-demand"> Development of demand</a> - Influences the heating behaviour of new buildings
+        • <a href="/scenario/demand/buildings/behaviour"> Behaviour</a> - Influences the heating behaviour of buildings
         <br>
         • <a href="/scenario/demand/buildings/building-stock">Building stock</a> - sets the number of buildings
         <br>
@@ -44,19 +44,19 @@ en:
         <br>
         • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather_years">Weather years</a> - changes the weather year used for the scenario
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
     buildings_insulation_existing_buildings:
       title: Existing buildings
       short_description:
       description: |
-        This slider reduces space heating demand of existing buildings through
-        insulation, as a percentage reduction relative to the heating
-        demand at current insulation levels. At 0%, insulation levels remain unchanged.
-        At 100%, space heating demand is fully eliminated.
+        This slider sets the percentage by which space heating demand of existing buildings decreases
+        relative to the present year value, due to improved insulation. At 0%, insulation levels
+        remain unchanged. At 100%, space heating demand is fully eliminated. This slider also affects
+        the insulation costs for buildings.
         <br><br>
         Related sliders that also influence the energy use for heating buildings:
         <br>
-        • <a href="/scenario/demand/buildings/development-of-demand">Development of demand</a> - Influences the heating behaviour of existing buildings
+        • <a href="/scenario/demand/buildings/behaviour">Behaviour</a> - Influences the heating behaviour of buildings
         <br>
         • <a href="/scenario/demand/buildings/building-stock">Building stock</a> - sets the number of buildings
         <br>
@@ -64,7 +64,7 @@ en:
         <br>
         • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather_years">Weather years</a> - changes the weather year used for the scenario
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
     buildings_space_heating_behaviour:
       title: Space heating
       short_description:

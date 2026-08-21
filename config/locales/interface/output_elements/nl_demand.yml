@@ -481,14 +481,21 @@ nl:
       description: |
         Deze grafiek toont de verschillende energetische transitstromen in de toekomst, uitgesplitst per drager.
         Elk van de staafjes draagt bij aan het totaal, dat aangegeven wordt met het zwarte staafje rechts in de grafiek.
-    number_of_residences_overview:
-      title: Aantal woningen per woningtype en bouwjaarklasse
+    number_of_residences_and_buildings_overview:
+      title: Aantal woningen en gebouwen per bouwjaarklasse
       description:
-        Deze grafiek toont de woningen per woningtype en bouwjaarklasse.
+        Deze grafiek toont het aantal woningen en (niet-residentiële) gebouwen per type en
+        bouwjaarklasse. </br></br>
+        (Niet-residentiële) gebouwen worden weergegeven in <i>woningequivalenten</i> (WEQ).
+        Het aantal woningequivalenten wordt berekend door het totale vloeroppervlak voor
+        niet-residentiële gebouwen te delen door het typische vloeroppervlak per woning. Het
+        typische vloeroppervlak per woning kan verschillen per regio. De brondata kan worden
+        gevonden via de sectie
+        <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
     residential_heating_demand:
-      title: Warmtevraag van woningen
+      title: Ruimteverwarmingsvraag woningen
       description: |
-        Deze grafiek toont de warmtevraag per woningtype en bouwperiode.
+        Deze grafiek toont de warmtevraag voor ruimteverwarming per woningtype en bouwperiode.
     buildings_heating_demand:
       title: Warmtevraag gebouwen
       description: |

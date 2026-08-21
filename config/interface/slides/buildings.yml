@@ -7,8 +7,9 @@
   key: demand_buildings_stock
   position: 100
   sidebar_item_key: buildings
-  output_element_key: use_of_final_demand_in_buildings
-- key: demand_buildings_insulation
+  output_element_key: number_of_residences_and_buildings_overview
+- group_sub_header: demand_buildings_insulation
+  key: demand_buildings_insulation
   position: 105
   sidebar_item_key: buildings
   alt_output_element_key:
@@ -50,3 +51,4 @@
   sidebar_item_key: buildings
   output_element_key: mekko_of_oil_mix
   dependent_on: has_coal_oil_for_heating_built_environment
+

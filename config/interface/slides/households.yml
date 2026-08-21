@@ -3,11 +3,13 @@
   position: 0
   sidebar_item_key: households
   output_element_key: use_of_final_demand_in_households
-- key: demand_households_population
+- group_sub_header: number
+  key: demand_households_population
   position: 100
   sidebar_item_key: households
-  output_element_key: number_of_residences_overview
-- key: demand_households_insulation
+  output_element_key: number_of_residences_and_buildings_overview
+- group_sub_header: households_insulation
+  key: demand_households_insulation
   position: 105
   sidebar_item_key: households
   output_element_key: residential_heating_demand

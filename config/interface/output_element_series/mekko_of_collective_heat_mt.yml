@@ -123,6 +123,18 @@
   dependent_on:
   output_element_key: mekko_of_collective_heat_mt
   key: energy_chp_combined_cycle_mt_network_gas_mekko_of_collective_heat_mt
+- label: energy_chp_combined_cycle_hydrogen_in_mekko_of_collective_heat
+  color: "#9B59B6"
+  order_by: 231
+  group: supply
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_combined_cycle_mt_hydrogen_for_heat_network_mt_mekko
+  is_1990:
+  dependent_on:
+  output_element_key: mekko_of_collective_heat_mt
+  key: energy_chp_combined_cycle_mt_hydrogen_mekko_of_collective_heat_mt
 - label: energy_chp_local_engine_network_gas_in_mekko_of_collective_heat
   color: "#DFE4EA"
   order_by: 240

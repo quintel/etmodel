@@ -263,6 +263,18 @@
   dependent_on:
   output_element_key: merit_order_hourly_supply
   key: energy_chp_combined_cycle_network_gas_dispatchable_merit_order_hourly_supply
+- label: energy_chp_combined_cycle_hydrogen
+  color: "#87CEEB"
+  order_by: 5
+  group: dispatchable
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_combined_cycle_hydrogen
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order_hourly_supply
+  key: energy_chp_combined_cycle_hydrogen_dispatchable_merit_order_hourly_supply
 - label: energy_chp_ultra_supercritical_coal
   color: "#3BFAEB"
   order_by: 5

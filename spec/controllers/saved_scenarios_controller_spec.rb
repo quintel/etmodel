@@ -187,6 +187,14 @@ describe SavedScenariosController, vcr: true do
 
       expect(response).to be_ok
     end
+
+    it 'renders the cannot-save page when no scenario is in progress' do
+      session[:setting].api_session_id = nil
+      sign_in(user)
+      get :new, params: { inline: true }
+
+      expect(response).to have_http_status(:bad_request)
+    end
   end
 
   describe 'POST create' do

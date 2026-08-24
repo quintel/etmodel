@@ -40,14 +40,16 @@ class Current
 
   def session=(session)
     @session = session
+    @setting = nil
   end
 
   def setting=(setting)
-    session[:setting] = setting
+    @setting = session[:setting] = setting
   end
 
+  # activerecord-session_store 2.3 only writes the session when the committed hash differs
   def setting
-    session[:setting] ||= Setting.default
+    @setting ||= (session[:setting] = (session[:setting] || Setting.default).dup)
   end
 
   def current_slide=(current_slide)

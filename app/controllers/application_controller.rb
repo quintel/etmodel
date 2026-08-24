@@ -15,6 +15,24 @@ class ApplicationController < ActionController::Base
   after_action  :teardown_current
   after_action  :set_document_policy_header
 
+  # Raised when trying to save a scenario, but the user does not have a
+  # scenario in progress. See quintel/etengine#542.
+  class NoScenarioIdError < RuntimeError
+    def initialize(_controller = nil)
+      super(
+        'Cannot save ETM scenario with settings: ' \
+        "#{Current.setting.to_hash.inspect}"
+      )
+    end
+  end
+
+  rescue_from NoScenarioIdError do |ex|
+    render 'scenarios/cannot_save_without_id',
+      status: :bad_request,
+      layout: !params[:inline]
+    Sentry.capture_exception(ex)
+  end
+
   rescue_from YModel::RecordNotFound do
     render_not_found
   end

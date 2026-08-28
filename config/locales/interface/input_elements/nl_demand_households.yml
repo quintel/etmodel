@@ -147,52 +147,54 @@ nl:
     households_useful_demand_for_cooling:
       title: Ruimtekoeling
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Koeling). \r\n<br/><br/>\r\nHoe
-        denk jij dat de koudevraag per huishouden zich gaat ontwikkelen? Dit hangt
-        vooral af van de welvaartsgroei. Als mensen rijker worden, gaat hun energiegebruik
-        onvermijdelijk omhoog, doordat ze in steeds grotere huizen wonen, airconditioning
-        aanschaffen, etc."
-    households_useful_demand_heat_per_person:
-      title: Warmtevraag
-      short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je in hieronder kunt kiezen (Ruimteverwarming slide).\r\n<br/>\r\n<br/>\r\nHier
-        kun je aangeven hoe jij denkt dat de warmtevraag per huishouden zich gaat
-        ontwikkelen. Als mensen rijker worden, gaan ze in grotere huizen wonen waardoor
-        de energievraag voor ruimteverwarming toeneemt."
+      description: |
+        Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je kunt kiezen onder <a href="/scenario/demand/households/cooling">Koeling</a>.
+        <br/><br/>
+        Hier geef je de verandering in de koudevraag per huishouden aan als gevolg van gedrag.
+        Dit hangt vooral af van de welvaartsgroei. Als mensen rijker worden, gaat hun energiegebruik
+        omhoog, doordat ze in steeds grotere huizen wonen, airconditioning
+        aanschaffen, etc.
     households_useful_demand_hot_water_share:
       title: Warm water
       short_description: ''
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Warmwaterslide).\r\n<br/>\r\n<br/>\r\nHier
-        kun je aangeven hoe jij denkt dat de warmwatervraag per persoon zich gaat
-        ontwikkelen."
+      description: |
+        Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je kunt kiezen onder <a href="/scenario/demand/households/space-heating-and-hot-water">Ruimteverwarming & warm water</a>.
+        <br/><br/>
+        Hier geef je de verandering in de warmwatervraag per persoon aan als gevolg van gedrag.
+        Dit hangt vooral af van de welvaartsgroei.
     households_useful_demand_cooking_per_person:
       title: Koken
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Koken slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor koken per persoon zich
-        gaat ontwikkelen. Als mensen rijker worden gaan ze vaker uit eten of eten
-        afhalen. Dit heeft tot gevolg dat de energievraag voor koken lager wordt."
+      description: |
+        Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je kunt kiezen onder <a href="/scenario/demand/households/cooking">Koken</a>.
+        <br/><br/>
+        Hier geef je de verandering in de energievraag voor koken per persoon aan als gevolg van gedrag.
+        Als mensen rijker worden gaan ze vaker uit eten of eten
+        afhalen. Dit heeft tot gevolg dat de energievraag voor koken lager wordt.
     households_useful_demand_electric_appliances:
       title: Apparaten
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Apparaten slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor apparaten per persoon
-        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Hoe rijker
-        mensen zijn, des te meer apparaten ze bezitten."
+      description: |
+        Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je kunt kiezen onder <a href="/scenario/demand/households/appliances">Apparaten</a>.
+        <br/><br/>
+        Hier geef je de verandering in de energievraag voor apparaten per persoon aan als gevolg van gedrag.
+        Dit hangt vooral af van de welvaartsgroei. Hoe rijker
+        mensen zijn, des te meer apparaten ze bezitten.
     households_useful_demand_lighting:
       title: Verlichting
       short_description:
-      description: "Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
-        van de technologieën die je hieronder kunt kiezen (Verlichting slide).\r\n<br>\r\n<br>\r\nHier
-        kun je aangeven hoe jij denkt dat de energievraag voor verlichting per persoon
-        zich gaat ontwikkelen. Dit hangt vooral af van de welvaartsgroei. Als mensen
+      description: |
+        Let op: deze verandering van energiegebruik is <strong>onafhankelijk</strong>
+        van de technologieën die je kunt kiezen onder <a href="/scenario/demand/households/lighting">Verlichting</a>.
+        <br/><br/>
+        Hier geef je de verandering in de energievraag voor verlichting per persoon aan als gevolg van gedrag.
+        Dit hangt vooral af van de welvaartsgroei. Als mensen
         rijker worden, gaan ze in grotere huizen wonen waarvoor meer verlichting nodig
-        is."
+        is.
     households_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Warmtepomp met aquathermie (TEO) en WKO
       short_description: ''

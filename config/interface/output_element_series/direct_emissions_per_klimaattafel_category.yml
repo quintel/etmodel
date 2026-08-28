@@ -1,0 +1,246 @@
+# present and future total GHG emissions per klimaattafel category
+- label: elektriciteit
+  color: "#416B86"
+  order_by: 100
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_elektriciteit_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_elektriciteit
+- label: industrie
+  color: "#A9A9A9"
+  order_by: 110
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_industrie_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_industrie
+- label: mobiliteit
+  color: "#8B0000"
+  order_by: 120
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_mobiliteit_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_mobiliteit
+- label: gebouwde_omgeving
+  color: "#4169E1"
+  order_by: 130
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_gebouwde_omgeving_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_gebouwde_omgeving
+- label: landbouw
+  color: "#FFD700"
+  order_by: 140
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_landbouw_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_landbouw
+- label: landgebruik
+  color: "#A1DC8E"
+  order_by: 150
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_landgebruik_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_landgebruik
+- label: internationaal_transport
+  color: "#82589F"
+  order_by: 160
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_internationaal_transport_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_internationaal_transport
+- label: indirecte_emissies
+  color: "#C2185B"
+  order_by: 170
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_indirecte_emissies_total_ghg_for_direct_emissions_chart
+  is_1990:
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_indirecte_emissies
+
+# 1990 total GHG emissions per klimaattafel category
+- label: elektriciteit
+  color: "#416B86"
+  order_by: 200
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_elektriciteit_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_elektriciteit_1990
+- label: industrie
+  color: "#A9A9A9"
+  order_by: 210
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_industrie_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_industrie_1990
+- label: mobiliteit
+  color: "#8B0000"
+  order_by: 220
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_mobiliteit_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_mobiliteit_1990
+- label: gebouwde_omgeving
+  color: "#4169E1"
+  order_by: 230
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_gebouwde_omgeving_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_gebouwde_omgeving_1990
+- label: landbouw
+  color: "#FFD700"
+  order_by: 240
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_landbouw_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_landbouw_1990
+- label: landgebruik
+  color: "#A1DC8E"
+  order_by: 250
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_landgebruik_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_landgebruik_1990
+- label: internationaal_transport
+  color: "#82589F"
+  order_by: 260
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_internationaal_transport_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_internationaal_transport_1990
+- label: indirecte_emissies
+  color: "#C2185B"
+  order_by: 270
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_klimaattafel_indirecte_emissies_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_indirecte_emissies_1990
+
+# target line present and future net total GHG emissions
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 310
+  group:
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '1'
+  gquery: direct_emissions_klimaattafel_total_ghg_present_for_direct_emissions_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_total_ghg_present
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 320
+  group:
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '2'
+  gquery: direct_emissions_klimaattafel_total_ghg_future_for_direct_emissions_chart
+  is_1990: false
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_total_ghg_future
+
+# target line 1990 total GHG emissions
+# order_by should be higher than present and future target line to show correct totals in table view
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 330
+  group:
+  show_at_first: false
+  is_target_line: true
+  target_line_position: '0'
+  gquery: direct_emissions_klimaattafel_total_ghg_1990_for_direct_emissions_chart
+  is_1990: true
+  hide_label: true
+  dependent_on:
+  output_element_key: direct_emissions_per_klimaattafel_category
+  key: direct_emissions_per_klimaattafel_category_total_ghg_1990

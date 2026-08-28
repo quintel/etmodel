@@ -170,6 +170,26 @@
   requires_merit_order: false
   output_element_type_name: category_bar
 - under_construction: false
+  unit: 'GJ/#'
+  percentage: false
+  group: Demand
+  sub_group: households
+  show_point_label: false
+  growth_chart: false
+  key: residential_heating_demand_per_residence
+  max_axis_value:
+  min_axis_value:
+  hidden: false
+  requires_merit_order: false
+  dependent_on: ''
+  output_element_type_name: category_bar
+  config:
+    serie_selections:
+    - apartment
+    - fully_detached
+    - semi_detached
+    - terraced
+- under_construction: false
   unit: PJ
   percentage: false
   group: Demand
@@ -184,7 +204,15 @@
   dependent_on: ''
   output_element_type_name: category_bar
   config:
-    show_total_row: false
+    show_total_row: true
+    serie_selections:
+    - bar
+    - before_1945
+    - '1945_1964'
+    - '1965_1984'
+    - '1985_2004'
+    - 2005_present
+    - future
 - under_construction: false
   unit: PJ
   percentage: false

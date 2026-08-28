@@ -146,51 +146,53 @@ en:
     households_useful_demand_for_cooling:
       title: Cooling
       short_description: ''
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Cooling).\r\n<br/><br/>\r\n\r\nPlease indicate
-        how you expect the demand for cooling per residence to change. This is mainly
-        determined by growth in prosperity. As people become richer, their energy
-        consumption inevitably increases as they live in larger houses, install airconditioning,
-        etc.\r\n"
-    households_useful_demand_heat_per_person:
-      title: Heating demand
-      short_description: ''
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Space heating slide). \r\n<br/>\r\n<br/>\r\nHere
-        you indicate how you expect heat demand per residence to change. As people
-        become wealthier, they start living in larger houses which increases the energy
-        demand for space heating. "
+      description: |
+        Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen under <a href="/scenario/demand/households/cooling">Cooling</a>.
+        <br/><br/>
+        Here you indicate the change in demand for cooling per residence due to behaviour.
+        This is mainly determined by growth in prosperity. As people become richer, their energy
+        consumption increases as they live in larger houses, install airconditioning,
+        etc.
     households_useful_demand_hot_water_share:
       title: Hot water
       short_description: ''
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Hot water slide). \r\n<br/>\r\n<br/>\r\nHere
-        you indicate how you expect demand for hot water per person to change. This
-        is mainly determined by growth in prosperity."
+      description: |
+        Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen under <a href="/scenario/demand/households/space-heating-and-hot-water">Space heating & hot water</a>.
+        <br/><br/>
+        Here you indicate the change in demand for hot water per person due to behaviour.
+        This is mainly determined by growth in prosperity.
     households_useful_demand_cooking_per_person:
       title: Cooking
       short_description:
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Cooking slide). \r\n<br/>\r\n<br/>\r\nHere
-        you can indicate how you expect the demand for cooking per person to change.
+      description: |
+        Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen under <a href="/scenario/demand/households/cooking">Cooking</a>.
+        <br/><br/>
+        Here you indicate the change in demand for cooking per person due to behaviour.
         As people become wealthier, they go out for dinner or take away food more
-        often, resulting in a lower demand for cooking at home."
+        often, resulting in a lower demand for cooking at home.
     households_useful_demand_electric_appliances:
       title: Electric appliances
       short_description:
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Appliances slide). \r\n<br/>\r\n<br/>\r\nHere
-        you indicate how you expect demand for appliances per person to change. This
-        is mainly determined by growth in prosperity. As people become richer, they
-        tend to possess more electric appliances."
+      description: |
+        Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen under <a href="/scenario/demand/households/appliances">Appliances</a>.
+        <br/><br/>
+        Here you indicate the change in demand for appliances per person due to behaviour.
+        This is mainly determined by growth in prosperity. As people become richer, they
+        tend to possess more electric appliances.
     households_useful_demand_lighting:
       title: Lighting
       short_description:
-      description: "Note: these changes in energy demand do <strong>not</strong> depend
-        on the technologies chosen below (Lighting slide). \r\n<br/>\r\n<br/>\r\nHere
-        you indicate how you expect demand for lighting per person to change. This
-        is mainly determined by growth in prosperity. As people become richer, they
-        start living in larger houses that require more lighting."
+      description: |
+        Note: these changes in energy demand do <strong>not</strong> depend
+        on the technologies chosen under <a href="/scenario/demand/households/lighting">Lighting</a>.
+        <br/><br/>
+        Here you indicate the change in demand for lighting per person due to behaviour.
+        This is mainly determined by growth in prosperity. As people become richer, they
+        start living in larger houses that require more lighting.
     households_cooling_heatpump_surface_water_water_ts_electricity_share:
       title: Aquathermal heat pump with TS (surface water)
       short_description: ''

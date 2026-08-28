@@ -135,6 +135,11 @@ $chart-header-icon-color: #333
       svg, .legend, .d3-chart-select
         display: none
 
+    // A category bar chart keeps its series dropdown while empty: the
+    // selection is itself a likely reason for there being no data to show.
+    .empty.category_bar select.d3-chart-select
+      display: block
+
     select.d3-chart-select
       float: right
       margin: 10px 0 10px 10px

@@ -180,6 +180,10 @@ en:
         The sliders below set the reduction in space heating demand due to improved insulation. Go
         to the section <a href="/scenario/demand/households/behaviour">behaviour</a>
         to set changes in space heating demand due to behavioural changes.
+        <br/><br/>
+        The default chart shows the space heating demand per residence. You can also view the space heating demand of the total housing stock,
+        either by <a href="#" class="open_chart" data-chart-key="residential_heating_demand_by_type" data-chart-location="side">residence type</a>
+        or by <a href="#" class="open_chart" data-chart-key="residential_heating_demand_by_period" data-chart-location="side">construction period</a>.
     demand_households_lighting:
       title: Lighting
       short_description:

@@ -93,6 +93,12 @@ compiledUnits['GJ/#'] = {
   power: POWERS[8]
 }
 
+compiledUnits['GJ/WEQ'] = {
+  name: 'GJ/WEQ',
+  base: { name: 'GJ/WEQ', i18n: 'GJ/WEQ' },
+  power: POWERS[8]
+}
+
 # ------------------------------------------------------------------------------
 
 class @Quantity

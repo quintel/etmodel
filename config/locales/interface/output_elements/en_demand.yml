@@ -489,10 +489,14 @@ en:
         divided by the typical surface area per residence. The typical surface area per residence
         can differ per region. The source data can be found via the
         <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
-    residential_heating_demand:
-      title: Residential space heating demand
+    residential_heating_demand_by_type:
+      title: Residential space heating demand by building type
       description: |
-        This bar chart shows the useful demand for space heating per residence type and building period.
+        This bar chart shows the useful demand for space heating per residence type, differentiated by construction period.
+    residential_heating_demand_by_period:
+      title: Residential space heating demand by construction period
+      description: |
+        This bar chart shows the useful demand for space heating per construction period, differentiated by residence type.
     residential_heating_demand_per_residence:
       title: Residential space heating demand per residence
       description: |
@@ -506,6 +510,10 @@ en:
         This differs from \"final demand\" shown in some of the other graphs in the
         model, which is the input from energy sources before it's converted to it's
         useful purpose.
+    buildings_heating_demand_per_building:
+      title: Buildings heating demand per building
+      description: |
+        This bar chart shows the useful space heating demand per building, for existing and new buildings.
     residential_heating_technologies:
       title: Number of residences per space heating technology
       description: |

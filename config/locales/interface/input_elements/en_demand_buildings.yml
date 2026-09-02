@@ -29,42 +29,46 @@ en:
       title: New buildings
       short_description: ''
       description: |
-        This slider sets the percentage by which space heating demand of new buildings decreases
-        relative to the present year value, due to improved insulation. At 0%, insulation levels
-        remain unchanged. At 100%, space heating demand is fully eliminated. This slider also affects
-        the insulation costs for buildings.
+        This slider sets the percentage reduction in space heating demand relative to the present year
+        from improved insulation, for new buildings.
+        0% = no change, 100% = space heating fully eliminated. Also affects insulation costs.
+        <br/><br/>
+        The default chart shows space heating demand per building. Total building stock demand
+        can also be viewed in <a href="#" class="open_chart" data-chart-key="buildings_heating_demand" data-chart-location="side">this chart</a>.
         <br><br>
-        Related sliders that influence the energy use for heating buildings:
+        Related sliders:
         <br>
-        • <a href="/scenario/demand/buildings/behaviour"> Behaviour</a> - Influences the heating behaviour of buildings
+        • <a href="/scenario/demand/buildings/behaviour">Behaviour</a> - heating behaviour
         <br>
-        • <a href="/scenario/demand/buildings/building-stock">Building stock</a> - sets the number of buildings
+        • <a href="/scenario/demand/buildings/building-stock">Building stock</a> - number of buildings
         <br>
-        • <a href="/scenario/demand/buildings/space-heating-technologies">Space heating technologies</a> - sets the share of different space heating technologies in buildings
+        • <a href="/scenario/demand/buildings/space-heating-technologies">Space heating technologies</a> - heating technology mix
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
+        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - future temperature
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - weather year used
     buildings_insulation_existing_buildings:
       title: Existing buildings
       short_description:
       description: |
-        This slider sets the percentage by which space heating demand of existing buildings decreases
-        relative to the present year value, due to improved insulation. At 0%, insulation levels
-        remain unchanged. At 100%, space heating demand is fully eliminated. This slider also affects
-        the insulation costs for buildings.
+        This slider sets the percentage reduction in space heating demand relative to the present year
+        from improved insulation, for existing buildings.
+        0% = no change, 100% = space heating fully eliminated. Also affects insulation costs.
+        <br/><br/>
+        The default chart shows space heating demand per building. Total building stock demand
+        can also be viewed in <a href="#" class="open_chart" data-chart-key="buildings_heating_demand" data-chart-location="side">this chart</a>.
         <br><br>
-        Related sliders that also influence the energy use for heating buildings:
+        Related sliders:
         <br>
-        • <a href="/scenario/demand/buildings/behaviour">Behaviour</a> - Influences the heating behaviour of buildings
+        • <a href="/scenario/demand/buildings/behaviour">Behaviour</a> - heating behaviour
         <br>
-        • <a href="/scenario/demand/buildings/building-stock">Building stock</a> - sets the number of buildings
+        • <a href="/scenario/demand/buildings/building-stock">Building stock</a> - number of buildings
         <br>
-        • <a href="/scenario/demand/buildings/space-heating-technologies">Space heating technologies</a> - sets the share of different space heating technologies in buildings
+        • <a href="/scenario/demand/buildings/space-heating-technologies">Space heating technologies</a> - heating technology mix
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - changes future outdoor temperature
+        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Outdoor temperature</a> - future temperature
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - changes the weather year used for the scenario
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weather years</a> - weather year used
     buildings_space_heating_behaviour:
       title: Space heating
       short_description:

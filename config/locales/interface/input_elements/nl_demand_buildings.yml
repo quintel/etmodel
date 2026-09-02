@@ -31,42 +31,46 @@ nl:
       title: Nieuwe gebouwen
       short_description:
       description: |
-        Dit schuifje stelt het percentage in waarmee de ruimteverwarmingsvraag van nieuwe gebouwen
-        afneemt ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van gebouwen.
+        Dit schuifje stelt het percentage in waarmee de ruimteverwarmingsvraag afneemt ten opzichte
+        van het startjaar door verbeterde isolatie, voor nieuwe gebouwen.
+        0% = geen verandering, 100% = warmtevraag voor ruimteverwarming volledig verdwenen. Beïnvloedt ook de isolatiekosten.
+        <br/><br/>
+        De standaardgrafiek toont de warmtevraag voor ruimteverwarming per gebouw. De totale warmtevraag
+        van de gebouwvoorraad kan ook worden bekeken in <a href="#" class="open_chart" data-chart-key="buildings_heating_demand" data-chart-location="side">deze grafiek</a>.
         <br><br>
-        Andere schuifjes die invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
+        Gerelateerde schuifjes:
         <br>
-        • <a href="/scenario/demand/buildings/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van nieuwe gebouwen
+        • <a href="/scenario/demand/buildings/behaviour">Gedrag</a> - gedrag bij ruimteverwarming
         <br>
-        • <a href="/scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - stelt het aantal gebouwen in
+        • <a href="/scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - aantal gebouwen
         <br>
-        • <a href="/scenario/demand/buildings/space-heating-technologies">Ruimteverwarmingstechnologieën</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in gebouwen in
+        • <a href="/scenario/demand/buildings/space-heating-technologies">Ruimteverwarmingstechnologieën</a> - technologiemix
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
+        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - toekomstige temperatuur
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - gebruikte weerjaar
     buildings_insulation_existing_buildings:
       title: Bestaande gebouwen
       short_description:
       description: |
-        Dit schuifje stelt het percentage in waarmee de ruimteverwarmingsvraag van bestaande gebouwen
-        afneemt ten opzichte van het startjaar, als gevolg van verbeterde isolatie.
-        Bij 0% blijft de isolatiegraad ongewijzigd. Bij 100% verdwijnt de warmtevraag voor ruimteverwarming volledig.
-        Dit schuifje beïnvloedt ook de isolatiekosten van gebouwen.
+        Dit schuifje stelt het percentage in waarmee de ruimteverwarmingsvraag afneemt ten opzichte
+        van het startjaar door verbeterde isolatie, voor bestaande gebouwen.
+        0% = geen verandering, 100% = warmtevraag voor ruimteverwarming volledig verdwenen. Beïnvloedt ook de isolatiekosten.
+        <br/><br/>
+        De standaardgrafiek toont de warmtevraag voor ruimteverwarming per gebouw. De totale warmtevraag
+        van de gebouwvoorraad kan ook worden bekeken in <a href="#" class="open_chart" data-chart-key="buildings_heating_demand" data-chart-location="side">deze grafiek</a>.
         <br><br>
-        Andere schuifjes die ook invloed hebben op het energiegebruik voor het verwarmen van gebouwen:
+        Gerelateerde schuifjes:
         <br>
-        • <a href="/scenario/demand/buildings/behaviour">Gedrag</a> - beïnvloedt het gedrag bij ruimteverwarming van bestaande gebouwen
+        • <a href="/scenario/demand/buildings/behaviour">Gedrag</a> - gedrag bij ruimteverwarming
         <br>
-        • <a href="/scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - stelt het aantal gebouwen in
+        • <a href="/scenario/demand/buildings/building-stock">Gebouwvoorraad</a> - aantal gebouwen
         <br>
-        • <a href="/scenario/demand/buildings/space-heating-technologies">Ruimteverwarmingstechnologieën</a> - stelt het aandeel van verschillende ruimteverwarmingstechnologieën in gebouwen in
+        • <a href="/scenario/demand/buildings/space-heating-technologies">Ruimteverwarmingstechnologieën</a> - technologiemix
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - verandert de toekomstige buitentemperatuur
+        • <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours">Buitentemperatuur</a> - toekomstige temperatuur
         <br>
-        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - verandert het weerjaar dat voor het scenario wordt gebruikt
+        • <a href="/scenario/flexibility/flexibility_weather/weather-years">Weerjaren</a> - gebruikte weerjaar
     buildings_space_heating_behaviour:
       title: Ruimteverwarming
       short_description:

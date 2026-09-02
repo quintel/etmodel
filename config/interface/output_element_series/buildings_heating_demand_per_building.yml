@@ -6,7 +6,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: useful_demand_buildings_present_per_building
+  gquery: useful_demand_buildings_present_per_building_bar
   is_1990:
   dependent_on:
   output_element_key: buildings_heating_demand_per_building
@@ -18,7 +18,7 @@
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: useful_demand_buildings_future_per_building
+  gquery: useful_demand_buildings_future_per_building_bar
   is_1990:
   dependent_on:
   output_element_key: buildings_heating_demand_per_building

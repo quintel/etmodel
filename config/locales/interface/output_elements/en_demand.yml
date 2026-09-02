@@ -506,14 +506,17 @@ en:
       title: Buildings heating demand
       description: |
         This bar chart shows the useful heating demand for buildings per building period.
-        The \"useful demand\", which is the energy actually used for a given purpose.
-        This differs from \"final demand\" shown in some of the other graphs in the
+        The <i>useful demand</i>, which is the energy actually used for a given purpose.
+        This differs from <i>final demand</i> shown in some of the other graphs in the
         model, which is the input from energy sources before it's converted to it's
         useful purpose.
     buildings_heating_demand_per_building:
       title: Buildings heating demand per building
       description: |
-        This bar chart shows the useful space heating demand per building, for existing and new buildings.
+        This bar chart shows the useful space heating demand per residence equivalent, for existing and new buildings. <br/><br/>
+        A residence equivalent is an amount of surface area that corresponds to the typical surface area of one residence.
+        The typical surface area per residence can differ per region. The source data can be found via the
+        <a href="/scenario/data/data_sources/present-year-data">Results & data</a> section.
     residential_heating_technologies:
       title: Number of residences per space heating technology
       description: |

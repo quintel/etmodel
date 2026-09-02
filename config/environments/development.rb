@@ -50,6 +50,13 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # ETLauncher sets this. Without it, development logs go to log/development.log
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = ::Logger::Formatter.new
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  end
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

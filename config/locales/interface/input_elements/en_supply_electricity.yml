@@ -72,11 +72,11 @@ en:
     capacity_of_energy_chp_combined_cycle_hydrogen:
       title: Hydrogen CCGT CHP
       short_description:
-      description: 'This slider adjusts the total electric capacity of combined cycle gas turbine
+      description: |
+        This slider adjusts the total electric capacity of hydrogen-fired combined cycle gas turbine
         (CCGT) plants with combined heat and power (CHP).
-        At the moment, these turbines are not used (yet) on a large scale. Because
-        CHP combined cycle hydrogen plant technology is very similar to the CHP combined cycle
-        gas plants, we assume that both plants have the same specifications. '
+        Currently, this technology is not (yet) operational on large scale. In terms of operation,
+        the technology is similar to the gas-fired CCGT CHP.
     capacity_of_energy_power_geothermal:
       title: Geothermal electric
       short_description: ''

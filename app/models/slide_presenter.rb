@@ -30,11 +30,7 @@ class SlidePresenter
 
   private
 
-  def path
-    [translate_item(:tabs, @slide.sidebar_item.tab),
-     translate_item(:sidebar_items, @slide.sidebar_item),
-     translate_item(:slides, @slide)]
-  end
+
 
   def self.sidebar_item_position(slide)
     if parent_item = slide.sidebar_item.parent_key
@@ -43,6 +39,22 @@ class SlidePresenter
     else
       slide.sidebar_item.position
     end
+  end
+
+  def path
+    [translate_item(:tabs, @slide.sidebar_item.tab),
+     sidebar_item_translation,
+     translate_item(:slides, @slide)]
+  end
+
+  def sidebar_item_translation
+    translation = translate_item(:sidebar_items, @slide.sidebar_item)
+
+    prefix = if parent_item = @slide.sidebar_item.parent_key
+      translate_item(:sidebar_items, SidebarItem.find_by_key(parent_item))
+    end
+
+    prefix ? "#{prefix} - #{translation}" : translation
   end
 
   def inputs

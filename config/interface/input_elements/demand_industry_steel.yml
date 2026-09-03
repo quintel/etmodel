@@ -2,7 +2,7 @@
 - key: industry_steel_production
   step_value: 0.1
   unit: "%"
-  position: 100
+  position: 1
   slide_key: demand_industry_steel
 
 - key: industry_steel_blastfurnace_bof_share
@@ -10,7 +10,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: production_route
-  position: 200
+  position: 2
   slide_key: demand_industry_steel
   related_node: industry_steel_blastfurnace_bof_production
 - key: industry_steel_dri_network_gas_share
@@ -18,7 +18,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: production_route
-  position: 205
+  position: 3
   slide_key: demand_industry_steel
   related_node: industry_steel_dri_network_gas_production
 - key: industry_steel_dri_hydrogen_share
@@ -26,7 +26,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: production_route
-  position: 210
+  position: 4
   slide_key: demand_industry_steel
   related_node: industry_steel_dri_hydrogen_production
 - key: industry_steel_cyclonefurnace_bof_share
@@ -34,7 +34,7 @@
   step_value: 0.1
   unit: "%"
   interface_group: production_route
-  position: 215
+  position: 5
   slide_key: demand_industry_steel
   related_node: industry_steel_cyclonefurnace_bof_production
 - key: industry_steel_scrap_hbi_eaf_share
@@ -42,14 +42,14 @@
   step_value: 0.1
   unit: "%"
   interface_group: production_route
-  position: 220
+  position: 6
   slide_key: demand_industry_steel
   related_node: industry_steel_scrap_hbi_eaf_production
 
 - key: industry_steel_cyclonefurnace_bof_wood_pellets_share
   step_value: 0.1
   unit: "%"
-  position: 300
+  position: 7
   interface_group: biomass_input
   slide_key: demand_industry_steel
   related_node: industry_steel_cyclonefurnace_bof_production

@@ -13,7 +13,7 @@ class SlidePresenter
     slides =
       slides.sort_by do |slide|
         [slide.sidebar_item.tab.position,
-         slide.sidebar_item.position,
+         SlidePresenter.sidebar_item_position(slide),
          slide.position]
       end
 
@@ -34,6 +34,15 @@ class SlidePresenter
     [translate_item(:tabs, @slide.sidebar_item.tab),
      translate_item(:sidebar_items, @slide.sidebar_item),
      translate_item(:slides, @slide)]
+  end
+
+  def self.sidebar_item_position(slide)
+    if parent_item = slide.sidebar_item.parent_key
+      SidebarItem.find_by_key(parent_item).position +
+        slide.sidebar_item.position / 10
+    else
+      slide.sidebar_item.position
+    end
   end
 
   def inputs

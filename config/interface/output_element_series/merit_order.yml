@@ -23,6 +23,30 @@
   dependent_on:
   output_element_key: merit_order
   key: gas_chp_ccgt_mt_merit_order
+- label: hydrogen_chp_ccgt_ht
+  color: "#5DADE2"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_chp_ccgt_ht_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: hydrogen_chp_ccgt_ht_merit_order
+- label: hydrogen_chp_ccgt_mt
+  color: "#2E86C1"
+  order_by: 1
+  group:
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: hydrogen_chp_ccgt_mt_merit_order
+  is_1990:
+  dependent_on:
+  output_element_key: merit_order
+  key: hydrogen_chp_ccgt_mt_merit_order
 - label: coal_chp_pwd_ht
   color: "#737373"
   order_by: 1

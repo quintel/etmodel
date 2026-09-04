@@ -113,6 +113,7 @@ en:
         dsr_load_shifting_industry_other_ict_output_curve: "Central ICT industry decreased demand"
         dsr_load_shifting_industry_metals_output_curve: "Metal industry decreased demand"
         energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas CCGT CHP'
+        energy_chp_combined_cycle_hydrogen_steam_hot_water_output_curve: 'Hydrogen CCGT CHP'
         energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas CHP'
         energy_chp_local_engine_network_gas_steam_hot_water_output_curve: 'Gas engine CHP'
         energy_chp_local_wood_pellets_must_run_in_mekko_of_collective_heat: 'Biomass CHP (must-run)'
@@ -559,6 +560,7 @@ en:
         energetic_use: "Energetic use"
         energy: "Energy"
         energy_chp_combined_cycle_network_gas: 'Gas CCGT CHP'
+        energy_chp_combined_cycle_hydrogen: 'Hydrogen CCGT CHP'
         energy_chp_supercritical_waste_mix: 'Waste CHP'
         energy_chp_supercritical_ccs_waste_mix: 'Waste CHP + CCS'
         energy_chp_ultra_supercritical_coal: 'Pulverized coal CHP'
@@ -697,6 +699,8 @@ en:
         gas_ccgt_ccs: "Gas CCGT + CCS"
         gas_chp_ccgt_ht: "Gas CCGT CHP (HT)"
         gas_chp_ccgt_mt: "Gas CCGT CHP (MT)"
+        hydrogen_chp_ccgt_ht: "Hydrogen CCGT CHP (HT)"
+        hydrogen_chp_ccgt_mt: "Hydrogen CCGT CHP (MT)"
         gas_chp_engine_ht: "Gas motor CHP (HT)"
         gas_chp_engine_mt: "Gas motor CHP (MT)"
         gas_chp_large: "Large-scale gas CHP"
@@ -1577,6 +1581,7 @@ en:
         energy_chp_local_engine_network_gas_in_mekko_of_collective_heat: "Gas motor CHP"
         buildings_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Buildings final demand"
         energy_chp_combined_cycle_network_gas_in_mekko_of_collective_heat: "Gas CCGT CHP"
+        energy_chp_combined_cycle_hydrogen_in_mekko_of_collective_heat: "Hydrogen CCGT CHP"
         energy_chp_local_engine_biogas_in_mekko_of_collective_heat: "Biogas CHP"
         agriculture_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Agriculture final demand"
         energy_heat_burner_coal_in_mekko_of_collective_heat: "Coal heater"

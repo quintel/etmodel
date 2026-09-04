@@ -169,6 +169,18 @@
   dependent_on:
   output_element_key: hydrogen_demand
   key: energy_power_combined_cycle_hydrogen_hydrogen_demand
+- label: energy_chp_combined_cycle_hydrogen
+  color: "#36B2E2"
+  order_by: 57
+  group: ''
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: energy_chp_combined_cycle_hydrogen_hydrogen_input_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: hydrogen_demand
+  key: energy_chp_combined_cycle_hydrogen_hydrogen_demand
 - label: industry_final_demand_for_chemical_fertilizers_hydrogen_non_energetic
   color: "#74B9FF"
   order_by: 60

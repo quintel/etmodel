@@ -492,10 +492,14 @@ nl:
         typische vloeroppervlak per woning kan verschillen per regio. De brondata kan worden
         gevonden via de sectie
         <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
-    residential_heating_demand:
-      title: Ruimteverwarmingsvraag woningen
+    residential_heating_demand_by_type:
+      title: Ruimteverwarmingsvraag woningen naar woningtype
       description: |
-        Deze grafiek toont de warmtevraag voor ruimteverwarming per woningtype en bouwperiode.
+        Deze grafiek toont de totale warmtevraag voor ruimteverwarming per woningtype, uitgesplitst naar bouwperiode.
+    residential_heating_demand_by_period:
+      title: Ruimteverwarmingsvraag woningen naar bouwperiode
+      description: |
+        Deze grafiek toont de totale warmtevraag voor ruimteverwarming per bouwperiode, uitgesplitst naar woningtype.
     residential_heating_demand_per_residence:
       title: Ruimteverwarmingsvraag per woning
       description: |
@@ -504,11 +508,20 @@ nl:
       title: Warmtevraag gebouwen
       description: |
         Deze grafiek toont het nuttig gebruik van warmte per bouwperiode van de gebouwen.
-        \"Nuttig gebruik\" betekent dat het de energie toont die nuttig gebruikt wordt voor een bepaald
-        doel. Dit verschilt van \"finaal gebruik\", zoals in sommige andere grafieken
+        <i>Nuttig gebruik</i> betekent dat het de energie toont die nuttig gebruikt wordt voor een bepaald
+        doel. Dit verschilt van <i>finaal gebruik</i>, zoals in sommige andere grafieken
         in het model. Dit zijn namelijk de verschillende soorten energie die gebruikt
         worden om tot het nuttige gebruik te komen, waarbij ook een deel van de energie
         verloren gaat aan omzetting.
+    buildings_heating_demand_per_building:
+      title: Warmtevraag per gebouw
+      description: |
+        Deze grafiek toont de nuttige warmtevraag voor ruimteverwarming per gebouw (uitgedrukt in
+        woningequivalenten), voor bestaande en nieuwe gebouwen. <br/><br/>
+        Een woningequivalent (WEQ) is een hoeveelheid vloeroppervlak die overeenkomt met het typische vloeroppervlak van één woning.
+        Het typische vloeroppervlak per woning kan verschillen per regio.
+        De brondata kan worden gevonden via de sectie
+        <a href="/scenario/data/data_sources/present-year-data">Resultaten & data</a>.
     residential_heating_technologies:
       title: Aantal woningen per ruimteverwarmingstechnologie
       description: |

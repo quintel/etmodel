@@ -85,6 +85,18 @@
   dependent_on:
   output_element_key: heat_network_production_mt
   key: energy_chp_combined_cycle_network_gas_mt_steam_hot_water_output_curve_heat_network_production
+- label: energy_chp_combined_cycle_hydrogen_steam_hot_water_output_curve
+  color: "#6CB4EE"
+  order_by: 305
+  group:
+  show_at_first: false
+  is_target_line: false
+  target_line_position:
+  gquery: energy_chp_combined_cycle_hydrogen_mt_steam_hot_water_output_curve
+  is_1990: false
+  dependent_on:
+  output_element_key: heat_network_production_mt
+  key: energy_chp_combined_cycle_hydrogen_mt_steam_hot_water_output_curve_heat_network_production
 - label: energy_chp_local_engine_biogas_steam_hot_water_output_curve
   color: "#CE8814"
   order_by: 310

@@ -95,7 +95,7 @@ en:
         to current costs. These costs are likely to follow developments for coal-fired
         power plants.
     om_costs_combustion_hydrogen_plant:
-      title: O&M costs hydrogen plant
+      title: O&M costs hydrogen plants
       short_description: ''
       description: "This slider sets the expected change in operational and maintenance
         costs for a hydrogen-fired power plant (excluding fuel costs). Costs are compared to
@@ -866,11 +866,11 @@ en:
     efficiency_industry_chp_combined_cycle_gas_power_fuelmix_electricity:
       title: Gas CCGT CHP - electricity
       short_description: ''
-      description: "This slider sets the future efficiency of electricity production from gas CHP CCGT in industry."
+      description: "This slider sets the future efficiency of electricity production from gas CCGT CHP in industry."
     efficiency_industry_chp_combined_cycle_gas_power_fuelmix_heat:
       title: Gas CCGT CHP - heat
       short_description: ''
-      description: "This slider sets the future efficiency of heat production from gas CHP CCGT in industry."
+      description: "This slider sets the future efficiency of heat production from gas CCGT CHP in industry."
     efficiency_industry_chp_engine_gas_power_fuelmix_electricity:
       title: Gas motor CHP - electricity
       short_description: ''
@@ -988,6 +988,16 @@ en:
       short_description:
       description: |
         This slider sets the future efficiency of electricity production from hydrogen turbine CHPs in industry.
+    efficiency_energy_chp_combined_cycle_hydrogen_electricity:
+      title: Hydrogen CCGT CHP - electricity
+      short_description:
+      description: |
+        This slider sets the future efficiency of electricity production from hydrogen CCGT CHPs in the energy sector.
+    efficiency_energy_chp_combined_cycle_hydrogen_heat:
+      title: Hydrogen CCGT CHP - heat
+      short_description:
+      description: |
+        This slider sets the future efficiency of heat production from hydrogen CCGT CHPs in the energy sector.
     efficiency_industry_chp_turbine_hydrogen_heat:
       title: Hydrogen turbine CHP (industry) - heat
       short_description:

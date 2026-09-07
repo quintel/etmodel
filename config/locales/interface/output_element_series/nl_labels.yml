@@ -121,6 +121,7 @@ nl:
         dsr_load_shifting_industry_other_ict_output_curve: "Centrale ICT industrie verlaagd vraag"
         dsr_load_shifting_industry_metals_output_curve: "Metaal industrie verlaagde vraag"
         energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas STEG WKK'
+        energy_chp_combined_cycle_hydrogen_steam_hot_water_output_curve: 'Waterstof STEG WKK'
         energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas-WKK'
         energy_chp_local_engine_network_gas_steam_hot_water_output_curve: 'Gasmotor-WKK '
         energy_chp_local_wood_pellets_must_run_in_mekko_of_collective_heat: 'Biomassa-WKK (niet-regelbaar)'
@@ -534,6 +535,7 @@ nl:
         energetic_use: "Energetisch gebruik"
         energy: "Energie"
         energy_chp_combined_cycle_network_gas: 'Gas STEG WKK'
+        energy_chp_combined_cycle_hydrogen: 'Waterstof STEG WKK'
         energy_chp_supercritical_waste_mix: 'Afval-WKK'
         energy_chp_supercritical_ccs_waste_mix: 'Afval-WKK + CCS'
         energy_chp_ultra_supercritical_coal: 'Poederkolen-WKK'
@@ -705,6 +707,8 @@ nl:
         gas: "Gas"
         gas_chp_ccgt_ht: "Gas STEG WKK (HT)"
         gas_chp_ccgt_mt: "Gas CCGT WKK (MT)"
+        hydrogen_chp_ccgt_ht: "Waterstof STEG WKK (HT)"
+        hydrogen_chp_ccgt_mt: "Waterstof STEG WKK (MT)"
         gas_chp_engine_ht: "Gasmotor-WKK (HT)"
         gas_chp_engine_mt: "Gasmotor-WkK (MT)"
         gas_ccgt: "Gas STEG"
@@ -923,6 +927,7 @@ nl:
         hydrogen_ccgt: "Waterstofcentrale (STEG)"
         hydrogen_to_power: "Waterstofcentrales"
         hydrogen_to_heat: "Waterstofketel"
+        hydrogen_chp_for_electricity_network_mekko: "Waterstof-WKK"
         energy_hydrogen_storage: "Waterstofopslag (gestapeld)"
         energy_hydrogen_biomass_gasification: "Biomassavergassing"
         energy_hydrogen_biomass_gasification_ccs: "Biomassavergassing CCS"
@@ -1575,6 +1580,7 @@ nl:
         energy_chp_local_engine_network_gas_in_mekko_of_collective_heat: "Gasmotor-WKK"
         buildings_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Gebouwen eindgebruik"
         energy_chp_combined_cycle_network_gas_in_mekko_of_collective_heat: "Gas STEG WKK"
+        energy_chp_combined_cycle_hydrogen_in_mekko_of_collective_heat: "Waterstof STEG WKK"
         energy_chp_local_engine_biogas_in_mekko_of_collective_heat: "Biogas-WKK"
         agriculture_final_demand_steam_hot_water_in_mekko_of_collective_heat: "Landbouw eindgebruik"
         energy_heat_burner_coal_in_mekko_of_collective_heat: "Kolenketel"

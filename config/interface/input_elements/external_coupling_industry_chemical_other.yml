@@ -119,10 +119,18 @@
   share_group: ''
   interface_group: external_coupling_industry_chemical_other_general
   coupling_icon: true
+- key: external_coupling_emissions_energy_chemical_other_transformation_co2
+  step_value: 0.1
+  unit: kT
+  position: 220
+  slide_key: demand_industry_chemical_other
+  share_group: ''
+  interface_group: external_coupling_industry_chemical_other_general
+  coupling_icon: true
 - key: external_coupling_industry_chemical_other_total_non_energetic
   step_value: 0.001
   unit: '%'
-  position: 220
+  position: 225
   slide_key: demand_industry_chemical_other
   share_group: ''
   interface_group: external_coupling_industry_chemical_other_general
@@ -130,14 +138,6 @@
 - key: external_coupling_industry_chemical_other_p2h_capacity
   step_value: 1.0
   unit: MW
-  position: 225
-  slide_key: demand_industry_chemical_other
-  share_group: ''
-  interface_group: external_coupling_industry_chemical_other_general
-  coupling_icon: true
-- key: external_coupling_emissions_energy_chemical_other_transformation_co2
-  step_value: 0.1
-  unit: kT
   position: 230
   slide_key: demand_industry_chemical_other
   share_group: ''

@@ -5,7 +5,7 @@
   step_value: 0.1
   unit: "%"
   position: 220
-  slide_key: external_coupling_bio_ethanol_production
+  slide_key: costs_bio_ethanol_production
   coupling_icon: true
 - key: external_coupling_bio_ethanol_wet_biomass_input_share
   interface_group: external_coupling_production_bio_ethanol
@@ -13,7 +13,7 @@
   step_value: 0.1
   unit: "%"
   position: 230
-  slide_key: external_coupling_bio_ethanol_production
+  slide_key: costs_bio_ethanol_production
   coupling_icon: true
 - key: external_coupling_bio_ethanol_bio_ethanol_output_share
   interface_group: external_coupling_production_bio_ethanol
@@ -21,7 +21,7 @@
   step_value: 0.1
   unit: "%"
   position: 240
-  slide_key: external_coupling_bio_ethanol_production
+  slide_key: costs_bio_ethanol_production
   coupling_icon: true
 - key: external_coupling_bio_ethanol_loss_output_share
   interface_group: external_coupling_production_bio_ethanol
@@ -29,7 +29,7 @@
   step_value: 0.1
   unit: "%"
   position: 250
-  slide_key: external_coupling_bio_ethanol_production
+  slide_key: costs_bio_ethanol_production
   coupling_icon: true
 - key: external_coupling_bio_ethanol_to_jet_bio_ethanol_input_share
   interface_group: external_coupling_production_bio_ethanol_to_jet
@@ -37,7 +37,7 @@
   step_value: 0.1
   unit: "%"
   position: 260
-  slide_key: external_coupling_bio_ethanol_to_jet
+  slide_key: costs_bio_ethanol_to_jet
   coupling_icon: true
 - key: external_coupling_bio_ethanol_to_jet_hydrogen_input_share
   interface_group: external_coupling_production_bio_ethanol_to_jet
@@ -45,7 +45,7 @@
   step_value: 0.1
   unit: "%"
   position: 270
-  slide_key: external_coupling_bio_ethanol_to_jet
+  slide_key: costs_bio_ethanol_to_jet
   coupling_icon: true
 - key: external_coupling_bio_ethanol_to_jet_bio_kerosene_output_share
   interface_group: external_coupling_production_bio_ethanol_to_jet
@@ -53,7 +53,7 @@
   step_value: 0.1
   unit: "%"
   position: 280
-  slide_key: external_coupling_bio_ethanol_to_jet
+  slide_key: costs_bio_ethanol_to_jet
   coupling_icon: true
 - key: external_coupling_bio_ethanol_to_jet_biodiesel_output_share
   interface_group: external_coupling_production_bio_ethanol_to_jet
@@ -61,7 +61,7 @@
   step_value: 0.1
   unit: "%"
   position: 290
-  slide_key: external_coupling_bio_ethanol_to_jet
+  slide_key: costs_bio_ethanol_to_jet
   coupling_icon: true
 - key: external_coupling_bio_ethanol_to_jet_loss_output_share
   interface_group: external_coupling_production_bio_ethanol_to_jet
@@ -69,7 +69,7 @@
   step_value: 0.1
   unit: "%"
   position: 295
-  slide_key: external_coupling_bio_ethanol_to_jet
+  slide_key: costs_bio_ethanol_to_jet
   coupling_icon: true
 - key: external_coupling_biomethanol_to_jet_biomethanol_input_share
   interface_group: external_coupling_production_biomethanol_to_jet
@@ -77,7 +77,7 @@
   step_value: 0.1
   unit: "%"
   position: 300
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_biomethanol_to_jet_hydrogen_input_share
   interface_group: external_coupling_production_biomethanol_to_jet
@@ -85,7 +85,7 @@
   step_value: 0.1
   unit: "%"
   position: 310
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_biomethanol_to_jet_bio_kerosene_output_share
   interface_group: external_coupling_production_biomethanol_to_jet
@@ -93,7 +93,7 @@
   step_value: 0.1
   unit: "%"
   position: 320
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_biomethanol_to_jet_bionaphtha_output_share
   interface_group: external_coupling_production_biomethanol_to_jet
@@ -101,7 +101,7 @@
   step_value: 0.1
   unit: "%"
   position: 330
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_biomethanol_to_jet_loss_output_share
   interface_group: external_coupling_production_biomethanol_to_jet
@@ -109,7 +109,7 @@
   step_value: 0.1
   unit: "%"
   position: 340
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_biogenic_waste_ccs_bio_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs
@@ -117,7 +117,7 @@
   step_value: 0.1
   unit: "%"
   position: 350
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_biogenic_waste_ccs_biodiesel_output_share
   interface_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs
@@ -125,7 +125,7 @@
   step_value: 0.1
   unit: "%"
   position: 360
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_biogenic_waste_ccs_bionaphtha_output_share
   interface_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs
@@ -133,7 +133,7 @@
   step_value: 0.1
   unit: "%"
   position: 370
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_biogenic_waste_ccs_loss_output_share
   interface_group: external_coupling_production_fischer_tropsch_biogenic_waste_ccs
@@ -141,7 +141,7 @@
   step_value: 0.1
   unit: "%"
   position: 380
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_dry_biomass_ccs_bio_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs
@@ -149,7 +149,7 @@
   step_value: 0.1
   unit: "%"
   position: 390
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_dry_biomass_ccs_biodiesel_output_share
   interface_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs
@@ -157,7 +157,7 @@
   step_value: 0.1
   unit: "%"
   position: 400
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_dry_biomass_ccs_bionaphtha_output_share
   interface_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs
@@ -165,7 +165,7 @@
   step_value: 0.1
   unit: "%"
   position: 410
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_dry_biomass_ccs_loss_output_share
   interface_group: external_coupling_production_fischer_tropsch_dry_biomass_ccs
@@ -173,7 +173,7 @@
   step_value: 0.1
   unit: "%"
   position: 420
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_non_biogenic_waste_ccs_diesel_output_share
   interface_group: external_coupling_production_fischer_tropsch_non_biogenic_waste_ccs
@@ -181,7 +181,7 @@
   step_value: 0.1
   unit: "%"
   position: 430
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_non_biogenic_waste_ccs_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_non_biogenic_waste_ccs
@@ -189,7 +189,7 @@
   step_value: 0.1
   unit: "%"
   position: 440
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_non_biogenic_waste_ccs_naphtha_output_share
   interface_group: external_coupling_production_fischer_tropsch_non_biogenic_waste_ccs
@@ -197,7 +197,7 @@
   step_value: 0.1
   unit: "%"
   position: 450
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_non_biogenic_waste_ccs_loss_output_share
   interface_group: external_coupling_production_fischer_tropsch_non_biogenic_waste_ccs
@@ -205,7 +205,7 @@
   step_value: 0.1
   unit: "%"
   position: 455
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_dispatchable_electricity_input_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
@@ -213,7 +213,7 @@
   step_value: 0.1
   unit: "%"
   position: 460
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_dispatchable_hydrogen_input_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
@@ -221,7 +221,7 @@
   step_value: 0.1
   unit: "%"
   position: 470
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_dispatchable_gasoline_output_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
@@ -229,7 +229,7 @@
   step_value: 0.1
   unit: "%"
   position: 480
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_dispatchable_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
@@ -237,7 +237,7 @@
   step_value: 0.1
   unit: "%"
   position: 490
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_dispatchable_loss_output_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
@@ -245,7 +245,7 @@
   step_value: 0.1
   unit: "%"
   position: 495
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_must_run_electricity_input_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_must_run
@@ -253,7 +253,7 @@
   step_value: 0.1
   unit: "%"
   position: 500
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_must_run_hydrogen_input_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_must_run
@@ -261,7 +261,7 @@
   step_value: 0.1
   unit: "%"
   position: 510
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_must_run_gasoline_output_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_must_run
@@ -269,7 +269,7 @@
   step_value: 0.1
   unit: "%"
   position: 520
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_must_run_kerosene_output_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_must_run
@@ -277,7 +277,7 @@
   step_value: 0.1
   unit: "%"
   position: 530
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_must_run_loss_output_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_must_run
@@ -285,7 +285,7 @@
   step_value: 0.1
   unit: "%"
   position: 535
-  slide_key: external_coupling_fischer_tropsch
+  slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fractionation_bio_pyrolysis_oil_bio_pyrolysis_oil_input_share
   interface_group: external_coupling_production_fractionation_bio_pyrolysis_oil
@@ -293,7 +293,7 @@
   step_value: 0.1
   unit: "%"
   position: 540
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_bio_pyrolysis_oil_hydrogen_input_share
   interface_group: external_coupling_production_fractionation_bio_pyrolysis_oil
@@ -301,7 +301,7 @@
   step_value: 0.1
   unit: "%"
   position: 550
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_bio_pyrolysis_oil_steam_hot_water_input_share
   interface_group: external_coupling_production_fractionation_bio_pyrolysis_oil
@@ -309,7 +309,7 @@
   step_value: 0.1
   unit: "%"
   position: 560
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_bio_pyrolysis_oil_bio_kerosene_output_share
   interface_group: external_coupling_production_fractionation_bio_pyrolysis_oil
@@ -317,7 +317,7 @@
   step_value: 0.1
   unit: "%"
   position: 570
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_bio_pyrolysis_oil_bionaphtha_output_share
   interface_group: external_coupling_production_fractionation_bio_pyrolysis_oil
@@ -325,7 +325,7 @@
   step_value: 0.1
   unit: "%"
   position: 580
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_bio_pyrolysis_oil_loss_output_share
   interface_group: external_coupling_production_fractionation_bio_pyrolysis_oil
@@ -333,7 +333,7 @@
   step_value: 0.1
   unit: "%"
   position: 585
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_pyrolysis_oil_hydrogen_input_share
   interface_group: external_coupling_production_fractionation_pyrolysis_oil
@@ -341,7 +341,7 @@
   step_value: 0.1
   unit: "%"
   position: 590
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_pyrolysis_oil_pyrolysis_oil_input_share
   interface_group: external_coupling_production_fractionation_pyrolysis_oil
@@ -349,7 +349,7 @@
   step_value: 0.1
   unit: "%"
   position: 600
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_pyrolysis_oil_steam_hot_water_input_share
   interface_group: external_coupling_production_fractionation_pyrolysis_oil
@@ -357,7 +357,7 @@
   step_value: 0.1
   unit: "%"
   position: 610
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_pyrolysis_oil_kerosene_output_share
   interface_group: external_coupling_production_fractionation_pyrolysis_oil
@@ -365,7 +365,7 @@
   step_value: 0.1
   unit: "%"
   position: 620
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_pyrolysis_oil_naphtha_output_share
   interface_group: external_coupling_production_fractionation_pyrolysis_oil
@@ -373,7 +373,7 @@
   step_value: 0.1
   unit: "%"
   position: 630
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_fractionation_pyrolysis_oil_loss_output_share
   interface_group: external_coupling_production_fractionation_pyrolysis_oil
@@ -381,7 +381,7 @@
   step_value: 0.1
   unit: "%"
   position: 635
-  slide_key: external_coupling_pyrolysis_fractionation
+  slide_key: costs_pyrolysis_fractionation
   coupling_icon: true
 - key: external_coupling_hvo_bio_kerosene_hydrogen_input_share
   interface_group: external_coupling_production_hvo_bio_kerosene
@@ -389,7 +389,7 @@
   step_value: 0.1
   unit: "%"
   position: 640
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_bio_kerosene_network_gas_input_share
   interface_group: external_coupling_production_hvo_bio_kerosene
@@ -397,7 +397,7 @@
   step_value: 0.1
   unit: "%"
   position: 650
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_bio_kerosene_oily_biomass_input_share
   interface_group: external_coupling_production_hvo_bio_kerosene
@@ -405,7 +405,7 @@
   step_value: 0.1
   unit: "%"
   position: 660
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_bio_kerosene_bio_kerosene_output_share
   interface_group: external_coupling_production_hvo_bio_kerosene
@@ -413,7 +413,7 @@
   step_value: 0.1
   unit: "%"
   position: 670
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_bio_kerosene_bionaphtha_output_share
   interface_group: external_coupling_production_hvo_bio_kerosene
@@ -421,7 +421,7 @@
   step_value: 0.1
   unit: "%"
   position: 680
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_bio_kerosene_loss_output_share
   interface_group: external_coupling_production_hvo_bio_kerosene
@@ -429,7 +429,7 @@
   step_value: 0.1
   unit: "%"
   position: 685
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_biodiesel_hydrogen_input_share
   interface_group: external_coupling_production_hvo_biodiesel
@@ -437,7 +437,7 @@
   step_value: 0.1
   unit: "%"
   position: 690
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_biodiesel_oily_biomass_input_share
   interface_group: external_coupling_production_hvo_biodiesel
@@ -445,7 +445,7 @@
   step_value: 0.1
   unit: "%"
   position: 700
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_biodiesel_biodiesel_output_share
   interface_group: external_coupling_production_hvo_biodiesel
@@ -453,7 +453,7 @@
   step_value: 0.1
   unit: "%"
   position: 710
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_biodiesel_bionaphtha_output_share
   interface_group: external_coupling_production_hvo_biodiesel
@@ -461,7 +461,7 @@
   step_value: 0.1
   unit: "%"
   position: 720
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_hvo_biodiesel_loss_output_share
   interface_group: external_coupling_production_hvo_biodiesel
@@ -469,7 +469,7 @@
   step_value: 0.1
   unit: "%"
   position: 730
-  slide_key: external_coupling_hydrotreatment
+  slide_key: costs_hydrotreatment
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_biogenic_waste_ccs_biomethanol_output_share
   interface_group: external_coupling_production_methanol_synthesis_biogenic_waste_ccs
@@ -477,7 +477,7 @@
   step_value: 0.1
   unit: "%"
   position: 740
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_biogenic_waste_ccs_loss_output_share
   interface_group: external_coupling_production_methanol_synthesis_biogenic_waste_ccs
@@ -485,7 +485,7 @@
   step_value: 0.1
   unit: "%"
   position: 750
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_dry_biomass_ccs_biomethanol_output_share
   interface_group: external_coupling_production_methanol_synthesis_dry_biomass_ccs
@@ -493,7 +493,7 @@
   step_value: 0.1
   unit: "%"
   position: 770
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_dry_biomass_ccs_loss_output_share
   interface_group: external_coupling_production_methanol_synthesis_dry_biomass_ccs
@@ -501,7 +501,7 @@
   step_value: 0.1
   unit: "%"
   position: 780
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_non_biogenic_waste_ccs_methanol_output_share
   interface_group: external_coupling_production_methanol_synthesis_non_biogenic_waste_ccs
@@ -509,7 +509,7 @@
   step_value: 0.1
   unit: "%"
   position: 800
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_non_biogenic_waste_ccs_loss_output_share
   interface_group: external_coupling_production_methanol_synthesis_non_biogenic_waste_ccs
@@ -517,7 +517,7 @@
   step_value: 0.1
   unit: "%"
   position: 810
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_synthetic_electricity_input_share
   interface_group: external_coupling_production_methanol_synthesis_synthetic
@@ -525,7 +525,7 @@
   step_value: 0.1
   unit: "%"
   position: 820
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_synthetic_hydrogen_input_share
   interface_group: external_coupling_production_methanol_synthesis_synthetic
@@ -533,7 +533,7 @@
   step_value: 0.1
   unit: "%"
   position: 830
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_synthetic_methanol_output_share
   interface_group: external_coupling_production_methanol_synthesis_synthetic
@@ -541,7 +541,7 @@
   step_value: 0.1
   unit: "%"
   position: 840
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_synthetic_loss_output_share
   interface_group: external_coupling_production_methanol_synthesis_synthetic
@@ -549,7 +549,7 @@
   step_value: 0.1
   unit: "%"
   position: 850
-  slide_key: external_coupling_methanol_synthesis
+  slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_to_jet_hydrogen_input_share
   interface_group: external_coupling_production_methanol_to_jet
@@ -557,7 +557,7 @@
   step_value: 0.1
   unit: "%"
   position: 860
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_methanol_to_jet_methanol_input_share
   interface_group: external_coupling_production_methanol_to_jet
@@ -565,7 +565,7 @@
   step_value: 0.1
   unit: "%"
   position: 870
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_methanol_to_jet_kerosene_output_share
   interface_group: external_coupling_production_methanol_to_jet
@@ -573,7 +573,7 @@
   step_value: 0.1
   unit: "%"
   position: 880
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_methanol_to_jet_naphtha_output_share
   interface_group: external_coupling_production_methanol_to_jet
@@ -581,7 +581,7 @@
   step_value: 0.1
   unit: "%"
   position: 890
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_methanol_to_jet_loss_output_share
   interface_group: external_coupling_production_methanol_to_jet
@@ -589,7 +589,7 @@
   step_value: 0.1
   unit: "%"
   position: 895
-  slide_key: external_coupling_methanol_to_jet
+  slide_key: costs_methanol_to_jet
   coupling_icon: true
 - key: external_coupling_pyrolysis_biogenic_waste_bio_pyrolysis_oil_output_share
   interface_group: external_coupling_production_pyrolysis_biogenic_waste
@@ -597,7 +597,7 @@
   step_value: 0.1
   unit: "%"
   position: 910
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_biogenic_waste_steam_hot_water_output_share
   interface_group: external_coupling_production_pyrolysis_biogenic_waste
@@ -605,7 +605,7 @@
   step_value: 0.1
   unit: "%"
   position: 920
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_biogenic_waste_loss_output_share
   interface_group: external_coupling_production_pyrolysis_biogenic_waste
@@ -613,7 +613,7 @@
   step_value: 0.1
   unit: "%"
   position: 930
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_dry_biomass_bio_pyrolysis_oil_output_share
   interface_group: external_coupling_production_pyrolysis_dry_biomass
@@ -621,7 +621,7 @@
   step_value: 0.1
   unit: "%"
   position: 940
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_dry_biomass_steam_hot_water_output_share
   interface_group: external_coupling_production_pyrolysis_dry_biomass
@@ -629,7 +629,7 @@
   step_value: 0.1
   unit: "%"
   position: 950
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_dry_biomass_loss_output_share
   interface_group: external_coupling_production_pyrolysis_dry_biomass
@@ -637,7 +637,7 @@
   step_value: 0.1
   unit: "%"
   position: 960
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_non_biogenic_waste_pyrolysis_oil_output_share
   interface_group: external_coupling_production_pyrolysis_non_biogenic_waste
@@ -645,7 +645,7 @@
   step_value: 0.1
   unit: "%"
   position: 970
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_non_biogenic_waste_steam_hot_water_output_share
   interface_group: external_coupling_production_pyrolysis_non_biogenic_waste
@@ -653,7 +653,7 @@
   step_value: 0.1
   unit: "%"
   position: 980
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true
 - key: external_coupling_pyrolysis_non_biogenic_waste_loss_output_share
   interface_group: external_coupling_production_pyrolysis_non_biogenic_waste
@@ -661,5 +661,5 @@
   step_value: 0.1
   unit: "%"
   position: 990
-  slide_key: external_coupling_pyrolysis_production
+  slide_key: costs_pyrolysis_production
   coupling_icon: true

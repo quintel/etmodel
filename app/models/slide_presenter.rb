@@ -35,7 +35,7 @@ class SlidePresenter
   def self.sidebar_item_position(slide)
     if parent_item = slide.sidebar_item.parent_key
       SidebarItem.find_by_key(parent_item).position +
-        slide.sidebar_item.position / 10
+        slide.sidebar_item.position / 10.0
     else
       slide.sidebar_item.position
     end

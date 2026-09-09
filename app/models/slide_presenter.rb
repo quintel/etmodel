@@ -62,7 +62,8 @@ class SlidePresenter
     @slide.sliders.sort_by(&:position).map do |ie|
       ie.as_json(only: %w[key unit interface_group]).merge(
         'name' => translate_item(:input_elements, ie),
-        'group_name' => ie.interface_group.present? ? I18n.t("accordion.#{ie.interface_group}") : nil
+        'group_name' => ie.interface_group.present? ? I18n.t("accordion.#{ie.interface_group}") : nil,
+        'external_coupling' => ie.coupling_icon.present?
       )
     end
   end

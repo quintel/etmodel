@@ -79,4 +79,8 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Allow the ETLauncher cross-app parent domain so the shared etm_session cookie can be scoped to
+  # a dotted parent the browser accepts
+  config.hosts << ENV.fetch('ETM_HOST_PARENT', '.local.energytransitionmodel.com')
 end

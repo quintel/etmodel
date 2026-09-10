@@ -28,7 +28,7 @@ workers ENV.fetch('WEB_CONCURRENCY', 0)
 # Use the `preload_app!` method when specifying a `workers` number. This directive tells Puma to
 # first boot the application and load code before forking the application. This takes advantage of
 # Copy On Write process behavior so workers use less memory.
-preload_app!
+# preload_app!
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart

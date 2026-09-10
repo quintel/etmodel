@@ -5,9 +5,7 @@ module API
   class APIController < ActionController::API
     abstract!
 
-    rescue_from ETModel::Tokens::DecodeError do |e|
-      render json: { errors: [e.message] }, status: :forbidden
-    end
+    include Identity::ResourceServer
 
     rescue_from ActionController::ParameterMissing do |e|
       render json: { errors: [e.message] }, status: :bad_request
@@ -21,36 +19,14 @@ module API
 
     # Returns the current user, if a token is set and is valid.
     def current_user
-      return nil unless token
+      return nil unless decoded_token
 
-      @current_user ||= User.from_jwt!(token) if token
+      @current_user ||= User.from_jwt!(decoded_token)
     end
 
     # Verifies that a token is set and is valid.
     def verify_token!
-      token || render(json: { errors: ['Missing or invalid token'] }, status: :unauthorized)
-    end
-
-    # Verifies that the token has the desired scopes.
-    def verify_scopes!(required_scopes)
-      missing = Array(required_scopes).reject { |scope| token['scopes'].include?(scope) }
-
-      return if missing.empty?
-
-      render(
-        json: { errors: ["Missing required scope: #{missing.join(', ')}"] },
-        status: :forbidden
-      )
-    end
-
-    # Returns the contents of the current token, if an Authorization header is set.
-    def token
-      return @token if @token
-      return nil if request.authorization.blank?
-
-      request.authorization.to_s.match(/\ABearer (.+)\z/) do |match|
-        return @token = ETModel::Tokens.decode(match[1])
-      end
+      decoded_token || render(json: { errors: ['Missing or invalid token'] }, status: :unauthorized)
     end
   end
 end

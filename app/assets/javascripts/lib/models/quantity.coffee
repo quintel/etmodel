@@ -87,6 +87,12 @@ compiledUnits['kg/MWh'] = {
   power: POWERS[8]
 }
 
+compiledUnits['GJ/#'] = {
+  name: 'GJ/#',
+  base: { name: 'GJ/#', i18n: 'GJ/#' },
+  power: POWERS[8]
+}
+
 # ------------------------------------------------------------------------------
 
 class @Quantity

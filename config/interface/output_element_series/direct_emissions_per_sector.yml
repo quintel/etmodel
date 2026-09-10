@@ -253,7 +253,7 @@
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_bunkers_1990
 
-# taget line present and future net total GHG emissions
+# target line present and future net total GHG emissions
 - label: direct_emissions_total_ghg
   color: "#FF0000"
   order_by: 310
@@ -279,7 +279,7 @@
   output_element_key: direct_emissions_per_sector
   key: direct_emissions_per_sector_total_ghg_future
 
-# taget line 1990 total GHG emissions
+# target line 1990 total GHG emissions
 # order_by should be higher than present and future target line to show correct totals in table view
 - label: direct_emissions_total_ghg
   color: "#FF0000"

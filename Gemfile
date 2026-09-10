@@ -11,7 +11,7 @@ end
 
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 6.0'
-gem 'rails', '~> 8.1.0'
+gem 'rails', '~> 8.1.3'
 
 gem 'browser'
 gem 'config'
@@ -22,21 +22,21 @@ gem 'http_accept_language'
 gem 'httparty'
 gem 'inline_svg'
 gem 'invisible_captcha'
-gem 'jquery-rails', '~> 4.4.0'
+gem 'jquery-rails', '~> 4.6.1'
 gem 'kaminari', '~> 1.2.1'
 gem 'local_time'
 gem 'loofah'
 gem 'nokogiri', '~> 1.19'
 gem 'non-stupid-digest-assets', github: 'alexspeller/non-stupid-digest-assets'
-gem 'rails-html-sanitizer', '~> 1.6'
-gem 'rdiscount', '~> 2.2.7.4'
+gem 'rails-html-sanitizer', '~> 1.7'
+gem 'rdiscount', '~> 2.2.7.5'
 gem 'simple_form'
 gem 'tabs_on_rails', '~> 3.0'
 gem 'valid_email2'
 
 # Authentication
 gem 'cancancan'
-gem 'identity', ref: '26f582e', github: 'quintel/identity_rails'
+gem 'identity',      ref: 'd88af33', github: 'quintel/identity_rails'
 
 # javascript
 gem 'babel-transpiler'
@@ -49,6 +49,11 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 # supporting gems
 gem 'sentry-rails'
 gem 'sentry-ruby'
+
+# opentelemetry gems
+gem 'opentelemetry-sdk', '~> 1.13'
+gem 'opentelemetry-exporter-otlp', '~> 0.34.1'
+gem 'opentelemetry-instrumentation-faraday', '~> 0.33.0'
 
 # system gems
 gem 'solid_cache'
@@ -68,9 +73,6 @@ gem 'dry-validation'
 group :development do
   gem 'letter_opener'
 
-  gem 'tomdoc'
-  gem 'yard-tomdoc', '~> 0.4.0'
-
   gem 'better_errors'
   gem 'seed_dump'
 end
@@ -84,7 +86,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 6.1.2'
   gem 'watchr'
 
-  gem 'rubocop', '~> 1.0',    require: false
+  gem 'rubocop', '~> 1.89',    require: false
   gem 'rubocop-performance',  require: false
   gem 'rubocop-rails',        require: false
   gem 'rubocop-rspec',        require: false

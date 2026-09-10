@@ -1,0 +1,292 @@
+---
+- label: apartment
+  color: "#44AA99"
+  order_by: 10
+  group: residences_before_1945
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_apartment_before_1945_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_apartment_before_1945_bar_residential_heating_demand_per_residence
+- label: apartment
+  color: "#44AA99"
+  order_by: 110
+  group: residences_1945_1964
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_apartment_1945_1964_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_apartment_1945_1964_bar_residential_heating_demand_per_residence
+- label: apartment
+  color: "#44AA99"
+  order_by: 210
+  group: residences_1965_1984
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_apartment_1965_1984_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_apartment_1965_1984_bar_residential_heating_demand_per_residence
+- label: apartment
+  color: "#44AA99"
+  order_by: 310
+  group: residences_1985_2004
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_apartment_1985_2004_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_apartment_1985_2004_bar_residential_heating_demand_per_residence
+- label: apartment
+  color: "#44AA99"
+  order_by: 410
+  group: residences_2005_present
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_apartment_2005_present_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_apartment_2005_present_bar_residential_heating_demand_per_residence
+- label: apartment
+  color: "#44AA99"
+  order_by: 510
+  group: residences_future
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_apartment_future_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_apartment_future_bar_residential_heating_demand_per_residence
+
+- label: fully_detached
+  color: "#648FFF"
+  order_by: 20
+  group: residences_before_1945
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_fully_detached_house_before_1945_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_fully_detached_house_before_1945_bar_residential_heating_demand_per_residence
+- label: fully_detached
+  color: "#648FFF"
+  order_by: 120
+  group: residences_1945_1964
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_fully_detached_house_1945_1964_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_fully_detached_house_1945_1964_bar_residential_heating_demand_per_residence
+- label: fully_detached
+  color: "#648FFF"
+  order_by: 220
+  group: residences_1965_1984
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_fully_detached_house_1965_1984_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_fully_detached_house_1965_1984_bar_residential_heating_demand_per_residence
+- label: fully_detached
+  color: "#648FFF"
+  order_by: 320
+  group: residences_1985_2004
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_fully_detached_house_1985_2004_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_fully_detached_house_1985_2004_bar_residential_heating_demand_per_residence
+- label: fully_detached
+  color: "#648FFF"
+  order_by: 420
+  group: residences_2005_present
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_fully_detached_house_2005_present_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_fully_detached_house_2005_present_bar_residential_heating_demand_per_residence
+- label: fully_detached
+  color: "#648FFF"
+  order_by: 520
+  group: residences_future
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_fully_detached_house_future_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_fully_detached_house_future_bar_residential_heating_demand_per_residence
+
+- label: semi_detached
+  color: "#785EF0"
+  order_by: 30
+  group: residences_before_1945
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_semi_detached_house_before_1945_bar
+  is_1990:
+  dependent_on: has_semi_detached_houses
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_semi_detached_house_before_1945_bar_residential_heating_demand_per_residence
+- label: semi_detached
+  color: "#785EF0"
+  order_by: 130
+  group: residences_1945_1964
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_semi_detached_house_1945_1964_bar
+  is_1990:
+  dependent_on: has_semi_detached_houses
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_semi_detached_house_1945_1964_bar_residential_heating_demand_per_residence
+- label: semi_detached
+  color: "#785EF0"
+  order_by: 230
+  group: residences_1965_1984
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_semi_detached_house_1965_1984_bar
+  is_1990:
+  dependent_on: has_semi_detached_houses
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_semi_detached_house_1965_1984_bar_residential_heating_demand_per_residence
+- label: semi_detached
+  color: "#785EF0"
+  order_by: 330
+  group: residences_1985_2004
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_semi_detached_house_1985_2004_bar
+  is_1990:
+  dependent_on: has_semi_detached_houses
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_semi_detached_house_1985_2004_bar_residential_heating_demand_per_residence
+- label: semi_detached
+  color: "#785EF0"
+  order_by: 430
+  group: residences_2005_present
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_semi_detached_house_2005_present_bar
+  is_1990:
+  dependent_on: has_semi_detached_houses
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_semi_detached_house_2005_present_bar_residential_heating_demand_per_residence
+- label: semi_detached
+  color: "#785EF0"
+  order_by: 530
+  group: residences_future
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_semi_detached_house_future_bar
+  is_1990:
+  dependent_on: has_semi_detached_houses
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_semi_detached_house_future_bar_residential_heating_demand_per_residence
+
+- label: terraced
+  color: "#DC267F"
+  order_by: 40
+  group: residences_before_1945
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_terraced_house_before_1945_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_terraced_house_before_1945_bar_residential_heating_demand_per_residence
+- label: terraced
+  color: "#DC267F"
+  order_by: 140
+  group: residences_1945_1964
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_terraced_house_1945_1964_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_terraced_house_1945_1964_bar_residential_heating_demand_per_residence
+- label: terraced
+  color: "#DC267F"
+  order_by: 240
+  group: residences_1965_1984
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_terraced_house_1965_1984_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_terraced_house_1965_1984_bar_residential_heating_demand_per_residence
+- label: terraced
+  color: "#DC267F"
+  order_by: 340
+  group: residences_1985_2004
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_terraced_house_1985_2004_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_terraced_house_1985_2004_bar_residential_heating_demand_per_residence
+- label: terraced
+  color: "#DC267F"
+  order_by: 440
+  group: residences_2005_present
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_terraced_house_2005_present_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_terraced_house_2005_present_bar_residential_heating_demand_per_residence
+- label: terraced
+  color: "#DC267F"
+  order_by: 540
+  group: residences_future
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: useful_heat_demand_per_terraced_house_future_bar
+  is_1990:
+  dependent_on:
+  output_element_key: residential_heating_demand_per_residence
+  key: useful_heat_demand_per_terraced_house_future_bar_residential_heating_demand_per_residence

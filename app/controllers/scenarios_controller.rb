@@ -10,22 +10,6 @@ class ScenariosController < ApplicationController
   before_action :store_last_etm_page, :prevent_browser_cache, only: :play
   before_action :myc_content_security_policy, only: :play_multi_year_charts
 
-  # Raised when trying to save a scenario, but the user does not have a
-  # scenario in progress. See quintel/etengine#542.
-  class NoScenarioIdError < RuntimeError
-    def initialize(controller)
-      super(
-        'Cannot save ETM scenario with settings: ' \
-        "#{Current.setting.to_hash.inspect}"
-      )
-    end
-  end
-
-  rescue_from NoScenarioIdError do |ex|
-    render :cannot_save_without_id, status: :bad_request
-    Sentry.capture_exception(ex)
-  end
-
   def index
     redirect_to "#{Settings.identity.issuer}/saved_scenarios", allow_other_host: true
   end

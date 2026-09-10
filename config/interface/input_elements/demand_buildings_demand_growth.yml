@@ -9,11 +9,18 @@
   step_value: 0.1
   unit: "%"
   interface_group: per_building
-  position: 100
+  position: 110
   slide_key: demand_buildings_demand_growth
 - key: buildings_useful_demand_cooling
   step_value: 0.1
   unit: "%"
   interface_group: per_building
-  position: 110
+  position: 120
+  slide_key: demand_buildings_demand_growth
+- sub_header: "%"
+  key: buildings_space_heating_behaviour
+  step_value: 0.1
+  unit: "%"
+  interface_group: buildings_heat_behaviour
+  position: 130
   slide_key: demand_buildings_demand_growth

@@ -7,7 +7,7 @@ class APIPassthruController < ApplicationController
     response.set_header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
     url = URI.parse(Settings.ete_url)
     url.path = "/api/v3/scenarios/#{params[:id]}/#{params[:rest]}"
-    url.query = { access_token: identity_access_token.token }.to_query if signed_in?
+    url.query = { access_token: session_access_token }.to_query if session_access_token
 
     track_csv_download
 

@@ -95,7 +95,7 @@ en:
         to current costs. These costs are likely to follow developments for coal-fired
         power plants.
     om_costs_combustion_hydrogen_plant:
-      title: O&M costs hydrogen plant
+      title: O&M costs hydrogen plants
       short_description: ''
       description: "This slider sets the expected change in operational and maintenance
         costs for a hydrogen-fired power plant (excluding fuel costs). Costs are compared to
@@ -441,7 +441,7 @@ en:
       description: |
         This slider determines the future change in investment costs of
         batteries in households per MWh. </br></br>
-        In the <a href="scenario/flexibility/flexibility_storage/batteries-in-households">
+        In the <a href="/scenario/flexibility/flexibility_storage/batteries-in-households">
         Flexibility</a> section you can determine the installed capacity and relative storage volume
         for your scenario.
     investment_costs_energy_flexibility_hv_opac_electricity:
@@ -450,7 +450,7 @@ en:
       description: |
         This slider determines the future change in investment costs of
         underground hydro pumped storage per MWh. </br></br>
-        In the <a href="scenario/flexibility/flexibility_storage/underground-pumped-hydro-storage">
+        In the <a href="/scenario/flexibility/flexibility_storage/underground-pumped-hydro-storage">
         Flexibility</a> section you can determine the installed capacity and relative storage volume
         for your scenario.
     investment_costs_energy_flexibility_mv_batteries_electricity:
@@ -462,11 +462,11 @@ en:
         with wind turbines or solar plants. </br></br>
         In the Flexibility section you can determine the installed capacity and relative storage volume
         for your scenario for
-        <a href="scenario/flexibility/flexibility_storage/large-scale-batteries">
+        <a href="/scenario/flexibility/flexibility_storage/large-scale-batteries">
         large-scale batteries</a>,
-        <a href="scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
+        <a href="/scenario/flexibility/flexibility_storage/wind-onshore-with-battery-system">
         batteries integrated with wind turbines</a>, and
-        <a href="scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
+        <a href="/scenario/flexibility/flexibility_storage/solar-on-land-with-battery-system">
         batteries integrated with solar plants</a>.
     om_costs_water_river:
       title: O&M costs hydro river
@@ -866,11 +866,11 @@ en:
     efficiency_industry_chp_combined_cycle_gas_power_fuelmix_electricity:
       title: Gas CCGT CHP - electricity
       short_description: ''
-      description: "This slider sets the future efficiency of electricity production from gas CHP CCGT in industry."
+      description: "This slider sets the future efficiency of electricity production from gas CCGT CHP in industry."
     efficiency_industry_chp_combined_cycle_gas_power_fuelmix_heat:
       title: Gas CCGT CHP - heat
       short_description: ''
-      description: "This slider sets the future efficiency of heat production from gas CHP CCGT in industry."
+      description: "This slider sets the future efficiency of heat production from gas CCGT CHP in industry."
     efficiency_industry_chp_engine_gas_power_fuelmix_electricity:
       title: Gas motor CHP - electricity
       short_description: ''
@@ -988,6 +988,16 @@ en:
       short_description:
       description: |
         This slider sets the future efficiency of electricity production from hydrogen turbine CHPs in industry.
+    efficiency_energy_chp_combined_cycle_hydrogen_electricity:
+      title: Hydrogen CCGT CHP - electricity
+      short_description:
+      description: |
+        This slider sets the future efficiency of electricity production from hydrogen CCGT CHPs in the energy sector.
+    efficiency_energy_chp_combined_cycle_hydrogen_heat:
+      title: Hydrogen CCGT CHP - heat
+      short_description:
+      description: |
+        This slider sets the future efficiency of heat production from hydrogen CCGT CHPs in the energy sector.
     efficiency_industry_chp_turbine_hydrogen_heat:
       title: Hydrogen turbine CHP (industry) - heat
       short_description:
@@ -1111,7 +1121,7 @@ en:
         In contrast to other batteries, the investment costs of flow batteries consist of two components.
         With this slider you can set the investment costs per MW of input capacity. The slider below
         sets the investment costs per MWh storage volume. </br></br>
-        In the <a href="scenario/flexibility/flexibility_storage/flowbatteries">
+        In the <a href="/scenario/flexibility/flexibility_storage/flowbatteries">
         Flexibility</a> section you can determine the installed capacity and relative storage volume
         for your scenario.
     volume_costs_energy_flexibility_flow_batteries_electricity:
@@ -1121,7 +1131,7 @@ en:
         In contrast to other batteries, the investment costs of flow batteries consist of two components.
         The slider above sets the investment costs per MW of input capacity. With this slider you can
         set the investment costs per MWh storage volume. </br></br>
-        In the <a href="scenario/flexibility/flexibility_storage/flowbatteries">
+        In the <a href="/scenario/flexibility/flexibility_storage/flowbatteries">
         Flexibility</a> section you can determine the installed capacity and relative storage volume
         for your scenario.
     efficiency_buildings_space_heater_hybrid_heatpump_air_water_electricity:

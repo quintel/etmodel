@@ -98,6 +98,7 @@ D3.category_bar =
     initialize: ->
       D3ChartView.prototype.initialize.call(this)
       @series = @model.series.models
+      @selectedSerie = @serieSelectOptions()?[0]?.match
 
       # the stack method will filter the data and calculate the offset
       # for every item
@@ -126,10 +127,25 @@ D3.category_bar =
     totals_for_table: ->
       @model.get('config') && @model.get('config').show_total_row
 
+    # Options for the series dropdown, or undefined when the chart has no
+    # "serie_selections" config. Each option is matched against the gquery key
+    # of every serie, so the first option is typically a substring shared by
+    # all of them.
+    serieSelectOptions: ->
+      @model.get('config')?.serie_selections?.map((option) -> { match: option })
+
+    # The series to be drawn, restricted to those matching the dropdown
+    # selection. Filtering on the gquery key rather than the group keeps the
+    # selection independent of the grouping into categories.
+    visibleSeries: ->
+      return @series unless @selectedSerie
+
+      @series.filter((serie) => serie.get('gquery_key').includes(@selectedSerie))
+
     draw: =>
       self = this
 
-      @categories = categoriesFromSeries(@series, @periods())
+      @categories = categoriesFromSeries(@visibleSeries(), @periods())
 
       [@width, @height] = @available_size()
 
@@ -143,6 +159,11 @@ D3.category_bar =
       @svg = @create_svg_container @width, @series_height, @margins
 
       @display_legend()
+
+      @drawSerieSelect()
+
+      # A selection which matches no series at all leaves no geometry to draw.
+      return if @categories.length == 0
 
       columns = @get_columns()
 
@@ -298,6 +319,8 @@ D3.category_bar =
     refresh: =>
       self = this
 
+      return if @categories.length == 0
+
       tallest = d3.max(@categories.map (c) -> c.maxValue()) * 1.05
       smallest = Math.min(0, d3.min(@categories.map (c) -> c.minValue()) * 1.05)
 
@@ -358,6 +381,23 @@ D3.category_bar =
     get_columns: =>
       _.flatten(@categories.map((category) -> category.columns()))
 
+    # Draws the series dropdown, restoring the previous selection. Changing the
+    # selection changes which categories are present, and with them the width
+    # and position of every bar, so the chart is redrawn in full rather than
+    # refreshed.
+    drawSerieSelect: =>
+      options = @serieSelectOptions()
+      return unless options
+
+      @serieSelect = new D3ChartSerieSelect(@container_selector(), options)
+
+      @serieSelect.draw(=>
+        @selectedSerie = @serieSelect.selectBox.val()
+        @render(true)
+      )
+
+      @serieSelect.selectBox.val(@selectedSerie)
+
     display_legend: =>
       $(@container_selector()).find('.legend').remove()
 
@@ -390,7 +430,7 @@ D3.category_bar =
       include_present = @periods().includes('present')
       include_future  = @periods().includes('future')
 
-      for series in @series
+      for series in @visibleSeries()
         label = series.get('label')
 
         total = (if include_future then Math.abs(series.safe_future_value()) else 0) +

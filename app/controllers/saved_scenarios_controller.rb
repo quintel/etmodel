@@ -9,6 +9,8 @@ class SavedScenariosController < ApplicationController
   #
   # GET /scenarios/:scenario_id/save
   def new
+    raise NoScenarioIdError, self if Current.setting.api_session_id.blank?
+
     @saved_scenario = SavedScenario.new(
       scenario_id: Current.setting.api_session_id,
       title: params[:title].presence || "",

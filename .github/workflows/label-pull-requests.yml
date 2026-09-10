@@ -1,0 +1,31 @@
+# Applies labels to pull requests. Add one job per labelling rule.
+
+name: Label pull requests
+
+on: pull_request
+
+permissions:
+  pull-requests: write   # add labels to the PR
+
+jobs:
+  # Label the grouped Dependabot "major-updates" dashboard PR with `do-not-merge`.
+  # That PR is a standing list of the majors we're behind on and not intended to
+  # be directly merged. Checks with fetch-metadata's `dependency-group`, so only
+  # majors PRs are labelled.  The `do-not-merge` label must be created manually:
+  #   gh label create do-not-merge --repo quintel/<repo> \
+  #     --color B60205 --description "Informational PR. Do not merge directly"
+
+  dependabot-majors-dashboard:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v3
+
+      - name: Flag the majors dashboard as do-not-merge
+        if: steps.meta.outputs.dependency-group == 'major-updates'
+        run: gh pr edit "$PR_URL" --add-label "do-not-merge"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

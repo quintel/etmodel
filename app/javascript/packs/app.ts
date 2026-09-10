@@ -23,10 +23,6 @@ import 'core-js/features/array/flat';
 // Core
 // -----
 
-import { AccessToken, GuestToken } from '../models/AccessToken';
-window.AccessToken = AccessToken;
-window.GuestToken = GuestToken;
-
 // Charts
 // ------
 

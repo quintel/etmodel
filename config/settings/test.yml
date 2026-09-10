@@ -2,6 +2,10 @@
 #          have to be manually adapted (s. spec_helper.rb -> default_cassette_options -> :record) or re-recorded
 ete_url: https://beta-engine.energytransitionmodel.com
 
+# WARNING: Keep this key, and keep it blank. Stops an ETE_INTERNAL_URL exported in your
+#          shell from repointing Engine::Area / NastyProxy off the cassette host above.
+ete_internal_url:
+
 incoming_webhook_keys:
   mailchimp: abc
 
@@ -9,3 +13,4 @@ identity:
   client_id: client_id_123
   client_secret: client_secret_123
   client_uri: http://localhost:3000
+  resource_uri: http://localhost:3000

@@ -59,4 +59,4 @@
         %a.nav-link{ href: sign_up_url }
           = t('header.sign_up')
       %li.sign-in.nav-item
-        = button_to t('header.sign_in'), sign_in_path, class: 'nav-link', method: :post
+        = link_to t('header.sign_in'), sign_in_path, class: 'nav-link'

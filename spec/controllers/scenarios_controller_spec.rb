@@ -192,7 +192,7 @@ describe ScenariosController, vcr: true do
 
           it 'does not set the API session ID' do
             expect { get(:play_multi_year_charts, params: { id: 123 }) }
-              .not_to change(session[:setting], :api_session_id)
+              .not_to change { session[:setting].api_session_id }
           end
 
           it 'redirects to the root page' do
@@ -354,7 +354,7 @@ describe ScenariosController, vcr: true do
 
         it 'does not set the API session ID' do
           expect { get(:resume, params: { id: 123 }) }
-            .not_to change(session[:setting], :api_session_id)
+            .not_to change { session[:setting].api_session_id }
         end
 
         it 'redirects to the root page' do

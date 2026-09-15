@@ -60,11 +60,21 @@ class SlidePresenter
   def inputs
     # Sort in Ruby to avoid N+1 query.
     @slide.sliders.sort_by(&:position).map do |ie|
-      ie.as_json(only: %w[key unit interface_group]).merge(
+      ie.as_json(only: %w[key interface_group]).merge(
         'name' => translate_item(:input_elements, ie),
+        'unit' => display_unit(ie),
         'group_name' => ie.interface_group.present? ? I18n.t("accordion.#{ie.interface_group}") : nil
       )
     end
+  end
+
+  def display_unit(ie)
+    return ie.unit unless ie.interface_group.present? && I18n.exists?("subheaders.#{ie.interface_group}")
+
+    display_info = I18n.t("subheaders.#{ie.interface_group}")
+    return ie.unit if display_info == ie.unit
+
+    "#{ie.unit} (#{display_info})"
   end
 
   # Internal: Simplfies translations of input element, slide, sidebar

@@ -25,7 +25,7 @@ class SlidePresenter
   end
 
   def as_json(*)
-    { path: path, input_elements: inputs }
+    { path: path, display_unit: slide_display_unit, input_elements: inputs }
   end
 
   private
@@ -43,38 +43,50 @@ class SlidePresenter
 
   def path
     [translate_item(:tabs, @slide.sidebar_item.tab),
-     sidebar_item_translation,
+     *sidebar_item_path,
      translate_item(:slides, @slide)]
   end
 
-  def sidebar_item_translation
-    translation = translate_item(:sidebar_items, @slide.sidebar_item)
+  def sidebar_item_path
+    [parent_sidebar_item, @slide.sidebar_item]
+      .compact
+      .map { |item| translate_item(:sidebar_items, item) }
+  end
 
-    prefix = if parent_item = @slide.sidebar_item.parent_key
-      translate_item(:sidebar_items, SidebarItem.find_by_key(parent_item))
-    end
+  def parent_sidebar_item
+    key = @slide.sidebar_item.parent_key
 
-    prefix ? "#{prefix} - #{translation}" : translation
+    key && SidebarItem.find_by_key(key)
   end
 
   def inputs
     # Sort in Ruby to avoid N+1 query.
     @slide.sliders.sort_by(&:position).map do |ie|
-      ie.as_json(only: %w[key interface_group]).merge(
+      ie.as_json(only: %w[key unit interface_group]).merge(
         'name' => translate_item(:input_elements, ie),
-        'unit' => display_unit(ie),
+        'display_unit' => display_unit(ie),
         'group_name' => ie.interface_group.present? ? I18n.t("accordion.#{ie.interface_group}") : nil
       )
     end
   end
 
-  def display_unit(ie)
-    return ie.unit unless ie.interface_group.present? && I18n.exists?("subheaders.#{ie.interface_group}")
+  def slide_display_unit
+    subheader(@slide.general_sub_header)
+  end
 
-    display_info = I18n.t("subheaders.#{ie.interface_group}")
-    return ie.unit if display_info == ie.unit
+  # See scenarios/_slide.html.haml
+  def display_unit(input_element)
+    return nil if input_element.interface_group.blank?
 
-    "#{ie.unit} (#{display_info})"
+    subheader(input_element.interface_group) || subheader(@slide.group_sub_header)
+  end
+
+  def subheader(name)
+    key = name.to_s.parameterize.underscore
+    return nil if key.blank?
+
+    value = I18n.t("subheaders.#{key}", default: nil)
+    value.is_a?(String) && value.present? ? value : nil
   end
 
   # Internal: Simplfies translations of input element, slide, sidebar

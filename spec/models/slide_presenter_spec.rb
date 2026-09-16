@@ -69,6 +69,10 @@ describe SlidePresenter do
       it {
         is_expected.to include translator.call('slides', "#{sl1.key}.title")
       }
+
+      it 'holds one segment per level, ending with the slide' do
+        expect(subject.length).to eq(3)
+      end
     end
   end
 end

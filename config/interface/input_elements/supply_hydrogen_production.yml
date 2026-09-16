@@ -29,7 +29,7 @@
   command_type: value
   related_node: energy_hydrogen_autothermal_reformer_must_run
   interface_group: hydrogen_must_run
-  position: 40
+  position: 31
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_ammonia_reformer_must_run
   step_value: 1.0
@@ -37,7 +37,7 @@
   command_type: value
   related_node: energy_hydrogen_ammonia_reformer_must_run
   interface_group: hydrogen_must_run
-  position: 50
+  position: 32
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_steam_methane_reformer_dispatchable
   step_value: 1.0
@@ -45,7 +45,7 @@
   command_type: value
   related_node: energy_hydrogen_steam_methane_reformer_dispatchable
   interface_group: hydrogen_dispatchable
-  position: 35
+  position: 37
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_autothermal_reformer_dispatchable
   step_value: 1.0
@@ -53,7 +53,7 @@
   command_type: value
   related_node: energy_hydrogen_autothermal_reformer_dispatchable
   interface_group: hydrogen_dispatchable
-  position: 45
+  position: 38
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_ammonia_reformer_dispatchable
   step_value: 1.0
@@ -61,7 +61,7 @@
   command_type: value
   related_node: energy_hydrogen_ammonia_reformer_dispatchable
   interface_group: hydrogen_dispatchable
-  position: 55
+  position: 39
   slide_key: supply_hydrogen_production  
 - key: capacity_of_energy_hydrogen_liquid_hydrogen_regasifier
   step_value: 1.0
@@ -69,7 +69,7 @@
   command_type: value
   related_node: energy_hydrogen_liquid_hydrogen_regasifier
   interface_group: hydrogen_must_run
-  position: 60
+  position: 33
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_lohc_reformer
   step_value: 1.0
@@ -77,19 +77,19 @@
   command_type: value
   related_node: energy_hydrogen_lohc_reformer
   interface_group: hydrogen_must_run
-  position: 70
+  position: 34
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_hydrogen_biomass_gasification
   step_value: 1.0
   unit: MW
   related_node: energy_hydrogen_biomass_gasification
   interface_group: hydrogen_must_run
-  position: 20
+  position: 21
   slide_key: supply_hydrogen_production
 - key: capacity_of_energy_imported_hydrogen_baseload
   step_value: 1.0
   unit: MW
   command_type: value
   interface_group: hydrogen_must_run
-  position: 80
+  position: 36
   slide_key: supply_hydrogen_production

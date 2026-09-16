@@ -2,7 +2,7 @@
 - key: external_coupling_energy_heat_production_ht_residual_heat_investment_costs
   step_value: 1.0
   unit: "€/unit"
-  position: 100
+  position: 20
   slide_key: costs_heat_sources_other
   share_group: ''
   interface_group: residual_heat
@@ -10,7 +10,7 @@
 - key: external_coupling_energy_heat_production_ht_residual_heat_wacc
   step_value: 1.0
   unit: '%'
-  position: 105
+  position: 25
   slide_key: costs_heat_sources_other
   share_group: ''
   interface_group: residual_heat
@@ -18,7 +18,7 @@
 - key: external_coupling_energy_heat_production_ht_residual_heat_technical_lifetime
   step_value: 1.0
   unit: year
-  position: 110
+  position: 30
   slide_key: costs_heat_sources_other
   share_group: ''
   interface_group: residual_heat
@@ -26,7 +26,7 @@
 - key: external_coupling_energy_heat_production_ht_residual_heat_fixed_om_costs
   step_value: 1.0
   unit: "€/year/unit"
-  position: 115
+  position: 35
   slide_key: costs_heat_sources_other
   share_group: ''
   interface_group: residual_heat

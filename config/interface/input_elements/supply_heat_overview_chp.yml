@@ -26,7 +26,7 @@
   step_value: 1.0
   unit: "%"
   interface_group: heat_allocation_coal_chp_pwd_cofiring
-  position: 130
+  position: 125
   slide_key: supply_heat_overview_chp
 
 - key: share_of_energy_chp_ultra_supercritical_ht_lignite
@@ -34,7 +34,7 @@
   step_value: 1.0
   unit: "%"
   interface_group: heat_allocation_lignite_chp
-  position: 120
+  position: 135
   dependent_on: has_lignite
   slide_key: supply_heat_overview_chp
 - key: share_of_energy_chp_ultra_supercritical_mt_lignite
@@ -42,7 +42,7 @@
   step_value: 1.0
   unit: "%"
   interface_group: heat_allocation_lignite_chp
-  position: 130
+  position: 140
   dependent_on: has_lignite
   slide_key: supply_heat_overview_chp
 
@@ -103,7 +103,7 @@
   step_value: 1.0
   unit: "%"
   interface_group: heat_allocation_wood_pellets_chp_must_run
-  position: 310
+  position: 305
   slide_key: supply_heat_overview_chp
 
 - key: share_of_energy_chp_local_ht_wood_pellets_dispatchable
@@ -111,14 +111,14 @@
   step_value: 1.0
   unit: "%"
   interface_group: heat_allocation_wood_pellets_chp_dispatchable
-  position: 300
+  position: 315
   slide_key: supply_heat_overview_chp
 - key: share_of_energy_chp_local_mt_wood_pellets_dispatchable
   share_group: chp_wood_pellets_heat_dispatchable
   step_value: 1.0
   unit: "%"
   interface_group: heat_allocation_wood_pellets_chp_dispatchable
-  position: 310
+  position: 320
   slide_key: supply_heat_overview_chp
 
 - key: share_of_energy_chp_local_engine_ht_biogas

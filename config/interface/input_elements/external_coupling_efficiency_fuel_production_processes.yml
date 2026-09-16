@@ -207,6 +207,14 @@
   position: 455
   slide_key: costs_fischer_tropsch
   coupling_icon: true
+- key: external_coupling_fischer_tropsch_synthetic_dispatchable_co2_utilisation
+  interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
+  share_group: ''
+  step_value: 0.01
+  unit: "k/MJ"
+  position: 458
+  slide_key: costs_fischer_tropsch
+  coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_dispatchable_electricity_input_share
   interface_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable
   share_group: external_coupling_production_fischer_tropsch_synthetic_dispatchable_input
@@ -245,6 +253,14 @@
   step_value: 0.1
   unit: "%"
   position: 495
+  slide_key: costs_fischer_tropsch
+  coupling_icon: true
+- key: external_coupling_fischer_tropsch_synthetic_must_run_co2_utilisation
+  interface_group: external_coupling_production_fischer_tropsch_synthetic_must_run
+  share_group: ''
+  step_value: 0.01
+  unit: "k/MJ"
+  position: 497
   slide_key: costs_fischer_tropsch
   coupling_icon: true
 - key: external_coupling_fischer_tropsch_synthetic_must_run_electricity_input_share
@@ -517,6 +533,14 @@
   step_value: 0.1
   unit: "%"
   position: 810
+  slide_key: costs_methanol_synthesis
+  coupling_icon: true
+- key: external_coupling_methanol_synthesis_synthetic_co2_utilisation
+  interface_group: external_coupling_production_methanol_synthesis_synthetic
+  share_group: ''
+  step_value: 0.01
+  unit: "k/MJ"
+  position: 815
   slide_key: costs_methanol_synthesis
   coupling_icon: true
 - key: external_coupling_methanol_synthesis_synthetic_electricity_input_share

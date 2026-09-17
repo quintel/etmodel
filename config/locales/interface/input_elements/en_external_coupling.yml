@@ -1347,6 +1347,14 @@ en:
         <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
         technology. The model does not rebalance this automatically, so these sliders should be adjusted
         with the carbon balance in mind.
+    external_coupling_fischer_tropsch_synthetic_dispatchable_co2_utilisation:
+      title: Input - CO<sub>2</sub>
+      description: |
+        This slider sets the amount of CO<sub>2</sub> (in Mton) utilised per unit energy kerosine (in PJ)
+        produced by the Fischer Tropsch process.
+        <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
+        technology. The model does not rebalance this automatically, so these sliders should be adjusted
+        with the carbon balance in mind.
     external_coupling_fischer_tropsch_synthetic_dispatchable_electricity_input_share:
       title: Input - electricity
       description: |
@@ -1379,6 +1387,14 @@ en:
       title: Output - loss
       description: |
         This slider sets the loss share in the Fischer Tropsch process (synthetic, dispatchable).
+        <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
+        technology. The model does not rebalance this automatically, so these sliders should be adjusted
+        with the carbon balance in mind.
+    external_coupling_fischer_tropsch_synthetic_must_run_co2_utilisation:
+      title: Input - CO<sub>2</sub>
+      description: |
+        This slider sets the amount of CO<sub>2</sub> (in Mton) utilised per unit energy kerosine (in PJ)
+        produced by the Fischer Tropsch process.
         <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
         technology. The model does not rebalance this automatically, so these sliders should be adjusted
         with the carbon balance in mind.
@@ -1617,6 +1633,13 @@ en:
       title: Output - loss
       description: |
         This slider sets the loss share in methanol synthesis (non-biogenic waste, CCS).
+        <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
+        technology. The model does not rebalance this automatically, so these sliders should be adjusted
+        with the carbon balance in mind.
+    external_coupling_methanol_synthesis_synthetic_co2_utilisation:
+      title: Input - CO<sub>2</sub>
+      description: |
+        This slider sets the amount of CO<sub>2</sub> (in Mton) utilised per unit energy of produced methanol (in PJ).
         <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
         technology. The model does not rebalance this automatically, so these sliders should be adjusted
         with the carbon balance in mind.

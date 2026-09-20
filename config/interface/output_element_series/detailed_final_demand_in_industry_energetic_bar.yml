@@ -1,0 +1,961 @@
+---
+- label: heat
+  color: "#8B0000"
+  order_by: 100
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 105
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 110
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 115
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 120
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 125
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 130
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 135
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 140
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 145
+  group: metal
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_metal_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_metal_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 200
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 205
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 210
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 215
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 220
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 225
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 230
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 235
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 240
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 245
+  group: refineries
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_refineries_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_refineries_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 300
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 305
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 310
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 315
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 320
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 325
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 330
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 335
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 340
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 345
+  group: fertilizers
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_fertilizers_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_fertilizers_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 400
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 405
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 410
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 415
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 420
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 425
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 430
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 435
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 440
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 445
+  group: chemical
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_other_chemical_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_other_chemical_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 500
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 505
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 510
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 515
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 520
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 525
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 530
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 535
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 540
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 545
+  group: ict
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_ict_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_ict_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 600
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 605
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 610
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 615
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 620
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 625
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 630
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 635
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 640
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 645
+  group: food
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_food_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_food_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 700
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 705
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 710
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 715
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 720
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 725
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 730
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 735
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 740
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 745
+  group: paper
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_paper_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_paper_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: heat
+  color: "#8B0000"
+  order_by: 800
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: heat_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: heat_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: coal
+  color: "#333333"
+  order_by: 805
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: coal_and_derivatives_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: coal_and_derivatives_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: network_gas
+  color: "#CCCCCC"
+  order_by: 810
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: natural_gas_and_derivatives_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: natural_gas_and_derivatives_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: oil
+  color: "#854321"
+  order_by: 815
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: oil_and_derivatives_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: oil_and_derivatives_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: electricity
+  color: "#4169E1"
+  order_by: 820
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: electricity_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: electricity_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: biomass
+  color: "#5D7929"
+  order_by: 825
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: biomass_products_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: biomass_products_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: solar
+  color: "#FFD900"
+  order_by: 830
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: solar_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: solar_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: ambient
+  color: "#ADDE4C"
+  order_by: 835
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: ambient_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: ambient_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: geothermal
+  color: "#FF8400"
+  order_by: 840
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: geothermal_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: geothermal_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar
+- label: hydrogen
+  color: "#87CEEB"
+  order_by: 845
+  group: aggregated_other
+  show_at_first:
+  is_target_line:
+  target_line_position:
+  gquery: hydrogen_in_other_non_specified_industry_demand_bar
+  is_1990:
+  dependent_on:
+  output_element_key: detailed_final_demand_in_industry_energetic_bar
+  key: hydrogen_in_other_non_specified_industry_demand_bar_detailed_final_demand_in_industry_energetic_bar

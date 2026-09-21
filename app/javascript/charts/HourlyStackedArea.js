@@ -94,6 +94,9 @@ export default class HourlyStackedArea extends HourlyBase {
 
     this.setStackedData();
 
+    // The legend hides series with no data, so it needs to be redrawn when the values change.
+    this.drawLegend(this.getLegendSeries(), 2);
+
     const xScale = this.createTimeScale(this.dateSelect.currentRange());
     const yScale = this.createLinearScale();
     const area = this.area(xScale, yScale);

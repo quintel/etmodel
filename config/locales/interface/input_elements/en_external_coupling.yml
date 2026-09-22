@@ -1,10 +1,25 @@
 ---
 en:
   input_elements:
-    external_coupling_industry_external_coupling_node_captured_co2_supply:
-      title: Generic industry
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_ccus_captured_share:
+      title: Captured CO2 from emissions - other
       description: |
-        Supply of CO2 captured in industry that is not allocated to a specific industry sector. </br></br>
+        Share of CO2 captured from industry transformation emissions in the chemicals sector
+        (excluding fertilizers and refineries). </br></br>
+        Note: this captured flow comes from emissions that are not in scope of the ETM, but are set
+        by an external model. Capture of these emissions therefore does not lead to a reduction of
+        CO2 emissions in the ETM.
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_ccus_captured_share:
+      title: Captured CO2 from emissions - fertilizers
+      description: |
+        Share of CO2 captured from industry transformation emissions in the fertilizer sector. </br></br>
+        Note: this captured flow comes from emissions that are not in scope of the ETM, but are set
+        by an external model. Capture of these emissions therefore does not lead to a reduction of
+        CO2 emissions in the ETM.
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_ccus_captured_share:
+      title: Captured CO2 from emissions - refineries
+      description: |
+        Share of CO2 captured from industry transformation emissions in the refineries sector. </br></br>
         Note: this captured flow comes from emissions that are not in scope of the ETM, but are set
         by an external model. Capture of these emissions therefore does not lead to a reduction of
         CO2 emissions in the ETM.

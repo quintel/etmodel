@@ -1,11 +1,26 @@
 ---
 nl:
   input_elements:
-    external_coupling_industry_external_coupling_node_captured_co2_supply:
-      title: Generieke industrie
+    external_coupling_energy_chemical_other_transformation_external_coupling_node_ccus_captured_share:
+      title: Afgevangen CO2 uit emissies - overig
       description: |
-        Aanbod van CO2 afvangen in de industrie die niet is gealloceerd aan een specifieke industriesector. </br></br>
-        Let op: de afvangen stroom komt van emissies die niet in scope van het ETM zijn, maar die zijn
+        Aandeel CO2 afgevangen uit emissies van transformaties in de chemiesector
+        (exclusief kunstmest en raffinaderijen). </br></br>
+        Let op: de afgevangen stroom komt van emissies die niet in scope van het ETM zijn, maar die zijn
+        ingesteld door een extern model. Afvang van deze emissies leidt daarom niet tot een verlaging
+        van de CO2-emissies in het ETM.
+    external_coupling_energy_chemical_fertilizers_transformation_external_coupling_node_ccus_captured_share:
+      title: Afgevangen CO2 uit emissies - kunstmest
+      description: |
+        Aandeel CO2 afgevangen uit emissies van transformaties in de kunstmestsector. </br></br>
+        Let op: de afgevangen stroom komt van emissies die niet in scope van het ETM zijn, maar die zijn
+        ingesteld door een extern model. Afvang van deze emissies leidt daarom niet tot een verlaging
+        van de CO2-emissies in het ETM.
+    external_coupling_energy_chemical_refineries_transformation_external_coupling_node_ccus_captured_share:
+      title: Afgevangen CO2 uit emissies - raffinaderijen
+      description: |
+        Aandeel CO2 afgevangen uit emissies van transformaties in de raffinaderijsector. </br></br>
+        Let op: de afgevangen stroom komt van emissies die niet in scope van het ETM zijn, maar die zijn
         ingesteld door een extern model. Afvang van deze emissies leidt daarom niet tot een verlaging
         van de CO2-emissies in het ETM.
     external_coupling_molecules_other_utilisation_demand:

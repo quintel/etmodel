@@ -598,6 +598,20 @@ nl:
         >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
         <br/><br/>
         Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
+    households_heater_airconditioning_with_combined_network_gas_share:
+      title: Airco met HR combiketel (gas)
+      short_description: ''
+      description: |
+        Deze verwarmingsoptie is een combinatie van een airconditioner die ook kan
+        verwarmen (een lucht-luchtwarmtepomp) met een gasgestookte HR-combiketel
+        voor ruimteverwarming en warm tapwater.
+    households_heater_airconditioning_with_heat_pump_boiler_share:
+      title: Airco met warmtepompboiler
+      short_description: ''
+      description: |
+        Deze verwarmingsoptie is een combinatie van een airconditioner die ook kan
+        verwarmen (een lucht-luchtwarmtepomp) voor ruimteverwarming met een aparte
+        warmtepompboiler voor de productie van warm tapwater.
     households_cooker_network_gas_share:
       title: Gas
       short_description: ''
@@ -723,6 +737,14 @@ nl:
       description: ''
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (ruwe olie)
+      short_description: ''
+      description: ''
+    households_heater_airconditioning_with_heat_pump_boiler_heat_output_capacity:
+      title: Airco met warmtepompboiler
+      short_description: ''
+      description: ''
+    households_heater_hybrid_airconditioning_combined_network_gas_heat_output_capacity:
+      title: Airco met HR combiketel (gas)
       short_description: ''
       description: ''
     households_diesel_in_crude_oil_share:

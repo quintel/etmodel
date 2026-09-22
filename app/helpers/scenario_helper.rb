@@ -180,7 +180,7 @@ module ScenarioHelper
   def area_flag(area_code)
     area = Engine::Area.find_by_country_memoized(area_code)
 
-    return unless area.country? && area.area != 'UKNI01_northern_ireland'
+    return unless area.country? && %w[UKNI01_northern_ireland IEUKNI_island_of_ireland].exclude?(area.area)
 
     capture_haml do
       haml_tag(

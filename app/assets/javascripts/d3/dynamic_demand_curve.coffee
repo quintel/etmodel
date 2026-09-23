@@ -103,7 +103,8 @@ D3.dynamic_demand_curve =
     getLegendSeries: ->
       legendSeries = []
       @series.forEach (serie) =>
-         if _.find(serie.future_value(), (v) -> (v > 0))
+         # Filter series whose values are all zero (target line is exempt since is always drawn).
+         if serie.get('is_target_line') || _.find(serie.future_value(), (v) -> (v > 0))
            legendSeries.push(serie)
 
       legendSeries

@@ -44,8 +44,10 @@ export default class HourlyStackedArea extends HourlyBase {
   }
 
   getLegendSeries() {
-    // Filter series whose values are all zero.
-    return this.series.filter(serie => _.some(serie.future_value()));
+    // Filter series whose values are all zero (target line is exempt since is always drawn).
+    return this.series.filter(
+      (serie) => serie.get('is_target_line') || _.some(serie.future_value())
+    );
   }
 
   /**

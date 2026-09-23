@@ -23,8 +23,9 @@ D3.merit_order_hourly_supply =
           .attr('height', @height)
 
     getLegendSeries: ->
-      # Filter series whose values are all zero.
-      @series.filter (serie) -> _.some(serie.future_value())
+      # Filter series whose values are all zero (target line is exempt since is always drawn).
+      @series.filter (serie) ->
+        serie.get('is_target_line') || _.some(serie.future_value())
 
     getSeries: ->
       transformOpts =

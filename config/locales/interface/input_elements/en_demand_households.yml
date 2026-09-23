@@ -246,7 +246,7 @@ en:
         for cooling. <br/><br/>
         An air heatpump uses electricity
         and ambient cold to generate cold. This cold can be transfered to water or air
-        and used in underfloor heating or airconditioning systems for cooling. <br/><br/>
+        and used in underfloor heating or air conditioning systems for cooling. <br/><br/>
         Contrary to heating, the efficiency (COP) of this heat pump for cooling is
         fixed. You can view the efficiency in the technical and financial properties. <br/><br/>
         For more information you can view the
@@ -449,7 +449,7 @@ en:
         for space heating and hot water.<br/><br/>
         An air heatpump uses electricity
         and ambient heat to generate heat. This heat can be transfered to water or air
-        and used in underfloor heating or airconditioning systems for space heating or for the generation of hot water. <br/><br/>
+        and used in underfloor heating or air conditioning systems for space heating or for the generation of hot water. <br/><br/>
         The efficiency (COP) of this heat pump is affected by the outside air temperature
         and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the
         weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP: 'SCOP') can be found
@@ -573,6 +573,20 @@ en:
         Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
         More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+    households_heater_hybrid_airconditioning_combined_network_gas_share:
+      title: Air conditioning with combi boiler (gas)
+      short_description: ''
+      description: |
+        This heating option is a combination of an air conditioning unit that
+        can also heat (an air-to-air heat pump) with a gas-fired combi boiler
+        for space heating and hot water.
+    households_heater_airconditioning_with_heat_pump_boiler_share:
+      title: Air conditioning with heat pump boiler
+      short_description: ''
+      description: |
+        This heating option is a combination of an air conditioning unit that
+        can also heat (an air-to-air heat pump) for space heating with a
+        separate heat pump boiler for hot water production.
     households_cooker_network_gas_share:
       title: Gas
       short_description:
@@ -702,6 +716,14 @@ en:
       description: ''
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybrid air heat pump (crude oil)
+      short_description: ''
+      description: ''
+    households_heater_airconditioning_with_heat_pump_boiler_heat_output_capacity:
+      title: Air conditioning with heat pump boiler
+      short_description: ''
+      description: ''
+    households_heater_hybrid_airconditioning_combined_network_gas_heat_output_capacity:
+      title: Air conditioning with combi boiler (gas)
       short_description: ''
       description: ''
     households_diesel_in_crude_oil_share:

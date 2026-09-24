@@ -1590,10 +1590,24 @@ nl:
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_biogenic_waste_ccs_biogenic_waste_input_share:
+      title: Input - biogeen afval
+      description: |
+        Deze schuif bepaalt het aandeel van verbruikt biogeen afval in methanolsynthese (biogeen afval, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
     external_coupling_methanol_synthesis_biogenic_waste_ccs_biomethanol_output_share:
       title: Output - biomethanol
       description: |
         Deze schuif bepaalt het aandeel van geproduceerd biomethanol in methanolsynthese (biogeen afval, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_biogenic_waste_ccs_hydrogen_input_share:
+      title: Input - waterstof
+      description: |
+        Deze schuif bepaalt het aandeel van verbruikt waterstof in methanolsynthese (biogeen afval, CCS).
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.
@@ -1611,6 +1625,20 @@ nl:
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_dry_biomass_ccs_dry_biomass_input_share:
+      title: Input - droge biomassa
+      description: |
+        Deze schuif bepaalt het aandeel van verbruikte droge biomassa in methanolsynthese (droge biomassa, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_dry_biomass_ccs_hydrogen_input_share:
+      title: Input - waterstof
+      description: |
+        Deze schuif bepaalt het aandeel van verbruikt waterstof in methanolsynthese (droge biomassa, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
     external_coupling_methanol_synthesis_dry_biomass_ccs_loss_output_share:
       title: Output - verlies
       description: |
@@ -1618,10 +1646,24 @@ nl:
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_non_biogenic_waste_ccs_hydrogen_input_share:
+      title: Input - waterstof
+      description: |
+        Deze schuif bepaalt het aandeel van verbruikt waterstof in methanolsynthese (niet-biogeen afval, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
     external_coupling_methanol_synthesis_non_biogenic_waste_ccs_methanol_output_share:
       title: Output - methanol
       description: |
         Deze schuif bepaalt het aandeel van geproduceerde methanol in methanolsynthese (niet-biogeen afval, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_non_biogenic_waste_ccs_non_biogenic_waste_input_share:
+      title: Input - niet-biogeen afval
+      description: |
+        Deze schuif bepaalt het aandeel van verbruikt niet-biogeen afval in methanolsynthese (niet-biogeen afval, CCS).
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.

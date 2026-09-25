@@ -1359,6 +1359,14 @@ nl:
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_fischer_tropsch_synthetic_dispatchable_co2_utilisation:
+      title: Input - CO<sub>2</sub> gebruik
+      description: |
+        Deze schuif bepaalt de hoeveelheid CO<sub>2</sub> (in kg) die wordt gebruikt per eenheid
+        geproduceerde output (in GJ) in het Fischer Tropsch-proces.
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
     external_coupling_fischer_tropsch_synthetic_dispatchable_electricity_input_share:
       title: Input - elektriciteit
       description: |
@@ -1391,6 +1399,14 @@ nl:
       title: Output - verlies
       description: |
         Deze schuif bepaalt het aandeel van verlies in het Fischer Tropsch-proces (synthetisch, regelbaar).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_fischer_tropsch_synthetic_must_run_co2_utilisation:
+      title: Input - CO<sub>2</sub> gebruik
+      description: |
+        Deze schuif bepaalt de hoeveelheid CO<sub>2</sub> (in kg) die wordt gebruikt per eenheid
+        geproduceerde output (in GJ) in het Fischer Tropsch-proces.
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.
@@ -1629,6 +1645,14 @@ nl:
       title: Output - verlies
       description: |
         Deze schuif bepaalt het aandeel van verlies in methanolsynthese (niet-biogeen afval, CCS).
+        <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
+        technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
+        schuifjes moet rekening gehouden worden met de koolstofbalans.
+    external_coupling_methanol_synthesis_synthetic_co2_utilisation:
+      title: Input - CO<sub>2</sub> gebruik
+      description: |
+        Deze schuif bepaalt de hoeveelheid CO<sub>2</sub> (in kg) die wordt gebruikt per eenheid
+        geproduceerd methanol (in GJ).
         <b>Let op</b>: het instellen van de verhouding inputs of outputs kan de koolstofbalans van deze
         technologie verbreken. Het model balanceert dit niet automatisch, dus bij het instellen van deze
         schuifjes moet rekening gehouden worden met de koolstofbalans.

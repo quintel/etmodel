@@ -1350,7 +1350,7 @@ en:
     external_coupling_fischer_tropsch_synthetic_dispatchable_co2_utilisation:
       title: Input - CO<sub>2</sub> utilisation
       description: |
-        This slider sets the amount of CO<sub>2</sub> (in kg) utilised per unit energy kerosine (in GJ)
+        This slider sets the amount of CO<sub>2</sub> (in kg) utilised per unit energy of the output (in GJ)
         produced by the Fischer Tropsch process.
         <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
         technology. The model does not rebalance this automatically, so these sliders should be adjusted
@@ -1393,7 +1393,7 @@ en:
     external_coupling_fischer_tropsch_synthetic_must_run_co2_utilisation:
       title: Input - CO<sub>2</sub> utilisation
       description: |
-        This slider sets the amount of CO<sub>2</sub> (in kg) utilised per unit energy kerosine (in GJ)
+        This slider sets the amount of CO<sub>2</sub> (in kg) utilised per unit energy of the output (in GJ)
         produced by the Fischer Tropsch process.
         <b>Note</b>: changing input or output shares can unbalance the carbon going in and out of this
         technology. The model does not rebalance this automatically, so these sliders should be adjusted

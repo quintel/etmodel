@@ -29,9 +29,11 @@ module YModel
 
     def load_records!
       all = records.map { |record| new(record) }
-      unless all.map(&:index) == all.map(&:index).uniq
+      indexes = all.map(&:index)
+      unless indexes == indexes.uniq
+        duplicates = indexes.tally.select { |_, count| count > 1 }.keys
         raise YModel::DuplicateIndexError,
-              "#{name}: Some records share the same index"
+              "#{name}: Some records share the same index: #{duplicates.join(', ')}"
       end
 
       all

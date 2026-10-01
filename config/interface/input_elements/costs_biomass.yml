@@ -51,13 +51,13 @@
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 305
+  position: 315
   slide_key: specs_electricity_renewable_biomass_plants
 - key: flh_of_energy_chp_local_ht_wood_pellets_ccs_must_run
   step_value: 1.0
   unit: "#"
   interface_group: full_load_hours
-  position: 310
+  position: 320
   slide_key: specs_electricity_renewable_biomass_plants
 
 - key: efficiency_industry_chp_wood_pellets_electricity
@@ -65,14 +65,14 @@
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_wood_pellets
-  position: 400
+  position: 335
   slide_key: specs_electricity_renewable_biomass_plants
 - key: efficiency_industry_chp_wood_pellets_heat
   interface_group: efficiency_industry_plants
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_wood_pellets
-  position: 410
+  position: 340
   slide_key: specs_electricity_renewable_biomass_plants
 
 - key: efficiency_agriculture_chp_wood_pellets_electricity

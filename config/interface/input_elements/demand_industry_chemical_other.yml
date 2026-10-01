@@ -15,7 +15,7 @@
   step_value: 1
   unit: "%"
   interface_group: efficiency_industry_total
-  position: 105
+  position: 145
   slide_key: demand_industry_chemical_other
 
 - key: industry_chemicals_other_burner_network_gas_share
@@ -24,7 +24,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_network_gas
-  position: 200
+  position: 260
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_crude_oil_share
   share_group: chemical_other_heat
@@ -32,7 +32,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_crude_oil
-  position: 205
+  position: 265
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_naphtha_share
   share_group: chemical_other_heat
@@ -40,7 +40,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_naphtha
-  position: 210
+  position: 270
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_bionaphtha_share
   share_group: chemical_other_heat
@@ -48,7 +48,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_bionaphtha
-  position: 215
+  position: 275
   slide_key: demand_industry_chemical_other  
 - key: industry_chemicals_other_burner_coal_share
   share_group: chemical_other_heat
@@ -56,7 +56,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_coal
-  position: 220
+  position: 280
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_wood_pellets_share
   share_group: chemical_other_heat
@@ -64,7 +64,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_wood_pellets
-  position: 225
+  position: 285
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_hydrogen_share
   share_group: chemical_other_heat
@@ -72,7 +72,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_burner_hydrogen
-  position: 230
+  position: 290
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_heater_electricity_share
   share_group: chemical_other_heat
@@ -80,7 +80,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_heater_electricity
-  position: 235
+  position: 295
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_steam_recompression_electricity_share
   share_group: chemical_other_heat
@@ -88,7 +88,7 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_steam_recompression_electricity
-  position: 240
+  position: 325
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_heatpump_water_water_electricity_share
   share_group: chemical_other_heat
@@ -96,14 +96,14 @@
   unit: "%"
   interface_group: heat_production
   related_node: industry_chemicals_other_heatpump_water_water_electricity
-  position: 245
+  position: 330
   slide_key: demand_industry_chemical_other
 - key: industry_final_demand_for_chemical_other_steam_hot_water_share
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
   interface_group: heat_production
-  position: 250
+  position: 335
   slide_key: demand_industry_chemical_other
 
 - key: capacity_of_industry_chemicals_other_flexibility_p2h_electricity
@@ -111,7 +111,7 @@
   unit: MW
   interface_group: hybrid_heating
   related_node: industry_chemicals_other_flexibility_p2h_network_gas_electricity
-  position: 300
+  position: 370
   slide_key: demand_industry_chemical_other
 
 - key: industry_chemicals_other_wood_pellets_non_energetic_share
@@ -119,61 +119,61 @@
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 400
+  position: 470
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_hydrogen_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 405
+  position: 475
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_network_gas_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 410
+  position: 480
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_crude_oil_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 415
+  position: 485
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_naphtha_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 420
+  position: 490
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_bionaphtha_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 425
+  position: 495
   slide_key: demand_industry_chemical_other  
 - key: industry_chemicals_other_coal_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 430
+  position: 565
   slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_methanol_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 435
+  position: 575
   slide_key: demand_industry_chemical_other  
 - key: industry_chemicals_other_biomethanol_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
   unit: "%"
   interface_group: chemical_other_non_energetic
-  position: 440
+  position: 585
   slide_key: demand_industry_chemical_other

@@ -834,7 +834,7 @@ en:
       description: |
         This slider sets the share of the remaining heat demand in the refineries that is met by gas-fired heaters.<br/><br/>
         Part of the heat demand is first met by refinery gas. The share of refinery gas used in the
-        refineries themselves can be set under Distribution of refinery gas.
+        refineries themselves can be set under Energetic use of refinery gas.
         The sliders in this group only distribute the heat demand that remains.
     industry_chemicals_refineries_burner_crude_oil_share:
       title: Oil-fired heater
@@ -842,7 +842,7 @@ en:
       description: |
         This slider sets the share of the remaining heat demand in the refineries that is met by oil-fired heaters.<br/><br/>
         Part of the heat demand is first met by refinery gas. The share of refinery gas used in the
-        refineries themselves can be set under Distribution of refinery gas.
+        refineries themselves can be set under Energetic use of refinery gas.
         The sliders in this group only distribute the heat demand that remains.
     industry_chemicals_refineries_burner_wood_pellets_share:
       title: Biomass-fired heater
@@ -850,7 +850,7 @@ en:
       description: |
         This slider sets the share of the remaining heat demand in the refineries that is met by biomass-fired heaters.<br/><br/>
         Part of the heat demand is first met by refinery gas. The share of refinery gas used in the
-        refineries themselves can be set under Distribution of refinery gas.
+        refineries themselves can be set under Energetic use of refinery gas.
         The sliders in this group only distribute the heat demand that remains.
     industry_chemicals_refineries_burner_coal_share:
       title: Coal-fired heater
@@ -858,7 +858,7 @@ en:
       description: |
         This slider sets the share of the remaining heat demand in the refineries that is met by coal-fired heaters.<br/><br/>
         Part of the heat demand is first met by refinery gas. The share of refinery gas used in the
-        refineries themselves can be set under Distribution of refinery gas.
+        refineries themselves can be set under Energetic use of refinery gas.
         The sliders in this group only distribute the heat demand that remains.
     industry_final_demand_for_chemical_refineries_steam_hot_water_share:
       title: Steam network
@@ -866,7 +866,7 @@ en:
       description: |
         This slider sets the share of the remaining heat demand in the refineries that is met by steam from a collective steam network.<br/><br/>
         Part of the heat demand is first met by refinery gas. The share of refinery gas used in the
-        refineries themselves can be set under Distribution of refinery gas.
+        refineries themselves can be set under Energetic use of refinery gas.
         The sliders in this group only distribute the heat demand that remains.<br/><br/>
         The sources of the steam network can be set in the
         <a href="/scenario/demand/industry/steam-network-sources">Steam network sources</a> section.
@@ -898,7 +898,7 @@ en:
       description: |
         This slider sets the share of the remaining heat demand in the refineries that is met by hydrogen-fired heaters.<br/><br/>
         Part of the heat demand is first met by refinery gas. The share of refinery gas used in the
-        refineries themselves can be set under Distribution of refinery gas.
+        refineries themselves can be set under Energetic use of refinery gas.
         The sliders in this group only distribute the heat demand that remains.<br/><br/>
         Hydrogen production can be set in the
         <a href="/scenario/supply/hydrogen/hydrogen-production">Hydrogen production</a> section.
@@ -909,6 +909,7 @@ en:
         Refinery gas is a by-product of the refining process. This by-product is always used as fuel.
         This can be in the refineries themselves, but also in the chemical industry.
         This slider determines what percentage of the refinery gas is used in the refineries themselves.
+        If more refinery gas is directed to the refineries than is needed for heat production there, the excess is flared.
     industry_chemicals_refineries_refinery_gas_distribution_chemicals_other_share:
       title: Chemicals
       short_description:
@@ -916,6 +917,7 @@ en:
         Refinery gas is a by-product of the refining process. This by-product is always used as fuel.
         This can be in the refineries themselves, but also in the chemical industry.
         This slider determines what percentage of the refinery gas is used in the <a href="/scenario/demand/industry/chemicals">chemical industry</a>.
+        If more refinery gas is directed to the chemical industry than is needed for heat production there, the excess is flared.
     industry_diesel_in_crude_oil_share:
       title: Diesel
       short_description:

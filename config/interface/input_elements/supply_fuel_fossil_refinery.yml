@@ -16,14 +16,14 @@
   step_value: 0.1
   unit: "%"
   interface_group: refinery_gas_distribution
-  position: 16
+  position: 20
   slide_key: supply_fuel_fossil_refinery
 - key: industry_chemicals_refineries_refinery_gas_distribution_refineries_share
   share_group: chemical_refineries_refinery_gas_distribution
   step_value: 0.1
   unit: "%"
   interface_group: refinery_gas_distribution
-  position: 17
+  position: 25
   slide_key: supply_fuel_fossil_refinery
 - key: industry_chemicals_refineries_burner_network_gas_share
   share_group: chemical_refineries_heat
@@ -31,7 +31,7 @@
   unit: "%"
   interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_refineries_burner_network_gas
-  position: 20
+  position: 30
   slide_key: supply_fuel_fossil_refinery
 - key: industry_chemicals_refineries_burner_crude_oil_share
   share_group: chemical_refineries_heat
@@ -39,7 +39,7 @@
   unit: "%"
   interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_refineries_burner_crude_oil
-  position: 25
+  position: 35
   slide_key: supply_fuel_fossil_refinery
 - key: industry_chemicals_refineries_burner_wood_pellets_share
   share_group: chemical_refineries_heat
@@ -47,7 +47,7 @@
   unit: "%"
   interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_refineries_burner_wood_pellets
-  position: 30
+  position: 40
   slide_key: supply_fuel_fossil_refinery
 - key: industry_chemicals_refineries_burner_coal_share
   share_group: chemical_refineries_heat
@@ -55,14 +55,14 @@
   unit: "%"
   interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_refineries_burner_coal
-  position: 35
+  position: 45
   slide_key: supply_fuel_fossil_refinery
 - key: industry_final_demand_for_chemical_refineries_steam_hot_water_share
   share_group: chemical_refineries_heat
   step_value: 0.1
   unit: "%"
   interface_group: heat_production_after_refinery_gas
-  position: 40
+  position: 50
   slide_key: supply_fuel_fossil_refinery
 - key: industry_chemicals_refineries_burner_hydrogen_share
   share_group: chemical_refineries_heat
@@ -70,12 +70,12 @@
   unit: "%"
   interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_refineries_burner_hydrogen
-  position: 45
+  position: 55
   slide_key: supply_fuel_fossil_refinery
 - key: capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity
   step_value: 1.0
   unit: MW
   interface_group: hybrid_heating
   related_node: industry_chemicals_refineries_flexibility_p2h_network_gas_electricity
-  position: 50
+  position: 60
   slide_key: supply_fuel_fossil_refinery

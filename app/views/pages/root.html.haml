@@ -73,7 +73,7 @@
       %h4= t('intro.pyetm.title')
       %p= t('intro.pyetm.description')
       %p
-        = link_to('https://github.com/quintel/pyetm/blob/version-2/README.md', target: '_blank', rel: 'noopener noreferrer') do
+        = link_to('https://github.com/quintel/pyetm/blob/main/README.md', target: '_blank', rel: 'noopener noreferrer') do
           = t('intro.pyetm.link')
           →
 
@@ -82,6 +82,7 @@
     - flags.each do |flag|
       = image_tag flag, class: File.basename(flag, '.png')
     .ukni01_northern_ireland.blank-flag
+    .ieukni_island_of_ireland.blank-flag
 
   #legal
     = render partial: 'layouts/etm/footer'

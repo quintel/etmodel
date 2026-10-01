@@ -787,7 +787,7 @@ nl:
       description: |
         Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met gasketels.<br/><br/>
         Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
-        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Energetisch gebruik raffinagegas.
         De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_refineries_burner_crude_oil_share:
       title: Olieketel
@@ -795,7 +795,7 @@ nl:
       description: |
         Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met olieketels.<br/><br/>
         Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
-        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Energetisch gebruik raffinagegas.
         De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_refineries_burner_wood_pellets_share:
       title: Biomassaketel
@@ -803,7 +803,7 @@ nl:
       description: |
         Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met biomassaketels.<br/><br/>
         Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
-        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Energetisch gebruik raffinagegas.
         De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_refineries_burner_coal_share:
       title: Kolenketel
@@ -811,7 +811,7 @@ nl:
       description: |
         Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met kolenketels.<br/><br/>
         Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
-        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Energetisch gebruik raffinagegas.
         De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_final_demand_for_chemical_refineries_steam_hot_water_share:
       title: Stoomnet
@@ -819,7 +819,7 @@ nl:
       description: |
         Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met stoom uit een collectief stoomnet.<br/><br/>
         Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
-        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Energetisch gebruik raffinagegas.
         De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
         De bronnen van het stoomnet zijn in te stellen in de sectie
         <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
@@ -851,7 +851,7 @@ nl:
       description: |
         Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met waterstofketels.<br/><br/>
         Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
-        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Energetisch gebruik raffinagegas.
         De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
         De productie van waterstof is in te stellen in de sectie
         <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a>.
@@ -862,6 +862,7 @@ nl:
         Raffinagegas is een bijproduct van het raffinageproces. Dit bijproduct wordt altijd gebruikt als brandstof.
         Dit kan zijn in de raffinaderijen zelf, maar ook in de chemische industrie.
         Deze slider bepaalt welk percentage van het raffinagegas wordt gebruikt in de raffinaderijen zelf.
+        Als er meer raffinagegas naar de raffinaderijen gaat dan daar nodig is voor warmteproductie, wordt het overschot afgefakkeld.
     industry_chemicals_refineries_refinery_gas_distribution_chemicals_other_share:
       title: Chemie
       short_description:
@@ -869,6 +870,7 @@ nl:
         Raffinagegas is een bijproduct van het raffinageproces. Dit bijproduct wordt altijd gebruikt als brandstof.
         Dit kan zijn in de raffinaderijen zelf, maar ook in de chemische industrie.
         Deze slider bepaalt welk percentage van het raffinagegas wordt gebruikt in de <a href="/scenario/demand/industry/chemicals">chemie</a>.
+        Als er meer raffinagegas naar de chemie gaat dan daar nodig is voor warmteproductie, wordt het overschot afgefakkeld.
     industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
       title: Lokale NH<sub>3</sub> (stoomreforming van aardgas)
       short_description:

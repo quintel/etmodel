@@ -283,15 +283,10 @@ nl:
     demand_industry_chemical_other:
       title: Chemie
       short_description:
-      description: "Binnen deze sector vallen de productie van chemicaliën. De productie
-        van kunstmest is hiervan afgesplitst en is als <a href=\"/scenario/demand/industry/fertilizers\"
-        > aparte sector</a> opgenomen in het model.\r\n<br></br>\r\nDe groei die je
-        hier aangeeft is het gevolg van economische groei en bevolkingsgroei. Dit
-        is dus <strong>exclusief</strong> efficiëntieverbeteringen en andere technologieën
-        die je in de gedeeltes hieronder kunt aangeven.\r\n<br></br>\r\nLet op: de
-        warmtetechnologieën zijn niet allemaal geschikt om de volledige warmtevraag
-        in te vullen. Meer informatie hierover is te vinden bij het \"?\" naast de
-        schuifjes."
+      description: |
+        Binnen deze sector valt de productie van chemicaliën, exclusief
+        <a href="/scenario/supply/fuel_production/oil-refineries">raffinaderijen</a> en
+        <a href="/scenario/demand/industry/fertilizers">kunstmest</a>.
     demand_industry_other_food:
       title: Voedsel
       short_description:

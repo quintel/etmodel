@@ -381,10 +381,8 @@ nl:
     industry_useful_demand_for_chemical_other:
       title: Grootte
       short_description:
-      description: "In geval van niet-energetisch gebruik worden olieproducten gebruikt
-        om chemische producten te maken die niet als brandstof dienen. Onder andere
-        verscheidene plastics, farmaceutica en smeermiddelen worden uit olie gemaakt.\r\n</br></br>\r\nGeef
-        hier aan hoe de raffinagesector in de toekomst zal groeien of krimpen."
+      description: |
+        Deze slider bepaalt hoe de chemische industrie in de toekomst groeit of krimpt.
     industry_useful_demand_for_chemical_other_electricity_efficiency:
       title: Elektriciteit
       short_description:
@@ -400,90 +398,81 @@ nl:
     industry_chemicals_other_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met gasketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_other_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuur nodig. Die kan nu het best gemaakt worden door brandstoffen te
-        verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het meest
-        afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met olieketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_other_burner_naphtha_share:
       title: Naftaketel
       short_description:
       description: |
-        Het aandeel van de warmtevraag dat wordt ingevuld door naftaketels.<br/><br/>In industriële
-        processen is vooral hoge temperatuur nodig. Die kan nu het beste geleverd worden
-        door brandstoffen te verstoken. De brandstofmix voor warmtelevering aan industriële
-        processen hangt waarschijnlijk het meest af van de brandstofprijzen en milieuwetgeving.
-        Zie de sectie <a href=/scenario/costs/fuel_costs/combustion-fuel>Kosten</a> om
-        aannames te doen in de prijs van primaire brandstoffen.
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met naftaketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_other_burner_bionaphtha_share:
       title: Bionaftaketel
       short_description:
       description: |
-        Het aandeel van de warmtevraag dat wordt ingevuld door bionaftaketels.<br/><br/>In industriële
-        processen is vooral hoge temperatuur nodig. Die kan nu het beste geleverd worden
-        door brandstoffen te verstoken. De brandstofmix voor warmtelevering aan industriële
-        processen hangt waarschijnlijk het meest af van de brandstofprijzen en milieuwetgeving.
-        Zie de sectie <a href=/scenario/costs/fuel_costs/combustion-fuel>Kosten</a> om
-        aannames te doen in de prijs van primaire brandstoffen.
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met bionaftaketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_other_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met biomassaketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_other_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\nDe brandstofmix die
-        je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met kolenketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_final_demand_for_chemical_other_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met stoom uit een collectief stoomnet.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        De bronnen van het stoomnet zijn in te stellen in de sectie
+        <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
     industry_chemicals_other_steam_recompression_electricity_share:
       title: Stoomrecompressie
       short_description:
-      description: "Welk percentage van de warmtevraag van de chemische industrie
-        wordt ingevuld door stoomrecompressie? \r\n<br></br>\r\nDeze technologie gebruikt
-        \"afvalstoom\" van lage temperatuur en druk. Door compressie worden zowel
-        de druk als de temperatuur verhoogd. De energie die nodig is voor compressie
-        is klein in vergelijking met de restwarmte die in de \"afvalstoom\" nog aanwezig
-        is. Het totale proces heeft een COP van 9.8.\r\n<br></br>\r\nLet op, niet
-        alle warmtevraag van de chemische sector bestaat uit stoomvraag. Meer informatie
-        over de verdeling van de warmtevraag is te vinden in de CE Delft studie <a
-        href=\"https://refman.energytransitionmodel.com/publications/2052\" target=\"_blank\">Denktank
-        Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met stoomrecompressie.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        Niet alle warmtevraag in de chemische industrie bestaat uit stoomvraag.
+        Voor een realistische verdeling is het belangrijk hier rekening mee te houden.
     industry_chemicals_other_heatpump_water_water_electricity_share:
       title: Warmtepomp
       short_description:
-      description: "Welk percentage van de warmtevraag van de chemische industrie
-        wordt ingevuld door industriële warmtepompen? \r\n<br></br>\r\nHet eindproduct
-        van dit proces is stoom. De stoomgeneratie bestaat uit twee stappen. In de
-        eerste stap wordt water verwarmd door een warmtepomp. Dit water wordt vervolgens
-        bij lage druk verdampt. De stoom die hierbij ontstaat wordt door een compressor
-        op de gewenste druk gebracht. De COP van het totale proces is 2.8.\r\n<br></br>\r\nLet
-        op, niet alle warmtevraag van de chemische sector bestaat uit stoomvraag.
-        Meer informatie over de verdeling van de warmtevraag is te vinden in de CE
-        Delft studie <a href=\"https://refman.energytransitionmodel.com/publications/2052\"
-        target=\"_blank\">Denktank Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met industriële warmtepompen.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        Deze techniek is beperkt in de temperatuur die geleverd kan worden. Sommige processen vereisen hogere temperaturen.
+        Voor een realistische verdeling is het belangrijk hier rekening mee te houden.
     capacity_of_industry_chemicals_other_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
@@ -509,23 +498,23 @@ nl:
     industry_chemicals_other_heater_electricity_share:
       title: Elektrische boiler
       short_description:
-      description: "Industriële elektrische boilers zijn geavanceerde en enorm vergrote
-        versies van de alledaagse elektrische boiler die in huishoudens te vinden
-        is. Deze boilers kunnen warmte leveren tot een temperatuur van 300 <sup>o</sup>C.
-        Aangezien de temperatuur van de warmtevraag tussen diverse industrieën en
-        binnen een industrie sterk kan verschillen, kunnen zij enkel ingezet worden
-        voor dat gedeelte van de vraag waar relatief lage temperatuur nodig is.\r\n<br></br>\r\nMeer
-        informatie over de verdeling van de warmtevraag is te vinden in de CE Delft
-        studie <a href=\"https://refman.energytransitionmodel.com/publications/2052\"
-        target=\"_blank\">Denktank Energiemarkt Industriële warmtemarkt\"</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met elektrische boilers.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        Deze techniek is beperkt in de temperatuur die geleverd kan worden. Sommige processen vereisen hogere temperaturen.
+        Voor een realistische verdeling is het belangrijk hier rekening mee te houden.
     industry_chemicals_other_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de chemische industrie wordt ingevuld met waterstofketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas uit de
+        <a href="/scenario/supply/fuel_production/oil-refineries">olieraffinaderijen</a>.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        De productie van waterstof is in te stellen in de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a>.
     industry_chemicals_other_wood_pellets_non_energetic_share:
       title: Biomassa
       short_description:
@@ -795,44 +784,45 @@ nl:
     industry_chemicals_refineries_burner_network_gas_share:
       title: Gasketel
       short_description:
-      description: "Alle warmte die niet wordt opgewekt met de methodes hieronder,
-        wordt door het model automatisch ingevuld met een gasketel. Dit zijn behoorlijk
-        efficiënte systemen, maar ze stoten wel CO<sub>2</sub> uit. Dat kan een probleem
-        zijn als je hele grote reducties van broeikasgasemissies wilt halen.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met gasketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_refineries_burner_crude_oil_share:
       title: Olieketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door oliegestookte ketels? \r\n</br></br>\r\nIn de industrie is vooral hoge
-        temperatuur nodig. Die kan nu het best gemaakt worden door brandstoffen te
-        verstoken. \r\nDe brandstofmix die je hier invult zal waarschijnlijk het meest
-        afhangen van je verwachtingen voor brandstofprijzen. Zie ook het onderdeel
-        <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met olieketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_refineries_burner_wood_pellets_share:
       title: Biomassaketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door biomassa? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur
-        nodig. Die kan nu het best gemaakt worden door brandstoffen te verstoken.\r\nDe
-        brandstofmix die je hier invult zal waarschijnlijk het meest afhangen van
-        je verwachtingen voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.\r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met biomassaketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_chemicals_refineries_burner_coal_share:
       title: Kolenketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door kolen? \r\n</br></br>\r\nIn de industrie is vooral hoge temperatuur nodig.
-        Die kan nu het best gemaakt worden door brandstoffen te verstoken. Kolen (of
-        cokes) worden vooral in de staalindustrie ingezet. \r\n</br></br>\r\nDe brandstofmix
-        die je hier invult zal waarschijnlijk het meest afhangen van je verwachtingen
-        voor brandstofprijzen. Zie ook het onderdeel <a href=/scenario/costs/fuel_costs/combustion-fuel>'Kosten'</a>.
-        \r\n<br>"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met kolenketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.
     industry_final_demand_for_chemical_refineries_steam_hot_water_share:
       title: Stoomnet
       short_description:
       description: |
-        Warmte wordt geleverd door een collectief net als stoom. De warmte kan worden geproduceerd
-        door warmtekrachtkoppeling (WKK) of door grootschalige ketels. Je kunt de warmtebronnen instellen in
-        de sectie <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met stoom uit een collectief stoomnet.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        De bronnen van het stoomnet zijn in te stellen in de sectie
+        <a href="/scenario/demand/industry/steam-network-sources">Bronnen stoomnet</a>.
     capacity_of_industry_chemicals_refineries_flexibility_p2h_electricity:
       title: Power-to-heat boiler voor H<sub>2</sub> en gasketels
       short_description:
@@ -858,11 +848,27 @@ nl:
     industry_chemicals_refineries_burner_hydrogen_share:
       title: Waterstofketel
       short_description:
-      description: "Welk percentage van de industriële warmtevraag wordt ingevuld
-        door waterstofketels? <br /> <br />\r\n\r\nDeze ketel is in staat om hogetemperatuurwarmte
-        te maken, waar in de industrie veel behoefte aan is. In de <a href=\"/scenario/supply/hydrogen/hydrogen-production\">
-        Aanbodsectie</a> kun je specificeren hoe de gebruikte waterstof wordt geproduceerd.
-        <br />"
+      description: |
+        Deze slider bepaalt welk deel van de resterende warmtevraag in de raffinaderijen wordt ingevuld met waterstofketels.<br/><br/>
+        Een deel van de warmtevraag wordt eerst ingevuld met raffinagegas. Welk deel van het raffinagegas
+        in de raffinaderijen zelf wordt gebruikt, is in te stellen onder Verdeling raffinagegas.
+        De sliders in deze groep verdelen alleen de warmtevraag die daarna overblijft.<br/><br/>
+        De productie van waterstof is in te stellen in de sectie
+        <a href="/scenario/supply/hydrogen/hydrogen-production">Waterstofproductie</a>.
+    industry_chemicals_refineries_refinery_gas_distribution_refineries_share:
+      title: Raffinaderijen
+      short_description:
+      description: |
+        Raffinagegas is een bijproduct van het raffinageproces. Dit bijproduct wordt altijd gebruikt als brandstof.
+        Dit kan zijn in de raffinaderijen zelf, maar ook in de chemische industrie.
+        Deze slider bepaalt welk percentage van het raffinagegas wordt gebruikt in de raffinaderijen zelf.
+    industry_chemicals_refineries_refinery_gas_distribution_chemicals_other_share:
+      title: Chemie
+      short_description:
+      description: |
+        Raffinagegas is een bijproduct van het raffinageproces. Dit bijproduct wordt altijd gebruikt als brandstof.
+        Dit kan zijn in de raffinaderijen zelf, maar ook in de chemische industrie.
+        Deze slider bepaalt welk percentage van het raffinagegas wordt gebruikt in de <a href="/scenario/demand/industry/chemicals">chemie</a>.
     industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
       title: Lokale NH<sub>3</sub> (stoomreforming van aardgas)
       short_description:

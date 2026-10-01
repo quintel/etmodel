@@ -280,13 +280,10 @@ en:
     demand_industry_chemical_other:
       title: Chemicals
       short_description:
-      description: "This sector includes the production of chemicals. Fertilizer production
-        has been excluded from this sector and is represented as a <a href=\"/scenario/demand/industry/fertilizers\"
-        > separate sector</a>. \r\n<br><br/>\r\nThe growth you indicate here is due
-        to economic and population growth. This growth is excluding efficiencies and
-        technological changes you can indicate in the subsections below.\r\n<br></br>\r\nCaution:
-        not all heat production technologies are suited to supply the full heat demand.
-        More information on this can be found in the \"?\" next to the slider."
+      description: |
+        This sector includes the production of chemicals, excluding
+        <a href="/scenario/supply/fuel_production/oil-refineries">refineries</a> and
+        <a href="/scenario/demand/industry/fertilizers">fertilizers</a>.
     demand_industry_other_food:
       title: Food
       short_description:

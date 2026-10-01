@@ -23,7 +23,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_network_gas
   position: 260
   slide_key: demand_industry_chemical_other
@@ -31,7 +31,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_crude_oil
   position: 265
   slide_key: demand_industry_chemical_other
@@ -39,7 +39,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_naphtha
   position: 270
   slide_key: demand_industry_chemical_other
@@ -47,15 +47,15 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_bionaphtha
   position: 275
-  slide_key: demand_industry_chemical_other  
+  slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_burner_coal_share
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_coal
   position: 280
   slide_key: demand_industry_chemical_other
@@ -63,7 +63,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_wood_pellets
   position: 285
   slide_key: demand_industry_chemical_other
@@ -71,7 +71,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_burner_hydrogen
   position: 290
   slide_key: demand_industry_chemical_other
@@ -79,7 +79,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_heater_electricity
   position: 295
   slide_key: demand_industry_chemical_other
@@ -87,7 +87,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_steam_recompression_electricity
   position: 325
   slide_key: demand_industry_chemical_other
@@ -95,7 +95,7 @@
   share_group: chemical_other_heat
   step_value: 0.1
   unit: "%"
-  interface_group: heat_production
+  interface_group: heat_production_after_refinery_gas
   related_node: industry_chemicals_other_heatpump_water_water_electricity
   position: 330
   slide_key: demand_industry_chemical_other
@@ -156,7 +156,7 @@
   unit: "%"
   interface_group: chemical_other_non_energetic
   position: 495
-  slide_key: demand_industry_chemical_other  
+  slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_coal_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1
@@ -170,7 +170,7 @@
   unit: "%"
   interface_group: chemical_other_non_energetic
   position: 575
-  slide_key: demand_industry_chemical_other  
+  slide_key: demand_industry_chemical_other
 - key: industry_chemicals_other_biomethanol_non_energetic_share
   share_group: chemical_other_non_energetic
   step_value: 0.1

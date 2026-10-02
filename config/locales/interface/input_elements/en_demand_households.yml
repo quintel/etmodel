@@ -580,6 +580,14 @@ en:
         This heating option is a combination of an air conditioning unit that
         can also heat (an air-to-air heat pump) with a gas-fired combi boiler
         for space heating and hot water.
+        <br/><br/>
+        The air conditioning unit supplies as much of the space heating demand
+        as its capacity allows. The combi boiler meets the remaining space
+        heating demand and also provides all hot water.
+        More information on how this system works can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank">heat pump documentation</a>.
+        <br/><br/>
+        The capacity of the air conditioning unit can be adjusted in the section
+        <a href="/scenario/demand/households_heating_order/capacities">Capacities</a>.
     households_heater_airconditioning_with_heat_pump_boiler_share:
       title: Air conditioning with heat pump boiler
       short_description: ''
@@ -587,6 +595,9 @@ en:
         This heating option is a combination of an air conditioning unit that
         can also heat (an air-to-air heat pump) for space heating with a
         separate heat pump boiler for hot water production.
+        <br/><br/>
+        The capacity of the air conditioning unit can be adjusted in the section
+        <a href="/scenario/demand/households_heating_order/capacities">Capacities</a>.
     households_cooker_network_gas_share:
       title: Gas
       short_description:

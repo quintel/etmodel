@@ -70,11 +70,16 @@ D3.heat_demand_and_production =
       @drawLegend(@getLegendSeries())
 
     getLegendSeries: () ->
+      # Filter series whose values are all zero (target line is exempt since is always drawn).
       legendSeries = @series.filter (serie) ->
-        _.find(serie.future_value(), (v) -> v > 0)
+        serie.get('is_target_line') || _.find(serie.future_value(), (v) -> v > 0)
 
-      legendSeries.unshift(new FakeSerie(@deficitKey, '#ffbaba'))
-      legendSeries.unshift(new FakeSerie(@surplusKey, '#FE6100'))
+      # Surplus and deficit are fake series calculated from real series (production vs demand).
+      deficit = _.find(@rawChartData, (serie) => serie.key == @deficitKey)
+      surplus = _.find(@rawChartData, (serie) => serie.key == @surplusKey)
+
+      legendSeries.unshift(new FakeSerie(@deficitKey, '#ffbaba')) if _.some(deficit?.values)
+      legendSeries.unshift(new FakeSerie(@surplusKey, '#FE6100')) if _.some(surplus?.values)
 
       legendSeries
 

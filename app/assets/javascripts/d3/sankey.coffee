@@ -1186,6 +1186,7 @@ D3.sankey =
           {left: 'chemical_fertilizer',                  right: 'kerosene',                          gquery: 'fertilizers_chemical_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'chemical_fertilizer',                  right: 'hfo',                               gquery: 'fertilizers_chemical_to_hfo_in_liquid_fuels_sankey', color: '#8B7355'},
           {left: 'chemical_fertilizer',                  right: 'naphtha',                           gquery: 'fertilizers_chemical_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
+          {left: 'chemical_fertilizer',                  right: 'refinery_gas',                      gquery: 'fertilizers_chemical_to_refinery_gas_in_liquid_fuels_sankey', color: '#BC8F8F'},
           {left: 'chemical_fertilizer',                  right: 'methanol',                          gquery: 'fertilizers_chemical_to_methanol_in_liquid_fuels_sankey', color: '#BF8877'},
           {left: 'chemical_fertilizer',                  right: 'bio_kerosene',                      gquery: 'fertilizers_chemical_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'chemical_fertilizer',                  right: 'biodiesel',                         gquery: 'fertilizers_chemical_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
@@ -1256,6 +1257,7 @@ D3.sankey =
 
           # FUEL PRODUCTS TO END USES
           {left: 'crude_oil',                             right: 'export',                            gquery: 'crude_oil_to_export_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'crude_oil',                             right: 'refinery_gas',                      gquery: 'crude_oil_to_refinery_gas_in_liquid_fuels_sankey', color: '#8B4513'},
 
           {left: 'diesel',                                right: 'households',                        gquery: 'diesel_to_households_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'diesel',                                right: 'buildings',                         gquery: 'diesel_to_buildings_in_liquid_fuels_sankey', color: '#8B4513'},
@@ -1324,7 +1326,7 @@ D3.sankey =
 
           {left: 'oil_products',                          right: 'export',                            gquery: 'oil_products_to_export_in_liquid_fuels_sankey', color: '#8B4513'},
 
-          {left: 'refinery_gas',                          right: 'losses',                            gquery: 'refinery_gas_to_losses_in_liquid_fuels_sankey', color: '#DCDCDC'},
+          {left: 'refinery_gas',                          right: 'industry',                          gquery: 'refinery_gas_to_industry_in_liquid_fuels_sankey', color: '#BC8F8F'},
 
           {left: 'bio_ethanol',                           right: 'transport',                         gquery: 'bio_ethanol_to_transport_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'bio_ethanol',                           right: 'export',                            gquery: 'bio_ethanol_to_export_in_liquid_fuels_sankey', color: '#90EE90'},

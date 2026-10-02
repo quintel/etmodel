@@ -598,6 +598,31 @@ nl:
         >Vraagsturing - gedrag van hybride warmtepompen</a> aan te passen.
         <br/><br/>
         Meer informatie over hoe hybride warmtepompen werken is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentatie</a>
+    households_heater_hybrid_airconditioning_combined_network_gas_share:
+      title: Airco met HR combiketel (gas)
+      short_description: ''
+      description: |
+        Deze verwarmingsoptie is een combinatie van een airconditioner die ook kan
+        verwarmen (een lucht-luchtwarmtepomp) met een gasgestookte HR-combiketel
+        voor ruimteverwarming en warm tapwater.
+        <br/><br/>
+        De airco levert zoveel van ruimteverwarmingsvraag als zijn vermogen
+        toelaat. De HR-combiketel vult de resterende vraag naar ruimteverwarming in
+        en levert daarnaast al het warm tapwater.
+        Meer informatie over hoe dit systeem werkt is te vinden in de <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank">documentatie over warmtepompen</a>.
+        <br/><br/>
+        Het vermogen van de airco is in de sectie
+        <a href="/scenario/demand/households_heating_order/capacities">Vermogens</a> aan te passen.
+    households_heater_airconditioning_with_heat_pump_boiler_share:
+      title: Airco met warmtepompboiler
+      short_description: ''
+      description: |
+        Deze verwarmingsoptie is een combinatie van een airconditioner die ook kan
+        verwarmen (een lucht-luchtwarmtepomp) voor ruimteverwarming met een aparte
+        warmtepompboiler voor de productie van warm tapwater.
+        <br/><br/>
+        Het vermogen van de airco is in de sectie
+        <a href="/scenario/demand/households_heating_order/capacities">Vermogens</a> aan te passen.
     households_cooker_network_gas_share:
       title: Gas
       short_description: ''
@@ -723,6 +748,14 @@ nl:
       description: ''
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (ruwe olie)
+      short_description: ''
+      description: ''
+    households_heater_airconditioning_with_heat_pump_boiler_heat_output_capacity:
+      title: Airco met warmtepompboiler
+      short_description: ''
+      description: ''
+    households_heater_hybrid_airconditioning_combined_network_gas_heat_output_capacity:
+      title: Airco met HR combiketel (gas)
       short_description: ''
       description: ''
     households_diesel_in_crude_oil_share:

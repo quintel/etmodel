@@ -203,6 +203,30 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_before_1945_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
+- label: households_space_heater_airconditioning_with_heat_pump_boiler
+  color: "#3EB489"
+  order_by: 90
+  group: residences_before_1945
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_before_1945_with_space_heater_airconditioning_with_heat_pump_boiler
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_airconditioning_with_heat_pump_boiler_residential_heating_technologies
+- label: households_space_heater_hybrid_airconditioning_combined_network_gas
+  color: "#8A9A5B"
+  order_by: 95
+  group: residences_before_1945
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_before_1945_with_space_heater_hybrid_airconditioning_combined_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_before_1945_with_space_heater_hybrid_airconditioning_combined_network_gas_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -408,6 +432,30 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_1945_1964_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
+- label: households_space_heater_airconditioning_with_heat_pump_boiler
+  color: "#3EB489"
+  order_by: 190
+  group: residences_1945_1964
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1945_1964_with_space_heater_airconditioning_with_heat_pump_boiler
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_airconditioning_with_heat_pump_boiler_residential_heating_technologies
+- label: households_space_heater_hybrid_airconditioning_combined_network_gas
+  color: "#8A9A5B"
+  order_by: 195
+  group: residences_1945_1964
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1945_1964_with_space_heater_hybrid_airconditioning_combined_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1945_1964_with_space_heater_hybrid_airconditioning_combined_network_gas_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -613,6 +661,30 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_1965_1984_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
+- label: households_space_heater_airconditioning_with_heat_pump_boiler
+  color: "#3EB489"
+  order_by: 290
+  group: residences_1965_1984
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1965_1984_with_space_heater_airconditioning_with_heat_pump_boiler
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_airconditioning_with_heat_pump_boiler_residential_heating_technologies
+- label: households_space_heater_hybrid_airconditioning_combined_network_gas
+  color: "#8A9A5B"
+  order_by: 295
+  group: residences_1965_1984
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1965_1984_with_space_heater_hybrid_airconditioning_combined_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1965_1984_with_space_heater_hybrid_airconditioning_combined_network_gas_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -818,6 +890,30 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_1985_2004_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
+- label: households_space_heater_airconditioning_with_heat_pump_boiler
+  color: "#3EB489"
+  order_by: 390
+  group: residences_1985_2004
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1985_2004_with_space_heater_airconditioning_with_heat_pump_boiler
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_airconditioning_with_heat_pump_boiler_residential_heating_technologies
+- label: households_space_heater_hybrid_airconditioning_combined_network_gas
+  color: "#8A9A5B"
+  order_by: 395
+  group: residences_1985_2004
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_1985_2004_with_space_heater_hybrid_airconditioning_combined_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_1985_2004_with_space_heater_hybrid_airconditioning_combined_network_gas_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -1023,6 +1119,30 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_2005_present_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
+- label: households_space_heater_airconditioning_with_heat_pump_boiler
+  color: "#3EB489"
+  order_by: 490
+  group: residences_2005_present
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_2005_present_with_space_heater_airconditioning_with_heat_pump_boiler
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_airconditioning_with_heat_pump_boiler_residential_heating_technologies
+- label: households_space_heater_hybrid_airconditioning_combined_network_gas
+  color: "#8A9A5B"
+  order_by: 495
+  group: residences_2005_present
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_2005_present_with_space_heater_hybrid_airconditioning_combined_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_2005_present_with_space_heater_hybrid_airconditioning_combined_network_gas_residential_heating_technologies
 
 - label: households_space_heater_coal
   color: "#333333"
@@ -1228,3 +1348,27 @@
   dependent_on: 
   output_element_key: residential_heating_technologies
   key: number_of_houses_future_with_space_heater_hybrid_crude_oil_heatpump_air_water_electricity_residential_heating_technologies  
+- label: households_space_heater_airconditioning_with_heat_pump_boiler
+  color: "#3EB489"
+  order_by: 590
+  group: residences_future
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_future_with_space_heater_airconditioning_with_heat_pump_boiler
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_airconditioning_with_heat_pump_boiler_residential_heating_technologies
+- label: households_space_heater_hybrid_airconditioning_combined_network_gas
+  color: "#8A9A5B"
+  order_by: 595
+  group: residences_future
+  show_at_first: 
+  is_target_line: false
+  target_line_position: 
+  gquery: number_of_houses_future_with_space_heater_hybrid_airconditioning_combined_network_gas
+  is_1990: 
+  dependent_on: 
+  output_element_key: residential_heating_technologies
+  key: number_of_houses_future_with_space_heater_hybrid_airconditioning_combined_network_gas_residential_heating_technologies

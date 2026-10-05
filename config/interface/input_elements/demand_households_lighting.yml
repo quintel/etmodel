@@ -3,17 +3,20 @@
   share_group: household_light
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   position: 2
   slide_key: demand_households_lighting
 - key: households_lighting_led_electricity_share
   share_group: household_light
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   position: 3
   slide_key: demand_households_lighting
 - key: households_lighting_incandescent_electricity_share
   share_group: household_light
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   position: 1
   slide_key: demand_households_lighting

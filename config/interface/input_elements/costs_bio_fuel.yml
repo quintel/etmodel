@@ -3,24 +3,29 @@
   step_value: 1.0
   unit: " €/MWh"
   position: 2
+  interface_group: unit_cost
   slide_key: costs_bio_fuel
 - key: costs_greengas
   step_value: 1.0
   unit: " €/MWh"
   position: 1
+  interface_group: unit_cost
   slide_key: costs_bio_fuel
 - key: costs_wood
   step_value: 1.0
   unit: " €/Tonne"
   position: 3
+  interface_group: unit_cost
   slide_key: costs_bio_fuel
 - key: costs_biodiesel
   step_value: 0.01
   unit: " €/liter"
   position: 4
+  interface_group: unit_cost
   slide_key: costs_bio_fuel
 - key: costs_bio_ethanol
   step_value: 0.01
   unit: " €/liter"
   position: 5
+  interface_group: unit_cost
   slide_key: costs_bio_fuel

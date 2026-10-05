@@ -1,34 +1,36 @@
 ---
-- key: transport_trucks_share
-  share_group: freight_transport
-  step_value: 0.1
-  unit: "%"
-  interface_group: empty
-  position: 2
-  slide_key: demand_transport_freight_transport
-- key: transport_ships_share
-  share_group: freight_transport
-  step_value: 0.1
-  unit: "%"
-  interface_group: empty
-  position: 4
-  slide_key: demand_transport_freight_transport
 - key: transport_useful_demand_freight_tonne_kms
   step_value: 0.1
   unit: "%"
+  interface_group: freight_transport
   position: 1
   slide_key: demand_transport_freight_transport
-- key: transport_freight_trains_share
-  share_group: freight_transport
+
+- key: transport_trucks_share
+  share_group: freight_transport_share
   step_value: 0.1
   unit: "%"
-  interface_group: empty
-  position: 3
+  interface_group: technology_split
+  position: 2
   slide_key: demand_transport_freight_transport
 - key: transport_vans_share
-  share_group: freight_transport
+  share_group: freight_transport_share
   step_value: 0.1
   unit: "%"
-  interface_group: empty
+  interface_group: technology_split
   position: 3
+  slide_key: demand_transport_freight_transport
+- key: transport_freight_trains_share
+  share_group: freight_transport_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: technology_split
+  position: 4
+  slide_key: demand_transport_freight_transport
+- key: transport_ships_share
+  share_group: freight_transport_share
+  step_value: 0.1
+  unit: "%"
+  interface_group: technology_split
+  position: 5
   slide_key: demand_transport_freight_transport

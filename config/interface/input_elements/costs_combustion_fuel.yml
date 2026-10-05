@@ -2,16 +2,19 @@
 - key: costs_oil
   step_value: 1.0
   unit: "$/barrel"
+  interface_group: unit_cost
   position: 2
   slide_key: costs_combustion_fuel
 - key: costs_coal
   step_value: 1.0
   unit: "$/tonne"
+  interface_group: unit_cost
   position: 3
   slide_key: costs_combustion_fuel
 - key: costs_gas
   step_value: 1.0
   unit: " €/MWh"
+  interface_group: unit_cost
   command_type: value
   position: 1
   slide_key: costs_combustion_fuel

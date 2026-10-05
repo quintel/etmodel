@@ -2,16 +2,19 @@
 - key: other_useful_demand_electricity
   step_value: 0.1
   unit: "%"
+  interface_group: growth_rate
   position: 1
   slide_key: demand_other_demand_growth
 - key: other_useful_demand_useable_heat
   step_value: 0.1
   unit: "%"
+  interface_group: growth_rate
   position: 2
   slide_key: demand_other_demand_growth
 - key: other_useful_demand_non_energetic
   step_value: 0.1
   unit: "%"
+  interface_group: growth_rate
   command_type: growth_rate
   position: 3
   slide_key: demand_other_demand_growth

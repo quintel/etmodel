@@ -2,6 +2,7 @@
 - key: capacity_of_energy_power_wind_turbine_inland
   step_value: 1.0
   unit: MW
+  interface_group: capacity
   command_type: value
   related_node: energy_power_wind_turbine_inland
   position: 1
@@ -9,6 +10,7 @@
 - key: capacity_of_energy_power_wind_turbine_coastal
   step_value: 1.0
   unit: MW
+  interface_group: capacity
   related_node: energy_power_wind_turbine_coastal
   position: 2
   dependent_on: has_coastline
@@ -16,6 +18,7 @@
 - key: capacity_of_energy_power_wind_turbine_offshore
   step_value: 1.0
   unit: MW
+  interface_group: capacity
   command_type: value
   related_node: energy_power_wind_turbine_offshore
   position: 3
@@ -23,6 +26,7 @@
 - key: capacity_of_energy_power_hybrid_wind_turbine_offshore
   step_value: 1.0
   unit: MW
+  interface_group: capacity
   command_type: value
   related_node: energy_power_hybrid_wind_turbine_offshore
   position: 4
@@ -30,6 +34,7 @@
 - key: capacity_of_energy_battery_wind_turbine_inland
   step_value: 1.0
   unit: MW
+  interface_group: capacity
   command_type: value
   related_node: energy_battery_wind_turbine_inland
   position: 5

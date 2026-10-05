@@ -15,14 +15,14 @@
   slide_key: costs_hydrogen_production
 
 - key: efficiency_hydrogen_electrolysis
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: energy_hydrogen_flexibility_p2g_electricity
   position: 200
   slide_key: costs_hydrogen_production
 - key: efficiency_ammonia_reforming
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: energy_hydrogen_ammonia_reformer_must_run

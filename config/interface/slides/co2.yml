@@ -1,32 +1,33 @@
 ---
-- general_sub_header: change
+- group_sub_header: price
   key: costs_co2_prices
   position: 1
   sidebar_item_key: co2
   output_element_key: costs_overview_detailed
-- general_sub_header: change
+- group_sub_header: investment_costs
   key: costs_co2_capture_energy
   position: 2
   sidebar_item_key: co2
   output_element_key: costs_overview_detailed
-- general_sub_header: change
+- group_sub_header: investment_costs
   key: costs_co2_capture_industry
   position: 3
   sidebar_item_key: co2
   alt_output_element_key: costs_overview_detailed
   output_element_key: costs_overview_detailed
-- general_sub_header: change
+- group_sub_header: investment_costs
   key: costs_co2_storage
   position: 4
   sidebar_item_key: co2
   alt_output_element_key: costs_overview_detailed
   output_element_key: costs_overview_detailed
-- key: costs_co2_utilisation
+- group_sub_header: investment_costs
+  key: costs_co2_utilisation
   position: 5
   sidebar_item_key: co2
   alt_output_element_key: costs_overview_detailed
   output_element_key: costs_overview_detailed
-- general_sub_header: change
+- group_sub_header: investment_costs
   key: costs_co2_transport
   position: 6
   sidebar_item_key: co2

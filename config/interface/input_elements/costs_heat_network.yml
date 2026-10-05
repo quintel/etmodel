@@ -2,11 +2,13 @@
 - key: costs_heat_infra_indoors
   step_value: 0.1
   unit: "%"
+  interface_group: investment_costs
   position: 100
   slide_key: costs_heat_network
 - key: costs_heat_infra_outdoors
   step_value: 0.1
   unit: "%"
+  interface_group: investment_costs
   position: 105
   slide_key: costs_heat_network
 - key: costs_heat_network_storage_ht_steam_hot_water

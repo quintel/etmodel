@@ -1,14 +1,17 @@
 ---
 - key: costs_heat_built_environment
   position: 1
+  group_sub_header: efficiency_lhv
   sidebar_item_key: costs_heat
   alt_output_element_key: source_of_heat_in_buildings
   output_element_key: source_of_heat_used_in_households
 - key: costs_heat_sources_other
   position: 2
+  group_sub_header: investment_costs
   sidebar_item_key: costs_heat
   output_element_key: costs_overview_detailed
 - key: costs_heat_network
   position: 3
+  group_sub_header: investment_costs
   sidebar_item_key: costs_heat
   output_element_key: heat_infrastructure_annualised_costs_ht

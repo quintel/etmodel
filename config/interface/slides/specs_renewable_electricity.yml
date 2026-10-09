@@ -1,25 +1,31 @@
 ---
 - key: specs_electricity_renewable_wind_turbines
   position: 1
-  sidebar_item_key: specs_renewable_electricity
-  output_element_key: merit_order
-- key: specs_electricity_renewable_hydro_electric
-  position: 3
+  group_sub_header: efficiency_lhv
   sidebar_item_key: specs_renewable_electricity
   output_element_key: merit_order
 - key: specs_electricity_renewable_solar_power
   position: 2
+  group_sub_header: efficiency_lhv
   sidebar_item_key: specs_renewable_electricity
   output_element_key: merit_order
-- key: specs_electricity_renewable_waste_power
-  position: 5
-  sidebar_item_key: specs_renewable_electricity
-  output_element_key: merit_order
-- key: specs_electricity_renewable_hydrogen_plants
-  position: 6
+- key: specs_electricity_renewable_hydro_electric
+  position: 3
+  group_sub_header: efficiency_lhv
   sidebar_item_key: specs_renewable_electricity
   output_element_key: merit_order
 - key: specs_electricity_renewable_biomass_plants
   position: 4
+  group_sub_header: efficiency_lhv
+  sidebar_item_key: specs_renewable_electricity
+  output_element_key: merit_order
+- key: specs_electricity_renewable_waste_power
+  position: 5
+  group_sub_header: efficiency_lhv
+  sidebar_item_key: specs_renewable_electricity
+  output_element_key: merit_order
+- key: specs_electricity_renewable_hydrogen_plants
+  position: 6
+  group_sub_header: efficiency_lhv
   sidebar_item_key: specs_renewable_electricity
   output_element_key: merit_order

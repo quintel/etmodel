@@ -3,6 +3,7 @@
   share_group: transport_freight_train_share
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   command_type: value
   position: 1
   related_node: transport_freight_train_using_electricity
@@ -11,6 +12,7 @@
   share_group: transport_freight_train_share
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   command_type: value
   position: 2
   related_node: transport_freight_train_using_hydrogen
@@ -19,6 +21,7 @@
   share_group: transport_freight_train_share
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   command_type: value
   related_node: transport_freight_train_using_diesel_mix
   position: 3

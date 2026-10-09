@@ -1,16 +1,16 @@
 ---
-- general_sub_header: price
+- group_sub_header: cost
   key: costs_combustion_fuel
   position: 1
   sidebar_item_key: fuel_costs
   output_element_key: merit_order
-- general_sub_header: change
+- group_sub_header: change
   key: costs_nuclear_fuel
-  position: 1
+  position: 2
   sidebar_item_key: fuel_costs
   output_element_key: merit_order
-- general_sub_header: price
+- group_sub_header: cost
   key: costs_bio_fuel
-  position: 2
+  position: 3
   sidebar_item_key: fuel_costs
   output_element_key: greengas_costs

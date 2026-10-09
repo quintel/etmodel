@@ -13,44 +13,44 @@
   position: 2
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_energy_power_turbine_hydrogen
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: energy_power_turbine_hydrogen
   position: 3
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_energy_power_combined_cycle_hydrogen
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: energy_power_combined_cycle_hydrogen
   position: 4
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_industry_chp_turbine_hydrogen_electricity
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_turbine_hydrogen
-  position: 200
+  position: 5
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_industry_chp_turbine_hydrogen_heat
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: industry_chp_turbine_hydrogen
-  position: 210
+  position: 6
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_energy_chp_combined_cycle_hydrogen_electricity
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_combined_cycle_ht_hydrogen
-  position: 220
+  position: 7
   slide_key: specs_electricity_renewable_hydrogen_plants
 - key: efficiency_energy_chp_combined_cycle_hydrogen_heat
-  interface_group: efficiency
+  interface_group: efficiency_lhv
   step_value: 1.0
   unit: "%"
   related_node: energy_chp_combined_cycle_ht_hydrogen
-  position: 230
+  position: 8
   slide_key: specs_electricity_renewable_hydrogen_plants

@@ -3,12 +3,14 @@
   share_group : hydrogen_transport
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   position: 100
   slide_key: supply_hydrogen_transport
 - key: energy_hydrogen_distribution_compressed_trucks_share
   share_group : hydrogen_transport
   step_value: 0.1
   unit: "%"
+  interface_group: technology_split
   position: 110
   slide_key: supply_hydrogen_transport
   

@@ -2,10 +2,12 @@
 - key: agriculture_useful_demand_electricity
   step_value: 0.1
   unit: "%"
+  interface_group: growth_rate
   position: 1
   slide_key: demand_agriculture_demand_growth
 - key: agriculture_useful_demand_useable_heat
   step_value: 0.1
   unit: "%"
+  interface_group: growth_rate
   position: 2
   slide_key: demand_agriculture_demand_growth

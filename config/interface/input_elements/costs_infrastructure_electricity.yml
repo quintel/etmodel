@@ -2,35 +2,42 @@
 - key: costs_infrastructure_electricity_lv_net
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 1
   slide_key: costs_infrastructure_electricity
 - key: costs_infrastructure_electricity_lv_mv_trafo
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 2
   slide_key: costs_infrastructure_electricity
 - key: costs_infrastructure_electricity_mv_net
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 3
   slide_key: costs_infrastructure_electricity
 - key: costs_infrastructure_electricity_mv_hv_trafo
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 4
   slide_key: costs_infrastructure_electricity
 - key: costs_infrastructure_electricity_hv_net
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 5
   slide_key: costs_infrastructure_electricity
 - key: costs_infrastructure_electricity_interconnector_net
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 6
   slide_key: costs_infrastructure_electricity
 - key: costs_infrastructure_electricity_offshore_net
   step_value: 1.0
   unit: "€/kW"
+  interface_group: unit_investment_costs
   position: 7
   slide_key: costs_infrastructure_electricity

@@ -3,11 +3,13 @@
   step_value: 0.1
   unit: "%"
   command_type: growth_rate
+  interface_group: growth_rate
   position: 1
   slide_key: demand_transport_international_transport_mobility_growth
 - key: bunkers_useful_demand_ships
   step_value: 0.1
   unit: "%"
+  interface_group: growth_rate
   command_type: growth_rate
   position: 2
   slide_key: demand_transport_international_transport_mobility_growth

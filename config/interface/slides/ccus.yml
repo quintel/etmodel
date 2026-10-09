@@ -4,6 +4,7 @@
   sidebar_item_key: ccus
   output_element_key: mekko_of_co2_demand_supply
 - key: supply_ccus_capture_energy
+  group_sub_header: of_potential
   position: 105
   sidebar_item_key: ccus
   output_element_key: waterfall_captured_emissions
@@ -13,6 +14,7 @@
   sidebar_item_key: ccus
   output_element_key: ccus_sankey
 - key: supply_ccus_capture_import
+  group_sub_header: per_year
   position: 115
   sidebar_item_key: ccus
   output_element_key: mekko_of_co2_demand_supply
@@ -22,6 +24,7 @@
   sidebar_item_key: ccus
   output_element_key: ccus_sankey
 - key: supply_ccus_transport
+  group_sub_header: share
   position: 125
   sidebar_item_key: ccus
   output_element_key: ccus_sankey

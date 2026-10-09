@@ -2,17 +2,20 @@
 - key: costs_co2
   step_value: 1.0
   unit: "€/tonne"
+  interface_group: cost
   command_type: value
   position: 1
   slide_key: costs_co2_prices
 - key: costs_co2_free_allocation
   step_value: 1.0
   unit: "%"
+  interface_group: cost
   position: 2
   slide_key: costs_co2_prices
 - key: costs_captured_biogenic_co2
   step_value: 1.0
   unit: "€/tonne"
+  interface_group: cost
   command_type: value
   position: 3
   slide_key: costs_co2_prices

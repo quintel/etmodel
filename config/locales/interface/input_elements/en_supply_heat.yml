@@ -603,7 +603,7 @@ en:
         When this slider is set, the yearly production of heat using shallow
         geothermal energy will be visible in the supply side of the graph on the right."
     energy_heat_distribution_ht_loss_share:
-      title: Transport and distribution losses
+      title: Losses
       short_description:
       description: "The default value for the distribution losses slider is typically
         low or even zero for many regions modelled in the ETM. This is mainly due
@@ -612,7 +612,7 @@ en:
         your scenario. A 15% loss value is a sensible default for new district heating
         systems. For older systems, this is closer to 25-30%."
     energy_heat_distribution_lt_loss_share:
-      title: Transport and distribution losses
+      title: Losses
       short_description:
       description: "The default value for the distribution losses slider is typically
         low or even zero for many regions modelled in the ETM. This is mainly due
@@ -621,7 +621,7 @@ en:
         your scenario. A 15% loss value is a sensible default for new district heating
         systems. For older systems, this is closer to 25-30%."
     energy_heat_distribution_mt_loss_share:
-      title: Transport and distribution losses
+      title: Losses
       short_description:
       description: "The default value for the distribution losses slider is typically
         low or even zero for many regions modelled in the ETM. This is mainly due
@@ -630,7 +630,7 @@ en:
         your scenario. A 15% loss value is a sensible default for new district heating
         systems. For older systems, this is closer to 25-30%."
     energy_heat_network_storage_lt_steam_hot_water_output_capacity_share:
-      title: Output capacity (as % of average hourly load)
+      title: Output capacity
       short_description:
       description: "Here you can specify the heat output capacity per hour of heat storage.
         By default, this capacity is unlimited, meaning that there is no limit to the amount
@@ -644,7 +644,7 @@ en:
         District heating sources: capacities and marginal costs.<br/><br/>
         This slider is aimed at expert users. In many cases the default setting will suffice."
     energy_heat_network_storage_mt_steam_hot_water_output_capacity_share:
-      title: Output capacity (as % of average hourly load)
+      title: Output capacity
       short_description:
       description: "Here you can specify the heat output capacity per hour of heat storage.
         By default, this capacity is unlimited, meaning that there is no limit to the amount
@@ -658,7 +658,7 @@ en:
         District heating sources: capacities and marginal costs.<br/><br/>
         This slider is aimed at expert users. In many cases the default setting will suffice."
     energy_heat_network_storage_ht_steam_hot_water_output_capacity_share:
-      title: Output capacity (as % of average hourly load)
+      title: Output capacity
       short_description:
       description: "Here you can specify the heat output capacity per hour of heat storage.
         By default, this capacity is unlimited, meaning that there is no limit to the amount

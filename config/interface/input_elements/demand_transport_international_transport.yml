@@ -2,10 +2,12 @@
 - key: bunkers_allocated_percentage_aviation
   step_value: 0.1
   unit: "%"
+  interface_group: bunkers_allocated_percentage
   position: 1
   slide_key: demand_transport_international_transport
 - key: bunkers_allocated_percentage_shipping
   step_value: 0.1
   unit: "%"
+  interface_group: bunkers_allocated_percentage
   position: 2
   slide_key: demand_transport_international_transport

@@ -1,17 +1,21 @@
 ---
 - key: costs_hydrogen_production
   position: 10
+  group_sub_header: efficiency_lhv
   sidebar_item_key: costs_hydrogen
   output_element_key: hydrogen_cost_capacity
 - key: costs_hydrogen_storage
   position: 20
+  group_sub_header: efficiency_lhv
   sidebar_item_key: costs_hydrogen
   output_element_key: costs_overview_detailed
 - key: costs_hydrogen_transport
   position: 30
+  group_sub_header: efficiency_lhv
   sidebar_item_key: costs_hydrogen
   output_element_key: costs_overview_detailed
 - key: costs_hydrogen_import
   position: 40
+  group_sub_header: efficiency_lhv
   sidebar_item_key: costs_hydrogen
   output_element_key: hydrogen_cost_capacity

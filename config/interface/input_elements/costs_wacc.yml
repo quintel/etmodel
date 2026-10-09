@@ -2,20 +2,24 @@
 - key: costs_wacc_households
   step_value: 0.1
   unit: "%"
+  interface_group: costs_wacc
   position: 1
   slide_key: costs_wacc
 - key: costs_wacc_public_infrastructure
   step_value: 0.1
   unit: "%"
+  interface_group: costs_wacc
   position: 2
   slide_key: costs_wacc
 - key: costs_wacc_proven_technologies
   step_value: 0.1
   unit: "%"
+  interface_group: costs_wacc
   position: 3
   slide_key: costs_wacc
 - key: costs_wacc_unproven_technologies
   step_value: 0.1
   unit: "%"
+  interface_group: costs_wacc
   position: 4
   slide_key: costs_wacc

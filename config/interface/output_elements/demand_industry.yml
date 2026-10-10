@@ -89,12 +89,27 @@
   sub_group: industry
   show_point_label: false
   growth_chart: false
-  key: mekko_of_detailed_final_demand_in_industry_energetic
+  key: detailed_final_demand_in_industry_energetic_bar
   max_axis_value:
   min_axis_value:
   hidden: false
   requires_merit_order: false
-  output_element_type_name: mekko
+  output_element_type_name: category_bar
+  config:
+    period: future
+    show_total_row: true
+    serie_selections:
+    - industry_demand_bar
+    - ambient_in
+    - biomass_products_in
+    - coal_and_derivatives_in
+    - electricity_in
+    - geothermal_in
+    - heat_in
+    - hydrogen_in
+    - natural_gas_and_derivatives_in
+    - oil_and_derivatives_in
+    - solar_in
 - under_construction: false
   unit: PJ
   percentage: false

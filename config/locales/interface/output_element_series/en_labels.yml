@@ -15,11 +15,14 @@ en:
         agriculture_heat: "Agriculture heat"
         all_time_resolved_carriers_cumulative_incl_correction_incl_offset_curve: "Including correction"
         all_time_resolved_carriers_cumulative_excl_correction_incl_offset_curve: "Excluding correction"
+        ambient_in: "Ambient heat"
         apartment: "Apartments"
         bar: "All residences"
         battery_wind_inland: "Wind onshore (battery)"
         battery_solar_pv: "Solar on land (battery)"
         before_1945: "< 1945"
+        biomass_products_in: "Biomass"
+        coal_and_derivatives_in: "Coal"
         costs_building_and_installations: "Building and installations"
         costs_storage_and_conversion: "Storage and conversion"
         costs_production: "Energy production"
@@ -112,6 +115,7 @@ en:
         dsr_load_shifting_industry_other_output_curve: "Other industry decreased demand"
         dsr_load_shifting_industry_other_ict_output_curve: "Central ICT industry decreased demand"
         dsr_load_shifting_industry_metals_output_curve: "Metal industry decreased demand"
+        electricity_in: "Electricity"
         energy_chp_combined_cycle_network_gas_steam_hot_water_output_curve: 'Gas CCGT CHP'
         energy_chp_combined_cycle_hydrogen_steam_hot_water_output_curve: 'Hydrogen CCGT CHP'
         energy_chp_local_engine_biogas_steam_hot_water_output_curve: 'Biogas CHP'
@@ -156,7 +160,13 @@ en:
         energy_heat_unused_steam_hot_water_input_curve: 'Heat surplus (wasted)'
         agriculture_final_demand_steam_hot_water_input_curve: 'Agriculture'
         buildings_final_demand_steam_hot_water_input_curve: 'Buildings'
+        geothermal_in: "Geothermal"
+        heat_in: "Heat"
         households_final_demand_steam_hot_water_input_curve: 'Households'
+        hydrogen_in: "Hydrogen"
+        industry_demand_bar: "All energy carriers"
+        natural_gas_and_derivatives_in: "Network gas"
+        oil_and_derivatives_in: "Oil"
         other_final_demand_steam_hot_water_input_curve: 'Other'
         industry_chp_wood_pellets: 'Industry biomass CHP'
         industry_chp_turbine_hydrogen: 'Industry hydrogen turbine CHP'
@@ -204,6 +214,7 @@ en:
         heat_network_demand_buildings: "Buildings"
         heat_network_demand_agriculture: "Agriculture"
         heat_network_demand_other: "Other"
+        solar_in: "Solar"
         total_heat_network_demand_agriculture: "Agricultural heat network demand"
         total_heat_network_demand_industry: "Industrial heat network demand"
         agriculture_central_heat: "Heat from district heating"
@@ -807,7 +818,6 @@ en:
         heat_network_storage_lt: "LT district heating"
         heat_network_storage_mt: "MT district heating"
         heat_network_storage_ht: "HT district heating"
-        heat_unused_heat_mekko_of_detailed_final_demand_in_industry_energetic: "Surplus heat"
         heatpumps: "Heatpumps"
         heavy_fuel_oil: "Heavy fuel oil"
         heavy_fuel_oil_for_ships: "Heavy fuel oil ships"

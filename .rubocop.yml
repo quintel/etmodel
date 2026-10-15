@@ -85,10 +85,6 @@ Layout/FirstHashElementIndentation:
 # little limiting when there are multiple nested modules. We compromise at 100.
 Layout/LineLength:
   Max: 100
-  # Ignore long comments in deploy configs.
-  Exclude:
-  - config/deploy.rb
-  - config/deploy/*.rb
   IgnoredPatterns:
   - '(context|context|it|shared_examples_for)'
 

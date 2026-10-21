@@ -684,34 +684,34 @@ nl:
       description: ''
     households_heater_coal_heat_output_capacity:
       title: Kolenketel
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van een kolenketel voor ruimteverwarming. Voor warm water wordt
-        dezelfde capaciteit aangenomen.<br/><br/>
+        aangenomen dat dezelfde capaciteit beschikbaar is.<br/><br/>
         Als de capaciteit te laag is, wordt de warmtevraag in sommige uren niet gedekt. Zie de <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_crude_oil_heat_output_capacity:
       title: Olieketel
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van een olieketel voor ruimteverwarming. Voor warm water wordt
-        dezelfde capaciteit aangenomen.<br/><br/>
+        aangenomen dat dezelfde capaciteit beschikbaar is.<br/><br/>
         Als de capaciteit te laag is, wordt de warmtevraag in sommige uren niet gedekt. Zie de <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_network_gas_heat_output_capacity:
       title: Gasketel
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van een gasketel voor ruimteverwarming. Voor warm water wordt dezelfde
-        capaciteit aangenomen.<br/><br/>
+        aangenomen dat capaciteit aangenomen beschikbaar is. </br></br>
         Als de capaciteit te laag is, wordt de warmtevraag in sommige uren niet gedekt. Zie de <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_combined_network_gas_heat_output_capacity:
       title: HR combiketel (gas)
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één HR-combiketel (gas), gebruikt voor zowel
         ruimteverwarming als warm water.<br/><br/>
@@ -720,7 +720,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_combined_hydrogen_heat_output_capacity:
       title: HR combiketel (waterstof)
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één HR-combiketel (waterstof), gebruikt voor zowel
         ruimteverwarming als warm water.<br/><br/>
@@ -729,25 +729,25 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_wood_pellets_heat_output_capacity:
       title: Houtpelletkachel
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van een houtpelletkachel voor ruimteverwarming. Voor warm water wordt
-        dezelfde capaciteit aangenomen.<br/><br/>
+        aangenomen dat dezelfde capaciteit beschikbaar is.<br/><br/>
         Als de capaciteit te laag is, wordt de warmtevraag in sommige uren niet gedekt. Zie de <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_electricity_heat_output_capacity:
       title: Elektrische boiler/bijstook
-      short_description: ''
+      short_description:
       description: |
-        Thermische capaciteit van een elektrische boiler voor ruimteverwarming. Voor warm water
-        wordt dezelfde capaciteit aangenomen.<br/><br/>
+        Thermische capaciteit van een elektrische boiler voor ruimteverwarming. Voor warm water wordt
+        aangenomen dat dezelfde capaciteit beschikbaar is.<br/><br/>
         Als de capaciteit te laag is, wordt de warmtevraag in sommige uren niet gedekt. Zie de <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_heatpump_air_water_electricity_heat_output_capacity:
       title: Luchtwarmtepomp
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één luchtwarmtepomp, gebruikt voor zowel ruimteverwarming
         als warm water. De elektrische capaciteit van de warmtepomp schaalt naar verhouding mee.<br/><br/>
@@ -756,7 +756,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_heatpump_ground_water_electricity_heat_output_capacity:
       title: Bodemwarmtepomp
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één bodemwarmtepomp, gebruikt voor zowel ruimteverwarming
         als warm water.<br/><br/>
@@ -765,7 +765,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
       title: Warmtepomp met aquathermie (TEO) en WKO
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één warmtepomp met aquathermie (thermische energie uit
         oppervlaktewater, TEO) en warmte-koudeopslag (WKO), gebruikt voor zowel ruimteverwarming als
@@ -775,7 +775,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_heatpump_pvt_electricity_heat_output_capacity:
       title: Bodemwarmtepomp met PVT
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één bodemwarmtepomp met PVT-panelen
         (photovoltaïsch-thermisch), gebruikt voor zowel ruimteverwarming als warm water.<br/><br/>
@@ -784,7 +784,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
       title: LT-warmtenet
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één aansluiting op een lagetemperatuur (LT) warmtenet,
         gebruikt voor zowel ruimteverwarming als warm water.<br/><br/>
@@ -793,7 +793,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
       title: MT-warmtenet
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één aansluiting op een middentemperatuur (MT) warmtenet,
         gebruikt voor zowel ruimteverwarming als warm water.<br/><br/>
@@ -802,7 +802,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
       title: HT-warmtenet
-      short_description: ''
+      short_description:
       description: |
         Totale thermische capaciteit van één aansluiting op een hogetemperatuur (HT) warmtenet,
         gebruikt voor zowel ruimteverwarming als warm water.<br/><br/>
@@ -811,7 +811,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (gas)
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van de warmtepomp in één hybride luchtwarmtepomp (gas) voor
         ruimteverwarming. De capaciteit van de gasketel, en daarmee de capaciteit voor warm water,
@@ -820,7 +820,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybride luchtwarmtepomp (waterstof)
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van de warmtepomp in één hybride luchtwarmtepomp (waterstof) voor
         ruimteverwarming. De capaciteit van de waterstofketel, en daarmee de capaciteit voor warm
@@ -828,16 +828,16 @@ nl:
         Zie de <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
-      title: Hybride luchtwarmtepomp (ruwe olie)
-      short_description: ''
+      title: Hybride luchtwarmtepomp (olie)
+      short_description:
       description: |
-        Thermische capaciteit van de warmtepomp in één hybride luchtwarmtepomp (ruwe olie) voor
+        Thermische capaciteit van de warmtepomp in één hybride luchtwarmtepomp (olie) voor
         ruimteverwarming. De capaciteit van de olieketel verandert niet mee met deze schuif.<br/><br/>
         Zie de <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_airconditioning_with_heat_pump_boiler_heat_output_capacity:
       title: Airco met warmtepompboiler
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van één airco voor ruimteverwarming. Een aparte warmtepompboiler
         levert het warme water. De capaciteit hiervan schaalt naar verhouding mee met deze schuif.<br/><br/>
@@ -846,7 +846,7 @@ nl:
         target="_blank">documentatie</a> voor meer informatie.
     households_heater_hybrid_airconditioning_combined_network_gas_heat_output_capacity:
       title: Airco met HR combiketel (gas)
-      short_description: ''
+      short_description:
       description: |
         Thermische capaciteit van één airco in combinatie met een HR-combiketel (gas), voor
         ruimteverwarming. De capaciteit van de combiketel, en daarmee de capaciteit voor warm water,

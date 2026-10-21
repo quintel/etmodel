@@ -663,34 +663,34 @@ en:
       description: ''
     households_heater_coal_heat_output_capacity:
       title: Coal heater
-      short_description: ''
+      short_description:
       description: |
-        Thermal capacity of a coal heater for space heating. The same capacity is assumed for hot
-        water.<br/><br/>
+        Thermal capacity of a coal heater for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
         If the capacity is too low, heat demand in some hours is not met. See the <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentation</a> for more information.
     households_heater_crude_oil_heat_output_capacity:
       title: Oil heater
-      short_description: ''
+      short_description:
       description: |
-        Thermal capacity of an oil heater for space heating. The same capacity is assumed for hot
-        water.<br/><br/>
+        Thermal capacity of an oil heater for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
         If the capacity is too low, heat demand in some hours is not met. See the <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentation</a> for more information.
     households_heater_network_gas_heat_output_capacity:
       title: Gas-fired heater
-      short_description: ''
+      short_description:
       description: |
-        Thermal capacity of a gas-fired heater for space heating. The same capacity is assumed for
-        hot water.<br/><br/>
+        Thermal capacity of a gas-fired heater for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
         If the capacity is too low, heat demand in some hours is not met. See the <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentation</a> for more information.
     households_heater_combined_network_gas_heat_output_capacity:
       title: Condensing combi boiler (gas)
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one condensing combi boiler (gas), used for both space heating and
         hot water.<br/><br/>
@@ -699,7 +699,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_combined_hydrogen_heat_output_capacity:
       title: Condensing combi boiler (hydrogen)
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one condensing combi boiler (hydrogen), used for both space
         heating and hot water.<br/><br/>
@@ -708,25 +708,25 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_wood_pellets_heat_output_capacity:
       title: Wood pellet boiler
-      short_description: ''
+      short_description:
       description: |
-        Thermal capacity of a wood pellet boiler for space heating. The same capacity is assumed for
-        hot water.<br/><br/>
+        Thermal capacity of a wood pellet boiler for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
         If the capacity is too low, heat demand in some hours is not met. See the <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentation</a> for more information.
     households_heater_electricity_heat_output_capacity:
       title: Electric boiler
-      short_description: ''
+      short_description:
       description: |
-        Thermal capacity of an electric boiler for space heating. The same capacity is assumed for
-        hot water.<br/><br/>
+        Thermal capacity of an electric boiler for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
         If the capacity is too low, heat demand in some hours is not met. See the <a
         href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
         target="_blank">documentation</a> for more information.
     households_heater_heatpump_air_water_electricity_heat_output_capacity:
       title: Air heat pump
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one air heat pump, used for both space heating and hot water. The
         electrical capacity of the heat pump scales proportionally.<br/><br/>
@@ -735,7 +735,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_heatpump_ground_water_electricity_heat_output_capacity:
       title: Ground heat pump
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one ground heat pump, used for both space heating and hot water.<br/><br/>
         If the capacity is too low, heat demand in some hours is not met. See the <a
@@ -743,7 +743,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
       title: Aquathermal heat pump with TS (surface water)
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one aquathermal heat pump with thermal storage (TS), used for both
         space heating and hot water. The electrical capacity of the heat pump scales proportionally.<br/><br/>
@@ -752,7 +752,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_heatpump_pvt_electricity_heat_output_capacity:
       title: Ground heat pump with PVT
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one ground heat pump with photovoltaic-thermal (PVT) panels, used
         for both space heating and hot water.<br/><br/>
@@ -761,7 +761,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
       title: LT district heating
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one low temperature (LT) district heating connection, used for
         both space heating and hot water.<br/><br/>
@@ -770,7 +770,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
       title: MT district heating
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one medium temperature (MT) district heating connection, used for
         both space heating and hot water.<br/><br/>
@@ -779,7 +779,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
       title: HT district heating
-      short_description: ''
+      short_description:
       description: |
         Total thermal capacity of one high temperature (HT) district heating connection, used for
         both space heating and hot water.<br/><br/>
@@ -788,7 +788,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybrid air heat pump (gas)
-      short_description: ''
+      short_description:
       description: |
         Thermal capacity of the heat pump in one hybrid air heat pump (gas) for space heating. The
         capacity of the gas boiler, and with it the hot water capacity, scales proportionally with
@@ -797,7 +797,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybrid air heat pump (hydrogen)
-      short_description: ''
+      short_description:
       description: |
         Thermal capacity of the heat pump in one hybrid air heat pump (hydrogen) for space heating.
         The capacity of the hydrogen boiler, and with it the hot water capacity, scales
@@ -805,16 +805,16 @@ en:
         See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
         target="_blank">documentation</a> for more information.
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
-      title: Hybrid air heat pump (crude oil)
-      short_description: ''
+      title: Hybrid air heat pump (oil)
+      short_description:
       description: |
-        Thermal capacity of the heat pump in one hybrid air heat pump (crude oil) for space heating.
+        Thermal capacity of the heat pump in one hybrid air heat pump (oil) for space heating.
         The capacity of the oil boiler does not change with this slider.<br/><br/>
         See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
         target="_blank">documentation</a> for more information.
     households_heater_airconditioning_with_heat_pump_boiler_heat_output_capacity:
       title: Air conditioning with heat pump boiler
-      short_description: ''
+      short_description:
       description: |
         Thermal capacity of one air conditioning unit for space heating. A separate heat pump boiler
         supplies hot water. Its capacity scales proportionally with this slider.<br/><br/>
@@ -823,7 +823,7 @@ en:
         target="_blank">documentation</a> for more information.
     households_heater_hybrid_airconditioning_combined_network_gas_heat_output_capacity:
       title: Air conditioning with combi boiler (gas)
-      short_description: ''
+      short_description:
       description: |
         Thermal capacity of one air conditioning unit combined with a condensing combi boiler (gas),
         for space heating. The capacity of the combi boiler, and with it the hot water capacity,

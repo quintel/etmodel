@@ -1339,6 +1339,7 @@ D3.sankey =
           {left: 'bio_oil',                               right: 'industry',                          gquery: 'bio_oil_to_industry_in_liquid_fuels_sankey', color: '#556B2F'},
 
           {left: 'refinery_gas',                          right: 'industry',                          gquery: 'refinery_gas_to_industry_in_liquid_fuels_sankey', color: '#B5524B'},
+          {left: 'refinery_gas',                          right: 'losses',                            gquery: 'refinery_gas_to_losses_in_liquid_fuels_sankey', color: '#DCDCDC'},
 
           # BACKFLOWS: oil products used by refineries
           {left: 'oil_products',                          right: 'fossil_refinery',                   gquery: 'oil_products_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},

@@ -4,6 +4,13 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2404
+
+# Image tag and deploy path are derived from the branch name and must match the instance in the
+# ansible stable group_vars:
+# branch 2027-01 -> image quintel/etmodel:2027_01, deployed from /var/www/etmodel_2027_01.
+#
+# RELEASE is overwritten with "stable-<branch>" before the build: the Sentry release (runtime and
+# uploaded source maps) is read from that file, and stable shares its Sentry project with latest.
 blocks:
   - name: Docker
     task:
@@ -12,24 +19,29 @@ blocks:
           - chmod 0600 ~/.ssh/id_deploy
           - ssh-add ~/.ssh/id_deploy
       env_vars:
+        - name: DOCKER_BUILDKIT
+          value: '1'
         - name: BUNDLE_JOBS
           value: '4'
       jobs:
         - name: 'Build, publish, deploy'
           commands:
             - checkout
-            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - export TAG="${SEMAPHORE_GIT_BRANCH//-/_}"
+            - echo "stable-$SEMAPHORE_GIT_BRANCH" > RELEASE
             - export SENTRY_RELEASE=$(cat RELEASE)
-            - 'docker build --progress plain -f Dockerfile.production --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN --build-arg SENTRY_RELEASE=$SENTRY_RELEASE -t quintel/etmodel:stable .'
-            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:stable --build-arg "SOURCE_IMAGE=quintel/etmodel:stable" .'
-            - 'docker push quintel/etmodel:stable'
-            - 'docker push quintel/etmodel-nginx:stable'
+            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            - 'docker build --progress plain -f Dockerfile.production --secret id=sentry_auth_token,env=SENTRY_AUTH_TOKEN --build-arg SENTRY_RELEASE=$SENTRY_RELEASE -t quintel/etmodel:$TAG .'
+            - 'docker build -f .docker/nginx/Dockerfile -t quintel/etmodel-nginx:$TAG --build-arg "SOURCE_IMAGE=quintel/etmodel:$TAG" .'
+            - 'docker push quintel/etmodel:$TAG'
+            - 'docker push quintel/etmodel-nginx:$TAG'
             - echo $SSH_FINGERPRINT >> ~/.ssh/known_hosts
-            - 'ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_stable && ./deploy.sh"'
-            - 'ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_stable_2 && ./deploy.sh"'
+            - 'ssh -i ~/.ssh/id_deploy "${SSH_USER}@${SSH_HOST}" -p $SSH_PORT "cd /var/www/etmodel_$TAG && ./deploy.sh"'
       secrets:
         - name: Docker Hub credentials
         - name: Stable SSH settings
         - name: Sentry credentials
     run:
-      when: branch = 'master'
+      when: >-
+        branch = '2025-01' or
+        branch = '2027-01'

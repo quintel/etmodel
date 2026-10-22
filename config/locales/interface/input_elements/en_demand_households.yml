@@ -250,7 +250,7 @@ en:
         Contrary to heating, the efficiency (COP) of this heat pump for cooling is
         fixed. You can view the efficiency in the technical and financial properties. <br/><br/>
         For more information you can view the
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-water-heat-pumps" target="_blank">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     households_appliances_electricity_efficiency:
@@ -455,7 +455,7 @@ en:
         weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP: 'SCOP') can be found
         in the technical and financial properties. <br/><br/>
         For more information you can view the
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-water-heat-pumps" target="_blank">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     households_heater_heatpump_surface_water_water_ts_electricity_share:
@@ -538,7 +538,7 @@ en:
         to gas. The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
         >Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
-        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps" target="_blank">documentation</a>
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (hydrogen)
       short_description:
@@ -552,7 +552,7 @@ en:
         The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
         >Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
-        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps" target="_blank">documentation</a>
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (oil)
       short_description:
@@ -572,7 +572,7 @@ en:
         The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">
         Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
-        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps" target="_blank">documentation</a>
     households_heater_hybrid_airconditioning_combined_network_gas_share:
       title: Air conditioning with combi boiler (gas)
       short_description: ''
@@ -584,7 +584,7 @@ en:
         The air conditioning unit supplies as much of the space heating demand
         as its capacity allows. The combi boiler meets the remaining space
         heating demand and also provides all hot water.
-        More information on how this system works can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank">heat pump documentation</a>.
+        More information on how this system works can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-air-heat-pumps-airco" target="_blank">heat pump documentation</a>.
         <br/><br/>
         The capacity of the air conditioning unit can be adjusted in the section
         <a href="/scenario/demand/households_heating_order/capacities">Capacities</a>.

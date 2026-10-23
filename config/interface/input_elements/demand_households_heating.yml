@@ -84,7 +84,7 @@
   related_node: households_space_heater_hybrid_crude_oil_heatpump_air_water_electricity
   position: 105
   dependent_on: has_coal_oil_for_heating_built_environment
-  slide_key: demand_households_heating  
+  slide_key: demand_households_heating
 - key: households_heater_heatpump_pvt_electricity_share
   share_group: heating_households
   step_value: 0.1
@@ -134,6 +134,22 @@
   related_node: households_space_heater_coal
   position: 170
   dependent_on: has_coal_oil_for_heating_built_environment
+  slide_key: demand_households_heating
+- key: households_heater_hybrid_airconditioning_combined_network_gas_share
+  share_group: heating_households
+  step_value: 0.1
+  unit: "%"
+  interface_group: space_and_water_heating_technologies
+  related_node: households_space_heater_hybrid_airconditioning_combined_network_gas
+  position: 180
+  slide_key: demand_households_heating
+- key: households_heater_airconditioning_with_heat_pump_boiler_share
+  share_group: heating_households
+  step_value: 0.1
+  unit: "%"
+  interface_group: space_and_water_heating_technologies
+  related_node: households_space_heater_airconditioning_with_heat_pump_boiler
+  position: 190
   slide_key: demand_households_heating
 
 - key: households_water_heater_solar_thermal_share

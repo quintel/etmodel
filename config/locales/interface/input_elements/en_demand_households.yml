@@ -246,11 +246,11 @@ en:
         for cooling. <br/><br/>
         An air heatpump uses electricity
         and ambient cold to generate cold. This cold can be transfered to water or air
-        and used in underfloor heating or airconditioning systems for cooling. <br/><br/>
+        and used in underfloor heating or air conditioning systems for cooling. <br/><br/>
         Contrary to heating, the efficiency (COP) of this heat pump for cooling is
         fixed. You can view the efficiency in the technical and financial properties. <br/><br/>
         For more information you can view the
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-water-heat-pumps" target="_blank">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     households_appliances_electricity_efficiency:
@@ -449,13 +449,13 @@ en:
         for space heating and hot water.<br/><br/>
         An air heatpump uses electricity
         and ambient heat to generate heat. This heat can be transfered to water or air
-        and used in underfloor heating or airconditioning systems for space heating or for the generation of hot water. <br/><br/>
+        and used in underfloor heating or air conditioning systems for space heating or for the generation of hot water. <br/><br/>
         The efficiency (COP) of this heat pump is affected by the outside air temperature
         and therefore determined by the weather. For every hour a seperate efficiency (COP) is calculated based on the
         weather curve available in the ETM. The average of these hourly calculations (the Seasonal COP: 'SCOP') can be found
         in the technical and financial properties. <br/><br/>
         For more information you can view the
-        <a href="https://docs.energytransitionmodel.com/main/heat-pumps/#air-source-heat-pumps" target=\"_blank\">documentation</a>.
+        <a href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-water-heat-pumps" target="_blank">documentation</a>.
         To influence the efficiency of this heatpump you can go to the <a href="/scenario/costs/costs_heat/heating-in-houses-and-buildings">Costs & efficiencies</a> section
         or choose to adjust the <a href="/scenario/flexibility/flexibility_weather/temperature-and-full-load-hours" >weather curve</a>.
     households_heater_heatpump_surface_water_water_ts_electricity_share:
@@ -538,7 +538,7 @@ en:
         to gas. The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
         >Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
-        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps" target="_blank">documentation</a>
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (hydrogen)
       short_description:
@@ -552,7 +552,7 @@ en:
         The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps"
         >Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
-        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps" target="_blank">documentation</a>
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_share:
       title: Hybrid air heat pump (oil)
       short_description:
@@ -572,7 +572,32 @@ en:
         The threshold value can be adjusted in the section <a href="/scenario/flexibility/flexibility_net_load/demand-response-behavior-of-hybrid-heat-pumps">
         Demand response - behavior of hybrid heat pumps</a>.
         <br/><br/>
-        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps" target="_blank\">documentation</a>
+        More information on how hybrid heat pumps work can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps" target="_blank">documentation</a>
+    households_heater_hybrid_airconditioning_combined_network_gas_share:
+      title: Air conditioning with combi boiler (gas)
+      short_description: ''
+      description: |
+        This heating option is a combination of an air conditioning unit that
+        can also heat (an air-to-air heat pump) with a gas-fired combi boiler
+        for space heating and hot water.
+        <br/><br/>
+        The air conditioning unit supplies as much of the space heating demand
+        as its capacity allows. The combi boiler meets the remaining space
+        heating demand and also provides all hot water.
+        More information on how this system works can be found in the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-air-heat-pumps-airco" target="_blank">heat pump documentation</a>.
+        <br/><br/>
+        The capacity of the air conditioning unit can be adjusted in the section
+        <a href="/scenario/demand/households_heating_order/capacities">Capacities</a>.
+    households_heater_airconditioning_with_heat_pump_boiler_share:
+      title: Air conditioning with heat pump boiler
+      short_description: ''
+      description: |
+        This heating option is a combination of an air conditioning unit that
+        can also heat (an air-to-air heat pump) for space heating with a
+        separate heat pump boiler for hot water production.
+        <br/><br/>
+        The capacity of the air conditioning unit can be adjusted in the section
+        <a href="/scenario/demand/households_heating_order/capacities">Capacities</a>.
     households_cooker_network_gas_share:
       title: Gas
       short_description:
@@ -638,72 +663,174 @@ en:
       description: ''
     households_heater_coal_heat_output_capacity:
       title: Coal heater
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of a coal heater for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_crude_oil_heat_output_capacity:
       title: Oil heater
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of an oil heater for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_network_gas_heat_output_capacity:
       title: Gas-fired heater
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of a gas-fired heater for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_combined_network_gas_heat_output_capacity:
       title: Condensing combi boiler (gas)
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one condensing combi boiler (gas), used for both space heating and
+        hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_combined_hydrogen_heat_output_capacity:
       title: Condensing combi boiler (hydrogen)
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one condensing combi boiler (hydrogen), used for both space
+        heating and hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_wood_pellets_heat_output_capacity:
       title: Wood pellet boiler
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of a wood pellet boiler for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_electricity_heat_output_capacity:
       title: Electric boiler
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of an electric boiler for space heating. The same capacity is assumed to be
+        available for hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_heatpump_air_water_electricity_heat_output_capacity:
       title: Air heat pump
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one air heat pump, used for both space heating and hot water. The
+        electrical capacity of the heat pump scales proportionally.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_heatpump_ground_water_electricity_heat_output_capacity:
       title: Ground heat pump
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one ground heat pump, used for both space heating and hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_heatpump_surface_water_water_ts_electricity_heat_output_capacity:
       title: Aquathermal heat pump with TS (surface water)
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one aquathermal heat pump with thermal storage (TS), used for both
+        space heating and hot water. The electrical capacity of the heat pump scales proportionally.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_heatpump_pvt_electricity_heat_output_capacity:
       title: Ground heat pump with PVT
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one ground heat pump with photovoltaic-thermal (PVT) panels, used
+        for both space heating and hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_district_heating_lt_steam_hot_water_heat_output_capacity:
       title: LT district heating
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one low temperature (LT) district heating connection, used for
+        both space heating and hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_district_heating_mt_steam_hot_water_heat_output_capacity:
       title: MT district heating
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one medium temperature (MT) district heating connection, used for
+        both space heating and hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_district_heating_ht_steam_hot_water_heat_output_capacity:
       title: HT district heating
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Total thermal capacity of one high temperature (HT) district heating connection, used for
+        both space heating and hot water.<br/><br/>
+        If the capacity is too low, heat demand in some hours is not met. See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-built-environment#matching-heat-demand-with-supply"
+        target="_blank">documentation</a> for more information.
     households_heater_hybrid_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybrid air heat pump (gas)
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of the heat pump in one hybrid air heat pump (gas) for space heating. The
+        capacity of the gas boiler, and with it the hot water capacity, scales proportionally with
+        this slider.<br/><br/>
+        See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
+        target="_blank">documentation</a> for more information.
     households_heater_hybrid_hydrogen_heatpump_air_water_electricity_heat_output_capacity:
       title: Hybrid air heat pump (hydrogen)
-      short_description: ''
-      description: ''
+      short_description:
+      description: |
+        Thermal capacity of the heat pump in one hybrid air heat pump (hydrogen) for space heating.
+        The capacity of the hydrogen boiler, and with it the hot water capacity, scales
+        proportionally with this slider.<br/><br/>
+        See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
+        target="_blank">documentation</a> for more information.
     households_heater_hybrid_crude_oil_heatpump_air_water_electricity_heat_output_capacity:
-      title: Hybrid air heat pump (crude oil)
-      short_description: ''
-      description: ''
+      title: Hybrid air heat pump (oil)
+      short_description:
+      description: |
+        Thermal capacity of the heat pump in one hybrid air heat pump (oil) for space heating.
+        The capacity of the oil boiler does not change with this slider.<br/><br/>
+        See the <a href="https://docs.energytransitionmodel.com/main/heat-pumps#hybrid-heat-pumps"
+        target="_blank">documentation</a> for more information.
+    households_heater_airconditioning_with_heat_pump_boiler_heat_output_capacity:
+      title: Air conditioning with heat pump boiler
+      short_description:
+      description: |
+        Thermal capacity of one air conditioning unit for space heating. A separate heat pump boiler
+        supplies hot water. Its capacity scales proportionally with this slider.<br/><br/>
+        See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-air-heat-pumps-airco"
+        target="_blank">documentation</a> for more information.
+    households_heater_hybrid_airconditioning_combined_network_gas_heat_output_capacity:
+      title: Air conditioning with combi boiler (gas)
+      short_description:
+      description: |
+        Thermal capacity of one air conditioning unit combined with a condensing combi boiler (gas),
+        for space heating. The capacity of the combi boiler, and with it the hot water capacity,
+        scales proportionally with this slider.<br/><br/>
+        See the <a
+        href="https://docs.energytransitionmodel.com/main/heat-pumps#air-to-air-heat-pumps-airco"
+        target="_blank">documentation</a> for more information.
     households_diesel_in_crude_oil_share:
       title: Diesel
       short_description:

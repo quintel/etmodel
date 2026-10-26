@@ -1,6 +1,16 @@
-# See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-Agent: *
-# Disallow: /
-Disallow: /scenario/reset
+# ETModel exposes a small set of public pages. Everything else is either the
+# interactive model (a combinatorial URL space), a proxy into ETEngine, or
+# per-scenario data, none of which belongs in a search index.
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /about
+Allow: /development
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /regions/
+Allow: /my_etm/saved_scenarios
+
+# Assets must stay crawlable so the allowed pages render correctly for indexers.
+Allow: /assets/
+Allow: /packs/

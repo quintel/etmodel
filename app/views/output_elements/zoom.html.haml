@@ -5,7 +5,7 @@
 
   :javascript
     $(function(){
-      App.charts.load('#{@chart.key}', null, {
+      App.charts.load(#{@chart.key.to_json}, null, {
         wrapper: '#zoomed_chart_wrapper',
         prunable: true,
         force: true,

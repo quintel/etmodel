@@ -1,0 +1,332 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "HTTP Verb Confusion",
+      "warning_code": 118,
+      "fingerprint": "4dc71d9d3af9f88432d2883a97bf050c576ab578b379c73af03387407ac9b99a",
+      "check_name": "VerbConfusion",
+      "message": "Potential HTTP verb confusion. `HEAD` is routed like `GET` but `request.get?` will return `false`",
+      "file": "app/controllers/application_controller.rb",
+      "line": 60,
+      "link": "https://brakemanscanner.org/docs/warning_types/http_verb_confusion/",
+      "code": "return unless request.get?",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "ApplicationController",
+        "method": "ensure_modern_browser"
+      },
+      "user_input": "request.get?",
+      "confidence": "Weak",
+      "cwe_id": [
+        352
+      ],
+      "note": "Only skips the unsupported-browser redirect for non-GET requests; treating HEAD like POST here has no security impact."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "cb6aa4f5a6635197f8579a1a678891c8f3c75bcffee582a4077c216d062622e0",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/dashboard_items/show.html.haml",
+      "line": 3,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t(\"dashboard_items.#{DashboardItem.find(params[:id]).key}.title\")",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "DashboardItemsController",
+          "method": "show",
+          "line": 8,
+          "file": "app/controllers/dashboard_items_controller.rb",
+          "rendered": {
+            "name": "dashboard_items/show",
+            "file": "app/views/dashboard_items/show.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "dashboard_items/show"
+      },
+      "user_input": "DashboardItem.find(params[:id]).key",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": "Renders developer-controlled I18n copy from config/locales, which intentionally contains HTML (lists, links, embedded players). The record is looked up by key from YAML config, so unknown keys 404 rather than reaching the view."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "2e42a8877a2ede2bb0c695f2ac4a9d9b0f0130cd0032725b2fae47eebbef9475",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/dashboard_items/show.html.haml",
+      "line": 15,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "DashboardItem.find(params[:id]).description",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "DashboardItemsController",
+          "method": "show",
+          "line": 8,
+          "file": "app/controllers/dashboard_items_controller.rb",
+          "rendered": {
+            "name": "dashboard_items/show",
+            "file": "app/views/dashboard_items/show.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "dashboard_items/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "cwe_id": [
+        79
+      ],
+      "note": "Renders developer-controlled I18n copy from config/locales, which intentionally contains HTML (lists, links, embedded players). The record is looked up by key from YAML config, so unknown keys 404 rather than reaching the view."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "d7740fedb0644e7de9a0be0b039744dc84dbfa78c43d78d737e634911f53f6df",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/descriptions/show.html.haml",
+      "line": 2,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "I18n.t(OutputElement.find!(params[:id]).title_for_description)",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "DescriptionsController",
+          "method": "charts",
+          "line": 8,
+          "file": "app/controllers/descriptions_controller.rb",
+          "rendered": {
+            "name": "descriptions/show",
+            "file": "app/views/descriptions/show.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "descriptions/show"
+      },
+      "user_input": "OutputElement.find!(params[:id]).title_for_description",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": "Renders developer-controlled I18n copy from config/locales, which intentionally contains HTML (lists, links, embedded players). The record is looked up by key from YAML config, so unknown keys 404 rather than reaching the view."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "07490e38bc0e3d15189adaeb4bbe037cfcc6b8999e24ba8025229702910d00a9",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/descriptions/show.html.haml",
+      "line": 3,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "OutputElement.find!(params[:id]).description",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "DescriptionsController",
+          "method": "charts",
+          "line": 8,
+          "file": "app/controllers/descriptions_controller.rb",
+          "rendered": {
+            "name": "descriptions/show",
+            "file": "app/views/descriptions/show.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "descriptions/show"
+      },
+      "user_input": null,
+      "confidence": "Medium",
+      "cwe_id": [
+        79
+      ],
+      "note": "Renders developer-controlled I18n copy from config/locales, which intentionally contains HTML (lists, links, embedded players). The record is looked up by key from YAML config, so unknown keys 404 rather than reaching the view."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "744014928374c3cd7a41c40c690e7695b184b852b8692ccfacc3de9a1d267c33",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/output_elements/zoom.html.haml",
+      "line": 2,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "t(\"output_elements.#{OutputElement.find!(params[:key]).key}.title\")",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "OutputElementsController",
+          "method": "zoom",
+          "line": 41,
+          "file": "app/controllers/output_elements_controller.rb",
+          "rendered": {
+            "name": "output_elements/zoom",
+            "file": "app/views/output_elements/zoom.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "output_elements/zoom"
+      },
+      "user_input": "OutputElement.find!(params[:key]).key",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": "Renders developer-controlled I18n copy from config/locales, which intentionally contains HTML (lists, links, embedded players). The record is looked up by key from YAML config, so unknown keys 404 rather than reaching the view."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 4,
+      "fingerprint": "c335239ec4edf085afeed7203fa24bcfc08321a6d1475d5e8b7d33b7e27156e9",
+      "check_name": "LinkToHref",
+      "message": "Potentially unsafe model attribute in `link_to` href",
+      "file": "app/views/scenarios/_slide.html.haml",
+      "line": 8,
+      "link": "https://brakemanscanner.org/docs/warning_types/link_to_href",
+      "code": "link_to(t(\"slides.#{(Unresolved Model).new.key}.title\").html_safe, (Unresolved Model).new.url)",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "ScenariosController",
+          "method": "play",
+          "line": 102,
+          "file": "app/controllers/scenarios_controller.rb",
+          "rendered": {
+            "name": "scenarios/play",
+            "file": "app/views/scenarios/play.js.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "scenarios/play",
+          "line": 5,
+          "file": "app/views/scenarios/play.js.erb",
+          "rendered": {
+            "name": "scenarios/_slide",
+            "file": "app/views/scenarios/_slide.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "scenarios/_slide"
+      },
+      "user_input": "(Unresolved Model).new.url",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": "Slide title is developer-controlled I18n copy and slide.url comes from config/interface/slides YAML, not user input."
+    },
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "25dd0774047f4fd9f77368be94b3595f0390cc92e89590ba6eb51ea62a4987bd",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/scenarios/_slide.html.haml",
+      "line": 12,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "format_description(I18n.t(\"slides.#{(Unresolved Model).new.key}.description\"))",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "ScenariosController",
+          "method": "play",
+          "line": 102,
+          "file": "app/controllers/scenarios_controller.rb",
+          "rendered": {
+            "name": "scenarios/play",
+            "file": "app/views/scenarios/play.js.erb"
+          }
+        },
+        {
+          "type": "template",
+          "name": "scenarios/play",
+          "line": 5,
+          "file": "app/views/scenarios/play.js.erb",
+          "rendered": {
+            "name": "scenarios/_slide",
+            "file": "app/views/scenarios/_slide.html.haml"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "scenarios/_slide"
+      },
+      "user_input": "(Unresolved Model).new.key",
+      "confidence": "Weak",
+      "cwe_id": [
+        79
+      ],
+      "note": "Renders developer-controlled I18n copy from config/locales, which intentionally contains HTML (lists, links, embedded players). The record is looked up by key from YAML config, so unknown keys 404 rather than reaching the view."
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "b043c9e7b8d69aaae211f5eade51933b6d633df910bb0f40e550b1e5764f4bca",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "lib/ymodel/relatable.rb",
+      "line": 36,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "YModel::Helper.model_class((class_name or model)).where(\"#{as}_id\" => id, \"#{as}_type\" => self.class.name)",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "YModel::Relatable",
+        "method": "has_many"
+      },
+      "user_input": "as",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": "Hash keys built from the relation name declared in code (`as:`), not user input; values are bound parameters."
+    },
+    {
+      "warning_type": "SQL Injection",
+      "warning_code": 0,
+      "fingerprint": "59aef32b10cccd0177aa8c45163dfacc78e22ca8f3be2d138dac8782d8b69dbf",
+      "check_name": "SQL",
+      "message": "Possible SQL injection",
+      "file": "lib/ymodel/relatable.rb",
+      "line": 52,
+      "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
+      "code": "YModel::Helper.model_class((class_name or model)).find_by(\"#{as}_id\" => id, \"#{as}_type\" => self.class.name)",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "YModel::Relatable",
+        "method": "has_one"
+      },
+      "user_input": "as",
+      "confidence": "Weak",
+      "cwe_id": [
+        89
+      ],
+      "note": "Hash keys built from the relation name declared in code (`as:`), not user input; values are bound parameters."
+    }
+  ],
+  "brakeman_version": "8.1.0"
+}

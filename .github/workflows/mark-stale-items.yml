@@ -1,4 +1,4 @@
-name: Mark stale issues and pull requests
+name: Mark stale items
 
 on:
   schedule:
@@ -23,4 +23,6 @@ jobs:
           This pull request has had no activity for 60 days and will be closed in 7 days. Removing
           the "Stale" label or posting a comment will prevent it from being closed automatically.
           You can also add the "Pinned" label to ensure it isn't marked as stale in the future.
-        exempt-pr-labels: 'Pinned, Priority'
+        # `do-not-merge` exempts the standing Dependabot major-updates dashboard PR,
+        # which is meant to stay open indefinitely.
+        exempt-pr-labels: 'Pinned, Priority, do-not-merge'

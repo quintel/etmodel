@@ -8,8 +8,9 @@ class APIProxyController < ApplicationController
     uri = "/#{params[:url]}"
     uri += ".#{params[:format]}" if params[:format]
 
+    # Parameters are forwarded as-is to ETEngine, never mass-assigned.
     parameters =
-      params.permit!.to_h.except('controller', 'action', 'url', 'format')
+      params.to_unsafe_h.except('controller', 'action', 'url', 'format')
 
     response = if request.get?
       NastyProxy.get uri

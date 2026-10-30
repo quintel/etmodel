@@ -93,11 +93,22 @@
   show_at_first: false
   is_target_line: false
   target_line_position: ''
-  gquery: final_demand_of_refinery_gas_in_other_chemical_industry_energetic
+  gquery: final_demand_of_refinery_gas_in_other_chemical_industry_energetic_usefull
   is_1990: false
   dependent_on:
   output_element_key: use_of_final_demand_in_industry_chemical_other
   key: refinery_gas_energetic_other_chemical_use_of_final_demand_in_industry_chemical_other
+- label: excess_refinery_gas
+  color: "#FF0000"
+  order_by: 46
+  show_at_first: false
+  is_target_line: false
+  target_line_position: ''
+  gquery: final_demand_of_refinery_gas_in_other_chemical_industry_energetic_excess
+  is_1990: false
+  dependent_on:
+  output_element_key: use_of_final_demand_in_industry_chemical_other
+  key: excess_refinery_gas_energetic_other_chemical_use_of_final_demand_in_industry_chemical_other
 - label: ambient
   color: "#ADDE4C"
   order_by: 50

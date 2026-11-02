@@ -1116,6 +1116,8 @@ D3.sankey =
         ]
         links: [
           # CARRIERS TO PROCESS
+          {left: 'crude_oil',                             right: 'refinery_gas',                      gquery: 'crude_oil_to_refinery_gas_in_liquid_fuels_sankey', color: '#8B4513'},
+
           {left: 'crude_oil',                             right: 'fossil_refinery',                   gquery: 'crude_oil_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'network_gas',                           right: 'fossil_refinery',                   gquery: 'network_gas_to_fossil_refinery_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'coal',                                  right: 'fossil_refinery',                   gquery: 'coal_to_fossil_refinery_in_liquid_fuels_sankey', color: '#252525'},

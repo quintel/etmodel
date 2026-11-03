@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 module MyEtm
-  # Site-wide messages, such as planned maintenance notices, configured in the MyETM admin panel.
+  # Messages such as planned maintenance notices, configured per version in the MyETM admin panel.
+  # Only those of the version this ETModel runs as (ETModel::Version::TAG) are shown.
   #
   # The banner is never important enough to break a page, so a failure to reach MyETM is reported
   # and treated as "no announcements".
@@ -15,7 +16,9 @@ module MyEtm
     CACHE_TTL = 5.minutes
 
     def self.all_active
-      Rails.cache.fetch(:announcements, expires_in: CACHE_TTL) { find(:all).to_a }
+      Rails.cache.fetch(:announcements, expires_in: CACHE_TTL) do
+        find(:all, params: { version: ETModel::Version::TAG }).to_a
+      end
     rescue StandardError => e
       Sentry.capture_exception(e)
       []

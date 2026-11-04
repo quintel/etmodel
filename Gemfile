@@ -23,6 +23,8 @@ gem 'httparty'
 gem 'inline_svg'
 gem 'invisible_captcha'
 gem 'jquery-rails', '~> 4.6.1'
+# json 3 removes JSON.parse's create_additions option, used by sprockets 4.2.
+gem 'json', '~> 2.21'
 gem 'kaminari', '~> 1.2.1'
 gem 'local_time'
 gem 'loofah'

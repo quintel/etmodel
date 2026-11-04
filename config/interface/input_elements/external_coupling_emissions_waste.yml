@@ -1,0 +1,17 @@
+---
+- key: external_coupling_emissions_waste_non_specified_non_energetic_co2
+  step_value: 1.0
+  unit: "kton"
+  position: 100
+  slide_key: other_emissions_direct_waste
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_waste_non_specified_non_energetic_other_ghg
+  step_value: 1.0
+  unit: "kton"
+  position: 105
+  slide_key: other_emissions_direct_waste
+  share_group: ''
+  interface_group: non_energetic_emissions_other_ghg
+  coupling_icon: true

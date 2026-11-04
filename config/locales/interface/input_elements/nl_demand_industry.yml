@@ -859,18 +859,37 @@ nl:
       title: Raffinaderijen
       short_description:
       description: |
-        Raffinagegas is een bijproduct van het raffinageproces. Dit bijproduct wordt altijd gebruikt als brandstof.
-        Dit kan zijn in de raffinaderijen zelf, maar ook in de chemische industrie.
-        Deze slider bepaalt welk percentage van het raffinagegas wordt gebruikt in de raffinaderijen zelf.
-        Als er meer raffinagegas naar de raffinaderijen gaat dan daar nodig is voor warmteproductie, wordt het overschot afgefakkeld.
+        Raffinagegas is een bijproduct van het raffinageproces. Het wordt gebruikt als brandstof, zowel in
+        de raffinaderijen zelf als in de chemische industrie.<br/><br/>
+
+        Deze slider bepaalt welk aandeel van dit raffinagegas wordt gebruikt door raffinaderijen.
+        Raffinagegas wordt eerst ingezet om in de warmtevraag te voorzien. Aangenomen wordt dat
+        overschotten worden afgefakkeld. Een mogelijk overschot aan raffinagegas in raffinaderijen wordt getoond in deze
+        <a href="#" class="open_chart" data-chart-key="use_of_final_demand_in_industry_chemical_refineries" data-chart-location="side">grafiek</a>.<br/><br/>
+
+        In sommige regio's wordt meer raffinagegas geproduceerd dan deze twee sectoren gebruiken. In werkelijkheid
+        wordt dit overschot grotendeels verbrand in elektriciteitscentrales en WKK's. Dat gebruik is niet expliciet
+        gemodelleerd. Daarom wordt het als verlies getoond en wordt het niet beïnvloed door deze slider. Zie de
+        <a href="https://docs.energytransitionmodel.com/main/liquid-fuels#refinery-gas"
+        target="_blank">documentatie</a> voor meer informatie.
     industry_chemicals_refineries_refinery_gas_distribution_chemicals_other_share:
       title: Chemie
       short_description:
       description: |
-        Raffinagegas is een bijproduct van het raffinageproces. Dit bijproduct wordt altijd gebruikt als brandstof.
-        Dit kan zijn in de raffinaderijen zelf, maar ook in de chemische industrie.
-        Deze slider bepaalt welk percentage van het raffinagegas wordt gebruikt in de <a href="/scenario/demand/industry/chemicals">chemie</a>.
-        Als er meer raffinagegas naar de chemie gaat dan daar nodig is voor warmteproductie, wordt het overschot afgefakkeld.
+        Raffinagegas is een bijproduct van het raffinageproces. Het wordt gebruikt als brandstof, zowel in
+        de raffinaderijen zelf als in de chemische industrie.<br/><br/>
+
+        Deze slider bepaalt welk aandeel van dit raffinagegas wordt gebruikt in de <a href="/scenario/demand/industry/chemicals">chemische industrie</a>.
+        Raffinagegas wordt eerst ingezet om in de warmtevraag te voorzien. Aangenomen wordt dat
+        overschotten worden afgefakkeld. Een mogelijk overschot aan raffinagegas in de chemische industrie
+        wordt getoond in deze
+        <a href="#" class="open_chart" data-chart-key="use_of_final_demand_in_industry_chemical_other" data-chart-location="side">grafiek</a>.<br/><br/>
+
+        In sommige regio's wordt meer raffinagegas geproduceerd dan deze twee sectoren gebruiken. In werkelijkheid
+        wordt dit overschot grotendeels verbrand in elektriciteitscentrales en WKK's. Dat gebruik is niet expliciet
+        gemodelleerd. Daarom wordt het als verlies getoond en wordt het niet beïnvloed door deze slider. Zie de
+        <a href="https://docs.energytransitionmodel.com/main/liquid-fuels#refinery-gas"
+        target="_blank">documentatie</a> voor meer informatie.
     industry_chemicals_fertilizers_local_ammonia_local_hydrogen_share:
       title: Lokale NH<sub>3</sub> (stoomreforming van aardgas)
       short_description:

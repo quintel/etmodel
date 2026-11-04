@@ -906,18 +906,36 @@ en:
       title: Refineries
       short_description:
       description: |
-        Refinery gas is a by-product of the refining process. This by-product is always used as fuel.
-        This can be in the refineries themselves, but also in the chemical industry.
-        This slider determines what percentage of the refinery gas is used in the refineries themselves.
-        If more refinery gas is directed to the refineries than is needed for heat production there, the excess is flared.
+        Refinery gas is a by-product of the refining process. It is used as fuel, both in the
+        refineries themselves and in the chemical industry.<br/><br/>
+
+        This slider determines what share of this refinery gas is used by refineries. Refinery gas
+        is used first to meet heat demand. Any amount above that demand is assumed to be flared.
+        Excess refinery gas in refineries is explicitly shown in this
+        <a href="#" class="open_chart" data-chart-key="use_of_final_demand_in_industry_chemical_refineries" data-chart-location="side">chart</a>.<br/><br/>
+
+        In some regions, more refinery gas is produced than these two sectors use. In reality this
+        surplus is mostly used in power plants and CHPs. That use is not modelled explicitly, so it
+        is shown as a loss and not affected by this slider. See the
+        <a href="https://docs.energytransitionmodel.com/main/liquid-fuels#refinery-gas"
+        target="_blank">documentation</a> for more information.
     industry_chemicals_refineries_refinery_gas_distribution_chemicals_other_share:
       title: Chemicals
       short_description:
       description: |
-        Refinery gas is a by-product of the refining process. This by-product is always used as fuel.
-        This can be in the refineries themselves, but also in the chemical industry.
-        This slider determines what percentage of the refinery gas is used in the <a href="/scenario/demand/industry/chemicals">chemical industry</a>.
-        If more refinery gas is directed to the chemical industry than is needed for heat production there, the excess is flared.
+        Refinery gas is a by-product of the refining process. It is used as fuel, both in the
+        refineries themselves and in the chemical industry.<br/><br/>
+
+        This slider determines what share of this refinery gas is used in the <a href="/scenario/demand/industry/chemicals">chemical industry</a>.
+        Refinery gas is used first to meet heat demand. Any amount above that demand is assumed to be flared.
+        Excess refinery gas in the chemical industry is explicitly shown in this
+        <a href="#" class="open_chart" data-chart-key="use_of_final_demand_in_industry_chemical_other" data-chart-location="side">chart</a>.<br/><br/>
+
+        In some regions, more refinery gas is produced than these two sectors use. In reality this
+        surplus is mostly used in power plants and CHPs. That use is not modelled explicitly, so it
+        is shown as a loss and not affected by this slider. See the
+        <a href="https://docs.energytransitionmodel.com/main/liquid-fuels#refinery-gas"
+        target="_blank">documentation</a> for more information.
     industry_diesel_in_crude_oil_share:
       title: Diesel
       short_description:

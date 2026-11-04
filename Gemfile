@@ -38,7 +38,7 @@ gem 'valid_email2'
 
 # Authentication
 gem 'cancancan'
-gem 'identity',      ref: 'd88af33', github: 'quintel/identity_rails'
+gem 'identity',      ref: '1c7c3b9', github: 'quintel/identity_rails'
 
 # javascript
 gem 'babel-transpiler'

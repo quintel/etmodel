@@ -52,7 +52,7 @@ describe SavedScenariosController, vcr: true do
 
         before do
           sign_in user
-          get(:load, params: { id: 12, scenario_id: 10 })
+          get(:load, params: { id: 12, scenario_id: 10, granted: 1 })
         end
 
         it { expect(response).to redirect_to play_path }
@@ -79,7 +79,7 @@ describe SavedScenariosController, vcr: true do
 
         before do
           sign_in user
-          get(:load, params: { id: 12 })
+          get(:load, params: { id: 12, granted: 1 })
         end
 
         it { expect(response).to redirect_to play_path }

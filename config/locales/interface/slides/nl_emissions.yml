@@ -29,11 +29,67 @@ nl:
     other_emissions_agriculture:
       title: Landbouw
       short_description:
-      description: 'Hoeveel ‘overige’ emissies worden er in de toekomst uitgestoten door de landbouw? Dit is
-      bijvoorbeeld methaanuitstoot van landbouwdieren (‘fermentatie’), bemesting en landbewerking. Hieronder
-      kun je voor de belangrijkste emissiebronnen aannames maken over de toe- of afname van niet-energetische
-      CO<sub>2</sub> en overige broeikasgasemissies (BKG). <br /><br />
-      In de grafiek zie je de uitstoot van de verschillende emissiebronnen voor het heden en de toekomst.'
+      description: |
+        Hoeveel ‘overige’ emissies worden er in de toekomst uitgestoten door de landbouw? Dit is
+        bijvoorbeeld methaanuitstoot van landbouwdieren (‘fermentatie’), bemesting en landbewerking. Hieronder
+        kun je voor de belangrijkste emissiebronnen aannames maken over de toe- of afname van niet-energetische
+        CO<sub>2</sub> en overige broeikasgasemissies (BKG). <br /><br />
+        In de grafiek zie je de uitstoot van de verschillende emissiebronnen voor het heden en de toekomst.
+    other_emissions_direct_agriculture:
+      title: Landbouw
+      short_description:
+      description: |
+        Stel hier de niet-energetische CO<sub>2</sub>- en de overige broeikasgasemissies van
+        landbouw in.
+    other_emissions_direct_overview:
+      title: Overzicht
+      short_description:
+      description: |
+        In deze sectie kunnen de overige broeikasgasemissies in het toekomstjaar worden aangepast
+        voor de <b>directe emissies</b>. Let op: de directe emissiemethode is momenteel in
+        ontwikkeling. Lees hierover meer in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.
+    other_emissions_direct_built_environment:
+      title: Gebouwde omgeving
+      short_description:
+      description: |
+        Stel hier de overige broeikasgasemissies van huishoudens en gebouwen in.
+    other_emissions_direct_transport:
+      title: Transport
+      short_description:
+      description: |
+        Stel hier de overige broeikasgasemissies van nationaal en internationaal transport in.
+    other_emissions_direct_industry:
+      title: Industrie
+      short_description:
+      description: |
+        Stel hier de niet-energetische CO<sub>2</sub>- en de overige broeikasgasemissies van
+        industrie in.
+    other_emissions_direct_other:
+      title: Overig
+      short_description:
+      description: |
+        Stel hier de overige broeikasgasemissies van overig transport en overige sectoren in,
+        en stel de indirecte CO<sub>2</sub>-emissies in.
+    other_emissions_direct_energy:
+      title: Energie
+      short_description:
+      description: |
+        Stel hier de niet-energetische CO<sub>2</sub>- en de overige broeikasgasemissies van
+        de energiesector in.
+    other_emissions_direct_waste:
+      title: Afval
+      short_description:
+      description: |
+        Stel hier de niet-energetische CO<sub>2</sub>- en overige broeikasgasemissies van
+        afvalbeheer in.
+    other_emissions_direct_lulucf:
+      title: LULUCF
+      short_description:
+      description: |
+        Stel hier de niet-energetische CO<sub>2</sub>- en overige broeikasgasemissies van
+        landgebruik en bosbouw (LULUCF) in.
     other_emissions_industry:
       title: Industrie en Energie
       short_description:

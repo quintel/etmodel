@@ -1,0 +1,366 @@
+---
+nl:
+  input_elements:
+    # Built environment
+    emissions_households_non_specified_energetic_other_ghg:
+      title: Huishoudens
+      short_description: ''
+      description: |
+        In huishoudens kan door de verbranding van brandstoffen voor verwarming methaan (CH<sub>4</sub>) of lachgas
+        (N<sub>2</sub>O) vrijkomen. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.4.b.
+    emissions_buildings_non_specified_energetic_other_ghg:
+      title: Gebouwen
+      short_description: ''
+      description: |
+        In gebouwen kan door de verbranding van brandstoffen voor verwarming methaan (CH<sub>4</sub>) of lachgas
+        (N<sub>2</sub>O) vrijkomen. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.4.a.
+    # Transport
+    emissions_transport_non_specified_energetic_other_ghg:
+      title: Nationaal transport
+      short_description: ''
+      description: |
+        Bij de verbranding van brandstoffen in de transportsector komen methaan (CH<sub>4</sub>) en lachgas
+        (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.3 excl. 1.A.3.e.
+    emissions_bunkers_international_aviation_energetic_other_ghg:
+      title: Internationale luchtvaart
+      short_description: ''
+      description: |
+        Bij de verbranding van brandstoffen in de internationale luchtvaart komen methaan (CH<sub>4</sub>) en lachgas
+        (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/>
+        <b>Let op</b>: dit schuifje heeft pas effect als is ingesteld welk aandeel van de vraag naar internationale luchtvaart
+        in het scenario wordt meegenomen, in de sectie
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        Internationaal transport</a>. Datzelfde aandeel wordt ook toegepast op de overige broeikasgasemissies
+        van internationale luchtvaart die met dit schuifje worden ingesteld.
+        <br/><br/>
+        In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.D.1.a.
+    emissions_bunkers_international_navigation_energetic_other_ghg:
+      title: Internationale scheepvaart
+      short_description: ''
+      description: |
+        Bij de verbranding van brandstoffen in de internationale scheepvaart komen methaan (CH<sub>4</sub>) en lachgas
+        (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/>
+        <b>Let op</b>: dit schuifje heeft pas effect als is ingesteld welk aandeel van de vraag naar internationale scheepvaart
+        in het scenario wordt meegenomen, in de sectie
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        Internationaal transport</a>. Datzelfde aandeel wordt ook toegepast op de overige broeikasgasemissies
+        van internationale scheepvaart die met dit schuifje worden ingesteld.
+        <br/><br/>
+        In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.D.1.b.
+    # Industry
+    emissions_industry_aluminium_non_energetic_co2:
+      title: Aluminium
+      short_description: ''
+      description: |
+        Bij de productie van aluminium komt CO<sub>2</sub> vrij in niet-energetische processen, voornamelijk
+        door het verbruik van koolstofanodes. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.C.3.
+    emissions_industry_aluminium_non_energetic_other_ghg:
+      title: Aluminium
+      short_description: ''
+      description: |
+        Bij de productie van aluminium komen perfluorkoolwaterstoffen (PFK's) vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.C.3.
+    emissions_industry_chemicals_non_energetic_co2:
+      title: Chemie
+      short_description: ''
+      description: |
+        In de chemische industrie zijn er verschillende niet-energetische processen waarbij CO<sub>2</sub>
+        vrijkomt, bijvoorbeeld bij de productie van petrochemische en andere chemische producten.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.B excl. 2.B.1, 2.B.2, 2.B.8.a en 2.B.10.a.
+    emissions_industry_chemicals_non_energetic_other_ghg:
+      title: Chemie
+      short_description: ''
+      description: |
+        In de chemische industrie zijn er veel verschillende niet-energetische processen waarbij overige
+        broeikasgassen vrijkomen. Bijvoorbeeld bij de productie van caprolactam, glyoxal, glyoxylzuur en
+        petrochemische of fluorchemische producten. Met dit schuifje wordt de hoeveelheid van deze uitstoot
+        in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.B excl. 2.B.1, 2.B.2, 2.B.8.a en 2.B.10.a.
+    emissions_industry_fertilizers_non_energetic_other_ghg:
+      title: Kunstmest
+      short_description: ''
+      description: |
+        In de kunstmestindustrie komen overige broeikasgassen vrij in niet-energetische processen.
+        Vooral bij de productie van salpeterzuur komt lachgas (N<sub>2</sub>O) vrij.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.B.1, 2.B.2.
+    emissions_industry_food_non_energetic_co2:
+      title: Voedsel
+      short_description: ''
+      description: |
+        In de voedingsmiddelenindustrie komt CO<sub>2</sub> vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.H.2.
+    emissions_industry_food_non_energetic_other_ghg:
+      title: Voedsel
+      short_description: ''
+      description: |
+        In de voedingsmiddelenindustrie komen overige broeikasgassen vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.H.2.
+    emissions_industry_non_specified_energetic_other_ghg:
+      title: Industrie
+      short_description: ''
+      description: |
+        Naast de grote hoeveelheid CO<sub>2</sub> die vrijkomt door energiegebruik in een aantal
+        industriële processen, kunnen ook relatief kleine hoeveelheden methaan (CH<sub>4</sub>) of lachgas (N<sub>2</sub>O)
+        vrijkomen. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.2.
+    emissions_industry_other_metals_non_energetic_co2:
+      title: Overige metalen
+      short_description: ''
+      description: |
+        Bij de productie van andere metalen dan staal en aluminium, zoals ferrolegeringen, lood en zink,
+        komt CO<sub>2</sub> vrij in niet-energetische processen. Met dit schuifje wordt de hoeveelheid van deze uitstoot
+        in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.C excl. 2.C.1 en 2.C.3.
+    emissions_industry_other_metals_non_energetic_other_ghg:
+      title: Overige metalen
+      short_description: ''
+      description: |
+        Bij de productie van andere metalen dan staal en aluminium komen overige broeikasgassen vrij
+        in niet-energetische processen, bijvoorbeeld zwavelhexafluoride (SF<sub>6</sub>) dat gebruikt wordt bij de productie van magnesium.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.C excl. 2.C.1 en 2.C.3.
+    emissions_industry_other_non_energetic_co2:
+      title: Overige industrie
+      short_description: ''
+      description: |
+        De productie van mineralen, elektronica en alle overige producten vallen onder de categorie
+        'overige' industrie. Vooral in de mijnbouw en bij de productie van mineralen (bijv. cement) komt CO<sub>2</sub>
+        vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.A, 2.D t/m 2.G.
+    emissions_industry_other_non_energetic_other_ghg:
+      title: Overige industrie
+      short_description: ''
+      description: |
+        In industriële sectoren komt een grote verscheidenheid aan broeikasgassen vrij. Bijvoorbeeld
+        bij de productie van koelmiddelen voor koelkasten en in mindere mate bij de productie van elektronica
+        of paraffinewas. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.A, 2.D t/m 2.G.
+    emissions_industry_paper_non_energetic_co2:
+      title: Papier
+      short_description: ''
+      description: |
+        In de papierindustrie komt CO<sub>2</sub> vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.H.1.
+    emissions_industry_paper_non_energetic_other_ghg:
+      title: Papier
+      short_description: ''
+      description: |
+        In de papierindustrie komen overige broeikasgassen vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.H.1.
+    emissions_industry_refineries_energetic_other_ghg:
+      title: Raffinaderijen
+      short_description: ''
+      description: |
+        Bij de verbranding van brandstoffen in raffinaderijen komen methaan (CH<sub>4</sub>) en lachgas
+        (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.1.b.
+    emissions_industry_refineries_non_energetic_other_ghg:
+      title: Raffinaderijen
+      short_description: ''
+      description: |
+        In raffinaderijen komen overige broeikasgassen vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.B.2.a.iv.
+    emissions_industry_steel_non_energetic_co2:
+      title: Staal
+      short_description: ''
+      description: |
+        Bij de productie van ijzer en staal komt CO<sub>2</sub> vrij in niet-energetische processen,
+        bijvoorbeeld door het gebruik van kalksteen. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.C.1.
+    emissions_industry_steel_non_energetic_other_ghg:
+      title: Staal
+      short_description: ''
+      description: |
+        Bij de productie van ijzer en staal komen overige broeikasgassen, zoals methaan (CH<sub>4</sub>),
+        vrij in niet-energetische processen. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.C.1.
+    # Agriculture
+    emissions_agriculture_non_specified_energetic_other_ghg:
+      title: Landbouw
+      short_description: ''
+      description: |
+        In de landbouw en visserij zijn er veel processen waarvoor energie nodig is.
+        Het gebruik van machines, (kas)verlichting of het verwarmen van gewassen zijn hier voorbeelden van. Bij deze
+        processen komen zowel lachgas (N<sub>2</sub>O) als methaan (CH<sub>4</sub>) vrij.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.4.c.
+    emissions_agriculture_non_specified_non_energetic_co2:
+      title: Landbouw
+      short_description: ''
+      description: |
+        In de landbouw komt CO<sub>2</sub> vrij in niet-energetische processen, zoals bemesting en
+        landbewerking. In Europa is vooral het gebruik van kalk tegen bodemverzuring een bron van CO<sub>2</sub>.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 3.
+    emissions_agriculture_non_specified_non_energetic_other_ghg:
+      title: Landbouw
+      short_description: ''
+      description: |
+        In de landbouw komen overige broeikasgassen vrij in niet-energetische processen. Voorbeelden zijn
+        methaan (CH<sub>4</sub>) dat vrijkomt bij (enterische) fermentatie in landbouwdieren en uit mest, en lachgas
+        (N<sub>2</sub>O) door landbewerking en de vergisting van biomassa.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 3.
+    # Other
+    emissions_other_non_specified_energetic_other_ghg:
+      title: Overig
+      short_description: ''
+      description: |
+        Bij de verbranding van brandstoffen in overige sectoren, zoals militair gebruik, komen methaan (CH<sub>4</sub>)
+        en lachgas (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.5.
+    emissions_other_other_transportation_energetic_other_ghg:
+      title: Overig transport
+      short_description: ''
+      description: |
+        Bij de verbranding van brandstoffen voor overig transport, zoals transport via pijpleidingen,
+        komen methaan (CH<sub>4</sub>) en lachgas (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot
+        in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.3.e.
+    # Energy
+    emissions_energy_ccus_non_energetic_co2:
+      title: CCUS
+      short_description: ''
+      description: |
+        Bij het transport en de opslag van CO<sub>2</sub> kan CO<sub>2</sub> weglekken en vrijkomen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.C.
+    emissions_energy_electricity_and_heat_production_energetic_other_ghg:
+      title: Elektriciteits- en warmteproductie
+      short_description: ''
+      description: |
+        Bij de productie van elektriciteit en warmte komen de broeikasgassen methaan (CH<sub>4</sub>) of
+        lachgas (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.1.a.
+    emissions_energy_fuels_production_energetic_other_ghg:
+      title: Brandstofproductie
+      short_description: ''
+      description: |
+        Bij de productie van brandstoffen, zoals cokes en vaste brandstoffen, komen de broeikasgassen methaan (CH<sub>4</sub>) of
+        lachgas (N<sub>2</sub>O) vrij. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.A.1.c.
+    emissions_energy_fugitive_emissions_non_energetic_co2:
+      title: Diffuse emissies
+      short_description: ''
+      description: |
+        Bij de winning, verwerking, opslag en het transport van brandstoffen kan CO<sub>2</sub> ontsnappen,
+        bijvoorbeeld door lekkages of affakkelen. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.B excl. 1.B.2.a.iv.
+    emissions_energy_fugitive_emissions_non_energetic_other_ghg:
+      title: Diffuse emissies
+      short_description: ''
+      description: |
+        Bij de winning, verwerking, opslag en het transport van brandstoffen kan methaan (CH<sub>4</sub>) ontsnappen,
+        bijvoorbeeld door lekkages in gasnetten of uit kolenmijnen. Met dit schuifje wordt de hoeveelheid van deze uitstoot
+        in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 1.B excl. 1.B.2.a.iv.
+    emissions_energy_hydrogen_production_non_energetic_other_ghg:
+      title: Waterstofproductie
+      short_description: ''
+      description: |
+        Bij de productie van waterstof komen overige broeikasgassen vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.B.10.a.
+    emissions_energy_methanol_production_non_energetic_other_ghg:
+      title: Methanolproductie
+      short_description: ''
+      description: |
+        Bij de productie van methanol komen overige broeikasgassen vrij in niet-energetische processen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 2.B.8.a.
+    # Waste
+    emissions_waste_non_specified_non_energetic_co2:
+      title: Afval
+      short_description: ''
+      description: |
+        Bij het beheer van afval kan CO<sub>2</sub> vrijkomen. Bijvoorbeeld bij de verbranding
+        van afval zonder energieterugwinning. Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 5.
+    emissions_waste_non_specified_non_energetic_other_ghg:
+      title: Afval
+      short_description: ''
+      description: |
+        Bij het storten en beheren van vast afval komt vaak methaan (CH<sub>4</sub>) vrij.
+        In mindere mate komen bij de behandeling van afvalwater methaan en lachgas (N<sub>2</sub>O) vrij.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 5.
+    # LULUCF
+    emissions_lulucf_non_energetic_co2:
+      title: LULUCF
+      short_description: ''
+      description: |
+        Landgebruik, verandering in landgebruik en bosbouw (LULUCF) kunnen CO<sub>2</sub> zowel uitstoten als opnemen,
+        bijvoorbeeld door het ontwateren van veengebieden, ontbossing of de groei van bossen. Met dit schuifje wordt de hoeveelheid
+        van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 4.
+    emissions_lulucf_non_energetic_other_ghg:
+      title: LULUCF
+      short_description: ''
+      description: |
+        Landgebruik, verandering in landgebruik en bosbouw (LULUCF) kunnen leiden tot de uitstoot van overige broeikasgassen,
+        zoals methaan (CH<sub>4</sub>) en lachgas (N<sub>2</sub>O) uit ontwaterde organische bodems of natuurbranden.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC is dit de uitstoot in de
+        categorie: 4.
+    # Indirect emissions
+    emissions_other_indirect_emissions_non_energetic_co2:
+      title: Indirecte emissies
+      short_description: ''
+      description: |
+        ‘Indirecte emissies’ zijn CO<sub>2</sub>-emissies die ontstaan door de oxidatie van methaan (CH<sub>4</sub>),
+        koolmonoxide (CO) en vluchtige organische stoffen anders dan methaan (NMVOS) in de atmosfeer. Deze emissies hebben een groot aantal oorzaken en
+        kunnen in elke sector vrijkomen.
+        Met dit schuifje wordt de hoeveelheid van deze uitstoot in het toekomstjaar ingesteld.
+        <br/><br/> In de 'Common Reporting Tables (CRT)' van het UNFCCC wordt deze uitstoot geclassificeerd als 'ind_CO2'.

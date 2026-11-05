@@ -14,7 +14,7 @@ en:
         <li>Other greenhouse gas emissions from non-energetic activities, such as methane emissions from manure
         in agriculture</li>
         <li>Indirect CO<sub>2</sub> emissions which are emitted due to the atmospheric oxidation
-        of methane (CH<sub>4</sub>), carbon monoxide (CO) and Non-Methane Volatile Organic Compounds (NMVOC) in 
+        of methane (CH<sub>4</sub>), carbon monoxide (CO) and Non-Methane Volatile Organic Compounds (NMVOC) in
         different sectors</li>
         <li>Delayed CO<sub>2</sub> emissions which arise from the capture of CO<sub>2</sub> for 'Other utilisation'
         </li></ul>
@@ -33,6 +33,61 @@ en:
       Below you can specify assumptions regarding the future increase or decrease of non-energetic CO<sub>2</sub>
       or other greenhouse gas emissions (GHG). <br /><br />
       The figure on the right shows you the different sources of emissions now and in the future."
+    other_emissions_direct_agriculture:
+      title: Agriculture
+      short_description:
+      description: |
+        Set the non-energetic CO<sub>2</sub> and other greenhouse gas emissions of
+        agriculture below.
+    other_emissions_direct_overview:
+      title: Overview
+      short_description:
+      description: |
+        In this section, the other greenhouse gas emissions in the future year can be adjusted
+        for the <b>direct emissions</b>. Note: the direct emissions method is currently under
+        development. Read more about this in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
+    other_emissions_direct_built_environment:
+      title: Built environment
+      short_description:
+      description: |
+        Set the other greenhouse gas emissions of households and buildings below.
+    other_emissions_direct_transport:
+      title: Transport
+      short_description:
+      description: |
+        Set the other greenhouse gas emissions of national and international transport below.
+    other_emissions_direct_industry:
+      title: Industry
+      short_description:
+      description: |
+        Set the non-energetic CO<sub>2</sub> and other greenhouse gas emissions of
+        industry below.
+    other_emissions_direct_other:
+      title: Other
+      short_description:
+      description: |
+        Set the other greenhouse gas emissions of other transportation and other sectors,
+        and set the indirect CO<sub>2</sub> emissions below.
+    other_emissions_direct_energy:
+      title: Energy
+      short_description:
+      description: |
+        Set the non-energetic CO<sub>2</sub> and other greenhouse gas emissions of
+        the energy sector below.
+    other_emissions_direct_waste:
+      title: Waste
+      short_description:
+      description: |
+        Set the non-energetic CO<sub>2</sub> and other greenhouse gas emissions of
+        waste management below.
+    other_emissions_direct_lulucf:
+      title: LULUCF
+      short_description:
+      description: |
+        Set the non-energetic CO<sub>2</sub> and other greenhouse gas emissions of
+        land use and forestry (LULUCF) below.
     other_emissions_industry:
       title: Industry and Energy
       short_description:
@@ -69,19 +124,19 @@ en:
       title: Delayed emissions
       short_description:
       description: |
-        Delayed emissions arise from 'Other utilisation' of CO<sub>2</sub> in the 
+        Delayed emissions arise from 'Other utilisation' of CO<sub>2</sub> in the
         <a href="/scenario/emissions/ccus/utilisation-and-storage-of-co2">CCUS section</a>. Examples of
-        'Other utilisation' include the use of CO<sub>2</sub> as a propellant gas for beer and soda, for 
-        the production of the fertilizer urea or for the cultivation of crops in greenhouses. In the 
+        'Other utilisation' include the use of CO<sub>2</sub> as a propellant gas for beer and soda, for
+        the production of the fertilizer urea or for the cultivation of crops in greenhouses. In the
         future, captured CO<sub>2</sub> may even be used to produce plastics. </br></br>
-        For most of the examples above, the CO<sub>2</sub> is only stored for a short time: when 
-        soda or beer is consumed, the CO<sub>2</sub> is released. The resulting emissions of this 
-        type of 'Other utilisation' are therefore defined as 'delayed emissions'. By default, all 
-        delayed emissions are assumed to be take place within the same year as they are captured and 
+        For most of the examples above, the CO<sub>2</sub> is only stored for a short time: when
+        soda or beer is consumed, the CO<sub>2</sub> is released. The resulting emissions of this
+        type of 'Other utilisation' are therefore defined as 'delayed emissions'. By default, all
+        delayed emissions are assumed to be take place within the same year as they are captured and
         therefore count towards the total emissions in your scenario. </br></br>
-        For some of the examples above, like the production of plastics, the captured CO<sub>2</sub> 
-        can actually be stored for a very long time. These emissions are assumed to be 'delayed indefinitely' 
-        and are therefore excluded from the total emissions. You can determine which share of 
+        For some of the examples above, like the production of plastics, the captured CO<sub>2</sub>
+        can actually be stored for a very long time. These emissions are assumed to be 'delayed indefinitely'
+        and are therefore excluded from the total emissions. You can determine which share of
         delayed emissions is delayed indefinitely with the sliders below.
     emissions_emission_factors_imported_heat:
       title: CO<sub>2</sub> emissions of imported heat
@@ -100,9 +155,9 @@ en:
         CO<sub>2</sub> emissions elsewhere. How much of these emissions do you want
         to attribute to your region?
         <br/><br/>
-        As a default, the emissions (in kg CO<sub>2</sub> per MWh hydrogen) are set equal to 
-        the emissions of hydrogen produced with Steam Methane Reforming (SMR), since over 90% 
-        of hydrogen produced today comes from SMR. However, you can change the emissions 
+        As a default, the emissions (in kg CO<sub>2</sub> per MWh hydrogen) are set equal to
+        the emissions of hydrogen produced with Steam Methane Reforming (SMR), since over 90%
+        of hydrogen produced today comes from SMR. However, you can change the emissions
         yourself below. Click on the '?' for some reference values.
         <br/><br/>
         Shipping of liquified green ammonia (and then reforming it to hydrogen) is seen as
@@ -129,4 +184,4 @@ en:
         target =\"_blank\">learn more</a>\r\n</br></br>\r\n<strong>NOTE: the CO<sub>2</sub>
         emissions that you include here are only shown in the chart and not included
         in your scenario!</strong>"
-        
+

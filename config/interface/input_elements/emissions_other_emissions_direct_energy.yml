@@ -5,20 +5,20 @@
   unit: kT
   position: 10
   slide_key: other_emissions_direct_energy
-- key: emissions_energy_electricity_and_heat_production_energetic_other_ghg
-  interface_group: energetic_emissions_other_ghg
+- key: emissions_energy_fugitive_emissions_non_energetic_co2
+  interface_group: non_energetic_emissions_co2
   step_value: 0.1
   unit: kT
   position: 20
   slide_key: other_emissions_direct_energy
-- key: emissions_energy_fuels_production_energetic_other_ghg
+- key: emissions_energy_electricity_and_heat_production_energetic_other_ghg
   interface_group: energetic_emissions_other_ghg
   step_value: 0.1
   unit: kT
   position: 30
   slide_key: other_emissions_direct_energy
-- key: emissions_energy_fugitive_emissions_non_energetic_co2
-  interface_group: non_energetic_emissions_co2
+- key: emissions_energy_fuels_production_energetic_other_ghg
+  interface_group: energetic_emissions_other_ghg
   step_value: 0.1
   unit: kT
   position: 40

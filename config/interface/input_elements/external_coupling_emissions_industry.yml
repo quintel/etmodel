@@ -1,37 +1,93 @@
 ---
+- key: external_coupling_emissions_industry_steel_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 10
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
 - key: external_coupling_emissions_industry_aluminium_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 20
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_industry_other_metals_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 30
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_industry_chemicals_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 40
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_industry_food_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 50
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_industry_paper_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 60
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_industry_other_non_energetic_co2
+  step_value: 0.1
+  unit: kT
+  position: 70
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: non_energetic_emissions_co2
+  coupling_icon: true
+- key: external_coupling_emissions_industry_refineries_energetic_other_ghg
+  step_value: 0.1
+  unit: kT
+  position: 80
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: energetic_emissions_other_ghg
+  coupling_icon: true
+- key: external_coupling_emissions_industry_non_specified_energetic_other_ghg
+  step_value: 0.1
+  unit: kT
+  position: 90
+  slide_key: other_emissions_direct_industry
+  share_group: ''
+  interface_group: energetic_emissions_other_ghg
+  coupling_icon: true
+- key: external_coupling_emissions_industry_steel_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 100
   slide_key: other_emissions_direct_industry
   share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_aluminium_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 105
-  slide_key: other_emissions_direct_industry
-  share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_chemicals_non_energetic_co2
+- key: external_coupling_emissions_industry_aluminium_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 110
   slide_key: other_emissions_direct_industry
   share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_chemicals_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 115
-  slide_key: other_emissions_direct_industry
-  share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_fertilizers_non_energetic_other_ghg
+- key: external_coupling_emissions_industry_other_metals_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 120
@@ -39,15 +95,7 @@
   share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_food_non_energetic_co2
-  step_value: 0.1
-  unit: kT
-  position: 125
-  slide_key: other_emissions_direct_industry
-  share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_food_non_energetic_other_ghg
+- key: external_coupling_emissions_industry_refineries_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 130
@@ -55,90 +103,42 @@
   share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_non_specified_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 135
-  slide_key: other_emissions_direct_industry
-  share_group: ''
-  interface_group: energetic_emissions_other_ghg
-  coupling_icon: true
-- key: external_coupling_emissions_industry_other_metals_non_energetic_co2
+- key: external_coupling_emissions_industry_fertilizers_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 140
   slide_key: other_emissions_direct_industry
   share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_other_metals_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 145
-  slide_key: other_emissions_direct_industry
-  share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_other_non_energetic_co2
+- key: external_coupling_emissions_industry_chemicals_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 150
   slide_key: other_emissions_direct_industry
   share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_other_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 155
-  slide_key: other_emissions_direct_industry
-  share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_paper_non_energetic_co2
+- key: external_coupling_emissions_industry_food_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 160
   slide_key: other_emissions_direct_industry
   share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_paper_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 165
-  slide_key: other_emissions_direct_industry
-  share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_refineries_energetic_other_ghg
+- key: external_coupling_emissions_industry_paper_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 170
   slide_key: other_emissions_direct_industry
   share_group: ''
-  interface_group: energetic_emissions_other_ghg
-  coupling_icon: true
-- key: external_coupling_emissions_industry_refineries_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 175
-  slide_key: other_emissions_direct_industry
-  share_group: ''
   interface_group: non_energetic_emissions_other_ghg
   coupling_icon: true
-- key: external_coupling_emissions_industry_steel_non_energetic_co2
+- key: external_coupling_emissions_industry_other_non_energetic_other_ghg
   step_value: 0.1
   unit: kT
   position: 180
-  slide_key: other_emissions_direct_industry
-  share_group: ''
-  interface_group: non_energetic_emissions_co2
-  coupling_icon: true
-- key: external_coupling_emissions_industry_steel_non_energetic_other_ghg
-  step_value: 0.1
-  unit: kT
-  position: 185
   slide_key: other_emissions_direct_industry
   share_group: ''
   interface_group: non_energetic_emissions_other_ghg

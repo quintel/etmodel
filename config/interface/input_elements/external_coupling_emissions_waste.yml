@@ -1,6 +1,6 @@
 ---
 - key: external_coupling_emissions_waste_non_specified_non_energetic_co2
-  step_value: 1.0
+  step_value: 0.1
   unit: kT
   position: 100
   slide_key: other_emissions_direct_waste
@@ -8,7 +8,7 @@
   interface_group: non_energetic_emissions_co2
   coupling_icon: true
 - key: external_coupling_emissions_waste_non_specified_non_energetic_other_ghg
-  step_value: 1.0
+  step_value: 0.1
   unit: kT
   position: 105
   slide_key: other_emissions_direct_waste

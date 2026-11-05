@@ -87,10 +87,12 @@ en:
         as a result of the choices you make in this section. Industrial energy demand
         is mainly determined by growth of the sector’s output and investments in energy
         saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy use,
-        so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-        use is the use of energy carriers (like oil) to make non-energy products such
-        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-        to select different graphs about industrial energy demand."
+        so conversion losses for producing heat or power are not included.\r\n<br/><br/>\r\nRefinery
+        gas is used to meet heat demand. Any excess is assumed to be flared: it still counts as
+        final energy demand, but is shown separately as 'Refinery gas (excess)'.
+        Excess can be reduced by changing how refinery gas is divided between the
+        refineries and the chemical industry in the <a href='/scenario/supply/fuel_production/oil-refineries'>oil
+        refineries</a> section."
     use_of_final_demand_in_industry_other_paper:
       title: Final energy demand in the paper industry
       short_description: ''
@@ -109,10 +111,13 @@ en:
         change as a result of the choices you make in this section. Industrial energy
         demand is mainly determined by growth of the sector’s output and investments
         in energy saving technologies. \r\n<br/><br/> \r\nThe graph shows final energy
-        use, so conversion losses for producing heat or power are not included.<br/>\r\nNon-energetic
-        use is the use of energy carriers (like oil) to make non-energy products such
-        as fertilizer, for example. \r\n<br/><br/>\r\nYou can choose 'Change chart'
-        to select different graphs about industrial energy demand."
+        use, so conversion losses for producing heat or power are not included. Non-energetic
+        use refers to energy carriers used as feedstock, for example to make plastics.\r\n<br/><br/>\r\nPart of the heat demand is met by refinery gas
+        from the oil refineries. Any excess is assumed to be flared: it still counts
+        as final energy demand, but is shown separately as 'Refinery gas (excess)'.
+        Excess can be reduced by changing how refinery gas is divided between the
+        refineries and the chemical industry in the <a href='/scenario/supply/fuel_production/oil-refineries'>oil
+        refineries</a> section."
     use_of_final_demand_in_industry_other_food:
       title: Final energy demand in the food industry
       short_description: ''

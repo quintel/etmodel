@@ -1083,6 +1083,7 @@ D3.sankey =
           {id: 'biomethanol_to_jet',              column: 1, label: 'biomethanol_to_jet',        color: '#228B22'},
 
           # FUEL PRODUCTS (Column 2)
+          {id: 'refinery_gas',                    column: 2, label: 'refinery_gas',              color: '#B5524B'},
           {id: 'diesel',                          column: 2, label: 'diesel',                    color: '#8B4513'},
           {id: 'gasoline',                        column: 2, label: 'gasoline',                  color: '#A0522D'},
           {id: 'oil_products',                    column: 2, label: 'oil_products',              color: '#8B4513'},
@@ -1090,7 +1091,6 @@ D3.sankey =
           {id: 'kerosene',                        column: 2, label: 'kerosene',                  color: '#D2691E'},
           {id: 'hfo',                             column: 2, label: 'hfo',                       color: '#8B7355'},
           {id: 'naphtha',                         column: 2, label: 'naphtha',                   color: '#B8860B'},
-          {id: 'refinery_gas',                    column: 2, label: 'refinery_gas',              color: '#BC8F8F'},
           {id: 'pyrolysis_oil',                   column: 2, label: 'pyrolysis_oil',             color: '#8B7D6B'},
           {id: 'methanol',                        column: 2, label: 'methanol',                  color: '#BF8877'},
           {id: 'biomethanol',                     column: 2, label: 'biomethanol',               color: '#95B15C'},
@@ -1114,6 +1114,8 @@ D3.sankey =
         ]
         links: [
           # CARRIERS TO PROCESS
+          {left: 'crude_oil',                             right: 'refinery_gas',                      gquery: 'crude_oil_to_refinery_gas_in_liquid_fuels_sankey', color: '#8B4513'},
+
           {left: 'crude_oil',                             right: 'fossil_refinery',                   gquery: 'crude_oil_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'network_gas',                           right: 'fossil_refinery',                   gquery: 'network_gas_to_fossil_refinery_in_liquid_fuels_sankey', color: '#7f7f7f'},
           {left: 'coal',                                  right: 'fossil_refinery',                   gquery: 'coal_to_fossil_refinery_in_liquid_fuels_sankey', color: '#252525'},
@@ -1122,6 +1124,8 @@ D3.sankey =
           {left: 'steam_hot_water_input',                 right: 'fossil_refinery',                   gquery: 'steam_hot_water_input_to_fossil_refinery_in_liquid_fuels_sankey', color: '#cc0000'},
           {left: 'wood_pellets',                          right: 'fossil_refinery',                   gquery: 'wood_pellets_to_fossil_refinery_in_liquid_fuels_sankey', color: '#228B22'},
           {left: 'non_oil_input',                         right: 'fossil_refinery',                   gquery: 'non_oil_input_to_industry_transformation_chemical_refineries_in_liquid_fuels_sankey', color: '#D3D3D3'},
+
+          {left: 'crude_oil',                             right: 'oil_products',                      gquery: 'crude_oil_to_oil_products_in_liquid_fuels_sankey', color: '#8B4513'},
 
           {left: 'hydrogen',                              right: 'fischer_tropsch',                   gquery: 'hydrogen_to_fischer_tropsch_in_liquid_fuels_sankey', color: '#87CEEB'},
           {left: 'electricity',                           right: 'fischer_tropsch',                   gquery: 'electricity_to_fischer_tropsch_in_liquid_fuels_sankey', color: '#1f77b4'},
@@ -1162,6 +1166,7 @@ D3.sankey =
           {left: 'biomethanol',                           right: 'biomethanol_to_jet',                 gquery: 'biomethanol_to_biomethanol_to_jet_in_liquid_fuels_sankey', color: '#95B15C'},
 
           # PROCESS OUTPUT TO FUELS
+          {left: 'fossil_refinery',                       right: 'refinery_gas',                      gquery: 'fossil_refinery_to_refinery_gas_in_liquid_fuels_sankey', color: '#B5524B'},
           {left: 'fossil_refinery',                       right: 'diesel',                            gquery: 'fossil_refinery_to_diesel_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'fossil_refinery',                       right: 'gasoline',                          gquery: 'fossil_refinery_to_gasoline_in_liquid_fuels_sankey', color: '#A0522D'},
           {left: 'fossil_refinery',                       right: 'oil_products',                      gquery: 'fossil_refinery_to_oil_products_in_liquid_fuels_sankey', color: '#8B4513'},
@@ -1169,7 +1174,6 @@ D3.sankey =
           {left: 'fossil_refinery',                       right: 'kerosene',                          gquery: 'fossil_refinery_to_kerosene_in_liquid_fuels_sankey', color: '#D2691E'},
           {left: 'fossil_refinery',                       right: 'hfo',                               gquery: 'fossil_refinery_to_hfo_in_liquid_fuels_sankey', color: '#8B7355'},
           {left: 'fossil_refinery',                       right: 'naphtha',                           gquery: 'fossil_refinery_to_naphtha_in_liquid_fuels_sankey', color: '#B8860B'},
-          {left: 'fossil_refinery',                       right: 'refinery_gas',                      gquery: 'fossil_refinery_to_refinery_gas_in_liquid_fuels_sankey', color: '#BC8F8F'},
           {left: 'fossil_refinery',                       right: 'methanol',                          gquery: 'fossil_refinery_to_methanol_in_liquid_fuels_sankey', color: '#BF8877'},
           {left: 'fossil_refinery',                       right: 'bio_kerosene',                      gquery: 'fossil_refinery_to_bio_kerosene_in_liquid_fuels_sankey', color: '#32CD32'},
           {left: 'fossil_refinery',                       right: 'biodiesel',                         gquery: 'fossil_refinery_to_biodiesel_in_liquid_fuels_sankey', color: '#9ACD32'},
@@ -1320,9 +1324,23 @@ D3.sankey =
           {left: 'biomethanol',                           right: 'industry',                          gquery: 'biomethanol_to_industry_in_liquid_fuels_sankey', color: '#95B15C'},
           {left: 'biomethanol',                           right: 'export',                            gquery: 'biomethanol_to_export_in_liquid_fuels_sankey', color: '#95B15C'},
 
+          {left: 'oil_products',                          right: 'households',                        gquery: 'oil_products_to_households_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'oil_products',                          right: 'buildings',                         gquery: 'oil_products_to_buildings_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'oil_products',                          right: 'agriculture',                       gquery: 'oil_products_to_agriculture_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'oil_products',                          right: 'industry',                          gquery: 'oil_products_to_industry_in_liquid_fuels_sankey', color: '#8B4513'},
           {left: 'oil_products',                          right: 'export',                            gquery: 'oil_products_to_export_in_liquid_fuels_sankey', color: '#8B4513'},
 
+          {left: 'refinery_gas',                          right: 'industry',                          gquery: 'refinery_gas_to_industry_in_liquid_fuels_sankey', color: '#B5524B'},
           {left: 'refinery_gas',                          right: 'losses',                            gquery: 'refinery_gas_to_losses_in_liquid_fuels_sankey', color: '#DCDCDC'},
+
+          # BACKFLOWS: oil products used by refineries
+          {left: 'oil_products',                          right: 'fossil_refinery',                   gquery: 'oil_products_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'diesel',                                right: 'fossil_refinery',                   gquery: 'diesel_to_fossil_refinery_in_liquid_fuels_sankey', color: '#8B4513'},
+          {left: 'kerosene',                              right: 'fossil_refinery',                   gquery: 'kerosene_to_fossil_refinery_in_liquid_fuels_sankey', color: '#D2691E'},
+          {left: 'lpg',                                   right: 'fossil_refinery',                   gquery: 'lpg_to_fossil_refinery_in_liquid_fuels_sankey', color: '#CD853F'},
+          {left: 'biodiesel',                             right: 'fossil_refinery',                   gquery: 'biodiesel_to_fossil_refinery_in_liquid_fuels_sankey', color: '#9ACD32'},
+          {left: 'bio_kerosene',                          right: 'fossil_refinery',                   gquery: 'bio_kerosene_to_fossil_refinery_in_liquid_fuels_sankey', color: '#32CD32'},
+          {left: 'refinery_gas',                          right: 'fossil_refinery',                   gquery: 'refinery_gas_to_fossil_refinery_in_liquid_fuels_sankey', color: '#B5524B'},
 
           {left: 'bio_ethanol',                           right: 'transport',                         gquery: 'bio_ethanol_to_transport_in_liquid_fuels_sankey', color: '#90EE90'},
           {left: 'bio_ethanol',                           right: 'export',                            gquery: 'bio_ethanol_to_export_in_liquid_fuels_sankey', color: '#90EE90'},

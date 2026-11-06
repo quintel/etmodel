@@ -11,7 +11,7 @@ end
 
 gem 'activerecord-session_store'
 gem 'activeresource', '~> 6.0'
-gem 'rails', '~> 8.1.3'
+gem 'rails', '~> 8.1.4'
 
 gem 'browser'
 gem 'config'

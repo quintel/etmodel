@@ -56,4 +56,4 @@ promotions:
       when: >-
         result = 'passed' and (
         branch = '2025-01' or
-        branch = '2027-01')
+        branch = '2027-stable')

@@ -7,10 +7,7 @@ agent:
 
 # Image tag and deploy path are derived from the branch name and must match the instance in the
 # ansible stable group_vars:
-# branch 2027-01 -> image quintel/etmodel:2027_01, deployed from /var/www/etmodel_2027_01.
-#
-# RELEASE is overwritten with "stable-<branch>" before the build: the Sentry release (runtime and
-# uploaded source maps) is read from that file, and stable shares its Sentry project with latest.
+# branch 2027-stable -> image quintel/etmodel:2027_stable, deployed from /var/www/etmodel_2027_stable.
 blocks:
   - name: Docker
     task:
@@ -28,7 +25,8 @@ blocks:
           commands:
             - checkout
             - export TAG="${SEMAPHORE_GIT_BRANCH//-/_}"
-            - echo "stable-$SEMAPHORE_GIT_BRANCH" > RELEASE
+            # The Sentry release is read from RELEASE: overwrite latest's release with the branch name.
+            - echo "$SEMAPHORE_GIT_BRANCH" > RELEASE
             - export SENTRY_RELEASE=$(cat RELEASE)
             - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
             - 'docker build --progress plain -f Dockerfile.production --secret id=sentry_auth_token,env=SENTRY_AUTH_TOKEN --build-arg SENTRY_RELEASE=$SENTRY_RELEASE -t quintel/etmodel:$TAG .'
@@ -44,4 +42,4 @@ blocks:
     run:
       when: >-
         branch = '2025-01' or
-        branch = '2027-01'
+        branch = '2027-stable'

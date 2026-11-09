@@ -25,6 +25,7 @@ module LoadBouncesForGrant
   end
 
   def my_etm_open_url(session_id, return_to)
-    "#{Settings.identity.issuer}/saved_scenarios/open?#{{ session_ids: session_id, return_to: }.to_query}"
+    query = { session_ids: [ session_id ], return_to: }.to_query
+    "#{Settings.identity.issuer}/saved_scenarios/open?#{query}"
   end
 end

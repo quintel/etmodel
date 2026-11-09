@@ -34,7 +34,7 @@ RSpec.describe 'Loading a scenario without a grant', type: :request do
 
   def open_url(return_to)
     "#{Settings.identity.issuer}/saved_scenarios/open?" \
-      "#{{ session_ids: session_id, return_to: }.to_query}"
+      "#{{ session_ids: [ session_id ], return_to: }.to_query}"
   end
 
   shared_examples 'a load that bounces for a grant' do

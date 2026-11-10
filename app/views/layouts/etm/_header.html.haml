@@ -5,18 +5,26 @@
         %img{ src: "/assets/header/logo-round.svg", width: 37, height: 37, alt: "", style: 'margin: auto 0' }
         .flex-col
           .span Energy Transition Model
+      - versions = MyEtm::Version.listed
       .dropdown
         %button#version-button.nav-link{ aria: { expanded: 'false'}, data: { toggle: 'dropdown', 'dropdown-trigger': 'click' }, type: 'button' }
-          %span= "##{ETModel::Version::TAG}"
+          %span.version-caption= t('versions.button')
+          %span.version-current= versions.find(&:current?).short_name
           %span.fa.fa-caret-down
-        .dropdown-menu.version-dropdown.development{ 'aria-labelledby': 'version-button' }
+        .dropdown-menu.version-dropdown{ 'aria-labelledby': 'version-button' }
+          .version-title= t('versions.title')
           %ul#version-links
-            %li{style: 'margin-bottom:0.3rem'}= t('versions.switch')
-            - MyEtm::Version.all_other_versions.each do |version|
-              %li= link_to "##{version.tag}", version.model_url
-          %hr
-          %div{style: 'padding: 0.2rem; text-align: left; margin-left:0.5rem'}
-            = link_to t('versions.explained'), "https://docs.energytransitionmodel.com/main/user_manual/model-versions", target: "_blank", rel: "noopener"
+            - versions.each do |version|
+              %li
+                %a.version-option{ href: version.current? ? root_path : version.model_url, class: ('current' if version.current?), 'aria-current': ('true' if version.current?) }
+                  %span.fa{ class: ('fa-check' if version.current?) }
+                  %span.version-name= version.name
+                  - if version.badge
+                    %span.version-badge{ class: version.badge }= t("versions.#{version.badge}")
+          .version-footer
+            = link_to "https://docs.energytransitionmodel.com/main/user_manual/model-versions", target: "_blank", rel: "noopener" do
+              = t('versions.explained')
+              %span.fa.fa-angle-right
     .app-nav
       = render partial: 'layouts/etm/about_menu'
       = render partial: 'layouts/etm/features_menu'

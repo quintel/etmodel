@@ -58,17 +58,87 @@ header.main-header
         margin-top: 2px
         margin-left: 4px
         color: #b4bcff
-    .dropdown-menu
+      .version-caption
+        border-right: 1px solid rgba(255, 255, 255, 0.3)
+        color: #b4bcff
+        font-size: 0.6875rem
+        font-weight: 500
+        letter-spacing: 0.05em
+        margin-right: 0.5rem
+        padding-right: 0.5rem
+        text-transform: uppercase
+      .version-current
+        font-weight: 600
+
+    // Version picker
+    .dropdown-menu.version-dropdown
+      background: white
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12)
+      min-width: 17rem
+      padding: 0
+      top: 2.75rem
+      &::before
+        background: white
+        left: 2rem
+
+      .version-title
+        color: #6b7280
+        font-size: 0.6875rem
+        font-weight: 600
+        letter-spacing: 0.05em
+        padding: 1rem 1rem 0.5rem
+        text-transform: uppercase
+
       ul
         list-style: none
-        padding: 0.5rem 1rem
         margin: 0
-        color: #333
-        width: 150px
-        li
-          padding: 0.5rem 0
-      &::before
-        left: 2rem
+        padding: 0 0.5rem 0.5rem
+
+      a.version-option
+        align-items: center
+        border-radius: 6px
+        color: #1f2937
+        column-gap: 0.5rem
+        display: grid
+        grid-template-columns: 1rem 1fr auto
+        padding: 0.625rem 0.75rem
+        white-space: nowrap
+        &:hover
+          background: #f3f4f6
+          text-decoration: none
+        &.current
+          background: #eef2ff
+          color: #1d4ed8
+        .fa-check
+          color: #1d4ed8
+          font-size: 0.875rem
+        .version-name
+          font-size: 0.9375rem
+          font-weight: 600
+
+      .version-badge
+        border-radius: 4px
+        font-size: 0.75rem
+        font-weight: 500
+        padding: 0.125rem 0.5rem
+        &.latest
+          background: #dcfce7
+          color: #166534
+        &.beta
+          background: #fef3c7
+          color: #92400e
+        &.stable
+          background: #e0e7ff
+          color: #1e40af
+
+      .version-footer
+        border-top: 1px solid #e5e7eb
+        padding: 0.75rem 1rem
+        a
+          color: #1d4ed8
+          font-weight: 500
+        .fa
+          margin-left: 0.25rem
 
 
 

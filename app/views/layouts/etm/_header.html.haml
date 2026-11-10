@@ -11,7 +11,7 @@
           %span.version-caption= t('versions.button')
           %span.version-current= versions.find(&:current?).short_name
           %span.fa.fa-caret-down
-        .dropdown-menu.version-dropdown{ 'aria-labelledby': 'version-button' }
+        .dropdown-menu.dropdown-menu-right.version-dropdown{ 'aria-labelledby': 'version-button' }
           .version-title= t('versions.title')
           %ul#version-links
             - versions.each do |version|

@@ -1,13 +1,15 @@
 $header-font-size: 0.875rem
 $header-item-padding: 0.75rem 1rem 0.625rem
 $header-item-line-height: 19px
+$header-height: 57px
+$app-nav-offset: 3px
 
 header.main-header
   align-items: center
   background: $landing-blue
   display: flex
   font-size: $header-font-size
-  height: 57px
+  height: $header-height
   justify-content: space-between
   position: fixed
   width: 100%
@@ -70,51 +72,48 @@ header.main-header
       .version-current
         font-weight: 600
 
-    // Version picker
     .dropdown-menu.version-dropdown
       background: white
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12)
+      color: $landing-text-color
       min-width: 17rem
       padding: 0
-      top: 2.75rem
       &::before
         background: white
-        left: 2rem
+        right: calc(0.9rem + 1px)
 
       .version-title
-        color: #6b7280
-        font-size: 0.6875rem
-        font-weight: 600
-        letter-spacing: 0.05em
-        padding: 1rem 1rem 0.5rem
-        text-transform: uppercase
+        color: darken($landing-grey, 8%)
+        font-size: 0.8125rem
+        font-weight: 500
+        padding: 1rem 1.25rem 0.25rem
 
       ul
         list-style: none
         margin: 0
-        padding: 0 0.5rem 0.5rem
+        padding: 0 0.75rem 0.5rem
 
       a.version-option
-        align-items: center
-        border-radius: 6px
-        color: #1f2937
+        align-items: baseline
+        border-radius: 5px
+        color: $landing-text-color
         column-gap: 0.5rem
         display: grid
         grid-template-columns: 1rem 1fr auto
-        padding: 0.625rem 0.75rem
+        padding: 0.375rem 0.5rem
+        transition: background 0.15s ease-in
         white-space: nowrap
         &:hover
-          background: #f3f4f6
+          background: lighten($landing-border-color, 12%)
           text-decoration: none
         &.current
-          background: #eef2ff
-          color: #1d4ed8
+          background: $light-blue
+          color: $landing-blue
         .fa-check
-          color: #1d4ed8
+          color: $landing-blue
           font-size: 0.875rem
         .version-name
-          font-size: 0.9375rem
-          font-weight: 600
+          font-size: 0.875rem
+          font-weight: 500
 
       .version-badge
         border-radius: 4px
@@ -122,21 +121,24 @@ header.main-header
         font-weight: 500
         padding: 0.125rem 0.5rem
         &.latest
-          background: #dcfce7
-          color: #166534
+          background: lighten($landing-green, 40%)
+          color: darken($landing-green, 20%)
         &.beta
-          background: #fef3c7
-          color: #92400e
+          background: $dark-cream
+          color: darken($landing-gold, 20%)
         &.stable
-          background: #e0e7ff
-          color: #1e40af
+          background: lighten($landing-blue, 28%)
+          color: darken($landing-blue, 20%)
 
       .version-footer
-        border-top: 1px solid #e5e7eb
-        padding: 0.75rem 1rem
+        border-top: 1px solid $landing-border-color
+        font-size: 0.8125rem
+        padding: 0.75rem 1.25rem
         a
-          color: #1d4ed8
-          font-weight: 500
+          color: darken($landing-blue, 4%)
+          &:hover
+            color: black
+            text-decoration: underline
         .fa
           margin-left: 0.25rem
 
@@ -153,8 +155,11 @@ header.main-header
   .app-nav
     border-left: 1px solid rgba(255, 255, 255, 0.2)
     margin-left: 0.25rem
-    margin-top: 3px
+    margin-top: $app-nav-offset
     padding-left: 0.5rem
+    // Compensate for the offset above, which moves each menu's .dropdown down by half as much.
+    .dropdown-menu
+      top: calc(50% + (#{$header-height} - #{$app-nav-offset}) / 2)
 
   .logo
     align-items: center
@@ -179,6 +184,7 @@ header.main-header
       outline: 0
   .dropdown-menu
     background: $landing-background-color
+    top: calc(50% + #{$header-height} / 2)
 
   .survey-item button
     align-items: center
@@ -267,10 +273,8 @@ header.main-header
     color: white
 
 .dropdown-menu.learn-dropdown
-  margin: -0.5rem 0
   padding: 1.5rem 4rem 1.5rem 2rem
   min-width: 160px
-  top: 45px
   white-space: nowrap
 
   .extras
@@ -477,7 +481,9 @@ header.main-header
 
 .dropdown-menu
   background: white
+  border: 1px solid $landing-border-color
   border-radius: 6px
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06)
   display: block
   font-size: 0.875rem
   left: 0.5em
@@ -493,9 +499,13 @@ header.main-header
   will-change: opacity, transform
   z-index: 100
 
+  // Rotated square: borders on its top and left sides continue the menu's border.
   &:before
     background: #F6FFF1
+    border: 1px solid $landing-border-color
+    border-bottom: none
     border-radius: 2px
+    border-right: none
     content: " "
     height: 0.625rem
     left: 0.625rem

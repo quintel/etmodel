@@ -2,7 +2,9 @@
 
 require 'rails_helper'
 
-describe PagesController, vcr: true do
+# Pages request MyETM's version list twice, for the version picker and for the release date, and
+# the test cache keeps nothing between the two: one recorded response answers both.
+describe PagesController, vcr: { allow_playback_repeats: true } do
   render_views
 
   context 'with an IE11 user agent' do
@@ -85,7 +87,7 @@ describe PagesController, vcr: true do
     before do
       sign_in FactoryBot.create(:user)
 
-      VCR.use_cassette('pages_controller/signed_in_user') do
+      VCR.use_cassette('pages_controller/signed_in_user', allow_playback_repeats: true) do
         get :root
       end
     end

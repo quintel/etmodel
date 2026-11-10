@@ -5,22 +5,9 @@ module ETModel
     # Release tag
     TAG = Settings.version
 
-    # Year of release.
-    MAJOR = 2026
-
-    # Month of release.
-    MINOR = 10
-
-    # Day of release. This is not used in version numbers but is required to build the DATE_VERSION
-    # so that we know the exact date. This should be the day on which the minor version was released,
-    # not incremented for each small change.
-    DAY = 15
-
-    STRING = format('%<major>d.%<minor>02d', major: MAJOR, minor: MINOR)
-    DATE = Date.new(MAJOR, MINOR, DAY)
-
-    def self.prerelease?
-      DATE > Time.now.utc
+    # The day this version was released, from MyETM. Empty while the version is hidden.
+    def self.date
+      MyEtm::Version.listed.find(&:current?)&.released_on
     end
   end
 end

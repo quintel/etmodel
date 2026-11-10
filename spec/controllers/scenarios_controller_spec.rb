@@ -2,7 +2,9 @@
 
 require 'rails_helper'
 
-describe ScenariosController, vcr: true do
+# Pages request MyETM's version list twice, for the version picker and for the release date, and
+# the test cache keeps nothing between the two: one recorded response answers both.
+describe ScenariosController, vcr: { allow_playback_repeats: true } do
   render_views
 
   # Interface elements

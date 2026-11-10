@@ -26,8 +26,10 @@
 
       %p= t('intro.releases.description')
 
-      %p
-        = "#{t('intro.releases.date')}: #{l(ETModel::Version::DATE, format: :long)}"
+      - release_date = ETModel::Version.date
+      - if release_date
+        %p
+          = "#{t('intro.releases.date')}: #{l(release_date, format: :long)}"
 
       %p
         = link_to(releases_url, target: '_blank', rel: 'noopener noreferrer') do

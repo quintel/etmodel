@@ -6,11 +6,11 @@ EstablishmentShot.ScenarioUpdater = (function () {
             return $.ajax({
                 type: 'PUT',
                 dataType: 'json',
-                headers: establishment.requestHeaders(),
+                xhrFields: { withCredentials: true },
                 data: {
                     gqueries: establishment.queries
                 },
-                url: establishment.host + '/' + establishment.scenarioId
+                url: establishment.host + '/' + encodeURIComponent(establishment.scenarioId)
             });
         }
     }

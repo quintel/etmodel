@@ -38,7 +38,7 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.ChartRenderer.render(scope, data, EstablishmentShot.time);
 
     scope.find('.overview').show();
-    $('a.scenario-link').attr('href', '/scenarios/' + EstablishmentShot.scenarioId + '/load');
+    $('a.scenario-link').attr('href', '/scenarios/' + encodeURIComponent(EstablishmentShot.scenarioId) + '/load');
     $('span.loading').remove();
   }
 
@@ -77,14 +77,6 @@ EstablishmentShot.Main = (function() {
     },
   };
 
-  EstablishmentShot.requestHeaders = function () {
-    if (EstablishmentShot.accessToken) {
-      return { Authorization: 'Bearer ' + EstablishmentShot.accessToken };
-    }
-
-    return {};
-  }
-
   function Main(scope) {
     var data = $(scope).data();
     EstablishmentShot.scope = scope;
@@ -92,7 +84,6 @@ EstablishmentShot.Main = (function() {
     EstablishmentShot.area = data.area;
     EstablishmentShot.scenarioId = data.scenarioId;
     EstablishmentShot.time = data.time;
-    EstablishmentShot.accessToken = data.accessToken;
   }
 
   return Main;

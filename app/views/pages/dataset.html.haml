@@ -17,15 +17,15 @@
           %span.loading
             = image_tag('layout/ajax-loader-small.gif')
 
-        - if params[:scenario]
+        - if @scenario_id
           %ul.toggle_year{ data: { time: @time } }
             %li#present
               = link_to @area.analysis_year,
-                        region_path(time: 'present', scenario: params[:scenario]), class: 'button'
+                        region_path(time: 'present', scenario: @scenario_id), class: 'button'
 
             %li#future
               = link_to Current.setting.end_year,
-                        region_path(time: 'future', scenario: params[:scenario]), class: 'button'
+                        region_path(time: 'future', scenario: @scenario_id), class: 'button'
 
       .clearfix
 
@@ -81,7 +81,7 @@
       .footer
         = t('establishment_shot.created_by_html')
 
-    - unless params[:scenario]
+    - unless @scenario_id
       .navigation.establishment_shot_navigation
         = link_to I18n.t("dataset.start_scenario", area: I18n.t("areas.#{@area.area}")), root_path(country: @area.area), class: 'button primary scenario-link'
 

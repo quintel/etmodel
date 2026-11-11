@@ -20,6 +20,7 @@ class PagesController < ApplicationController
     @area = Engine::Area.find_by_country_memoized(params[:dataset_locale])
     raise ActiveRecord::RecordNotFound unless @area
 
+    @scenario_id = params[:scenario] if params[:scenario].to_s.match?(/\A\d+\z/)
     @time = params[:time] if %w[present future].include?(params[:time])
     @time ||= 'present'
     @year = Current.setting.end_year if @time == 'future'

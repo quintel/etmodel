@@ -15,7 +15,7 @@ EstablishmentShot.ScenarioCreator = (function () {
                 type: 'POST',
                 dataType: 'json',
                 url: establishment.host,
-                headers: establishment.requestHeaders(),
+                xhrFields: { withCredentials: true },
                 data: {
                     scenario: {
                         area_code: establishment.area,

@@ -53,10 +53,8 @@ module PagesHelper
       max_year: Setting::MAX_YEAR,
       min_year: Setting::MIN_YEAR,
       default_year: Setting::DEFAULT_YEAR,
-      scenario_id: params[:scenario],
-      time: @time,
-      non_energy: params[:non_energy],
-      access_token: session_access_token
+      scenario_id: @scenario_id,
+      time: @time
     }
   end
 

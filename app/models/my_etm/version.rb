@@ -31,16 +31,16 @@ module MyEtm
     end
 
     def latest?
-      tag.to_s == 'latest'
+      tag == 'latest'
     end
 
     def beta?
-      tag.to_s == 'beta'
+      tag == 'beta'
     end
 
     # The version this ETModel runs as.
     def current?
-      tag.to_s == ETModel::Version::TAG.to_s
+      tag == ETModel::Version::TAG
     end
 
     # Latest and beta are shown by their release date, the others by their label.

@@ -54,8 +54,7 @@ module PagesHelper
       min_year: Setting::MIN_YEAR,
       default_year: Setting::DEFAULT_YEAR,
       scenario_id: @scenario_id,
-      time: @time,
-      non_energy: params[:non_energy]
+      time: @time
     }
   end
 

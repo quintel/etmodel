@@ -77,8 +77,8 @@ class SavedScenario < Dry::Struct
 
   def self.role_to_int(role)
     case role.to_s.downcase.strip
-    when "viewer" then 1
-    when "collaborator" then 2
+    when "scenario_viewer" then 1
+    when "scenario_collaborator" then 2
     when "scenario_owner" then 3
     else 0
     end

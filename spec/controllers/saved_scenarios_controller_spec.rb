@@ -19,14 +19,18 @@ describe SavedScenariosController, vcr: true do
     end
 
     describe 'GET load' do
-      let(:saved_scenario) do
-        instance_double('SavedScenario',
+      let(:saved_scenario_base_params) do
+        {
           title: 'Test',
           scenario_id: 10,
-          collaborator?: false,
-          viewer?: false,
+          area_code: 'nl',
+          end_year: 2050,
           private: false
-        )
+        }
+      end
+
+      let(:saved_scenario) do
+        SavedScenario.from_params(saved_scenario_base_params)
       end
 
       before do
@@ -36,9 +40,18 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when user is a collaborator' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(
+              saved_scenario_users: [
+                { user_id: user.id, role: 'scenario_collaborator' }
+              ]
+            )
+          )
+        end
+
         before do
           sign_in user
-          allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           get(:load, params: { id: 12, scenario_id: 10 })
         end
 
@@ -54,9 +67,18 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when user is a viewer' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(
+              saved_scenario_users: [
+                { user_id: user.id, role: 'scenario_viewer' }
+              ]
+            )
+          )
+        end
+
         before do
           sign_in user
-          allow(saved_scenario).to receive(:viewer?).with(user).and_return(true)
           get(:load, params: { id: 12 })
         end
 
@@ -80,8 +102,13 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when user has no permissions and scenario is private' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(private: true)
+          )
+        end
+
         before do
-          allow(saved_scenario).to receive(:private).and_return(true)
           get(:load, params: { id: 12})
         end
 
@@ -117,9 +144,18 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when the scenario is already active' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(
+              saved_scenario_users: [
+                { user_id: user.id, role: 'scenario_collaborator' }
+              ]
+            )
+          )
+        end
+
         before do
           sign_in user
-          allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           session[:setting].active_saved_scenario_id = 12
           session[:setting].preset_scenario_id = 10
           session[:setting].api_session_id = 100_000

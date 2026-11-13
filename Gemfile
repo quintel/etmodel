@@ -17,14 +17,14 @@ gem 'browser'
 gem 'config'
 gem 'discard'
 gem 'font-awesome-rails'
-gem 'haml', '~> 5.0'
+gem 'haml', '~> 7.5'
 gem 'http_accept_language'
 gem 'httparty'
 gem 'inline_svg'
 gem 'invisible_captcha'
 gem 'jquery-rails', '~> 4.6.1'
 # json 3 removes JSON.parse's create_additions option, used by sprockets 4.2.
-gem 'json', '~> 2.21'
+gem 'json', '~> 3.1'
 gem 'kaminari', '~> 1.2.1'
 gem 'local_time'
 gem 'loofah'
@@ -42,10 +42,10 @@ gem 'identity',      ref: 'd88af33', github: 'quintel/identity_rails'
 
 # javascript
 gem 'babel-transpiler'
-gem 'i18n-js', '~> 3'
+gem 'i18n-js', '~> 4'
 gem 'jbuilder'
 gem 'rails-i18n'
-gem 'shakapacker', '9.5.0'
+gem 'shakapacker', '10.3.2'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 
 # supporting gems
@@ -85,7 +85,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', '~> 6.1.2'
+  gem 'rspec-rails', '~> 8.1.0'
   gem 'watchr'
 
   gem 'rubocop', '~> 1.89',    require: false

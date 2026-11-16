@@ -2,7 +2,9 @@ require 'csv'
 
 class ScenariosController < ApplicationController
   include MainInterfaceController.new(:play, :play_multi_year_charts)
+  include LoadBouncesForGrant
 
+  before_action :bounce_load_for_grant, only: :load
   before_action :find_scenario, only: %i[show load play_multi_year_charts resume update_couplings coupling_settings inputs]
   before_action :require_user, only: %i[index merge]
   before_action :redirect_compare, only: :compare
@@ -199,6 +201,12 @@ class ScenariosController < ApplicationController
       'csv_download',
       attributes: { type: type }
     )
+  end
+
+  # Runs before find_scenario, which already needs the grant to read a private Session
+  def bounce_load_for_grant
+    id = params.require(:id).to_i
+    bounce_for_grant(id, load_scenario_url(id, granted: 1))
   end
 
   # Finds the scenario from id

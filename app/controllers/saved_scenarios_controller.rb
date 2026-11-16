@@ -2,8 +2,11 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
+  include LoadBouncesForGrant
+
   before_action :require_user, only: %i[create new]
   before_action :check_authentication, only: %i[load]
+  before_action :bounce_for_role, only: %i[load]
 
   # Shows a form for creating a new saved scenario.
   #
@@ -127,8 +130,27 @@ class SavedScenariosController < ApplicationController
     authenticate_user!(show_as: :sign_in) if !signed_in? && params[:current_user] == 'true'
   end
 
+  # Only a caller with a role can gain anything from MyETM's open, at the level that role grants
+  def bounce_for_role
+    return if !saved_scenario || active_scenario?
+
+    level = role_level or return
+    return_to = load_saved_scenario_url(params[:id], granted: 1)
+
+    bounce_for_grant(saved_scenario.scenario_id, return_to, level:)
+  end
+
+  def role_level
+    return unless current_user
+    return :write if saved_scenario.collaborator?(current_user)
+
+    :read if saved_scenario.viewer?(current_user)
+  end
+
   def saved_scenario
-    @saved_scenario ||= FetchSavedScenario.call(my_etm_client, params[:id]).or do |_error|
+    return @saved_scenario if defined?(@saved_scenario)
+
+    @saved_scenario = FetchSavedScenario.call(my_etm_client, params[:id]).or do |_error|
       flash[:alert] = t('scenario.cannot_load')
       nil
     end

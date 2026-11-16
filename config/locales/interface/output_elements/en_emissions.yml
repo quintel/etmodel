@@ -5,6 +5,19 @@ en:
       title: Total greenhouse gas emissions (CO<sub>2</sub> eq)
       short_description:
       description: "Overview of total emissions"
+    direct_emissions_bruto_netto:
+      title: Direct gross and net GHG emissions (beta)
+      short_description:
+      description: |
+        This chart compares gross and net direct GHG emissions in the present and the future.
+        Gross emissions show all emitted CO<sub>2</sub> and other greenhouse gases before capture,
+        with captured and removed CO<sub>2</sub> shown below the axis. Net emissions show the
+        remaining CO<sub>2</sub> after capture and removal, together with other greenhouse gases.
+        <br/><br/>
+        <b>Note: the emissions are calculated based on direct emissions.</b> This emissions method
+        is currently in development. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
     emissions_agriculture:
       title: Greenhouse gas emissions Agriculture (CO<sub>2</sub> eq)
       short_description:

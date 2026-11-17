@@ -12,7 +12,7 @@
           %a= year
 
     - @featured_scenarios.each do |year, grouped|
-      %ul.scenario-list{year: year}
+      .scenario-list{year: year}
         - grouped.each do |data|
           = render partial: 'pages/root_page/scenario_group', locals: { group: data[:name], scenarios: data[:scenarios] }
   - else

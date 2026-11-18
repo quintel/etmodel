@@ -56,7 +56,8 @@ body
   text-align: center
   top: 18px
   width: 250px
-  z-index: 999
+  // Above fancybox's highest layer (8060), so a toast shows over an open modal
+  z-index: 8100
   .bar, .progress
     background: #dfe8f3
     height: 4px

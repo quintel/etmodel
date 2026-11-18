@@ -1,4 +1,4 @@
-/* globals $ Backbone DropdownView I18n */
+/* globals $ Backbone DropdownView I18n ToastView */
 (function (window) {
   /**
    * Saves an already-saved scenario.
@@ -15,6 +15,25 @@
       dataType: 'json',
       method: 'put',
     });
+  }
+
+  /**
+   * Saves the scenario as a new saved scenario, leaving the user in the modal when the save fails.
+   *
+   * @param {HTMLFormElement} form The "save as" form shown in the modal.
+   */
+  function submitSaveScenarioForm(form) {
+    var submit = form.querySelector('[type=submit]');
+    submit.disabled = true;
+
+    $.ajax({ url: form.action, method: 'post', data: $(form).serialize(), dataType: 'json' })
+      .done(function (data) {
+        window.location.href = data.redirect_to;
+      })
+      .fail(function () {
+        submit.disabled = false;
+        ToastView.create(I18n.t('toast.scenario_not_saved')).start(5000);
+      });
   }
 
   function loadSaveScenarioForm(event) {
@@ -49,6 +68,9 @@
 
             return;
           }
+
+          event.preventDefault();
+          submitSaveScenarioForm(form);
         });
       },
     });
@@ -160,18 +182,23 @@
       var button = this.el.querySelector('.save-scenario');
       button.disabled = true;
 
-      saveScenario(button.dataset.path, this.model.get('id')).always(function (data) {
-        button.querySelector('.label').classList.remove('show');
-        button.querySelector('.saved').classList.add('show');
+      saveScenario(button.dataset.path, this.model.get('id'))
+        .done(function (data) {
+          button.querySelector('.label').classList.remove('show');
+          button.querySelector('.saved').classList.add('show');
 
-        App.after_save(data['api_session_id'])
+          App.after_save(data['api_session_id']);
 
-        window.setTimeout(function () {
+          window.setTimeout(function () {
+            button.disabled = false;
+            button.querySelector('.saved').classList.remove('show');
+            button.querySelector('.main').classList.add('show');
+          }, 3000);
+        })
+        .fail(function () {
           button.disabled = false;
-          button.querySelector('.saved').classList.remove('show');
-          button.querySelector('.main').classList.add('show');
-        }, 3000);
-      });
+          ToastView.create(I18n.t('toast.scenario_not_saved')).start(5000);
+        });
     },
 
     showSaveAsModal: function (event) {

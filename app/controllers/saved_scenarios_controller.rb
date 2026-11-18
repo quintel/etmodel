@@ -40,19 +40,7 @@ class SavedScenariosController < ApplicationController
   #
   # POST /saved_scenarios
   def create
-    if create_saved_scenario.failure? || new_api_scenario.failure?
-      @saved_scenario = SavedScenario.new(
-        scenario_id: saved_scenario_params[:scenario_id].to_i,
-        title: saved_scenario_params[:title].presence || '',
-        area_code: Current.setting.area_code,
-        end_year: Current.setting.end_year
-      )
-
-      # Add error from failure
-      flash[:alert] = t('scenario.cannot_save')
-
-      render :new and return
-    end
+    return render_create_failure if create_saved_scenario.failure? || new_api_scenario.failure?
 
     Current.setting.update_scenario_session(
       new_api_scenario.value,
@@ -60,7 +48,12 @@ class SavedScenariosController < ApplicationController
       title: saved_scenario_params[:title]
     )
 
-    redirect_to(Current.setting.last_etm_page.presence || play_path)
+    next_page = Current.setting.last_etm_page.presence || play_path
+
+    respond_to do |format|
+      format.html { redirect_to(next_page) }
+      format.json { render json: { redirect_to: next_page } }
+    end
   end
 
   # Loads a saved scenario and sets the scenario.
@@ -198,6 +191,25 @@ class SavedScenariosController < ApplicationController
       :area_code,
       :end_year
     )
+  end
+
+  def render_create_failure
+    respond_to do |format|
+      format.html { render_new_after_failure }
+      format.json { render json: { error: t('scenario.cannot_save') }, status: :unprocessable_entity }
+    end
+  end
+
+  def render_new_after_failure
+    @saved_scenario = SavedScenario.new(
+      scenario_id: saved_scenario_params[:scenario_id].to_i,
+      title: saved_scenario_params[:title].presence || '',
+      area_code: Current.setting.area_code,
+      end_year: Current.setting.end_year
+    )
+
+    flash[:alert] = t('scenario.cannot_save')
+    render :new
   end
 
   def saved_scenario_params

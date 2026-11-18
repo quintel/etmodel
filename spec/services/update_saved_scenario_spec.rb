@@ -62,6 +62,38 @@ RSpec.describe UpdateSavedScenario do
       end
     end
 
+    [Faraday::ResourceNotFound, Faraday::ForbiddenError].each do |refusal|
+      context "when MyETM refuses the save with #{refusal.name.demodulize}" do
+        before do
+          allow(client).to receive(:put).and_raise(refusal.new('Refused'))
+          allow(Sentry).to receive(:capture_exception)
+        end
+
+        it { is_expected.to be_failure }
+
+        it 'reports nothing to Sentry' do
+          subject
+
+          expect(Sentry).not_to have_received(:capture_exception)
+        end
+      end
+    end
+
+    context 'when MyETM fails' do
+      before do
+        allow(client).to receive(:put).and_raise(Faraday::ServerError.new('Down'))
+        allow(Sentry).to receive(:capture_exception)
+      end
+
+      it { is_expected.to be_failure }
+
+      it 'reports the error to Sentry' do
+        subject
+
+        expect(Sentry).to have_received(:capture_exception)
+      end
+    end
+
     context 'when another error occurs during the API call' do
       let(:error) { StandardError.new('Some other error') }
 

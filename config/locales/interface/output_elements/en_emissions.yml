@@ -10,9 +10,11 @@ en:
       short_description:
       description: |
         This chart compares gross and net direct GHG emissions in the future year.
-        Gross emissions show all emitted CO<sub>2</sub> and other greenhouse gases before capture,
-        with captured and removed CO<sub>2</sub> shown below the axis. Net emissions show the
-        remaining CO<sub>2</sub> after capture and removal, together with other greenhouse gases.
+        Gross emissions show emitted CO<sub>2</sub> and other greenhouse gases before
+        capture. Biogenic CO<sub>2</sub> from biomass use is not included in gross emissions, but
+        captured biogenic CO<sub>2</sub> is counted as a removal. Captured and removed
+        CO<sub>2</sub> is shown below the axis. Net emissions show the remaining CO<sub>2</sub>
+        after capture and removal, together with other greenhouse gases.
         <br/><br/>
         <b>Note: the emissions are calculated based on direct emissions.</b> This emissions method
         is currently in development. Read more in the

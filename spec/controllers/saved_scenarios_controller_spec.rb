@@ -228,6 +228,45 @@ describe SavedScenariosController, vcr: true do
       end
     end
 
+    context 'with valid attributes as JSON' do
+      let(:request) do
+        post :create, format: :json, params: {
+          saved_scenario: { title: 'My first scenario', scenario_id: 1 }
+        }
+      end
+
+      it 'returns where to go next' do
+        request
+        expect(response.parsed_body).to eq('redirect_to' => play_path)
+      end
+    end
+
+    context 'when MyETM refuses the save, as JSON' do
+      let(:request) do
+        post :create, format: :json, params: {
+          saved_scenario: { title: 'My first scenario', scenario_id: 1 }
+        }
+      end
+
+      before do
+        allow(CreateSavedScenario).to receive(:call).and_return(ServiceResult.failure('Scenario is invalid'))
+      end
+
+      it 'returns unprocessable entity' do
+        request
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'returns the message to show' do
+        request
+        expect(response.parsed_body).to eq('error' => I18n.t('scenario.cannot_save'))
+      end
+
+      it 'keeps the current scenario' do
+        expect { request }.not_to(change { session[:setting][:api_session_id] })
+      end
+    end
+
     context 'with invalid attributes' do
       let(:request) do
         post :create, params: {

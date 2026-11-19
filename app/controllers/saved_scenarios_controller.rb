@@ -37,10 +37,11 @@ class SavedScenariosController < ApplicationController
   #
   # This implies two DB records: a SavedSenario in my ETM and a Scenario in ETEngine. MyETM
   # stores the user_id,  scenario_id, and some other useful scenario metadata..
+  # The copy is made first: once MyETM binds the Session, it may no longer be copied.
   #
   # POST /saved_scenarios
   def create
-    return render_create_failure if create_saved_scenario.failure? || new_api_scenario.failure?
+    return render_create_failure if new_api_scenario.failure? || create_saved_scenario.failure?
 
     Current.setting.update_scenario_session(
       new_api_scenario.value,
@@ -85,33 +86,19 @@ class SavedScenariosController < ApplicationController
     redirect_to root_path
   end
 
+  # The copy is made first: once MyETM binds the Session, it may no longer be copied
   def update
-    session_id = Current.setting.api_session_id
+    new_scenario = CreateAPIScenario.call(engine_client, { scenario_id: update_params[:scenario_id] })
+    return render_update_failure if new_scenario.failure?
 
-    result = UpdateSavedScenario.call(
-      my_etm_client,
-      update_params[:id],
-      update_params[:scenario_id]
-    )
+    result = UpdateSavedScenario.call(my_etm_client, update_params[:id], update_params[:scenario_id])
+    return render_update_failure if result.failure?
 
-    if result.failure?
-      return respond_to do |format|
-        format.json { render json: { error: 'Failed to update' }, status: :unprocessable_entity }
-      end
-    end
-
-    new_scenario = CreateAPIScenario.call(
-      engine_client, { scenario_id: update_params[:scenario_id] }
-    )
-
-    if new_scenario.successful?
-      Current.setting.preset_scenario_id = session_id
-      Current.setting.api_session_id = new_scenario.value.id
-      session_id = new_scenario.value.id
-    end
+    Current.setting.preset_scenario_id = Current.setting.api_session_id
+    Current.setting.api_session_id = new_scenario.value.id
 
     respond_to do |format|
-      format.json { render json: { api_session_id: session_id } }
+      format.json { render json: { api_session_id: new_scenario.value.id } }
     end
   end
 
@@ -191,6 +178,12 @@ class SavedScenariosController < ApplicationController
       :area_code,
       :end_year
     )
+  end
+
+  def render_update_failure
+    respond_to do |format|
+      format.json { render json: { error: 'Failed to update' }, status: :unprocessable_entity }
+    end
   end
 
   def render_create_failure

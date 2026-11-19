@@ -29,5 +29,10 @@ class UpdateSavedScenario
     ServiceResult.success(response.body)
   rescue Faraday::UnprocessableEntityError => e
     ServiceResult.failure_from_unprocessable_entity(e)
+  rescue Faraday::ClientError
+    ServiceResult.failure('Failed to update saved scenario')
+  rescue Faraday::Error => e
+    Sentry.capture_exception(e)
+    ServiceResult.failure('Failed to update saved scenario')
   end
 end

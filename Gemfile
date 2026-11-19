@@ -36,7 +36,7 @@ gem 'inline_svg'
 
 # Authentication
 gem 'cancancan'
-gem 'identity', ref: 'd88af33', github: 'quintel/identity_rails'
+gem 'identity', ref: 'eb5d139', github: 'quintel/identity_rails'
 
 # ESDL Suite talks OpenID Connect directly (EsdlSuiteService, EsdlSuiteId, EsdlSuiteController).
 # It used to reach these constants through the identity gem, which depended on omniauth_openid_connect;

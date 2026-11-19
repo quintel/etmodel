@@ -2,8 +2,11 @@
 
 # The controller that handles calls to the saved_scenario entity
 class SavedScenariosController < ApplicationController
+  include LoadBouncesForGrant
+
   before_action :require_user, only: %i[create new]
   before_action :check_authentication, only: %i[load]
+  before_action :bounce_for_role, only: %i[load]
 
   # Shows a form for creating a new saved scenario.
   #
@@ -32,22 +35,11 @@ class SavedScenariosController < ApplicationController
   #
   # This implies two DB records: a SavedSenario in my ETM and a Scenario in ETEngine. MyETM
   # stores the user_id,  scenario_id, and some other useful scenario metadata..
+  # The copy is made first: once MyETM binds the Session, it may no longer be copied.
   #
   # POST /saved_scenarios
   def create
-    if create_saved_scenario.failure? || new_api_scenario.failure?
-      @saved_scenario = SavedScenario.new(
-        scenario_id: saved_scenario_params[:scenario_id].to_i,
-        title: saved_scenario_params[:title].presence || '',
-        area_code: Current.setting.area_code,
-        end_year: Current.setting.end_year
-      )
-
-      # Add error from failure
-      flash[:alert] = t('scenario.cannot_save')
-
-      render :new and return
-    end
+    return render_create_failure if new_api_scenario.failure? || create_saved_scenario.failure?
 
     Current.setting.update_scenario_session(
       new_api_scenario.value,
@@ -55,7 +47,12 @@ class SavedScenariosController < ApplicationController
       title: saved_scenario_params[:title]
     )
 
-    redirect_to(Current.setting.last_etm_page.presence || play_path)
+    next_page = Current.setting.last_etm_page.presence || play_path
+
+    respond_to do |format|
+      format.html { redirect_to(next_page) }
+      format.json { render json: { redirect_to: next_page } }
+    end
   end
 
   # Loads a saved scenario and sets the scenario.
@@ -87,33 +84,19 @@ class SavedScenariosController < ApplicationController
     redirect_to root_path
   end
 
+  # The copy is made first: once MyETM binds the Session, it may no longer be copied
   def update
-    session_id = Current.setting.api_session_id
+    new_scenario = CreateAPIScenario.call(engine_client, { scenario_id: update_params[:scenario_id] })
+    return render_update_failure if new_scenario.failure?
 
-    result = UpdateSavedScenario.call(
-      my_etm_client,
-      update_params[:id],
-      update_params[:scenario_id]
-    )
+    result = UpdateSavedScenario.call(my_etm_client, update_params[:id], update_params[:scenario_id])
+    return render_update_failure if result.failure?
 
-    if result.failure?
-      return respond_to do |format|
-        format.json { render json: { error: 'Failed to update' }, status: :unprocessable_entity }
-      end
-    end
-
-    new_scenario = CreateAPIScenario.call(
-      engine_client, { scenario_id: update_params[:scenario_id] }
-    )
-
-    if new_scenario.successful?
-      Current.setting.preset_scenario_id = session_id
-      Current.setting.api_session_id = new_scenario.value.id
-      session_id = new_scenario.value.id
-    end
+    Current.setting.preset_scenario_id = Current.setting.api_session_id
+    Current.setting.api_session_id = new_scenario.value.id
 
     respond_to do |format|
-      format.json { render json: { api_session_id: session_id } }
+      format.json { render json: { api_session_id: new_scenario.value.id } }
     end
   end
 
@@ -125,8 +108,27 @@ class SavedScenariosController < ApplicationController
     authenticate_user!(show_as: :sign_in) if !signed_in? && params[:current_user] == 'true'
   end
 
+  # Only a caller with a role can gain anything from MyETM's open, at the level that role grants
+  def bounce_for_role
+    return if !saved_scenario || active_scenario?
+
+    level = role_level or return
+    return_to = load_saved_scenario_url(params[:id], granted: 1)
+
+    bounce_for_grant(saved_scenario.scenario_id, return_to, level:)
+  end
+
+  def role_level
+    return unless current_user
+    return :write if saved_scenario.collaborator?(current_user)
+
+    :read if saved_scenario.viewer?(current_user)
+  end
+
   def saved_scenario
-    @saved_scenario ||= FetchSavedScenario.call(my_etm_client, params[:id]).or do |_error|
+    return @saved_scenario if defined?(@saved_scenario)
+
+    @saved_scenario = FetchSavedScenario.call(my_etm_client, params[:id]).or do |_error|
       flash[:alert] = t('scenario.cannot_load')
       nil
     end
@@ -174,6 +176,31 @@ class SavedScenariosController < ApplicationController
       :area_code,
       :end_year
     )
+  end
+
+  def render_update_failure
+    respond_to do |format|
+      format.json { render json: { error: 'Failed to update' }, status: :unprocessable_entity }
+    end
+  end
+
+  def render_create_failure
+    respond_to do |format|
+      format.html { render_new_after_failure }
+      format.json { render json: { error: t('scenario.cannot_save') }, status: :unprocessable_entity }
+    end
+  end
+
+  def render_new_after_failure
+    @saved_scenario = SavedScenario.new(
+      scenario_id: saved_scenario_params[:scenario_id].to_i,
+      title: saved_scenario_params[:title].presence || '',
+      area_code: Current.setting.area_code,
+      end_year: Current.setting.end_year
+    )
+
+    flash[:alert] = t('scenario.cannot_save')
+    render :new
   end
 
   def saved_scenario_params

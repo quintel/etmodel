@@ -19,14 +19,18 @@ describe SavedScenariosController, vcr: true do
     end
 
     describe 'GET load' do
-      let(:saved_scenario) do
-        instance_double('SavedScenario',
+      let(:saved_scenario_base_params) do
+        {
           title: 'Test',
           scenario_id: 10,
-          collaborator?: false,
-          viewer?: false,
+          area_code: 'nl',
+          end_year: 2050,
           private: false
-        )
+        }
+      end
+
+      let(:saved_scenario) do
+        SavedScenario.from_params(saved_scenario_base_params)
       end
 
       before do
@@ -36,10 +40,19 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when user is a collaborator' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(
+              saved_scenario_users: [
+                { user_id: user.id, role: 'scenario_collaborator' }
+              ]
+            )
+          )
+        end
+
         before do
           sign_in user
-          allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
-          get(:load, params: { id: 12, scenario_id: 10 })
+          get(:load, params: { id: 12, scenario_id: 10, granted: 1 })
         end
 
         it { expect(response).to redirect_to play_path }
@@ -54,10 +67,19 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when user is a viewer' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(
+              saved_scenario_users: [
+                { user_id: user.id, role: 'scenario_viewer' }
+              ]
+            )
+          )
+        end
+
         before do
           sign_in user
-          allow(saved_scenario).to receive(:viewer?).with(user).and_return(true)
-          get(:load, params: { id: 12 })
+          get(:load, params: { id: 12, granted: 1 })
         end
 
         it { expect(response).to redirect_to play_path }
@@ -80,8 +102,13 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when user has no permissions and scenario is private' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(private: true)
+          )
+        end
+
         before do
-          allow(saved_scenario).to receive(:private).and_return(true)
           get(:load, params: { id: 12})
         end
 
@@ -117,9 +144,18 @@ describe SavedScenariosController, vcr: true do
       end
 
       context 'when the scenario is already active' do
+        let(:saved_scenario) do
+          SavedScenario.from_params(
+            saved_scenario_base_params.merge(
+              saved_scenario_users: [
+                { user_id: user.id, role: 'scenario_collaborator' }
+              ]
+            )
+          )
+        end
+
         before do
           sign_in user
-          allow(saved_scenario).to receive(:collaborator?).with(user).and_return(true)
           session[:setting].active_saved_scenario_id = 12
           session[:setting].preset_scenario_id = 10
           session[:setting].api_session_id = 100_000
@@ -192,6 +228,67 @@ describe SavedScenariosController, vcr: true do
       end
     end
 
+    context 'with valid attributes as JSON' do
+      let(:request) do
+        post :create, format: :json, params: {
+          saved_scenario: { title: 'My first scenario', scenario_id: 1 }
+        }
+      end
+
+      it 'returns where to go next' do
+        request
+        expect(response.parsed_body).to eq('redirect_to' => play_path)
+      end
+    end
+
+    context 'when MyETM refuses the save, as JSON' do
+      let(:request) do
+        post :create, format: :json, params: {
+          saved_scenario: { title: 'My first scenario', scenario_id: 1 }
+        }
+      end
+
+      before do
+        allow(CreateSavedScenario).to receive(:call).and_return(ServiceResult.failure('Scenario is invalid'))
+      end
+
+      it 'returns unprocessable entity' do
+        request
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'returns the message to show' do
+        request
+        expect(response.parsed_body).to eq('error' => I18n.t('scenario.cannot_save'))
+      end
+
+      it 'keeps the current scenario' do
+        expect { request }.not_to(change { session[:setting][:api_session_id] })
+      end
+    end
+
+    context 'when ETEngine cannot copy the scenario, as JSON' do
+      let(:request) do
+        post :create, format: :json, params: {
+          saved_scenario: { title: 'My first scenario', scenario_id: 1 }
+        }
+      end
+
+      before do
+        allow(CreateAPIScenario).to receive(:call).and_return(ServiceResult.failure('Not found'))
+      end
+
+      it 'returns unprocessable entity' do
+        request
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+
+      it 'does not save the scenario in MyETM' do
+        request
+        expect(CreateSavedScenario).not_to have_received(:call)
+      end
+    end
+
     context 'with invalid attributes' do
       let(:request) do
         post :create, params: {
@@ -256,16 +353,37 @@ describe SavedScenariosController, vcr: true do
 
     context 'when UpdateSavedScenario fails' do
       before do
+        session[:setting] = Setting.new
+        session[:setting].api_session_id = 1
         allow(UpdateSavedScenario).to receive(:call).and_return(
           ServiceResult.failure('Some error')
         )
       end
 
-      it 'does not call CreateAPIScenario and returns an error response' do
-        expect(CreateAPIScenario).not_to receive(:call)
-
+      it 'returns an error response' do
         make_request
         expect(response.status).to eq(422)
+      end
+
+      it 'keeps the current scenario' do
+        expect { make_request }.not_to(change { session[:setting].api_session_id })
+      end
+    end
+
+    context 'when ETEngine cannot copy the scenario' do
+      before do
+        allow(UpdateSavedScenario).to receive(:call)
+        allow(CreateAPIScenario).to receive(:call).and_return(ServiceResult.failure('Not found'))
+      end
+
+      it 'returns an error response' do
+        make_request
+        expect(response.status).to eq(422)
+      end
+
+      it 'does not save the scenario in MyETM' do
+        make_request
+        expect(UpdateSavedScenario).not_to have_received(:call)
       end
     end
   end

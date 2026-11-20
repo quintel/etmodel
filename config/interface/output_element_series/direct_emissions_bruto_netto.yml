@@ -1,31 +1,19 @@
 ---
-- label: direct_fossil_co2_production
-  color: "#84817a"
+- label: direct_co2
+  color: "#aaa69d"
   order_by: 10
   group: direct_emissions_co2_production
   show_at_first:
   is_target_line: false
   target_line_position:
-  gquery: direct_emissions_co2_gross_production_fossil_for_direct_emissions_chart
+  gquery: direct_emissions_co2_gross_production_total_for_direct_emissions_chart
   is_1990: false
   dependent_on:
   output_element_key: direct_emissions_bruto_netto
-  key: direct_emissions_bruto_netto_co2_production_direct_fossil_co2_production
-- label: direct_lulucf_co2_emissions
-  color: "#cc8e35"
-  order_by: 20
-  group: direct_emissions_co2_production
-  show_at_first:
-  is_target_line: false
-  target_line_position:
-  gquery: direct_emissions_co2_gross_production_lulucf_for_direct_emissions_chart
-  is_1990: false
-  dependent_on:
-  output_element_key: direct_emissions_bruto_netto
-  key: direct_emissions_bruto_netto_co2_production_direct_lulucf_co2_emissions
+  key: direct_emissions_bruto_netto_co2_production_direct_co2
 - label: direct_lulucf_co2_removal
-  color: "#079992"
-  order_by: 30
+  color: "#a1dc8e"
+  order_by: 20
   group: direct_emissions_co2_capture
   show_at_first:
   is_target_line: false
@@ -36,8 +24,8 @@
   output_element_key: direct_emissions_bruto_netto
   key: direct_emissions_bruto_netto_co2_capture_direct_lulucf_co2_removal
 - label: direct_direct_air_capture
-  color: "#b8e994"
-  order_by: 40
+  color: "#b71540"
+  order_by: 30
   group: direct_emissions_co2_capture
   show_at_first:
   is_target_line: false
@@ -48,8 +36,8 @@
   output_element_key: direct_emissions_bruto_netto
   key: direct_emissions_bruto_netto_co2_capture_direct_direct_air_capture
 - label: direct_fossil_co2_captured
-  color: "#38ada9"
-  order_by: 50
+  color: "#416b86"
+  order_by: 40
   group: direct_emissions_co2_capture
   show_at_first:
   is_target_line: false
@@ -60,8 +48,8 @@
   output_element_key: direct_emissions_bruto_netto
   key: direct_emissions_bruto_netto_co2_capture_direct_fossil_co2_captured
 - label: direct_biogenic_co2_captured
-  color: "#78e08f"
-  order_by: 60
+  color: "#fde7b1"
+  order_by: 50
   group: direct_emissions_co2_capture
   show_at_first:
   is_target_line: false
@@ -73,7 +61,7 @@
   key: direct_emissions_bruto_netto_co2_capture_direct_biogenic_co2_captured
 - label: direct_other_ghg
   color: "#e55039"
-  order_by: 70
+  order_by: 60
   group: direct_emissions_other_ghg
   show_at_first:
   is_target_line: false
@@ -83,9 +71,9 @@
   dependent_on:
   output_element_key: direct_emissions_bruto_netto
   key: direct_emissions_bruto_netto_other_ghg_direct_other_ghg
-- label: direct_co2_emissions
-  color: "#3c6382"
-  order_by: 80
+- label: direct_co2
+  color: "#aaa69d"
+  order_by: 70
   group: direct_emissions_total_ghg
   show_at_first:
   is_target_line: false
@@ -94,10 +82,10 @@
   is_1990: false
   dependent_on:
   output_element_key: direct_emissions_bruto_netto
-  key: direct_emissions_bruto_netto_total_ghg_direct_co2_emissions
+  key: direct_emissions_bruto_netto_total_ghg_direct_co2
 - label: direct_other_ghg
   color: "#e55039"
-  order_by: 90
+  order_by: 80
   group: direct_emissions_total_ghg
   show_at_first:
   is_target_line: false

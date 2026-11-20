@@ -6,16 +6,16 @@ nl:
       short_description:
       description: "Overview of total emissions attributed"
     direct_emissions_bruto_netto:
-      title: Directe bruto- en nettobroeikasgasemissies (beta)
+      title: Directe broeikasgasemissies (beta)
       short_description:
       description: |
-        Deze grafiek vergelijkt de bruto en netto directe broeikasgasemissies in het toekomstjaar.
-        Bruto-emissies tonen uitgestoten CO<sub>2</sub> en overige broeikasgassen
-        vóór afvang. Biogene CO<sub>2</sub> uit het gebruik van biomassa wordt niet meegeteld in
-        de bruto-emissies, maar afgevangen biogene CO<sub>2</sub> telt wel als verwijdering.
-        Afgevangen en verwijderde CO<sub>2</sub> wordt onder de as getoond. Netto-emissies tonen
-        de resterende CO<sub>2</sub> na afvang en verwijdering, samen met de overige
-        broeikasgassen.
+        Deze grafiek toont de directe broeikasgasemissies in het toekomstjaar, volgens de kolommen van
+        de export van directe emissies. <b>CO<sub>2</sub>-productie</b> toont de bruto fossiele en
+        LULUCF CO<sub>2</sub>-emissies vóór afvang. Biogene CO<sub>2</sub> uit het gebruik van
+        biomassa wordt niet meegeteld. <b>CO<sub>2</sub>-afvang</b> toont afgevangen en verwijderde
+        CO<sub>2</sub> onder de as, inclusief afgevangen biogene CO<sub>2</sub>. <b>Overige
+        BKG-emissies</b> toont de overige broeikasgassen. <b>Totale BKG-emissies</b> toont de
+        resulterende netto CO<sub>2</sub>-emissies samen met de overige broeikasgassen.
         <br/><br/>
         <b>Let op: de emissies zijn berekend op basis van directe emissies.</b> Deze emissiemethode
         is momenteel in ontwikkeling. Lees meer in de

@@ -404,15 +404,15 @@ nl:
     demand_transport_freight_transport:
       title: Applicaties
       short_description:
-      description: "Zal vrachtvervoer toenemen of afnemen in de toekomst? De groeifactor
-        die je hier invoert, bepaalt onze toekomstige vraag naar 'ladingtonkilometers',
-        het totaal aantal transportkilometers van vracht per jaar. Dit getal omvat
-        alle vrachtvervoersmiddelen (vrachtwagens, bestelbussen, goederentreinen en binnenvaartsschepen).\r\n\r\n<br
-        /> <br />\r\nNaast de groeifactor kun je hier de verdeling van vrachtvervoersmiddelen
-        bepalen. Hoeveel procent van de ladingtonkilometers wordt afgelegd door vrachtwagens, door bestelbussen,
-        door goederentreinen en hoeveel door binnenvaartsschepen?\r\n\r\n<br
-        /> <br />\r\nLet op: containerschepen vallen onder de categorie <a href=\"/scenario/demand/transport_international_transport/international-transport\">'internationaal
-        transport'</a>."
+      description: |
+        Stel hier de groeisnelheid en technologieverdeling van vrachtvervoer in.
+        Aannames over internationale scheepvaart kunnen worden gedaan in de sectie
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        internationaal transport</a>. </br></br>
+        <b>Let op:</b> voor sommige regio's wordt het brandstofgebruik van
+        mobiele werktuigen meegenomen in wegtransport. Lees meer in de
+        <a href="https://docs.energytransitionmodel.com/main/non-road-mobile-machinery">
+        documentatie</a>.
     demand_transport_motorcycle_technology:
       title: Technologie motorfietsen
       short_description:
@@ -431,17 +431,16 @@ nl:
         van verschillende transportvoertuigen.
     demand_transport_passenger_transport:
       title: Applicaties
-      short_description: ''
-      description: "Onze mobiliteit is gegroeid als gevolg van een groeiende economie.
-        Zet deze trend zich voort in de toekomst? De groeifactor die je hier invoert,
-        bepaalt onze toekomstige vraag naar 'passagierskilometers', het totaal aantal
-        kilometers dat we afleggen in een jaar. Dit getal omvat alle passagiersvervoersmiddelen
-        (auto, bus, fiets, etc.) en wordt niet beïnvloed door (de groei van) het aantal
-        inwoners. \r\n<br /> <br />\r\nNaast de groeifactor kun je hier de verdeling
-        van vervoermiddelen bepalen. Hoeveel procent van de kilometers die we reizen,
-        leggen we af met de auto, bus, fiets, etc.?\r\n<br /> <br />\r\nLet op: internationaal
-        vliegverkeer valt onder de <a href=\"/scenario/demand/transport_international_transport/international-transport\">sectie
-        'internationaal transport'</a>."
+      short_description:
+      description: |
+        Stel hier de groeisnelheid en technologieverdeling van passagiersvervoer in.
+        Aannames over internationale luchtvaart kunnen worden gedaan in de sectie
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        internationaal transport</a>. </br></br>
+        <b>Let op:</b> voor sommige regio's wordt het brandstofgebruik van
+        mobiele werktuigen meegenomen in wegtransport. Lees meer in de
+        <a href="https://docs.energytransitionmodel.com/main/non-road-mobile-machinery">
+        documentatie</a>.
     demand_transport_passenger_train_technology:
       title: Technologie passagierstreinen
       short_description: ''

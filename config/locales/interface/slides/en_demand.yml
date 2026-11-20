@@ -412,15 +412,15 @@ en:
     demand_transport_freight_transport:
       title: Applications
       short_description:
-      description: "Will freight transport increase or decrease in the future? The
-        growth rate that you indicate here determines the future demand for 'freight
-        tonne kilometres', the total number of kilometres freight is shipped per year.
-        This number includes all freight transport applications (trucks, vans, trains and
-        ships).\r\n<br /> <br />\r\nBesides growth rate you can choose the division
-        of transport applications here. What percentage of freight tonne kilometres
-        is covered by trucks, by vans, by trains and by inland ships?\r\n<br /> <br /> \r\nNote
-        that international container ships are part of the <a href=\"/scenario/demand/transport_international_transport/international-transport\">international
-        transport section</a>."
+      description: |
+        The growth rate and technology split of freight transport can be set here.
+        Assumptions about international navigation can be made in the
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        international transport</a> section. </br></br>
+        <b>Note:</b> for some regions, fuel use of mobile machinery
+        is included in road transport. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/non-road-mobile-machinery">
+        documentation</a>.
     demand_transport_motorcycle_technology:
       title: Motorcycle technology
       short_description:
@@ -439,17 +439,16 @@ en:
         assumptions about future effiency improvements for transport vehicles.
     demand_transport_passenger_transport:
       title: Applications
-      short_description: ''
-      description: "Our mobility has grown as a result of a growing economy. Will
-        this trend continue in the future? The growth rate that you indicate here
-        determines the future demand for 'passenger kilometres', the total number
-        of kilometres people travel per year. This number includes all passenger transport
-        applications (car, bus, bike, etc.) and is not influenced by the population
-        size. \r\n<br /> <br />\r\nBesides the growth rate, you can choose the division
-        of transport applications here. What percentage of the kilometres we travel
-        is covered by cars, buses, bikes, etc.?\r\n\r\n<br /> <br />\r\nPlease note
-        that international aviation is part of the <a href=\"/scenario/demand/transport_international_transport/international-transport\">international
-        transport section</a>."
+      short_description:
+      description: |
+        The growth rate and technology split of passenger transport can be set here.
+        Assumptions about international aviation can be made in the
+        <a href="/scenario/demand/transport_international_transport/international-transport">
+        international transport</a> section. </br></br>
+        <b>Note:</b> for some regions, fuel use of mobile machinery
+        is included in road transport. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/non-road-mobile-machinery">
+        documentation</a>.
     demand_transport_passenger_train_technology:
       title: Train technology
       short_description: ''

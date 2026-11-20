@@ -5,6 +5,22 @@ en:
       title: Total greenhouse gas emissions (CO<sub>2</sub> eq)
       short_description:
       description: "Overview of total emissions"
+    direct_emissions_bruto_netto:
+      title: CO<sub>2</sub> capture and direct net GHG emissions (beta)
+      short_description:
+      description: |
+        This chart shows the direct GHG emissions in the future year, following the columns of the
+        direct emissions export. <b>CO<sub>2</sub> production</b> shows gross fossil and LULUCF
+        CO<sub>2</sub> emissions before capture. Biogenic CO<sub>2</sub> from biomass use is not
+        included. <b>CO<sub>2</sub> capture</b> shows captured and removed CO<sub>2</sub> below the
+        axis, including captured biogenic CO<sub>2</sub>. <b>Other GHG emissions</b> shows the
+        non-CO<sub>2</sub> greenhouse gases. <b>Total GHG emissions</b> shows the resulting net
+        CO<sub>2</sub> emissions together with the other greenhouse gases.
+        <br/><br/>
+        <b>Note: the emissions are calculated based on direct emissions.</b> This emissions method
+        is currently in development. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
     emissions_agriculture:
       title: Greenhouse gas emissions Agriculture (CO<sub>2</sub> eq)
       short_description:

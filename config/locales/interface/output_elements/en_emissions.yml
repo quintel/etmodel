@@ -6,15 +6,16 @@ en:
       short_description:
       description: "Overview of total emissions"
     direct_emissions_bruto_netto:
-      title: Direct gross and net GHG emissions (beta)
+      title: CO<sub>2</sub> capture and direct net GHG emissions (beta)
       short_description:
       description: |
-        This chart compares gross and net direct GHG emissions in the future year.
-        Gross emissions show emitted CO<sub>2</sub> and other greenhouse gases before
-        capture. Biogenic CO<sub>2</sub> from biomass use is not included in gross emissions, but
-        captured biogenic CO<sub>2</sub> is counted as a removal. Captured and removed
-        CO<sub>2</sub> is shown below the axis. Net emissions show the remaining CO<sub>2</sub>
-        after capture and removal, together with other greenhouse gases.
+        This chart shows the direct GHG emissions in the future year, following the columns of the
+        direct emissions export. <b>CO<sub>2</sub> production</b> shows gross fossil and LULUCF
+        CO<sub>2</sub> emissions before capture. Biogenic CO<sub>2</sub> from biomass use is not
+        included. <b>CO<sub>2</sub> capture</b> shows captured and removed CO<sub>2</sub> below the
+        axis, including captured biogenic CO<sub>2</sub>. <b>Other GHG emissions</b> shows the
+        non-CO<sub>2</sub> greenhouse gases. <b>Total GHG emissions</b> shows the resulting net
+        CO<sub>2</sub> emissions together with the other greenhouse gases.
         <br/><br/>
         <b>Note: the emissions are calculated based on direct emissions.</b> This emissions method
         is currently in development. Read more in the

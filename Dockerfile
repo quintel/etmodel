@@ -1,4 +1,4 @@
-FROM ruby:4.0-slim
+FROM ruby:4.0.10-slim
 
 LABEL maintainer="info@energytransitionmodel.com"
 
@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y curl gnupg \
  # Throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
-COPY Gemfile* package.json yarn.lock /app/
+COPY Gemfile* .ruby-version package.json yarn.lock /app/
 WORKDIR /app
 
 RUN bundle install --jobs=4 --retry=3

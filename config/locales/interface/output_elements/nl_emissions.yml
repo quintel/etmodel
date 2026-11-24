@@ -5,6 +5,31 @@ nl:
       title: Totale broeikasgasemissies (CO<sub>2</sub>-eq)
       short_description:
       description: "Overview of total emissions attributed"
+    direct_emissions_per_category:
+      title: Directe totale broeikasgasemissies per categorie (toekomst)
+      short_description:
+      description: |
+        Deze grafiek toont de directe broeikasgasemissies in het toekomstjaar, uitgesplitst naar de
+        categorieën CO<sub>2</sub>-productie, CO<sub>2</sub>-afvang, overige BKG-emissies en
+        totale emissies (overeenkomend met de kolommen in de
+        <a href="/scenario/data/data_export/yearly-direct-greenhouse-gas-emissions">data-export</a>
+        voor directe emissies). Toelichting:
+        <ul>
+        <li><b>CO<sub>2</sub>-productie</b>: toont de bruto CO<sub>2</sub>-productie vóór eventuele
+        CO<sub>2</sub>-afvang, bijvoorbeeld CO<sub>2</sub>-productie uit productieprocessen of
+        CO<sub>2</sub>-emissies uit LULUCF. Biogene CO<sub>2</sub>-productie uit het gebruik van
+        biomassa wordt niet meegeteld.
+        </li>
+        <li><b>CO<sub>2</sub>-afvang</b>: toont afgevangen en verwijderde
+        CO<sub>2</sub> als negatieve waarden, inclusief afgevangen biogene CO<sub>2</sub>.</li>
+        <li><b>Overige BKG-emissies</b>: toont emissies van overige broeikasgassen.</li>
+        <li><b>Totale emissies</b>: toont de resulterende netto totale broeikasgasemissies, waarbij
+        CO<sub>2</sub>-afvang is afgetrokken van CO<sub>2</sub>-productie.</li>
+        </ul>
+        <b>Let op</b>: de emissies zijn berekend op basis van directe emissies. Deze methode
+        is momenteel in ontwikkeling. Lees meer in de
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentatie</a>.
     emissions_agriculture:
       title: Broeikasgasemissies Landbouw (CO<sub>2</sub>-eq)
       short_description:
@@ -32,7 +57,7 @@ nl:
       short_description:
       description:
     direct_emissions_per_sector:
-      title: Directe totale broeikasgasemissies (beta)
+      title: Directe totale broeikasgasemissies per sector (beta)
       short_description:
       description: |
         Deze grafiek vergelijkt de uitstoot van broeikasgassen

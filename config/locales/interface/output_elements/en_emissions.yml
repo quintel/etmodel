@@ -5,6 +5,31 @@ en:
       title: Total greenhouse gas emissions (CO<sub>2</sub> eq)
       short_description:
       description: "Overview of total emissions"
+    direct_emissions_per_category:
+      title: Direct total GHG emissions per category (future)
+      short_description:
+      description: |
+        This chart shows the direct GHG emissions in the future year, broken down into the
+        categories CO<sub>2</sub> production, CO<sub>2</sub> capture, other GHG emissions and
+        total emissions (corresponding to the columns in the
+        <a href="/scenario/data/data_export/yearly-direct-greenhouse-gas-emissions">data export</a>
+        for direct emissions). Explanation:
+        <ul>
+        <li><b>CO<sub>2</sub> production</b>: shows gross CO<sub>2</sub> production before any
+        CO<sub>2</sub> capture, for example CO<sub>2</sub> production from production processes or
+        CO<sub>2</sub> emissions from LULUCF. Biogenic CO<sub>2</sub> production from biomass use is
+        not included.
+        </li>
+        <li><b>CO<sub>2</sub> capture</b>: shows captured and removed CO<sub>2</sub> as negative
+        values, including captured biogenic CO<sub>2</sub>.</li>
+        <li><b>Other GHG emissions</b>: shows emissions of other greenhouse gases.</li>
+        <li><b>Total emissions</b>: shows the resulting net greenhouse gas emissions, where
+        CO<sub>2</sub> capture is subtracted from CO<sub>2</sub> production.</li>
+        </ul>
+        <b>Note</b>: the emissions are calculated based on direct emissions. This method
+        is currently in development. Read more in the
+        <a href="https://docs.energytransitionmodel.com/main/direct-emissions"
+        target="_blank">documentation</a>.
     emissions_agriculture:
       title: Greenhouse gas emissions Agriculture (CO<sub>2</sub> eq)
       short_description:
@@ -33,7 +58,7 @@ en:
       short_description:
       description:
     direct_emissions_per_sector:
-      title: Direct total GHG emissions (beta)
+      title: Direct total GHG emissions per sector (beta)
       short_description:
       description: |
         This chart compares total GHG emissions in 1990, the present and the future.

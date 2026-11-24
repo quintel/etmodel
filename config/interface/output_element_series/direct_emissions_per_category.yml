@@ -1,0 +1,117 @@
+---
+# CO2 production
+- label: direct_co2
+  color: "#aaa69d"
+  order_by: 10
+  group: direct_emissions_co2_production
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_co2_production_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_co2_production_direct_co2
+
+# CO2 capture
+- label: direct_fossil_co2_captured
+  color: "#416b86"
+  order_by: 100
+  group: direct_emissions_co2_capture
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_co2_captured_fossil_total_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_co2_capture_direct_fossil_co2_captured
+- label: direct_biogenic_co2_captured
+  color: "#B1CEBC"
+  order_by: 110
+  group: direct_emissions_co2_capture
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_co2_captured_biogenic_total_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_co2_capture_direct_biogenic_co2_captured
+- label: direct_direct_air_capture
+  color: "#b71540"
+  order_by: 120
+  group: direct_emissions_co2_capture
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_co2_captured_dac_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_co2_capture_direct_direct_air_capture
+- label: direct_lulucf_co2_removal
+  color: "#a1dc8e"
+  order_by: 130
+  group: direct_emissions_co2_capture
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_co2_captured_lulucf_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_co2_capture_direct_lulucf_co2_removal
+
+# Other GHG
+- label: direct_other_ghg
+  color: "#e55039"
+  order_by: 200
+  group: direct_emissions_other_ghg
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_other_ghg_total_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_other_ghg_direct_other_ghg
+
+# Total emissions
+- label: direct_co2
+  color: "#aaa69d"
+  order_by: 300
+  group: direct_emissions_total_ghg
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_co2_net_total_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_total_ghg_direct_co2
+- label: direct_other_ghg
+  color: "#e55039"
+  order_by: 310
+  group: direct_emissions_total_ghg
+  show_at_first:
+  is_target_line: false
+  target_line_position:
+  gquery: direct_emissions_other_ghg_total_for_direct_emissions_per_category_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_total_ghg_direct_other_ghg
+
+# Total emissions: target line
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 320
+  group: direct_emissions_total_ghg
+  show_at_first: false
+  is_target_line: true
+  gquery: direct_emissions_total_ghg_future_for_direct_emissions_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_total_ghg_direct_total_ghg

@@ -102,3 +102,16 @@
   dependent_on:
   output_element_key: direct_emissions_per_category
   key: direct_emissions_per_category_total_ghg_direct_other_ghg
+
+# Total emissions: target line
+- label: direct_emissions_total_ghg
+  color: "#FF0000"
+  order_by: 320
+  group: direct_emissions_total_ghg
+  show_at_first: false
+  is_target_line: true
+  gquery: direct_emissions_total_ghg_future_for_direct_emissions_chart
+  is_1990: false
+  dependent_on:
+  output_element_key: direct_emissions_per_category
+  key: direct_emissions_per_category_total_ghg_direct_total_ghg
